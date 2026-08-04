@@ -1,0 +1,98 @@
+[
+  {
+    "code": "214450",
+    "name": "파마리서치",
+    "close": 327000,
+    "rate": -2.823179791976226,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "004310",
+    "name": "★현대약품",
+    "close": 6220,
+    "rate": -18.157894736842106,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "091440",
+    "name": "★한울소재과학",
+    "close": 2915,
+    "rate": 5.045045045045045,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "044340",
+    "name": "★위닉스",
+    "close": 4570,
+    "rate": -9.504950495049505,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "012690",
+    "name": "★모나리자",
+    "close": 1740,
+    "rate": -19.81566820276498,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "065950",
+    "name": "웰크론",
+    "close": 1150,
+    "rate": -12.746585735963581,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "038870",
+    "name": "에코심플렉스",
+    "close": 1939,
+    "rate": -8.75294117647059,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "071950",
+    "name": "코아스",
+    "close": 1959,
+    "rate": -29.02173913043478,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "024940",
+    "name": "PN풍년",
+    "close": 2335,
+    "rate": -13.518518518518519,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "322780",
+    "name": "코퍼스코리아",
+    "close": 2070,
+    "rate": -7.38255033557047,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "291810",
+    "name": "★핀텔",
+    "close": 1411,
+    "rate": -5.9960026648900735,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "043590",
+    "name": "웰킵스하이텍",
+    "close": 1247,
+    "rate": 7.222699914015478,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  }
+]

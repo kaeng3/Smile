@@ -1,0 +1,90 @@
+[
+  {
+    "code": "460930",
+    "name": "★현대힘스",
+    "close": 12540,
+    "rate": -10.9375,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "091440",
+    "name": "한울소재과학",
+    "close": 2555,
+    "rate": -4.8417132216014895,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "463020",
+    "name": "★뉴엔AI",
+    "close": 8260,
+    "rate": -13.507853403141363,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "006370",
+    "name": "★대구백화점",
+    "close": 4880,
+    "rate": -3.3663366336633667,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "002140",
+    "name": "★고려산업",
+    "close": 1870,
+    "rate": -3.008298755186722,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "340810",
+    "name": "★시선AI",
+    "close": 2720,
+    "rate": -1.090909090909091,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "078590",
+    "name": "휴림에이텍",
+    "close": 2470,
+    "rate": -14.680483592400693,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "038880",
+    "name": "★아이에이",
+    "close": 3270,
+    "rate": -6.571428571428571,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "023790",
+    "name": "★동일스틸럭스",
+    "close": 1440,
+    "rate": -11.602209944751381,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "303030",
+    "name": "지니틱스",
+    "close": 1805,
+    "rate": 7.825567502986858,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "900100",
+    "name": "파이온엑스",
+    "close": 2670,
+    "rate": -24.25531914893617,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  }
+]

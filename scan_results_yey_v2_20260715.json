@@ -1,0 +1,26 @@
+[
+  {
+    "code": "044340",
+    "name": "위닉스",
+    "close": 5410,
+    "rate": 15.845824411134904,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "091440",
+    "name": "한울소재과학",
+    "close": 2940,
+    "rate": 2.6178010471204187,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "024890",
+    "name": "대원화성",
+    "close": 3245,
+    "rate": 2.8526148969889067,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  }
+]

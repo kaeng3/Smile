@@ -1,0 +1,690 @@
+[
+  {
+    "code": "096770",
+    "name": "SK이노베이션",
+    "close": 132200,
+    "rate": 11.655405405405405,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "000150",
+    "name": "두산",
+    "close": 1276000,
+    "rate": 5.020576131687243,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "277810",
+    "name": "레인보우로보틱스",
+    "close": 508000,
+    "rate": 6.165099268547544,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "005930",
+    "name": "삼성전자",
+    "close": 270000,
+    "rate": 3.6468330134357005,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "475150",
+    "name": "SK이터닉스",
+    "close": 80600,
+    "rate": 30.0,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "031980",
+    "name": "피에스케이홀딩스",
+    "close": 121000,
+    "rate": -0.819672131147541,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "007340",
+    "name": "DN오토모티브",
+    "close": 40600,
+    "rate": 6.143790849673202,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "089860",
+    "name": "롯데렌탈",
+    "close": 39950,
+    "rate": 3.363518758085381,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "006360",
+    "name": "GS건설",
+    "close": 34400,
+    "rate": 18.213058419243985,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "437730",
+    "name": "삼현",
+    "close": 37950,
+    "rate": 8.273894436519258,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "298020",
+    "name": "효성티앤씨",
+    "close": 322000,
+    "rate": 5.921052631578947,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "030530",
+    "name": "원익홀딩스",
+    "close": 18510,
+    "rate": 8.24561403508772,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "058610",
+    "name": "에스피지",
+    "close": 83700,
+    "rate": 1.331719128329298,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "294870",
+    "name": "IPARK현대산업개발",
+    "close": 20750,
+    "rate": 6.903657908294693,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "100090",
+    "name": "SK오션플랜트",
+    "close": 17260,
+    "rate": 19.61191961191961,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "252990",
+    "name": "샘씨엔에스",
+    "close": 14040,
+    "rate": 2.556610664718773,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "218410",
+    "name": "RFHIC",
+    "close": 48200,
+    "rate": 7.230255839822025,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "090710",
+    "name": "휴림로봇",
+    "close": 7270,
+    "rate": 5.36231884057971,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "001820",
+    "name": "삼화콘덴서",
+    "close": 90200,
+    "rate": 4.398148148148148,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "456040",
+    "name": "OCI",
+    "close": 88300,
+    "rate": 5.748502994011976,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "006340",
+    "name": "대원전선",
+    "close": 14200,
+    "rate": 16.776315789473685,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "119850",
+    "name": "지엔씨에너지",
+    "close": 45550,
+    "rate": 29.95720399429387,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "327260",
+    "name": "RF머트리얼즈",
+    "close": 52500,
+    "rate": 11.228813559322035,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "060250",
+    "name": "NHN KCP",
+    "close": 12830,
+    "rate": 7.9966329966329965,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "287840",
+    "name": "인투셀",
+    "close": 23400,
+    "rate": 15.841584158415841,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "217590",
+    "name": "티엠씨",
+    "close": 13420,
+    "rate": 3.3102386451116246,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "160980",
+    "name": "싸이맥스",
+    "close": 36400,
+    "rate": 2.535211267605634,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "077360",
+    "name": "덕산하이메탈",
+    "close": 9060,
+    "rate": 2.2573363431151243,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "033240",
+    "name": "자화전자",
+    "close": 25700,
+    "rate": 0.7843137254901961,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "125490",
+    "name": "한라캐스트",
+    "close": 8210,
+    "rate": 4.187817258883249,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "064260",
+    "name": "다날",
+    "close": 4635,
+    "rate": 17.938931297709924,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "448900",
+    "name": "한국피아이엠",
+    "close": 52500,
+    "rate": 4.790419161676647,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "061090",
+    "name": "세나테크놀로지",
+    "close": 45000,
+    "rate": -1.9607843137254901,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "417840",
+    "name": "저스템",
+    "close": 11370,
+    "rate": 0.7978723404255319,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "389260",
+    "name": "대명에너지",
+    "close": 16580,
+    "rate": 15.058986814712005,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "234340",
+    "name": "헥토파이낸셜",
+    "close": 18090,
+    "rate": 8.64864864864865,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "002990",
+    "name": "금호건설",
+    "close": 11300,
+    "rate": 8.445297504798464,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "317400",
+    "name": "자이에스앤디",
+    "close": 8250,
+    "rate": 27.51159196290572,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "099440",
+    "name": "스맥",
+    "close": 3315,
+    "rate": 8.51063829787234,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "108860",
+    "name": "셀바스AI",
+    "close": 7730,
+    "rate": 18.923076923076923,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "024060",
+    "name": "흥구석유",
+    "close": 13870,
+    "rate": 1.1670313639679066,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "138360",
+    "name": "앤로보틱스",
+    "close": 2105,
+    "rate": -11.92468619246862,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "086390",
+    "name": "유니테스트",
+    "close": 9700,
+    "rate": 5.092091007583965,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "004310",
+    "name": "현대약품",
+    "close": 6300,
+    "rate": -3.225806451612903,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "489460",
+    "name": "바이오비쥬",
+    "close": 8670,
+    "rate": 14.078947368421051,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "357880",
+    "name": "SKAI",
+    "close": 2520,
+    "rate": 5.0,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "068790",
+    "name": "DMS",
+    "close": 8230,
+    "rate": -1.0817307692307692,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "041020",
+    "name": "폴라리스오피스",
+    "close": 3085,
+    "rate": 14.684014869888475,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "086890",
+    "name": "이수앱지스",
+    "close": 3560,
+    "rate": 16.33986928104575,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "126640",
+    "name": "화신정공",
+    "close": 4100,
+    "rate": 4.859335038363171,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "067290",
+    "name": "JW신약",
+    "close": 1982,
+    "rate": -5.6190476190476195,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "049070",
+    "name": "인탑스",
+    "close": 18740,
+    "rate": -0.6362672322375398,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "013990",
+    "name": "아가방컴퍼니",
+    "close": 4190,
+    "rate": 4.881101376720901,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "059120",
+    "name": "아진엑스텍",
+    "close": 5910,
+    "rate": 9.242144177449168,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "282720",
+    "name": "금양그린파워",
+    "close": 7580,
+    "rate": 15.19756838905775,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "263800",
+    "name": "데이타솔루션",
+    "close": 6020,
+    "rate": 2.0338983050847457,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "362320",
+    "name": "청담글로벌",
+    "close": 4970,
+    "rate": 4.631578947368421,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "381620",
+    "name": "제닉스로보틱스",
+    "close": 6240,
+    "rate": 1.794453507340946,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "005860",
+    "name": "한일사료",
+    "close": 2645,
+    "rate": -1.48975791433892,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "014950",
+    "name": "삼익제약",
+    "close": 5680,
+    "rate": -6.885245901639345,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "463020",
+    "name": "뉴엔AI",
+    "close": 6810,
+    "rate": 15.619694397283531,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "413630",
+    "name": "씨피시스템",
+    "close": 3165,
+    "rate": -11.344537815126051,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "006660",
+    "name": "삼성공조",
+    "close": 12600,
+    "rate": -3.076923076923077,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "396300",
+    "name": "세아메카닉스",
+    "close": 3630,
+    "rate": 15.238095238095239,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "377480",
+    "name": "마음AI",
+    "close": 9390,
+    "rate": 11.918951132300357,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "094480",
+    "name": "갤럭시아머니트리",
+    "close": 5150,
+    "rate": 11.713665943600867,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "261520",
+    "name": "이지스",
+    "close": 4585,
+    "rate": -2.9629629629629632,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "215100",
+    "name": "로보로보",
+    "close": 4035,
+    "rate": 2.151898734177215,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "158430",
+    "name": "아톤",
+    "close": 4140,
+    "rate": 8.661417322834646,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "123330",
+    "name": "제닉",
+    "close": 23750,
+    "rate": 1.279317697228145,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "457600",
+    "name": "벡트",
+    "close": 3310,
+    "rate": -1.925925925925926,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "320000",
+    "name": "한울반도체",
+    "close": 14420,
+    "rate": 4.492753623188406,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "003310",
+    "name": "대주산업",
+    "close": 1747,
+    "rate": 0.7497116493656286,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "340810",
+    "name": "시선AI",
+    "close": 2610,
+    "rate": 5.030181086519115,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "406820",
+    "name": "뷰티스킨",
+    "close": 1802,
+    "rate": 0.27824151363383415,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "192250",
+    "name": "케이사인",
+    "close": 7580,
+    "rate": 9.53757225433526,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "001520",
+    "name": "동양",
+    "close": 1134,
+    "rate": 12.835820895522387,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "215090",
+    "name": "솔디펜스",
+    "close": 1445,
+    "rate": 1.4035087719298245,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "011230",
+    "name": "삼화전자",
+    "close": 2885,
+    "rate": 11.175337186897881,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "017180",
+    "name": "명문제약",
+    "close": 1220,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "034940",
+    "name": "조아제약",
+    "close": 606,
+    "rate": -4.113924050632911,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "002680",
+    "name": "한탑",
+    "close": 2060,
+    "rate": -4.408352668213457,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "001000",
+    "name": "신라섬유",
+    "close": 795,
+    "rate": 0.7604562737642585,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "201490",
+    "name": "미투온",
+    "close": 2180,
+    "rate": 8.728179551122196,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "042110",
+    "name": "에스씨디",
+    "close": 1149,
+    "rate": 0.17436791630340018,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "002630",
+    "name": "오리엔트바이오",
+    "close": 980,
+    "rate": -0.6085192697768762,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  }
+]

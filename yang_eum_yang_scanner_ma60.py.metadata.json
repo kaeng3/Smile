@@ -1,0 +1,4 @@
+{
+  "summary":  "A specialized Python script (yang_eum_yang_scanner_ma60.py) that strictly scans all 2,600+ Korean stocks for Gamejoa's '60-day Line Law' (60일선의 법칙), verifying a 2-year peak price drop, MA120 > MA60 bearish alignment, MA5 > MA20 golden cross, recent MA120 volume breakout, and MA60 support.",
+  "updatedAt":  "2026-07-09T13:30:03.280833100Z"
+}

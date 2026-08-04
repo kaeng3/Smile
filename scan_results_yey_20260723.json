@@ -1,0 +1,1494 @@
+[
+  {
+    "code": "096770",
+    "name": "SK이노베이션",
+    "close": 132200,
+    "rate": 11.655405405405405,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "006360",
+    "name": "GS건설",
+    "close": 34400,
+    "rate": 18.213058419243985,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "252990",
+    "name": "샘씨엔에스",
+    "close": 14040,
+    "rate": 2.556610664718773,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "004310",
+    "name": "현대약품",
+    "close": 6300,
+    "rate": -3.225806451612903,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "489460",
+    "name": "바이오비쥬",
+    "close": 8670,
+    "rate": 14.078947368421051,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "006660",
+    "name": "삼성공조",
+    "close": 12600,
+    "rate": -3.076923076923077,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "067290",
+    "name": "JW신약",
+    "close": 1982,
+    "rate": -5.6190476190476195,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "002630",
+    "name": "오리엔트바이오",
+    "close": 980,
+    "rate": -0.6085192697768762,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "457600",
+    "name": "벡트",
+    "close": 3310,
+    "rate": -1.925925925925926,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "011230",
+    "name": "삼화전자",
+    "close": 2885,
+    "rate": 11.175337186897881,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 2"
+  },
+  {
+    "code": "405000",
+    "name": "플라즈맵",
+    "close": 5520,
+    "rate": 19.35135135135135,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "069330",
+    "name": "유아이디",
+    "close": 1180,
+    "rate": 9.25925925925926,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "215090",
+    "name": "솔디펜스",
+    "close": 1445,
+    "rate": 1.4035087719298245,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 3"
+  },
+  {
+    "code": "115610",
+    "name": "이미지스",
+    "close": 1610,
+    "rate": 3.205128205128205,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1"
+  },
+  {
+    "code": "248170",
+    "name": "샘표식품",
+    "close": 22700,
+    "rate": 0.8888888888888888,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+5일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-15"
+  },
+  {
+    "code": "119850",
+    "name": "지엔씨에너지",
+    "close": 45550,
+    "rate": 29.95720399429387,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+4일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-16"
+  },
+  {
+    "code": "101160",
+    "name": "월덱스",
+    "close": 30400,
+    "rate": 2.356902356902357,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+4일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-16"
+  },
+  {
+    "code": "179290",
+    "name": "엠아이텍",
+    "close": 4870,
+    "rate": 6.448087431693988,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+4일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-16"
+  },
+  {
+    "code": "035610",
+    "name": "솔본",
+    "close": 4800,
+    "rate": 1.3727560718057021,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+4일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-16"
+  },
+  {
+    "code": "012690",
+    "name": "모나리자",
+    "close": 1586,
+    "rate": -4.400241109101868,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+4일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-16"
+  },
+  {
+    "code": "042110",
+    "name": "에스씨디",
+    "close": 1149,
+    "rate": 0.17436791630340018,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+4일 (우상향 15일선 지지 매수 타점)",
+    "touched_ma": "우상향 15일선",
+    "anchor_date": "2026-07-16"
+  },
+  {
+    "code": "002680",
+    "name": "한탑",
+    "close": 2060,
+    "rate": -4.408352668213457,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+4일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-16"
+  },
+  {
+    "code": "044340",
+    "name": "위닉스",
+    "close": 3775,
+    "rate": -1.948051948051948,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+5일 (우상향 20일선 지지 매수 타점)",
+    "touched_ma": "우상향 20일선",
+    "anchor_date": "2026-07-15"
+  },
+  {
+    "code": "024890",
+    "name": "대원화성",
+    "close": 3020,
+    "rate": -0.9836065573770493,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+5일 (우상향 15일선 지지 매수 타점)",
+    "touched_ma": "우상향 15일선",
+    "anchor_date": "2026-07-15"
+  },
+  {
+    "code": "476060",
+    "name": "온코닉테라퓨틱스",
+    "close": 11550,
+    "rate": 5.383211678832116,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+4일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-16"
+  },
+  {
+    "code": "036540",
+    "name": "SFA반도체",
+    "close": 5520,
+    "rate": 0.9140767824497258,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+4일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-16"
+  },
+  {
+    "code": "062970",
+    "name": "한국첨단소재",
+    "close": 1162,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+4일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-16"
+  },
+  {
+    "code": "406820",
+    "name": "뷰티스킨",
+    "close": 1802,
+    "rate": 0.27824151363383415,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+4일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-16"
+  },
+  {
+    "code": "298020",
+    "name": "효성티앤씨",
+    "close": 322000,
+    "rate": 5.921052631578947,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "376900",
+    "name": "로킷헬스케어",
+    "close": 48650,
+    "rate": -0.8154943934760449,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "007690",
+    "name": "국도화학",
+    "close": 39450,
+    "rate": 5.906040268456376,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "003310",
+    "name": "대주산업",
+    "close": 1747,
+    "rate": 0.7497116493656286,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "005860",
+    "name": "한일사료",
+    "close": 2645,
+    "rate": -1.48975791433892,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "002140",
+    "name": "고려산업",
+    "close": 2070,
+    "rate": 2.2222222222222223,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "084180",
+    "name": "수성웹툰",
+    "close": 633,
+    "rate": 29.97946611909651,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "340440",
+    "name": "세림B&G",
+    "close": 939,
+    "rate": 1.5135135135135136,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "010950",
+    "name": "S-Oil",
+    "close": 149800,
+    "rate": 5.716302046577276,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "018670",
+    "name": "SK가스",
+    "close": 259500,
+    "rate": 13.815789473684212,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "000400",
+    "name": "롯데손해보험",
+    "close": 2210,
+    "rate": -4.329004329004329,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 15일선 지지 매수 타점)",
+    "touched_ma": "우상향 15일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "219130",
+    "name": "타이거일렉",
+    "close": 73500,
+    "rate": -2.906208718626156,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "290550",
+    "name": "디케이티",
+    "close": 23050,
+    "rate": -2.536997885835095,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "144960",
+    "name": "뉴파워프라즈마",
+    "close": 10020,
+    "rate": -0.2985074626865672,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "078130",
+    "name": "국일제지",
+    "close": 4120,
+    "rate": 0.24330900243309003,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "026890",
+    "name": "스틱인베스트먼트",
+    "close": 7680,
+    "rate": 5.349794238683128,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 15일선 지지 매수 타점)",
+    "touched_ma": "우상향 15일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "061090",
+    "name": "세나테크놀로지",
+    "close": 45000,
+    "rate": -1.9607843137254901,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "039830",
+    "name": "오로라",
+    "close": 19130,
+    "rate": 2.7389903329752956,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 15일선 지지 매수 타점)",
+    "touched_ma": "우상향 15일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "310200",
+    "name": "애니플러스",
+    "close": 2735,
+    "rate": 6.8359375,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "263800",
+    "name": "데이타솔루션",
+    "close": 6020,
+    "rate": 2.0338983050847457,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "001540",
+    "name": "안국약품",
+    "close": 11730,
+    "rate": 2.2667829119442024,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "013700",
+    "name": "까뮤이앤씨",
+    "close": 1410,
+    "rate": 3.6002939015429827,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "070300",
+    "name": "엑스큐어",
+    "close": 1795,
+    "rate": -1.2107870115575123,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "091970",
+    "name": "LSK아이로봇",
+    "close": 3915,
+    "rate": 2.3529411764705883,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "193250",
+    "name": "링크드",
+    "close": 1800,
+    "rate": -0.9356081452944414,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "003680",
+    "name": "한성기업",
+    "close": 8200,
+    "rate": -1.56062424969988,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 15일선 지지 매수 타점)",
+    "touched_ma": "우상향 15일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "010120",
+    "name": "LS ELECTRIC",
+    "close": 223500,
+    "rate": 17.26128016789087,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "062040",
+    "name": "산일전기",
+    "close": 183600,
+    "rate": 10.137972405518896,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "377300",
+    "name": "카카오페이",
+    "close": 43350,
+    "rate": 5.218446601941747,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "006400",
+    "name": "삼성SDI",
+    "close": 467000,
+    "rate": 11.455847255369928,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "440110",
+    "name": "파두",
+    "close": 73700,
+    "rate": 4.6875,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "010060",
+    "name": "OCI홀딩스",
+    "close": 247000,
+    "rate": 30.0,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "058470",
+    "name": "리노공업",
+    "close": 73900,
+    "rate": 2.9247910863509747,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "489790",
+    "name": "한화비전",
+    "close": 45900,
+    "rate": 5.154639175257731,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "028050",
+    "name": "삼성E&A",
+    "close": 46650,
+    "rate": 12.953995157384988,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "108490",
+    "name": "로보티즈",
+    "close": 216500,
+    "rate": -1.366742596810934,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "007340",
+    "name": "DN오토모티브",
+    "close": 40600,
+    "rate": 6.143790849673202,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "005290",
+    "name": "동진쎄미켐",
+    "close": 45400,
+    "rate": 7.328605200945626,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "089030",
+    "name": "테크윙",
+    "close": 50800,
+    "rate": 9.956709956709958,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "039200",
+    "name": "오스코텍",
+    "close": 31200,
+    "rate": 6.484641638225256,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "010170",
+    "name": "대한광통신",
+    "close": 10840,
+    "rate": 7.433102081268583,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "388210",
+    "name": "씨엠티엑스",
+    "close": 87100,
+    "rate": -1.4705882352941175,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "166090",
+    "name": "하나머티리얼즈",
+    "close": 54700,
+    "rate": 2.819548872180451,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "095340",
+    "name": "ISC",
+    "close": 147200,
+    "rate": 4.7686832740213525,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "031330",
+    "name": "에스에이엠티",
+    "close": 10940,
+    "rate": 4.190476190476191,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "397030",
+    "name": "에이프릴바이오",
+    "close": 26550,
+    "rate": 8.36734693877551,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "090710",
+    "name": "휴림로봇",
+    "close": 7270,
+    "rate": 5.36231884057971,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "033100",
+    "name": "제룡전기",
+    "close": 47100,
+    "rate": 9.280742459396752,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "037460",
+    "name": "삼지전자",
+    "close": 36600,
+    "rate": 4.273504273504273,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "160980",
+    "name": "싸이맥스",
+    "close": 36400,
+    "rate": 2.535211267605634,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "033160",
+    "name": "엠케이전자",
+    "close": 16350,
+    "rate": 6.723237597911227,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "327260",
+    "name": "RF머트리얼즈",
+    "close": 52500,
+    "rate": 11.228813559322035,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "069540",
+    "name": "빛과전자",
+    "close": 2470,
+    "rate": -3.515625,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "228760",
+    "name": "지노믹트리",
+    "close": 12290,
+    "rate": 8.28193832599119,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "102710",
+    "name": "이엔에프테크놀로지",
+    "close": 45200,
+    "rate": 12.158808933002481,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "011930",
+    "name": "신성이엔지",
+    "close": 16240,
+    "rate": 9.286675639300135,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "318060",
+    "name": "그래피",
+    "close": 17900,
+    "rate": 1.6467915956842702,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 15일선 지지 매수 타점)",
+    "touched_ma": "우상향 15일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "298000",
+    "name": "효성화학",
+    "close": 61900,
+    "rate": 5.45144804088586,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "453450",
+    "name": "그리드위즈",
+    "close": 15800,
+    "rate": 11.818825194621372,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "067080",
+    "name": "대화제약",
+    "close": 9340,
+    "rate": 4.008908685968819,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "032580",
+    "name": "피델릭스",
+    "close": 4820,
+    "rate": 11.18800461361015,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "060230",
+    "name": "제이케이시냅스",
+    "close": 1694,
+    "rate": 19.295774647887324,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+3일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-20"
+  },
+  {
+    "code": "093520",
+    "name": "매커스",
+    "close": 19160,
+    "rate": 6.208425720620843,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "085910",
+    "name": "네오티스",
+    "close": 17500,
+    "rate": 3.4890597279716142,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "435570",
+    "name": "에르코스",
+    "close": 7060,
+    "rate": -0.5633802816901409,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "043590",
+    "name": "웰킵스하이텍",
+    "close": 1250,
+    "rate": 1.7915309446254073,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "272210",
+    "name": "한화시스템",
+    "close": 69700,
+    "rate": 12.60096930533118,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "009540",
+    "name": "HD한국조선해양",
+    "close": 381000,
+    "rate": 7.779349363507778,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "336260",
+    "name": "두산퓨얼셀",
+    "close": 45950,
+    "rate": 14.731585518102372,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "294870",
+    "name": "IPARK현대산업개발",
+    "close": 20750,
+    "rate": 6.903657908294693,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "323280",
+    "name": "태성",
+    "close": 35000,
+    "rate": 11.11111111111111,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "001430",
+    "name": "세아베스틸지주",
+    "close": 36650,
+    "rate": 12.942989214175654,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "020150",
+    "name": "롯데에너지머티리얼즈",
+    "close": 33150,
+    "rate": 11.055276381909549,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "140860",
+    "name": "파크시스템스",
+    "close": 260500,
+    "rate": 6.5439672801636,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 20일선 지지 매수 타점)",
+    "touched_ma": "우상향 20일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "099320",
+    "name": "쎄트렉아이",
+    "close": 85200,
+    "rate": 8.951406649616368,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "281740",
+    "name": "레이크머티리얼즈",
+    "close": 12480,
+    "rate": 8.805579773321709,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "090460",
+    "name": "비에이치",
+    "close": 18100,
+    "rate": 3.487707261292167,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "356680",
+    "name": "엑스게이트",
+    "close": 11050,
+    "rate": 5.1379638439581345,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "017900",
+    "name": "광전자",
+    "close": 6060,
+    "rate": 2.711864406779661,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "049070",
+    "name": "인탑스",
+    "close": 18740,
+    "rate": -0.6362672322375398,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "013990",
+    "name": "아가방컴퍼니",
+    "close": 4190,
+    "rate": 4.881101376720901,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "362320",
+    "name": "청담글로벌",
+    "close": 4970,
+    "rate": 4.631578947368421,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "000020",
+    "name": "동화약품",
+    "close": 5020,
+    "rate": 2.240325865580448,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 20일선 지지 매수 타점)",
+    "touched_ma": "우상향 20일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "215790",
+    "name": "이노인스트루먼트",
+    "close": 867,
+    "rate": -10.526315789473683,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "007610",
+    "name": "선도전기",
+    "close": 4725,
+    "rate": 9.122401847575059,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+2일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-21"
+  },
+  {
+    "code": "484120",
+    "name": "도우인시스",
+    "close": 16860,
+    "rate": 3.945745992601726,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "045510",
+    "name": "정원엔시스",
+    "close": 941,
+    "rate": 8.786127167630058,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "298040",
+    "name": "효성중공업",
+    "close": 2866000,
+    "rate": 6.980216498693542,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "000810",
+    "name": "삼성화재",
+    "close": 638000,
+    "rate": 1.2698412698412698,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 15일선 지지 매수 타점)",
+    "touched_ma": "우상향 15일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "042660",
+    "name": "한화오션",
+    "close": 89900,
+    "rate": 7.151370679380214,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "001440",
+    "name": "대한전선",
+    "close": 31000,
+    "rate": 12.932604735883423,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "000150",
+    "name": "두산",
+    "close": 1276000,
+    "rate": 5.020576131687243,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "086520",
+    "name": "에코프로",
+    "close": 84300,
+    "rate": 9.33852140077821,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "247540",
+    "name": "에코프로비엠",
+    "close": 118200,
+    "rate": 9.953488372093023,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "003670",
+    "name": "포스코퓨처엠",
+    "close": 152200,
+    "rate": 7.866761162296244,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "000720",
+    "name": "현대건설",
+    "close": 108900,
+    "rate": 10.446247464503044,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "003550",
+    "name": "LG",
+    "close": 101600,
+    "rate": 2.5227043390514634,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 15일선 지지 매수 타점)",
+    "touched_ma": "우상향 15일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "082740",
+    "name": "한화엔진",
+    "close": 50300,
+    "rate": 6.9075451647183845,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "267270",
+    "name": "HD건설기계",
+    "close": 140300,
+    "rate": 10.47244094488189,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "003230",
+    "name": "삼양식품",
+    "close": 1127000,
+    "rate": 1.6230838593327321,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "450080",
+    "name": "에코프로머티",
+    "close": 37050,
+    "rate": 7.860262008733625,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "011780",
+    "name": "금호석유화학",
+    "close": 125100,
+    "rate": 6.287170773152082,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "139480",
+    "name": "이마트",
+    "close": 83400,
+    "rate": 2.08078335373317,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 15일선 지지 매수 타점)",
+    "touched_ma": "우상향 15일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "098460",
+    "name": "고영",
+    "close": 27550,
+    "rate": 3.9622641509433962,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "032820",
+    "name": "우리기술",
+    "close": 10880,
+    "rate": 9.01803607214429,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "322000",
+    "name": "HD현대에너지솔루션",
+    "close": 171500,
+    "rate": 29.72768532526475,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "043260",
+    "name": "성호전자",
+    "close": 19270,
+    "rate": 6.9961132704053295,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "491000",
+    "name": "리브스메드",
+    "close": 38400,
+    "rate": 5.785123966942149,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "030530",
+    "name": "원익홀딩스",
+    "close": 18510,
+    "rate": 8.24561403508772,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "475830",
+    "name": "오름테라퓨틱",
+    "close": 47700,
+    "rate": 12.36749116607774,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "078600",
+    "name": "대주전자재료",
+    "close": 81200,
+    "rate": 11.232876712328768,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "229640",
+    "name": "LS에코에너지",
+    "close": 52700,
+    "rate": 21.84971098265896,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "083650",
+    "name": "비에이치아이",
+    "close": 47100,
+    "rate": 9.662398137369035,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "417200",
+    "name": "LS머트리얼즈",
+    "close": 12620,
+    "rate": 13.489208633093524,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "050890",
+    "name": "쏠리드",
+    "close": 9610,
+    "rate": 5.604395604395605,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "452260",
+    "name": "한화갤러리아",
+    "close": 2015,
+    "rate": 3.81246780010304,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "125490",
+    "name": "한라캐스트",
+    "close": 8210,
+    "rate": 4.187817258883249,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "006910",
+    "name": "보성파워텍",
+    "close": 6970,
+    "rate": 9.936908517350158,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "456010",
+    "name": "아이씨티케이",
+    "close": 15300,
+    "rate": 5.88235294117647,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "396300",
+    "name": "세아메카닉스",
+    "close": 3630,
+    "rate": 15.238095238095239,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 20일선 지지 매수 타점)",
+    "touched_ma": "우상향 20일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "475430",
+    "name": "키스트론",
+    "close": 4485,
+    "rate": 6.405693950177936,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 10일선 지지 매수 타점)",
+    "touched_ma": "우상향 10일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "261520",
+    "name": "이지스",
+    "close": 4585,
+    "rate": -2.9629629629629632,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "026910",
+    "name": "광진실업",
+    "close": 5200,
+    "rate": -2.2556390977443606,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 20일선 지지 매수 타점)",
+    "touched_ma": "우상향 20일선",
+    "anchor_date": "2026-07-22"
+  },
+  {
+    "code": "034940",
+    "name": "조아제약",
+    "close": 606,
+    "rate": -4.113924050632911,
+    "match_type": "predictive",
+    "pattern": "[추적관리] 기준봉 D+1일 (우상향 5일선 지지 매수 타점)",
+    "touched_ma": "우상향 5일선",
+    "anchor_date": "2026-07-22"
+  }
+]

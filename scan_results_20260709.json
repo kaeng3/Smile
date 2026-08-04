@@ -1,0 +1,90 @@
+[
+  {
+    "code": "002960",
+    "name": "한국쉘석유",
+    "close": 497500,
+    "rate": -3.77,
+    "match_type": "predictive",
+    "pattern": "Pattern 1"
+  },
+  {
+    "code": "001790",
+    "name": "대한제당",
+    "close": 2795,
+    "rate": -3.79,
+    "match_type": "predictive",
+    "pattern": "Pattern 1"
+  },
+  {
+    "code": "010960",
+    "name": "삼호개발",
+    "close": 3970,
+    "rate": -10.99,
+    "match_type": "predictive",
+    "pattern": "Pattern 1"
+  },
+  {
+    "code": "457600",
+    "name": "벡트",
+    "close": 2410,
+    "rate": -7.31,
+    "match_type": "predictive",
+    "pattern": "Pattern 1"
+  },
+  {
+    "code": "226320",
+    "name": "잇츠한불",
+    "close": 10380,
+    "rate": -5.64,
+    "match_type": "predictive",
+    "pattern": "Pattern 2"
+  },
+  {
+    "code": "204620",
+    "name": "글로벌텍스프리",
+    "close": 5140,
+    "rate": 0.19,
+    "match_type": "predictive",
+    "pattern": "Pattern 2"
+  },
+  {
+    "code": "362320",
+    "name": "청담글로벌",
+    "close": 4700,
+    "rate": -0.63,
+    "match_type": "predictive",
+    "pattern": "Pattern 2"
+  },
+  {
+    "code": "092730",
+    "name": "네오팜",
+    "close": 18920,
+    "rate": -3.12,
+    "match_type": "predictive",
+    "pattern": "Pattern 3"
+  },
+  {
+    "code": "052460",
+    "name": "아이크래프트",
+    "close": 3200,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "Pattern 3"
+  },
+  {
+    "code": "013360",
+    "name": "일성건설",
+    "close": 1636,
+    "rate": -2.97,
+    "match_type": "predictive",
+    "pattern": "60일의 법칙"
+  },
+  {
+    "code": "214450",
+    "name": "파마리서치",
+    "close": 309000,
+    "rate": -1.28,
+    "match_type": "predictive",
+    "pattern": "60일의 법칙"
+  }
+]

@@ -1,0 +1,4 @@
+{
+  "summary":  "Rewrite run_scan_and_report.py to run the original Yang-Eum-Yang scanner and the general 3-pattern Podosi scanner. If a Podosi stock is also in the Yang-Eum-Yang list, mark it with ★ so that it sorts to the top. Generate two reports: 김일청의_양음양기법 and 김일청의_포도시차트.",
+  "updatedAt":  "2026-07-15T14:02:58.040532100Z"
+}

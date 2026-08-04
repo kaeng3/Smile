@@ -1,0 +1,18 @@
+[
+  {
+    "code": "122350",
+    "name": "삼기",
+    "close": 2345,
+    "rate": -2.29,
+    "match_type": "predictive",
+    "pattern": "Pattern 2"
+  },
+  {
+    "code": "092730",
+    "name": "네오팜",
+    "close": 19530,
+    "rate": -2.59,
+    "match_type": "predictive",
+    "pattern": "Pattern 1"
+  }
+]
