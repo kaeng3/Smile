@@ -577,6 +577,15 @@
             renderStrategy();
         }
 
+        function dec(str) {
+            if (!str) return "";
+            try {
+                return decodeURIComponent(escape(atob(str)));
+            } catch(e) {
+                return str;
+            }
+        }
+
         // 📰 뉴스 타임라인 모달 오픈 & 모바일 뒤로가기 지원
         function openNewsModal(code, name) {
             const overlay = document.getElementById('news-modal-overlay');
@@ -594,13 +603,17 @@
                         등록된 과거 이브닝 호재/뉴스 데이터가 없습니다.
                     </div>`;
             } else {
-                bodyEl.innerHTML = list.map(item => `
-                    <div class="timeline-item">
-                        <div class="timeline-date">📅 ${item.date} ${item.rate ? '('+item.rate+')' : ''}</div>
-                        <div class="timeline-title">${item.title}</div>
-                        <div class="timeline-text">${item.content}</div>
-                    </div>
-                `).join('');
+                bodyEl.innerHTML = list.map(item => {
+                    const titleText = item.enc ? dec(item.title) : item.title;
+                    const contentText = item.enc ? dec(item.content) : item.content;
+                    return `
+                        <div class="timeline-item">
+                            <div class="timeline-date">📅 ${item.date} ${item.rate ? '('+item.rate+')' : ''}</div>
+                            <div class="timeline-title">${titleText}</div>
+                            <div class="timeline-text">${contentText}</div>
+                        </div>
+                    `;
+                }).join('');
             }
 
             overlay.classList.add('active');
@@ -608,6 +621,7 @@
             // 스마트폰 뒤로가기 지원
             history.pushState({ modalOpen: true }, '');
         }
+
 
         function closeNewsModal() {
             const overlay = document.getElementById('news-modal-overlay');
