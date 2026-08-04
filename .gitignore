@@ -1,0 +1,10 @@
+# 대용량 DB 파일 제외 (GitHub 50MB 제한)
+stock_ohlcv_cache.db
+*.db
+
+# 불필요한 파일 제외
+github_upload_repo/
+__pycache__/
+*.pyc
+*.pyo
+*.log
