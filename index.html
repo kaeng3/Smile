@@ -21,8 +21,9 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
         }
+
 
         body {
             background-color: var(--bg-color);
@@ -206,7 +207,59 @@
             box-shadow: 0 8px 20px rgba(139, 92, 246, 0.2);
         }
 
+        .stock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .stock-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .stock-code {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-sub);
+            margin-top: 2px;
+        }
+
+        .stock-rate {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .rate-up { color: var(--accent-red); }
+        .rate-down { color: var(--accent-blue); }
+
+        .stock-pattern {
+            display: inline-block;
+            padding: 5px 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #c7d2fe;
+            margin-bottom: 8px;
+        }
+
+        .stock-comment {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #f3f4f6;
+            line-height: 1.5;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
         /* 📰 과거 뉴스 타임라인 모달 스타일 */
+
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
