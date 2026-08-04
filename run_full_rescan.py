@@ -194,14 +194,25 @@ def load_b500m_data(date_str):
 b500m_web = load_b500m_data(date_str)
 
 
-# 오늘 데이터(AI 코멘트 + 차트 포함) 히스토리에 저장
-history_data[date_str] = {
-    'yey': yey_web,
-    'v2': v2_web,
-    'podosi': podosi_web,
-    'b500m': b500m_web
-}
+# 세부 테마 DB 매핑 적용
+theme_db = {}
+if os.path.exists('stock_detail_themes.json'):
+    try:
+        with open('stock_detail_themes.json', 'r', encoding='utf-8') as f:
+            theme_db = json.load(f)
+    except Exception:
+        pass
 
+for strat_key in ['yey', 'v2', 'podosi', 'b500m']:
+    for s in history_data[date_str].get(strat_key, []):
+        code = s.get('code', '')
+        t_info = theme_db.get(code, {})
+        s['category'] = t_info.get('category', '기타')
+        s['subthemes'] = t_info.get('subthemes', [])
+        if s['subthemes']:
+            s['detail_theme'] = f"{s['category']} > {', '.join(s['subthemes'][:2])}"
+        else:
+            s['detail_theme'] = s['category']
 
 # 날짜 내림차순 정렬 후 최근 5일치만 남기고 6일 이전 데이터 자동 삭제
 sorted_dates = sorted(history_data.keys(), reverse=True)
@@ -212,7 +223,8 @@ purged_history = {d: history_data[d] for d in keep_dates}
 with open(history_file, 'w', encoding='utf-8') as f:
     json.dump(purged_history, f, ensure_ascii=False, indent=2)
 
-print(f"[히스토리 관리] 최근 5일치({', '.join(keep_dates)}) 데이터 보관, 6일 이상 이전 스캔 자동 삭제 완료!")
+print(f"[히스토리 관리] 최근 5일치({', '.join(keep_dates)}) 데이터 및 세부테마 보관 완료!")
+
 
 
 import subprocess

@@ -384,12 +384,8 @@
                 return;
             }
 
-            grid.innerHTML = list.map(s => {
-                const isUp = s.rate >= 0;
-                const rateClass = isUp ? 'rate-up' : 'rate-down';
-                const rateSign = isUp ? '+' : '';
-                const chartHtml = s.chart
-                    ? `<img src="${s.chart}" alt="${s.name} 차트" style="width:100%;border-radius:10px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.08);">`
+                const themeBadge = s.detail_theme
+                    ? `<div style="font-size:0.75rem; color:#a78bfa; font-weight:700; margin-bottom:4px;">🏷️ ${s.detail_theme}</div>`
                     : '';
                 return `
                     <div class="stock-card">
@@ -400,11 +396,13 @@
                             </div>
                             <div class="stock-rate ${rateClass}">${rateSign}${s.rate.toFixed(2)}%</div>
                         </div>
+                        ${themeBadge}
                         <div class="stock-pattern">${s.pattern || '상승 타점 포착'}</div>
                         ${chartHtml}
                         <div class="stock-comment">${s.comment || s.result_desc || '5일선 및 20일선 지지 흐름 점검'}</div>
                     </div>
                 `;
+
             }).join('');
         }
 
