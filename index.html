@@ -282,6 +282,7 @@
             <button class="tab-btn active" onclick="switchStrategy('yey')">🔥 양음양 기법</button>
             <button class="tab-btn" onclick="switchStrategy('v2')">⚡ 양음양 v2전략</button>
             <button class="tab-btn" onclick="switchStrategy('podosi')">🍇 포도시 차트</button>
+            <button class="tab-btn" onclick="switchStrategy('b500m')">💰 500억/150억 기준봉</button>
         </div>
 
         <div class="report-download-card" id="download-card">
@@ -334,6 +335,7 @@
             if (strat === 'yey') document.querySelectorAll('.tab-btn')[0].classList.add('active');
             if (strat === 'v2') document.querySelectorAll('.tab-btn')[1].classList.add('active');
             if (strat === 'podosi') document.querySelectorAll('.tab-btn')[2].classList.add('active');
+            if (strat === 'b500m') document.querySelectorAll('.tab-btn')[3].classList.add('active');
 
             renderStrategy();
         }
@@ -347,14 +349,17 @@
             let titleMap = {
                 yey: '김일청의 양음양 기법 PDF 리포트',
                 v2: '김일청의 양음양 v2전략 PDF 리포트',
-                podosi: '김일청의 포도시 차트 기법 PDF 리포트'
+                podosi: '김일청의 포도시 차트 기법 PDF 리포트',
+                b500m: '김일청의 500억/150억 기준봉 분석 리포트'
             };
 
             let pdfFileMap = {
                 yey: `김일청의_양음양기법_${selectedDate}.pdf`,
                 v2: `김일청의_양음양기법_v2전략_${selectedDate}.pdf`,
-                podosi: `김일청의_포도시차트_${selectedDate}.pdf`
+                podosi: `김일청의_포도시차트_${selectedDate}.pdf`,
+                b500m: `김일청의_양음양기법_${selectedDate}.pdf`
             };
+
 
             pdfTitle.innerText = `${titleMap[currentStrategy]} (${selectedDate})`;
             pdfSub.innerText = `${selectedDate}자 고화질 차트 및 AI 실전 대응 전략 수록`;

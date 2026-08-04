@@ -154,12 +154,39 @@ if not podosi_web:
 
 
 
+# 500억/150억봉 스캐너 데이터 연동
+def load_b500m_data(date_str):
+    scanner_dir = r"C:\Users\pc\.gemini\antigravity\scratch\stock_scanner_500m"
+    scanner_json = os.path.join(scanner_dir, f"scan_results_integrated_{date_str}.json")
+    b500m_list = []
+    if os.path.exists(scanner_json):
+        try:
+            with open(scanner_json, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                items = data.get('scan_results', [])
+                for s in items:
+                    b500m_list.append({
+                        'code': s.get('code', ''),
+                        'name': s.get('name', ''),
+                        'close': s.get('close', 0),
+                        'rate': s.get('rate', 0.0),
+                        'pattern': f"{s.get('candle_class', '500억봉')} 기준봉",
+                        'comment': s.get('commentary', '500억/150억 대량 수급 발생 및 지지선 점검')
+                    })
+        except Exception as e:
+            print(f"[500억봉 연동 오류] {e}")
+    return b500m_list
+
+b500m_web = load_b500m_data(date_str)
+
 # 오늘 데이터(AI 코멘트 + 차트 포함) 히스토리에 저장
 history_data[date_str] = {
     'yey': yey_web,
     'v2': v2_web,
-    'podosi': podosi_web
+    'podosi': podosi_web,
+    'b500m': b500m_web
 }
+
 
 # 날짜 내림차순 정렬 후 최근 5일치만 남기고 6일 이전 데이터 자동 삭제
 sorted_dates = sorted(history_data.keys(), reverse=True)
