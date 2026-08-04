@@ -354,8 +354,40 @@ def build_report_for_date(target_date, technique_name='양음양 기법', json_f
     for idx, s in enumerate(comp_stocks):
         make_chart_historical(s['code'], s['name'], charts_dir, target_date, stock_dfs=stock_dfs)
         print(f"  - 2부 ({idx+1}/{len(comp_stocks)}) {s['name']} 완료", flush=True)
-        
-    print(f"[{technique_name}] PDF 컴파일 시작...", flush=True)
+
+    # --- 웹 대시보드용 JSON + 차트 이미지 저장 ---
+    try:
+        web_dir = os.path.dirname(os.path.abspath(__file__))
+        web_charts_dir = os.path.join(web_dir, f"charts/{date_str}")
+        os.makedirs(web_charts_dir, exist_ok=True)
+
+        import shutil
+        web_stocks = []
+        for s in stocks:
+            # 차트 PNG 복사 → 웹 접근 가능한 경로로
+            src_png = os.path.join(charts_dir, f"{s['code']}.png")
+            dst_png = os.path.join(web_charts_dir, f"{s['code']}.png")
+            if os.path.exists(src_png) and not os.path.exists(dst_png):
+                shutil.copyfile(src_png, dst_png)
+            web_stocks.append({
+                'code': s['code'],
+                'name': s['name'],
+                'close': s.get('close', 0),
+                'rate': s.get('rate', 0),
+                'pattern': s.get('pattern', ''),
+                'comment': s.get('comment', ''),
+                'chart': f"charts/{date_str}/{s['code']}.png" if os.path.exists(dst_png) else ""
+            })
+
+        # 대시보드 데이터 파일 저장
+        prefix_key = pdf_filename_prefix.replace('김일청의_', '').replace('차트', '').replace('기법', '').strip('_').lower()
+        dash_json_path = os.path.join(web_dir, f"dashboard_{prefix_key}_{date_str}.json")
+        with open(dash_json_path, 'w', encoding='utf-8') as f:
+            json.dump(web_stocks, f, ensure_ascii=False, indent=2)
+        print(f"[대시보드] {os.path.basename(dash_json_path)} 저장 완료 ({len(web_stocks)}개 종목)")
+    except Exception as e:
+        print(f"[대시보드 저장 오류] {e}")
+
         
     # PDF 컴파일
     desktop_dir = r"C:\Users\pc\Desktop\양음양 리포트"

@@ -113,11 +113,36 @@ if os.path.exists(history_file):
     except Exception:
         history_data = {}
 
-# 오늘 데이터 저장
+# 대시보드용 JSON (AI 코멘트 + 차트 경로 포함) 읽기
+def load_dashboard_json(prefix_key, date_str):
+    path = f"dashboard_{prefix_key}_{date_str}.json"
+    if os.path.exists(path):
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return []
+
+yey_web = load_dashboard_json('양음양', date_str)
+v2_web  = load_dashboard_json('양음양기법_v2전략', date_str)
+podosi_web = load_dashboard_json('포도시', date_str)
+
+# fallback: 대시보드 JSON 없으면 기존 scan result JSON 사용
+if not yey_web:
+    yey_web = yey_results
+if not v2_web:
+    v2_web  = v2_results
+if not podosi_web:
+    podosi_web = podosi_results
+
+
+
+# 오늘 데이터(AI 코멘트 + 차트 포함) 히스토리에 저장
 history_data[date_str] = {
-    'yey': yey_results,
-    'v2': v2_results,
-    'podosi': podosi_results
+    'yey': yey_web,
+    'v2': v2_web,
+    'podosi': podosi_web
 }
 
 # 날짜 내림차순 정렬 후 최근 5일치만 남기고 6일 이전 데이터 자동 삭제
@@ -130,6 +155,7 @@ with open(history_file, 'w', encoding='utf-8') as f:
     json.dump(purged_history, f, ensure_ascii=False, indent=2)
 
 print(f"[히스토리 관리] 최근 5일치({', '.join(keep_dates)}) 데이터 보관, 6일 이상 이전 스캔 자동 삭제 완료!")
+
 
 import subprocess
 print("\n[GitHub] 깃허브 웹사이트 자동 반영 업로드 시작...")
