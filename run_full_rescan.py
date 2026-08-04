@@ -157,6 +157,10 @@ if not podosi_web:
 # 500억/150억봉 스캐너 데이터 연동
 def load_b500m_data(date_str):
     scanner_dir = r"C:\Users\pc\.gemini\antigravity\scratch\stock_scanner_500m"
+    scanner_charts_dir = os.path.join(scanner_dir, "charts")
+    target_charts_dir = os.path.join(".", "charts", date_str)
+    os.makedirs(target_charts_dir, exist_ok=True)
+
     scanner_json = os.path.join(scanner_dir, f"scan_results_integrated_{date_str}.json")
     b500m_list = []
     if os.path.exists(scanner_json):
@@ -165,19 +169,30 @@ def load_b500m_data(date_str):
                 data = json.load(f)
                 items = data.get('scan_results', [])
                 for s in items:
+                    code = s.get('code', '')
+                    src_png = os.path.join(scanner_charts_dir, f"{code}.png")
+                    dst_png = os.path.join(target_charts_dir, f"{code}.png")
+                    chart_path = ""
+                    if os.path.exists(src_png):
+                        if not os.path.exists(dst_png):
+                            shutil.copyfile(src_png, dst_png)
+                        chart_path = f"charts/{date_str}/{code}.png"
+
                     b500m_list.append({
-                        'code': s.get('code', ''),
+                        'code': code,
                         'name': s.get('name', ''),
                         'close': s.get('close', 0),
                         'rate': s.get('rate', 0.0),
                         'pattern': f"{s.get('candle_class', '500억봉')} 기준봉",
-                        'comment': s.get('commentary', '500억/150억 대량 수급 발생 및 지지선 점검')
+                        'comment': s.get('commentary', '500억/150억 대량 수급 발생 및 지지선 점검'),
+                        'chart': chart_path
                     })
         except Exception as e:
             print(f"[500억봉 연동 오류] {e}")
     return b500m_list
 
 b500m_web = load_b500m_data(date_str)
+
 
 # 오늘 데이터(AI 코멘트 + 차트 포함) 히스토리에 저장
 history_data[date_str] = {
