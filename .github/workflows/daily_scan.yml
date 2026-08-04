@@ -2,9 +2,11 @@ name: Daily Stock Scan & GitHub Pages Automation
 
 on:
   schedule:
-    # 매일 평일(월~금) 한국 시간 15:40 (UTC 06:40) 자동 실행
     - cron: '40 6 * * 1-5'
-  workflow_dispatch: # 깃허브 웹 화면에서 수동 실행 버튼 지원
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -12,31 +14,23 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Python 3.9
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.9'
 
-    - name: Install Dependencies
+    - name: Install System Fonts & Dependencies
       run: |
+        sudo apt-get update
+        sudo apt-get install -y fonts-nanum
         python -m pip install --upgrade pip
         pip install FinanceDataReader reportlab pandas matplotlib requests
 
     - name: Execute Daily Scan & PDF Generation
       run: |
-        python run_full_rescan.py
-
-    - name: Prepare Latest Files for Dashboard & Download
-      run: |
-        LATEST_DATE=$(date +'%Y%m%d')
-        cp scan_results_yey_${LATEST_DATE}.json scan_results_yey_latest.json || true
-        cp scan_results_v2_${LATEST_DATE}.json scan_results_v2_latest.json || true
-        cp scan_results_podosi_${LATEST_DATE}.json scan_results_podosi_latest.json || true
-        cp "C:\Users\pc\Desktop\양음양 리포트\김일청의_양음양기법_${LATEST_DATE}.pdf" "김일청의_양음양기법_latest.pdf" || true
-        cp "C:\Users\pc\Desktop\양음양 리포트\김일청의_양음양기법_v2전략_${LATEST_DATE}.pdf" "김일청의_양음양기법_v2전략_latest.pdf" || true
-        cp "C:\Users\pc\Desktop\양음양 리포트\김일청의_포도시차트_${LATEST_DATE}.pdf" "김일청의_포도시차트_latest.pdf" || true
+        python run_simple_cloud.py
 
     - name: Commit and Push Updated Reports
       run: |
@@ -44,4 +38,4 @@ jobs:
         git config --global user.email "action@github.com"
         git add .
         git commit -m "Auto Update: Daily Stock Reports [$(date +'%Y-%m-%d')]" || exit 0
-        git push origin main
+        git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main

@@ -35,8 +35,8 @@ def scan_date_optimized(stocks, target_date, stock_dfs=None):
         
     results = []
     for stock in stocks:
-        code = stock['Code']
-        name = stock['Name']
+        code = stock.get('Code') or stock.get('code')
+        name = stock.get('Name') or stock.get('name')
         df = stock_dfs.get(code)
         if df is None or len(df) < 224:
             continue
@@ -69,8 +69,8 @@ def scan_podosi_date(stocks, target_date, stock_dfs=None):
 
     results = []
     for stock in stocks:
-        code = stock['Code']
-        name = stock['Name']
+        code = stock.get('Code') or stock.get('code')
+        name = stock.get('Name') or stock.get('name')
         df = stock_dfs.get(code)
         if df is None or len(df) < 224:
             continue
@@ -176,8 +176,8 @@ def scan_60ma_rule_date(stocks, target_date, stock_dfs=None):
 
     results = []
     for stock in stocks:
-        code = stock['Code']
-        name = stock['Name']
+        code = stock.get('Code') or stock.get('code')
+        name = stock.get('Name') or stock.get('name')
         df = stock_dfs.get(code)
         if df is None or len(df) < 125:
             continue

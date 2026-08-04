@@ -38,19 +38,35 @@ def get_previous_trading_day(target_date, stock_dfs=None):
         print("이전 영업일 구하기 실패:", e)
     return None
 
-# 1. 맑은 고딕 폰트 등록
+# 1. 폰트 등록 (Windows 및 Linux 호환)
 font_path = "C:\\Windows\\Fonts\\malgun.ttf"
 font_bold_path = "C:\\Windows\\Fonts\\malgunbd.ttf"
+linux_font = "/usr/share/fonts/truetype/nanum/NanumGothic.ttf"
+linux_font_bold = "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf"
+
 if os.path.exists(font_path):
     pdfmetrics.registerFont(TTFont('Malgun', font_path))
-if os.path.exists(font_bold_path):
-    pdfmetrics.registerFont(TTFont('MalgunBold', font_bold_path))
+    pdfmetrics.registerFont(TTFont('MalgunBold', font_bold_path if os.path.exists(font_bold_path) else font_path))
+elif os.path.exists(linux_font):
+    pdfmetrics.registerFont(TTFont('Malgun', linux_font))
+    pdfmetrics.registerFont(TTFont('MalgunBold', linux_font_bold if os.path.exists(linux_font_bold) else linux_font))
 else:
-    pdfmetrics.registerFont(TTFont('MalgunBold', font_path))
+    try:
+        pdfmetrics.registerFont(TTFont('Malgun', font_path))
+        pdfmetrics.registerFont(TTFont('MalgunBold', font_path))
+    except Exception:
+        pass
 
-# 2. 테마 및 종목명 JSON DB 로드
+# 2. 테마 및 종목명 JSON DB 로드 (절대경로/상대경로 유연 감지)
+base_dir = os.path.dirname(os.path.abspath(__file__))
 themes_json_path = r"C:\Users\pc\.gemini\antigravity\brain\c6997abd-5ccd-40e2-89a8-b4346393ae34\alphasquare_themes.json"
+if not os.path.exists(themes_json_path):
+    themes_json_path = os.path.join(base_dir, "alphasquare_themes.json")
+
 names_json_path = r"C:\Users\pc\.gemini\antigravity\brain\c6997abd-5ccd-40e2-89a8-b4346393ae34\stock_names.json"
+if not os.path.exists(names_json_path):
+    names_json_path = os.path.join(base_dir, "stock_names.json")
+
 themes_db = {}
 names_db = {}
 
@@ -343,8 +359,11 @@ def build_report_for_date(target_date, technique_name='양음양 기법', json_f
         
     # PDF 컴파일
     desktop_dir = r"C:\Users\pc\Desktop\양음양 리포트"
-    if not os.path.exists(desktop_dir):
-        os.makedirs(desktop_dir)
+    try:
+        if not os.path.exists(desktop_dir):
+            os.makedirs(desktop_dir)
+    except Exception:
+        desktop_dir = "."
         
     output_pdf_path = os.path.join(desktop_dir, f"{pdf_filename_prefix}_{date_str}.pdf")
     

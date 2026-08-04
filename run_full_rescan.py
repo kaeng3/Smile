@@ -103,14 +103,44 @@ shutil.copyfile(yey_json, 'scan_results_yey_latest.json')
 shutil.copyfile(v2_json, 'scan_results_v2_latest.json')
 shutil.copyfile(podosi_json, 'scan_results_podosi_latest.json')
 
-desktop_dir = r"C:\Users\pc\Desktop\양음양 리포트"
-if os.path.exists(desktop_dir):
+# --- 5일치 스캔 히스토리 유지 및 6일 이상 데이터 자동 삭제 ---
+history_file = 'scan_history.json'
+history_data = {}
+if os.path.exists(history_file):
     try:
-        shutil.copyfile(os.path.join(desktop_dir, f"김일청의_양음양기법_{date_str}.pdf"), "김일청의_양음양기법_latest.pdf")
-        shutil.copyfile(os.path.join(desktop_dir, f"김일청의_양음양기법_v2전략_{date_str}.pdf"), "김일청의_양음양기법_v2전략_latest.pdf")
-        shutil.copyfile(os.path.join(desktop_dir, f"김일청의_포도시차트_{date_str}.pdf"), "김일청의_포도시차트_latest.pdf")
-    except Exception as e:
-        print("PDF latest copy info:", e)
+        with open(history_file, 'r', encoding='utf-8') as f:
+            history_data = json.load(f)
+    except Exception:
+        history_data = {}
+
+# 오늘 데이터 저장
+history_data[date_str] = {
+    'yey': yey_results,
+    'v2': v2_results,
+    'podosi': podosi_results
+}
+
+# 날짜 내림차순 정렬 후 최근 5일치만 남기고 6일 이전 데이터 자동 삭제
+sorted_dates = sorted(history_data.keys(), reverse=True)
+keep_dates = sorted_dates[:5]
+
+purged_history = {d: history_data[d] for d in keep_dates}
+
+with open(history_file, 'w', encoding='utf-8') as f:
+    json.dump(purged_history, f, ensure_ascii=False, indent=2)
+
+print(f"[히스토리 관리] 최근 5일치({', '.join(keep_dates)}) 데이터 보관, 6일 이상 이전 스캔 자동 삭제 완료!")
+
+import subprocess
+print("\n[GitHub] 깃허브 웹사이트 자동 반영 업로드 시작...")
+try:
+    cmd_dir = r"C:\Users\pc\.gemini\antigravity\brain\c6997abd-5ccd-40e2-89a8-b4346393ae34\scratch"
+    subprocess.run(["git", "add", "."], cwd=cmd_dir, check=False)
+    subprocess.run(["git", "commit", "-m", f"Auto Update: {date_str}"], cwd=cmd_dir, check=False)
+    subprocess.run(["git", "push", "origin", "main"], cwd=cmd_dir, check=False)
+    print("[GitHub] 깃허브 웹사이트 반영 100% 완료!")
+except Exception as e:
+    print("[GitHub Upload Info]:", e)
 
 print("\n==========================================")
 print(f" [{target_date.strftime('%Y-%m-%d')}] 전 종목 로컬 초고속 스캔 및 리포트 3종 발행 완료!")

@@ -42,8 +42,8 @@
 
         header {
             text-align: center;
-            margin-bottom: 32px;
-            padding: 20px 0;
+            margin-bottom: 24px;
+            padding: 16px 0;
         }
 
         .badge {
@@ -59,62 +59,75 @@
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         p.subtitle {
             color: var(--text-sub);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
-        .date-picker-box {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 24px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        /* 5일 날짜 선택 탭 */
+        .date-section {
+            margin-bottom: 20px;
         }
 
-        .date-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .date-info span {
-            font-size: 1.1rem;
+        .date-title {
+            font-size: 0.85rem;
             font-weight: 700;
-            color: #f3f4f6;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+        }
+
+        .date-chips {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .date-chip {
+            padding: 8px 14px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-sub);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .date-chip.active {
+            background: rgba(139, 92, 246, 0.25);
+            color: #c7d2fe;
+            border-color: rgba(139, 92, 246, 0.6);
         }
 
         .strategy-tabs {
             display: flex;
             gap: 10px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             overflow-x: auto;
             padding-bottom: 4px;
         }
 
         .tab-btn {
             flex: 1;
-            min-width: 120px;
-            padding: 14px 16px;
+            min-width: 110px;
+            padding: 12px 14px;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 14px;
             color: var(--text-sub);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.2s ease;
             text-align: center;
@@ -131,21 +144,21 @@
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8));
             border: 1px solid rgba(99, 102, 241, 0.3);
             border-radius: 16px;
-            padding: 20px;
+            padding: 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .pdf-title {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #ffffff;
         }
 
         .pdf-sub {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-sub);
             margin-top: 4px;
         }
@@ -154,13 +167,13 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 20px;
+            padding: 10px 18px;
             background: #10b981;
             color: white;
             font-weight: 700;
             border-radius: 10px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: transform 0.2s ease, background-color 0.2s ease;
         }
 
@@ -171,8 +184,8 @@
 
         .stock-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 14px;
         }
 
         .stock-card {
@@ -180,12 +193,12 @@
             backdrop-filter: blur(12px);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 18px;
+            padding: 16px;
             transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .stock-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             border-color: rgba(99, 102, 241, 0.5);
         }
 
@@ -193,23 +206,23 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .stock-name {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #ffffff;
         }
 
         .stock-code {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-sub);
             margin-top: 2px;
         }
 
         .stock-rate {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 800;
         }
 
@@ -218,35 +231,35 @@
 
         .stock-pattern {
             display: inline-block;
-            padding: 4px 10px;
+            padding: 4px 8px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: #c7d2fe;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .stock-comment {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: #d1d5db;
-            line-height: 1.45;
+            line-height: 1.4;
             background: rgba(0, 0, 0, 0.2);
-            padding: 10px;
+            padding: 8px 10px;
             border-radius: 8px;
         }
 
         footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 36px;
             color: var(--text-sub);
-            font-size: 0.8rem;
-            padding: 20px 0;
+            font-size: 0.78rem;
+            padding: 16px 0;
             border-top: 1px solid var(--border-color);
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 1.6rem; }
-            .report-download-card { flex-direction: column; gap: 12px; align-items: flex-start; }
+            h1 { font-size: 1.5rem; }
+            .report-download-card { flex-direction: column; gap: 10px; align-items: flex-start; }
             .download-btn { width: 100%; justify-content: center; }
         }
     </style>
@@ -254,18 +267,20 @@
 <body>
     <div class="container">
         <header>
-            <div class="badge">LIVE 매일 자동 스캔 업데이트</div>
+            <div class="badge">최근 5일 스캔 보관 (6일 이상 자동 삭제)</div>
             <h1>김일청의 양음양 & 포도시 리포트</h1>
             <p class="subtitle">매일 장마감 후 세력 수급 및 이동평균선 지지 타점 자동 분석</p>
         </header>
 
-        <div class="date-picker-box">
-            <div class="date-info">
-                <span>📅 오늘자 스캔 리포트</span>
+        <!-- 📅 최근 5일 날짜 선택 탭 -->
+        <div class="date-section">
+            <div class="date-title">📅 날짜 선택 (최근 5영업일)</div>
+            <div class="date-chips" id="date-chips">
+                <!-- Dynamic Date Chips -->
             </div>
-            <div id="last-update" style="font-size: 0.85rem; color: var(--text-sub);">업데이트 확인 중...</div>
         </div>
 
+        <!-- ⚡ 전략 선택 탭 -->
         <div class="strategy-tabs">
             <button class="tab-btn active" onclick="switchStrategy('yey')">🔥 양음양 기법</button>
             <button class="tab-btn" onclick="switchStrategy('v2')">⚡ 양음양 v2전략</button>
@@ -274,8 +289,8 @@
 
         <div class="report-download-card" id="download-card">
             <div>
-                <div class="pdf-title" id="pdf-title-text">김일청의 양음양기법 PDF 리포트</div>
-                <div class="pdf-sub">고화질 차트 및 AI 종목별 실전 대응 전략 수록</div>
+                <div class="pdf-title" id="pdf-title-text">김일청의 양음양 기법 PDF 리포트</div>
+                <div class="pdf-sub" id="pdf-sub-text">고화질 차트 및 AI 종목별 실전 대응 전략 수록</div>
             </div>
             <a href="#" id="pdf-download-link" class="download-btn" target="_blank">
                 📥 PDF 다운로드
@@ -288,41 +303,55 @@
 
         <footer>
             <p>© 2026 김일청의 주식 연구소. All rights reserved.</p>
-            <p style="margin-top: 4px; opacity: 0.7;">매일 평일 15:40 GitHub Actions 클라우드 서버 자동 발행</p>
+            <p style="margin-top: 4px; opacity: 0.7;">매일 평일 15:40 자동 스캔 & 5일분 롤링 보관 시스템</p>
         </footer>
     </div>
 
     <script>
         let currentStrategy = 'yey';
-        let reportData = {
-            yey: [],
-            v2: [],
-            podosi: []
-        };
-        let pdfLinks = {};
+        let selectedDate = '';
+        let historyData = {};
+        let availableDates = [];
 
-        async function loadScanData() {
+        async function loadHistoryData() {
             try {
-                // Try loading latest JSON scan results
-                const resYey = await fetch('scan_results_yey_latest.json?t=' + Date.now()).catch(() => null);
-                const resV2 = await fetch('scan_results_v2_latest.json?t=' + Date.now()).catch(() => null);
-                const resPodosi = await fetch('scan_results_podosi_latest.json?t=' + Date.now()).catch(() => null);
-
-                if (resYey && resYey.ok) reportData.yey = await resYey.json();
-                if (resV2 && resV2.ok) reportData.v2 = await resV2.json();
-                if (resPodosi && resPodosi.ok) reportData.podosi = await resPodosi.json();
-
-                // Set PDF links
-                pdfLinks.yey = '김일청의_양음양기법_latest.pdf';
-                pdfLinks.v2 = '김일청의_양음양기법_v2전략_latest.pdf';
-                pdfLinks.podosi = '김일청의_포도시차트_latest.pdf';
-
-                document.getElementById('last-update').innerText = '최신 업데이트 완료';
-                renderStrategy();
+                const res = await fetch('scan_history.json?t=' + Date.now());
+                if (res.ok) {
+                    historyData = await res.json();
+                    availableDates = Object.keys(historyData).sort().reverse().slice(0, 5);
+                }
             } catch (e) {
-                console.error("Data load failed:", e);
-                document.getElementById('last-update').innerText = '데이터 로딩 중...';
+                console.error("History load failed:", e);
             }
+
+            if (availableDates.length === 0) {
+                // Fallback to today if history file not ready
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const day = String(now.getDate()).padStart(2, '0');
+                availableDates = [`${year}${month}${day}`];
+            }
+
+            selectedDate = availableDates[0];
+            renderDateChips();
+            renderStrategy();
+        }
+
+        function renderDateChips() {
+            const container = document.getElementById('date-chips');
+            container.innerHTML = availableDates.map((d, idx) => {
+                const formatted = `${d.substring(0,4)}.${d.substring(4,6)}.${d.substring(6,8)}`;
+                const label = idx === 0 ? `📅 ${formatted} (최신)` : `📅 ${formatted}`;
+                const activeClass = d === selectedDate ? 'active' : '';
+                return `<div class="date-chip ${activeClass}" onclick="selectDate('${d}')">${label}</div>`;
+            }).join('');
+        }
+
+        function selectDate(d) {
+            selectedDate = d;
+            renderDateChips();
+            renderStrategy();
         }
 
         function switchStrategy(strat) {
@@ -339,6 +368,7 @@
             const grid = document.getElementById('stock-grid');
             const pdfLink = document.getElementById('pdf-download-link');
             const pdfTitle = document.getElementById('pdf-title-text');
+            const pdfSub = document.getElementById('pdf-sub-text');
 
             let titleMap = {
                 yey: '김일청의 양음양 기법 PDF 리포트',
@@ -346,12 +376,21 @@
                 podosi: '김일청의 포도시 차트 기법 PDF 리포트'
             };
 
-            pdfTitle.innerText = titleMap[currentStrategy];
-            pdfLink.href = pdfLinks[currentStrategy] || '#';
+            let pdfFileMap = {
+                yey: `김일청의_양음양기법_${selectedDate}.pdf`,
+                v2: `김일청의_양음양기법_v2전략_${selectedDate}.pdf`,
+                podosi: `김일청의_포도시차트_${selectedDate}.pdf`
+            };
 
-            const list = reportData[currentStrategy] || [];
+            pdfTitle.innerText = `${titleMap[currentStrategy]} (${selectedDate})`;
+            pdfSub.innerText = `${selectedDate}자 고화질 차트 및 AI 실전 대응 전략 수록`;
+            pdfLink.href = pdfFileMap[currentStrategy] || '#';
+
+            const dayData = historyData[selectedDate] || {};
+            const list = dayData[currentStrategy] || [];
+
             if (list.length === 0) {
-                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-sub);">오늘 포착된 종목 데이터가 없거나 로딩 중입니다.</div>';
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-sub);">해당 날짜의 포착 종목 데이터가 없거나 수록 준비 중입니다.</div>';
                 return;
             }
 
@@ -368,14 +407,14 @@
                             </div>
                             <div class="stock-rate ${rateClass}">${rateSign}${s.rate.toFixed(2)}%</div>
                         </div>
-                        <div class="stock-pattern">${s.pattern || '상승 패턴'}</div>
+                        <div class="stock-pattern">${s.pattern || '상승 타점 포착'}</div>
                         <div class="stock-comment">${s.comment || s.result_desc || '5일선 및 20일선 지지 흐름 점검'}</div>
                     </div>
                 `;
             }).join('');
         }
 
-        loadScanData();
+        loadHistoryData();
     </script>
 </body>
 </html>

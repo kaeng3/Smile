@@ -6,12 +6,18 @@ import sqlite3
 import pandas as pd
 import FinanceDataReader as fdr
 
+base_dir = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = r"C:\Users\pc\.gemini\antigravity\brain\c6997abd-5ccd-40e2-89a8-b4346393ae34\scratch\stock_ohlcv_cache.db"
+if not os.path.exists(os.path.dirname(DB_PATH)):
+    DB_PATH = os.path.join(base_dir, "stock_ohlcv_cache.db")
 
 def get_db_connection():
     conn = sqlite3.connect(DB_PATH, timeout=30.0)
-    conn.execute("PRAGMA journal_mode = WAL;")
-    conn.execute("PRAGMA synchronous = NORMAL;")
+    try:
+        conn.execute("PRAGMA journal_mode = WAL;")
+        conn.execute("PRAGMA synchronous = NORMAL;")
+    except Exception:
+        pass
     return conn
 
 def init_db():

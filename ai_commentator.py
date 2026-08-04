@@ -463,8 +463,9 @@ def get_ai_commentary(code, name, pattern, close, rate, match_type, target_date=
     return fallback
 
 def get_ai_review_commentary(code, name, pattern, close_prev, close_curr, low_curr, high_curr, rate, max_prof, prev_comment, target_date=None, stock_dfs=None):
-    # 1. config.json에서 API Key 로드
     config_path = r"C:\Users\pc\.gemini\antigravity\brain\c6997abd-5ccd-40e2-89a8-b4346393ae34\config.json"
+    if not os.path.exists(config_path):
+        config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json")
     api_key = None
     if os.path.exists(config_path):
         try:
