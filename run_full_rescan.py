@@ -141,7 +141,7 @@ def load_dashboard_json(prefix_key, date_str):
     return []
 
 yey_web = load_dashboard_json('양음양', date_str)
-v2_web  = load_dashboard_json('양음양기법_v2전략', date_str)
+v2_web  = load_dashboard_json('양음양_v2전략', date_str)
 podosi_web = load_dashboard_json('포도시', date_str)
 
 # fallback: 대시보드 JSON 없으면 기존 scan result JSON 사용
