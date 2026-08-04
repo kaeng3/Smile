@@ -103,6 +103,22 @@ shutil.copyfile(yey_json, 'scan_results_yey_latest.json')
 shutil.copyfile(v2_json, 'scan_results_v2_latest.json')
 shutil.copyfile(podosi_json, 'scan_results_podosi_latest.json')
 
+# --- PDF 파일 → 웹사이트 폴더로 자동 복사 ---
+desktop_dir = r"C:\Users\pc\Desktop\양음양 리포트"
+pdf_files = [
+    f"김일청의_양음양기법_{date_str}.pdf",
+    f"김일청의_양음양기법_v2전략_{date_str}.pdf",
+    f"김일청의_포도시차트_{date_str}.pdf",
+]
+for pdf in pdf_files:
+    src = os.path.join(desktop_dir, pdf)
+    if os.path.exists(src):
+        try:
+            shutil.copyfile(src, pdf)
+            print(f"[PDF 복사] {pdf} → 웹사이트 폴더 완료")
+        except Exception as e:
+            print(f"[PDF 복사 오류] {pdf}: {e}")
+
 # --- 5일치 스캔 히스토리 유지 및 6일 이상 데이터 자동 삭제 ---
 history_file = 'scan_history.json'
 history_data = {}
