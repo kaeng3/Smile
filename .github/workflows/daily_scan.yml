@@ -1,15 +1,26 @@
-name: Daily Stock Scan & GitHub Pages Automation
+name: Daily Stock Scan & GitHub Pages Deploy
 
 on:
+  push:
+    branches: [ main ]
   schedule:
     - cron: '40 6 * * 1-5'
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
@@ -32,10 +43,22 @@ jobs:
       run: |
         python run_simple_cloud.py
 
-    - name: Commit and Push Updated Reports
+    - name: Commit Updated Reports
       run: |
         git config --global user.name "GitHub Action Bot"
         git config --global user.email "action@github.com"
         git add .
         git commit -m "Auto Update: Daily Stock Reports [$(date +'%Y-%m-%d')]" || exit 0
         git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
