@@ -196,67 +196,126 @@
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 16px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
         .stock-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(99, 102, 241, 0.5);
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.6);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.2);
         }
 
-        .stock-header {
+        /* 📰 과거 뉴스 타임라인 모달 스타일 */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 16px;
+        }
+
+        .modal-overlay.active {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
         }
 
-        .stock-name {
-            font-size: 1.1rem;
+        .modal-content {
+            background: #111827;
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            animation: modalUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes modalUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #f3f4f6;
+            padding: 8px 14px;
+            border-radius: 10px;
             font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .modal-title {
+            font-size: 1.1rem;
+            font-weight: 800;
             color: #ffffff;
         }
 
-        .stock-code {
-            font-size: 0.78rem;
-            color: var(--text-sub);
-            margin-top: 2px;
+        .modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;
         }
 
-        .stock-rate {
-            font-size: 1.05rem;
-            font-weight: 800;
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            border-left: 2px solid rgba(139, 92, 246, 0.4);
         }
 
-        .rate-up { color: var(--accent-red); }
-        .rate-down { color: var(--accent-blue); }
-
-        .stock-pattern {
-            display: inline-block;
-            padding: 4px 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            font-size: 0.78rem;
-            color: #c7d2fe;
-            margin-bottom: 8px;
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #8b5cf6;
+            box-shadow: 0 0 10px #8b5cf6;
         }
 
-        .stock-comment {
-            font-size: 0.82rem;
-            color: #d1d5db;
+        .timeline-date {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #a78bfa;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
             line-height: 1.4;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 8px 10px;
-            border-radius: 8px;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 36px;
-            color: var(--text-sub);
-            font-size: 0.78rem;
-            padding: 16px 0;
-            border-top: 1px solid var(--border-color);
+        .timeline-text {
+            font-size: 0.83rem;
+            color: #9ca3af;
+            line-height: 1.5;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 10px;
+            border-radius: 8px;
         }
 
         @media (max-width: 600px) {
@@ -270,8 +329,10 @@
             }
             .report-download-card { flex-direction: column; gap: 10px; align-items: flex-start; }
             .download-btn { width: 100%; justify-content: center; }
+            .modal-content { max-height: 90vh; }
         }
     </style>
+
 
 </head>
 <body>
@@ -395,7 +456,7 @@
                     ? `<img src="${s.chart}" alt="${s.name} 차트" style="width:100%;border-radius:10px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.08);">`
                     : '';
                 return `
-                    <div class="stock-card">
+                    <div class="stock-card" onclick="openNewsModal('${s.code}', '${s.name}')">
                         <div class="stock-header">
                             <div>
                                 <div class="stock-name">${s.name}</div>
@@ -412,6 +473,7 @@
             }).join('');
         }
 
+        let newsHistoryDB = {};
 
         async function loadData() {
             try {
@@ -424,6 +486,15 @@
                 console.error("scan_history.json 로딩 실패:", e);
             }
 
+            try {
+                const resNews = await fetch('stock_news_history.json?t=' + Date.now());
+                if (resNews.ok) {
+                    newsHistoryDB = await resNews.json();
+                }
+            } catch (e) {
+                console.error("stock_news_history.json 로딩 실패:", e);
+            }
+
             if (availableDates.length > 0) {
                 selectedDate = availableDates[0];
             }
@@ -431,6 +502,64 @@
             renderDateChips();
             renderStrategy();
         }
+
+        // 📰 뉴스 타임라인 모달 오픈 & 모바일 뒤로가기 지원
+        function openNewsModal(code, name) {
+            const overlay = document.getElementById('news-modal-overlay');
+            const titleEl = document.getElementById('modal-stock-title');
+            const bodyEl = document.getElementById('modal-news-body');
+
+            titleEl.innerText = `📰 ${name} (${code}) 과거 이브닝 뉴스 히스토리`;
+
+            const list = newsHistoryDB[code] || [];
+
+            if (list.length === 0) {
+                bodyEl.innerHTML = `
+                    <div style="text-align:center; padding:40px; color:var(--text-sub);">
+                        <div style="font-size:1.8rem; margin-bottom:10px;">🔍</div>
+                        등록된 과거 이브닝 호재/뉴스 데이터가 없습니다.
+                    </div>`;
+            } else {
+                bodyEl.innerHTML = list.map(item => `
+                    <div class="timeline-item">
+                        <div class="timeline-date">📅 ${item.date} ${item.rate ? '('+item.rate+')' : ''}</div>
+                        <div class="timeline-title">${item.title}</div>
+                        <div class="timeline-text">${item.content}</div>
+                    </div>
+                `).join('');
+            }
+
+            overlay.classList.add('active');
+
+            // 스마트폰 뒤로가기 지원
+            history.pushState({ modalOpen: true }, '');
+        }
+
+        function closeNewsModal() {
+            const overlay = document.getElementById('news-modal-overlay');
+            if (overlay.classList.contains('active')) {
+                overlay.classList.remove('active');
+            }
+        }
+
+        // 스마트폰 뒤로가기(popstate) 이벤트 감지
+        window.addEventListener('popstate', (e) => {
+            closeNewsModal();
+        });
     </script>
+
+    <!-- 📰 과거 뉴스 타임라인 모달 팝업 -->
+    <div class="modal-overlay" id="news-modal-overlay" onclick="if(event.target===this) history.back();">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-back-btn" onclick="history.back();">← 뒤로가기</button>
+                <div class="modal-title" id="modal-stock-title">📰 종목 뉴스 히스토리</div>
+            </div>
+            <div class="modal-body" id="modal-news-body">
+                <!-- Dynamic Timeline Items -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
