@@ -287,6 +287,9 @@
             flex-direction: column;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
             animation: modalUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            word-break: break-all;
+            overflow-wrap: anywhere;
+            box-sizing: border-box;
         }
 
         @keyframes modalUp {
@@ -300,32 +303,38 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 10px;
+            word-break: break-all;
         }
 
         .modal-back-btn {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: #f3f4f6;
             padding: 8px 14px;
             border-radius: 10px;
             font-weight: 700;
             font-size: 0.85rem;
             cursor: pointer;
+            flex-shrink: 0;
         }
 
         .modal-title {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 800;
             color: #ffffff;
+            word-break: break-all;
         }
 
         .modal-body {
             padding: 20px;
             overflow-y: auto;
+            overflow-x: hidden;
             flex: 1;
+            word-break: break-all;
         }
 
         .timeline-item {
@@ -333,6 +342,7 @@
             padding-left: 20px;
             margin-bottom: 20px;
             border-left: 2px solid rgba(139, 92, 246, 0.4);
+            word-break: break-all;
         }
 
         .timeline-item::before {
@@ -360,16 +370,23 @@
             color: #ffffff;
             margin-bottom: 6px;
             line-height: 1.4;
+            word-break: break-all;
+            overflow-wrap: anywhere;
         }
 
         .timeline-text {
-            font-size: 0.83rem;
-            color: #9ca3af;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #d1d5db;
             line-height: 1.5;
-            background: rgba(0, 0, 0, 0.25);
-            padding: 10px;
-            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px;
+            border-radius: 10px;
+            word-break: break-all;
+            overflow-wrap: anywhere;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
+
 
         @media (max-width: 600px) {
             h1 { font-size: 1.4rem; }
@@ -382,9 +399,13 @@
             }
             .report-download-card { flex-direction: column; gap: 10px; align-items: flex-start; }
             .download-btn { width: 100%; justify-content: center; }
-            .modal-content { max-height: 90vh; }
+            .modal-overlay { padding: 10px; }
+            .modal-content { max-height: 92vh; border-radius: 16px; }
+            .modal-header { padding: 12px 14px; }
+            .modal-body { padding: 14px 12px; }
         }
     </style>
+
 
 
 </head>
