@@ -8,3 +8,5 @@ __pycache__/
 *.pyc
 *.pyo
 *.log
+*.db-journal
+.git/
