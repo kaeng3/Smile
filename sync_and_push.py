@@ -34,7 +34,7 @@ def copy_chart(code):
     dst = os.path.join(dst_dir, f"{code}.png")
     if os.path.exists(src):
         os.makedirs(dst_dir, exist_ok=True)
-        if src != dst:
+        if os.path.abspath(src) != os.path.abspath(dst):
             shutil.copyfile(src, dst)
         return f"charts/{date_str}/{code}.png"
     return ""

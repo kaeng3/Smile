@@ -1,0 +1,106 @@
+[
+  {
+    "code": "460930",
+    "name": "현대힘스",
+    "close": 14620,
+    "rate": 6.404657933042213,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "199430",
+    "name": "케이엔알시스템",
+    "close": 15310,
+    "rate": 0.8563899868247694,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "049080",
+    "name": "기가레인",
+    "close": 10990,
+    "rate": 21.840354767184035,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "417860",
+    "name": "오브젠",
+    "close": 8140,
+    "rate": -1.0935601458080195,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "078590",
+    "name": "휴림에이텍",
+    "close": 3310,
+    "rate": -5.0215208034433285,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "004870",
+    "name": "티웨이홀딩스",
+    "close": 1357,
+    "rate": -3.7588652482269502,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "071950",
+    "name": "코아스",
+    "close": 2100,
+    "rate": 2.18978102189781,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "368600",
+    "name": "아이씨에이치",
+    "close": 958,
+    "rate": 0.31413612565445026,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "012340",
+    "name": "뉴인텍",
+    "close": 917,
+    "rate": 3.615819209039548,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "322780",
+    "name": "코퍼스코리아",
+    "close": 2015,
+    "rate": 0.4987531172069825,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "303030",
+    "name": "지니틱스",
+    "close": 1880,
+    "rate": 2.73224043715847,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "208640",
+    "name": "썸에이지",
+    "close": 1154,
+    "rate": -6.407137064071371,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "009620",
+    "name": "삼보산업",
+    "close": 815,
+    "rate": -1.9253910950661854,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  }
+]
