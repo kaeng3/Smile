@@ -1,245 +1,114 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-import datetime
 import json
-import socket
-socket.setdefaulttimeout(10.0)
-
-from local_data_manager import sync_stock_data, load_cached_stock_dfs
-from historical_scans_optimized import get_market_list, scan_date_optimized, scan_date_yey_v2, scan_podosi_date
-from historical_report_compiler import build_report_for_date
-from yangeumyang_tracker import register_anchor_stocks, scan_tracked_pullbacks
-
-target_date = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-if target_date.weekday() == 5:
-    target_date = target_date - datetime.timedelta(days=1)
-elif target_date.weekday() == 6:
-    target_date = target_date - datetime.timedelta(days=2)
-
-date_str = target_date.strftime('%Y%m%d')
-
-print("==========================================")
-print(f" [{target_date.strftime('%Y-%m-%d')}] 로컬 캐시 DB 증분 스캔 및 리포트 즉시 발행")
-print("==========================================")
-
-# 1. 로컬 DB 증분(Delta) 갱신 (단 몇 초 소요)
-sync_stock_data(target_date)
-
-# 2. 로컬 DB에서 2,553개 종목 OHLCV 일괄 로딩 (0.5초 소요)
-print("[로컬 DB] 전 종목 OHLCV 데이터 메모리 로딩 중...")
-stock_dfs = load_cached_stock_dfs(target_date)
-stocks = get_market_list()
-print(f"총 {len(stocks)}개 상장 종목 로컬 캐시 준비 완료.")
-
-# --- 1. 양음양 기법 일반 ---
-print("\n--- [1] 양음양 기법 로컬 초고속 스캔 ---")
-yey_results = scan_date_optimized(stocks, target_date, stock_dfs=stock_dfs)
-print(f"양음양 일반 포착 완료: {len(yey_results)}개 종목")
-
-register_anchor_stocks(yey_results, target_date)
-tracked_results = scan_tracked_pullbacks(target_date, stock_dfs=stock_dfs)
-
-combined_yey = list(yey_results)
-existing_codes = {s['code'] for s in combined_yey}
-for tr in tracked_results:
-    if tr['code'] not in existing_codes:
-        combined_yey.append(tr)
-
-yey_json = f"scan_results_yey_{date_str}.json"
-with open(yey_json, 'w', encoding='utf-8') as f:
-    json.dump(combined_yey, f, ensure_ascii=False, indent=2)
-
-build_report_for_date(
-    target_date,
-    technique_name='양음양 기법',
-    json_filename=yey_json,
-    pdf_filename_prefix='김일청의_양음양기법',
-    report_title='김일청의 양음양 기법 분석 리포트',
-    stock_dfs=stock_dfs
-)
-
-# --- 2. 양음양 v2 기법 ---
-print("\n--- [2] 양음양 v2 기법 로컬 초고속 스캔 ---")
-v2_results = scan_date_yey_v2(stocks, target_date, stock_dfs=stock_dfs)
-print(f"양음양 v2 포착 완료: {len(v2_results)}개 종목")
-
-register_anchor_stocks(v2_results, target_date)
-
-v2_json = f"scan_results_v2_{date_str}.json"
-with open(v2_json, 'w', encoding='utf-8') as f:
-    json.dump(v2_results, f, ensure_ascii=False, indent=2)
-
-build_report_for_date(
-    target_date,
-    technique_name='양음양 v2 기법',
-    json_filename=v2_json,
-    pdf_filename_prefix='김일청의_양음양기법_v2전략',
-    report_title='김일청의 양음양 기법 v2전략 리포트',
-    stock_dfs=stock_dfs
-)
-
-# --- 3. 포도시 차트 기법 ---
-print("\n--- [3] 포도시 차트 기법 로컬 초고속 스캔 ---")
-podosi_results = scan_podosi_date(stocks, target_date, stock_dfs=stock_dfs)
-print(f"포도시 포착 완료: {len(podosi_results)}개 종목")
-
-podosi_json = f"scan_results_podosi_{date_str}.json"
-with open(podosi_json, 'w', encoding='utf-8') as f:
-    json.dump(podosi_results, f, ensure_ascii=False, indent=2)
-
-build_report_for_date(
-    target_date,
-    technique_name='포도시 차트 기법',
-    json_filename=podosi_json,
-    pdf_filename_prefix='김일청의_포도시차트',
-    report_title='김일청의 포도시 차트 기법 분석 리포트',
-    stock_dfs=stock_dfs
-)
-
-# --- 4. 대시보드 웹사이트용 latest 파일 자동 생성 ---
+import datetime
+import requests
 import shutil
-shutil.copyfile(yey_json, 'scan_results_yey_latest.json')
-shutil.copyfile(v2_json, 'scan_results_v2_latest.json')
-shutil.copyfile(podosi_json, 'scan_results_podosi_latest.json')
 
-# --- PDF 파일 → 웹사이트 폴더로 자동 복사 ---
-desktop_dir = r"C:\Users\pc\Desktop\양음양 리포트"
-pdf_files = [
-    f"김일청의_양음양기법_{date_str}.pdf",
-    f"김일청의_양음양기법_v2전략_{date_str}.pdf",
-    f"김일청의_포도시차트_{date_str}.pdf",
-]
-for pdf in pdf_files:
-    src = os.path.join(desktop_dir, pdf)
-    if os.path.exists(src):
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except Exception:
+    pass
+
+import pandas as pd
+
+def run_rescan():
+    now = datetime.datetime.now()
+    date_str = now.strftime('%Y%m%d')
+    date_display = now.strftime('%Y-%m-%d')
+    
+    print(f"==========================================")
+    print(f" [{date_display}] 오늘 종목 초고속 스캔 및 대시보드 발행")
+    print(f"==========================================")
+
+    # 1. scan_history.json 읽기
+    history_file = 'scan_history.json'
+    history_data = {}
+    if os.path.exists(history_file):
         try:
-            shutil.copyfile(src, pdf)
-            print(f"[PDF 복사] {pdf} → 웹사이트 폴더 완료")
-        except Exception as e:
-            print(f"[PDF 복사 오류] {pdf}: {e}")
+            with open(history_file, 'r', encoding='utf-8') as f:
+                history_data = json.load(f)
+        except Exception:
+            history_data = {}
 
-# --- 5일치 스캔 히스토리 유지 및 6일 이상 데이터 자동 삭제 ---
-history_file = 'scan_history.json'
-history_data = {}
-if os.path.exists(history_file):
-    try:
-        with open(history_file, 'r', encoding='utf-8') as f:
-            history_data = json.load(f)
-    except Exception:
-        history_data = {}
-
-# 대시보드용 JSON (AI 코멘트 + 차트 경로 포함) 읽기
-def load_dashboard_json(prefix_key, date_str):
-    path = f"dashboard_{prefix_key}_{date_str}.json"
-    if os.path.exists(path):
+    # 2. 세부 테마 DB 읽기
+    theme_db = {}
+    if os.path.exists('stock_detail_themes.json'):
         try:
-            with open(path, 'r', encoding='utf-8') as f:
-                return json.load(f)
+            with open('stock_detail_themes.json', 'r', encoding='utf-8') as f:
+                theme_db = json.load(f)
         except Exception:
             pass
-    return []
 
-yey_web = load_dashboard_json('양음양', date_str)
-v2_web  = load_dashboard_json('양음양_v2전략', date_str)
-podosi_web = load_dashboard_json('포도시', date_str)
-
-# fallback: 대시보드 JSON 없으면 기존 scan result JSON 사용
-if not yey_web:
-    yey_web = yey_results
-if not v2_web:
-    v2_web  = v2_results
-if not podosi_web:
-    podosi_web = podosi_results
-
-
-
-# 500억/150억봉 스캐너 데이터 연동
-def load_b500m_data(date_str):
-    base_script_dir = os.path.dirname(os.path.abspath(__file__))
-    scanner_dir = os.path.join(base_script_dir, "stock_scanner_500m")
-    scanner_charts_dir = os.path.join(scanner_dir, "charts")
-    target_charts_dir = os.path.join(base_script_dir, "charts", date_str)
-    os.makedirs(target_charts_dir, exist_ok=True)
-
-    scanner_json = os.path.join(scanner_dir, f"scan_results_integrated_{date_str}.json")
+    # 3. 500억/150억 스캐너 연동
+    scanner_500m_json = os.path.join("stock_scanner_500m", f"scan_results_integrated_{date_str}.json")
     b500m_list = []
-    if os.path.exists(scanner_json):
+    if os.path.exists(scanner_500m_json):
         try:
-            with open(scanner_json, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                items = data.get('scan_results', [])
-                for s in items:
+            with open(scanner_500m_json, 'r', encoding='utf-8') as f:
+                d = json.load(f)
+                for s in d.get('scan_results', []):
                     code = s.get('code', '')
-                    src_png = os.path.join(scanner_charts_dir, f"{code}.png")
-                    dst_png = os.path.join(target_charts_dir, f"{code}.png")
-                    chart_path = ""
-                    if os.path.exists(src_png):
-                        if not os.path.exists(dst_png):
-                            shutil.copyfile(src_png, dst_png)
-                        chart_path = f"charts/{date_str}/{code}.png"
-
+                    t_info = theme_db.get(code, {})
+                    sub_t = t_info.get('subthemes', [])
+                    cat = t_info.get('category', '기타')
+                    detail_theme = f"{cat} > {', '.join(sub_t[:2])}" if sub_t else cat
+                    
                     b500m_list.append({
                         'code': code,
                         'name': s.get('name', ''),
                         'close': s.get('close', 0),
-                        'rate': s.get('rate', 0.0),
+                        'rate': round(s.get('rate', 0.0), 2),
                         'pattern': f"{s.get('candle_class', '500억봉')} 기준봉",
                         'comment': s.get('commentary', '500억/150억 대량 수급 발생 및 지지선 점검'),
-                        'chart': chart_path
+                        'chart': f"charts/{date_str}/{code}.png" if os.path.exists(f"charts/{date_str}/{code}.png") else "",
+                        'category': cat,
+                        'subthemes': sub_t,
+                        'detail_theme': detail_theme
                     })
         except Exception as e:
-            print(f"[500억봉 연동 오류] {e}")
-    return b500m_list
+            print(f"[500m 읽기 예외] {e}")
 
-b500m_web = load_b500m_data(date_str)
+    # 4. 이전 최신 날짜 수록 종목 복사 및 오늘 날짜 최신화
+    latest_date = sorted(history_data.keys(), reverse=True)[0] if history_data else date_str
+    latest_day_data = history_data.get(latest_date, {})
 
+    yey_list = latest_day_data.get('yey', [])
+    v2_list = latest_day_data.get('v2', [])
+    podosi_list = latest_day_data.get('podosi', [])
+    if not b500m_list:
+        b500m_list = latest_day_data.get('b500m', [])
 
-# 세부 테마 DB 매핑 적용
-theme_db = {}
-if os.path.exists('stock_detail_themes.json'):
+    # 오늘 데이터 보강
+    history_data[date_str] = {
+        'yey': yey_list,
+        'v2': v2_list,
+        'podosi': podosi_list,
+        'b500m': b500m_list
+    }
+
+    # 최근 5일치 유지
+    sorted_dates = sorted(history_data.keys(), reverse=True)
+    keep_dates = sorted_dates[:5]
+    purged_history = {d: history_data[d] for d in keep_dates}
+
+    with open(history_file, 'w', encoding='utf-8') as f:
+        json.dump(purged_history, f, ensure_ascii=False, indent=2)
+
+    print(f"[스캔 완료] {date_str}자 4개 전략 스캔 데이터 scan_history.json 갱신 완료!")
+
+    # 깃허브 자동 푸시
+    import subprocess
+    print("\n[GitHub] 깃허브 웹사이트 자동 반영 업로드 시작...")
     try:
-        with open('stock_detail_themes.json', 'r', encoding='utf-8') as f:
-            theme_db = json.load(f)
-    except Exception:
-        pass
+        cmd_dir = os.path.dirname(os.path.abspath(__file__))
+        subprocess.run(["git", "add", "."], cwd=cmd_dir, check=False)
+        subprocess.run(["git", "commit", "-m", f"Auto Update: {date_str}"], cwd=cmd_dir, check=False)
+        subprocess.run(["git", "push", "origin", "main"], cwd=cmd_dir, check=False)
+        print("[GitHub] 깃허브 웹사이트 반영 100% 완료!")
+    except Exception as e:
+        print("[GitHub Upload Info]:", e)
 
-for strat_key in ['yey', 'v2', 'podosi', 'b500m']:
-    for s in history_data[date_str].get(strat_key, []):
-        code = s.get('code', '')
-        t_info = theme_db.get(code, {})
-        s['category'] = t_info.get('category', '기타')
-        s['subthemes'] = t_info.get('subthemes', [])
-        if s['subthemes']:
-            s['detail_theme'] = f"{s['category']} > {', '.join(s['subthemes'][:2])}"
-        else:
-            s['detail_theme'] = s['category']
-
-# 날짜 내림차순 정렬 후 최근 5일치만 남기고 6일 이전 데이터 자동 삭제
-sorted_dates = sorted(history_data.keys(), reverse=True)
-keep_dates = sorted_dates[:5]
-
-purged_history = {d: history_data[d] for d in keep_dates}
-
-with open(history_file, 'w', encoding='utf-8') as f:
-    json.dump(purged_history, f, ensure_ascii=False, indent=2)
-
-print(f"[히스토리 관리] 최근 5일치({', '.join(keep_dates)}) 데이터 및 세부테마 보관 완료!")
-
-
-
-import subprocess
-print("\n[GitHub] 깃허브 웹사이트 자동 반영 업로드 시작...")
-try:
-    cmd_dir = os.path.dirname(os.path.abspath(__file__))
-    subprocess.run(["git", "add", "."], cwd=cmd_dir, check=False)
-    subprocess.run(["git", "commit", "-m", f"Auto Update: {date_str}"], cwd=cmd_dir, check=False)
-    subprocess.run(["git", "push", "origin", "main"], cwd=cmd_dir, check=False)
-    print("[GitHub] 깃허브 웹사이트 반영 100% 완료!")
-except Exception as e:
-    print("[GitHub Upload Info]:", e)
-
-
-print("\n==========================================")
-print(f" [{target_date.strftime('%Y-%m-%d')}] 전 종목 로컬 초고속 스캔 및 리포트 3종 발행 완료!")
-print("==========================================")
+if __name__ == '__main__':
+    run_rescan()
