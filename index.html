@@ -448,25 +448,41 @@
                 flex-direction: row;
                 overflow-x: auto;
                 padding-bottom: 4px;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .main-nav::-webkit-scrollbar {
+                display: none;
             }
             .nav-btn {
-                flex: 1;
+                flex: 0 0 auto;
                 text-align: center;
-                padding: 12px 10px;
-                border-left: 1px solid var(--border-color);
+                padding: 12px 16px;
+                border-left: none;
+                border-bottom: 2px solid transparent;
+                white-space: nowrap;
             }
             .nav-btn.active {
-                border-left: 1px solid rgba(212, 163, 115, 0.6);
+                border-left: none;
                 border-bottom: 4px solid #d4a373;
             }
-            .strategy-tabs { gap: 4px; }
+            .strategy-tabs { 
+                gap: 8px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .strategy-tabs::-webkit-scrollbar {
+                display: none;
+            }
             .tab-btn {
                 text-align: center;
-                flex: 1;
-                padding: 9px 2px;
-                font-size: 0.75rem;
-                letter-spacing: -0.6px;
-                border-radius: 10px;
+                flex: 0 0 auto;
+                padding: 10px 14px;
+                font-size: 0.85rem;
+                letter-spacing: -0.4px;
+                border-radius: 12px;
+                white-space: nowrap;
             }
             .report-download-card { flex-direction: column; gap: 10px; align-items: flex-start; }
             .download-btn { width: 100%; justify-content: center; }
