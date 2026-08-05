@@ -97,6 +97,13 @@ def load_scan_with_comments(json_filename, limit=12):
             comment = comment.replace('20일 평균 대비 100% 수준으로', '20일 평균 대비 충분한 수준으로')
             comment = comment.replace('평균 대비 100% 거래량과 함께', '평균 대비 증가한 거래량과 함께')
             comment = comment.replace('상단 상단', '상단')
+            
+            if comment.startswith('.0원('):
+                comment = f'오늘 {close:,}원' + comment[3:]
+            elif comment.startswith('.0원'):
+                comment = f'오늘 {close:,}원' + comment[3:]
+            if comment.startswith('원의 '):
+                comment = f'오늘 {close:,}원의 ' + comment[3:]
 
 
 
@@ -146,9 +153,12 @@ def load_b500m():
         cat    = t_info.get('category', '기타')
 
         # 기준봉 발생일과 오늘 날짜로 경과일 계산
-        candle_date_str = s.get('candle_date', date_str)
+        candle_date_str = s.get('ref_date', date_str)
         try:
-            candle_dt = datetime.datetime.strptime(candle_date_str, '%Y%m%d')
+            if '-' in candle_date_str:
+                candle_dt = datetime.datetime.strptime(candle_date_str, '%Y-%m-%d')
+            else:
+                candle_dt = datetime.datetime.strptime(candle_date_str, '%Y%m%d')
             elapsed = (now - candle_dt).days
             if elapsed == 0:
                 day_label = "당일 기준봉"
