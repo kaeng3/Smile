@@ -488,13 +488,6 @@
             <p class="subtitle">매일 장마감 후 세력 수급 및 이동평균선 지지 타점 자동 분석</p>
         </header>
 
-        <div class="date-section">
-            <div class="date-title">📅 날짜 선택 (최근 5영업일)</div>
-            <div class="date-chips" id="date-chips">
-                <!-- Dynamic Date Chips -->
-            </div>
-        </div>
-
         <div class="main-layout">
             <div class="sidebar">
                 <div class="main-nav">
@@ -506,6 +499,13 @@
             <div class="content-area">
                 <!-- 📈 실전 스캔 영역 -->
                 <div id="scan-content" style="display: block;">
+                    <div class="date-section">
+                        <div class="date-title">📅 날짜 선택 (최근 5영업일)</div>
+                        <div class="date-chips" id="date-chips">
+                            <!-- Dynamic Date Chips -->
+                        </div>
+                    </div>
+
                     <div class="strategy-tabs">
                         <button class="tab-btn active" onclick="switchStrategy('yey')">🔥 양음양 기법</button>
                         <button class="tab-btn" onclick="switchStrategy('v2')">⚡ 양음양 v2전략</button>
@@ -540,7 +540,7 @@
             </div>
         </div>
 
-        <footer>
+        <footer style="text-align: center; width: 100%; padding: 20px 0;">
             <p>© 2026 김일청의 주식 연구소. All rights reserved.</p>
             <p style="margin-top: 4px; opacity: 0.7;">매일 평일 15:40 자동 스캔 & 5일분 롤링 보관 시스템</p>
         </footer>
