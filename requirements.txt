@@ -1,0 +1,5 @@
+FinanceDataReader
+reportlab
+pandas
+matplotlib
+requests
