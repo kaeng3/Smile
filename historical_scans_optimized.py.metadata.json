@@ -1,4 +1,0 @@
-{
-  "summary":  "Implement three separate scanner functions in historical_scans_optimized.py: Yang-Eum-Yang, Podosi Chart, and the 60-day Rule. Use multi-threaded execution to filter stocks quickly and precisely.",
-  "updatedAt":  "2026-07-14T13:42:46.208644200Z"
-}

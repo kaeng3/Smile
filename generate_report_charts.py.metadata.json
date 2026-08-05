@@ -1,4 +1,0 @@
-{
-  "summary":  "Python script utilizing matplotlib to pull the latest stock data for today's scanned stocks and plot professional-grade candlestick charts with moving averages and volume, saving them as PNG images in the artifact directory.",
-  "updatedAt":  "2026-07-09T12:56:29.686262800Z"
-}

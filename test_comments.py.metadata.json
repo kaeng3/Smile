@@ -1,4 +1,0 @@
-{
-  "summary":  "Create a test script to query get_ai_commentary on all 14 stocks and verify if the comments are coming from Gemini API or the fallback templates.",
-  "updatedAt":  "2026-07-14T12:17:42.244886300Z"
-}

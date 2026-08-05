@@ -1,4 +1,0 @@
-{
-  "summary":  "Script to create scan_results_20260709.json from the hardcoded stocks inside compile_pdf_report.py so that the tracking feedback system has complete records.",
-  "updatedAt":  "2026-07-12T11:29:26.097334500Z"
-}

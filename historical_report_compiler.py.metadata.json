@@ -1,4 +1,0 @@
-{
-  "summary":  "Refactor historical_report_compiler.py to be fully parameterizable. It now accepts custom target techniques, custom json filenames, custom pdf output names, and custom report titles, dynamically linking back to historical data for the correct technique.",
-  "updatedAt":  "2026-07-14T13:43:13.298050800Z"
-}

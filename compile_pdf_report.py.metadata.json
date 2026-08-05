@@ -1,4 +1,0 @@
-{
-  "summary":  "PDF report compiler updated to load and integrate the Alpha Square theme database. Adds a '소속 테마' column in the summary tables and shows themes on detailed stock pages. Provides manual theme overrides for stocks affected by truncation.",
-  "updatedAt":  "2026-07-09T14:55:25.239512Z"
-}

@@ -156,9 +156,10 @@ if not podosi_web:
 
 # 500억/150억봉 스캐너 데이터 연동
 def load_b500m_data(date_str):
-    scanner_dir = r"C:\Users\pc\.gemini\antigravity\scratch\stock_scanner_500m"
+    base_script_dir = os.path.dirname(os.path.abspath(__file__))
+    scanner_dir = os.path.join(base_script_dir, "stock_scanner_500m")
     scanner_charts_dir = os.path.join(scanner_dir, "charts")
-    target_charts_dir = os.path.join(".", "charts", date_str)
+    target_charts_dir = os.path.join(base_script_dir, "charts", date_str)
     os.makedirs(target_charts_dir, exist_ok=True)
 
     scanner_json = os.path.join(scanner_dir, f"scan_results_integrated_{date_str}.json")
@@ -230,13 +231,14 @@ print(f"[히스토리 관리] 최근 5일치({', '.join(keep_dates)}) 데이터 
 import subprocess
 print("\n[GitHub] 깃허브 웹사이트 자동 반영 업로드 시작...")
 try:
-    cmd_dir = r"C:\Users\pc\.gemini\antigravity\brain\c6997abd-5ccd-40e2-89a8-b4346393ae34\scratch"
+    cmd_dir = os.path.dirname(os.path.abspath(__file__))
     subprocess.run(["git", "add", "."], cwd=cmd_dir, check=False)
     subprocess.run(["git", "commit", "-m", f"Auto Update: {date_str}"], cwd=cmd_dir, check=False)
     subprocess.run(["git", "push", "origin", "main"], cwd=cmd_dir, check=False)
     print("[GitHub] 깃허브 웹사이트 반영 100% 완료!")
 except Exception as e:
     print("[GitHub Upload Info]:", e)
+
 
 print("\n==========================================")
 print(f" [{target_date.strftime('%Y-%m-%d')}] 전 종목 로컬 초고속 스캔 및 리포트 3종 발행 완료!")
