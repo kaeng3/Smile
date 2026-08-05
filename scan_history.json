@@ -2,381 +2,194 @@
   "20260805": {
     "yey": [
       {
-        "code": "032830",
-        "name": "삼성생명",
-        "close": 294000,
-        "rate": 5.76,
+        "code": "348340",
+        "name": "뉴로메카",
+        "close": 21500,
+        "rate": -31.75,
         "pattern": "양음양 패턴 1 (수급 강세)",
         "comment": "",
-        "chart": "",
-        "category": "금융/경제",
+        "chart": "charts/20260805/348340.png",
+        "category": "테크",
         "subthemes": [
-          "보험",
-          "금리인상"
+          "로봇",
+          "지능형로봇"
         ],
-        "detail_theme": "금융/경제 > 보험,금리인상"
+        "detail_theme": "테크 > 로봇, 지능형로봇"
       },
       {
-        "code": "196170",
-        "name": "알테오젠",
-        "close": 277000,
-        "rate": -20.17,
+        "code": "179900",
+        "name": "유티아이",
+        "close": 2665,
+        "rate": 30.0,
         "pattern": "양음양 패턴 1 (수급 강세)",
         "comment": "",
-        "chart": "",
-        "category": "바이오",
+        "chart": "charts/20260805/179900.png",
+        "category": "디스플레이",
         "subthemes": [
-          "바이오시밀러"
+          "폴더블폰",
+          "플렉서블 디스플레이",
+          "UTG",
+          "유리기판",
+          "스마트폰"
         ],
-        "detail_theme": "바이오 > 바이오시밀러"
+        "detail_theme": "디스플레이 > 폴더블폰, 플렉서블 디스플레이"
       },
       {
-        "code": "278470",
-        "name": "에이피알",
-        "close": 357500,
-        "rate": -0.56,
+        "code": "215790",
+        "name": "이노인스트루먼트",
+        "close": 988,
+        "rate": 30.0,
         "pattern": "양음양 패턴 1 (수급 강세)",
         "comment": "",
-        "chart": "",
-        "category": "생활",
+        "chart": "charts/20260805/215790.png",
+        "category": "정치",
         "subthemes": [
-          "화장품",
-          "성형"
-        ],
-        "detail_theme": "생활 > 화장품,성형"
-      },
-      {
-        "code": "000720",
-        "name": "현대건설",
-        "close": 110100,
-        "rate": 8.47,
-        "pattern": "양음양 패턴 1 (수급 강세)",
-        "comment": "",
-        "chart": "",
-        "category": "건설/토목",
-        "subthemes": [
-          "건설/토목",
-          "스마트팜",
-          "남북경제협력",
-          "원전",
-          "SMR",
-          "테마파크",
-          "탈원전",
-          "GTX",
-          "네옴시티"
-        ],
-        "detail_theme": "건설/토목 > 건설/토목,스마트팜"
-      },
-      {
-        "code": "259960",
-        "name": "크래프톤",
-        "close": 229000,
-        "rate": -3.78,
-        "pattern": "양음양 패턴 1 (수급 강세)",
-        "comment": "",
-        "chart": "",
-        "category": "금융/경제",
-        "subthemes": [
-          "환율상승",
-          "크래프톤",
-          "게임",
-          "모바일게임",
-          "AI"
-        ],
-        "detail_theme": "금융/경제 > 환율상승,크래프톤"
-      },
-      {
-        "code": "323410",
-        "name": "카카오뱅크",
-        "close": 21550,
-        "rate": -1.37,
-        "pattern": "양음양 패턴 1 (수급 강세)",
-        "comment": "",
-        "chart": "",
-        "category": "금융/경제",
-        "subthemes": [
-          "은행",
-          "금리인상",
-          "카카오뱅크",
-          "핀테크"
-        ],
-        "detail_theme": "금융/경제 > 은행,금리인상"
-      },
-      {
-        "code": "003490",
-        "name": "대한항공",
-        "close": 26900,
-        "rate": 3.07,
-        "pattern": "양음양 패턴 1 (수급 강세)",
-        "comment": "",
-        "chart": "",
-        "category": "금융/경제",
-        "subthemes": [
-          "환율하락",
-          "방산",
-          "여행/관광",
-          "콜드체인",
-          "플라잉카",
-          "드론",
-          "항공",
-          "우주/항공소재부품",
-          "나로호"
-        ],
-        "detail_theme": "금융/경제 > 환율하락,방산"
-      },
-      {
-        "code": "016360",
-        "name": "삼성증권",
-        "close": 97600,
-        "rate": -1.01,
-        "pattern": "양음양 패턴 1 (수급 강세)",
-        "comment": "",
-        "chart": "",
-        "category": "금융/경제",
-        "subthemes": [
-          "증권",
-          "고배당"
-        ],
-        "detail_theme": "금융/경제 > 증권,고배당"
-      },
-      {
-        "code": "064400",
-        "name": "LG씨엔에스",
-        "close": 73300,
-        "rate": 7.64,
-        "pattern": "양음양 패턴 1 (수급 강세)",
-        "comment": "",
-        "chart": "",
-        "category": "기업",
-        "subthemes": [
-          "오라클",
-          "퓨리오사",
-          "데이터센터",
-          "클라우드컴퓨팅",
-          "AI"
-        ],
-        "detail_theme": "기업 > 오라클,퓨리오사"
-      },
-      {
-        "code": "267270",
-        "name": "HD건설기계",
-        "close": 141900,
-        "rate": 11.64,
-        "pattern": "양음양 패턴 1 (수급 강세)",
-        "comment": "",
-        "chart": "",
-        "category": "건설/토목",
-        "subthemes": [
-          "건설기계",
-          "우크라이나 재건"
-        ],
-        "detail_theme": "건설/토목 > 건설기계,우크라이나 재건"
-      },
-      {
-        "code": "047040",
-        "name": "대우건설",
-        "close": 16230,
-        "rate": 6.78,
-        "pattern": "양음양 패턴 1 (수급 강세)",
-        "comment": "",
-        "chart": "",
-        "category": "건설/토목",
-        "subthemes": [
-          "건설/토목",
-          "원전",
-          "수자원",
-          "GTX",
-          "수돗물"
-        ],
-        "detail_theme": "건설/토목 > 건설/토목,원전"
-      },
-      {
-        "code": "326030",
-        "name": "SK바이오팜",
-        "close": 82000,
-        "rate": 2.76,
-        "pattern": "양음양 패턴 1 (수급 강세)",
-        "comment": "",
-        "chart": "",
-        "category": "바이오",
-        "subthemes": [
-          "제약",
-          "AI신약개발"
-        ],
-        "detail_theme": "바이오 > 제약,AI신약개발"
-      }
-    ],
-    "v2": [
-      {
-        "code": "010170",
-        "name": "대한광통신",
-        "close": 12070,
-        "rate": 18.57,
-        "pattern": "양음양 v2 패턴 1 (눌림목)",
-        "comment": "",
-        "chart": "",
-        "category": "통신",
-        "subthemes": [
+          "한동훈",
           "통신장비",
           "차세대이동통신"
         ],
-        "detail_theme": "통신 > 통신장비,차세대이동통신"
+        "detail_theme": "정치 > 한동훈, 통신장비"
       },
       {
-        "code": "043260",
-        "name": "성호전자",
-        "close": 19000,
-        "rate": 13.03,
-        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "code": "348080",
+        "name": "큐라티스",
+        "close": 2990,
+        "rate": 30.0,
+        "pattern": "양음양 패턴 1 (수급 강세)",
         "comment": "",
-        "chart": "",
-        "category": "디스플레이",
+        "chart": "charts/20260805/348080.png",
+        "category": "바이오",
         "subthemes": [
-          "LED",
-          "공기청정기"
+          "제약",
+          "비만치료제"
         ],
-        "detail_theme": "디스플레이 > LED,공기청정기"
+        "detail_theme": "바이오 > 제약, 비만치료제"
       },
       {
-        "code": "199820",
-        "name": "제일일렉트릭",
-        "close": 7710,
-        "rate": 11.74,
-        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "code": "024840",
+        "name": "KBI메탈",
+        "close": 4985,
+        "rate": 29.99,
+        "pattern": "양음양 패턴 1 (수급 강세)",
         "comment": "",
-        "chart": "",
-        "category": "에너지",
+        "chart": "charts/20260805/024840.png",
+        "category": "원자재",
         "subthemes": [
-          "변압기",
-          "전력설비",
-          "전기차인프라",
-          "스마트홈"
+          "구리",
+          "자동차부품"
         ],
-        "detail_theme": "에너지 > 변압기,전력설비"
+        "detail_theme": "원자재 > 구리, 자동차부품"
       },
       {
-        "code": "051160",
-        "name": "지어소프트",
-        "close": 10000,
-        "rate": 7.87,
-        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "code": "148780",
+        "name": "비큐AI",
+        "close": 3885,
+        "rate": 29.93,
+        "pattern": "양음양 패턴 1 (수급 강세)",
         "comment": "",
-        "chart": "",
-        "category": "생활",
+        "chart": "charts/20260805/148780.png",
+        "category": "기업",
         "subthemes": [
-          "광고",
-          "리테일"
+          "퓨리오사"
         ],
-        "detail_theme": "생활 > 광고,리테일"
+        "detail_theme": "기업 > 퓨리오사"
       },
       {
-        "code": "355150",
-        "name": "코스텍시스",
-        "close": 19030,
-        "rate": 12.01,
-        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "code": "069540",
+        "name": "빛과전자",
+        "close": 2890,
+        "rate": 29.89,
+        "pattern": "양음양 패턴 1 (수급 강세)",
         "comment": "",
-        "chart": "",
+        "chart": "charts/20260805/069540.png",
+        "category": "자동차",
+        "subthemes": [
+          "수소차",
+          "라이파이",
+          "통신장비"
+        ],
+        "detail_theme": "자동차 > 수소차, 라이파이"
+      },
+      {
+        "code": "226340",
+        "name": "본느",
+        "close": 3675,
+        "rate": 29.86,
+        "pattern": "양음양 패턴 1 (수급 강세)",
+        "comment": "",
+        "chart": "charts/20260805/226340.png",
         "category": "기타",
         "subthemes": [],
         "detail_theme": "기타"
       },
       {
-        "code": "147830",
-        "name": "제룡산업",
-        "close": 6850,
-        "rate": 11.02,
-        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "code": "264850",
+        "name": "이랜시스",
+        "close": 6530,
+        "rate": 29.82,
+        "pattern": "양음양 패턴 1 (수급 강세)",
         "comment": "",
-        "chart": "",
-        "category": "에너지",
+        "chart": "charts/20260805/264850.png",
+        "category": "생활",
         "subthemes": [
-          "전력설비",
-          "추미애",
-          "합성수지"
+          "물리보안",
+          "로봇"
         ],
-        "detail_theme": "에너지 > 전력설비,추미애"
+        "detail_theme": "생활 > 물리보안, 로봇"
       },
       {
-        "code": "059120",
-        "name": "아진엑스텍",
-        "close": 6980,
-        "rate": 11.68,
-        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "code": "431190",
+        "name": "케이쓰리아이",
+        "close": 3045,
+        "rate": 27.41,
+        "pattern": "양음양 패턴 1 (수급 강세)",
         "comment": "",
-        "chart": "",
-        "category": "반도체",
-        "subthemes": [
-          "시스템반도체",
-          "로봇",
-          "스마트폰",
-          "스마트팩토리"
-        ],
-        "detail_theme": "반도체 > 시스템반도체,로봇"
-      },
-      {
-        "code": "017510",
-        "name": "세명전기",
-        "close": 7410,
-        "rate": 15.42,
-        "pattern": "양음양 v2 패턴 1 (눌림목)",
-        "comment": "",
-        "chart": "",
-        "category": "에너지",
-        "subthemes": [
-          "전력설비",
-          "해저터널",
-          "경부고속도로 지하화",
-          "GTX"
-        ],
-        "detail_theme": "에너지 > 전력설비,해저터널"
-      },
-      {
-        "code": "463020",
-        "name": "뉴엔AI",
-        "close": 10330,
-        "rate": 14.02,
-        "pattern": "양음양 v2 패턴 1 (눌림목)",
-        "comment": "",
-        "chart": "",
+        "chart": "charts/20260805/431190.png",
         "category": "테크",
         "subthemes": [
-          "AI",
-          "챗GPT"
+          "메타버스",
+          "AR",
+          "XR"
         ],
-        "detail_theme": "테크 > AI,챗GPT"
+        "detail_theme": "테크 > 메타버스, AR"
       },
       {
-        "code": "419050",
-        "name": "삼기에너지솔루션즈",
-        "close": 1577,
-        "rate": 8.83,
-        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "code": "049080",
+        "name": "기가레인",
+        "close": 10990,
+        "rate": 21.84,
+        "pattern": "양음양 패턴 1 (수급 강세)",
         "comment": "",
-        "chart": "",
-        "category": "에너지",
+        "chart": "charts/20260805/049080.png",
+        "category": "디스플레이",
         "subthemes": [
-          "2차전지",
-          "2차전지-소재부품",
-          "전기차"
+          "LED 장비",
+          "반도체장비",
+          "스마트폰",
+          "사물인터넷",
+          "통신장비",
+          "차세대이동통신"
         ],
-        "detail_theme": "에너지 > 2차전지,2차전지-소재부품"
+        "detail_theme": "디스플레이 > LED 장비, 반도체장비"
       },
       {
-        "code": "072950",
-        "name": "빛샘전자",
-        "close": 8550,
-        "rate": 13.1,
-        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "code": "017900",
+        "name": "광전자",
+        "close": 7060,
+        "rate": 21.31,
+        "pattern": "양음양 패턴 1 (수급 강세)",
         "comment": "",
-        "chart": "",
+        "chart": "charts/20260805/017900.png",
         "category": "디스플레이",
         "subthemes": [
           "LED",
-          "통신장비"
+          "미니LED",
+          "마이크로LED"
         ],
-        "detail_theme": "디스플레이 > LED,통신장비"
-      },
+        "detail_theme": "디스플레이 > LED, 미니LED"
+      }
+    ],
+    "v2": [
       {
         "code": "002630",
         "name": "오리엔트바이오",
@@ -384,7 +197,7 @@
         "rate": 18.63,
         "pattern": "양음양 v2 패턴 1 (눌림목)",
         "comment": "",
-        "chart": "",
+        "chart": "charts/20260805/002630.png",
         "category": "정치",
         "subthemes": [
           "이재명",
@@ -395,42 +208,183 @@
           "임상시험수탁기관",
           "탈모"
         ],
-        "detail_theme": "정치 > 이재명,메르스"
+        "detail_theme": "정치 > 이재명, 메르스"
+      },
+      {
+        "code": "010170",
+        "name": "대한광통신",
+        "close": 12070,
+        "rate": 18.57,
+        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "comment": "",
+        "chart": "charts/20260805/010170.png",
+        "category": "통신",
+        "subthemes": [
+          "통신장비",
+          "차세대이동통신"
+        ],
+        "detail_theme": "통신 > 통신장비, 차세대이동통신"
+      },
+      {
+        "code": "017510",
+        "name": "세명전기",
+        "close": 7410,
+        "rate": 15.42,
+        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "comment": "",
+        "chart": "charts/20260805/017510.png",
+        "category": "에너지",
+        "subthemes": [
+          "전력설비",
+          "해저터널",
+          "경부고속도로 지하화",
+          "GTX"
+        ],
+        "detail_theme": "에너지 > 전력설비, 해저터널"
+      },
+      {
+        "code": "463020",
+        "name": "뉴엔AI",
+        "close": 10330,
+        "rate": 14.02,
+        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "comment": "",
+        "chart": "charts/20260805/463020.png",
+        "category": "테크",
+        "subthemes": [
+          "AI",
+          "챗GPT"
+        ],
+        "detail_theme": "테크 > AI, 챗GPT"
+      },
+      {
+        "code": "072950",
+        "name": "빛샘전자",
+        "close": 8550,
+        "rate": 13.1,
+        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "comment": "",
+        "chart": "charts/20260805/072950.png",
+        "category": "디스플레이",
+        "subthemes": [
+          "LED",
+          "통신장비"
+        ],
+        "detail_theme": "디스플레이 > LED, 통신장비"
+      },
+      {
+        "code": "043260",
+        "name": "성호전자",
+        "close": 19000,
+        "rate": 13.03,
+        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "comment": "",
+        "chart": "charts/20260805/043260.png",
+        "category": "디스플레이",
+        "subthemes": [
+          "LED",
+          "공기청정기"
+        ],
+        "detail_theme": "디스플레이 > LED, 공기청정기"
+      },
+      {
+        "code": "355150",
+        "name": "코스텍시스",
+        "close": 19030,
+        "rate": 12.01,
+        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "comment": "",
+        "chart": "charts/20260805/355150.png",
+        "category": "기타",
+        "subthemes": [],
+        "detail_theme": "기타"
+      },
+      {
+        "code": "199820",
+        "name": "제일일렉트릭",
+        "close": 7710,
+        "rate": 11.74,
+        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "comment": "",
+        "chart": "charts/20260805/199820.png",
+        "category": "에너지",
+        "subthemes": [
+          "변압기",
+          "전력설비",
+          "전기차인프라",
+          "스마트홈"
+        ],
+        "detail_theme": "에너지 > 변압기, 전력설비"
+      },
+      {
+        "code": "059120",
+        "name": "아진엑스텍",
+        "close": 6980,
+        "rate": 11.68,
+        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "comment": "",
+        "chart": "charts/20260805/059120.png",
+        "category": "반도체",
+        "subthemes": [
+          "시스템반도체",
+          "로봇",
+          "스마트폰",
+          "스마트팩토리"
+        ],
+        "detail_theme": "반도체 > 시스템반도체, 로봇"
+      },
+      {
+        "code": "147830",
+        "name": "제룡산업",
+        "close": 6850,
+        "rate": 11.02,
+        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "comment": "",
+        "chart": "charts/20260805/147830.png",
+        "category": "에너지",
+        "subthemes": [
+          "전력설비",
+          "추미애",
+          "합성수지"
+        ],
+        "detail_theme": "에너지 > 전력설비, 추미애"
+      },
+      {
+        "code": "084650",
+        "name": "랩지노믹스",
+        "close": 825,
+        "rate": 9.85,
+        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "comment": "",
+        "chart": "charts/20260805/084650.png",
+        "category": "바이오",
+        "subthemes": [
+          "피임약",
+          "유전자치료/검사",
+          "말라리아",
+          "진단키트",
+          "의료기기"
+        ],
+        "detail_theme": "바이오 > 피임약, 유전자치료/검사"
+      },
+      {
+        "code": "419050",
+        "name": "삼기에너지솔루션즈",
+        "close": 1577,
+        "rate": 8.83,
+        "pattern": "양음양 v2 패턴 1 (눌림목)",
+        "comment": "",
+        "chart": "charts/20260805/419050.png",
+        "category": "에너지",
+        "subthemes": [
+          "2차전지",
+          "2차전지-소재부품",
+          "전기차"
+        ],
+        "detail_theme": "에너지 > 2차전지, 2차전지-소재부품"
       }
     ],
     "podosi": [
-      {
-        "code": "460930",
-        "name": "현대힘스",
-        "close": 14620,
-        "rate": 6.4,
-        "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)",
-        "comment": "",
-        "chart": "",
-        "category": "원자재",
-        "subthemes": [
-          "LNG",
-          "조선",
-          "조선기자재"
-        ],
-        "detail_theme": "원자재 > LNG,조선"
-      },
-      {
-        "code": "199430",
-        "name": "케이엔알시스템",
-        "close": 15310,
-        "rate": 0.86,
-        "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)",
-        "comment": "",
-        "chart": "",
-        "category": "테크",
-        "subthemes": [
-          "로봇",
-          "지능형로봇",
-          "AI"
-        ],
-        "detail_theme": "테크 > 로봇,지능형로봇"
-      },
       {
         "code": "049080",
         "name": "기가레인",
@@ -438,7 +392,7 @@
         "rate": 21.84,
         "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)",
         "comment": "",
-        "chart": "",
+        "chart": "charts/20260805/049080.png",
         "category": "디스플레이",
         "subthemes": [
           "LED 장비",
@@ -448,21 +402,38 @@
           "통신장비",
           "차세대이동통신"
         ],
-        "detail_theme": "디스플레이 > LED 장비,반도체장비"
+        "detail_theme": "디스플레이 > LED 장비, 반도체장비"
       },
       {
-        "code": "417860",
-        "name": "오브젠",
-        "close": 8140,
-        "rate": -1.09,
+        "code": "208640",
+        "name": "썸에이지",
+        "close": 1154,
+        "rate": -6.41,
         "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)",
         "comment": "",
-        "chart": "",
-        "category": "테크",
+        "chart": "charts/20260805/208640.png",
+        "category": "여가",
         "subthemes": [
-          "AI"
+          "모바일게임",
+          "우원식"
         ],
-        "detail_theme": "테크 > AI"
+        "detail_theme": "여가 > 모바일게임, 우원식"
+      },
+      {
+        "code": "460930",
+        "name": "현대힘스",
+        "close": 14620,
+        "rate": 6.4,
+        "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)",
+        "comment": "",
+        "chart": "charts/20260805/460930.png",
+        "category": "원자재",
+        "subthemes": [
+          "LNG",
+          "조선",
+          "조선기자재"
+        ],
+        "detail_theme": "원자재 > LNG, 조선"
       },
       {
         "code": "078590",
@@ -471,13 +442,13 @@
         "rate": -5.02,
         "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)",
         "comment": "",
-        "chart": "",
+        "chart": "charts/20260805/078590.png",
         "category": "정치",
         "subthemes": [
           "유승민",
           "홍준표"
         ],
-        "detail_theme": "정치 > 유승민,홍준표"
+        "detail_theme": "정치 > 유승민, 홍준표"
       },
       {
         "code": "004870",
@@ -486,43 +457,14 @@
         "rate": -3.76,
         "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)",
         "comment": "",
-        "chart": "",
+        "chart": "charts/20260805/004870.png",
         "category": "여가",
         "subthemes": [
           "저가항공",
           "정원오",
           "항공"
         ],
-        "detail_theme": "여가 > 저가항공,정원오"
-      },
-      {
-        "code": "071950",
-        "name": "코아스",
-        "close": 2100,
-        "rate": 2.19,
-        "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)",
-        "comment": "",
-        "chart": "",
-        "category": "대북",
-        "subthemes": [
-          "비무장지대",
-          "가구"
-        ],
-        "detail_theme": "대북 > 비무장지대,가구"
-      },
-      {
-        "code": "368600",
-        "name": "아이씨에이치",
-        "close": 958,
-        "rate": 0.31,
-        "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)",
-        "comment": "",
-        "chart": "",
-        "category": "테크",
-        "subthemes": [
-          "스마트폰"
-        ],
-        "detail_theme": "테크 > 스마트폰"
+        "detail_theme": "여가 > 저가항공, 정원오"
       },
       {
         "code": "012340",
@@ -531,7 +473,7 @@
         "rate": 3.62,
         "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)",
         "comment": "",
-        "chart": "",
+        "chart": "charts/20260805/012340.png",
         "category": "에너지",
         "subthemes": [
           "태양광",
@@ -541,22 +483,7 @@
           "전기차",
           "황교안"
         ],
-        "detail_theme": "에너지 > 태양광,2차전지"
-      },
-      {
-        "code": "322780",
-        "name": "코퍼스코리아",
-        "close": 2015,
-        "rate": 0.5,
-        "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)",
-        "comment": "",
-        "chart": "",
-        "category": "여가",
-        "subthemes": [
-          "OTT서비스",
-          "디즈니플러스"
-        ],
-        "detail_theme": "여가 > OTT서비스,디즈니플러스"
+        "detail_theme": "에너지 > 태양광, 2차전지"
       },
       {
         "code": "303030",
@@ -565,28 +492,91 @@
         "rate": 2.73,
         "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)",
         "comment": "",
-        "chart": "",
+        "chart": "charts/20260805/303030.png",
         "category": "반도체",
         "subthemes": [
           "반도체설계",
           "웨어러블"
         ],
-        "detail_theme": "반도체 > 반도체설계,웨어러블"
+        "detail_theme": "반도체 > 반도체설계, 웨어러블"
       },
       {
-        "code": "208640",
-        "name": "썸에이지",
-        "close": 1154,
-        "rate": -6.41,
+        "code": "071950",
+        "name": "코아스",
+        "close": 2100,
+        "rate": 2.19,
+        "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)",
+        "comment": "",
+        "chart": "charts/20260805/071950.png",
+        "category": "대북",
+        "subthemes": [
+          "비무장지대",
+          "가구"
+        ],
+        "detail_theme": "대북 > 비무장지대, 가구"
+      },
+      {
+        "code": "009620",
+        "name": "삼보산업",
+        "close": 815,
+        "rate": -1.93,
+        "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)",
+        "comment": "",
+        "chart": "charts/20260805/009620.png",
+        "category": "원자재",
+        "subthemes": [
+          "알루미늄",
+          "가덕도신공항",
+          "조국",
+          "유승민",
+          "이준석"
+        ],
+        "detail_theme": "원자재 > 알루미늄, 가덕도신공항"
+      },
+      {
+        "code": "417860",
+        "name": "오브젠",
+        "close": 8140,
+        "rate": -1.09,
         "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)",
         "comment": "",
-        "chart": "",
+        "chart": "charts/20260805/417860.png",
+        "category": "테크",
+        "subthemes": [
+          "AI"
+        ],
+        "detail_theme": "테크 > AI"
+      },
+      {
+        "code": "199430",
+        "name": "케이엔알시스템",
+        "close": 15310,
+        "rate": 0.86,
+        "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)",
+        "comment": "",
+        "chart": "charts/20260805/199430.png",
+        "category": "테크",
+        "subthemes": [
+          "로봇",
+          "지능형로봇",
+          "AI"
+        ],
+        "detail_theme": "테크 > 로봇, 지능형로봇"
+      },
+      {
+        "code": "322780",
+        "name": "코퍼스코리아",
+        "close": 2015,
+        "rate": 0.5,
+        "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)",
+        "comment": "",
+        "chart": "charts/20260805/322780.png",
         "category": "여가",
         "subthemes": [
-          "모바일게임",
-          "우원식"
+          "OTT서비스",
+          "디즈니플러스"
         ],
-        "detail_theme": "여가 > 모바일게임,우원식"
+        "detail_theme": "여가 > OTT서비스, 디즈니플러스"
       }
     ],
     "b500m": [
