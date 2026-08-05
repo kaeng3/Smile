@@ -589,6 +589,7 @@
         let availableDates = [];
         let selectedDate = '';
         let historyData = {};
+        let dailyIssuesDB = {};
 
         loadData();
 
@@ -606,6 +607,7 @@
             selectedDate = d;
             renderDateChips();
             renderStrategy();
+            renderLab1();
         }
 
         function switchMainTab(tab) {
@@ -728,12 +730,63 @@
                 console.error("stock_news_history.json 로딩 실패:", e);
             }
 
+            try {
+                const resIssues = await fetch('daily_issues.json?t=' + Date.now());
+                if (resIssues.ok) {
+                    dailyIssuesDB = await resIssues.json();
+                }
+            } catch (e) {
+                console.error("daily_issues.json 로딩 실패:", e);
+            }
+
             if (availableDates.length > 0) {
                 selectedDate = availableDates[0];
             }
 
             renderDateChips();
             renderStrategy();
+            renderLab1();
+        }
+
+        function renderLab1() {
+            const container = document.getElementById('lab-content');
+            if (!selectedDate || !container) return;
+            const issues = dailyIssuesDB[selectedDate] || [];
+            
+            let html = `
+                <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
+                    <div>
+                        <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 당일 500억봉 주요 이슈 분석</div>
+                        <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">선택된 날짜(${selectedDate})에 강력한 기준봉(당일 500억/150억)이 발생한 종목들의 핵심 재료를 AI가 요약합니다.</div>
+                    </div>
+                </div>
+            `;
+            
+            if (issues.length === 0) {
+                html += `<div style="text-align:center; padding:40px; color:var(--text-sub); border: 1px dashed rgba(212, 163, 115, 0.4); border-radius: 12px;">해당 날짜에 기준봉 종목이 없거나 이슈 데이터가 없습니다.</div>`;
+            } else {
+                html += `<div style="display:flex; flex-direction:column; gap:15px;">`;
+                issues.forEach(item => {
+                    const isUp = (item.rate || 0) >= 0;
+                    const rateClass = isUp ? 'rate-up' : 'rate-down';
+                    const rateSign = isUp ? '+' : '';
+                    
+                    html += `
+                        <div class="stock-card" style="padding: 24px; text-align: left; cursor: default; transform: none; box-shadow: none;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 16px;">
+                                <div style="font-size: 1.3rem; font-weight: 700; color: var(--text-main);">${item.name} <span style="font-size: 0.95rem; color: var(--text-sub); font-weight: 400;">(${item.code})</span></div>
+                                <div class="stock-rate ${rateClass}" style="font-size: 1.2rem;">${rateSign}${(item.rate || 0).toFixed(2)}%</div>
+                            </div>
+                            <div style="font-size: 0.95rem; color: #d4a373; font-weight: 700; margin-bottom: 10px;">📌 AI 급등 이슈 요약</div>
+                            <div style="font-size: 1rem; color: var(--text-main); line-height: 1.6; background: rgba(0,0,0,0.3); padding: 16px; border-radius: 10px; border-left: 4px solid #d4a373;">
+                                ${item.summary}
+                            </div>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+            container.innerHTML = html;
         }
 
         function dec(str) {

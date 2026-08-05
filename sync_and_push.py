@@ -229,6 +229,13 @@ with open(history_file, 'w', encoding='utf-8') as f:
 
 print(f"[SYNC] scan_history.json 완전 갱신 완료!")
 
+# ── 6.5. 당일 500억봉 이슈 AI 요약 실행 ─────────────────────────
+print("[SYNC] 당일 500억봉/150억봉 주요 이슈 분석(Gemini) 실행...")
+try:
+    subprocess.run([sys.executable, os.path.join(SCANNER_DIR, "fetch_daily_issues.py")], check=False)
+except Exception as e:
+    print(f"[SYNC] 이슈 분석 중 오류 발생: {e}")
+
 # ── 7. PDF 이동 및 오래된 데이터 삭제 (클라우드 환경 대응) ─────────────────────────────
 for prefix in ['김일청의_양음양기법', '김일청의_양음양기법_v2전략', '김일청의_포도시차트', '이동평균선과_500억봉_및_150억봉_분석보고서']:
     src_pdf = os.path.join(GIT_DIR, f"{prefix}_{date_str}.pdf")
@@ -268,7 +275,7 @@ for fname in os.listdir(GIT_DIR):
 # ── 8. GitHub 자동 푸시 ──────────────────────────────────────────────
 print("\n[GitHub] 자동 업로드 시작...")
 try:
-    subprocess.run(["git", "add", "scan_history.json", "charts/", "."], cwd=GIT_DIR, check=False)
+    subprocess.run(["git", "add", "scan_history.json", "daily_issues.json", "charts/", "."], cwd=GIT_DIR, check=False)
     subprocess.run(["git", "commit", "-m", f"Auto Update: {date_str} (차트+코멘트+500억일차 포함)"], cwd=GIT_DIR, check=False)
     subprocess.run(["git", "push", "origin", "main"], cwd=GIT_DIR, check=False)
     print("[GitHub] 웹사이트 반영 100% 완료!")
