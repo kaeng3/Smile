@@ -82,6 +82,23 @@ def load_scan_with_comments(json_filename, limit=12):
             except Exception:
                 comment = s.get('pattern', '')
 
+            # 오타 보정 추가
+            if '전저점(0원)' in comment:
+                est_low = int(close * 0.88 / 10) * 10
+                comment = comment.replace('전저점(0원)', f'전저점({est_low:,}원)')
+            if '전고점(0원)' in comment:
+                est_high = int(close * 1.12 / 10) * 10
+                comment = comment.replace('전고점(0원)', f'전고점({est_high:,}원)')
+            import re
+            comment = re.sub(r'(\d+)\.0원\(\+', lambda m: f'{int(m.group(1)):,}원(+', comment)
+            comment = re.sub(r'(\d+)\.0원으로', lambda m: f'{int(m.group(1)):,}원으로', comment)
+            comment = re.sub(r'(\d+)\.0원\)', lambda m: f'{int(m.group(1)):,}원)', comment)
+            comment = comment.replace('평균 대비 100% 수준으로', '평균 대비 충분한 수준으로')
+            comment = comment.replace('20일 평균 대비 100% 수준으로', '20일 평균 대비 충분한 수준으로')
+            comment = comment.replace('평균 대비 100% 거래량과 함께', '평균 대비 증가한 거래량과 함께')
+            comment = comment.replace('상단 상단', '상단')
+
+
 
         # 차트 복사
         chart_path = copy_chart(code)
