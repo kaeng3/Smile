@@ -16,6 +16,8 @@ def get_ai_commentary(stock_info, target_date_str=None):
                 api_key = json.load(f).get('GEMINI_API_KEY')
         except Exception:
             pass
+    if not api_key:
+        api_key = os.environ.get('GEMINI_API_KEY')
 
     code = stock_info['code']
     name = stock_info['name']
@@ -179,6 +181,8 @@ def get_ai_commentary_ma_near(stock_info, target_date_str=None):
                 api_key = json.load(f).get('GEMINI_API_KEY')
         except Exception:
             pass
+    if not api_key:
+        api_key = os.environ.get('GEMINI_API_KEY')
 
     code = stock_info['code']
     name = stock_info['name']

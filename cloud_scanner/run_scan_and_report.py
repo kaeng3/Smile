@@ -12,7 +12,7 @@ except AttributeError:
     pass
 
 from scanner import get_full_market_list, get_prefiltered_market_list, scan_stocks_parallel
-from ai_commentator import get_ai_commentary, get_ai_commentary_ma_near
+from ai_commentator_500m import get_ai_commentary, get_ai_commentary_ma_near
 from generate_charts import make_chart
 from compile_pdf_report import build_pdf_report
 
