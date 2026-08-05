@@ -110,28 +110,55 @@
             border-color: rgba(139, 92, 246, 0.6);
         }
 
-        .strategy-tabs {
+        .main-nav {
             display: flex;
-            gap: 8px;
+            flex-direction: column;
+            gap: 10px;
             margin-bottom: 20px;
         }
 
-        .strategy-tabs.vertical {
-            flex-direction: column;
+        .nav-btn {
+            padding: 14px 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-sub);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .nav-btn.active {
+            background: rgba(139, 92, 246, 0.2);
+            color: #c7d2fe;
+            border-color: rgba(139, 92, 246, 0.6);
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .strategy-tabs {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 4px;
         }
 
         .tab-btn {
-            padding: 12px 14px;
+            flex: 1;
+            min-width: 0;
+            padding: 10px 6px;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             color: var(--text-sub);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             letter-spacing: -0.4px;
             cursor: pointer;
             transition: all 0.2s ease;
-            text-align: left;
+            text-align: center;
             white-space: nowrap;
         }
 
@@ -416,15 +443,26 @@
             .content-area {
                 width: 100%;
             }
-            .strategy-tabs.vertical {
+            .main-nav {
                 flex-direction: row;
                 overflow-x: auto;
                 padding-bottom: 4px;
             }
+            .nav-btn {
+                flex: 1;
+                text-align: center;
+                padding: 12px 10px;
+                border-left: 1px solid var(--border-color);
+            }
+            .nav-btn.active {
+                border-left: 1px solid rgba(139, 92, 246, 0.6);
+                border-bottom: 4px solid #8b5cf6;
+            }
+            .strategy-tabs { gap: 4px; }
             .tab-btn {
                 text-align: center;
                 flex: 1;
-                padding: 10px 6px;
+                padding: 9px 2px;
                 font-size: 0.75rem;
                 letter-spacing: -0.6px;
                 border-radius: 10px;
@@ -458,27 +496,45 @@
 
         <div class="main-layout">
             <div class="sidebar">
-                <div class="strategy-tabs vertical">
-                    <button class="tab-btn active" onclick="switchStrategy('yey')">🔥 양음양 기법</button>
-                    <button class="tab-btn" onclick="switchStrategy('v2')">⚡ 양음양 v2전략</button>
-                    <button class="tab-btn" onclick="switchStrategy('podosi')">🍇 포도시 차트</button>
-                    <button class="tab-btn" onclick="switchStrategy('b500m')">💰 500억/150억 기준봉</button>
+                <div class="main-nav">
+                    <button class="nav-btn active" onclick="switchMainTab('scan')" id="nav-scan">📈 실전 스캔</button>
+                    <button class="nav-btn" onclick="switchMainTab('lab')" id="nav-lab">🧪 베타 실험실</button>
                 </div>
             </div>
 
             <div class="content-area">
-                <div class="report-download-card" id="download-card">
-                    <div>
-                        <div class="pdf-title" id="pdf-title-text">김일청의 양음양 기법 PDF 리포트</div>
-                        <div class="pdf-sub" id="pdf-sub-text">고화질 차트 및 AI 종목별 실전 대응 전략 수록</div>
+                <!-- 📈 실전 스캔 영역 -->
+                <div id="scan-content" style="display: block;">
+                    <div class="strategy-tabs">
+                        <button class="tab-btn active" onclick="switchStrategy('yey')">🔥 양음양 기법</button>
+                        <button class="tab-btn" onclick="switchStrategy('v2')">⚡ 양음양 v2전략</button>
+                        <button class="tab-btn" onclick="switchStrategy('podosi')">🍇 포도시 차트</button>
+                        <button class="tab-btn" onclick="switchStrategy('b500m')">💰 500억/150억 기준봉</button>
                     </div>
-                    <a href="김일청의_양음양기법_20260804.pdf" id="pdf-download-link" class="download-btn" target="_blank">
-                        📥 PDF 다운로드
-                    </a>
+
+                    <div class="report-download-card" id="download-card">
+                        <div>
+                            <div class="pdf-title" id="pdf-title-text">김일청의 양음양 기법 PDF 리포트</div>
+                            <div class="pdf-sub" id="pdf-sub-text">고화질 차트 및 AI 종목별 실전 대응 전략 수록</div>
+                        </div>
+                        <a href="김일청의_양음양기법_20260804.pdf" id="pdf-download-link" class="download-btn" target="_blank">
+                            📥 PDF 다운로드
+                        </a>
+                    </div>
+
+                    <div class="stock-grid" id="stock-grid">
+                        <!-- Dynamic Stock Cards -->
+                    </div>
                 </div>
 
-                <div class="stock-grid" id="stock-grid">
-                    <!-- Dynamic Stock Cards -->
+                <!-- 🧪 베타 실험실 영역 -->
+                <div id="lab-content" style="display: none;">
+                    <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
+                        <div>
+                            <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 실험실에 오신 것을 환영합니다</div>
+                            <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">현재 베타 테스트 중인 새로운 투자 기법이나<br>실험적인 AI 분석 기능이 이곳에 추가될 예정입니다.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -511,6 +567,22 @@
             selectedDate = d;
             renderDateChips();
             renderStrategy();
+        }
+
+        function switchMainTab(tab) {
+            document.getElementById('nav-scan').classList.remove('active');
+            document.getElementById('nav-lab').classList.remove('active');
+            
+            document.getElementById('scan-content').style.display = 'none';
+            document.getElementById('lab-content').style.display = 'none';
+
+            if (tab === 'scan') {
+                document.getElementById('nav-scan').classList.add('active');
+                document.getElementById('scan-content').style.display = 'block';
+            } else if (tab === 'lab') {
+                document.getElementById('nav-lab').classList.add('active');
+                document.getElementById('lab-content').style.display = 'block';
+            }
         }
 
         function switchStrategy(strat) {
