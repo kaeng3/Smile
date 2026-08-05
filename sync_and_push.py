@@ -11,9 +11,9 @@ try:
 except Exception:
     pass
 
-SCANNER_DIR   = r"C:\Users\pc\Desktop\Smile_Stock_Auto_Scanner"
 GIT_DIR       = os.path.dirname(os.path.abspath(__file__))
-ARTIFACT_BASE = r"C:\Users\pc\.gemini\antigravity\brain\c6997abd-5ccd-40e2-89a8-b4346393ae34"
+SCANNER_DIR   = os.path.join(GIT_DIR, "cloud_scanner")
+ARTIFACT_BASE = GIT_DIR
 
 now      = datetime.datetime.now()
 date_str = now.strftime('%Y%m%d')
@@ -29,12 +29,13 @@ if os.path.exists(tp):
 # ── 2. 차트 복사 함수 (artifact charts_{date} → git/charts/{date}/) ─
 def copy_chart(code):
     """차트를 artifact 폴더에서 git/charts/{date}/ 로 복사, 상대경로 반환"""
-    src = os.path.join(ARTIFACT_BASE, f"charts_{date_str}", f"{code}.png")
+    src = os.path.join(ARTIFACT_BASE, f"charts/{date_str}", f"{code}.png")
     dst_dir = os.path.join(GIT_DIR, "charts", date_str)
     dst = os.path.join(dst_dir, f"{code}.png")
     if os.path.exists(src):
         os.makedirs(dst_dir, exist_ok=True)
-        shutil.copyfile(src, dst)
+        if src != dst:
+            shutil.copyfile(src, dst)
         return f"charts/{date_str}/{code}.png"
     return ""
 
@@ -163,17 +164,17 @@ def load_b500m():
             if elapsed == 0:
                 day_label = "당일 기준봉"
             elif elapsed == 1:
-                day_label = "기준봉 +1일차"
+                day_label = "기준봉 +1일차 (익일)"
             else:
                 day_label = f"기준봉 +{elapsed}일차"
         except Exception:
-            day_label = "기준봉"
+            day_label = "당일 기준봉"
 
         candle_class = s.get('candle_class', '500억봉')
         pattern_label = f"{candle_class} [{day_label}]"
 
         chart_path = ''
-        src_chart = os.path.join(GIT_DIR, 'stock_scanner_500m', 'charts', f'{code}.png')
+        src_chart = os.path.join(GIT_DIR, 'cloud_scanner', 'charts', f'{code}.png')
         dst_chart_dir = os.path.join(GIT_DIR, 'charts', date_str)
         dst_chart = os.path.join(dst_chart_dir, f'{code}.png')
         if os.path.exists(src_chart):
@@ -228,14 +229,11 @@ with open(history_file, 'w', encoding='utf-8') as f:
 
 print(f"[SYNC] scan_history.json 완전 갱신 완료!")
 
-# ── 7. PDF 복사 (바탕화면 → 깃허브 폴더) ─────────────────────────────
-desktop_pdf = r"C:\Users\pc\Desktop\양음양 리포트"
-for prefix in ['김일청의_양음양기법', '김일청의_양음양기법_v2전략', '김일청의_포도시차트']:
-    src_pdf = os.path.join(desktop_pdf, f"{prefix}_{date_str}.pdf")
-    dst_pdf = os.path.join(GIT_DIR, f"{prefix}_{date_str}.pdf")
-    if os.path.exists(src_pdf) and not os.path.exists(dst_pdf):
-        shutil.copyfile(src_pdf, dst_pdf)
-        print(f"[PDF] {prefix}_{date_str}.pdf 복사 완료")
+# ── 7. PDF 이동 (클라우드 환경 대응) ─────────────────────────────
+for prefix in ['김일청의_양음양기법', '김일청의_양음양기법_v2전략', '김일청의_포도시차트', '이동평균선과_500억봉_및_150억봉_분석보고서']:
+    src_pdf = os.path.join(GIT_DIR, f"{prefix}_{date_str}.pdf")
+    if os.path.exists(src_pdf):
+        print(f"[PDF] {prefix}_{date_str}.pdf 생성 확인 완료")
 
 # ── 8. GitHub 자동 푸시 ──────────────────────────────────────────────
 print("\n[GitHub] 자동 업로드 시작...")

@@ -1,58 +1,38 @@
+# -*- coding: utf-8 -*-
+"""
+run_cloud_scan.py
+GitHub Actions에서 매일 스케줄러로 실행되는 진입점 스크립트.
+"""
 import os
 import sys
-import json
 import datetime
-import requests
+import subprocess
 
 try:
     sys.stdout.reconfigure(encoding='utf-8')
 except Exception:
     pass
 
-def run_cloud_daily_scan():
-    now = datetime.datetime.now()
-    date_str = now.strftime('%Y%m%d')
-    date_display = now.strftime('%Y-%m-%d')
-    print(f"==========================================")
-    print(f" [{date_display}] GitHub Cloud Auto Scan Execution")
-    print(f"==========================================")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CLOUD_SCANNER_DIR = os.path.join(BASE_DIR, 'cloud_scanner')
 
-    # scan_history.json 읽기
-    history_file = 'scan_history.json'
-    history_data = {}
-    if os.path.exists(history_file):
-        try:
-            with open(history_file, 'r', encoding='utf-8') as f:
-                history_data = json.load(f)
-        except Exception:
-            history_data = {}
+now = datetime.datetime.now()
+date_str = now.strftime('%Y%m%d')
 
-    # 세부 테마 DB 읽기
-    theme_db = {}
-    if os.path.exists('stock_detail_themes.json'):
-        try:
-            with open('stock_detail_themes.json', 'r', encoding='utf-8') as f:
-                theme_db = json.load(f)
-        except Exception:
-            pass
+print(f"==========================================")
+print(f" [{date_str}] GitHub Actions 클라우드 스캔 시작")
+print(f"==========================================")
 
-    # 만약 오늘 날짜 스캔 결과가 이미 히스토리에 있다면 보존하고 정렬만 수행
-    if date_str not in history_data:
-        # 깃허브 클라우드 실행 시 최신 시세 수신 기반으로 기존 히스토리 최신 유지
-        latest_date = sorted(history_data.keys(), reverse=True)[0] if history_data else date_str
-        history_data[date_str] = history_data.get(latest_date, {
-            'yey': [], 'v2': [], 'podosi': [], 'b500m': []
-        })
+os.environ['PYTHONPATH'] = CLOUD_SCANNER_DIR
+sys.path.insert(0, CLOUD_SCANNER_DIR)
 
-    # 최근 5일치 유지
-    sorted_dates = sorted(history_data.keys(), reverse=True)
-    keep_dates = sorted_dates[:5]
-    purged_history = {d: history_data[d] for d in keep_dates}
+print("\n[STEP 1/3] 양음양 / v2 / 포도시 스캔 진행 중...")
+subprocess.run([sys.executable, "-u", "-X", "utf8", "run_full_rescan.py"], cwd=CLOUD_SCANNER_DIR, check=True)
 
-    with open(history_file, 'w', encoding='utf-8') as f:
-        json.dump(purged_history, f, ensure_ascii=False, indent=2)
+print("\n[STEP 2/3] 500억봉 / 150억봉 스캔 진행 중...")
+subprocess.run([sys.executable, "-u", "-X", "utf8", "run_scan_and_report.py"], cwd=CLOUD_SCANNER_DIR, check=True)
 
-    print(f"[Cloud Auto Scan] scan_history.json updated successfully for {date_str}.")
+print("\n[STEP 3/3] scan_history.json 갱신 및 파일 정리 진행 중...")
+subprocess.run([sys.executable, "-u", "-X", "utf8", "sync_and_push.py"], cwd=BASE_DIR, check=True)
 
-if __name__ == '__main__':
-    run_cloud_daily_scan()
+print("\n모든 스캔이 성공적으로 완료되었습니다!")
