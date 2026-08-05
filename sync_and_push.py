@@ -140,7 +140,7 @@ print(f"  포도시: {len(pod_list)}개, 차트:{sum(1 for s in pod_list if s['c
 
 # ── 5. 500억/150억 스캐너 데이터 + 날짜 경과 표시 ─────────────────────
 def load_b500m():
-    b500m_json = os.path.join(GIT_DIR, 'stock_scanner_500m', f'scan_results_integrated_{date_str}.json')
+    b500m_json = os.path.join(GIT_DIR, 'cloud_scanner', f'scan_results_integrated_{date_str}.json')
     if not os.path.exists(b500m_json):
         return []
     with open(b500m_json, 'r', encoding='utf-8') as f:
