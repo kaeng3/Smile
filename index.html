@@ -112,26 +112,26 @@
 
         .strategy-tabs {
             display: flex;
-            gap: 6px;
+            gap: 8px;
             margin-bottom: 20px;
-            overflow-x: auto;
-            padding-bottom: 4px;
+        }
+
+        .strategy-tabs.vertical {
+            flex-direction: column;
         }
 
         .tab-btn {
-            flex: 1;
-            min-width: 0;
-            padding: 10px 6px;
+            padding: 12px 14px;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             color: var(--text-sub);
             font-weight: 600;
-            font-size: 0.82rem;
+            font-size: 0.9rem;
             letter-spacing: -0.4px;
             cursor: pointer;
             transition: all 0.2s ease;
-            text-align: center;
+            text-align: left;
             white-space: nowrap;
         }
 
@@ -140,6 +140,23 @@
             color: #ffffff;
             border-color: transparent;
             box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .main-layout {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            width: 25%;
+            flex-shrink: 0;
+        }
+
+        .content-area {
+            width: 75%;
+            flex-grow: 1;
+            min-width: 0; /* allows grid to shrink */
         }
 
 
@@ -390,9 +407,24 @@
 
         @media (max-width: 600px) {
             h1 { font-size: 1.4rem; }
-            .strategy-tabs { gap: 4px; }
+            .main-layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+            }
+            .content-area {
+                width: 100%;
+            }
+            .strategy-tabs.vertical {
+                flex-direction: row;
+                overflow-x: auto;
+                padding-bottom: 4px;
+            }
             .tab-btn {
-                padding: 9px 2px;
+                text-align: center;
+                flex: 1;
+                padding: 10px 6px;
                 font-size: 0.75rem;
                 letter-spacing: -0.6px;
                 border-radius: 10px;
@@ -424,25 +456,31 @@
             </div>
         </div>
 
-        <div class="strategy-tabs">
-            <button class="tab-btn active" onclick="switchStrategy('yey')">🔥 양음양 기법</button>
-            <button class="tab-btn" onclick="switchStrategy('v2')">⚡ 양음양 v2전략</button>
-            <button class="tab-btn" onclick="switchStrategy('podosi')">🍇 포도시 차트</button>
-            <button class="tab-btn" onclick="switchStrategy('b500m')">💰 500억/150억 기준봉</button>
-        </div>
-
-        <div class="report-download-card" id="download-card">
-            <div>
-                <div class="pdf-title" id="pdf-title-text">김일청의 양음양 기법 PDF 리포트</div>
-                <div class="pdf-sub" id="pdf-sub-text">고화질 차트 및 AI 종목별 실전 대응 전략 수록</div>
+        <div class="main-layout">
+            <div class="sidebar">
+                <div class="strategy-tabs vertical">
+                    <button class="tab-btn active" onclick="switchStrategy('yey')">🔥 양음양 기법</button>
+                    <button class="tab-btn" onclick="switchStrategy('v2')">⚡ 양음양 v2전략</button>
+                    <button class="tab-btn" onclick="switchStrategy('podosi')">🍇 포도시 차트</button>
+                    <button class="tab-btn" onclick="switchStrategy('b500m')">💰 500억/150억 기준봉</button>
+                </div>
             </div>
-            <a href="김일청의_양음양기법_20260804.pdf" id="pdf-download-link" class="download-btn" target="_blank">
-                📥 PDF 다운로드
-            </a>
-        </div>
 
-        <div class="stock-grid" id="stock-grid">
-            <!-- Dynamic Stock Cards -->
+            <div class="content-area">
+                <div class="report-download-card" id="download-card">
+                    <div>
+                        <div class="pdf-title" id="pdf-title-text">김일청의 양음양 기법 PDF 리포트</div>
+                        <div class="pdf-sub" id="pdf-sub-text">고화질 차트 및 AI 종목별 실전 대응 전략 수록</div>
+                    </div>
+                    <a href="김일청의_양음양기법_20260804.pdf" id="pdf-download-link" class="download-btn" target="_blank">
+                        📥 PDF 다운로드
+                    </a>
+                </div>
+
+                <div class="stock-grid" id="stock-grid">
+                    <!-- Dynamic Stock Cards -->
+                </div>
+            </div>
         </div>
 
         <footer>
