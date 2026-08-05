@@ -229,11 +229,41 @@ with open(history_file, 'w', encoding='utf-8') as f:
 
 print(f"[SYNC] scan_history.json 완전 갱신 완료!")
 
-# ── 7. PDF 이동 (클라우드 환경 대응) ─────────────────────────────
+# ── 7. PDF 이동 및 오래된 데이터 삭제 (클라우드 환경 대응) ─────────────────────────────
 for prefix in ['김일청의_양음양기법', '김일청의_양음양기법_v2전략', '김일청의_포도시차트', '이동평균선과_500억봉_및_150억봉_분석보고서']:
     src_pdf = os.path.join(GIT_DIR, f"{prefix}_{date_str}.pdf")
     if os.path.exists(src_pdf):
         print(f"[PDF] {prefix}_{date_str}.pdf 생성 확인 완료")
+
+valid_dates = set(purged.keys())
+
+# 5일 지난 차트 폴더 지우기
+charts_dir = os.path.join(GIT_DIR, 'charts')
+if os.path.exists(charts_dir):
+    for dname in os.listdir(charts_dir):
+        dp = os.path.join(charts_dir, dname)
+        if os.path.isdir(dp) and dname.isdigit() and len(dname) == 8:
+            if dname not in valid_dates:
+                try:
+                    import shutil
+                    shutil.rmtree(dp)
+                    print(f"[CLEANUP] 오래된 차트 폴더 삭제: {dname}")
+                except Exception as e:
+                    print(f"[CLEANUP ERROR] {dname} 폴더 삭제 실패: {e}")
+
+# 5일 지난 PDF 파일 지우기
+for fname in os.listdir(GIT_DIR):
+    if fname.endswith('.pdf'):
+        # Extract date from filename (e.g., 김일청의_양음양기법_20260805.pdf)
+        parts = fname.replace('.pdf', '').split('_')
+        if parts and parts[-1].isdigit() and len(parts[-1]) == 8:
+            file_date = parts[-1]
+            if file_date not in valid_dates:
+                try:
+                    os.remove(os.path.join(GIT_DIR, fname))
+                    print(f"[CLEANUP] 오래된 PDF 삭제: {fname}")
+                except Exception as e:
+                    pass
 
 # ── 8. GitHub 자동 푸시 ──────────────────────────────────────────────
 print("\n[GitHub] 자동 업로드 시작...")
