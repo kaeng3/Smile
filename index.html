@@ -7,14 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: rgba(22, 31, 49, 0.7);
-            --border-color: rgba(255, 255, 255, 0.08);
+            --bg-color: #1a1614;
+            --card-bg: rgba(44, 30, 22, 0.7);
+            --border-color: rgba(212, 163, 115, 0.15);
             --accent-red: #ff4d4d;
-            --accent-blue: #3b82f6;
-            --accent-purple: #8b5cf6;
-            --text-main: #f3f4f6;
-            --text-sub: #9ca3af;
+            --accent-blue: #d4a373;
+            --accent-purple: #c89f70;
+            --text-main: #fdf8f5;
+            --text-sub: #d0bba9;
         }
 
         * {
@@ -28,8 +28,8 @@
         body {
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(212, 163, 115, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(200, 159, 112, 0.15) 0px, transparent 50%);
             background-attachment: fixed;
             color: var(--text-main);
             min-height: 100vh;
@@ -51,19 +51,19 @@
         .badge {
             display: inline-block;
             padding: 6px 14px;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
-            border: 1px solid rgba(139, 92, 246, 0.4);
+            background: linear-gradient(135deg, rgba(212, 163, 115, 0.2), rgba(200, 159, 112, 0.2));
+            border: 1px solid rgba(212, 163, 115, 0.4);
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
-            color: #a78bfa;
+            color: #d4a373;
             margin-bottom: 12px;
         }
 
         h1 {
             font-size: 1.8rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #e6ccb2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 6px;
@@ -106,9 +106,9 @@
         }
 
         .date-chip.active {
-            background: rgba(139, 92, 246, 0.25);
-            color: #c7d2fe;
-            border-color: rgba(139, 92, 246, 0.6);
+            background: rgba(212, 163, 115, 0.25);
+            color: #fdf8f5;
+            border-color: rgba(212, 163, 115, 0.6);
         }
 
         .main-nav {
@@ -132,10 +132,10 @@
         }
 
         .nav-btn.active {
-            background: rgba(139, 92, 246, 0.2);
-            color: #c7d2fe;
-            border-color: rgba(139, 92, 246, 0.6);
-            border-left: 4px solid #8b5cf6;
+            background: rgba(200, 159, 112, 0.2);
+            color: #fdf8f5;
+            border-color: rgba(212, 163, 115, 0.6);
+            border-left: 4px solid #d4a373;
         }
 
         .strategy-tabs {
@@ -164,10 +164,10 @@
         }
 
         .tab-btn.active {
-            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            background: linear-gradient(135deg, #a47148 0%, #c89f70 100%);
             color: #ffffff;
             border-color: transparent;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 4px 15px rgba(200, 159, 112, 0.4);
         }
 
         .main-layout {
@@ -189,8 +189,8 @@
 
 
         .report-download-card {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8));
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            background: linear-gradient(135deg, rgba(60, 42, 33, 0.8), rgba(44, 30, 22, 0.8));
+            border: 1px solid rgba(212, 163, 115, 0.3);
             border-radius: 16px;
             padding: 18px;
             display: flex;
@@ -248,8 +248,8 @@
 
         .stock-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(139, 92, 246, 0.6);
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.2);
+            border-color: rgba(212, 163, 115, 0.6);
+            box-shadow: 0 8px 20px rgba(200, 159, 112, 0.2);
         }
 
         .stock-header {
@@ -288,7 +288,7 @@
             border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 700;
-            color: #c7d2fe;
+            color: #fdf8f5;
             margin-bottom: 8px;
         }
 
@@ -323,7 +323,7 @@
 
         .modal-content {
             background: #111827;
-            border: 1px solid rgba(139, 92, 246, 0.4);
+            border: 1px solid rgba(212, 163, 115, 0.4);
             border-radius: 20px;
             width: 100%;
             max-width: 600px;
@@ -386,7 +386,7 @@
             position: relative;
             padding-left: 20px;
             margin-bottom: 20px;
-            border-left: 2px solid rgba(139, 92, 246, 0.4);
+            border-left: 2px solid rgba(212, 163, 115, 0.4);
             word-break: break-all;
         }
 
@@ -398,14 +398,14 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: #8b5cf6;
-            box-shadow: 0 0 10px #8b5cf6;
+            background: #d4a373;
+            box-shadow: 0 0 10px #d4a373;
         }
 
         .timeline-date {
             font-size: 0.8rem;
             font-weight: 700;
-            color: #a78bfa;
+            color: #d4a373;
             margin-bottom: 4px;
         }
 
@@ -456,8 +456,8 @@
                 border-left: 1px solid var(--border-color);
             }
             .nav-btn.active {
-                border-left: 1px solid rgba(139, 92, 246, 0.6);
-                border-bottom: 4px solid #8b5cf6;
+                border-left: 1px solid rgba(212, 163, 115, 0.6);
+                border-bottom: 4px solid #d4a373;
             }
             .strategy-tabs { gap: 4px; }
             .tab-btn {
@@ -492,7 +492,9 @@
             <div class="sidebar">
                 <div class="main-nav">
                     <button class="nav-btn active" onclick="switchMainTab('scan')" id="nav-scan">📈 실전 스캔</button>
-                    <button class="nav-btn" onclick="switchMainTab('lab')" id="nav-lab">🧪 베타 실험실</button>
+                    <button class="nav-btn" onclick="switchMainTab('lab')" id="nav-lab">🧪 베타 실험실 1</button>
+                    <button class="nav-btn" onclick="switchMainTab('lab2')" id="nav-lab2">🧪 베타 실험실 2</button>
+                    <button class="nav-btn" onclick="switchMainTab('lab3')" id="nav-lab3">🧪 베타 실험실 3</button>
                 </div>
             </div>
 
@@ -532,7 +534,27 @@
                 <div id="lab-content" style="display: none;">
                     <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
                         <div>
-                            <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 실험실에 오신 것을 환영합니다</div>
+                            <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 실험실 1에 오신 것을 환영합니다</div>
+                            <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">현재 베타 테스트 중인 새로운 투자 기법이나<br>실험적인 AI 분석 기능이 이곳에 추가될 예정입니다.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🧪 베타 실험실 2 영역 -->
+                <div id="lab-content2" style="display: none;">
+                    <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
+                        <div>
+                            <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 실험실 2에 오신 것을 환영합니다</div>
+                            <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">현재 베타 테스트 중인 새로운 투자 기법이나<br>실험적인 AI 분석 기능이 이곳에 추가될 예정입니다.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🧪 베타 실험실 3 영역 -->
+                <div id="lab-content3" style="display: none;">
+                    <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
+                        <div>
+                            <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 실험실 3에 오신 것을 환영합니다</div>
                             <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">현재 베타 테스트 중인 새로운 투자 기법이나<br>실험적인 AI 분석 기능이 이곳에 추가될 예정입니다.</div>
                         </div>
                     </div>
@@ -573,9 +595,13 @@
         function switchMainTab(tab) {
             document.getElementById('nav-scan').classList.remove('active');
             document.getElementById('nav-lab').classList.remove('active');
+            document.getElementById('nav-lab2').classList.remove('active');
+            document.getElementById('nav-lab3').classList.remove('active');
             
             document.getElementById('scan-content').style.display = 'none';
             document.getElementById('lab-content').style.display = 'none';
+            document.getElementById('lab-content2').style.display = 'none';
+            document.getElementById('lab-content3').style.display = 'none';
 
             if (tab === 'scan') {
                 document.getElementById('nav-scan').classList.add('active');
@@ -583,6 +609,12 @@
             } else if (tab === 'lab') {
                 document.getElementById('nav-lab').classList.add('active');
                 document.getElementById('lab-content').style.display = 'block';
+            } else if (tab === 'lab2') {
+                document.getElementById('nav-lab2').classList.add('active');
+                document.getElementById('lab-content2').style.display = 'block';
+            } else if (tab === 'lab3') {
+                document.getElementById('nav-lab3').classList.add('active');
+                document.getElementById('lab-content3').style.display = 'block';
             }
         }
 
