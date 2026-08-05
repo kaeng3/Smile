@@ -53,7 +53,7 @@ def load_scan_with_comments(json_filename, limit=12):
     # AI commentator import (Scanner 디렉토리에 있음)
     sys.path.insert(0, SCANNER_DIR)
     try:
-        from ai_commentator import generate_stock_comment
+        from ai_commentator import get_ai_commentary
         has_commentator = True
     except Exception:
         has_commentator = False
@@ -70,9 +70,18 @@ def load_scan_with_comments(json_filename, limit=12):
         comment = s.get('comment', '')
         if not comment and has_commentator:
             try:
-                comment = generate_stock_comment(s, now)
+                comment = get_ai_commentary(
+                    code=code,
+                    name=s.get('name', ''),
+                    pattern=s.get('pattern', s.get('match_type', '')),
+                    close=s.get('close', 0),
+                    rate=s.get('rate', 0),
+                    match_type=s.get('match_type', ''),
+                    target_date=now
+                )
             except Exception:
                 comment = s.get('pattern', '')
+
 
         # 차트 복사
         chart_path = copy_chart(code)
