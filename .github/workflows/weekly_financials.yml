@@ -5,6 +5,11 @@ on:
     # 매주 일요일 10:00 KST = UTC 일요일 01:00 (장 안 여는 날, 여유롭게)
     - cron: '0 1 * * 0'
   workflow_dispatch:
+    inputs:
+      debug:
+        description: '디버그 모드 (샘플 3종목 원본 응답만 저장)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -27,6 +32,8 @@ jobs:
           pip install requests beautifulsoup4
 
       - name: Fetch Naver Finance Financials
+        env:
+          NAVER_DEBUG: ${{ github.event.inputs.debug == 'true' && '1' || '0' }}
         run: |
           python fetch_naver_financials.py
 
@@ -34,5 +41,5 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add stock_financials.json
+          git add stock_financials.json naver_debug.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Weekly Financials Update: $(date +'%Y-%m-%d')" && git push)

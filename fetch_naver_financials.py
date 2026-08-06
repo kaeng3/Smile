@@ -159,6 +159,27 @@ def main():
         print("[NAVER] 초기 토큰 발급 실패:", e)
         return
 
+    # ── DEBUG: 샘플 3종목 원본 응답을 파일로 저장 (파싱 문제 진단용) ──
+    if os.environ.get('NAVER_DEBUG') == '1':
+        debug_info = {}
+        for sample_code in codes[:3]:
+            try:
+                enc, id_ = get_token()
+                url = "https://navercomp.wisereport.co.kr/v2/company/ajax/cF1001.aspx"
+                params = {'cmp_cd': sample_code, 'fin_typ': 0, 'freq_typ': 'Y', 'encparam': enc, 'id': id_}
+                r = requests.get(url, params=params, headers=HEADERS, timeout=12)
+                debug_info[sample_code] = {
+                    'status_code': r.status_code,
+                    'url': r.url,
+                    'text_head': r.text[:3000],
+                }
+            except Exception as e:
+                debug_info[sample_code] = {'error': str(e)}
+        with open(os.path.join(GIT_DIR, 'naver_debug.json'), 'w', encoding='utf-8') as f:
+            json.dump(debug_info, f, ensure_ascii=False, indent=2)
+        print("[NAVER] 디버그 덤프 저장 완료: naver_debug.json")
+        return
+
     financials = {}
     if os.path.exists(OUTPUT_PATH):
         try:
