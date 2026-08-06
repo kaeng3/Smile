@@ -32,30 +32,26 @@ HEADERS = {
     'Referer': 'https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx',
 }
 
-_token_lock = threading.Lock()
-_token_cache = {'encparam': None, 'id': None, 'fetched_at': 0}
+_session = requests.Session()
+_session.headers.update(HEADERS)
 
 
-def get_token(sample_code='005930'):
-    """페이지 진입 시 발급되는 encparam/id 토큰. 세션성이라 주기적으로만 새로 받는다."""
-    with _token_lock:
-        now = time.time()
-        if _token_cache['encparam'] and (now - _token_cache['fetched_at'] < 300):
-            return _token_cache['encparam'], _token_cache['id']
+def get_token(code):
+    """해당 종목 코드로 접속했을 때 발급되는 encparam/id 토큰 + 세션 쿠키를 가져온다.
+    encparam은 종목(cmp_cd)에 종속된 값으로 보여서, 다른 종목 조회 시 재사용하면
+    안 되고 종목마다 새로 받아야 한다(재사용 시 더미/에러 데이터가 내려옴)."""
+    url = f"https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd={code}"
+    r = _session.get(url, timeout=10)
+    text = r.text
 
-        url = f"https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd={sample_code}"
-        r = requests.get(url, headers=HEADERS, timeout=10)
-        text = r.text
+    m_enc = re.search(r"encparam\s*:\s*'([^']+)'", text)
+    m_id = re.search(r"\bid\s*:\s*'([^']+)'", text)
+    if not m_enc:
+        raise RuntimeError("encparam 파싱 실패 (페이지 구조 변경 가능성)")
 
-        m_enc = re.search(r"encparam\s*:\s*'([^']+)'", text)
-        m_id = re.search(r"\bid\s*:\s*'([^']+)'", text)
-        if not m_enc:
-            raise RuntimeError("encparam 파싱 실패 (페이지 구조 변경 가능성)")
-
-        enc = m_enc.group(1)
-        id_ = m_id.group(1) if m_id else ''
-        _token_cache.update({'encparam': enc, 'id': id_, 'fetched_at': now})
-        return enc, id_
+    enc = m_enc.group(1)
+    id_ = m_id.group(1) if m_id else ''
+    return enc, id_
 
 
 ROW_KEYS = {
@@ -84,7 +80,7 @@ def parse_amount(text):
 
 def fetch_one(code):
     try:
-        enc, id_ = get_token()
+        enc, id_ = get_token(code)
         url = "https://navercomp.wisereport.co.kr/v2/company/ajax/cF1001.aspx"
         params = {
             'cmp_cd': code,
@@ -93,7 +89,7 @@ def fetch_one(code):
             'encparam': enc,
             'id': id_,
         }
-        r = requests.get(url, params=params, headers=HEADERS, timeout=12)
+        r = _session.get(url, params=params, timeout=12)
         soup = BeautifulSoup(r.text, 'html.parser')
         table = soup.find('table')
         if not table:
@@ -154,7 +150,7 @@ def main():
     print(f"[NAVER] 재무제표 조회 대상: {len(codes)}종목")
 
     try:
-        get_token()
+        get_token('005930')
     except Exception as e:
         print("[NAVER] 초기 토큰 발급 실패:", e)
         return
@@ -162,23 +158,12 @@ def main():
     # ── DEBUG: 샘플 3종목 원본 응답을 파일로 저장 (파싱 문제 진단용) ──
     if os.environ.get('NAVER_DEBUG') == '1':
         debug_info = {}
-        try:
-            url0 = "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=005930"
-            r0 = requests.get(url0, headers=HEADERS, timeout=10)
-            idx = r0.text.find('encparam')
-            debug_info['_initial_page'] = {
-                'status_code': r0.status_code,
-                'around_encparam': r0.text[max(0, idx - 100): idx + 300] if idx >= 0 else '(encparam 문자열 자체가 없음)',
-            }
-        except Exception as e:
-            debug_info['_initial_page'] = {'error': str(e)}
-
         for sample_code in codes[:3]:
             try:
-                enc, id_ = get_token()
+                enc, id_ = get_token(sample_code)
                 url = "https://navercomp.wisereport.co.kr/v2/company/ajax/cF1001.aspx"
                 params = {'cmp_cd': sample_code, 'fin_typ': 0, 'freq_typ': 'Y', 'encparam': enc, 'id': id_}
-                r = requests.get(url, params=params, headers=HEADERS, timeout=12)
+                r = _session.get(url, params=params, timeout=12)
                 debug_info[sample_code] = {
                     'status_code': r.status_code,
                     'url': r.url,
