@@ -39,6 +39,26 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests pandas finance-datareader google-generativeai matplotlib reportlab
 
+      - name: Compute cache date key
+        run: echo "TODAY=$(date -u +%Y%m%d)" >> "$GITHUB_ENV"
+
+      - name: Restore stock OHLCV cache DB
+        uses: actions/cache@v4
+        with:
+          path: cloud_scanner/stock_ohlcv_cache.db
+          key: stock-db-${{ env.TODAY }}
+          restore-keys: |
+            stock-db-
+
+      - name: Seed cache DB if missing (first run)
+        run: |
+          if [ ! -f cloud_scanner/stock_ohlcv_cache.db ]; then
+            echo "캐시가 없어 초기 시드 DB(db-seed 브랜치)를 내려받습니다."
+            curl -fL -o cloud_scanner/stock_ohlcv_cache.db "https://raw.githubusercontent.com/kaeng3/Smile/db-seed/stock_ohlcv_cache.db"
+          else
+            echo "캐시된 DB 사용 (크기: $(du -h cloud_scanner/stock_ohlcv_cache.db | cut -f1))"
+          fi
+
       - name: Run Cloud Stock Scan
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
