@@ -26,16 +26,22 @@ def build_pdf_report(target_stocks, charts_dir, output_pdf_path, report_title="�
     
     font_path = "NanumGothic.ttf"
     font_bold_path = "NanumGothicBold.ttf"
-    
+    linux_font = "/usr/share/fonts/truetype/nanum/NanumGothic.ttf"
+    linux_font_bold = "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf"
+
     if os.path.exists(font_path):
         pdfmetrics.registerFont(TTFont('Malgun', font_path))
+        pdfmetrics.registerFont(TTFont('MalgunBold', font_bold_path if os.path.exists(font_bold_path) else font_path))
+    elif os.path.exists(linux_font):
+        # GitHub Actions 등 Linux 환경: apt-get install fonts-nanum 으로 설치된 시스템 폰트 사용
+        pdfmetrics.registerFont(TTFont('Malgun', linux_font))
+        pdfmetrics.registerFont(TTFont('MalgunBold', linux_font_bold if os.path.exists(linux_font_bold) else linux_font))
     else:
-        print("맑은 고딕 폰트가 시스템에 존재하지 않아 기본 폰트를 시도합니다.")
-        
-    if os.path.exists(font_bold_path):
-        pdfmetrics.registerFont(TTFont('MalgunBold', font_bold_path))
-    else:
-        pdfmetrics.registerFont(TTFont('MalgunBold', font_path))
+        print("경고: 나눔고딕 폰트를 찾지 못했습니다. 한글이 깨질 수 있습니다.")
+        raise FileNotFoundError(
+            "NanumGothic 폰트를 찾을 수 없습니다. "
+            "GitHub Actions에서는 워크플로우에 'sudo apt-get install -y fonts-nanum' 단계가 있는지 확인하세요."
+        )
 
     doc = SimpleDocTemplate(
         output_pdf_path,
