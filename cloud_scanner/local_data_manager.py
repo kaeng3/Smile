@@ -3,6 +3,7 @@ import os
 import sys
 import datetime
 import sqlite3
+import concurrent.futures
 import pandas as pd
 import FinanceDataReader as fdr
 
@@ -39,6 +40,91 @@ def init_db():
     conn.commit()
     conn.close()
 
+def backfill_missing_days(target_date, max_gap_days=10):
+    """
+    DB의 마지막 저장일과 target_date 사이에 빠진 평일(거래일)이 있으면
+    종목별로 개별 히스토리 조회를 병렬로 실행해서 채워 넣는다.
+    (이걸 안 하면 등락률이 '어제-오늘'이 아니라 'N일전-오늘'로 계산되어
+    실제보다 부풀려진 값이 나옴)
+    """
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT MAX(date) FROM daily_prices;")
+    row = cursor.fetchone()
+    conn.close()
+    last_date_str = row[0] if row else None
+
+    if not last_date_str:
+        return  # DB가 완전히 비어있으면(최초 시드조차 없음) sync_stock_data가 오늘치만 채움
+
+    last_date = datetime.datetime.strptime(last_date_str, '%Y-%m-%d')
+
+    missing_dates = []
+    d = last_date + datetime.timedelta(days=1)
+    while d.date() < target_date.date():
+        if d.weekday() < 5:  # 평일만 (공휴일까지는 걸러내지 못하지만 아래서 빈 결과는 자연스레 무시됨)
+            missing_dates.append(d)
+        d += datetime.timedelta(days=1)
+
+    if not missing_dates:
+        return
+
+    if len(missing_dates) > max_gap_days:
+        print(f"[DB 보정] 결측 거래일이 {len(missing_dates)}일로 너무 많아 자동 보정을 건너뜁니다. (수동 확인 필요)")
+        return
+
+    date_strs = [d.strftime('%Y-%m-%d') for d in missing_dates]
+    print(f"[DB 보정] 결측 거래일 발견: {date_strs} → 종목별 히스토리로 채우는 중...")
+
+    try:
+        df_krx = fdr.StockListing('KRX')
+        codes = df_krx[df_krx['Market'].isin(['KOSPI', 'KOSDAQ', 'KOSDAQ GLOBAL'])]['Code'].astype(str).tolist()
+    except Exception as e:
+        print("[DB 보정] 종목 리스트 조회 실패, 보정 중단:", e)
+        return
+
+    start_str = missing_dates[0].strftime('%Y-%m-%d')
+    end_str = missing_dates[-1].strftime('%Y-%m-%d')
+
+    def fetch_one(code):
+        recs = []
+        try:
+            df = fdr.DataReader(code, start_str, end_str)
+            for idx, r in df.iterrows():
+                close = float(r.get('Close', 0) or 0)
+                if close > 0:
+                    recs.append((
+                        code, idx.strftime('%Y-%m-%d'),
+                        float(r.get('Open', close) or close),
+                        float(r.get('High', close) or close),
+                        float(r.get('Low', close) or close),
+                        close,
+                        float(r.get('Volume', 0) or 0),
+                    ))
+        except Exception:
+            pass
+        return recs
+
+    all_records = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=20) as ex:
+        for recs in ex.map(fetch_one, codes):
+            all_records.extend(recs)
+
+    if all_records:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("BEGIN TRANSACTION;")
+        cursor.executemany("""
+            INSERT OR REPLACE INTO daily_prices (code, date, open, high, low, close, volume)
+            VALUES (?, ?, ?, ?, ?, ?, ?);
+        """, all_records)
+        conn.commit()
+        conn.close()
+        print(f"[DB 보정] {len(all_records)}건 보정 완료 ({len(codes)}개 종목 x {len(missing_dates)}일)")
+    else:
+        print("[DB 보정] 보정할 데이터를 찾지 못했습니다 (공휴일이었을 수 있음).")
+
+
 def prune_old_data(target_date, days_to_keep=430):
     """
     오래된 시세 데이터 정리:
@@ -68,6 +154,7 @@ def sync_stock_data(target_date=None):
     target_str = target_date.strftime('%Y-%m-%d')
 
     prune_old_data(target_date)
+    backfill_missing_days(target_date)
 
     conn = get_db_connection()
     cursor = conn.cursor()
