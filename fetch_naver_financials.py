@@ -164,10 +164,14 @@ def main():
                 url = "https://navercomp.wisereport.co.kr/v2/company/ajax/cF1001.aspx"
                 params = {'cmp_cd': sample_code, 'fin_typ': 0, 'freq_typ': 'Y', 'encparam': enc, 'id': id_}
                 r = _session.get(url, params=params, timeout=12)
+                soup_dbg = BeautifulSoup(r.text, 'html.parser')
+                tables = soup_dbg.find_all('table')
                 debug_info[sample_code] = {
                     'status_code': r.status_code,
                     'url': r.url,
-                    'text_head': r.text[:3000],
+                    'total_len': len(r.text),
+                    'num_tables': len(tables),
+                    'text_full': r.text,
                 }
             except Exception as e:
                 debug_info[sample_code] = {'error': str(e)}
