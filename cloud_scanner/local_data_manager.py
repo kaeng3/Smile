@@ -39,6 +39,24 @@ def init_db():
     conn.commit()
     conn.close()
 
+def prune_old_data(target_date, days_to_keep=430):
+    """
+    오래된 시세 데이터 정리:
+    load_cached_stock_dfs()가 실제로 읽는 구간은 target_date 기준 최근 400일뿐이라
+    그보다 오래된 행은 어떤 스캔 로직에서도 쓰이지 않음. 여유 30일을 더해
+    430일 이전 데이터는 삭제해서 DB 용량이 무한정 커지는 것을 방지한다.
+    (양음양/v2/포도시가 요구하는 최대 500거래일치 ≈ 달력일 400일보다 넉넉함)
+    """
+    cutoff_str = (target_date - datetime.timedelta(days=days_to_keep)).strftime('%Y-%m-%d')
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM daily_prices WHERE date < ?;", (cutoff_str,))
+    deleted = cursor.rowcount
+    conn.commit()
+    conn.close()
+    if deleted:
+        print(f"[DB 정리] {cutoff_str} 이전 데이터 {deleted}건 삭제 완료 (용량 관리)")
+
 def sync_stock_data(target_date=None):
     """
     초고속 로컬 캐시 DB 증분 동기화엔진:
@@ -48,6 +66,8 @@ def sync_stock_data(target_date=None):
     if target_date is None:
         target_date = datetime.datetime.now()
     target_str = target_date.strftime('%Y-%m-%d')
+
+    prune_old_data(target_date)
 
     conn = get_db_connection()
     cursor = conn.cursor()
