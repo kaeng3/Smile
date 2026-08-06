@@ -2,8 +2,8 @@ name: Daily Cloud Stock Scan & Deploy
 
 on:
   schedule:
-    # 한국시간(KST) 매일 평일 15:40 = UTC 06:40 (월~금)
-    - cron: '40 6 * * 1-5'
+    # 한국시간(KST) 매일 평일 15:45 = UTC 06:45 (월~금)
+    - cron: '45 6 * * 1-5'
   workflow_dispatch:
 
 permissions:
