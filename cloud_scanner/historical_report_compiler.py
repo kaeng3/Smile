@@ -59,9 +59,9 @@ else:
 
 # 2. 테마 및 종목명 JSON DB 로드 (절대경로/상대경로 유연 감지)
 base_dir = os.path.dirname(os.path.abspath(__file__))
-themes_json_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'alphasquare_themes.json')
+themes_json_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'stock_detail_themes.json')
 if not os.path.exists(themes_json_path):
-    themes_json_path = os.path.join(base_dir, "alphasquare_themes.json")
+    themes_json_path = os.path.join(base_dir, "stock_detail_themes.json")
 
 names_json_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'stock_names.json')
 if not os.path.exists(names_json_path):
@@ -73,7 +73,25 @@ names_db = {}
 if os.path.exists(themes_json_path):
     try:
         with open(themes_json_path, 'r', encoding='utf-8') as f:
-            themes_db = json.load(f).get('themes', {})
+            raw_themes = json.load(f)
+        # stock_detail_themes.json 구조: {code: {"category": str, "subthemes": [str, ...]}}
+        for code, info in raw_themes.items():
+            if isinstance(info, dict):
+                tags = []
+                category = info.get('category')
+                if category:
+                    tags.append(category)
+                tags.extend(info.get('subthemes', []) or [])
+                # 중복 제거(순서 유지)
+                seen = set()
+                deduped = []
+                for t in tags:
+                    if t not in seen:
+                        seen.add(t)
+                        deduped.append(t)
+                themes_db[code] = deduped
+            elif isinstance(info, list):
+                themes_db[code] = info
     except Exception as e:
         print("테마 DB 로딩 실패:", e)
 
