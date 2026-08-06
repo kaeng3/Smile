@@ -1,4 +1,4 @@
-name: Weekly Financials Fetch (DART)
+name: Weekly Financials Fetch (Naver)
 
 on:
   schedule:
@@ -24,17 +24,15 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests
+          pip install requests beautifulsoup4
 
-      - name: Fetch DART Financials
-        env:
-          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+      - name: Fetch Naver Finance Financials
         run: |
-          python fetch_dart_financials.py
+          python fetch_naver_financials.py
 
       - name: Commit and Push Changes if Any
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add stock_financials.json dart_corp_code_map.json
+          git add stock_financials.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Weekly Financials Update: $(date +'%Y-%m-%d')" && git push)
