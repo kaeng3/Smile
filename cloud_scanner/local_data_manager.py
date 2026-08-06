@@ -47,24 +47,27 @@ def backfill_missing_days(target_date, max_gap_days=10):
     (이걸 안 하면 등락률이 '어제-오늘'이 아니라 'N일전-오늘'로 계산되어
     실제보다 부풀려진 값이 나옴)
     """
+def backfill_missing_days(target_date, max_gap_days=10, lookback_days=20):
+    """
+    최근 lookback_days 범위의 평일들을 하나씩 체크해서, 종목 수 기준
+    (1000개 미만) '사실상 비어있는' 날짜가 있으면 종목별 히스토리로 채운다.
+    (기존에는 MAX(date) 기준으로만 봐서 중간에 낀 결측일을 못 찾는 버그가 있었음:
+     예) ...8/4, [8/5 결측], 8/6 이 이미 있으면 MAX(date)=8/6이라 8/5를 못 찾음)
+    """
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT MAX(date) FROM daily_prices;")
-    row = cursor.fetchone()
-    conn.close()
-    last_date_str = row[0] if row else None
-
-    if not last_date_str:
-        return  # DB가 완전히 비어있으면(최초 시드조차 없음) sync_stock_data가 오늘치만 채움
-
-    last_date = datetime.datetime.strptime(last_date_str, '%Y-%m-%d')
 
     missing_dates = []
-    d = last_date + datetime.timedelta(days=1)
+    d = target_date - datetime.timedelta(days=lookback_days)
     while d.date() < target_date.date():
-        if d.weekday() < 5:  # 평일만 (공휴일까지는 걸러내지 못하지만 아래서 빈 결과는 자연스레 무시됨)
-            missing_dates.append(d)
+        if d.weekday() < 5:  # 평일만
+            date_str = d.strftime('%Y-%m-%d')
+            cursor.execute("SELECT COUNT(*) FROM daily_prices WHERE date = ?;", (date_str,))
+            count = cursor.fetchone()[0]
+            if count < 1000:
+                missing_dates.append(d)
         d += datetime.timedelta(days=1)
+    conn.close()
 
     if not missing_dates:
         return
