@@ -1,1 +1,98 @@
-[]
+[
+  {
+    "code": "199430",
+    "name": "케이엔알시스템",
+    "close": 14330,
+    "rate": -5.599472990777339,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "463020",
+    "name": "뉴엔AI",
+    "close": 11310,
+    "rate": 24.834437086092713,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "228670",
+    "name": "레이",
+    "close": 5530,
+    "rate": -2.4691358024691357,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "417860",
+    "name": "오브젠",
+    "close": 7400,
+    "rate": -10.08505467800729,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "004870",
+    "name": "티웨이홀딩스",
+    "close": 1232,
+    "rate": -12.624113475177303,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "368600",
+    "name": "아이씨에이치",
+    "close": 917,
+    "rate": -3.9790575916230364,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "012340",
+    "name": "뉴인텍",
+    "close": 930,
+    "rate": 5.084745762711865,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "322780",
+    "name": "코퍼스코리아",
+    "close": 2000,
+    "rate": -0.24937655860349126,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "303030",
+    "name": "지니틱스",
+    "close": 1903,
+    "rate": 3.989071038251366,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "009620",
+    "name": "삼보산업",
+    "close": 868,
+    "rate": 4.452466907340553,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "208640",
+    "name": "썸에이지",
+    "close": 1040,
+    "rate": -15.652879156528792,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "291810",
+    "name": "핀텔",
+    "close": 1232,
+    "rate": 3.7910699241786014,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  }
+]
