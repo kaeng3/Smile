@@ -684,8 +684,18 @@
                 const isUp = (s.rate || 0) >= 0;
                 const rateClass = isUp ? 'rate-up' : 'rate-down';
                 const rateSign = isUp ? '+' : '';
-                const themeBadge = s.detail_theme
-                    ? `<div style="font-size:0.75rem; color:#a78bfa; font-weight:700; margin-bottom:4px;">🏷️ ${s.detail_theme}</div>`
+                const themeTags = [];
+                if (s.category) themeTags.push(s.category);
+                if (Array.isArray(s.subthemes)) themeTags.push(...s.subthemes);
+                const uniqueThemeTags = [...new Set(themeTags)].slice(0, 6);
+                const themeBadge = uniqueThemeTags.length
+                    ? `<div style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:6px;">${
+                        uniqueThemeTags.map((t, i) => `<span style="font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:999px; ${
+                            i === 0
+                                ? 'background:rgba(167,139,250,0.18); color:#a78bfa; border:1px solid rgba(167,139,250,0.35);'
+                                : 'background:rgba(148,163,184,0.12); color:#cbd5e1; border:1px solid rgba(148,163,184,0.25);'
+                        }">🏷️ ${t}</span>`).join('')
+                      }</div>`
                     : '';
                 const chartHtml = s.chart
                     ? `<img src="${s.chart}" alt="${s.name} 차트" style="width:100%;border-radius:10px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.08);">`
