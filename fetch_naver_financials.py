@@ -162,6 +162,17 @@ def main():
     # ── DEBUG: 샘플 3종목 원본 응답을 파일로 저장 (파싱 문제 진단용) ──
     if os.environ.get('NAVER_DEBUG') == '1':
         debug_info = {}
+        try:
+            url0 = "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=005930"
+            r0 = requests.get(url0, headers=HEADERS, timeout=10)
+            idx = r0.text.find('encparam')
+            debug_info['_initial_page'] = {
+                'status_code': r0.status_code,
+                'around_encparam': r0.text[max(0, idx - 100): idx + 300] if idx >= 0 else '(encparam 문자열 자체가 없음)',
+            }
+        except Exception as e:
+            debug_info['_initial_page'] = {'error': str(e)}
+
         for sample_code in codes[:3]:
             try:
                 enc, id_ = get_token()
