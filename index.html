@@ -719,6 +719,10 @@
         }
 
         let newsHistoryDB = {};
+        let overviewDB = {};
+        let latestPricesDB = {};
+        let themeDetailDB = {};
+        let financialsDB = {};
 
         async function loadData() {
             try {
@@ -747,6 +751,34 @@
                 }
             } catch (e) {
                 console.error("daily_issues.json 로딩 실패:", e);
+            }
+
+            try {
+                const resOv = await fetch('stock_overview.json?t=' + Date.now());
+                if (resOv.ok) overviewDB = await resOv.json();
+            } catch (e) {
+                console.error("stock_overview.json 로딩 실패:", e);
+            }
+
+            try {
+                const resPr = await fetch('latest_prices.json?t=' + Date.now());
+                if (resPr.ok) latestPricesDB = await resPr.json();
+            } catch (e) {
+                console.error("latest_prices.json 로딩 실패:", e);
+            }
+
+            try {
+                const resTh = await fetch('stock_detail_themes.json?t=' + Date.now());
+                if (resTh.ok) themeDetailDB = await resTh.json();
+            } catch (e) {
+                console.error("stock_detail_themes.json 로딩 실패:", e);
+            }
+
+            try {
+                const resFin = await fetch('stock_financials.json?t=' + Date.now());
+                if (resFin.ok) financialsDB = await resFin.json();
+            } catch (e) {
+                console.error("stock_financials.json 로딩 실패:", e);
             }
 
             if (availableDates.length > 0) {
@@ -808,35 +840,141 @@
             }
         }
 
-        // 📰 뉴스 타임라인 모달 오픈 & 모바일 뒤로가기 지원
+        // 📇 종목 상세 모달 오픈 & 모바일 뒤로가기 지원
         function openNewsModal(code, name) {
             const overlay = document.getElementById('news-modal-overlay');
             const titleEl = document.getElementById('modal-stock-title');
             const bodyEl = document.getElementById('modal-news-body');
 
-            titleEl.innerText = `📰 ${name} (${code}) 과거 이브닝 뉴스 히스토리`;
+            titleEl.innerText = `${name} (${code})`;
 
+            const sectionStyle = 'margin-bottom:22px; padding-bottom:18px; border-bottom:1px solid rgba(255,255,255,0.08);';
+            const headStyle = 'font-size:1rem; font-weight:700; color:#d4a373; margin-bottom:10px;';
+
+            // ── 1. 기업개요 ──────────────────────────────
+            const ov = overviewDB[code] || {};
+            const marcapEok = ov.marcap ? Math.round(ov.marcap / 100000000).toLocaleString() : null;
+            const overviewHtml = `
+                <div style="${sectionStyle}">
+                    <div style="${headStyle}">🏢 기업개요</div>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 16px; font-size:0.9rem;">
+                        <div style="color:var(--text-sub);">구분 <span style="float:right; color:var(--text-main); font-weight:600;">${ov.market || '-'}</span></div>
+                        <div style="color:var(--text-sub);">업종 <span style="float:right; color:var(--text-main); font-weight:600;">${ov.sector || '-'}</span></div>
+                        <div style="color:var(--text-sub); grid-column:1/-1;">시가총액 <span style="float:right; color:var(--text-main); font-weight:600;">${marcapEok ? marcapEok + '억원' : '-'}</span></div>
+                    </div>
+                </div>`;
+
+            // ── 2. 재무추이 ──────────────────────────────
+            const fin = financialsDB[code] || [];
+            let financeHtml = '';
+            if (fin.length > 0) {
+                const maxRevenue = Math.max(...fin.map(r => Math.abs(r.revenue || 0)), 1);
+                const rows = fin.map(r => {
+                    const eok = v => v === null || v === undefined ? '-' : Math.round(v / 100000000).toLocaleString() + '억';
+                    const barWidth = Math.max(4, Math.round((Math.abs(r.revenue || 0) / maxRevenue) * 100));
+                    const profitUp = (r.operating_profit || 0) >= 0;
+                    return `
+                        <div style="margin-bottom:10px;">
+                            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:var(--text-sub); margin-bottom:3px;">
+                                <span>${r.year}년</span>
+                                <span>매출 ${eok(r.revenue)} · 영업이익 <span style="color:${profitUp ? '#4ade80' : '#f87171'};">${eok(r.operating_profit)}</span> · 순이익 ${eok(r.net_income)}</span>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.06); border-radius:6px; height:8px; overflow:hidden;">
+                                <div style="background:#d4a373; height:100%; width:${barWidth}%;"></div>
+                            </div>
+                        </div>`;
+                }).join('');
+                financeHtml = `
+                    <div style="${sectionStyle}">
+                        <div style="${headStyle}">📊 재무추이 (연간, DART 공시 기준)</div>
+                        ${rows}
+                    </div>`;
+            } else {
+                financeHtml = `
+                    <div style="${sectionStyle}">
+                        <div style="${headStyle}">📊 재무추이</div>
+                        <div style="font-size:0.85rem; color:var(--text-sub);">재무 데이터가 아직 수집되지 않았습니다.</div>
+                    </div>`;
+            }
+
+            // ── 3. 연관테마 ──────────────────────────────
+            const themeInfo = themeDetailDB[code] || {};
+            const themeTags = [];
+            if (themeInfo.category) themeTags.push(themeInfo.category);
+            if (Array.isArray(themeInfo.subthemes)) themeTags.push(...themeInfo.subthemes);
+            const uniqueTags = [...new Set(themeTags)];
+            const themeSectionHtml = `
+                <div style="${sectionStyle}">
+                    <div style="${headStyle}">🏷️ 연관테마</div>
+                    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+                        ${uniqueTags.length
+                            ? uniqueTags.map((t, i) => `<span style="font-size:0.78rem; font-weight:700; padding:3px 10px; border-radius:999px; ${i === 0 ? 'background:rgba(167,139,250,0.18); color:#a78bfa; border:1px solid rgba(167,139,250,0.35);' : 'background:rgba(148,163,184,0.12); color:#cbd5e1; border:1px solid rgba(148,163,184,0.25);'}">${t}</span>`).join('')
+                            : '<span style="font-size:0.85rem; color:var(--text-sub);">등록된 테마 정보가 없습니다.</span>'}
+                    </div>
+                </div>`;
+
+            // ── 4. 연관종목 (같은 서브테마를 공유하는 다른 종목) ──
+            let relatedHtml = '';
+            const mySubthemes = new Set(themeInfo.subthemes || []);
+            if (mySubthemes.size > 0) {
+                const scored = [];
+                for (const [otherCode, info] of Object.entries(themeDetailDB)) {
+                    if (otherCode === code) continue;
+                    const overlap = (info.subthemes || []).filter(t => mySubthemes.has(t)).length;
+                    if (overlap > 0) scored.push({ code: otherCode, overlap });
+                }
+                scored.sort((a, b) => b.overlap - a.overlap);
+                const top = scored.slice(0, 6);
+                if (top.length > 0) {
+                    relatedHtml = `
+                        <div style="${sectionStyle}">
+                            <div style="${headStyle}">🔗 연관종목</div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                                ${top.map(r => {
+                                    const p = latestPricesDB[r.code] || {};
+                                    const isUp = (p.rate || 0) >= 0;
+                                    return `
+                                        <div style="background:rgba(255,255,255,0.04); border-radius:8px; padding:8px 10px; font-size:0.82rem;">
+                                            <div style="font-weight:600; color:var(--text-main);">${p.name || r.code}</div>
+                                            <div style="color:${isUp ? '#4ade80' : '#f87171'};">${isUp ? '+' : ''}${(p.rate || 0).toFixed(2)}%</div>
+                                        </div>`;
+                                }).join('')}
+                            </div>
+                        </div>`;
+                }
+            }
+            if (!relatedHtml) {
+                relatedHtml = `
+                    <div style="${sectionStyle}">
+                        <div style="${headStyle}">🔗 연관종목</div>
+                        <div style="font-size:0.85rem; color:var(--text-sub);">연관 테마를 공유하는 종목이 없습니다.</div>
+                    </div>`;
+            }
+
+            // ── 5. 종목뉴스 (기존 타임라인) ──────────────
             const list = newsHistoryDB[code] || [];
-
+            let newsHtml = `<div style="${headStyle}">📰 종목뉴스</div>`;
             if (list.length === 0) {
-                bodyEl.innerHTML = `
-                    <div style="text-align:center; padding:40px; color:var(--text-sub);">
-                        <div style="font-size:1.8rem; margin-bottom:10px;">🔍</div>
+                newsHtml += `
+                    <div style="text-align:center; padding:30px; color:var(--text-sub);">
+                        <div style="font-size:1.6rem; margin-bottom:8px;">🔍</div>
                         등록된 과거 이브닝 호재/뉴스 데이터가 없습니다.
                     </div>`;
             } else {
-                bodyEl.innerHTML = list.map(item => {
+                newsHtml += list.map(item => {
                     const titleText = item.enc ? dec(item.title) : item.title;
                     const contentText = item.enc ? dec(item.content) : item.content;
                     return `
                         <div class="timeline-item">
-                            <div class="timeline-date">📅 ${item.date} ${item.rate ? '('+item.rate+')' : ''}</div>
+                            <div class="timeline-date">📅 ${item.date} ${item.rate ? '(' + item.rate + ')' : ''}</div>
                             <div class="timeline-title">${titleText}</div>
                             <div class="timeline-text">${contentText}</div>
                         </div>
                     `;
                 }).join('');
             }
+
+            bodyEl.innerHTML = overviewHtml + financeHtml + themeSectionHtml + relatedHtml + newsHtml;
 
             overlay.classList.add('active');
 

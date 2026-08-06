@@ -125,6 +125,48 @@ def load_scan_with_comments(json_filename, limit=12):
         })
     return result
 
+# ── 1.5. 기업개요(구분/시총/업종) + 전종목 최신가 스냅샷 생성 (모달의 기업개요/연관종목용) ──
+print("[SYNC] 기업개요/전종목 최신가 스냅샷 생성 중...")
+overview_db = {}
+latest_prices = {}
+try:
+    import FinanceDataReader as fdr
+    df_krx = fdr.StockListing('KRX')
+    df_krx = df_krx[df_krx['Market'].isin(['KOSPI', 'KOSDAQ', 'KOSDAQ GLOBAL'])]
+    for _, row in df_krx.iterrows():
+        code = str(row['Code'])
+        market = str(row.get('Market', ''))
+        marcap = row.get('Marcap', None)
+        close = row.get('Close', None)
+        rate = row.get('ChagesRatio', row.get('ChangesRatio', None))
+        overview_db[code] = {
+            'market': market,
+            'marcap': int(marcap) if marcap is not None and marcap == marcap else None,
+        }
+        latest_prices[code] = {
+            'name': str(row.get('Name', '')),
+            'close': float(close) if close is not None and close == close else 0,
+            'rate': round(float(rate), 2) if rate is not None and rate == rate else 0,
+        }
+    # 업종(Sector) 정보는 별도 소스(KRX-DESC)에서 시도, 실패해도 나머지엔 영향 없음
+    try:
+        df_desc = fdr.StockListing('KRX-DESC')
+        for _, row in df_desc.iterrows():
+            code = str(row.get('Code', ''))
+            sector = row.get('Sector') or row.get('Industry')
+            if code in overview_db and sector:
+                overview_db[code]['sector'] = str(sector)
+    except Exception as e:
+        print("[SYNC] 업종(KRX-DESC) 조회 실패, 구분/시총만 사용:", e)
+except Exception as e:
+    print("[SYNC] 기업개요 스냅샷 생성 실패:", e)
+
+with open(os.path.join(GIT_DIR, 'stock_overview.json'), 'w', encoding='utf-8') as f:
+    json.dump(overview_db, f, ensure_ascii=False)
+with open(os.path.join(GIT_DIR, 'latest_prices.json'), 'w', encoding='utf-8') as f:
+    json.dump(latest_prices, f, ensure_ascii=False)
+print(f"[SYNC] stock_overview.json({len(overview_db)}건), latest_prices.json({len(latest_prices)}건) 저장 완료")
+
 # ── 4. 각 전략 스캔 결과 로드 ─────────────────────────────────────────
 print("[SYNC] 양음양 기법 로드 중...")
 yey_list  = load_scan_with_comments(f'scan_results_yey_{date_str}.json')
@@ -275,7 +317,7 @@ for fname in os.listdir(GIT_DIR):
 # ── 8. GitHub 자동 푸시 ──────────────────────────────────────────────
 print("\n[GitHub] 자동 업로드 시작...")
 try:
-    subprocess.run(["git", "add", "scan_history.json", "daily_issues.json", "charts/", "."], cwd=GIT_DIR, check=False)
+    subprocess.run(["git", "add", "scan_history.json", "daily_issues.json", "stock_overview.json", "latest_prices.json", "charts/", "."], cwd=GIT_DIR, check=False)
     subprocess.run(["git", "commit", "-m", f"Auto Update: {date_str} (차트+코멘트+500억일차 포함)"], cwd=GIT_DIR, check=False)
     subprocess.run(["git", "push", "origin", "main"], cwd=GIT_DIR, check=False)
     print("[GitHub] 웹사이트 반영 100% 완료!")
