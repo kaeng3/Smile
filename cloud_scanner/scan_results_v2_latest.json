@@ -3,15 +3,23 @@
     "code": "010130",
     "name": "고려아연",
     "close": 1234000,
-    "rate": 18.199233716475096,
+    "rate": 12.694063926940638,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
   {
-    "code": "051160",
-    "name": "지어소프트",
-    "close": 10950,
-    "rate": 18.12297734627832,
+    "code": "024840",
+    "name": "KBI메탈",
+    "close": 5420,
+    "rate": 8.72617853560682,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "222040",
+    "name": "코스맥스엔비티",
+    "close": 9000,
+    "rate": 15.83011583011583,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
@@ -19,7 +27,7 @@
     "code": "001540",
     "name": "안국약품",
     "close": 12560,
-    "rate": 13.871260199456028,
+    "rate": 13.974591651542651,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
@@ -27,15 +35,15 @@
     "code": "038540",
     "name": "상상인",
     "close": 2265,
-    "rate": 11.302211302211303,
+    "rate": 11.029411764705882,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
   {
-    "code": "039980",
-    "name": "폴라리스AI",
-    "close": 5910,
-    "rate": 10.881801125703564,
+    "code": "463020",
+    "name": "뉴엔AI",
+    "close": 11310,
+    "rate": 9.486931268151016,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
@@ -43,7 +51,7 @@
     "code": "460940",
     "name": "피앤에스로보틱스",
     "close": 5570,
-    "rate": 15.082644628099173,
+    "rate": 11.177644710578843,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
@@ -51,7 +59,7 @@
     "code": "137950",
     "name": "제이씨케미칼",
     "close": 3045,
-    "rate": 12.987012987012985,
+    "rate": 8.94454382826476,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
@@ -59,7 +67,15 @@
     "code": "033320",
     "name": "제이씨현시스템",
     "close": 3150,
-    "rate": 11.900532859680284,
+    "rate": 11.702127659574469,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "355390",
+    "name": "크라우드웍스",
+    "close": 2170,
+    "rate": 9.485368314833503,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
@@ -67,7 +83,7 @@
     "code": "079190",
     "name": "케스피온",
     "close": 1192,
-    "rate": 14.615384615384617,
+    "rate": 12.13546566321731,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   }
