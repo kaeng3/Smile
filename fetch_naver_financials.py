@@ -220,7 +220,8 @@ def main():
             out['total_len'] = len(text)
             for kw in ['WICS', '코스닥 전기', '주요주주', '최대주주']:
                 idx = text.find(kw)
-                out[kw] = text[max(0, idx - 200): idx + 1200] if idx >= 0 else '(찾지 못함)'
+                window = 2500 if kw == '주요주주' else 1200
+                out[kw] = text[max(0, idx - 200): idx + window] if idx >= 0 else '(찾지 못함)'
         except Exception as e:
             import traceback
             out['error'] = str(e)
