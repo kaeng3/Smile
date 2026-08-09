@@ -90,7 +90,7 @@ def get_featured_news(stock_name, today):
             if profile:
                 press_el = profile.select_one('.sds-comps-profile-info-title-text')
                 if press_el:
-                    press = press_el.get_text(strip=True)
+                    press = press_el.get_text(strip=True).replace('새 창 열림', '').strip()
                 subtext_el = profile.select_one('.sds-comps-profile-info-subtext')
                 if subtext_el:
                     time_text = subtext_el.get_text(strip=True)
@@ -110,67 +110,6 @@ def get_featured_news(stock_name, today):
 
 
 def main():
-    if os.environ.get('FEATURED_DEBUG') == '1':
-        out = {}
-        query = urllib.parse.quote("포스코퓨처엠 특징주")
-        url = f"https://search.naver.com/search.naver?where=news&query={query}&sort=1"
-        try:
-            resp = requests.get(url, headers=HEADERS, timeout=8)
-            out['status_code'] = resp.status_code
-            out['url'] = resp.url
-            out['text_len'] = len(resp.text)
-            idx = resp.text.find('data-slog-container="nws"')
-            out['news_item_full'] = resp.text[idx: idx + 12000] if idx >= 0 else '(없음)'
-            out['count_PONEnr1v9VJKYgacx4wn'] = resp.text.count('PONEnr1v9VJKYgacx4wn')
-        except Exception as e:
-            out['error'] = str(e)
-        with open(os.path.join(GIT_DIR, 'featured_debug.json'), 'w', encoding='utf-8') as f:
-            json.dump(out, f, ensure_ascii=False, indent=2)
-        print("[DEBUG] 저장 완료")
-        return
-
-    if os.environ.get('FEATURED_DEBUG_PARSE') == '1':
-        # 실제 오늘(스크립트 실행 시점) 기준 파싱 자체가 되는지 직접 확인
-        name, articles = get_featured_news('삼성전자', datetime.datetime.now())
-        with open(os.path.join(GIT_DIR, 'featured_debug_parse.json'), 'w', encoding='utf-8') as f:
-            json.dump({'name': name, 'count': len(articles), 'articles': articles}, f, ensure_ascii=False, indent=2)
-        print("[DEBUG_PARSE] 저장 완료:", len(articles), "건")
-        return
-
-    if os.environ.get('FEATURED_DEBUG_RAW') == '1':
-        # '오늘 기사만' 필터를 걸지 않고, 선택자 자체가 제목/언론사/시간/링크를 뽑아내는지만 확인
-        query = urllib.parse.quote("포스코퓨처엠 특징주")
-        url = f"https://search.naver.com/search.naver?where=news&query={query}&sort=1"
-        raw = []
-        try:
-            resp = requests.get(url, headers=HEADERS, timeout=8)
-            soup = BeautifulSoup(resp.text, 'html.parser')
-            title_links = soup.select('a[data-heatmap-target=".tit"]')
-            seen_links = set()
-            for title_link in title_links:
-                link = title_link.get('href')
-                if not link or link in seen_links:
-                    continue
-                title_span = title_link.select_one('span.sds-comps-text-type-headline1')
-                title = title_span.get_text(strip=True) if title_span else title_link.get_text(strip=True)
-                seen_links.add(link)
-                profile = title_link.find_previous('div', attrs={'data-sds-comp': 'Profile'})
-                press, time_text = '', ''
-                if profile:
-                    press_el = profile.select_one('.sds-comps-profile-info-title-text')
-                    if press_el:
-                        press = press_el.get_text(strip=True)
-                    subtext_el = profile.select_one('.sds-comps-profile-info-subtext')
-                    if subtext_el:
-                        time_text = subtext_el.get_text(strip=True)
-                raw.append({'title': title, 'press': press, 'time_raw': time_text, 'link': link})
-        except Exception as e:
-            raw = [{'error': str(e)}]
-        with open(os.path.join(GIT_DIR, 'featured_debug_raw.json'), 'w', encoding='utf-8') as f:
-            json.dump(raw, f, ensure_ascii=False, indent=2)
-        print("[DEBUG_RAW] 저장 완료:", len(raw), "건")
-        return
-
     today = datetime.datetime.now()
     target_date_str = os.environ.get('FEATURED_NEWS_TARGET_DATE') or today.strftime('%Y%m%d')
 
