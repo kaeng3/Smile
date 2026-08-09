@@ -9,6 +9,9 @@ on:
       debug_parse:
         type: boolean
         default: false
+      debug_raw:
+        type: boolean
+        default: false
 
 jobs:
   test:
@@ -32,6 +35,7 @@ jobs:
           FEATURED_NEWS_TARGET_DATE: '20260807'
           FEATURED_DEBUG: ${{ github.event.inputs.debug == 'true' && '1' || '0' }}
           FEATURED_DEBUG_PARSE: ${{ github.event.inputs.debug_parse == 'true' && '1' || '0' }}
+          FEATURED_DEBUG_RAW: ${{ github.event.inputs.debug_raw == 'true' && '1' || '0' }}
         run: |
           python cloud_scanner/fetch_featured_stock_news.py
 
@@ -39,5 +43,5 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add featured_stock_news.json featured_debug.json featured_debug_parse.json
+          git add featured_stock_news.json featured_debug.json featured_debug_parse.json featured_debug_raw.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "TEST: featured news 20260807" && git push)
