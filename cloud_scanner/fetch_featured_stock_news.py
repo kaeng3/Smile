@@ -102,7 +102,7 @@ def get_featured_news(stock_name, today):
 
 def main():
     today = datetime.datetime.now()
-    target_date_str = today.strftime('%Y%m%d')
+    target_date_str = os.environ.get('FEATURED_NEWS_TARGET_DATE') or today.strftime('%Y%m%d')
 
     stocks = get_today_stock_list(target_date_str)
     if not stocks:
