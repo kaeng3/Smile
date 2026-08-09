@@ -111,7 +111,8 @@ def main():
             out['url'] = resp.url
             out['text_len'] = len(resp.text)
             idx = resp.text.find('data-slog-container="nws"')
-            out['news_item_full'] = resp.text[idx: idx + 5000] if idx >= 0 else '(없음)'
+            out['news_item_full'] = resp.text[idx: idx + 12000] if idx >= 0 else '(없음)'
+            out['count_PONEnr1v9VJKYgacx4wn'] = resp.text.count('PONEnr1v9VJKYgacx4wn')
         except Exception as e:
             out['error'] = str(e)
         with open(os.path.join(GIT_DIR, 'featured_debug.json'), 'w', encoding='utf-8') as f:
