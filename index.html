@@ -724,6 +724,7 @@
         let themeDetailDB = {};
         let financialsDB = {};
         let shareholdersDB = {};
+        let sectorDB = {};
 
         async function loadData() {
             try {
@@ -789,6 +790,13 @@
                 console.error("stock_shareholders.json 로딩 실패:", e);
             }
 
+            try {
+                const resSec = await fetch('stock_sector.json?t=' + Date.now());
+                if (resSec.ok) sectorDB = await resSec.json();
+            } catch (e) {
+                console.error("stock_sector.json 로딩 실패:", e);
+            }
+
             if (availableDates.length > 0) {
                 selectedDate = availableDates[0];
             }
@@ -849,6 +857,61 @@
         }
 
         // 📇 종목 상세 모달 오픈 & 모바일 뒤로가기 지원
+        // 🔗 연관종목 그리드 생성 (themeFilter가 없으면 전체 서브테마 겹침, 있으면 그 테마만)
+        function buildRelatedStocksGrid(code, themeFilter) {
+            const themeInfo = themeDetailDB[code] || {};
+            const mySubthemes = new Set(themeInfo.subthemes || []);
+            const scored = [];
+            for (const [otherCode, info] of Object.entries(themeDetailDB)) {
+                if (otherCode === code) continue;
+                if (themeFilter) {
+                    const matches = info.category === themeFilter || (info.subthemes || []).includes(themeFilter);
+                    if (matches) scored.push({ code: otherCode, overlap: 1 });
+                } else {
+                    const overlap = (info.subthemes || []).filter(t => mySubthemes.has(t)).length;
+                    if (overlap > 0) scored.push({ code: otherCode, overlap });
+                }
+            }
+            scored.sort((a, b) => b.overlap - a.overlap);
+            const top = scored.slice(0, 8);
+            if (top.length === 0) {
+                return `<div style="font-size:0.85rem; color:var(--text-sub);">${themeFilter ? `'${themeFilter}' 관련 종목이 없습니다.` : '연관 테마를 공유하는 종목이 없습니다.'}</div>`;
+            }
+            return `
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                    ${top.map(r => {
+                        const p = latestPricesDB[r.code] || {};
+                        const isUp = (p.rate || 0) >= 0;
+                        return `
+                            <div onclick="openNewsModal('${r.code}', '${(p.name || r.code).replace(/'/g, "\\'")}')" style="cursor:pointer; background:rgba(255,255,255,0.04); border-radius:8px; padding:8px 10px; font-size:0.82rem;">
+                                <div style="font-weight:600; color:var(--text-main);">${p.name || r.code}</div>
+                                <div style="color:${isUp ? '#4ade80' : '#f87171'};">${isUp ? '+' : ''}${(p.rate || 0).toFixed(2)}%</div>
+                            </div>`;
+                    }).join('')}
+                </div>`;
+        }
+
+        function filterRelatedByTheme(code, theme) {
+            const body = document.getElementById('related-stocks-body');
+            if (body) body.innerHTML = buildRelatedStocksGrid(code, theme);
+
+            // 선택된 테마 뱃지 강조
+            const row = document.getElementById('theme-tags-row');
+            if (row) {
+                row.querySelectorAll('span[data-theme]').forEach(el => {
+                    if (el.getAttribute('data-theme') === theme) {
+                        el.style.background = 'rgba(167,139,250,0.35)';
+                        el.style.border = '1px solid #a78bfa';
+                        el.style.color = '#fff';
+                    } else {
+                        el.style.background = 'rgba(148,163,184,0.12)';
+                        el.style.border = '1px solid rgba(148,163,184,0.25)';
+                        el.style.color = '#cbd5e1';
+                    }
+                });
+            }
+        }
+
         function openNewsModal(code, name) {
             const overlay = document.getElementById('news-modal-overlay');
             const titleEl = document.getElementById('modal-stock-title');
@@ -866,19 +929,35 @@
             const sharesOutstanding = (ov.marcap && priceInfo.close)
                 ? Math.round(ov.marcap / priceInfo.close).toLocaleString()
                 : null;
-            const sh = shareholdersDB[code];
-            const shareholderText = sh
-                ? `${sh.label || '최대주주등'} ${sh.percent}%${sh.holder_count ? ` (${sh.holder_count}인)` : ''}`
-                : '-';
+            const sectorDisplay = sectorDB[code] || ((ov.sector && ov.sector !== 'nan') ? ov.sector : null);
+            const shInfo = shareholdersDB[code] || {};
+            const namedHolders = shInfo.holders || [];
+            const shSummary = shInfo.summary;
+            let shareholderHtml;
+            if (namedHolders.length > 0) {
+                shareholderHtml = namedHolders.map(h =>
+                    `<div style="display:flex; justify-content:space-between; padding:2px 0;">
+                        <span style="color:var(--text-main);">${h.name}</span>
+                        <span style="color:var(--text-sub);">${h.shares ? h.shares.toLocaleString() + '주 · ' : ''}${h.percent}%</span>
+                    </div>`
+                ).join('');
+            } else if (shSummary) {
+                shareholderHtml = `<div style="color:var(--text-main);">${shSummary.label || '최대주주등'} ${shSummary.percent}%${shSummary.holder_count ? ` (${shSummary.holder_count}인)` : ''}</div>`;
+            } else {
+                shareholderHtml = `<div style="color:var(--text-sub);">-</div>`;
+            }
             const overviewHtml = `
                 <div style="${sectionStyle}">
                     <div style="${headStyle}">🏢 기업개요</div>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 16px; font-size:0.9rem;">
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 16px; font-size:0.9rem; margin-bottom:10px;">
                         <div style="color:var(--text-sub);">구분 <span style="float:right; color:var(--text-main); font-weight:600;">${ov.market || '-'}</span></div>
-                        <div style="color:var(--text-sub);">업종 <span style="float:right; color:var(--text-main); font-weight:600;">${(ov.sector && ov.sector !== 'nan') ? ov.sector : '-'}</span></div>
+                        <div style="color:var(--text-sub);">업종 <span style="float:right; color:var(--text-main); font-weight:600;">${sectorDisplay || '-'}</span></div>
                         <div style="color:var(--text-sub);">시가총액 <span style="float:right; color:var(--text-main); font-weight:600;">${marcapEok ? marcapEok + '억원' : '-'}</span></div>
                         <div style="color:var(--text-sub);">상장주식수 <span style="float:right; color:var(--text-main); font-weight:600;">${sharesOutstanding ? sharesOutstanding + '주' : '-'}</span></div>
-                        <div style="color:var(--text-sub); grid-column:1/-1;">대주주 <span style="float:right; color:var(--text-main); font-weight:600;">${shareholderText}</span></div>
+                    </div>
+                    <div style="font-size:0.85rem; color:var(--text-sub); margin-bottom:4px;">대주주</div>
+                    <div style="background:rgba(255,255,255,0.04); border-radius:8px; padding:8px 10px; font-size:0.85rem;">
+                        ${shareholderHtml}
                     </div>
                 </div>`;
 
@@ -896,12 +975,12 @@
                         <div style="margin-bottom:14px;">
                             <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:var(--text-sub); margin-bottom:4px;">
                                 <span style="font-weight:700; color:var(--text-main);">${r.year}년</span>
-                                <span>매출 ${eok(r.revenue)} · 영업이익 <span style="color:${opUp ? '#4ade80' : '#f87171'};">${eok(r.operating_profit)}</span> · 순이익 <span style="color:${niUp ? '#4ade80' : '#f87171'};">${eok(r.net_income)}</span></span>
+                                <span>매출 ${eok(r.revenue)} · 영업이익 <span style="color:${opUp ? '#22d3ee' : '#ef4444'};">${eok(r.operating_profit)}</span> · 순이익 <span style="color:${niUp ? '#fbbf24' : '#b91c1c'};">${eok(r.net_income)}</span></span>
                             </div>
-                            <div style="position:relative; height:22px;">
-                                <div style="position:absolute; left:0; top:0; height:22px; border-radius:5px; background:rgba(212,163,115,0.35); width:${barPct(r.revenue)}%;"></div>
-                                <div style="position:absolute; left:0; top:6px; height:10px; border-radius:4px; background:${opUp ? '#3b82f6' : '#f87171'}; width:${barPct(r.operating_profit)}%;"></div>
-                                <div style="position:absolute; left:0; top:9px; height:4px; border-radius:2px; background:${niUp ? '#4ade80' : '#dc2626'}; width:${barPct(r.net_income)}%;"></div>
+                            <div style="position:relative; height:26px;">
+                                <div style="position:absolute; left:0; top:0; height:26px; border-radius:5px; background:rgba(251,146,60,0.5); width:${barPct(r.revenue)}%;"></div>
+                                <div style="position:absolute; left:0; top:7px; height:13px; border-radius:4px; background:${opUp ? '#22d3ee' : '#ef4444'}; width:${barPct(r.operating_profit)}%;"></div>
+                                <div style="position:absolute; left:0; top:11px; height:5px; border-radius:2px; background:${niUp ? '#fbbf24' : '#b91c1c'}; width:${barPct(r.net_income)}%;"></div>
                             </div>
                         </div>`;
                 }).join('');
@@ -909,7 +988,7 @@
                     <div style="${sectionStyle}">
                         <div style="${headStyle}">📊 재무추이 (연간, 네이버금융 기준)</div>
                         <div style="display:flex; gap:12px; font-size:0.72rem; color:var(--text-sub); margin-bottom:10px;">
-                            <span>🟧 매출액</span><span>🔵 영업이익</span><span>🟢 순이익</span>
+                            <span>🟧 매출액</span><span style="color:#22d3ee;">■ 영업이익</span><span style="color:#fbbf24;">■ 순이익</span>
                         </div>
                         ${rows}
                     </div>`;
@@ -921,7 +1000,7 @@
                     </div>`;
             }
 
-            // ── 3. 연관테마 ──────────────────────────────
+            // ── 3. 연관테마 (클릭하면 그 테마 기준으로 연관종목 필터링) ──
             const themeInfo = themeDetailDB[code] || {};
             const themeTags = [];
             if (themeInfo.category) themeTags.push(themeInfo.category);
@@ -929,51 +1008,20 @@
             const uniqueTags = [...new Set(themeTags)];
             const themeSectionHtml = `
                 <div style="${sectionStyle}">
-                    <div style="${headStyle}">🏷️ 연관테마</div>
-                    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+                    <div style="${headStyle}">🏷️ 연관테마 <span style="font-size:0.72rem; font-weight:400; color:var(--text-sub);">(클릭하면 관련주 보기)</span></div>
+                    <div id="theme-tags-row" style="display:flex; flex-wrap:wrap; gap:6px;">
                         ${uniqueTags.length
-                            ? uniqueTags.map((t, i) => `<span style="font-size:0.78rem; font-weight:700; padding:3px 10px; border-radius:999px; ${i === 0 ? 'background:rgba(167,139,250,0.18); color:#a78bfa; border:1px solid rgba(167,139,250,0.35);' : 'background:rgba(148,163,184,0.12); color:#cbd5e1; border:1px solid rgba(148,163,184,0.25);'}">${t}</span>`).join('')
+                            ? uniqueTags.map((t, i) => `<span onclick="filterRelatedByTheme('${code}', '${t.replace(/'/g, "\\'")}')" data-theme="${t.replace(/"/g, '&quot;')}" style="cursor:pointer; font-size:0.78rem; font-weight:700; padding:3px 10px; border-radius:999px; ${i === 0 ? 'background:rgba(167,139,250,0.18); color:#a78bfa; border:1px solid rgba(167,139,250,0.35);' : 'background:rgba(148,163,184,0.12); color:#cbd5e1; border:1px solid rgba(148,163,184,0.25);'}">${t}</span>`).join('')
                             : '<span style="font-size:0.85rem; color:var(--text-sub);">등록된 테마 정보가 없습니다.</span>'}
                     </div>
                 </div>`;
 
-            // ── 4. 연관종목 (같은 서브테마를 공유하는 다른 종목) ──
-            let relatedHtml = '';
-            const mySubthemes = new Set(themeInfo.subthemes || []);
-            if (mySubthemes.size > 0) {
-                const scored = [];
-                for (const [otherCode, info] of Object.entries(themeDetailDB)) {
-                    if (otherCode === code) continue;
-                    const overlap = (info.subthemes || []).filter(t => mySubthemes.has(t)).length;
-                    if (overlap > 0) scored.push({ code: otherCode, overlap });
-                }
-                scored.sort((a, b) => b.overlap - a.overlap);
-                const top = scored.slice(0, 6);
-                if (top.length > 0) {
-                    relatedHtml = `
-                        <div style="${sectionStyle}">
-                            <div style="${headStyle}">🔗 연관종목</div>
-                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-                                ${top.map(r => {
-                                    const p = latestPricesDB[r.code] || {};
-                                    const isUp = (p.rate || 0) >= 0;
-                                    return `
-                                        <div style="background:rgba(255,255,255,0.04); border-radius:8px; padding:8px 10px; font-size:0.82rem;">
-                                            <div style="font-weight:600; color:var(--text-main);">${p.name || r.code}</div>
-                                            <div style="color:${isUp ? '#4ade80' : '#f87171'};">${isUp ? '+' : ''}${(p.rate || 0).toFixed(2)}%</div>
-                                        </div>`;
-                                }).join('')}
-                            </div>
-                        </div>`;
-                }
-            }
-            if (!relatedHtml) {
-                relatedHtml = `
-                    <div style="${sectionStyle}">
-                        <div style="${headStyle}">🔗 연관종목</div>
-                        <div style="font-size:0.85rem; color:var(--text-sub);">연관 테마를 공유하는 종목이 없습니다.</div>
-                    </div>`;
-            }
+            // ── 4. 연관종목 (기본: 전체 서브테마 공유 종목 / 클릭 시 특정 테마로 필터링) ──
+            const relatedHtml = `
+                <div style="${sectionStyle}">
+                    <div style="${headStyle}">🔗 연관종목</div>
+                    <div id="related-stocks-body">${buildRelatedStocksGrid(code, null)}</div>
+                </div>`;
 
             // ── 5. 종목뉴스 (연도 > 월별로 묶어서 접었다 펼치기) ──────────────
             const list = newsHistoryDB[code] || [];

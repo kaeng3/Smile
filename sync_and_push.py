@@ -148,16 +148,8 @@ try:
             'close': float(close) if close is not None and close == close else 0,
             'rate': round(float(rate), 2) if rate is not None and rate == rate else 0,
         }
-    # 업종(Sector) 정보는 별도 소스(KRX-DESC)에서 시도, 실패해도 나머지엔 영향 없음
-    try:
-        df_desc = fdr.StockListing('KRX-DESC')
-        for _, row in df_desc.iterrows():
-            code = str(row.get('Code', ''))
-            sector = row.get('Sector') or row.get('Industry')
-            if code in overview_db and sector is not None and str(sector) != 'nan' and str(sector).strip():
-                overview_db[code]['sector'] = str(sector)
-    except Exception as e:
-        print("[SYNC] 업종(KRX-DESC) 조회 실패, 구분/시총만 사용:", e)
+    # 업종은 FDR(KRX-DESC)이 '벤처기업부' 같은 시장구분을 잘못 반환하는 경우가 있어
+    # 정확한 WICS 업종분류는 별도(주간 네이버 재무 스크립트)에서 stock_sector.json으로 생성함
 except Exception as e:
     print("[SYNC] 기업개요 스냅샷 생성 실패:", e)
 
