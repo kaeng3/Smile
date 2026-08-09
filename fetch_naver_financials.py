@@ -263,6 +263,22 @@ SECTOR_OUTPUT_PATH = os.path.join(GIT_DIR, 'stock_sector.json')
 
 
 def main():
+    if os.environ.get('NAVER_DEBUG4') == '1':
+        out = {}
+        try:
+            enc, id_, shareholder, named, sector = get_token('005930')
+            out['sector'] = sector
+            out['shareholder_summary'] = shareholder
+            out['named_holders'] = named
+        except Exception as e:
+            import traceback
+            out['error'] = str(e)
+            out['traceback'] = traceback.format_exc()
+        with open(os.path.join(GIT_DIR, 'naver_debug4.json'), 'w', encoding='utf-8') as f:
+            json.dump(out, f, ensure_ascii=False, indent=2)
+        print("[DEBUG4] 저장 완료")
+        return
+
     if not os.path.exists(THEMES_PATH):
         print("[NAVER] stock_detail_themes.json이 없어 대상 종목을 알 수 없습니다.")
         return
