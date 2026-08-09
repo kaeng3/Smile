@@ -110,7 +110,9 @@ def main():
             out['status_code'] = resp.status_code
             out['url'] = resp.url
             out['text_len'] = len(resp.text)
-            out['text_sample'] = resp.text[:6000]
+            for kw in ['news_tit', 'news_wrap', 'class="bx"', 'sds-comps']:
+                idx = resp.text.find(kw)
+                out[kw] = resp.text[max(0, idx - 100): idx + 1500] if idx >= 0 else '(없음)'
         except Exception as e:
             out['error'] = str(e)
         with open(os.path.join(GIT_DIR, 'featured_debug.json'), 'w', encoding='utf-8') as f:
