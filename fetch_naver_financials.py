@@ -167,6 +167,21 @@ def fetch_one(code):
 
 
 def main():
+    if os.environ.get('NAVER_DEBUG2') == '1':
+        session = get_session()
+        r = session.get('https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=017900', timeout=10)
+        text = r.text
+        idx = text.find('최대주주')
+        out = {'idx': idx, 'total_len': len(text)}
+        if idx >= 0:
+            out['around'] = text[max(0, idx - 300): idx + 1500]
+        else:
+            out['sample'] = text[:2000]
+        with open(os.path.join(GIT_DIR, 'naver_debug2.json'), 'w', encoding='utf-8') as f:
+            json.dump(out, f, ensure_ascii=False, indent=2)
+        print("[DEBUG2] 저장 완료")
+        return
+
     if not os.path.exists(THEMES_PATH):
         print("[NAVER] stock_detail_themes.json이 없어 대상 종목을 알 수 없습니다.")
         return
