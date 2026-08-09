@@ -129,6 +129,14 @@ def main():
         print("[DEBUG] 저장 완료")
         return
 
+    if os.environ.get('FEATURED_DEBUG_PARSE') == '1':
+        # 실제 오늘(스크립트 실행 시점) 기준 파싱 자체가 되는지 직접 확인
+        name, articles = get_featured_news('삼성전자', datetime.datetime.now())
+        with open(os.path.join(GIT_DIR, 'featured_debug_parse.json'), 'w', encoding='utf-8') as f:
+            json.dump({'name': name, 'count': len(articles), 'articles': articles}, f, ensure_ascii=False, indent=2)
+        print("[DEBUG_PARSE] 저장 완료:", len(articles), "건")
+        return
+
     today = datetime.datetime.now()
     target_date_str = os.environ.get('FEATURED_NEWS_TARGET_DATE') or today.strftime('%Y%m%d')
 
