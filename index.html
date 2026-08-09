@@ -723,6 +723,7 @@
         let latestPricesDB = {};
         let themeDetailDB = {};
         let financialsDB = {};
+        let shareholdersDB = {};
 
         async function loadData() {
             try {
@@ -779,6 +780,13 @@
                 if (resFin.ok) financialsDB = await resFin.json();
             } catch (e) {
                 console.error("stock_financials.json 로딩 실패:", e);
+            }
+
+            try {
+                const resSh = await fetch('stock_shareholders.json?t=' + Date.now());
+                if (resSh.ok) shareholdersDB = await resSh.json();
+            } catch (e) {
+                console.error("stock_shareholders.json 로딩 실패:", e);
             }
 
             if (availableDates.length > 0) {
@@ -853,40 +861,56 @@
 
             // ── 1. 기업개요 ──────────────────────────────
             const ov = overviewDB[code] || {};
+            const priceInfo = latestPricesDB[code] || {};
             const marcapEok = ov.marcap ? Math.round(ov.marcap / 100000000).toLocaleString() : null;
+            const sharesOutstanding = (ov.marcap && priceInfo.close)
+                ? Math.round(ov.marcap / priceInfo.close).toLocaleString()
+                : null;
+            const sh = shareholdersDB[code];
+            const shareholderText = sh
+                ? `${sh.label || '최대주주등'} ${sh.percent}%${sh.holder_count ? ` (${sh.holder_count}인)` : ''}`
+                : '-';
             const overviewHtml = `
                 <div style="${sectionStyle}">
                     <div style="${headStyle}">🏢 기업개요</div>
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 16px; font-size:0.9rem;">
                         <div style="color:var(--text-sub);">구분 <span style="float:right; color:var(--text-main); font-weight:600;">${ov.market || '-'}</span></div>
                         <div style="color:var(--text-sub);">업종 <span style="float:right; color:var(--text-main); font-weight:600;">${(ov.sector && ov.sector !== 'nan') ? ov.sector : '-'}</span></div>
-                        <div style="color:var(--text-sub); grid-column:1/-1;">시가총액 <span style="float:right; color:var(--text-main); font-weight:600;">${marcapEok ? marcapEok + '억원' : '-'}</span></div>
+                        <div style="color:var(--text-sub);">시가총액 <span style="float:right; color:var(--text-main); font-weight:600;">${marcapEok ? marcapEok + '억원' : '-'}</span></div>
+                        <div style="color:var(--text-sub);">상장주식수 <span style="float:right; color:var(--text-main); font-weight:600;">${sharesOutstanding ? sharesOutstanding + '주' : '-'}</span></div>
+                        <div style="color:var(--text-sub); grid-column:1/-1;">대주주 <span style="float:right; color:var(--text-main); font-weight:600;">${shareholderText}</span></div>
                     </div>
                 </div>`;
 
-            // ── 2. 재무추이 ──────────────────────────────
+            // ── 2. 재무추이 (매출 배경 위에 영업이익/순이익을 겹쳐서 표시) ──
             const fin = financialsDB[code] || [];
             let financeHtml = '';
             if (fin.length > 0) {
                 const maxRevenue = Math.max(...fin.map(r => Math.abs(r.revenue || 0)), 1);
+                const eok = v => v === null || v === undefined ? '-' : Math.round(v / 100000000).toLocaleString() + '억';
+                const barPct = v => Math.max(3, Math.min(100, Math.round((Math.abs(v || 0) / maxRevenue) * 100)));
                 const rows = fin.map(r => {
-                    const eok = v => v === null || v === undefined ? '-' : Math.round(v / 100000000).toLocaleString() + '억';
-                    const barWidth = Math.max(4, Math.round((Math.abs(r.revenue || 0) / maxRevenue) * 100));
-                    const profitUp = (r.operating_profit || 0) >= 0;
+                    const opUp = (r.operating_profit || 0) >= 0;
+                    const niUp = (r.net_income || 0) >= 0;
                     return `
-                        <div style="margin-bottom:10px;">
-                            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:var(--text-sub); margin-bottom:3px;">
-                                <span>${r.year}년</span>
-                                <span>매출 ${eok(r.revenue)} · 영업이익 <span style="color:${profitUp ? '#4ade80' : '#f87171'};">${eok(r.operating_profit)}</span> · 순이익 ${eok(r.net_income)}</span>
+                        <div style="margin-bottom:14px;">
+                            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:var(--text-sub); margin-bottom:4px;">
+                                <span style="font-weight:700; color:var(--text-main);">${r.year}년</span>
+                                <span>매출 ${eok(r.revenue)} · 영업이익 <span style="color:${opUp ? '#4ade80' : '#f87171'};">${eok(r.operating_profit)}</span> · 순이익 <span style="color:${niUp ? '#4ade80' : '#f87171'};">${eok(r.net_income)}</span></span>
                             </div>
-                            <div style="background:rgba(255,255,255,0.06); border-radius:6px; height:8px; overflow:hidden;">
-                                <div style="background:#d4a373; height:100%; width:${barWidth}%;"></div>
+                            <div style="position:relative; height:22px;">
+                                <div style="position:absolute; left:0; top:0; height:22px; border-radius:5px; background:rgba(212,163,115,0.35); width:${barPct(r.revenue)}%;"></div>
+                                <div style="position:absolute; left:0; top:6px; height:10px; border-radius:4px; background:${opUp ? '#3b82f6' : '#f87171'}; width:${barPct(r.operating_profit)}%;"></div>
+                                <div style="position:absolute; left:0; top:9px; height:4px; border-radius:2px; background:${niUp ? '#4ade80' : '#dc2626'}; width:${barPct(r.net_income)}%;"></div>
                             </div>
                         </div>`;
                 }).join('');
                 financeHtml = `
                     <div style="${sectionStyle}">
-                        <div style="${headStyle}">📊 재무추이 (연간, DART 공시 기준)</div>
+                        <div style="${headStyle}">📊 재무추이 (연간, 네이버금융 기준)</div>
+                        <div style="display:flex; gap:12px; font-size:0.72rem; color:var(--text-sub); margin-bottom:10px;">
+                            <span>🟧 매출액</span><span>🔵 영업이익</span><span>🟢 순이익</span>
+                        </div>
                         ${rows}
                     </div>`;
             } else {
@@ -951,9 +975,9 @@
                     </div>`;
             }
 
-            // ── 5. 종목뉴스 (기존 타임라인) ──────────────
+            // ── 5. 종목뉴스 (연도 > 월별로 묶어서 접었다 펼치기) ──────────────
             const list = newsHistoryDB[code] || [];
-            let newsHtml = `<div style="${headStyle}">📰 종목뉴스</div>`;
+            let newsHtml = `<div style="${headStyle}">📰 종목뉴스 ${list.length ? `(${list.length}건)` : ''}</div>`;
             if (list.length === 0) {
                 newsHtml += `
                     <div style="text-align:center; padding:30px; color:var(--text-sub);">
@@ -961,16 +985,45 @@
                         등록된 과거 이브닝 호재/뉴스 데이터가 없습니다.
                     </div>`;
             } else {
-                newsHtml += list.map(item => {
-                    const titleText = item.enc ? dec(item.title) : item.title;
-                    const contentText = item.enc ? dec(item.content) : item.content;
+                // 연도 -> 월 -> 아이템 목록으로 그룹핑 (날짜 내림차순)
+                const sorted = [...list].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+                const byYear = {};
+                sorted.forEach(item => {
+                    const m = /^(\d{4})-(\d{2})/.exec(item.date || '');
+                    const year = m ? m[1] : '기타';
+                    const month = m ? m[2] : '00';
+                    byYear[year] = byYear[year] || {};
+                    byYear[year][month] = byYear[year][month] || [];
+                    byYear[year][month].push(item);
+                });
+
+                const years = Object.keys(byYear).sort((a, b) => b.localeCompare(a));
+                newsHtml += years.map((year, yi) => {
+                    const months = Object.keys(byYear[year]).sort((a, b) => b.localeCompare(a));
+                    const yearCount = months.reduce((sum, m) => sum + byYear[year][m].length, 0);
+                    const monthsHtml = months.map(month => {
+                        const items = byYear[year][month];
+                        const itemsHtml = items.map(item => {
+                            const titleText = item.enc ? dec(item.title) : item.title;
+                            const contentText = item.enc ? dec(item.content) : item.content;
+                            return `
+                                <div class="timeline-item">
+                                    <div class="timeline-date">📅 ${item.date} ${item.rate ? '(' + item.rate + ')' : ''}</div>
+                                    <div class="timeline-title">${titleText}</div>
+                                    <div class="timeline-text">${contentText}</div>
+                                </div>`;
+                        }).join('');
+                        return `
+                            <details style="margin:6px 0 6px 8px;">
+                                <summary style="cursor:pointer; font-size:0.85rem; color:var(--text-sub); padding:4px 0;">${parseInt(month, 10)}월 (${items.length}건)</summary>
+                                <div style="padding-left:6px;">${itemsHtml}</div>
+                            </details>`;
+                    }).join('');
                     return `
-                        <div class="timeline-item">
-                            <div class="timeline-date">📅 ${item.date} ${item.rate ? '(' + item.rate + ')' : ''}</div>
-                            <div class="timeline-title">${titleText}</div>
-                            <div class="timeline-text">${contentText}</div>
-                        </div>
-                    `;
+                        <details style="margin-bottom:6px;" ${yi === 0 ? 'open' : ''}>
+                            <summary style="cursor:pointer; font-size:0.92rem; font-weight:700; color:var(--text-main); padding:6px 0;">${year}년 (${yearCount}건)</summary>
+                            ${monthsHtml}
+                        </details>`;
                 }).join('');
             }
 
