@@ -1,0 +1,31 @@
+{
+  "sector": "반도체와반도체장비",
+  "shareholder_summary": {
+    "label": "최대주주등",
+    "holder_count": 16,
+    "shares": 1151309872,
+    "percent": 19.69
+  },
+  "named_holders": [
+    {
+      "name": "삼성생명보험 외 15인",
+      "shares": 1151309872,
+      "percent": 19.69
+    },
+    {
+      "name": "국민연금공단",
+      "shares": 458637667,
+      "percent": 7.84
+    },
+    {
+      "name": "BlackRock Fund Advisors 외 15인",
+      "shares": 300391061,
+      "percent": 5.14
+    },
+    {
+      "name": "자사주",
+      "shares": 79870794,
+      "percent": 1.37
+    }
+  ]
+}
