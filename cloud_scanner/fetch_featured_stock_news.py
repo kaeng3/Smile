@@ -41,7 +41,7 @@ def get_today_stock_list(target_date_str):
 
 def parse_time_text(time_text, today):
     """네이버 뉴스 검색결과의 상대/절대 시간 표기를 오늘 날짜의 HH:MM로 최대한 변환.
-    예) '3시간 전' '52분 전' '2026.08.10.' 등"""
+    예) '3시간 전' '52분 전' '2026.08.10.' 등. 오늘이 아닌 기사면 None을 반환해 제외시킨다."""
     time_text = (time_text or '').strip()
     m = re.match(r'^(\d+)분 전$', time_text)
     if m:
@@ -54,41 +54,49 @@ def parse_time_text(time_text, today):
     m = re.match(r'^(\d{2}):(\d{2})$', time_text)
     if m:
         return time_text
-    return time_text  # 그 외(날짜 등)는 원문 그대로
+    m = re.match(r'^(\d+)일 전$', time_text)
+    if m:
+        return None  # 오늘 기사가 아니면 제외
+    return None  # 그 외 형식(절대 날짜 등)도 오늘인지 확신할 수 없어 일단 제외
 
 
 def get_featured_news(stock_name, today):
-    """'{종목명} 특징주' 네이버 뉴스 검색 결과에서 시간/제목/언론사/링크를 모은다."""
+    """'{종목명} 특징주' 네이버 뉴스 검색 결과에서 시간/제목/언론사/링크를 모은다.
+    (2026년 기준 네이버 뉴스 검색 결과는 SDS 컴포넌트 구조라 클래스명이 해시화되어 있어,
+    data-heatmap-target / data-sds-comp 같은 안정적인 속성 기준으로 선택한다.)"""
     query = urllib.parse.quote(f"{stock_name} 특징주")
     url = f"https://search.naver.com/search.naver?where=news&query={query}&sort=1"  # sort=1: 최신순
     articles = []
     try:
         resp = requests.get(url, headers=HEADERS, timeout=8)
         soup = BeautifulSoup(resp.text, 'html.parser')
-        items = soup.select('div.news_wrap, li.bx')
+
+        title_links = soup.select('a[data-heatmap-target=".tit"]')
         seen_links = set()
-        for item in items[:20]:
-            title_tag = item.select_one('a.news_tit')
-            if not title_tag:
-                continue
-            title = title_tag.get('title') or title_tag.get_text(strip=True)
-            link = title_tag.get('href')
+        for title_link in title_links:
+            link = title_link.get('href')
             if not link or link in seen_links:
+                continue
+
+            title_span = title_link.select_one('span.sds-comps-text-type-headline1')
+            title = title_span.get_text(strip=True) if title_span else title_link.get_text(strip=True)
+            if '특징주' not in title:
                 continue
             seen_links.add(link)
 
-            press_tag = item.select_one('a.info.press, .press')
-            press = press_tag.get_text(strip=True) if press_tag else ''
-
-            time_tag = item.select_one('span.info')
-            time_text = time_tag.get_text(strip=True) if time_tag else ''
-            time_display = parse_time_text(time_text, today)
-
-            if '특징주' not in title:
-                continue
+            profile = title_link.find_previous('div', attrs={'data-sds-comp': 'Profile'})
+            press = ''
+            time_text = ''
+            if profile:
+                press_el = profile.select_one('.sds-comps-profile-info-title-text')
+                if press_el:
+                    press = press_el.get_text(strip=True)
+                subtext_el = profile.select_one('.sds-comps-profile-info-subtext')
+                if subtext_el:
+                    time_text = subtext_el.get_text(strip=True)
 
             articles.append({
-                'time': time_display,
+                'time': parse_time_text(time_text, today),
                 'title': title,
                 'press': press,
                 'link': link,
@@ -96,6 +104,7 @@ def get_featured_news(stock_name, today):
     except Exception as e:
         print(f"[{stock_name}] 특징주 뉴스 검색 실패: {e}")
 
+    articles = [a for a in articles if a['time']]
     articles.sort(key=lambda a: a['time'])
     return stock_name, articles
 
