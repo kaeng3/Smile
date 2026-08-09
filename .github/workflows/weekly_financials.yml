@@ -34,5 +34,5 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add stock_financials.json stock_shareholders.json stock_sector.json
+          git add stock_financials.json stock_shareholders.json stock_sector.json naver_run_debug.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Weekly Financials Update: $(date +'%Y-%m-%d')" && git push)

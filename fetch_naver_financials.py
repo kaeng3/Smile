@@ -326,6 +326,15 @@ def main():
     with open(SECTOR_OUTPUT_PATH, 'w', encoding='utf-8') as f:
         json.dump(sectors, f, ensure_ascii=False)
 
+    with open(os.path.join(GIT_DIR, 'naver_run_debug.json'), 'w', encoding='utf-8') as f:
+        json.dump({
+            'target_codes': len(codes),
+            'processed': done,
+            'financials_ok': ok,
+            'shareholders_total': len(shareholders),
+            'sectors_total': len(sectors),
+        }, f, ensure_ascii=False, indent=2)
+
     print(f"[NAVER] stock_financials.json 저장 완료: 총 {len(financials)}종목 (이번 실행 성공 {ok}건)")
     print(f"[NAVER] stock_shareholders.json 저장 완료: 총 {len(shareholders)}종목")
     print(f"[NAVER] stock_sector.json 저장 완료: 총 {len(sectors)}종목")
