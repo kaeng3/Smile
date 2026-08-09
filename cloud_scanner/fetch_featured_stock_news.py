@@ -101,6 +101,23 @@ def get_featured_news(stock_name, today):
 
 
 def main():
+    if os.environ.get('FEATURED_DEBUG') == '1':
+        out = {}
+        query = urllib.parse.quote("포스코퓨처엠 특징주")
+        url = f"https://search.naver.com/search.naver?where=news&query={query}&sort=1"
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=8)
+            out['status_code'] = resp.status_code
+            out['url'] = resp.url
+            out['text_len'] = len(resp.text)
+            out['text_sample'] = resp.text[:6000]
+        except Exception as e:
+            out['error'] = str(e)
+        with open(os.path.join(GIT_DIR, 'featured_debug.json'), 'w', encoding='utf-8') as f:
+            json.dump(out, f, ensure_ascii=False, indent=2)
+        print("[DEBUG] 저장 완료")
+        return
+
     today = datetime.datetime.now()
     target_date_str = os.environ.get('FEATURED_NEWS_TARGET_DATE') or today.strftime('%Y%m%d')
 

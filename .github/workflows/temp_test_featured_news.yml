@@ -2,6 +2,10 @@ name: TEMP Test Featured News
 
 on:
   workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        default: false
 
 jobs:
   test:
@@ -23,6 +27,7 @@ jobs:
       - name: Run Featured News Script (test against 20260807)
         env:
           FEATURED_NEWS_TARGET_DATE: '20260807'
+          FEATURED_DEBUG: ${{ github.event.inputs.debug == 'true' && '1' || '0' }}
         run: |
           python cloud_scanner/fetch_featured_stock_news.py
 
@@ -30,5 +35,5 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add featured_stock_news.json
+          git add featured_stock_news.json featured_debug.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "TEST: featured news 20260807" && git push)
