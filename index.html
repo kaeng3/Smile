@@ -859,7 +859,7 @@
                     <div style="${headStyle}">🏢 기업개요</div>
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 16px; font-size:0.9rem;">
                         <div style="color:var(--text-sub);">구분 <span style="float:right; color:var(--text-main); font-weight:600;">${ov.market || '-'}</span></div>
-                        <div style="color:var(--text-sub);">업종 <span style="float:right; color:var(--text-main); font-weight:600;">${ov.sector || '-'}</span></div>
+                        <div style="color:var(--text-sub);">업종 <span style="float:right; color:var(--text-main); font-weight:600;">${(ov.sector && ov.sector !== 'nan') ? ov.sector : '-'}</span></div>
                         <div style="color:var(--text-sub); grid-column:1/-1;">시가총액 <span style="float:right; color:var(--text-main); font-weight:600;">${marcapEok ? marcapEok + '억원' : '-'}</span></div>
                     </div>
                 </div>`;

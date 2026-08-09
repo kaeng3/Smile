@@ -154,7 +154,7 @@ try:
         for _, row in df_desc.iterrows():
             code = str(row.get('Code', ''))
             sector = row.get('Sector') or row.get('Industry')
-            if code in overview_db and sector:
+            if code in overview_db and sector is not None and str(sector) != 'nan' and str(sector).strip():
                 overview_db[code]['sector'] = str(sector)
     except Exception as e:
         print("[SYNC] 업종(KRX-DESC) 조회 실패, 구분/시총만 사용:", e)
