@@ -43,8 +43,45 @@ def get_session():
     return _thread_local.session
 
 
+def parse_shareholder_info(html_text):
+    """같은 페이지의 '기업별 주주현황' 표에서 최대주주등 지분율/보유주식수를 뽑는다."""
+    try:
+        soup = BeautifulSoup(html_text, 'html.parser')
+        table = None
+        for t in soup.find_all('table'):
+            if '주주현황' in (t.get('summary') or ''):
+                table = t
+                break
+        if not table:
+            return None
+        tbody = table.find('tbody')
+        if not tbody:
+            return None
+        row = tbody.find('tr')  # 첫 행 = 최대주주등
+        if not row:
+            return None
+        label_cell = row.find('th')
+        label = label_cell.get_text(strip=True) if label_cell else '최대주주등'
+        tds = row.find_all('td')
+        if len(tds) < 3:
+            return None
+        count = parse_amount(tds[0].get_text())
+        shares = parse_amount(tds[1].get_text())
+        percent = parse_amount(tds[2].get_text())
+        if percent is None:
+            return None
+        return {
+            'label': label,
+            'holder_count': int(count) if count is not None else None,
+            'shares': int(shares) if shares is not None else None,
+            'percent': percent,
+        }
+    except Exception:
+        return None
+
+
 def get_token(code):
-    """해당 종목 코드로 접속했을 때 발급되는 encparam/id 토큰 + 세션 쿠키를 가져온다.
+    """해당 종목 코드로 접속했을 때 발급되는 encparam/id 토큰 + 세션 쿠키 + 대주주 정보를 가져온다.
     encparam은 종목(cmp_cd)에 종속된 값으로 보여서, 다른 종목 조회 시 재사용하면
     안 되고 종목마다 새로 받아야 한다(재사용 시 더미/에러 데이터가 내려옴).
     스레드마다 별도 세션을 써야 쿠키가 서로 섞이지 않는다."""
@@ -58,9 +95,11 @@ def get_token(code):
     if not m_enc:
         raise RuntimeError("encparam 파싱 실패 (페이지 구조 변경 가능성)")
 
+    shareholder = parse_shareholder_info(text)
+
     enc = m_enc.group(1)
     id_ = m_id.group(1) if m_id else ''
-    return enc, id_
+    return enc, id_, shareholder
 
 
 ROW_KEYS = {
@@ -88,8 +127,9 @@ def parse_amount(text):
 
 
 def fetch_one(code):
+    shareholder = None
     try:
-        enc, id_ = get_token(code)
+        enc, id_, shareholder = get_token(code)
         url = "https://navercomp.wisereport.co.kr/v2/company/ajax/cF1001.aspx"
         params = {
             'cmp_cd': code,
@@ -103,12 +143,12 @@ def fetch_one(code):
         tables = soup.find_all('table')
         # 첫 번째 테이블은 크롤링 방지용 더미(같은 숫자 반복) 테이블이라 두 번째를 써야 함
         if len(tables) < 2:
-            return code, []
+            return code, [], shareholder
         table = tables[1]
 
         thead = table.find('thead')
         if not thead:
-            return code, []
+            return code, [], shareholder
 
         # 연도 헤더: "2024/12" 형태. "(E)"(추정치) 컬럼은 실적이 아니므로 제외
         year_cols = []  # [(col_index_in_row, year)]
@@ -123,12 +163,12 @@ def fetch_one(code):
                 col_idx += 1
 
         if not year_cols:
-            return code, []
+            return code, [], shareholder
 
         by_key = {}
         tbody = table.find('tbody')
         if not tbody:
-            return code, []
+            return code, [], shareholder
         for row in tbody.find_all('tr'):
             label_cell = row.find('th')
             label = label_cell.get_text(strip=True) if label_cell else ''
@@ -148,7 +188,7 @@ def fetch_one(code):
             by_key[matched_key] = values
 
         if not by_key:
-            return code, []
+            return code, [], shareholder
 
         results = []
         for col_idx, year in year_cols:
@@ -161,27 +201,15 @@ def fetch_one(code):
                 results.append(entry)
 
         results.sort(key=lambda r: r['year'])
-        return code, results
+        return code, results, shareholder
     except Exception:
-        return code, []
+        return code, [], shareholder
+
+
+SHAREHOLDER_OUTPUT_PATH = os.path.join(GIT_DIR, 'stock_shareholders.json')
 
 
 def main():
-    if os.environ.get('NAVER_DEBUG2') == '1':
-        session = get_session()
-        r = session.get('https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=017900', timeout=10)
-        text = r.text
-        idx = text.find('최대주주')
-        out = {'idx': idx, 'total_len': len(text)}
-        if idx >= 0:
-            out['around'] = text[max(0, idx - 300): idx + 1500]
-        else:
-            out['sample'] = text[:2000]
-        with open(os.path.join(GIT_DIR, 'naver_debug2.json'), 'w', encoding='utf-8') as f:
-            json.dump(out, f, ensure_ascii=False, indent=2)
-        print("[DEBUG2] 저장 완료")
-        return
-
     if not os.path.exists(THEMES_PATH):
         print("[NAVER] stock_detail_themes.json이 없어 대상 종목을 알 수 없습니다.")
         return
@@ -189,7 +217,7 @@ def main():
     with open(THEMES_PATH, 'r', encoding='utf-8') as f:
         codes = list(json.load(f).keys())
 
-    print(f"[NAVER] 재무제표 조회 대상: {len(codes)}종목")
+    print(f"[NAVER] 재무제표/대주주 조회 대상: {len(codes)}종목")
 
     try:
         get_token('005930')
@@ -205,23 +233,30 @@ def main():
         except Exception:
             financials = {}
 
+    shareholders = {}
+
     done = 0
     ok = 0
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ex:
         futures = {ex.submit(fetch_one, code): code for code in codes}
         for fut in concurrent.futures.as_completed(futures):
-            code, results = fut.result()
+            code, results, shareholder = fut.result()
             if results:
                 financials[code] = results
                 ok += 1
+            if shareholder:
+                shareholders[code] = shareholder
             done += 1
             if done % 300 == 0:
-                print(f"[NAVER] 진행 {done}/{len(codes)} (성공 {ok}건)")
+                print(f"[NAVER] 진행 {done}/{len(codes)} (재무 성공 {ok}건)")
 
     with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
         json.dump(financials, f, ensure_ascii=False)
+    with open(SHAREHOLDER_OUTPUT_PATH, 'w', encoding='utf-8') as f:
+        json.dump(shareholders, f, ensure_ascii=False)
 
     print(f"[NAVER] stock_financials.json 저장 완료: 총 {len(financials)}종목 (이번 실행 성공 {ok}건)")
+    print(f"[NAVER] stock_shareholders.json 저장 완료: 총 {len(shareholders)}종목")
 
 
 if __name__ == '__main__':
