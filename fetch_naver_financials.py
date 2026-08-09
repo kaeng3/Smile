@@ -210,6 +210,19 @@ SHAREHOLDER_OUTPUT_PATH = os.path.join(GIT_DIR, 'stock_shareholders.json')
 
 
 def main():
+    if os.environ.get('NAVER_DEBUG3') == '1':
+        session = get_session()
+        r = session.get('https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=126730', timeout=10)
+        text = r.text
+        out = {'total_len': len(text)}
+        for kw in ['WICS', '코스닥 전기', '주요주주', '최대주주']:
+            idx = text.find(kw)
+            out[kw] = text[max(0, idx - 200): idx + 1200] if idx >= 0 else f'(찾지 못함)'
+        with open(os.path.join(GIT_DIR, 'naver_debug3.json'), 'w', encoding='utf-8') as f:
+            json.dump(out, f, ensure_ascii=False, indent=2)
+        print("[DEBUG3] 저장 완료")
+        return
+
     if not os.path.exists(THEMES_PATH):
         print("[NAVER] stock_detail_themes.json이 없어 대상 종목을 알 수 없습니다.")
         return
