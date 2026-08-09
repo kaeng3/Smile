@@ -32,16 +32,25 @@ HEADERS = {
     'Referer': 'https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx',
 }
 
-_session = requests.Session()
-_session.headers.update(HEADERS)
+_thread_local = threading.local()
+
+
+def get_session():
+    if not hasattr(_thread_local, 'session'):
+        s = requests.Session()
+        s.headers.update(HEADERS)
+        _thread_local.session = s
+    return _thread_local.session
 
 
 def get_token(code):
     """해당 종목 코드로 접속했을 때 발급되는 encparam/id 토큰 + 세션 쿠키를 가져온다.
     encparam은 종목(cmp_cd)에 종속된 값으로 보여서, 다른 종목 조회 시 재사용하면
-    안 되고 종목마다 새로 받아야 한다(재사용 시 더미/에러 데이터가 내려옴)."""
+    안 되고 종목마다 새로 받아야 한다(재사용 시 더미/에러 데이터가 내려옴).
+    스레드마다 별도 세션을 써야 쿠키가 서로 섞이지 않는다."""
+    session = get_session()
     url = f"https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd={code}"
-    r = _session.get(url, timeout=10)
+    r = session.get(url, timeout=10)
     text = r.text
 
     m_enc = re.search(r"encparam\s*:\s*'([^']+)'", text)
@@ -89,22 +98,39 @@ def fetch_one(code):
             'encparam': enc,
             'id': id_,
         }
-        r = _session.get(url, params=params, timeout=12)
+        r = get_session().get(url, params=params, timeout=12)
         soup = BeautifulSoup(r.text, 'html.parser')
-        table = soup.find('table')
-        if not table:
+        tables = soup.find_all('table')
+        # 첫 번째 테이블은 크롤링 방지용 더미(같은 숫자 반복) 테이블이라 두 번째를 써야 함
+        if len(tables) < 2:
+            return code, []
+        table = tables[1]
+
+        thead = table.find('thead')
+        if not thead:
             return code, []
 
-        header_cells = [th.get_text(strip=True) for th in table.find_all('th')]
-        years = [parse_year(h) for h in header_cells]
-        years = [y for y in years if y]
+        # 연도 헤더: "2024/12" 형태. "(E)"(추정치) 컬럼은 실적이 아니므로 제외
+        year_cols = []  # [(col_index_in_row, year)]
+        header_ths = thead.find_all('th')
+        col_idx = 0
+        for th in header_ths:
+            txt = th.get_text(strip=True)
+            year = parse_year(txt)
+            if year and '(E)' not in txt:
+                year_cols.append((col_idx, year))
+            if year:  # 연도가 있는 th만 실제 데이터 컬럼(rowspan 헤더 제외)
+                col_idx += 1
+
+        if not year_cols:
+            return code, []
 
         by_key = {}
-        for row in table.find_all('tr'):
-            cells = row.find_all('td')
-            if not cells:
-                continue
-            label_cell = row.find(['th', 'td'])
+        tbody = table.find('tbody')
+        if not tbody:
+            return code, []
+        for row in tbody.find_all('tr'):
+            label_cell = row.find('th')
             label = label_cell.get_text(strip=True) if label_cell else ''
             matched_key = None
             for k in ROW_KEYS:
@@ -113,26 +139,27 @@ def fetch_one(code):
                     break
             if not matched_key or matched_key in by_key:
                 continue
-            values = [parse_amount(td.get_text()) for td in cells]
+            cells = row.find_all('td')
+            values = []
+            for td in cells:
+                title_attr = (td.get('title') or '').strip()
+                text_val = td.get_text(strip=True)
+                values.append(parse_amount(title_attr) if title_attr else parse_amount(text_val))
             by_key[matched_key] = values
 
-        if not years or not by_key:
+        if not by_key:
             return code, []
 
-        # 단위: 네이버금융 표는 보통 '억원' 단위로 이미 표시됨 -> 원 단위로 환산해서
-        # 기존(DART, 원단위) 구조와 통일
         results = []
-        n = min(len(years), max((len(v) for v in by_key.values()), default=0))
-        for i in range(n):
-            year = years[i]
+        for col_idx, year in year_cols:
             entry = {'year': year}
             for field in ('revenue', 'operating_profit', 'net_income'):
                 vals = by_key.get(field)
-                v = vals[i] if vals and i < len(vals) else None
-                entry[field] = int(v * 100000000) if v is not None else None
-            results.append(entry)
+                v = vals[col_idx] if vals and col_idx < len(vals) else None
+                entry[field] = int(round(v * 100000000)) if v is not None else None
+            if any(entry[f] is not None for f in ('revenue', 'operating_profit', 'net_income')):
+                results.append(entry)
 
-        results = [r for r in results if any(r[f] is not None for f in ('revenue', 'operating_profit', 'net_income'))]
         results.sort(key=lambda r: r['year'])
         return code, results
     except Exception:
@@ -163,7 +190,7 @@ def main():
                 enc, id_ = get_token(sample_code)
                 url = "https://navercomp.wisereport.co.kr/v2/company/ajax/cF1001.aspx"
                 params = {'cmp_cd': sample_code, 'fin_typ': 0, 'freq_typ': 'Y', 'encparam': enc, 'id': id_}
-                r = _session.get(url, params=params, timeout=12)
+                r = get_session().get(url, params=params, timeout=12)
                 soup_dbg = BeautifulSoup(r.text, 'html.parser')
                 tables = soup_dbg.find_all('table')
                 debug_info[sample_code] = {
