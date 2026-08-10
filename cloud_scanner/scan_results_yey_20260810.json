@@ -80,18 +80,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "001450",
-    "name": "현대해상",
-    "close": 41050,
-    "rate": 4.4529262086514,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "145020",
     "name": "휴젤",
     "close": 276000,
     "rate": 0.9140767824497258,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "001450",
+    "name": "현대해상",
+    "close": 41050,
+    "rate": 4.4529262086514,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -104,18 +104,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "008930",
-    "name": "한미사이언스",
-    "close": 45600,
-    "rate": 2.127659574468085,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "011780",
     "name": "금호석유화학",
     "close": 123000,
     "rate": -5.092592592592593,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "008930",
+    "name": "한미사이언스",
+    "close": 45600,
+    "rate": 2.127659574468085,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -216,18 +216,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "078600",
-    "name": "대주전자재료",
-    "close": 98800,
-    "rate": 12.01814058956916,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "089860",
     "name": "롯데렌탈",
     "close": 42100,
     "rate": 4.207920792079208,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "078600",
+    "name": "대주전자재료",
+    "close": 98800,
+    "rate": 12.01814058956916,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -280,18 +280,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "415640",
-    "name": "KB발해인프라",
-    "close": 10410,
-    "rate": 0.6769825918762089,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "003380",
     "name": "하림지주",
     "close": 11220,
     "rate": 1.7225747960108795,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "415640",
+    "name": "KB발해인프라",
+    "close": 10410,
+    "rate": 0.6769825918762089,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -392,18 +392,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "122870",
-    "name": "와이지엔터테인먼트",
-    "close": 44250,
-    "rate": 6.4981949458483745,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "090360",
     "name": "로보스타",
     "close": 84000,
     "rate": -3.5591274397244548,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "122870",
+    "name": "와이지엔터테인먼트",
+    "close": 44250,
+    "rate": 6.4981949458483745,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -424,18 +424,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "397030",
-    "name": "에이프릴바이오",
-    "close": 30400,
-    "rate": 10.144927536231885,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "048410",
     "name": "현대바이오",
     "close": 7350,
     "rate": 8.24742268041237,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "397030",
+    "name": "에이프릴바이오",
+    "close": 30400,
+    "rate": 10.144927536231885,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -488,18 +488,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "108320",
-    "name": "LX세미콘",
-    "close": 39300,
-    "rate": 10.393258426966293,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "044490",
     "name": "태웅",
     "close": 31800,
     "rate": 2.5806451612903225,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "108320",
+    "name": "LX세미콘",
+    "close": 39300,
+    "rate": 10.393258426966293,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -568,18 +568,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "214430",
-    "name": "아이쓰리시스템",
-    "close": 73600,
-    "rate": 15.179968701095461,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "383310",
     "name": "에코프로에이치엔",
     "close": 25600,
     "rate": 9.168443496801707,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "214430",
+    "name": "아이쓰리시스템",
+    "close": 73600,
+    "rate": 15.179968701095461,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -608,18 +608,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "365340",
-    "name": "성일하이텍",
-    "close": 35800,
-    "rate": 6.7064083457526085,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "019170",
     "name": "신풍제약",
     "close": 8800,
     "rate": 4.0189125295508275,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "365340",
+    "name": "성일하이텍",
+    "close": 35800,
+    "rate": 6.7064083457526085,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -656,14 +656,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "025900",
-    "name": "동화기업",
-    "close": 8100,
-    "rate": 0.49627791563275436,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "013030",
     "name": "하이록코리아",
     "close": 34650,
@@ -672,10 +664,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "215200",
-    "name": "메가스터디교육",
-    "close": 39000,
-    "rate": -5.224787363304982,
+    "code": "025900",
+    "name": "동화기업",
+    "close": 8100,
+    "rate": 0.49627791563275436,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -684,6 +676,14 @@
     "name": "메디포스트",
     "close": 10160,
     "rate": 3.1472081218274113,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "215200",
+    "name": "메가스터디교육",
+    "close": 39000,
+    "rate": -5.224787363304982,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -704,18 +704,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "441270",
-    "name": "파인엠텍",
-    "close": 9190,
-    "rate": 5.632183908045977,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "092730",
     "name": "네오팜",
     "close": 24000,
     "rate": 13.47517730496454,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "441270",
+    "name": "파인엠텍",
+    "close": 9190,
+    "rate": 5.632183908045977,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -728,14 +728,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "204620",
-    "name": "글로벌텍스프리",
-    "close": 5300,
-    "rate": 0.7604562737642585,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "064260",
     "name": "다날",
     "close": 4905,
@@ -744,18 +736,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "126560",
-    "name": "현대퓨처넷",
-    "close": 3345,
-    "rate": 1.82648401826484,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "020000",
-    "name": "한섬",
-    "close": 16290,
-    "rate": 0.3078817733990148,
+    "code": "204620",
+    "name": "글로벌텍스프리",
+    "close": 5300,
+    "rate": 0.7604562737642585,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -768,18 +752,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "005610",
-    "name": "삼립",
-    "close": 40300,
-    "rate": 0.12422360248447205,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "097520",
-    "name": "엠씨넥스",
-    "close": 19940,
-    "rate": 5.4468535166578524,
+    "code": "126560",
+    "name": "현대퓨처넷",
+    "close": 3345,
+    "rate": 1.82648401826484,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -792,10 +768,26 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "317400",
-    "name": "자이에스앤디",
-    "close": 8860,
-    "rate": 6.490384615384616,
+    "code": "020000",
+    "name": "한섬",
+    "close": 16290,
+    "rate": 0.3078817733990148,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "097520",
+    "name": "엠씨넥스",
+    "close": 19940,
+    "rate": 5.4468535166578524,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "005610",
+    "name": "삼립",
+    "close": 40300,
+    "rate": 0.12422360248447205,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -816,6 +808,22 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "317400",
+    "name": "자이에스앤디",
+    "close": 8860,
+    "rate": 6.490384615384616,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "468530",
+    "name": "프로티나",
+    "close": 29650,
+    "rate": 14.478764478764477,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "092790",
     "name": "넥스틸",
     "close": 12890,
@@ -832,34 +840,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "468530",
-    "name": "프로티나",
-    "close": 29650,
-    "rate": 14.478764478764477,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "114810",
-    "name": "한솔아이원스",
-    "close": 11600,
-    "rate": 20.33195020746888,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "482630",
     "name": "삼양엔씨켐",
     "close": 14580,
     "rate": 11.895625479662318,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "016800",
-    "name": "퍼시스",
-    "close": 27450,
-    "rate": 3.389830508474576,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -872,10 +856,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "194700",
-    "name": "노바렉스",
-    "close": 16920,
-    "rate": 3.995082974800246,
+    "code": "114810",
+    "name": "한솔아이원스",
+    "close": 11600,
+    "rate": 20.33195020746888,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "016800",
+    "name": "퍼시스",
+    "close": 27450,
+    "rate": 3.389830508474576,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -888,10 +880,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "054950",
-    "name": "제이브이엠",
-    "close": 25200,
-    "rate": 1.6129032258064515,
+    "code": "194700",
+    "name": "노바렉스",
+    "close": 16920,
+    "rate": 3.995082974800246,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -904,10 +896,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "001390",
-    "name": "KG케미칼",
-    "close": 4475,
-    "rate": -6.867845993756504,
+    "code": "376270",
+    "name": "HEM파마",
+    "close": 41500,
+    "rate": -1.4251781472684086,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "054950",
+    "name": "제이브이엠",
+    "close": 25200,
+    "rate": 1.6129032258064515,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -920,10 +920,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "376270",
-    "name": "HEM파마",
-    "close": 41500,
-    "rate": -1.4251781472684086,
+    "code": "001390",
+    "name": "KG케미칼",
+    "close": 4475,
+    "rate": -6.867845993756504,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -944,26 +944,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "393890",
-    "name": "더블유씨피",
-    "close": 8440,
-    "rate": 9.895833333333332,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "002900",
-    "name": "TYM",
-    "close": 6870,
-    "rate": 7.34375,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "234340",
     "name": "헥토파이낸셜",
     "close": 20350,
     "rate": 16.954022988505745,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "393890",
+    "name": "더블유씨피",
+    "close": 8440,
+    "rate": 9.895833333333332,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -984,18 +976,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "200130",
-    "name": "콜마비앤에이치",
-    "close": 9430,
-    "rate": 6.67420814479638,
+    "code": "002900",
+    "name": "TYM",
+    "close": 6870,
+    "rate": 7.34375,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "365270",
-    "name": "큐라클",
-    "close": 12470,
-    "rate": 25.95959595959596,
+    "code": "200130",
+    "name": "콜마비앤에이치",
+    "close": 9430,
+    "rate": 6.67420814479638,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1032,14 +1024,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "419530",
-    "name": "SAMG엔터",
-    "close": 26200,
-    "rate": -7.256637168141593,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "159010",
     "name": "아스플로",
     "close": 20050,
@@ -1056,10 +1040,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "018000",
-    "name": "유니슨",
-    "close": 997,
-    "rate": 8.60566448801743,
+    "code": "419530",
+    "name": "SAMG엔터",
+    "close": 26200,
+    "rate": -7.256637168141593,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "003720",
+    "name": "삼영",
+    "close": 7460,
+    "rate": 6.571428571428571,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1080,18 +1072,26 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "114190",
-    "name": "강원에너지",
-    "close": 9750,
-    "rate": 3.9445628997867805,
+    "code": "018000",
+    "name": "유니슨",
+    "close": 997,
+    "rate": 8.60566448801743,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "003720",
-    "name": "삼영",
-    "close": 7460,
-    "rate": 6.571428571428571,
+    "code": "365270",
+    "name": "큐라클",
+    "close": 12470,
+    "rate": 25.95959595959596,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "114190",
+    "name": "강원에너지",
+    "close": 9750,
+    "rate": 3.9445628997867805,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1104,14 +1104,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "461300",
-    "name": "아이스크림미디어",
-    "close": 18360,
-    "rate": 2.0,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "053030",
     "name": "바이넥스",
     "close": 7490,
@@ -1120,10 +1112,34 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "461300",
+    "name": "아이스크림미디어",
+    "close": 18360,
+    "rate": 2.0,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "044820",
     "name": "코스맥스비티아이",
     "close": 24750,
     "rate": 7.142857142857142,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "272110",
+    "name": "케이엔제이",
+    "close": 29100,
+    "rate": 3.374777975133215,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "091580",
+    "name": "상신이디피",
+    "close": 17560,
+    "rate": 10.85858585858586,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1144,30 +1160,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "091580",
-    "name": "상신이디피",
-    "close": 17560,
-    "rate": 10.85858585858586,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "272110",
-    "name": "케이엔제이",
-    "close": 29100,
-    "rate": 3.374777975133215,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "095500",
-    "name": "미래나노텍",
-    "close": 7520,
-    "rate": 3.43878954607978,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "448280",
     "name": "에코아이",
     "close": 7840,
@@ -1180,6 +1172,14 @@
     "name": "페니트리움바이오",
     "close": 4185,
     "rate": 8.13953488372093,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "095500",
+    "name": "미래나노텍",
+    "close": 7520,
+    "rate": 3.43878954607978,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1216,6 +1216,14 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "099430",
+    "name": "바이오플러스",
+    "close": 3680,
+    "rate": 0.9602194787379973,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "024840",
     "name": "KBI메탈",
     "close": 5270,
@@ -1232,10 +1240,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "099430",
-    "name": "바이오플러스",
-    "close": 3680,
-    "rate": 0.9602194787379973,
+    "code": "446540",
+    "name": "메가터치",
+    "close": 7580,
+    "rate": 13.134328358208954,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1248,34 +1256,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "000650",
-    "name": "천일고속",
-    "close": 154900,
-    "rate": 6.314344543582704,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "017860",
-    "name": "DS단석",
-    "close": 12440,
-    "rate": 4.8903878583473865,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "446540",
-    "name": "메가터치",
-    "close": 7580,
-    "rate": 13.134328358208954,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "052330",
     "name": "코텍",
     "close": 12380,
     "rate": -0.4022526146419952,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "484120",
+    "name": "도우인시스",
+    "close": 19710,
+    "rate": 15.061295971978982,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1288,10 +1280,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "005010",
-    "name": "휴스틸",
-    "close": 3890,
-    "rate": 7.162534435261708,
+    "code": "017860",
+    "name": "DS단석",
+    "close": 12440,
+    "rate": 4.8903878583473865,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1304,10 +1296,34 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "484120",
-    "name": "도우인시스",
-    "close": 19710,
-    "rate": 15.061295971978982,
+    "code": "005010",
+    "name": "휴스틸",
+    "close": 3890,
+    "rate": 7.162534435261708,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "314130",
+    "name": "지놈앤컴퍼니",
+    "close": 3980,
+    "rate": 9.641873278236915,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "000650",
+    "name": "천일고속",
+    "close": 154900,
+    "rate": 6.314344543582704,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "067080",
+    "name": "대화제약",
+    "close": 11180,
+    "rate": 18.306878306878307,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1324,22 +1340,6 @@
     "name": "쿠콘",
     "close": 20750,
     "rate": 6.3012295081967205,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "314130",
-    "name": "지놈앤컴퍼니",
-    "close": 3980,
-    "rate": 9.641873278236915,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "067080",
-    "name": "대화제약",
-    "close": 11180,
-    "rate": 18.306878306878307,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1384,14 +1384,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "204610",
-    "name": "티쓰리",
-    "close": 3370,
-    "rate": -2.0348837209302326,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "094820",
     "name": "일진파워",
     "close": 12390,
@@ -1404,6 +1396,14 @@
     "name": "신세계 I&C",
     "close": 13280,
     "rate": 2.1538461538461537,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "204610",
+    "name": "티쓰리",
+    "close": 3370,
+    "rate": -2.0348837209302326,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1456,14 +1456,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "092130",
-    "name": "이크레더블",
-    "close": 14410,
-    "rate": 0.34818941504178275,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "338840",
     "name": "와이바이오로직스",
     "close": 11250,
@@ -1472,10 +1464,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "051160",
-    "name": "지어소프트",
-    "close": 11160,
-    "rate": -0.53475935828877,
+    "code": "293780",
+    "name": "압타바이오",
+    "close": 6100,
+    "rate": 9.515260323159785,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "092130",
+    "name": "이크레더블",
+    "close": 14410,
+    "rate": 0.34818941504178275,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1488,10 +1488,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "293780",
-    "name": "압타바이오",
-    "close": 6100,
-    "rate": 9.515260323159785,
+    "code": "051160",
+    "name": "지어소프트",
+    "close": 11160,
+    "rate": -0.53475935828877,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1576,18 +1576,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "462860",
-    "name": "더즌",
-    "close": 2085,
-    "rate": 4.25,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "382800",
     "name": "지앤비에스 에코",
     "close": 4685,
     "rate": 3.4216335540838854,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "462860",
+    "name": "더즌",
+    "close": 2085,
+    "rate": 4.25,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1600,18 +1600,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "272550",
-    "name": "삼양패키징",
-    "close": 9760,
-    "rate": 2.5210084033613445,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "382900",
     "name": "범한퓨얼셀",
     "close": 16770,
     "rate": 7.225063938618925,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "272550",
+    "name": "삼양패키징",
+    "close": 9760,
+    "rate": 2.5210084033613445,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1648,14 +1648,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "126730",
-    "name": "코칩",
-    "close": 15650,
-    "rate": 6.535057862491491,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "041520",
     "name": "이엘씨",
     "close": 11250,
@@ -1688,34 +1680,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "001290",
-    "name": "상상인증권",
-    "close": 1223,
-    "rate": 1.6625103906899419,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "089600",
-    "name": "KT나스미디어",
-    "close": 11380,
-    "rate": -1.3009540329575022,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "189330",
-    "name": "씨이랩",
-    "close": 13990,
-    "rate": 19.572649572649574,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "004080",
-    "name": "신흥",
-    "close": 14040,
-    "rate": 0.0,
+    "code": "126730",
+    "name": "코칩",
+    "close": 15650,
+    "rate": 6.535057862491491,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1736,6 +1704,46 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "089600",
+    "name": "KT나스미디어",
+    "close": 11380,
+    "rate": -1.3009540329575022,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "417500",
+    "name": "제이아이테크",
+    "close": 3300,
+    "rate": 4.430379746835443,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "004080",
+    "name": "신흥",
+    "close": 14040,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "001290",
+    "name": "상상인증권",
+    "close": 1223,
+    "rate": 1.6625103906899419,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "189330",
+    "name": "씨이랩",
+    "close": 13990,
+    "rate": 19.572649572649574,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "289080",
     "name": "SV인베스트먼트",
     "close": 2080,
@@ -1748,6 +1756,14 @@
     "name": "엠플러스",
     "close": 10200,
     "rate": 4.830421377183967,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "035080",
+    "name": "그래디언트",
+    "close": 10810,
+    "rate": 8.862034239677746,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1768,10 +1784,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "035080",
-    "name": "그래디언트",
-    "close": 10810,
-    "rate": 8.862034239677746,
+    "code": "095700",
+    "name": "제넥신",
+    "close": 2670,
+    "rate": 1.1363636363636365,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "474170",
+    "name": "루미르",
+    "close": 6720,
+    "rate": 8.737864077669903,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1780,14 +1804,6 @@
     "name": "신영와코루",
     "close": 13580,
     "rate": 1.4189693801344287,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "095700",
-    "name": "제넥신",
-    "close": 2670,
-    "rate": 1.1363636363636365,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1804,14 +1820,6 @@
     "name": "상상인",
     "close": 2165,
     "rate": -3.9911308203991127,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "474170",
-    "name": "루미르",
-    "close": 6720,
-    "rate": 8.737864077669903,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1848,18 +1856,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "192410",
-    "name": "오늘이엔엠",
-    "close": 4450,
-    "rate": 6.71462829736211,
+    "code": "417010",
+    "name": "나노팀",
+    "close": 5420,
+    "rate": 7.326732673267326,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "091440",
-    "name": "한울소재과학",
-    "close": 3230,
-    "rate": 7.666666666666666,
+    "code": "192410",
+    "name": "오늘이엔엠",
+    "close": 4450,
+    "rate": 6.71462829736211,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1872,26 +1880,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "463020",
-    "name": "뉴엔AI",
-    "close": 12270,
-    "rate": 3.5443037974683547,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "417010",
-    "name": "나노팀",
-    "close": 5420,
-    "rate": 7.326732673267326,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "053260",
-    "name": "금강철강",
-    "close": 5820,
-    "rate": 9.398496240601503,
+    "code": "091440",
+    "name": "한울소재과학",
+    "close": 3230,
+    "rate": 7.666666666666666,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1904,10 +1896,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "417500",
-    "name": "제이아이테크",
-    "close": 3300,
-    "rate": 4.430379746835443,
+    "code": "053260",
+    "name": "금강철강",
+    "close": 5820,
+    "rate": 9.398496240601503,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1920,26 +1912,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "463020",
+    "name": "뉴엔AI",
+    "close": 12270,
+    "rate": 3.5443037974683547,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "123040",
     "name": "엠에스오토텍",
     "close": 1688,
     "rate": 2.3650697392359006,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "058820",
-    "name": "CMG제약",
-    "close": 703,
-    "rate": -1.6783216783216783,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "002220",
-    "name": "한일철강",
-    "close": 3895,
-    "rate": -4.534313725490196,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1960,10 +1944,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "209640",
-    "name": "와이제이링크",
-    "close": 3575,
-    "rate": 6.7164179104477615,
+    "code": "058820",
+    "name": "CMG제약",
+    "close": 703,
+    "rate": -1.6783216783216783,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -1972,6 +1956,22 @@
     "name": "박셀바이오",
     "close": 4370,
     "rate": 4.796163069544365,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "002220",
+    "name": "한일철강",
+    "close": 3895,
+    "rate": -4.534313725490196,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "209640",
+    "name": "와이제이링크",
+    "close": 3575,
+    "rate": 6.7164179104477615,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2000,14 +2000,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "008040",
-    "name": "사조동아원",
-    "close": 667,
-    "rate": 2.773497688751926,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "418470",
     "name": "KT밀리의서재",
     "close": 10900,
@@ -2024,6 +2016,14 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "389030",
+    "name": "지니너스",
+    "close": 2320,
+    "rate": 6.912442396313365,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "032560",
     "name": "황금에스티",
     "close": 5420,
@@ -2032,10 +2032,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "389030",
-    "name": "지니너스",
-    "close": 2320,
-    "rate": 6.912442396313365,
+    "code": "008040",
+    "name": "사조동아원",
+    "close": 667,
+    "rate": 2.773497688751926,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2056,10 +2056,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "223250",
-    "name": "드림씨아이에스",
-    "close": 3515,
-    "rate": 3.687315634218289,
+    "code": "107600",
+    "name": "새빗켐",
+    "close": 14860,
+    "rate": 2.9799029799029797,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2080,10 +2080,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "107600",
-    "name": "새빗켐",
-    "close": 14860,
-    "rate": 2.9799029799029797,
+    "code": "223250",
+    "name": "드림씨아이에스",
+    "close": 3515,
+    "rate": 3.687315634218289,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "019680",
+    "name": "대교",
+    "close": 1020,
+    "rate": -8.025247971145175,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2096,10 +2104,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "019680",
-    "name": "대교",
-    "close": 1020,
-    "rate": -8.025247971145175,
+    "code": "037760",
+    "name": "쎄니트",
+    "close": 2390,
+    "rate": -0.20876826722338201,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2120,18 +2128,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "037760",
-    "name": "쎄니트",
-    "close": 2390,
-    "rate": -0.20876826722338201,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "303810",
     "name": "동국생명과학",
     "close": 2520,
     "rate": 2.6476578411405294,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "045970",
+    "name": "코아시아",
+    "close": 2970,
+    "rate": 13.142857142857142,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2160,6 +2168,14 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "185490",
+    "name": "아이진",
+    "close": 1776,
+    "rate": 6.029850746268656,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "347890",
     "name": "엠엑스온",
     "close": 4625,
@@ -2168,10 +2184,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "045970",
-    "name": "코아시아",
-    "close": 2970,
-    "rate": 13.142857142857142,
+    "code": "460940",
+    "name": "피앤에스로보틱스",
+    "close": 5690,
+    "rate": 10.271317829457365,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2184,18 +2200,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "185490",
-    "name": "아이진",
-    "close": 1776,
-    "rate": 6.029850746268656,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "460940",
-    "name": "피앤에스로보틱스",
-    "close": 5690,
-    "rate": 10.271317829457365,
+    "code": "253840",
+    "name": "수젠텍",
+    "close": 4535,
+    "rate": 1.2276785714285714,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2216,18 +2224,26 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "253840",
-    "name": "수젠텍",
-    "close": 4535,
-    "rate": 1.2276785714285714,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "203400",
     "name": "에이비온",
     "close": 841,
     "rate": 29.984544049459043,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "003010",
+    "name": "혜인",
+    "close": 5770,
+    "rate": -2.3688663282571913,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "105740",
+    "name": "디케이락",
+    "close": 7290,
+    "rate": 1.25,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2240,18 +2256,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "024830",
-    "name": "세원물산",
-    "close": 8910,
-    "rate": 1.3651877133105803,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "105740",
-    "name": "디케이락",
-    "close": 7290,
-    "rate": 1.25,
+    "code": "147760",
+    "name": "피엠티",
+    "close": 3640,
+    "rate": 19.54022988505747,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2272,10 +2280,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "003010",
-    "name": "혜인",
-    "close": 5770,
-    "rate": -2.3688663282571913,
+    "code": "024830",
+    "name": "세원물산",
+    "close": 8910,
+    "rate": 1.3651877133105803,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2284,14 +2292,6 @@
     "name": "제이씨케미칼",
     "close": 3280,
     "rate": 5.636070853462158,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "147760",
-    "name": "피엠티",
-    "close": 3640,
-    "rate": 19.54022988505747,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2312,26 +2312,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "110790",
-    "name": "크리스에프앤씨",
-    "close": 2970,
-    "rate": -2.622950819672131,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "072950",
     "name": "빛샘전자",
     "close": 8600,
     "rate": 6.832298136645963,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "140070",
-    "name": "서플러스글로벌",
-    "close": 1852,
-    "rate": 4.8697621744054365,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2344,6 +2328,14 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "140070",
+    "name": "서플러스글로벌",
+    "close": 1852,
+    "rate": 4.8697621744054365,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "214680",
     "name": "디알텍",
     "close": 815,
@@ -2352,10 +2344,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "222110",
-    "name": "팬젠",
-    "close": 5020,
-    "rate": 0.6012024048096193,
+    "code": "110790",
+    "name": "크리스에프앤씨",
+    "close": 2970,
+    "rate": -2.622950819672131,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2376,18 +2368,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "318160",
-    "name": "셀바이오휴먼텍",
-    "close": 7200,
-    "rate": 7.462686567164178,
+    "code": "222110",
+    "name": "팬젠",
+    "close": 5020,
+    "rate": 0.6012024048096193,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "001560",
-    "name": "제일연마",
-    "close": 8820,
-    "rate": 2.4390243902439024,
+    "code": "318160",
+    "name": "셀바이오휴먼텍",
+    "close": 7200,
+    "rate": 7.462686567164178,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2400,10 +2392,26 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "001560",
+    "name": "제일연마",
+    "close": 8820,
+    "rate": 2.4390243902439024,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "005670",
     "name": "푸드웰",
     "close": 6550,
     "rate": 2.0249221183800623,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "082210",
+    "name": "옵트론텍",
+    "close": 1852,
+    "rate": -3.792207792207792,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2424,10 +2432,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "082210",
-    "name": "옵트론텍",
-    "close": 1852,
-    "rate": -3.792207792207792,
+    "code": "100590",
+    "name": "머큐리",
+    "close": 3650,
+    "rate": 5.0359712230215825,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2464,26 +2472,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "100590",
-    "name": "머큐리",
-    "close": 3650,
-    "rate": 5.0359712230215825,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "065530",
     "name": "와이어블",
     "close": 1304,
     "rate": 1.2422360248447204,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "027050",
-    "name": "코리아나",
-    "close": 1545,
-    "rate": 3.691275167785235,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2504,6 +2496,14 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "027050",
+    "name": "코리아나",
+    "close": 1545,
+    "rate": 3.691275167785235,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "084650",
     "name": "랩지노믹스",
     "close": 821,
@@ -2512,18 +2512,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "205470",
-    "name": "휴마시스",
-    "close": 2460,
-    "rate": 7.18954248366013,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "457370",
     "name": "한켐",
     "close": 7520,
     "rate": 7.275320970042796,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "205470",
+    "name": "휴마시스",
+    "close": 2460,
+    "rate": 7.18954248366013,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2560,18 +2560,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "225190",
-    "name": "LK삼양",
-    "close": 812,
-    "rate": 29.92,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "007280",
     "name": "한국특강",
     "close": 1993,
     "rate": 3.9103232533889467,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "225190",
+    "name": "LK삼양",
+    "close": 812,
+    "rate": 29.92,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2616,10 +2616,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "037950",
-    "name": "엘컴텍",
-    "close": 3105,
-    "rate": 1.1400651465798046,
+    "code": "064800",
+    "name": "포니링크",
+    "close": 2040,
+    "rate": 2.3582538886101356,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2632,10 +2632,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "064800",
-    "name": "포니링크",
-    "close": 2040,
-    "rate": 2.3582538886101356,
+    "code": "037950",
+    "name": "엘컴텍",
+    "close": 3105,
+    "rate": 1.1400651465798046,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2648,26 +2648,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "011330",
+    "name": "유니켐",
+    "close": 5550,
+    "rate": -6.091370558375635,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "382150",
     "name": "온코크로스",
     "close": 3975,
     "rate": 13.247863247863249,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "260930",
-    "name": "씨티케이",
-    "close": 2610,
-    "rate": 2.152641878669276,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "021050",
-    "name": "서원",
-    "close": 1062,
-    "rate": 2.7079303675048356,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2680,10 +2672,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "011330",
-    "name": "유니켐",
-    "close": 5550,
-    "rate": -6.091370558375635,
+    "code": "021050",
+    "name": "서원",
+    "close": 1062,
+    "rate": 2.7079303675048356,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "260930",
+    "name": "씨티케이",
+    "close": 2610,
+    "rate": 2.152641878669276,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2704,22 +2704,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "273060",
-    "name": "와이즈버즈",
-    "close": 983,
-    "rate": -5.298651252408478,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "002920",
-    "name": "유성기업",
-    "close": 1856,
-    "rate": 0.0,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "222420",
     "name": "쎄노텍",
     "close": 990,
@@ -2728,26 +2712,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "105760",
-    "name": "포스뱅크",
-    "close": 4680,
-    "rate": 17.735849056603772,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "066130",
-    "name": "하츠",
-    "close": 3715,
-    "rate": 4.943502824858757,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "042040",
-    "name": "케이피엠테크",
-    "close": 5460,
-    "rate": -2.3255813953488373,
+    "code": "273060",
+    "name": "와이즈버즈",
+    "close": 983,
+    "rate": -5.298651252408478,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2760,10 +2728,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "413640",
-    "name": "비아이매트릭스",
-    "close": 6550,
-    "rate": 1.7080745341614907,
+    "code": "002920",
+    "name": "유성기업",
+    "close": 1856,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "042040",
+    "name": "케이피엠테크",
+    "close": 5460,
+    "rate": -2.3255813953488373,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2776,6 +2752,30 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "413640",
+    "name": "비아이매트릭스",
+    "close": 6550,
+    "rate": 1.7080745341614907,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "066130",
+    "name": "하츠",
+    "close": 3715,
+    "rate": 4.943502824858757,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "105760",
+    "name": "포스뱅크",
+    "close": 4680,
+    "rate": 17.735849056603772,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "000910",
     "name": "유니온",
     "close": 2930,
@@ -2784,10 +2784,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "003080",
-    "name": "SB성보",
-    "close": 2275,
-    "rate": 0.0,
+    "code": "261200",
+    "name": "덴티스",
+    "close": 2830,
+    "rate": -2.5817555938037864,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2808,18 +2808,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "084870",
-    "name": "TBH글로벌",
-    "close": 2190,
-    "rate": 0.45871559633027525,
+    "code": "003080",
+    "name": "SB성보",
+    "close": 2275,
+    "rate": 0.0,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "261200",
-    "name": "덴티스",
-    "close": 2830,
-    "rate": -2.5817555938037864,
+    "code": "084870",
+    "name": "TBH글로벌",
+    "close": 2190,
+    "rate": 0.45871559633027525,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2856,18 +2856,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "348080",
-    "name": "큐라티스",
-    "close": 3255,
-    "rate": -12.145748987854251,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "050120",
     "name": "ES큐브",
     "close": 3070,
     "rate": 2.8475711892797317,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "348080",
+    "name": "큐라티스",
+    "close": 3255,
+    "rate": -12.145748987854251,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2888,14 +2888,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "047400",
-    "name": "유니온머티리얼",
-    "close": 942,
-    "rate": 6.320541760722348,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "122690",
     "name": "서진오토모티브",
     "close": 1711,
@@ -2904,18 +2896,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "083550",
-    "name": "케이엠",
-    "close": 2865,
-    "rate": 0.8802816901408451,
+    "code": "047400",
+    "name": "유니온머티리얼",
+    "close": 942,
+    "rate": 6.320541760722348,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "014570",
-    "name": "고려제약",
-    "close": 3495,
-    "rate": 1.0115606936416186,
+    "code": "083550",
+    "name": "케이엠",
+    "close": 2865,
+    "rate": 0.8802816901408451,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2936,6 +2928,14 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "014570",
+    "name": "고려제약",
+    "close": 3495,
+    "rate": 1.0115606936416186,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "050860",
     "name": "아세아텍",
     "close": 1678,
@@ -2952,14 +2952,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "220180",
-    "name": "폴라리스AI핸디",
-    "close": 1560,
-    "rate": 2.631578947368421,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "078590",
     "name": "휴림에이텍",
     "close": 3730,
@@ -2968,10 +2960,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "002420",
-    "name": "세기상사",
-    "close": 6180,
-    "rate": 9.9644128113879,
+    "code": "220180",
+    "name": "폴라리스AI핸디",
+    "close": 1560,
+    "rate": 2.631578947368421,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "013000",
+    "name": "세우글로벌",
+    "close": 1246,
+    "rate": 2.8901734104046244,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -2984,6 +2984,14 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "002420",
+    "name": "세기상사",
+    "close": 6180,
+    "rate": 9.9644128113879,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "057030",
     "name": "YBM넷",
     "close": 2205,
@@ -2992,10 +3000,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "013000",
-    "name": "세우글로벌",
-    "close": 1246,
-    "rate": 2.8901734104046244,
+    "code": "090410",
+    "name": "덕신이피씨",
+    "close": 763,
+    "rate": -6.609547123623011,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3016,18 +3024,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "090410",
-    "name": "덕신이피씨",
-    "close": 763,
-    "rate": -6.609547123623011,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "022220",
     "name": "티케이지애강",
     "close": 676,
     "rate": 2.4242424242424243,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "025440",
+    "name": "DH오토웨어",
+    "close": 3485,
+    "rate": 1.308139534883721,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3056,14 +3064,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "025440",
-    "name": "DH오토웨어",
-    "close": 3485,
-    "rate": 1.308139534883721,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "376930",
     "name": "노을",
     "close": 657,
@@ -3072,18 +3072,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "071850",
-    "name": "캐스텍코리아",
-    "close": 1381,
-    "rate": -1.2866333095067906,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "005820",
     "name": "원림",
     "close": 14270,
     "rate": 0.5637773079633545,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "071850",
+    "name": "캐스텍코리아",
+    "close": 1381,
+    "rate": -1.2866333095067906,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3112,14 +3112,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "397810",
-    "name": "애드포러스",
-    "close": 6120,
-    "rate": 20.47244094488189,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "464280",
     "name": "티디에스팜",
     "close": 5700,
@@ -3128,18 +3120,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "079170",
-    "name": "한창산업",
-    "close": 5860,
-    "rate": 4.83005366726297,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "363260",
-    "name": "모비데이즈",
-    "close": 939,
-    "rate": 6.342015855039637,
+    "code": "397810",
+    "name": "애드포러스",
+    "close": 6120,
+    "rate": 20.47244094488189,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3152,10 +3136,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "131090",
-    "name": "시큐브",
-    "close": 3925,
-    "rate": 1.5523932729624839,
+    "code": "363260",
+    "name": "모비데이즈",
+    "close": 939,
+    "rate": 6.342015855039637,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3176,10 +3160,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "297570",
-    "name": "아틀라스링크",
-    "close": 850,
-    "rate": 8.695652173913043,
+    "code": "079170",
+    "name": "한창산업",
+    "close": 5860,
+    "rate": 4.83005366726297,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "131090",
+    "name": "시큐브",
+    "close": 3925,
+    "rate": 1.5523932729624839,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3192,14 +3184,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "005320",
-    "name": "온타이드",
-    "close": 846,
-    "rate": 12.20159151193634,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "187270",
     "name": "신화콘텍",
     "close": 2845,
@@ -3208,10 +3192,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "027040",
-    "name": "서울전자통신",
-    "close": 2050,
-    "rate": -7.865168539325842,
+    "code": "297570",
+    "name": "아틀라스링크",
+    "close": 850,
+    "rate": 8.695652173913043,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3224,18 +3208,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "017000",
-    "name": "신원종합개발",
-    "close": 2435,
-    "rate": 4.506437768240343,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "021880",
-    "name": "메이슨캐피탈",
-    "close": 1332,
-    "rate": 10.53941908713693,
+    "code": "005320",
+    "name": "온타이드",
+    "close": 846,
+    "rate": 12.20159151193634,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3248,18 +3224,34 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "025890",
-    "name": "한국주강",
-    "close": 2490,
-    "rate": 0.8097165991902834,
+    "code": "021880",
+    "name": "메이슨캐피탈",
+    "close": 1332,
+    "rate": 10.53941908713693,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "148780",
-    "name": "비큐AI",
-    "close": 4390,
-    "rate": -1.348314606741573,
+    "code": "027040",
+    "name": "서울전자통신",
+    "close": 2050,
+    "rate": -7.865168539325842,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "017000",
+    "name": "신원종합개발",
+    "close": 2435,
+    "rate": 4.506437768240343,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "025890",
+    "name": "한국주강",
+    "close": 2490,
+    "rate": 0.8097165991902834,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3276,6 +3268,14 @@
     "name": "SUN&L",
     "close": 2270,
     "rate": -8.651911468812877,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "148780",
+    "name": "비큐AI",
+    "close": 4390,
+    "rate": -1.348314606741573,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3320,18 +3320,18 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "900310",
-    "name": "컬러레이",
-    "close": 2010,
-    "rate": 0.0,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "298060",
     "name": "풍전약품",
     "close": 2645,
     "rate": 3.3203125,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "900310",
+    "name": "컬러레이",
+    "close": 2010,
+    "rate": 0.0,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3352,14 +3352,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "290560",
-    "name": "파라택시스이더리움",
-    "close": 1112,
-    "rate": 29.906542056074763,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "091340",
     "name": "S&K폴리텍",
     "close": 2120,
@@ -3368,10 +3360,26 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "290560",
+    "name": "파라택시스이더리움",
+    "close": 1112,
+    "rate": 29.906542056074763,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "462510",
     "name": "라메디텍",
     "close": 2785,
     "rate": 0.5415162454873645,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "021040",
+    "name": "대호특수강",
+    "close": 1000,
+    "rate": 7.181136120042872,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3400,10 +3408,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "377030",
-    "name": "비트맥스",
-    "close": 1671,
-    "rate": 0.059880239520958084,
+    "code": "373110",
+    "name": "엑셀세라퓨틱스",
+    "close": 1370,
+    "rate": 4.26179604261796,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3416,10 +3424,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "373110",
-    "name": "엑셀세라퓨틱스",
-    "close": 1370,
-    "rate": 4.26179604261796,
+    "code": "377030",
+    "name": "비트맥스",
+    "close": 1671,
+    "rate": 0.059880239520958084,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3488,34 +3496,10 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "027580",
-    "name": "상보",
-    "close": 1852,
-    "rate": 7.0520231213872835,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "154040",
     "name": "다산솔루에타",
     "close": 1010,
     "rate": 0.6979062811565304,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "021040",
-    "name": "대호특수강",
-    "close": 1000,
-    "rate": 7.181136120042872,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "019660",
-    "name": "글로본",
-    "close": 1554,
-    "rate": -3.896103896103896,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3532,6 +3516,22 @@
     "name": "인바이오",
     "close": 1989,
     "rate": -1.0447761194029852,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "027580",
+    "name": "상보",
+    "close": 1852,
+    "rate": 7.0520231213872835,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "019660",
+    "name": "글로본",
+    "close": 1554,
+    "rate": -3.896103896103896,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3568,10 +3568,26 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
+    "code": "051780",
+    "name": "큐로홀딩스",
+    "close": 3005,
+    "rate": 2.385008517887564,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
     "code": "054220",
     "name": "비츠로시스",
     "close": 1579,
     "rate": -0.6293266205160478,
+    "match_type": "predictive",
+    "pattern": "양음양 패턴 1 (수급 강세)"
+  },
+  {
+    "code": "344860",
+    "name": "이노진",
+    "close": 1302,
+    "rate": -0.15337423312883436,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
@@ -3592,14 +3608,6 @@
     "pattern": "양음양 패턴 1 (수급 강세)"
   },
   {
-    "code": "051780",
-    "name": "큐로홀딩스",
-    "close": 3005,
-    "rate": 2.385008517887564,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
     "code": "020400",
     "name": "대동금속",
     "close": 2970,
@@ -3612,14 +3620,6 @@
     "name": "프롬바이오",
     "close": 3330,
     "rate": 549.1228070175439,
-    "match_type": "predictive",
-    "pattern": "양음양 패턴 1 (수급 강세)"
-  },
-  {
-    "code": "344860",
-    "name": "이노진",
-    "close": 1302,
-    "rate": -0.15337423312883436,
     "match_type": "predictive",
     "pattern": "양음양 패턴 1 (수급 강세)"
   },

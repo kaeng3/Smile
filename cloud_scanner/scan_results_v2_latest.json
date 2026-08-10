@@ -56,18 +56,18 @@
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
   {
-    "code": "002900",
-    "name": "TYM",
-    "close": 6870,
-    "rate": 7.34375,
-    "match_type": "predictive",
-    "pattern": "양음양 v2 패턴 1 (눌림목)"
-  },
-  {
     "code": "234340",
     "name": "헥토파이낸셜",
     "close": 20350,
     "rate": 16.954022988505745,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "002900",
+    "name": "TYM",
+    "close": 6870,
+    "rate": 7.34375,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
@@ -120,18 +120,18 @@
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
   {
-    "code": "126730",
-    "name": "코칩",
-    "close": 15650,
-    "rate": 6.535057862491491,
-    "match_type": "predictive",
-    "pattern": "양음양 v2 패턴 1 (눌림목)"
-  },
-  {
     "code": "478340",
     "name": "나라스페이스테크놀로지",
     "close": 11540,
     "rate": 12.366114897760468,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "126730",
+    "name": "코칩",
+    "close": 15650,
+    "rate": 6.535057862491491,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
@@ -152,18 +152,18 @@
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
   {
-    "code": "321370",
-    "name": "센서뷰",
-    "close": 1503,
-    "rate": 16.874027993779162,
-    "match_type": "predictive",
-    "pattern": "양음양 v2 패턴 1 (눌림목)"
-  },
-  {
     "code": "460940",
     "name": "피앤에스로보틱스",
     "close": 5690,
     "rate": 10.271317829457365,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "321370",
+    "name": "센서뷰",
+    "close": 1503,
+    "rate": 16.874027993779162,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
