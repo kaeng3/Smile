@@ -831,12 +831,24 @@
             if (issues.length === 0) {
                 html += `<div style="text-align:center; padding:40px; color:var(--text-sub); border: 1px dashed rgba(212, 163, 115, 0.4); border-radius: 12px;">해당 날짜에 기준봉 종목이 없거나 이슈 데이터가 없습니다.</div>`;
             } else {
+                const featured = featuredNewsDB[selectedDate] || {};
                 html += `<div style="display:flex; flex-direction:column; gap:15px;">`;
                 issues.forEach(item => {
                     const isUp = (item.rate || 0) >= 0;
                     const rateClass = isUp ? 'rate-up' : 'rate-down';
                     const rateSign = isUp ? '+' : '';
-                    
+                    const featuredInfo = featured[item.code];
+                    const articles = (featuredInfo && featuredInfo.articles) || [];
+                    const articlesHtml = articles.length
+                        ? `<ul style="list-style:none; padding-left:0; margin:0;">${articles.map(a => `
+                            <li style="margin-bottom:8px; font-size:0.85rem; line-height:1.5;">
+                                <span style="color:var(--text-sub); font-family:monospace;">${a.time || ''}</span>
+                                &nbsp;${a.title}
+                                ${a.press ? `<span style="color:var(--text-sub);"> — ${a.press}</span>` : ''}
+                                ${a.link ? ` · <a href="${a.link}" target="_blank" rel="noopener" style="color:#60a5fa;">기사 열기</a>` : ''}
+                            </li>`).join('')}</ul>`
+                        : `관련 특징주 뉴스가 없습니다.`;
+
                     html += `
                         <div class="stock-card" style="padding: 24px; text-align: left; cursor: default; transform: none; box-shadow: none;">
                             <div style="display:flex; justify-content:space-between; align-items:center; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 16px;">
@@ -844,54 +856,17 @@
                                 <div class="stock-rate ${rateClass}" style="font-size: 1.2rem;">${rateSign}${(item.rate || 0).toFixed(2)}%</div>
                             </div>
                             <div style="font-size: 0.95rem; color: #d4a373; font-weight: 700; margin-bottom: 10px;">📌 AI 급등 이슈 요약</div>
-                            <div style="font-size: 1rem; color: var(--text-main); line-height: 1.6; background: rgba(0,0,0,0.3); padding: 16px; border-radius: 10px; border-left: 4px solid #d4a373;">
+                            <div style="font-size: 1rem; color: var(--text-main); line-height: 1.6; background: rgba(0,0,0,0.3); padding: 16px; border-radius: 10px; border-left: 4px solid #d4a373; margin-bottom:16px;">
                                 ${item.summary}
+                            </div>
+                            <div style="font-size: 0.95rem; color: #a78bfa; font-weight: 700; margin-bottom: 10px;">📰 특징주 뉴스 ${articles.length ? `(${articles.length}건)` : ''}</div>
+                            <div style="font-size: 0.9rem; color: var(--text-main); background: rgba(0,0,0,0.3); padding: 16px; border-radius: 10px; border-left: 4px solid #a78bfa;">
+                                ${articlesHtml}
                             </div>
                         </div>
                     `;
                 });
                 html += `</div>`;
-            }
-
-            // ── 🏷️ 섹터별 특징주 기사 (오늘 스캔 종목 대상) ──────────────
-            const featured = featuredNewsDB[selectedDate] || {};
-            const codes = Object.keys(featured);
-            if (codes.length > 0) {
-                const bySector = {};
-                codes.forEach(code => {
-                    const item = featured[code];
-                    const sector = item.category || '기타';
-                    bySector[sector] = bySector[sector] || [];
-                    bySector[sector].push({ code, ...item });
-                });
-
-                html += `
-                    <div style="margin-top:28px; margin-bottom:14px;">
-                        <div class="pdf-title" style="font-size:1.2rem;">🏷️ 섹터별 특징주 기사</div>
-                        <div class="pdf-sub" style="font-size:0.85rem;">오늘 스캔에 잡힌 종목들의 [특징주] 뉴스를 섹터별로 모았습니다.</div>
-                    </div>`;
-
-                html += Object.entries(bySector).map(([sector, stocksInSector]) => {
-                    const stocksHtml = stocksInSector.map(s => {
-                        const articlesHtml = s.articles.map(a => `
-                            <li style="margin-bottom:8px; font-size:0.85rem; line-height:1.5;">
-                                <span style="color:var(--text-sub); font-family:monospace;">${a.time || ''}</span>
-                                &nbsp;${a.title}
-                                ${a.press ? `<span style="color:var(--text-sub);"> — ${a.press}</span>` : ''}
-                                ${a.link ? ` · <a href="${a.link}" target="_blank" rel="noopener" style="color:#60a5fa;">기사 열기</a>` : ''}
-                            </li>`).join('');
-                        return `
-                            <div style="margin-bottom:16px;">
-                                <div style="font-weight:700; color:var(--text-main); margin-bottom:6px;">${s.name} · ${s.articles.length}건</div>
-                                <ul style="list-style:none; padding-left:4px; margin:0;">${articlesHtml}</ul>
-                            </div>`;
-                    }).join('');
-                    return `
-                        <details style="margin-bottom:10px; background:rgba(255,255,255,0.03); border-radius:10px; padding:12px 16px;" open>
-                            <summary style="cursor:pointer; font-size:1rem; font-weight:700; color:#a78bfa;">${sector}</summary>
-                            <div style="margin-top:12px;">${stocksHtml}</div>
-                        </details>`;
-                }).join('');
             }
 
             container.innerHTML = html;
