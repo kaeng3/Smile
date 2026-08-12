@@ -9718,5 +9718,1643 @@
     "pattern": "양음양 패턴 1 (수급 강세)",
     "status": "tracking",
     "registered_at": "2026-08-11 07:26:48"
+  },
+  "012450": {
+    "code": "012450",
+    "name": "한화에어로스페이스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1156000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "068270": {
+    "code": "068270",
+    "name": "셀트리온",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 202000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "066570": {
+    "code": "066570",
+    "name": "LG전자",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 205000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "078930": {
+    "code": "078930",
+    "name": "GS",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 101000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "003230": {
+    "code": "003230",
+    "name": "삼양식품",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1204000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "161390": {
+    "code": "161390",
+    "name": "한국타이어앤테크놀로지",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 70100,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "064400": {
+    "code": "064400",
+    "name": "LG씨엔에스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 77300,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "271560": {
+    "code": "271560",
+    "name": "오리온",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 132800,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "088980": {
+    "code": "088980",
+    "name": "맥쿼리인프라",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 9890,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "111770": {
+    "code": "111770",
+    "name": "영원무역",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 85200,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "004170": {
+    "code": "004170",
+    "name": "신세계",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 399000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "103590": {
+    "code": "103590",
+    "name": "일진전기",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 72500,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "483650": {
+    "code": "483650",
+    "name": "달바글로벌",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 262000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "440110": {
+    "code": "440110",
+    "name": "파두",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 65000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "214150": {
+    "code": "214150",
+    "name": "클래시스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 43800,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "007340": {
+    "code": "007340",
+    "name": "DN오토모티브",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 47050,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "005850": {
+    "code": "005850",
+    "name": "에스엘",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 57400,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "064760": {
+    "code": "064760",
+    "name": "티씨케이",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 229000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "085620": {
+    "code": "085620",
+    "name": "미래에셋생명",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 19050,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "462870": {
+    "code": "462870",
+    "name": "시프트업",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 31750,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "000120": {
+    "code": "000120",
+    "name": "CJ대한통운",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 74100,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "131970": {
+    "code": "131970",
+    "name": "두산테스나",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 84400,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "298020": {
+    "code": "298020",
+    "name": "효성티앤씨",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 318500,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "012630": {
+    "code": "012630",
+    "name": "HDC",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 22500,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "003540": {
+    "code": "003540",
+    "name": "대신증권",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 27750,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "192080": {
+    "code": "192080",
+    "name": "더블유게임즈",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 62000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "006340": {
+    "code": "006340",
+    "name": "대원전선",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 16030,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "204270": {
+    "code": "204270",
+    "name": "제이앤티씨",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 18870,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "033100": {
+    "code": "033100",
+    "name": "제룡전기",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 50900,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "005690": {
+    "code": "005690",
+    "name": "파미셀",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 11780,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "001060": {
+    "code": "001060",
+    "name": "JW중외제약",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 30000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "025540": {
+    "code": "025540",
+    "name": "한국단자",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 65000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "059090": {
+    "code": "059090",
+    "name": "미코",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 19330,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "023160": {
+    "code": "023160",
+    "name": "태광",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 23500,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "046890": {
+    "code": "046890",
+    "name": "서울반도체",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 10150,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "036810": {
+    "code": "036810",
+    "name": "에프에스티",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 26150,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "358570": {
+    "code": "358570",
+    "name": "지아이이노베이션",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 8770,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "058650": {
+    "code": "058650",
+    "name": "세아홀딩스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 122000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "336570": {
+    "code": "336570",
+    "name": "원텍",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5460,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "484870": {
+    "code": "484870",
+    "name": "엠앤씨솔루션",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 17380,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "403550": {
+    "code": "403550",
+    "name": "쏘카",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 10780,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "372320": {
+    "code": "372320",
+    "name": "큐로셀",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 26150,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "194370": {
+    "code": "194370",
+    "name": "제이에스코퍼레이션",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 13570,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "330860": {
+    "code": "330860",
+    "name": "네패스아크",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 31000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "381970": {
+    "code": "381970",
+    "name": "케이카",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 7750,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "060980": {
+    "code": "060980",
+    "name": "HL홀딩스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 40050,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "145720": {
+    "code": "145720",
+    "name": "덴티움",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 41500,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "078350": {
+    "code": "078350",
+    "name": "한양디지텍",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 23450,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "104700": {
+    "code": "104700",
+    "name": "한국철강",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 9570,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "084110": {
+    "code": "084110",
+    "name": "휴온스글로벌",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 25100,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "900290": {
+    "code": "900290",
+    "name": "GRT",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3925,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "085910": {
+    "code": "085910",
+    "name": "네오티스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 22150,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "079370": {
+    "code": "079370",
+    "name": "제우스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 9810,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "034830": {
+    "code": "034830",
+    "name": "한국토지신탁",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1144,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "123890": {
+    "code": "123890",
+    "name": "한국자산신탁",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2290,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "017390": {
+    "code": "017390",
+    "name": "서울가스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 56300,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "023410": {
+    "code": "023410",
+    "name": "유진기업",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3585,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "003070": {
+    "code": "003070",
+    "name": "코오롱글로벌",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 10500,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "100120": {
+    "code": "100120",
+    "name": "뷰웍스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 29300,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "004360": {
+    "code": "004360",
+    "name": "세방",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 13280,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "005500": {
+    "code": "005500",
+    "name": "삼진제약",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 18450,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "314930": {
+    "code": "314930",
+    "name": "바이오다인",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 8140,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "000050": {
+    "code": "000050",
+    "name": "경방",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 8690,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "094360": {
+    "code": "094360",
+    "name": "칩스앤미디어",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 11130,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "112290": {
+    "code": "112290",
+    "name": "와이씨켐",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 11580,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "000320": {
+    "code": "000320",
+    "name": "노루홀딩스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 17100,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "025000": {
+    "code": "025000",
+    "name": "KPX케미칼",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 50000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "230240": {
+    "code": "230240",
+    "name": "에치에프알",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 16000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "125020": {
+    "code": "125020",
+    "name": "티씨머티리얼즈",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 6000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "039570": {
+    "code": "039570",
+    "name": "HDC랩스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 7740,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "001130": {
+    "code": "001130",
+    "name": "대한제분",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 11840,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "016580": {
+    "code": "016580",
+    "name": "환인제약",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 10230,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "489460": {
+    "code": "489460",
+    "name": "바이오비쥬",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 12350,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "143240": {
+    "code": "143240",
+    "name": "사람인",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 16990,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "002150": {
+    "code": "002150",
+    "name": "도화엔지니어링",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5320,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "002100": {
+    "code": "002100",
+    "name": "경농",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 9220,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "016880": {
+    "code": "016880",
+    "name": "웅진",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2200,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "014710": {
+    "code": "014710",
+    "name": "사조씨푸드",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 10130,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "039840": {
+    "code": "039840",
+    "name": "디오",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 12580,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "009470": {
+    "code": "009470",
+    "name": "삼화전기",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 24850,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "003830": {
+    "code": "003830",
+    "name": "대한화섬",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 118100,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "418550": {
+    "code": "418550",
+    "name": "제이오",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 4865,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "081000": {
+    "code": "081000",
+    "name": "일진다이아",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 10620,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "310200": {
+    "code": "310200",
+    "name": "애니플러스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2850,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "489500": {
+    "code": "489500",
+    "name": "엘케이켐",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 23300,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "094840": {
+    "code": "094840",
+    "name": "슈프리마에이치큐",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 13850,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "205500": {
+    "code": "205500",
+    "name": "넥써쓰",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1653,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "226590": {
+    "code": "226590",
+    "name": "엠디바이스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 12610,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "432720": {
+    "code": "432720",
+    "name": "퀄리타스반도체",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 9430,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "418420": {
+    "code": "418420",
+    "name": "라온텍",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 4275,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "371950": {
+    "code": "371950",
+    "name": "풍원정밀",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5730,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "453450": {
+    "code": "453450",
+    "name": "그리드위즈",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 15830,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "049520": {
+    "code": "049520",
+    "name": "유아이엘",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3830,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "083420": {
+    "code": "083420",
+    "name": "그린케미칼",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 4880,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "362320": {
+    "code": "362320",
+    "name": "청담글로벌",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5550,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "331920": {
+    "code": "331920",
+    "name": "셀레믹스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 10200,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "083500": {
+    "code": "083500",
+    "name": "에프엔에스테크",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 13030,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "366030": {
+    "code": "366030",
+    "name": "나인앤컴퍼니",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 4535,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "086710": {
+    "code": "086710",
+    "name": "선진뷰티사이언스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 8330,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "226400": {
+    "code": "226400",
+    "name": "오스테오닉",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 4880,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "348350": {
+    "code": "348350",
+    "name": "위드텍",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 10190,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "067830": {
+    "code": "067830",
+    "name": "세이브존I&C",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2365,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "078140": {
+    "code": "078140",
+    "name": "대봉엘에스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 8600,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "205100": {
+    "code": "205100",
+    "name": "엑셈",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1355,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "052900": {
+    "code": "052900",
+    "name": "KX하이텍",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1241,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "452190": {
+    "code": "452190",
+    "name": "한빛레이저",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3930,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "025620": {
+    "code": "025620",
+    "name": "차AI헬스케어",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5080,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "263720": {
+    "code": "263720",
+    "name": "디앤씨미디어",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 7430,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "306620": {
+    "code": "306620",
+    "name": "지아이에스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1884,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "007610": {
+    "code": "007610",
+    "name": "선도전기",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 4720,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "054670": {
+    "code": "054670",
+    "name": "대한뉴팜",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5850,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "251120": {
+    "code": "251120",
+    "name": "바이오에프디엔씨",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 8980,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "005750": {
+    "code": "005750",
+    "name": "대림바스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 4625,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "013870": {
+    "code": "013870",
+    "name": "지엠비코리아",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3930,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "217190": {
+    "code": "217190",
+    "name": "제너셈",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5430,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "096350": {
+    "code": "096350",
+    "name": "대창솔루션",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1907,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "009770": {
+    "code": "009770",
+    "name": "삼정펄프",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 27750,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "411080": {
+    "code": "411080",
+    "name": "샌즈랩",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 4470,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "191420": {
+    "code": "191420",
+    "name": "테고사이언스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 8370,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "277880": {
+    "code": "277880",
+    "name": "티에스아이",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3370,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "137080": {
+    "code": "137080",
+    "name": "나래나노텍",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5950,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "460870": {
+    "code": "460870",
+    "name": "에스엠씨지",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3135,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "453860": {
+    "code": "453860",
+    "name": "에이에스텍",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 9810,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "111110": {
+    "code": "111110",
+    "name": "호전실업",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 6820,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "037440": {
+    "code": "037440",
+    "name": "희림",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 4230,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "273640": {
+    "code": "273640",
+    "name": "와이엠텍",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5250,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "011230": {
+    "code": "011230",
+    "name": "삼화전자",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "039610": {
+    "code": "039610",
+    "name": "화성밸브",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5540,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "053620": {
+    "code": "053620",
+    "name": "태양",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 6540,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "291650": {
+    "code": "291650",
+    "name": "츌립앤사이언스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1749,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "372910": {
+    "code": "372910",
+    "name": "한컴라이프케어",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1895,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "461030": {
+    "code": "461030",
+    "name": "아이엠비디엑스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3520,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "024950": {
+    "code": "024950",
+    "name": "삼천리자전거",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 4035,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "317870": {
+    "code": "317870",
+    "name": "엔바이오니아",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5200,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "150900": {
+    "code": "150900",
+    "name": "파수AI",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3865,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "068330": {
+    "code": "068330",
+    "name": "일신바이오",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "014910": {
+    "code": "014910",
+    "name": "성문전자",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1951,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "361570": {
+    "code": "361570",
+    "name": "알비더블유",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1477,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "008870": {
+    "code": "008870",
+    "name": "금비",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 41250,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "105550": {
+    "code": "105550",
+    "name": "엣지파운드리",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2580,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "365590": {
+    "code": "365590",
+    "name": "하이딥",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1087,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "258610": {
+    "code": "258610",
+    "name": "케일럼",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1070,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "032960": {
+    "code": "032960",
+    "name": "동일기연",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2190,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "317240": {
+    "code": "317240",
+    "name": "TS트릴리온",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1299,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "133820": {
+    "code": "133820",
+    "name": "화인베스틸",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1014,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "101240": {
+    "code": "101240",
+    "name": "씨큐브",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3300,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "184230": {
+    "code": "184230",
+    "name": "SGA솔루션즈",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1995,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "075130": {
+    "code": "075130",
+    "name": "플랜티넷",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2250,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "419120": {
+    "code": "419120",
+    "name": "산돌",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2520,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "388610": {
+    "code": "388610",
+    "name": "지에프씨생명과학",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 6570,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "465480": {
+    "code": "465480",
+    "name": "인스피언",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3340,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "434480": {
+    "code": "434480",
+    "name": "모니터랩",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2675,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "039290": {
+    "code": "039290",
+    "name": "인포뱅크",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3735,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "206400": {
+    "code": "206400",
+    "name": "베노티앤알",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 850,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "001380": {
+    "code": "001380",
+    "name": "SG글로벌",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1374,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "356890": {
+    "code": "356890",
+    "name": "싸이버원",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2550,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "239610": {
+    "code": "239610",
+    "name": "에이치엘사이언스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5610,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "430690": {
+    "code": "430690",
+    "name": "한싹",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2770,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "008250": {
+    "code": "008250",
+    "name": "이건산업",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2700,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "083640": {
+    "code": "083640",
+    "name": "인콘",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1296,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "378800": {
+    "code": "378800",
+    "name": "샤페론",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 614,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "093380": {
+    "code": "093380",
+    "name": "풍강",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2860,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "198940": {
+    "code": "198940",
+    "name": "한주라이트메탈",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1400,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "900070": {
+    "code": "900070",
+    "name": "글로벌에스엠",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1040,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "024070": {
+    "code": "024070",
+    "name": "WISCOM",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1805,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "085810": {
+    "code": "085810",
+    "name": "알티캐스트",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1878,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "373170": {
+    "code": "373170",
+    "name": "엠아이큐브솔루션",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1724,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "333050": {
+    "code": "333050",
+    "name": "이노테나",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5150,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "054090": {
+    "code": "054090",
+    "name": "삼진엘앤디",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1015,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "139670": {
+    "code": "139670",
+    "name": "키네마스터",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1779,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "134060": {
+    "code": "134060",
+    "name": "이퓨쳐",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 5100,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "193250": {
+    "code": "193250",
+    "name": "링크드",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1765,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "368970": {
+    "code": "368970",
+    "name": "오에스피",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2340,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "169330": {
+    "code": "169330",
+    "name": "엠브레인",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1263,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "222980": {
+    "code": "222980",
+    "name": "한국맥널티",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2060,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "238200": {
+    "code": "238200",
+    "name": "비피도",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2700,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "060900": {
+    "code": "060900",
+    "name": "에이전트AI",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 4345,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "017250": {
+    "code": "017250",
+    "name": "인터엠",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 1008,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "103230": {
+    "code": "103230",
+    "name": "에스앤더블류",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2540,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "008470": {
+    "code": "008470",
+    "name": "부스타",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 2020,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "058450": {
+    "code": "058450",
+    "name": "한주에이알티",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 3270,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
+  },
+  "028080": {
+    "code": "028080",
+    "name": "휴맥스홀딩스",
+    "anchor_date": "2026-08-12",
+    "anchor_close": 4645,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-12 06:56:11"
   }
 }
