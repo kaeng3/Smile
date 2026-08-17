@@ -14794,5 +14794,131 @@
     "pattern": "양음양 v2 패턴 1 (눌림목)",
     "status": "tracking",
     "registered_at": "2026-08-14 08:05:30"
+  },
+  "054210": {
+    "code": "054210",
+    "name": "이랜텍",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 8090,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "066620": {
+    "code": "066620",
+    "name": "국보디자인",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 25200,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "083310": {
+    "code": "083310",
+    "name": "엘오티베큠",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 9110,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "090350": {
+    "code": "090350",
+    "name": "노루페인트",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 7850,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "290720": {
+    "code": "290720",
+    "name": "푸드나무",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 3120,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "248170": {
+    "code": "248170",
+    "name": "샘표식품",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 24050,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "078890": {
+    "code": "078890",
+    "name": "가온그룹",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 4700,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "006090": {
+    "code": "006090",
+    "name": "사조오양",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 8560,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "018500": {
+    "code": "018500",
+    "name": "동원모빌리티",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 1519,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "291230": {
+    "code": "291230",
+    "name": "컴투스엔",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 2740,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "457600": {
+    "code": "457600",
+    "name": "벡트",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 4390,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "475460": {
+    "code": "475460",
+    "name": "미트박스",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 6370,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "237750": {
+    "code": "237750",
+    "name": "피앤씨테크",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 3910,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
+  },
+  "084180": {
+    "code": "084180",
+    "name": "수성웹툰",
+    "anchor_date": "2026-08-17",
+    "anchor_close": 672,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-08-17 07:40:13"
   }
 }
