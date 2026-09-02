@@ -19897,5 +19897,329 @@
     "pattern": "양음양 v2 패턴 1 (눌림목)",
     "status": "tracking",
     "registered_at": "2026-09-01 09:15:07"
+  },
+  "357780": {
+    "code": "357780",
+    "name": "솔브레인",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 329500,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "229640": {
+    "code": "229640",
+    "name": "LS에코에너지",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 44300,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "003240": {
+    "code": "003240",
+    "name": "태광산업",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 933000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "036530": {
+    "code": "036530",
+    "name": "SNT홀딩스",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 45400,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "00104K": {
+    "code": "00104K",
+    "name": "CJ4우(전환)",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 127500,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "003620": {
+    "code": "003620",
+    "name": "KG모빌리티",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 2600,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "008060": {
+    "code": "008060",
+    "name": "대덕",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 15500,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "950210": {
+    "code": "950210",
+    "name": "프레스티지바이오파마",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 6720,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "004710": {
+    "code": "004710",
+    "name": "한솔테크닉스",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 7580,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "069080": {
+    "code": "069080",
+    "name": "웹젠",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 11450,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "117580": {
+    "code": "117580",
+    "name": "대성에너지",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 6850,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "176750": {
+    "code": "176750",
+    "name": "듀켐바이오",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 6210,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "107590": {
+    "code": "107590",
+    "name": "미원홀딩스",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 64400,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "086890": {
+    "code": "086890",
+    "name": "이수앱지스",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 3570,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "004090": {
+    "code": "004090",
+    "name": "한국석유",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 11250,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "131030": {
+    "code": "131030",
+    "name": "옵투스제약",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 5760,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "008700": {
+    "code": "008700",
+    "name": "아남전자",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 1242,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "007210": {
+    "code": "007210",
+    "name": "벽산",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 1425,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "032300": {
+    "code": "032300",
+    "name": "한국파마",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 7870,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "038110": {
+    "code": "038110",
+    "name": "에코플라스틱",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 1990,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "412350": {
+    "code": "412350",
+    "name": "레이저쎌",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 4835,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "049550": {
+    "code": "049550",
+    "name": "잉크테크",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 3480,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "010040": {
+    "code": "010040",
+    "name": "한국내화",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 1620,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "024740": {
+    "code": "024740",
+    "name": "한일단조",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 2010,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "424960": {
+    "code": "424960",
+    "name": "스마트레이더시스템",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 3995,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "014970": {
+    "code": "014970",
+    "name": "삼륭물산",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 4380,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "002140": {
+    "code": "002140",
+    "name": "고려산업",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 2070,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "048770": {
+    "code": "048770",
+    "name": "TPC로보틱스",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 3200,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "071670": {
+    "code": "071670",
+    "name": "에이테크솔루션",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 4930,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "317830": {
+    "code": "317830",
+    "name": "에스피시스템스",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 4575,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "218150": {
+    "code": "218150",
+    "name": "미래생명자원",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 2165,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "207760": {
+    "code": "207760",
+    "name": "미스터블루",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 2495,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "068050": {
+    "code": "068050",
+    "name": "팬엔터테인먼트",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 1186,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "032800": {
+    "code": "032800",
+    "name": "판타지오",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 1465,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "115610": {
+    "code": "115610",
+    "name": "이미지스",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 1697,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
+  },
+  "054410": {
+    "code": "054410",
+    "name": "케이피티유",
+    "anchor_date": "2026-09-02",
+    "anchor_close": 3315,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-02 10:18:10"
   }
 }
