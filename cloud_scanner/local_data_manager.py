@@ -2,12 +2,33 @@
 import os
 import sys
 import datetime
+import time
 import sqlite3
 import concurrent.futures
 import pandas as pd
 import FinanceDataReader as fdr
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+def fetch_krx_listing_with_retry(max_attempts=6, wait_seconds=180):
+    """
+    FinanceDataReader는 KRX 로그인 정책 변경 이후 자체 GitHub 캐시
+    (FinanceData/fdr_krx_data_cache)에서 그날 데이터를 읽어오는데,
+    이 캐시가 당일 데이터를 늦게 올리거나 가끔 누락하는 알려진 문제가 있다
+    (FinanceDataReader 이슈 #276 등). 그래서 404가 나면 몇 분 간격으로 재시도한다.
+    """
+    last_err = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            return fdr.StockListing('KRX')
+        except Exception as e:
+            last_err = e
+            print(f"[fetch_krx_listing_with_retry] 시도 {attempt}/{max_attempts} 실패: {e}")
+            if attempt < max_attempts:
+                print(f"  -> {wait_seconds}초 후 재시도합니다 (FDR의 KRX 데이터 캐시가 아직 갱신 안 됐을 수 있음)...")
+                time.sleep(wait_seconds)
+    raise last_err
 DB_PATH = os.path.join(base_dir, "stock_ohlcv_cache.db")
 if not os.path.exists(os.path.dirname(DB_PATH)):
     DB_PATH = os.path.join(base_dir, "stock_ohlcv_cache.db")
@@ -80,7 +101,7 @@ def backfill_missing_days(target_date, max_gap_days=10, lookback_days=20):
     print(f"[DB 보정] 결측 거래일 발견: {date_strs} → 종목별 히스토리로 채우는 중...")
 
     try:
-        df_krx = fdr.StockListing('KRX')
+        df_krx = fetch_krx_listing_with_retry()
         codes = df_krx[df_krx['Market'].isin(['KOSPI', 'KOSDAQ', 'KOSDAQ GLOBAL'])]['Code'].astype(str).tolist()
     except Exception as e:
         print("[DB 보정] 종목 리스트 조회 실패, 보정 중단:", e)
@@ -171,7 +192,7 @@ def sync_stock_data(target_date=None):
 
     print(f"[초고속 DB 캐시] {target_str} 전 종목 최신 시세 1초 일괄 증분 획득 중...")
     try:
-        df_krx = fdr.StockListing('KRX')
+        df_krx = fetch_krx_listing_with_retry()
         df_filtered = df_krx[df_krx['Market'].isin(['KOSPI', 'KOSDAQ', 'KOSDAQ GLOBAL'])]
         
         all_records = []

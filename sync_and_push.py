@@ -131,7 +131,8 @@ overview_db = {}
 latest_prices = {}
 try:
     import FinanceDataReader as fdr
-    df_krx = fdr.StockListing('KRX')
+    from local_data_manager import fetch_krx_listing_with_retry
+    df_krx = fetch_krx_listing_with_retry()
     df_krx = df_krx[df_krx['Market'].isin(['KOSPI', 'KOSDAQ', 'KOSDAQ GLOBAL'])]
     for _, row in df_krx.iterrows():
         code = str(row['Code'])

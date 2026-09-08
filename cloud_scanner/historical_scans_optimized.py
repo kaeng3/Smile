@@ -4,10 +4,11 @@ import sys
 import datetime
 import json
 import socket
+import time
 socket.setdefaulttimeout(3.0)
 import FinanceDataReader as fdr
 import pandas as pd
-from local_data_manager import sync_stock_data, load_cached_stock_dfs
+from local_data_manager import sync_stock_data, load_cached_stock_dfs, fetch_krx_listing_with_retry
 
 try:
     sys.stdout.reconfigure(encoding='utf-8')
@@ -15,7 +16,7 @@ except AttributeError:
     pass
 
 def get_market_list():
-    df = fdr.StockListing('KRX')
+    df = fetch_krx_listing_with_retry()
     df_filtered = df[df['Market'].isin(['KOSPI', 'KOSDAQ', 'KOSDAQ GLOBAL'])]
     exclude_keywords = ['우B', '우C', '스팩', '리츠', '레버리지', '인버스', 'ETN', 'ETF', '하이브리드']
     def is_excluded(name):
