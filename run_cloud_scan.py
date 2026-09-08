@@ -27,6 +27,9 @@ os.environ['PYTHONPATH'] = CLOUD_SCANNER_DIR
 sys.path.insert(0, CLOUD_SCANNER_DIR)
 
 debug_lines = []
+_debug_path = os.path.join(BASE_DIR, 'debug_scan_error.txt')
+if os.path.exists(_debug_path):
+    os.remove(_debug_path)
 
 def run_step(step_label, args, cwd):
     print(f"\n{step_label}")
@@ -43,7 +46,7 @@ def run_step(step_label, args, cwd):
         debug_lines.append(result.stdout or "(없음)")
         debug_lines.append("--- STDERR ---")
         debug_lines.append(result.stderr or "(없음)")
-        with open(os.path.join(BASE_DIR, 'debug_scan_error.txt'), 'w', encoding='utf-8') as f:
+        with open(_debug_path, 'w', encoding='utf-8') as f:
             f.write("\n".join(debug_lines))
         sys.exit(result.returncode)
 
