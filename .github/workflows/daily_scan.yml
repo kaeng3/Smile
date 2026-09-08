@@ -66,6 +66,7 @@ jobs:
           python run_cloud_scan.py
 
       - name: Commit and Push Changes if Any
+        if: always()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
