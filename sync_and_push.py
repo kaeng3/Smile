@@ -62,6 +62,7 @@ def load_scan_with_comments(json_filename, limit=12):
     result = []
     for s in sorted_stocks:
         code = s.get('code', '')
+        close = s.get('close', 0)
         t_info = theme_db.get(code, {})
         sub_t  = t_info.get('subthemes', [])
         cat    = t_info.get('category', '기타')
@@ -132,7 +133,7 @@ latest_prices = {}
 fetch_ok = False
 try:
     import FinanceDataReader as fdr
-    from local_data_manager import fetch_krx_listing_with_retry
+    from cloud_scanner.local_data_manager import fetch_krx_listing_with_retry
     df_krx = fetch_krx_listing_with_retry()
     df_krx = df_krx[df_krx['Market'].isin(['KOSPI', 'KOSDAQ', 'KOSDAQ GLOBAL'])]
     for _, row in df_krx.iterrows():
@@ -320,11 +321,13 @@ for fname in os.listdir(GIT_DIR):
                     pass
 
 # ── 8. GitHub 자동 푸시 ──────────────────────────────────────────────
-print("\n[GitHub] 자동 업로드 시작...")
-try:
-    subprocess.run(["git", "add", "scan_history.json", "daily_issues.json", "stock_overview.json", "latest_prices.json", "charts/", "."], cwd=GIT_DIR, check=False)
-    subprocess.run(["git", "commit", "-m", f"Auto Update: {date_str} (차트+코멘트+500억일차 포함)"], cwd=GIT_DIR, check=False)
-    subprocess.run(["git", "push", "origin", "main"], cwd=GIT_DIR, check=False)
-    print("[GitHub] 웹사이트 반영 100% 완료!")
-except Exception as e:
-    print("[GitHub 오류]:", e)
+# GitHub Actions commits only after the entire scan succeeds.
+if os.environ.get("GITHUB_ACTIONS") != "true":
+    print("\n[GitHub] 자동 업로드 시작...")
+    try:
+        subprocess.run(["git", "add", "scan_history.json", "daily_issues.json", "stock_overview.json", "latest_prices.json", "charts/", "."], cwd=GIT_DIR, check=False)
+        subprocess.run(["git", "commit", "-m", f"Auto Update: {date_str} (차트+코멘트+500억일차 포함)"], cwd=GIT_DIR, check=False)
+        subprocess.run(["git", "push", "origin", "main"], cwd=GIT_DIR, check=False)
+        print("[GitHub] 웹사이트 반영 100% 완료!")
+    except Exception as e:
+        print("[GitHub 오류]:", e)

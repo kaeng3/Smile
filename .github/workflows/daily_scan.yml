@@ -59,14 +59,24 @@ jobs:
             echo "캐시된 DB 사용 (크기: $(du -h cloud_scanner/stock_ohlcv_cache.db | cut -f1))"
           fi
 
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -v
+
       - name: Run Cloud Stock Scan
         env:
           GEMINI_API_KEY: ${{ secrets.SMILE }}
         run: |
           python run_cloud_scan.py
 
+      - name: Upload scan failure log
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scan-failure-log
+          path: debug_scan_error.txt
+          if-no-files-found: ignore
+
       - name: Commit and Push Changes if Any
-        if: always()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
