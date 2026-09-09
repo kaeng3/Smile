@@ -5,6 +5,7 @@ Smile_Stock_Auto_Scanner 스캔 결과 + 차트 + AI 코멘트를
 Smile_Stock_System(깃허브 폴더)로 완전 동기화 후 GitHub 자동 푸시.
 """
 import os, sys, json, shutil, datetime, subprocess
+from cleanup_artifacts import cleanup_artifacts, retention_cutoff
 
 try:
     sys.stdout.reconfigure(encoding='utf-8')
@@ -15,7 +16,7 @@ GIT_DIR       = os.path.dirname(os.path.abspath(__file__))
 SCANNER_DIR   = os.path.join(GIT_DIR, "cloud_scanner")
 ARTIFACT_BASE = GIT_DIR
 
-now      = datetime.datetime.now()
+now      = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).replace(tzinfo=None)
 date_str = now.strftime('%Y%m%d')
 print(f"[SYNC] {date_str} 스캔 결과 → 깃허브 폴더 동기화 시작...")
 
@@ -250,8 +251,9 @@ if os.path.exists(history_file):
     with open(history_file, 'r', encoding='utf-8') as f:
         history_data = json.load(f)
 
+cutoff = retention_cutoff(now.date().isoformat())
 if not b500m_list:
-    prev = sorted(history_data.keys(), reverse=True)
+    prev = sorted((d for d in history_data if d >= cutoff), reverse=True)
     if prev:
         b500m_list = history_data[prev[0]].get('b500m', [])
 
@@ -263,7 +265,7 @@ history_data[date_str] = {
 }
 
 sorted_dates = sorted(history_data.keys(), reverse=True)
-purged = {d: history_data[d] for d in sorted_dates[:5]}
+purged = {d: history_data[d] for d in sorted_dates if d >= cutoff}
 
 with open(history_file, 'w', encoding='utf-8') as f:
     json.dump(purged, f, ensure_ascii=False, indent=2)
@@ -290,35 +292,7 @@ for prefix in ['김일청의_양음양기법', '김일청의_양음양기법_v2�
     if os.path.exists(src_pdf):
         print(f"[PDF] {prefix}_{date_str}.pdf 생성 확인 완료")
 
-valid_dates = set(purged.keys())
-
-# 5일 지난 차트 폴더 지우기
-charts_dir = os.path.join(GIT_DIR, 'charts')
-if os.path.exists(charts_dir):
-    for dname in os.listdir(charts_dir):
-        dp = os.path.join(charts_dir, dname)
-        if os.path.isdir(dp) and dname.isdigit() and len(dname) == 8:
-            if dname not in valid_dates:
-                try:
-                    import shutil
-                    shutil.rmtree(dp)
-                    print(f"[CLEANUP] 오래된 차트 폴더 삭제: {dname}")
-                except Exception as e:
-                    print(f"[CLEANUP ERROR] {dname} 폴더 삭제 실패: {e}")
-
-# 5일 지난 PDF 파일 지우기
-for fname in os.listdir(GIT_DIR):
-    if fname.endswith('.pdf'):
-        # Extract date from filename (e.g., 김일청의_양음양기법_20260805.pdf)
-        parts = fname.replace('.pdf', '').split('_')
-        if parts and parts[-1].isdigit() and len(parts[-1]) == 8:
-            file_date = parts[-1]
-            if file_date not in valid_dates:
-                try:
-                    os.remove(os.path.join(GIT_DIR, fname))
-                    print(f"[CLEANUP] 오래된 PDF 삭제: {fname}")
-                except Exception as e:
-                    pass
+cleanup_artifacts(GIT_DIR, now.date().isoformat())
 
 # ── 8. GitHub 자동 푸시 ──────────────────────────────────────────────
 # GitHub Actions commits only after the entire scan succeeds.

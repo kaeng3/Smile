@@ -3,3 +3,4 @@ reportlab
 pandas
 matplotlib
 requests
+exchange-calendars==4.13.2
