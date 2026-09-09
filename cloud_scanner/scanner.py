@@ -17,29 +17,81 @@ except ImportError:
     os.system("pip install finance-datareader")
     import FinanceDataReader as fdr
 import utils_recent_scan as urs
+
+
+def _load_name_map():
+    """저장소 루트의 latest_prices.json에서 code->name 매핑을 가져온다 (일괄조회 폴백용)."""
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'latest_prices.json')
+    try:
+        import json as _json
+        with open(path, 'r', encoding='utf-8') as f:
+            data = _json.load(f)
+        return {code: info.get('name', '') for code, info in data.items()}
+    except Exception:
+        return {}
+
+
+def _get_today_df_from_local_cache():
+    """
+    fdr.StockListing('KOSPI'/'KOSDAQ')이 실패했을 때(FDR의 GitHub 캐시 저장소
+    문제) 쓰는 대체 경로. 이 스크립트가 돌기 전에 이미 로컬 캐시 DB(local_data_manager)에
+    오늘자 시세가 채워져 있으므로, 그걸 그대로 읽어서 Code/Name/Close/Volume/Change를
+    구성해 fdr.StockListing과 최대한 같은 모양으로 반환한다.
+    """
+    try:
+        from local_data_manager import load_cached_stock_dfs
+        target_date = datetime.datetime.now()
+        stock_dfs = load_cached_stock_dfs(target_date)
+        target_str = target_date.strftime('%Y-%m-%d')
+        name_map = _load_name_map()
+
+        rows = []
+        for code, df in stock_dfs.items():
+            if df.empty:
+                continue
+            if df.index[-1].strftime('%Y-%m-%d') != target_str:
+                continue
+            close = float(df['Close'].iloc[-1])
+            volume = float(df['Volume'].iloc[-1])
+            prev_close = float(df['Close'].iloc[-2]) if len(df) >= 2 else close
+            chg = ((close - prev_close) / prev_close) if prev_close else 0.0
+            rows.append({
+                'Code': code,
+                'Name': name_map.get(code, ''),
+                'Close': close,
+                'Volume': volume,
+                'Change': chg,  # 소수(0.05=5%) 형태로, 기존 change_col 처리 로직과 맞춤
+            })
+        df_out = pd.DataFrame(rows)
+        print(f"[로컬 캐시 대체] {len(df_out)}개 종목 오늘자 시세를 로컬 DB에서 읽음")
+        return df_out
+    except Exception as e:
+        print(f"[로컬 캐시 대체] 실패: {e}")
+        return pd.DataFrame()
+
+
 def get_full_market_list():
     """KOSPI, KOSDAQ 전 종목 리스트를 가져옵니다 (우선주, ETF, SPAC 등 제외)."""
     print("시장 전 종목 정보를 가져오는 중...")
+    exclude_keywords = ['우B', '우C', '스팩', '리츠', '레버리지', '인버스', 'ETN', 'ETF', '하이브리드']
+    def is_excluded(name):
+        return name.endswith('우') or any(kw in name for kw in exclude_keywords)
+
     try:
         df_kospi = fdr.StockListing('KOSPI')
         df_kosdaq = fdr.StockListing('KOSDAQ')
-        
-        exclude_keywords = ['우B', '우C', '스팩', '리츠', '레버리지', '인버스', 'ETN', 'ETF', '하이브리드']
-        def is_excluded(name):
-            return name.endswith('우') or any(kw in name for kw in exclude_keywords)
-
-        stocks = []
-        for s in df_kospi[['Code', 'Name']].to_dict('records'):
-            if not is_excluded(s['Name']): 
-                stocks.append(s)
-        for s in df_kosdaq[['Code', 'Name']].to_dict('records'):
-            if not is_excluded(s['Name']): 
-                stocks.append(s)
-                
-        return stocks
+        df_all = pd.concat([df_kospi, df_kosdaq], ignore_index=True)
     except Exception as e:
-        print(f"시장 종목 정보 가져오기 실패: {e}")
-        return []
+        print(f"시장 종목 정보 가져오기 실패: {e}. 로컬 캐시로 대체합니다.")
+        df_all = _get_today_df_from_local_cache()
+        if df_all.empty:
+            return []
+
+    stocks = []
+    for s in df_all[['Code', 'Name']].to_dict('records'):
+        if s['Name'] and not is_excluded(s['Name']):
+            stocks.append(s)
+    return stocks
 
 def get_prefiltered_market_list(threshold_billion=150, change_pct_min=3.0):
     """
@@ -53,7 +105,14 @@ def get_prefiltered_market_list(threshold_billion=150, change_pct_min=3.0):
         df_kospi = fdr.StockListing('KOSPI')
         df_kosdaq = fdr.StockListing('KOSDAQ')
         df_all = pd.concat([df_kospi, df_kosdaq], ignore_index=True)
+    except Exception as e:
+        print(f"사전 필터링용 일괄조회 실패 ({e}), 로컬 캐시로 대체합니다.")
+        df_all = _get_today_df_from_local_cache()
+        if df_all.empty:
+            print("[사전 필터링] 로컬 캐시도 비어있어 전체 종목 리스트로 폴백합니다.")
+            return get_full_market_list()
 
+    try:
         exclude_keywords = ['우B', '우C', '스팩', '리츠', '레버리지', '인버스', 'ETN', 'ETF', '하이브리드']
         def is_excluded(name):
             if not isinstance(name, str):
