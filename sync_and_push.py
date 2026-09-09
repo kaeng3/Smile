@@ -129,6 +129,7 @@ def load_scan_with_comments(json_filename, limit=12):
 print("[SYNC] 기업개요/전종목 최신가 스냅샷 생성 중...")
 overview_db = {}
 latest_prices = {}
+fetch_ok = False
 try:
     import FinanceDataReader as fdr
     from local_data_manager import fetch_krx_listing_with_retry
@@ -149,16 +150,20 @@ try:
             'close': float(close) if close is not None and close == close else 0,
             'rate': round(float(rate), 2) if rate is not None and rate == rate else 0,
         }
+    fetch_ok = True
     # 업종은 FDR(KRX-DESC)이 '벤처기업부' 같은 시장구분을 잘못 반환하는 경우가 있어
     # 정확한 WICS 업종분류는 별도(주간 네이버 재무 스크립트)에서 stock_sector.json으로 생성함
 except Exception as e:
-    print("[SYNC] 기업개요 스냅샷 생성 실패:", e)
+    print("[SYNC] 전종목 일괄조회 실패, 기존 파일을 그대로 유지합니다:", e)
 
-with open(os.path.join(GIT_DIR, 'stock_overview.json'), 'w', encoding='utf-8') as f:
-    json.dump(overview_db, f, ensure_ascii=False)
-with open(os.path.join(GIT_DIR, 'latest_prices.json'), 'w', encoding='utf-8') as f:
-    json.dump(latest_prices, f, ensure_ascii=False)
-print(f"[SYNC] stock_overview.json({len(overview_db)}건), latest_prices.json({len(latest_prices)}건) 저장 완료")
+if fetch_ok:
+    with open(os.path.join(GIT_DIR, 'stock_overview.json'), 'w', encoding='utf-8') as f:
+        json.dump(overview_db, f, ensure_ascii=False)
+    with open(os.path.join(GIT_DIR, 'latest_prices.json'), 'w', encoding='utf-8') as f:
+        json.dump(latest_prices, f, ensure_ascii=False)
+    print(f"[SYNC] stock_overview.json({len(overview_db)}건), latest_prices.json({len(latest_prices)}건) 저장 완료")
+else:
+    print("[SYNC] stock_overview.json/latest_prices.json 갱신 건너뜀 (기존 파일 유지)")
 
 # ── 4. 각 전략 스캔 결과 로드 ─────────────────────────────────────────
 print("[SYNC] 양음양 기법 로드 중...")

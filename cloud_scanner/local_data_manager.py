@@ -11,12 +11,13 @@ import FinanceDataReader as fdr
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 
-def fetch_krx_listing_with_retry(max_attempts=6, wait_seconds=180):
+def fetch_krx_listing_with_retry(max_attempts=2, wait_seconds=30):
     """
     FinanceDataReader는 KRX 로그인 정책 변경 이후 자체 GitHub 캐시
     (FinanceData/fdr_krx_data_cache)에서 그날 데이터를 읽어오는데,
-    이 캐시가 당일 데이터를 늦게 올리거나 가끔 누락하는 알려진 문제가 있다
-    (FinanceDataReader 이슈 #276 등). 그래서 404가 나면 몇 분 간격으로 재시도한다.
+    이 캐시가 당일 데이터를 늦게 올리거나 며칠씩 누락하는 알려진 문제가 있다
+    (FinanceDataReader 이슈 #276 등). 짧게만 재시도하고, 계속 실패하면
+    호출부에서 종목별 네이버 조회(fetch_stock_prices_via_naver)로 대체한다.
     """
     last_err = None
     for attempt in range(1, max_attempts + 1):
@@ -61,13 +62,63 @@ def init_db():
     conn.commit()
     conn.close()
 
-def backfill_missing_days(target_date, max_gap_days=10):
+def get_stock_codes_fallback():
     """
-    DB의 마지막 저장일과 target_date 사이에 빠진 평일(거래일)이 있으면
-    종목별로 개별 히스토리 조회를 병렬로 실행해서 채워 넣는다.
-    (이걸 안 하면 등락률이 '어제-오늘'이 아니라 'N일전-오늘'로 계산되어
-    실제보다 부풀려진 값이 나옴)
+    fetch_krx_listing_with_retry()가 실패했을 때(예: FDR의 GitHub 캐시 저장소가
+    며칠째 갱신 안 됨) 쓰는 대체 종목 코드 목록. 로컬 DB에 이미 쌓여있는
+    종목 코드를 그대로 쓴다(상장 종목 구성은 거의 매일 바뀌지 않으므로 충분히 안전).
     """
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT DISTINCT code FROM daily_prices;")
+        codes = [row[0] for row in cursor.fetchall()]
+        conn.close()
+        if codes:
+            print(f"[대체 종목목록] 로컬 DB 기준 {len(codes)}개 종목 코드 사용")
+        return codes
+    except Exception as e:
+        print("[대체 종목목록] 로컬 DB 조회도 실패:", e)
+        return []
+
+
+def fetch_stock_prices_via_naver(codes, target_date_str, max_workers=20):
+    """
+    fdr.DataReader(code, ...)는 KRX 종목코드일 때 네이버 시세를 소스로 쓰기 때문에,
+    FDR의 GitHub 캐시 저장소 문제(전종목 일괄조회 fdr.StockListing('KRX')가 참조)와
+    무관하게 항상 동작한다. 전종목 일괄조회가 막혔을 때 이걸로 종목별 병렬 조회해서
+    같은 결과(오늘자 OHLCV)를 얻는다. 개별 호출이라 일괄조회보다는 느리다.
+    """
+    records = []
+
+    def fetch_one(code):
+        try:
+            df = fdr.DataReader(code, target_date_str, target_date_str)
+            if df.empty:
+                return None
+            row = df.iloc[-1]
+            close = float(row.get('Close', 0) or 0)
+            if close <= 0:
+                return None
+            return (
+                code, target_date_str,
+                float(row.get('Open', close) or close),
+                float(row.get('High', close) or close),
+                float(row.get('Low', close) or close),
+                close,
+                float(row.get('Volume', 0) or 0),
+            )
+        except Exception:
+            return None
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as ex:
+        for rec in ex.map(fetch_one, codes):
+            if rec:
+                records.append(rec)
+
+    return records
+
+
 def backfill_missing_days(target_date, max_gap_days=10, lookback_days=20):
     """
     최근 lookback_days 범위의 평일들을 하나씩 체크해서, 종목 수 기준
@@ -101,11 +152,14 @@ def backfill_missing_days(target_date, max_gap_days=10, lookback_days=20):
     print(f"[DB 보정] 결측 거래일 발견: {date_strs} → 종목별 히스토리로 채우는 중...")
 
     try:
-        df_krx = fetch_krx_listing_with_retry()
+        df_krx = fetch_krx_listing_with_retry(max_attempts=2, wait_seconds=30)
         codes = df_krx[df_krx['Market'].isin(['KOSPI', 'KOSDAQ', 'KOSDAQ GLOBAL'])]['Code'].astype(str).tolist()
     except Exception as e:
-        print("[DB 보정] 종목 리스트 조회 실패, 보정 중단:", e)
-        return
+        print("[DB 보정] 전종목 일괄조회 실패, 로컬 DB 종목목록으로 대체:", e)
+        codes = get_stock_codes_fallback()
+        if not codes:
+            print("[DB 보정] 대체 종목목록도 없어 보정 중단")
+            return
 
     start_str = missing_dates[0].strftime('%Y-%m-%d')
     end_str = missing_dates[-1].strftime('%Y-%m-%d')
@@ -191,11 +245,11 @@ def sync_stock_data(target_date=None):
         return
 
     print(f"[초고속 DB 캐시] {target_str} 전 종목 최신 시세 1초 일괄 증분 획득 중...")
+    all_records = []
     try:
         df_krx = fetch_krx_listing_with_retry()
         df_filtered = df_krx[df_krx['Market'].isin(['KOSPI', 'KOSDAQ', 'KOSDAQ GLOBAL'])]
-        
-        all_records = []
+
         for _, row in df_filtered.iterrows():
             code = str(row['Code'])
             close = float(row.get('Close', 0) or 0)
@@ -205,20 +259,26 @@ def sync_stock_data(target_date=None):
             vol = float(row.get('Volume', 0) or 0)
             if close > 0:
                 all_records.append((code, target_str, open_p, high_p, low_p, close, vol))
-
-        if all_records:
-            conn = get_db_connection()
-            cursor = conn.cursor()
-            cursor.execute("BEGIN TRANSACTION;")
-            cursor.executemany("""
-                INSERT OR REPLACE INTO daily_prices (code, date, open, high, low, close, volume)
-                VALUES (?, ?, ?, ?, ?, ?, ?);
-            """, all_records)
-            conn.commit()
-            conn.close()
-            print(f"[초고속 DB 캐시] {len(all_records)}개 종목 시세 1초 만에 로컬 DB 반영 완료!")
     except Exception as e:
-        print("시세 증분 저장 중 예외 (기존 DB 사용):", e)
+        print("[초고속 DB 캐시] 전종목 일괄조회 실패, 종목별 네이버 조회로 대체:", e)
+        codes = get_stock_codes_fallback()
+        if codes:
+            all_records = fetch_stock_prices_via_naver(codes, target_str)
+            print(f"[대체 경로] 종목별 네이버 조회로 {len(all_records)}건 확보")
+        else:
+            print("[대체 경로] 대체 종목목록도 없어 오늘자 증분 실패 (기존 DB 사용)")
+
+    if all_records:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("BEGIN TRANSACTION;")
+        cursor.executemany("""
+            INSERT OR REPLACE INTO daily_prices (code, date, open, high, low, close, volume)
+            VALUES (?, ?, ?, ?, ?, ?, ?);
+        """, all_records)
+        conn.commit()
+        conn.close()
+        print(f"[초고속 DB 캐시] {len(all_records)}개 종목 시세 로컬 DB 반영 완료!")
 
 def load_cached_stock_dfs(target_date):
     target_str = target_date.strftime('%Y-%m-%d')

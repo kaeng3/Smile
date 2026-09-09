@@ -16,17 +16,36 @@ except AttributeError:
     pass
 
 def get_market_list():
-    df = fetch_krx_listing_with_retry()
-    df_filtered = df[df['Market'].isin(['KOSPI', 'KOSDAQ', 'KOSDAQ GLOBAL'])]
     exclude_keywords = ['우B', '우C', '스팩', '리츠', '레버리지', '인버스', 'ETN', 'ETF', '하이브리드']
     def is_excluded(name):
         return name.endswith('우') or any(kw in name for kw in exclude_keywords)
-        
-    stocks = []
-    for s in df_filtered[['Code', 'Name']].to_dict('records'):
-        if not is_excluded(s['Name']): 
-            stocks.append(s)
-    return stocks
+
+    try:
+        df = fetch_krx_listing_with_retry()
+        df_filtered = df[df['Market'].isin(['KOSPI', 'KOSDAQ', 'KOSDAQ GLOBAL'])]
+        stocks = []
+        for s in df_filtered[['Code', 'Name']].to_dict('records'):
+            if not is_excluded(s['Name']):
+                stocks.append(s)
+        return stocks
+    except Exception as e:
+        print("[get_market_list] 전종목 일괄조회 실패, 저장소에 있던 최근 종목목록으로 대체:", e)
+        # latest_prices.json은 저장소 루트에 있고, 매일 스캔 때 갱신되는 code->name/close 스냅샷.
+        # 상장 종목 구성은 하루아침에 크게 안 바뀌므로 하루이틀 지난 목록이어도 충분히 안전한 대체재.
+        fallback_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'latest_prices.json')
+        try:
+            with open(fallback_path, 'r', encoding='utf-8') as f:
+                latest_prices = json.load(f)
+            stocks = []
+            for code, info in latest_prices.items():
+                name = info.get('name', '')
+                if name and not is_excluded(name):
+                    stocks.append({'Code': code, 'Name': name})
+            print(f"[get_market_list] 대체 종목목록 {len(stocks)}개 사용")
+            return stocks
+        except Exception as e2:
+            print("[get_market_list] 대체 종목목록도 실패:", e2)
+            raise
 
 # 1. 양음양 기법 스캐너 (로컬 캐시 DB 기반 초고속 연산)
 def scan_date_optimized(stocks, target_date, stock_dfs=None):
