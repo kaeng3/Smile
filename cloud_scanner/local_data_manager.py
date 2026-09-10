@@ -305,4 +305,21 @@ def load_cached_stock_dfs(target_date):
     return stock_dfs
 
 if __name__ == '__main__':
-    sync_stock_data()
+    if os.environ.get('PRICE_DEBUG') == '1':
+        import json as _json
+        conn = get_db_connection()
+        cur = conn.cursor()
+        out = {}
+        for code in ['214680', '006490', '005930']:
+            cur.execute("SELECT date, close, volume FROM daily_prices WHERE code=? ORDER BY date DESC LIMIT 15;", (code,))
+            out[code] = cur.fetchall()
+        cur.execute("SELECT MAX(date), MIN(date), COUNT(DISTINCT date) FROM daily_prices;")
+        out['_db_summary'] = cur.fetchone()
+        cur.execute("SELECT date, COUNT(*) FROM daily_prices GROUP BY date ORDER BY date DESC LIMIT 15;")
+        out['_date_counts'] = cur.fetchall()
+        conn.close()
+        with open(os.path.join(base_dir, '..', 'price_debug.json'), 'w', encoding='utf-8') as f:
+            _json.dump(out, f, ensure_ascii=False, indent=2)
+        print("[PRICE_DEBUG] 저장 완료")
+    else:
+        sync_stock_data()
