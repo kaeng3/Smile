@@ -17,6 +17,21 @@ except ImportError:
     os.system("pip install finance-datareader")
     import FinanceDataReader as fdr
 import utils_recent_scan as urs
+from local_data_manager import fetch_krx_listing_with_retry
+
+
+def _fetch_kospi_kosdaq_df():
+    """
+    KOSPI+KOSDAQ 전 종목을 한 번에 가져온다. fetch_krx_listing_with_retry()가
+    1차(FDR 캐시)/2차(KRX 직접조회)를 순서대로 시도해주므로 여기서는 그 결과를
+    Market 기준으로 필터링만 한다.
+    """
+    df_all = fetch_krx_listing_with_retry()
+    if 'Market' in df_all.columns:
+        filtered = df_all[df_all['Market'].isin(['KOSPI', 'KOSDAQ', 'KOSDAQ GLOBAL'])]
+        if not filtered.empty:
+            return filtered.reset_index(drop=True)
+    return df_all
 
 
 def _load_name_map():
@@ -78,9 +93,7 @@ def get_full_market_list():
         return name.endswith('우') or any(kw in name for kw in exclude_keywords)
 
     try:
-        df_kospi = fdr.StockListing('KOSPI')
-        df_kosdaq = fdr.StockListing('KOSDAQ')
-        df_all = pd.concat([df_kospi, df_kosdaq], ignore_index=True)
+        df_all = _fetch_kospi_kosdaq_df()
     except Exception as e:
         print(f"시장 종목 정보 가져오기 실패: {e}. 로컬 캐시로 대체합니다.")
         df_all = _get_today_df_from_local_cache()
@@ -102,9 +115,7 @@ def get_prefiltered_market_list(threshold_billion=150, change_pct_min=3.0):
     """
     print("[사전 필터링] 거래대금 + 등락률 기준으로 후보 종목 압축 중...")
     try:
-        df_kospi = fdr.StockListing('KOSPI')
-        df_kosdaq = fdr.StockListing('KOSDAQ')
-        df_all = pd.concat([df_kospi, df_kosdaq], ignore_index=True)
+        df_all = _fetch_kospi_kosdaq_df()
     except Exception as e:
         print(f"사전 필터링용 일괄조회 실패 ({e}), 로컬 캐시로 대체합니다.")
         df_all = _get_today_df_from_local_cache()

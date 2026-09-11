@@ -16,8 +16,11 @@ def fetch_krx_listing_with_retry(max_attempts=2, wait_seconds=30):
     FinanceDataReader는 KRX 로그인 정책 변경 이후 자체 GitHub 캐시
     (FinanceData/fdr_krx_data_cache)에서 그날 데이터를 읽어오는데,
     이 캐시가 당일 데이터를 늦게 올리거나 며칠씩 누락하는 알려진 문제가 있다
-    (FinanceDataReader 이슈 #276 등). 짧게만 재시도하고, 계속 실패하면
-    호출부에서 종목별 네이버 조회(fetch_stock_prices_via_naver)로 대체한다.
+    (FinanceDataReader 이슈 #276 등).
+    1차: fdr.StockListing('KRX') (그 캐시 경유, 정상이면 가장 빠름)
+    2차: FDR 내부의 KrxMarcapListing으로 KRX 사이트에 직접 접속해서 그 캐시를
+         아예 거치지 않고 전종목 시세를 가져옴(느리지 않고, 종목별 개별조회보다 훨씬 빠름)
+    그래도 실패하면 예외를 던지고, 호출부에서 종목별 네이버 조회로 최종 대체한다.
     """
     last_err = None
     for attempt in range(1, max_attempts + 1):
@@ -29,7 +32,15 @@ def fetch_krx_listing_with_retry(max_attempts=2, wait_seconds=30):
             if attempt < max_attempts:
                 print(f"  -> {wait_seconds}초 후 재시도합니다 (FDR의 KRX 데이터 캐시가 아직 갱신 안 됐을 수 있음)...")
                 time.sleep(wait_seconds)
-    raise last_err
+
+    print("[fetch_krx_listing_with_retry] 캐시 경유 방식 실패, KRX 사이트 직접 조회로 전환...")
+    try:
+        df = fdr.krx.listing.KrxMarcapListing('KRX').read()
+        print(f"[fetch_krx_listing_with_retry] KRX 직접 조회 성공 ({len(df)}종목)")
+        return df
+    except Exception as e2:
+        print(f"[fetch_krx_listing_with_retry] KRX 직접 조회도 실패: {e2}")
+        raise last_err
 DB_PATH = os.path.join(base_dir, "stock_ohlcv_cache.db")
 if not os.path.exists(os.path.dirname(DB_PATH)):
     DB_PATH = os.path.join(base_dir, "stock_ohlcv_cache.db")
