@@ -40,18 +40,18 @@
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
   {
-    "code": "006490",
-    "name": "프리티",
-    "close": 2835,
-    "rate": 18.619246861924683,
-    "match_type": "predictive",
-    "pattern": "양음양 v2 패턴 1 (눌림목)"
-  },
-  {
     "code": "150900",
     "name": "파수AI",
     "close": 4230,
     "rate": 12.05298013245033,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "006490",
+    "name": "프리티",
+    "close": 2835,
+    "rate": 18.619246861924683,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
