@@ -21427,5 +21427,14 @@
     "pattern": "양음양 v2 패턴 1 (눌림목)",
     "status": "tracking",
     "registered_at": "2026-09-11 09:54:17"
+  },
+  "332290": {
+    "code": "332290",
+    "name": "누보",
+    "anchor_date": "2026-09-14",
+    "anchor_close": 4630,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-14 07:31:35"
   }
 }
