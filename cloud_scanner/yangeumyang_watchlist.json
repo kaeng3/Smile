@@ -21436,5 +21436,32 @@
     "pattern": "양음양 패턴 1 (수급 강세)",
     "status": "tracking",
     "registered_at": "2026-09-14 07:31:35"
+  },
+  "054450": {
+    "code": "054450",
+    "name": "텔레칩스",
+    "anchor_date": "2026-09-15",
+    "anchor_close": 9360,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-15 07:13:27"
+  },
+  "278650": {
+    "code": "278650",
+    "name": "HLB바이오스텝",
+    "anchor_date": "2026-09-15",
+    "anchor_close": 2545,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-15 07:13:27"
+  },
+  "417860": {
+    "code": "417860",
+    "name": "오브젠",
+    "anchor_date": "2026-09-15",
+    "anchor_close": 7470,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-15 07:13:27"
   }
 }
