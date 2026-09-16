@@ -21463,5 +21463,104 @@
     "pattern": "양음양 패턴 1 (수급 강세)",
     "status": "tracking",
     "registered_at": "2026-09-15 07:13:27"
+  },
+  "078130": {
+    "code": "078130",
+    "name": "국일제지",
+    "anchor_date": "2026-09-16",
+    "anchor_close": 3440,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-16 09:06:56"
+  },
+  "136480": {
+    "code": "136480",
+    "name": "하림",
+    "anchor_date": "2026-09-16",
+    "anchor_close": 2645,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-16 09:06:56"
+  },
+  "073490": {
+    "code": "073490",
+    "name": "LIG아큐버",
+    "anchor_date": "2026-09-16",
+    "anchor_close": 31500,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-16 09:06:56"
+  },
+  "042420": {
+    "code": "042420",
+    "name": "네오위즈홀딩스",
+    "anchor_date": "2026-09-16",
+    "anchor_close": 24000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-16 09:06:56"
+  },
+  "460850": {
+    "code": "460850",
+    "name": "동국씨엠",
+    "anchor_date": "2026-09-16",
+    "anchor_close": 5350,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-16 09:06:56"
+  },
+  "047310": {
+    "code": "047310",
+    "name": "파워로직스",
+    "anchor_date": "2026-09-16",
+    "anchor_close": 3140,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-16 09:06:56"
+  },
+  "402490": {
+    "code": "402490",
+    "name": "그린리소스",
+    "anchor_date": "2026-09-16",
+    "anchor_close": 6730,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-16 09:06:56"
+  },
+  "019550": {
+    "code": "019550",
+    "name": "SBI인베스트먼트",
+    "anchor_date": "2026-09-16",
+    "anchor_close": 984,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-16 09:06:56"
+  },
+  "033560": {
+    "code": "033560",
+    "name": "블루콤",
+    "anchor_date": "2026-09-16",
+    "anchor_close": 4590,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-16 09:06:56"
+  },
+  "004780": {
+    "code": "004780",
+    "name": "대륙제관",
+    "anchor_date": "2026-09-16",
+    "anchor_close": 4370,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-16 09:06:56"
+  },
+  "046310": {
+    "code": "046310",
+    "name": "백금T&A",
+    "anchor_date": "2026-09-16",
+    "anchor_close": 2245,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-16 09:06:56"
   }
 }
