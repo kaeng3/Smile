@@ -21562,5 +21562,95 @@
     "pattern": "양음양 패턴 1 (수급 강세)",
     "status": "tracking",
     "registered_at": "2026-09-16 09:06:56"
+  },
+  "272210": {
+    "code": "272210",
+    "name": "한화시스템",
+    "anchor_date": "2026-09-17",
+    "anchor_close": 78100,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-17 11:23:15"
+  },
+  "489790": {
+    "code": "489790",
+    "name": "한화비전",
+    "anchor_date": "2026-09-17",
+    "anchor_close": 45050,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-17 11:23:15"
+  },
+  "317450": {
+    "code": "317450",
+    "name": "명인제약",
+    "anchor_date": "2026-09-17",
+    "anchor_close": 42600,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-17 11:23:15"
+  },
+  "014940": {
+    "code": "014940",
+    "name": "오리엔탈정공",
+    "anchor_date": "2026-09-17",
+    "anchor_close": 4670,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-17 11:23:15"
+  },
+  "339770": {
+    "code": "339770",
+    "name": "교촌에프앤비",
+    "anchor_date": "2026-09-17",
+    "anchor_close": 3845,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-17 11:23:15"
+  },
+  "078070": {
+    "code": "078070",
+    "name": "유비쿼스홀딩스",
+    "anchor_date": "2026-09-17",
+    "anchor_close": 8820,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-17 11:23:15"
+  },
+  "361390": {
+    "code": "361390",
+    "name": "제노코",
+    "anchor_date": "2026-09-17",
+    "anchor_close": 13210,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-17 11:23:15"
+  },
+  "002230": {
+    "code": "002230",
+    "name": "피에스텍",
+    "anchor_date": "2026-09-17",
+    "anchor_close": 5150,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-17 11:23:15"
+  },
+  "096250": {
+    "code": "096250",
+    "name": "와이즈넛",
+    "anchor_date": "2026-09-17",
+    "anchor_close": 5470,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-17 11:23:15"
+  },
+  "488900": {
+    "code": "488900",
+    "name": "비츠로넥스텍",
+    "anchor_date": "2026-09-17",
+    "anchor_close": 12050,
+    "pattern": "양음양 v2 패턴 1 (눌림목)",
+    "status": "tracking",
+    "registered_at": "2026-09-17 11:24:34"
   }
 }
