@@ -21652,5 +21652,122 @@
     "pattern": "양음양 v2 패턴 1 (눌림목)",
     "status": "tracking",
     "registered_at": "2026-09-17 11:24:34"
+  },
+  "000660": {
+    "code": "000660",
+    "name": "SK하이닉스",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 1850000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
+  },
+  "010120": {
+    "code": "010120",
+    "name": "LS ELECTRIC",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 209500,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
+  },
+  "475150": {
+    "code": "475150",
+    "name": "SK이터닉스",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 51000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
+  },
+  "214320": {
+    "code": "214320",
+    "name": "이노션",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 18110,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
+  },
+  "178920": {
+    "code": "178920",
+    "name": "PI첨단소재",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 18560,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
+  },
+  "084850": {
+    "code": "084850",
+    "name": "아이티엠반도체",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 7920,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
+  },
+  "002210": {
+    "code": "002210",
+    "name": "동성제약",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 1366,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
+  },
+  "051360": {
+    "code": "051360",
+    "name": "토비스",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 11850,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
+  },
+  "302550": {
+    "code": "302550",
+    "name": "리메드",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 2625,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
+  },
+  "407400": {
+    "code": "407400",
+    "name": "꿈비",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 2000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
+  },
+  "096630": {
+    "code": "096630",
+    "name": "에스코넥",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 1949,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
+  },
+  "900110": {
+    "code": "900110",
+    "name": "딥커머스",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 5740,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
+  },
+  "009620": {
+    "code": "009620",
+    "name": "삼보산업",
+    "anchor_date": "2026-09-18",
+    "anchor_close": 4645,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-18 09:44:22"
   }
 }
