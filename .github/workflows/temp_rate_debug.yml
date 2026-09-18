@@ -34,40 +34,24 @@ jobs:
           restore-keys: |
             stock-db-
 
-      - name: Full sync + targeted backfill for 096610
+      - name: Dump 096610 history
         run: |
           cd cloud_scanner
-          python3 local_data_manager.py
           python3 -c "
-          import sqlite3, FinanceDataReader as fdr
-
-          code = '096610'
-          df = fdr.DataReader(code, '2026-09-03', '2026-09-18')
-          print(df)
-
+          import sqlite3, json
           conn = sqlite3.connect('stock_ohlcv_cache.db')
           cur = conn.cursor()
-          recs = []
-          for idx, row in df.iterrows():
-              close = float(row.get('Close', 0) or 0)
-              if close <= 0:
-                  continue
-              recs.append((
-                  code, idx.strftime('%Y-%m-%d'),
-                  float(row.get('Open', close) or close),
-                  float(row.get('High', close) or close),
-                  float(row.get('Low', close) or close),
-                  close,
-                  float(row.get('Volume', 0) or 0),
-              ))
-          cur.executemany('INSERT OR REPLACE INTO daily_prices VALUES (?,?,?,?,?,?,?)', recs)
-          conn.commit()
+          cur.execute('SELECT date, close, volume FROM daily_prices WHERE code=? ORDER BY date DESC LIMIT 20;', ('096610',))
+          rows = cur.fetchall()
           conn.close()
-          print(f'{len(recs)}건 보정 완료')
+          with open('../rate_debug.json','w',encoding='utf-8') as f:
+              json.dump(rows, f, ensure_ascii=False, indent=2)
+          print(rows)
           "
 
-      - name: Save updated cache under today's key
-        uses: actions/cache/save@v4
-        with:
-          path: cloud_scanner/stock_ohlcv_cache.db
-          key: stock-db-${{ env.TODAY }}
+      - name: Commit and Push Changes if Any
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add rate_debug.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "TEMP: verify 096610 backfill" && git push)
