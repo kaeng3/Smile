@@ -34,28 +34,40 @@ jobs:
           restore-keys: |
             stock-db-
 
-      - name: Dump rate debug
+      - name: Full sync + targeted backfill for 096610
         run: |
           cd cloud_scanner
+          python3 local_data_manager.py
           python3 -c "
-          import sqlite3, json
+          import sqlite3, FinanceDataReader as fdr
+
+          code = '096610'
+          df = fdr.DataReader(code, '2026-09-03', '2026-09-18')
+          print(df)
+
           conn = sqlite3.connect('stock_ohlcv_cache.db')
           cur = conn.cursor()
-          out = {}
-          for code in ['099220','900110','096610']:
-              cur.execute('SELECT date, close, volume FROM daily_prices WHERE code=? ORDER BY date DESC LIMIT 15;', (code,))
-              out[code] = cur.fetchall()
-          cur.execute('SELECT date, COUNT(*) FROM daily_prices GROUP BY date ORDER BY date DESC LIMIT 15;')
-          out['_date_counts'] = cur.fetchall()
+          recs = []
+          for idx, row in df.iterrows():
+              close = float(row.get('Close', 0) or 0)
+              if close <= 0:
+                  continue
+              recs.append((
+                  code, idx.strftime('%Y-%m-%d'),
+                  float(row.get('Open', close) or close),
+                  float(row.get('High', close) or close),
+                  float(row.get('Low', close) or close),
+                  close,
+                  float(row.get('Volume', 0) or 0),
+              ))
+          cur.executemany('INSERT OR REPLACE INTO daily_prices VALUES (?,?,?,?,?,?,?)', recs)
+          conn.commit()
           conn.close()
-          with open('../rate_debug.json','w',encoding='utf-8') as f:
-              json.dump(out, f, ensure_ascii=False, indent=2)
-          print('done')
+          print(f'{len(recs)}건 보정 완료')
           "
 
-      - name: Commit and Push Changes if Any
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add rate_debug.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "TEMP: rate debug dump" && git push)
+      - name: Save updated cache under today's key
+        uses: actions/cache/save@v4
+        with:
+          path: cloud_scanner/stock_ohlcv_cache.db
+          key: stock-db-${{ env.TODAY }}
