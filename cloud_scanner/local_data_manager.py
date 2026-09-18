@@ -291,6 +291,42 @@ def sync_stock_data(target_date=None):
         conn.close()
         print(f"[초고속 DB 캐시] {len(all_records)}개 종목 시세 로컬 DB 반영 완료!")
 
+    # ── 개별 종목 누락 보정 ──────────────────────────────────────────
+    # 전체 일괄조회/네이버 대체가 '성공'해도, 그 결과 안에 특정 종목 하나만
+    # 빠지는 경우가 있다(날짜 전체 카운트로는 표가 안 남). 어제자엔 있었는데
+    # 오늘자엔 없는 종목만 골라 소수만 네이버로 추가 보정한다.
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT DISTINCT code FROM daily_prices WHERE date = ?;", (target_str,))
+        codes_today = {row[0] for row in cursor.fetchall()}
+        cursor.execute("""
+            SELECT DISTINCT code FROM daily_prices
+            WHERE date = (SELECT MAX(date) FROM daily_prices WHERE date < ?);
+        """, (target_str,))
+        codes_recent = {row[0] for row in cursor.fetchall()}
+        conn.close()
+
+        missing_codes = list(codes_recent - codes_today)
+        if missing_codes and len(missing_codes) < 200:  # 소수 누락일 때만(대량이면 다른 문제이므로 건드리지 않음)
+            print(f"[개별 종목 보정] {target_str} 데이터가 없는 종목 {len(missing_codes)}개 발견, 네이버로 보충 조회 중...")
+            extra_records = fetch_stock_prices_via_naver(missing_codes, target_str)
+            if extra_records:
+                conn = get_db_connection()
+                cursor = conn.cursor()
+                cursor.execute("BEGIN TRANSACTION;")
+                cursor.executemany("""
+                    INSERT OR REPLACE INTO daily_prices (code, date, open, high, low, close, volume)
+                    VALUES (?, ?, ?, ?, ?, ?, ?);
+                """, extra_records)
+                conn.commit()
+                conn.close()
+                print(f"[개별 종목 보정] {len(extra_records)}건 보정 완료")
+        elif missing_codes:
+            print(f"[개별 종목 보정] 누락 종목이 {len(missing_codes)}개로 너무 많아 건너뜁니다 (다른 문제일 가능성).")
+    except Exception as e:
+        print("[개별 종목 보정] 확인 중 오류:", e)
+
 def load_cached_stock_dfs(target_date):
     target_str = target_date.strftime('%Y-%m-%d')
     start_str = (target_date - datetime.timedelta(days=400)).strftime('%Y-%m-%d')
