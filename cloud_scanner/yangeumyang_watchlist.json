@@ -21769,5 +21769,59 @@
     "pattern": "양음양 패턴 1 (수급 강세)",
     "status": "tracking",
     "registered_at": "2026-09-18 09:44:22"
+  },
+  "005930": {
+    "code": "005930",
+    "name": "삼성전자",
+    "anchor_date": "2026-09-21",
+    "anchor_close": 274000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-21 09:33:24"
+  },
+  "168360": {
+    "code": "168360",
+    "name": "펨트론",
+    "anchor_date": "2026-09-21",
+    "anchor_close": 14230,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-21 09:33:24"
+  },
+  "002020": {
+    "code": "002020",
+    "name": "코오롱",
+    "anchor_date": "2026-09-21",
+    "anchor_close": 24300,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-21 09:33:24"
+  },
+  "001340": {
+    "code": "001340",
+    "name": "PKC",
+    "anchor_date": "2026-09-21",
+    "anchor_close": 4905,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-21 09:33:24"
+  },
+  "093640": {
+    "code": "093640",
+    "name": "케이알엠",
+    "anchor_date": "2026-09-21",
+    "anchor_close": 4800,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-21 09:33:24"
+  },
+  "002700": {
+    "code": "002700",
+    "name": "신일전자",
+    "anchor_date": "2026-09-21",
+    "anchor_close": 937,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-21 09:33:24"
   }
 }
