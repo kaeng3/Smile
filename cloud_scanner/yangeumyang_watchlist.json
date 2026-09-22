@@ -21823,5 +21823,50 @@
     "pattern": "양음양 패턴 1 (수급 강세)",
     "status": "tracking",
     "registered_at": "2026-09-21 09:33:24"
+  },
+  "402340": {
+    "code": "402340",
+    "name": "SK스퀘어",
+    "anchor_date": "2026-09-22",
+    "anchor_close": 1116000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-22 12:03:57"
+  },
+  "041020": {
+    "code": "041020",
+    "name": "폴라리스오피스",
+    "anchor_date": "2026-09-22",
+    "anchor_close": 3015,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-22 12:03:57"
+  },
+  "000020": {
+    "code": "000020",
+    "name": "동화약품",
+    "anchor_date": "2026-09-22",
+    "anchor_close": 5000,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-22 12:03:57"
+  },
+  "049720": {
+    "code": "049720",
+    "name": "고려신용정보",
+    "anchor_date": "2026-09-22",
+    "anchor_close": 9120,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-22 12:03:57"
+  },
+  "085670": {
+    "code": "085670",
+    "name": "뉴프렉스",
+    "anchor_date": "2026-09-22",
+    "anchor_close": 3105,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-22 12:03:57"
   }
 }
