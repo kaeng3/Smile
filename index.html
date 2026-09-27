@@ -455,6 +455,10 @@
         .new-scanner-state { display: inline-block; margin: 12px 0; padding: 5px 9px; border-radius: 9px; background: rgba(91,157,255,.18); color: #b9d4ff; font-weight: 700; font-size: .8rem; }
         .new-scanner-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; color: var(--text-sub); font-size: .84rem; line-height: 1.45; }
         .new-scanner-metrics strong { display: block; color: var(--text-main); font-size: .95rem; }
+        .new-scanner-chart { margin-top: 14px; border-top: 1px solid var(--border-color); padding-top: 12px; }
+        .new-scanner-chart svg { width: 100%; height: 128px; display: block; }
+        .new-scanner-chart-legend { display: flex; gap: 12px; margin-bottom: 5px; color: var(--text-sub); font-size: .74rem; }
+        .new-scanner-chart-empty { color: var(--text-sub); font-size: .8rem; padding: 18px 0 4px; text-align: center; }
         .new-scanner-empty { grid-column: 1/-1; padding: 42px 18px; text-align: center; color: var(--text-sub); border: 1px dashed var(--border-color); border-radius: 16px; }
 
 
@@ -730,6 +734,35 @@
             renderNewScannerCards();
         }
 
+        function renderNewScannerChart(item) {
+            if (!Array.isArray(item.chart) || item.chart.length < 2) {
+                return '<div class="new-scanner-chart"><div class="new-scanner-chart-empty">다음 스캔부터 차트가 표시됩니다.</div></div>';
+            }
+            const points = item.chart.filter(point => point && Number.isFinite(point.close) && Number.isFinite(point.volume));
+            if (points.length < 2) return '';
+            const width = 320, priceTop = 8, priceBottom = 86, volumeTop = 94, volumeBottom = 124;
+            const prices = points.map(point => Number(point.close));
+            if (Number.isFinite(item.estimated_cost)) prices.push(Number(item.estimated_cost));
+            const min = Math.min(...prices), max = Math.max(...prices), span = Math.max(max - min, 1);
+            const maxVolume = Math.max(...points.map(point => Number(point.volume)), 1);
+            const x = index => index * width / (points.length - 1);
+            const y = price => priceBottom - (price - min) * (priceBottom - priceTop) / span;
+            const line = points.map((point, index) => `${x(index).toFixed(1)},${y(Number(point.close)).toFixed(1)}`).join(' ');
+            const bars = points.map((point, index) => {
+                const h = Number(point.volume) / maxVolume * (volumeBottom - volumeTop);
+                return `<rect x="${Math.max(0, x(index) - 1.5).toFixed(1)}" y="${(volumeBottom - h).toFixed(1)}" width="3" height="${h.toFixed(1)}" fill="rgba(91,157,255,.38)"/>`;
+            }).join('');
+            const costLine = Number.isFinite(item.estimated_cost)
+                ? `<line x1="0" y1="${y(Number(item.estimated_cost)).toFixed(1)}" x2="${width}" y2="${y(Number(item.estimated_cost)).toFixed(1)}" stroke="#ffb45b" stroke-width="1.5" stroke-dasharray="5 4"/>` : '';
+            return `<div class="new-scanner-chart">
+                <div class="new-scanner-chart-legend"><span>━ 종가</span><span style="color:#ffb45b">┄ 매집원가</span><span>▥ 거래량</span></div>
+                <svg viewBox="0 0 ${width} 132" role="img" aria-label="${escapeNewScannerHtml(item.name)} 최근 60거래일 차트">
+                    ${bars}${costLine}<polyline points="${line}" fill="none" stroke="#7eb2ff" stroke-width="2.4" stroke-linejoin="round"/>
+                    <circle cx="${width}" cy="${y(points.at(-1).close).toFixed(1)}" r="4" fill="#ff5c5c"/>
+                </svg>
+            </div>`;
+        }
+
         function renderNewScannerCards() {
             const status = document.getElementById('new-scanner-status');
             const cards = document.getElementById('new-scanner-cards');
@@ -745,19 +778,20 @@
                 return;
             }
             cards.innerHTML = session.candidates.map(item => {
-                const cost = item.estimated_cost == null ? '-' : `${Number(item.estimated_cost).toLocaleString('ko-KR')}원`;
+                const cost = item.estimated_cost == null ? '-' : `${Math.trunc(Number(item.estimated_cost)).toLocaleString('ko-KR')}원`;
                 const distance = item.cost_distance == null ? '-' : `${(Number(item.cost_distance) * 100).toFixed(2)}%`;
+                const stateLabel = ({ IGNITION: '점화', BREAKOUT: '돌파' })[item.state] || item.state;
                 return `<article class="new-scanner-card">
                     <div class="new-scanner-rank">TOP ${Number(item.rank)}</div>
                     <div class="new-scanner-name">${escapeNewScannerHtml(item.name)}</div>
                     <div class="new-scanner-code">${escapeNewScannerHtml(item.ticker)}</div>
-                    <div class="new-scanner-state">${escapeNewScannerHtml(item.state)}</div>
+                    <div class="new-scanner-state">${escapeNewScannerHtml(stateLabel)} · ${escapeNewScannerHtml(item.state)}</div>
                     <div class="new-scanner-metrics">
-                        <div>종가<strong>${Number(item.close).toLocaleString('ko-KR')}원</strong></div>
+                        <div>종가<strong>${Math.trunc(Number(item.close)).toLocaleString('ko-KR')}원</strong></div>
                         <div>매집원가<strong>${cost}</strong></div>
                         <div>원가 대비<strong>${distance}</strong></div>
                         <div>최종점수<strong>${Number(item.final_score).toFixed(1)}</strong></div>
-                    </div>
+                    </div>${renderNewScannerChart(item)}
                 </article>`;
             }).join('');
         }
