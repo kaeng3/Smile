@@ -121,7 +121,7 @@ def test_run_daily_filters_metadata_short_stale_and_non_bottom(monkeypatch, tmp_
     assert chart[-1] == {
         "date": "20260925", "open": 1234.0, "high": 1249.0,
         "low": 1229.0, "close": 1239.0, "volume": 1239,
-        "ma20": 1229.5, "ma60": 1209.5, "ma120": 1179.5,
+        "ma5": 1237.0, "ma20": 1229.5, "ma60": 1209.5, "ma120": 1179.5,
         "is_500eok": False,
     }
     assert chart[-3]["is_500eok"] is False
