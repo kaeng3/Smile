@@ -432,6 +432,31 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        .new-scanner-header {
+            margin-bottom: 18px;
+            padding: 22px;
+            background: linear-gradient(135deg, rgba(91, 157, 255, 0.16), rgba(255, 255, 255, 0.05));
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+        }
+        .new-scanner-header h2 { margin-bottom: 8px; font-size: 1.35rem; }
+        .new-scanner-status { color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; }
+        .new-scanner-dates { display: flex; gap: 8px; overflow-x: auto; margin-bottom: 18px; }
+        .new-scanner-date {
+            flex: 0 0 auto; padding: 9px 13px; border: 1px solid var(--border-color);
+            border-radius: 12px; color: var(--text-sub); background: var(--card-bg); cursor: pointer;
+        }
+        .new-scanner-date.active { color: #fff; border-color: #5b9dff; background: rgba(91,157,255,.2); }
+        .new-scanner-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+        .new-scanner-card { padding: 18px; border: 1px solid var(--border-color); border-radius: 16px; background: var(--card-bg); }
+        .new-scanner-rank { color: #8db8ff; font-weight: 800; font-size: .85rem; }
+        .new-scanner-name { margin: 8px 0 3px; font-size: 1.1rem; font-weight: 800; }
+        .new-scanner-code { color: var(--text-sub); font-size: .82rem; }
+        .new-scanner-state { display: inline-block; margin: 12px 0; padding: 5px 9px; border-radius: 9px; background: rgba(91,157,255,.18); color: #b9d4ff; font-weight: 700; font-size: .8rem; }
+        .new-scanner-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; color: var(--text-sub); font-size: .84rem; line-height: 1.45; }
+        .new-scanner-metrics strong { display: block; color: var(--text-main); font-size: .95rem; }
+        .new-scanner-empty { grid-column: 1/-1; padding: 42px 18px; text-align: center; color: var(--text-sub); border: 1px dashed var(--border-color); border-radius: 16px; }
+
 
         @media (max-width: 600px) {
             h1 { font-size: 1.4rem; }
@@ -490,6 +515,7 @@
             .modal-content { max-height: 92vh; border-radius: 16px; }
             .modal-header { padding: 12px 14px; }
             .modal-body { padding: 14px 12px; }
+            .new-scanner-cards { grid-template-columns: 1fr; }
         }
     </style>
 
@@ -509,7 +535,7 @@
                 <div class="main-nav">
                     <button class="nav-btn active" onclick="switchMainTab('scan')" id="nav-scan">📈 실전 스캔</button>
                     <button class="nav-btn" onclick="switchMainTab('lab')" id="nav-lab">🧪 베타 실험실 1</button>
-                    <button class="nav-btn" onclick="switchMainTab('lab2')" id="nav-lab2">🧪 베타 실험실 2</button>
+                    <button class="nav-btn" onclick="switchMainTab('lab2')" id="nav-lab2">🔎 김일구 New스캐너</button>
                     <button class="nav-btn" onclick="switchMainTab('lab3')" id="nav-lab3">🧪 베타 실험실 3</button>
                 </div>
             </div>
@@ -556,14 +582,14 @@
                     </div>
                 </div>
 
-                <!-- 🧪 베타 실험실 2 영역 -->
+                <!-- 🔎 김일구 New스캐너 영역 -->
                 <div id="lab-content2" style="display: none;">
-                    <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
-                        <div>
-                            <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 실험실 2에 오신 것을 환영합니다</div>
-                            <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">현재 베타 테스트 중인 새로운 투자 기법이나<br>실험적인 AI 분석 기능이 이곳에 추가될 예정입니다.</div>
-                        </div>
+                    <div class="new-scanner-header">
+                        <h2>🔎 김일구 New스캐너</h2>
+                        <div class="new-scanner-status" id="new-scanner-status">최근 스캔 결과를 불러오는 중입니다.</div>
                     </div>
+                    <div class="new-scanner-dates" id="new-scanner-dates"></div>
+                    <div class="new-scanner-cards" id="new-scanner-cards"></div>
                 </div>
 
                 <!-- 🧪 베타 실험실 3 영역 -->
@@ -630,10 +656,88 @@
             } else if (tab === 'lab2') {
                 document.getElementById('nav-lab2').classList.add('active');
                 document.getElementById('lab-content2').style.display = 'block';
+                loadNewScannerData();
             } else if (tab === 'lab3') {
                 document.getElementById('nav-lab3').classList.add('active');
                 document.getElementById('lab-content3').style.display = 'block';
             }
+        }
+
+        let newScannerSessions = [];
+        let selectedNewScannerDate = '';
+        let newScannerLoaded = false;
+
+        function escapeNewScannerHtml(value) {
+            return String(value ?? '').replace(/[&<>"']/g, char => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            })[char]);
+        }
+
+        async function loadNewScannerData() {
+            if (newScannerLoaded) return;
+            const status = document.getElementById('new-scanner-status');
+            try {
+                const response = await fetch('new_scanner/results/history.json', { cache: 'no-store' });
+                if (!response.ok) throw new Error('HTTP');
+                const payload = await response.json();
+                if (payload.version !== 1 || !Array.isArray(payload.sessions)) throw new Error('SCHEMA');
+                newScannerSessions = payload.sessions;
+                selectedNewScannerDate = newScannerSessions[0]?.date || '';
+                newScannerLoaded = true;
+                renderNewScannerDates();
+                renderNewScannerCards();
+            } catch (error) {
+                status.textContent = '스캔 결과를 불러오지 못했습니다. 잠시 후 다시 확인해 주세요.';
+                document.getElementById('new-scanner-dates').innerHTML = '';
+                document.getElementById('new-scanner-cards').innerHTML = '<div class="new-scanner-empty">데이터를 표시할 수 없습니다.</div>';
+            }
+        }
+
+        function renderNewScannerDates() {
+            const dates = document.getElementById('new-scanner-dates');
+            dates.innerHTML = newScannerSessions.map((session, index) => {
+                const date = escapeNewScannerHtml(session.date);
+                const label = `${date.slice(0,4)}.${date.slice(4,6)}.${date.slice(6,8)}${index === 0 ? ' (최신)' : ''}`;
+                return `<button class="new-scanner-date ${session.date === selectedNewScannerDate ? 'active' : ''}" onclick="selectNewScannerDate('${date}')">${label}</button>`;
+            }).join('');
+        }
+
+        function selectNewScannerDate(date) {
+            selectedNewScannerDate = date;
+            renderNewScannerDates();
+            renderNewScannerCards();
+        }
+
+        function renderNewScannerCards() {
+            const status = document.getElementById('new-scanner-status');
+            const cards = document.getElementById('new-scanner-cards');
+            const session = newScannerSessions.find(item => item.date === selectedNewScannerDate);
+            if (!session) {
+                status.textContent = '아직 저장된 스캔 결과가 없습니다.';
+                cards.innerHTML = '<div class="new-scanner-empty">오늘 신규 후보가 없습니다.</div>';
+                return;
+            }
+            status.textContent = `${session.date} 기준 · ${session.successful_tickers}개 분석 · ${session.failed_tickers}개 실패`;
+            if (!Array.isArray(session.candidates) || session.candidates.length === 0) {
+                cards.innerHTML = '<div class="new-scanner-empty">오늘 신규 후보가 없습니다.</div>';
+                return;
+            }
+            cards.innerHTML = session.candidates.map(item => {
+                const cost = item.estimated_cost == null ? '-' : `${Number(item.estimated_cost).toLocaleString('ko-KR')}원`;
+                const distance = item.cost_distance == null ? '-' : `${(Number(item.cost_distance) * 100).toFixed(2)}%`;
+                return `<article class="new-scanner-card">
+                    <div class="new-scanner-rank">TOP ${Number(item.rank)}</div>
+                    <div class="new-scanner-name">${escapeNewScannerHtml(item.name)}</div>
+                    <div class="new-scanner-code">${escapeNewScannerHtml(item.ticker)}</div>
+                    <div class="new-scanner-state">${escapeNewScannerHtml(item.state)}</div>
+                    <div class="new-scanner-metrics">
+                        <div>종가<strong>${Number(item.close).toLocaleString('ko-KR')}원</strong></div>
+                        <div>매집원가<strong>${cost}</strong></div>
+                        <div>원가 대비<strong>${distance}</strong></div>
+                        <div>최종점수<strong>${Number(item.final_score).toFixed(1)}</strong></div>
+                    </div>
+                </article>`;
+            }).join('');
         }
 
         function switchStrategy(strat) {
