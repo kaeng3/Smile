@@ -115,7 +115,7 @@ def test_validate_history_accepts_rich_candlestick_chart_point():
     payload["sessions"][0]["candidates"][0]["chart"] = [{
         "date": "20260925", "open": 9900.0, "high": 10100.0,
         "low": 9800.0, "close": 10000.0, "volume": 1000,
-        "ma20": 9700.0, "ma60": 9500.0, "ma120": None,
+        "ma20": 9700.0, "ma60": 9500.0, "ma120": None, "ma5": 9800.0,
         "is_500eok": True,
     }]
     assert validate_history(payload) == payload
