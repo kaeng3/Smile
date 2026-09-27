@@ -22,6 +22,7 @@ def row(ticker: str, **overrides):
         "close": 10000.0,
         "estimated_cost": 9000.0,
         "cost_distance": 0.1111,
+        "chart": [{"date": "20260925", "close": 10000.0, "volume": 1000}],
     }
     value.update(overrides)
     return value
@@ -100,6 +101,23 @@ def test_validate_history_rejects_unexpected_candidate_fields():
     payload["sessions"][0]["candidates"][0]["access_token"] = "secret"
     with pytest.raises(ValueError):
         validate_history(payload)
+
+
+def test_validate_history_rejects_invalid_chart_point():
+    payload = {"version": 1, "sessions": [session("20260925")]}
+    payload["sessions"][0]["candidates"][0]["chart"][0]["close"] = math.nan
+    with pytest.raises(ValueError, match="chart"):
+        validate_history(payload)
+
+
+def test_validate_history_accepts_rich_candlestick_chart_point():
+    payload = {"version": 1, "sessions": [session("20260925")]}
+    payload["sessions"][0]["candidates"][0]["chart"] = [{
+        "date": "20260925", "open": 9900.0, "high": 10100.0,
+        "low": 9800.0, "close": 10000.0, "volume": 1000,
+        "ma20": 9700.0, "ma60": 9500.0, "ma120": None,
+    }]
+    assert validate_history(payload) == payload
 
 
 @pytest.mark.parametrize(

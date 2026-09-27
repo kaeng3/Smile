@@ -18,7 +18,15 @@ TARGET = date(2026, 9, 25)
 
 def frame(last="2026-09-25", bars=240):
     dates = pd.bdate_range(end=last, periods=bars)
-    return pd.DataFrame({"date": dates, "close": range(bars)})
+    close = pd.Series(range(1000, 1000 + bars), dtype=float)
+    return pd.DataFrame({
+        "date": dates,
+        "open": close - 5,
+        "high": close + 10,
+        "low": close - 10,
+        "close": close,
+        "volume": range(1000, 1000 + bars),
+    })
 
 
 def result(ticker, state="IGNITION", prev_state="DORMANT", family="BOTTOM_ACCUMULATION", cost="HOLD"):
@@ -105,6 +113,13 @@ def test_run_daily_filters_metadata_short_stale_and_non_bottom(monkeypatch, tmp_
     assert session["total_tickers"] == 5
     assert session["successful_tickers"] == 4
     assert session["failed_tickers"] == 0
+    chart = session["candidates"][0]["chart"]
+    assert len(chart) == 60
+    assert chart[-1] == {
+        "date": "20260925", "open": 1234.0, "high": 1249.0,
+        "low": 1229.0, "close": 1239.0, "volume": 1239,
+        "ma20": 1229.5, "ma60": 1209.5, "ma120": 1179.5,
+    }
 
 
 def test_partial_failure_is_counted_but_result_is_written(monkeypatch, tmp_path):
