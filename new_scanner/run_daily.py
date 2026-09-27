@@ -58,15 +58,28 @@ def _state_value(value: Any) -> str:
     return str(name if name is not None else getattr(value, "value", value))
 
 
+def _is_500eok_strong_candle(previous: pd.Series, candle: pd.Series) -> bool:
+    return bool(
+        float(candle["trading_value"]) >= 50_000_000_000
+        and float(candle["close"]) >= float(candle["open"]) * 1.09
+        and float(candle["high"]) >= float(previous["close"]) * 1.15
+        and float(candle["high"]) >= float(candle["low"]) * 1.15
+    )
+
+
 def _chart_points(
     df: pd.DataFrame,
     limit: int = 60,
-    event_threshold: float = 50_000_000_000,
 ) -> list[dict[str, Any]]:
     chart = df.copy()
     close = pd.to_numeric(chart["close"], errors="coerce")
-    for window in (20, 60, 120):
+    for window in (5, 20, 60, 120):
         chart[f"ma{window}"] = close.rolling(window, min_periods=window).mean()
+    chart["is_500eok"] = False
+    for idx in range(1, len(chart)):
+        chart.iloc[idx, chart.columns.get_loc("is_500eok")] = _is_500eok_strong_candle(
+            chart.iloc[idx - 1], chart.iloc[idx]
+        )
 
     def number(row: Any, field: str, fallback: float) -> float:
         value = getattr(row, field, fallback)
@@ -84,10 +97,11 @@ def _chart_points(
             "high": number(row, "high", float(row.close)),
             "low": number(row, "low", float(row.close)),
             "volume": int(getattr(row, "volume", 0)),
+            "ma5": moving_average(row, "ma5"),
             "ma20": moving_average(row, "ma20"),
             "ma60": moving_average(row, "ma60"),
             "ma120": moving_average(row, "ma120"),
-            "is_500eok": number(row, "trading_value", 0.0) >= event_threshold,
+            "is_500eok": bool(row.is_500eok),
         }
         for row in chart.tail(limit).itertuples()
     ]
@@ -157,10 +171,7 @@ def run_daily(
                         "close": float(latest.close),
                         "estimated_cost": None if latest.estimated_cost is None else float(latest.estimated_cost),
                         "cost_distance": None if latest.cost_distance is None else float(latest.cost_distance),
-                        "chart": _chart_points(
-                            df,
-                            event_threshold=getattr(cfg, "core_event_trading_value", 50_000_000_000),
-                        ),
+                        "chart": _chart_points(df),
                     }
                 )
             except KisApiError as exc:
