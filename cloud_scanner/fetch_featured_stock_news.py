@@ -57,6 +57,14 @@ def parse_time_text(time_text, today):
     m = re.match(r'^(\d+)일 전$', time_text)
     if m:
         return None  # 오늘 기사가 아니면 제외
+    m = re.match(r'^(\d{4})\.(\d{1,2})\.(\d{1,2})\.?\s*(\d{1,2}):(\d{2})$', time_text)
+    if m:
+        article_date = datetime.date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
+        return f'{int(m.group(4)):02d}:{m.group(5)}' if article_date == today.date() else None
+    m = re.match(r'^(\d{4})\.(\d{1,2})\.(\d{1,2})\.?$', time_text)
+    if m:
+        article_date = datetime.date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
+        return '00:00' if article_date == today.date() else None
     return None  # 그 외 형식(절대 날짜 등)도 오늘인지 확신할 수 없어 일단 제외
 
 
@@ -71,7 +79,7 @@ def get_featured_news(stock_name, today):
         resp = requests.get(url, headers=HEADERS, timeout=8)
         soup = BeautifulSoup(resp.text, 'html.parser')
 
-        title_links = soup.select('a[data-heatmap-target=".tit"]')
+        title_links = soup.select('a[data-heatmap-target=".tit"], a.news_tit')
         seen_links = set()
         for title_link in title_links:
             link = title_link.get('href')
@@ -80,7 +88,9 @@ def get_featured_news(stock_name, today):
 
             title_span = title_link.select_one('span.sds-comps-text-type-headline1')
             title = title_span.get_text(strip=True) if title_span else title_link.get_text(strip=True)
-            if '특징주' not in title:
+            relevance_words = ('특징주', '호재', '계약', '수주', '승인', '임상', '공급', '상한가', '급등', '상승')
+            if stock_name not in title and not any(word in title for word in relevance_words):
+
                 continue
             seen_links.add(link)
 
