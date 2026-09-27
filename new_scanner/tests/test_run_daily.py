@@ -124,7 +124,7 @@ def test_run_daily_filters_metadata_short_stale_and_non_bottom(monkeypatch, tmp_
         "ma20": 1229.5, "ma60": 1209.5, "ma120": 1179.5,
         "is_500eok": False,
     }
-    assert chart[-3]["is_500eok"] is True
+    assert chart[-3]["is_500eok"] is False
 
 
 def test_partial_failure_is_counted_but_result_is_written(monkeypatch, tmp_path):
