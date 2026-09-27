@@ -1,0 +1,123 @@
+event_location:
+  bottom_max: 0.30
+  high_min: 0.70
+
+event:
+  core_trading_value_krw: 50000000000
+  strong_value_ratio_min: 2.0
+  strong_turnover_min: 0.30
+
+accumulation:
+  cost_weight_event_price: 0.4
+  cost_weight_vwap: 0.6
+  atr_tolerance_event_low: 1.0
+  atr_multiplier_invalidated: 2.0
+  cost_hold_tolerance_pct: null  # null = ATR rule; e.g. 0.03 = close >= cost*(1-3%) instead
+
+dormant:
+  vcr_max: 0.40
+  range10_max: 0.15
+
+ignition:
+  rvol20_min: 1.5
+
+breakout:
+  rvol20_min: 1.3
+  swing_high_window: 5
+
+pullback:
+  drawdown_min: -0.12
+  drawdown_max: -0.03
+  volume_ratio_max: 0.5
+
+distribution_warning:
+  location120_min: 0.80
+  rvol20_min: 3.0
+  upper_wick_ratio_min: 0.40
+
+# NOTE: every numeric value under `scoring:` is an initial hypothesis, not a
+# tuned/final strategy value. These are expected to be revisited once the
+# Stage 2 parameter backtest (see design doc) can measure which values
+# actually predict forward returns.
+scoring:
+  structure_weight_no_theme: 0.65
+  trigger_weight_no_theme: 0.35
+  structure_weight_with_theme: 0.50
+  trigger_weight_with_theme: 0.30
+  theme_weight: 0.20
+
+  structure:
+    event_score_weight: 0.20
+    low_hold_points: 15
+    cost_hold_points: 20
+    cost_distance:
+      ideal_min: -0.02
+      ideal_max: 0.10
+      max_points: 15
+      penalty_scale: 200.0
+    vcr:
+      strong_threshold: 0.25
+      normal_threshold: 0.40
+      weak_threshold: 0.60
+      strong_points: 15
+      normal_points: 12
+      weak_points: 6
+    compression:
+      best: 0.08
+      worst: 0.20
+      max_points: 10
+    capital_impact:
+      reference: 0.30
+      max_points: 10
+    distribution_penalty: 25
+
+  trigger:
+    ma240_cross_points: 20
+    ma120_cross_points: 10
+    ma5_slope_points: 10
+    previous_high_break_points: 20
+    trend_break_points: 20
+    rvol:
+      reference: 3.0
+      max_points: 20
+    above_ma240_points: 10
+    # State itself is a RESULT of these same features (MA240 cross, prior-high
+    # break, RVOL, ...), so folding it back into Trigger Score would double
+    # count the same signal. Off by default; kept as an option so a future
+    # backtest can test whether a state bonus adds independent predictive value.
+    use_state_bonus: false
+    state_bonus:
+      NONE: 0
+      EVENT: 0
+      ACCUMULATION: 0
+      DORMANT: 0
+      IGNITION: 5
+      BREAKOUT: 8
+      PULLBACK: 5
+      INVALIDATED: -20
+
+# Telegram alerts are only sent for a transition on the ticker's last data
+# bar AND no older than this many calendar days (stale/backfilled data is
+# stored but never announced).
+telegram:
+  max_signal_age_days: 3
+
+# Research-only backtest settings (Stage 2). None of these change scanner
+# states or scores.
+backtest:
+  # Derived flag `accumulation_confirmed` on signal snapshots (state machine untouched).
+  accumulation_confirmation:
+    min_days: 3
+    vcr_max: 0.50
+  # Forward-return horizons, in trading days.
+  horizons: [1, 3, 5, 10, 20, 40]
+  # sample_quality: n < very_low_below -> VERY_LOW, < low_below -> LOW, < medium_below -> MEDIUM, else HIGH
+  sample_quality:
+    very_low_below: 30
+    low_below: 100
+    medium_below: 300
+  # Groups with fewer samples are flagged low_sample (values are still shown).
+  min_sample_size: 100
+  # Rolling-indicator warm-up (> MA240 need + margin): only used to WARN when a ticker has less
+  # history than this before signal_start. Never a fetch lookback (episodes have no expiry).
+  rolling_warmup_calendar_days: 600
