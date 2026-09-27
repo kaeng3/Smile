@@ -11,3 +11,10 @@ __pycache__/
 *.db-journal
 .git/
 config.json
+app ket.txt
+
+# 김일구 New스캐너 비밀정보와 로컬 실행 데이터
+.env
+new_scanner/.env
+new_scanner/data/cache/
+new_scanner/state/
