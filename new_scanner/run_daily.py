@@ -157,7 +157,10 @@ def run_daily(
                         "close": float(latest.close),
                         "estimated_cost": None if latest.estimated_cost is None else float(latest.estimated_cost),
                         "cost_distance": None if latest.cost_distance is None else float(latest.cost_distance),
-                        "chart": _chart_points(df, event_threshold=cfg.core_event_trading_value),
+                        "chart": _chart_points(
+                            df,
+                            event_threshold=getattr(cfg, "core_event_trading_value", 50_000_000_000),
+                        ),
                     }
                 )
             except KisApiError as exc:
