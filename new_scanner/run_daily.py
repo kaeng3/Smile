@@ -58,7 +58,11 @@ def _state_value(value: Any) -> str:
     return str(name if name is not None else getattr(value, "value", value))
 
 
-def _chart_points(df: pd.DataFrame, limit: int = 60) -> list[dict[str, Any]]:
+def _chart_points(
+    df: pd.DataFrame,
+    limit: int = 60,
+    event_threshold: float = 50_000_000_000,
+) -> list[dict[str, Any]]:
     chart = df.copy()
     close = pd.to_numeric(chart["close"], errors="coerce")
     for window in (20, 60, 120):
@@ -83,6 +87,7 @@ def _chart_points(df: pd.DataFrame, limit: int = 60) -> list[dict[str, Any]]:
             "ma20": moving_average(row, "ma20"),
             "ma60": moving_average(row, "ma60"),
             "ma120": moving_average(row, "ma120"),
+            "is_500eok": number(row, "trading_value", 0.0) >= event_threshold,
         }
         for row in chart.tail(limit).itertuples()
     ]
@@ -152,7 +157,7 @@ def run_daily(
                         "close": float(latest.close),
                         "estimated_cost": None if latest.estimated_cost is None else float(latest.estimated_cost),
                         "cost_distance": None if latest.cost_distance is None else float(latest.cost_distance),
-                        "chart": _chart_points(df),
+                        "chart": _chart_points(df, event_threshold=cfg.core_event_trading_value),
                     }
                 )
             except KisApiError as exc:
