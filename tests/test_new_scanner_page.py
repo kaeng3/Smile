@@ -29,6 +29,23 @@ class NewScannerPageTests(unittest.TestCase):
         self.assertIn("스캔 결과를 불러오지 못했습니다", HTML)
         self.assertIn("Array.isArray(payload.sessions)", HTML)
 
+    def test_cards_render_chart_korean_state_and_truncated_numbers(self):
+        self.assertIn("function renderNewScannerChart", HTML)
+        self.assertIn('IGNITION: \'점화\'', HTML)
+        self.assertIn('BREAKOUT: \'돌파\'', HTML)
+        self.assertIn("Math.trunc", HTML)
+        self.assertIn('class="new-scanner-chart"', HTML)
+
+    def test_chart_renders_candles_moving_averages_axes_and_volume(self):
+        self.assertIn('class="new-scanner-candle-body"', HTML)
+        self.assertIn('class="new-scanner-candle-wick"', HTML)
+        self.assertIn('20일선', HTML)
+        self.assertIn('60일선', HTML)
+        self.assertIn('120일선', HTML)
+        self.assertIn('new-scanner-axis-label', HTML)
+        self.assertIn('new-scanner-volume-bar', HTML)
+        self.assertIn('grid-template-columns: repeat(2, minmax(0, 1fr))', HTML)
+
 
 if __name__ == "__main__":
     unittest.main()
