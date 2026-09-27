@@ -59,13 +59,32 @@ def _state_value(value: Any) -> str:
 
 
 def _chart_points(df: pd.DataFrame, limit: int = 60) -> list[dict[str, Any]]:
+    chart = df.copy()
+    close = pd.to_numeric(chart["close"], errors="coerce")
+    for window in (20, 60, 120):
+        chart[f"ma{window}"] = close.rolling(window, min_periods=window).mean()
+
+    def number(row: Any, field: str, fallback: float) -> float:
+        value = getattr(row, field, fallback)
+        return fallback if pd.isna(value) else float(value)
+
+    def moving_average(row: Any, field: str) -> float | None:
+        value = getattr(row, field)
+        return None if pd.isna(value) else float(value)
+
     return [
         {
             "date": pd.Timestamp(row.date).strftime("%Y%m%d"),
             "close": float(row.close),
+            "open": number(row, "open", float(row.close)),
+            "high": number(row, "high", float(row.close)),
+            "low": number(row, "low", float(row.close)),
             "volume": int(getattr(row, "volume", 0)),
+            "ma20": moving_average(row, "ma20"),
+            "ma60": moving_average(row, "ma60"),
+            "ma120": moving_average(row, "ma120"),
         }
-        for row in df.tail(limit).itertuples()
+        for row in chart.tail(limit).itertuples()
     ]
 
 
