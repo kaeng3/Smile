@@ -84,10 +84,11 @@ def _validate_candidate(candidate: object) -> None:
         legacy_fields = {"date", "close", "volume"}
         rich_fields = legacy_fields | {"open", "high", "low", "ma20", "ma60", "ma120"}
         rich_fields_with_ma5 = rich_fields | {"ma5"}
+        legacy_event_fields = rich_fields | {"is_500eok"}
         event_fields = rich_fields_with_ma5 | {"is_500eok"}
         for point in chart:
             point_fields = set(point) if isinstance(point, dict) else set()
-            if point_fields not in (legacy_fields, rich_fields, rich_fields_with_ma5, event_fields):
+            if point_fields not in (legacy_fields, rich_fields, legacy_event_fields, rich_fields_with_ma5, event_fields):
                 raise ValueError("candidate chart point is invalid")
             if not isinstance(point["date"], str) or not _DATE.fullmatch(point["date"]):
                 raise ValueError("candidate chart date is invalid")
