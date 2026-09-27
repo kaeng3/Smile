@@ -18,10 +18,12 @@ def get_news_headlines(stock_name):
         html = urllib.request.urlopen(req, timeout=5).read()
         soup = BeautifulSoup(html, 'html.parser')
         
-        articles = soup.find_all('a', class_='news_tit')
+        articles = soup.select('a.news_tit, a[data-heatmap-target=".tit"]')
         headlines = []
-        for a in articles[:5]:
-            headlines.append(a.get('title'))
+        for a in articles[:10]:
+            title = a.get('title') or a.get_text(' ', strip=True)
+            if title:
+                headlines.append(title)
         return headlines
     except Exception as e:
         print(f"[{stock_name}] 뉴스 검색 실패: {e}")
