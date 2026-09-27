@@ -16,6 +16,8 @@ class NewScannerWorkflowTests(unittest.TestCase):
         self.assertIn("python-version: '3.12'", text)
         for name in ("KIS_APP_KEY", "KIS_APP_SECRET", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"):
             self.assertIn(f"secrets.{name}", text)
+        self.assertIn("python run_daily.py --no-telegram", text)
+        self.assertIn('if [ -n "$TELEGRAM_BOT_TOKEN" ]', text)
         self.assertIn("new_scanner/data/cache", text)
         self.assertIn("hashFiles('new_scanner/config/scanner.yaml')", text)
         self.assertIn("python -m pytest tests -q", text)

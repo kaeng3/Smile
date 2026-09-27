@@ -63,7 +63,13 @@ jobs:
           KIS_APP_SECRET: ${{ secrets.KIS_APP_SECRET }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python run_daily.py
+        run: |
+          if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+            python run_daily.py
+          else
+            echo "Telegram secrets are not configured; running the site scan without notifications."
+            python run_daily.py --no-telegram
+          fi
 
       - name: Save scanner cache and notification receipt
         uses: actions/cache/save@v4

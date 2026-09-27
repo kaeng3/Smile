@@ -5,12 +5,15 @@
 `results/history.json`에 보관하고 같은 날짜의 같은 결과는 텔레그램으로 다시
 보내지 않습니다.
 
-GitHub 저장소의 Actions secrets에 다음 네 값을 등록해야 합니다.
+GitHub 저장소의 Actions secrets에 KIS 값 두 개를 등록해야 합니다. 텔레그램
+알림을 사용할 때만 나머지 두 값을 추가합니다.
 
 - `KIS_APP_KEY`
 - `KIS_APP_SECRET`
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
+
+텔레그램 값이 없으면 사이트 스캔과 결과 갱신은 계속 실행되고 알림만 생략됩니다.
 
 원시 시세 캐시, KIS 토큰, 텔레그램 발송 상태는 Actions cache에만 저장되며
 Git에는 포함되지 않습니다. 수동 실행은 Actions의 **Kim Ilgu New Scanner**에서
