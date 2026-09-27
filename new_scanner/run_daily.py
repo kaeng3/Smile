@@ -58,6 +58,17 @@ def _state_value(value: Any) -> str:
     return str(name if name is not None else getattr(value, "value", value))
 
 
+def _chart_points(df: pd.DataFrame, limit: int = 60) -> list[dict[str, Any]]:
+    return [
+        {
+            "date": pd.Timestamp(row.date).strftime("%Y%m%d"),
+            "close": float(row.close),
+            "volume": int(row.volume),
+        }
+        for row in df.tail(limit).itertuples()
+    ]
+
+
 def run_daily(
     *,
     target_date: date,
@@ -122,6 +133,7 @@ def run_daily(
                         "close": float(latest.close),
                         "estimated_cost": None if latest.estimated_cost is None else float(latest.estimated_cost),
                         "cost_distance": None if latest.cost_distance is None else float(latest.cost_distance),
+                        "chart": _chart_points(df),
                     }
                 )
             except KisApiError as exc:

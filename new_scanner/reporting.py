@@ -37,6 +37,8 @@ def select_top_candidates(rows: Iterable[dict[str, Any]], limit: int = 5) -> lis
     selected = []
     for rank, row in enumerate(eligible[:limit], start=1):
         public = {field: row.get(field) for field in _PUBLIC_FIELDS}
+        if "chart" in row:
+            public["chart"] = copy.deepcopy(row["chart"])
         public["rank"] = rank
         selected.append(public)
     return selected
@@ -48,7 +50,7 @@ def _validate_candidate(candidate: object) -> None:
     required = set(_PUBLIC_FIELDS) | {"rank"}
     if not required.issubset(candidate):
         raise ValueError("candidate is missing required fields")
-    if set(candidate) != required:
+    if set(candidate) not in (required, required | {"chart"}):
         raise ValueError("candidate contains unexpected fields")
     if not isinstance(candidate["ticker"], str) or not candidate["ticker"]:
         raise ValueError("candidate ticker must be text")
@@ -75,6 +77,20 @@ def _validate_candidate(candidate: object) -> None:
         if value is not None and (not isinstance(value, (int, float)) or isinstance(value, bool)
                                   or not math.isfinite(float(value))):
             raise ValueError(f"candidate {field} must be finite or null")
+    if "chart" in candidate:
+        chart = candidate["chart"]
+        if not isinstance(chart, list) or len(chart) > 60:
+            raise ValueError("candidate chart must contain at most 60 points")
+        for point in chart:
+            if not isinstance(point, dict) or set(point) != {"date", "close", "volume"}:
+                raise ValueError("candidate chart point is invalid")
+            if not isinstance(point["date"], str) or not _DATE.fullmatch(point["date"]):
+                raise ValueError("candidate chart date is invalid")
+            for field in ("close", "volume"):
+                value = point[field]
+                if (not isinstance(value, (int, float)) or isinstance(value, bool)
+                        or not math.isfinite(float(value)) or value < 0):
+                    raise ValueError("candidate chart value is invalid")
 
 
 def _validate_session(session: object) -> None:
