@@ -44,6 +44,9 @@ class NewScannerPageTests(unittest.TestCase):
         self.assertIn('120일선', HTML)
         self.assertIn('new-scanner-axis-label', HTML)
         self.assertIn('new-scanner-volume-bar', HTML)
+        self.assertIn('new-scanner-event-band', HTML)
+        self.assertIn('500억봉', HTML)
+        self.assertIn('background: #fff', HTML)
         self.assertIn('grid-template-columns: repeat(2, minmax(0, 1fr))', HTML)
 
 
