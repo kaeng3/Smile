@@ -10,7 +10,7 @@ import pandas as pd
 import pytest
 
 import run_daily as daily
-from jusmo_scanner.data.kis_provider import KisApiError
+from jusmo_scanner.data.kis_provider import KisApiError, KisAuthenticationError
 
 
 TARGET = date(2026, 9, 25)
@@ -207,6 +207,33 @@ def test_all_scan_failures_preserve_existing(monkeypatch, tmp_path):
     history, sent = paths(tmp_path)
     original = history.read_bytes()
     with pytest.raises(RuntimeError, match="all ticker"):
+        daily.run_daily(
+            target_date=TARGET, provider_factory=lambda _: provider, notifier=None,
+            history_path=history, sent_state_path=sent,
+        )
+    assert history.read_bytes() == original
+
+
+def test_stale_success_plus_fresh_scan_failure_preserves_existing(monkeypatch, tmp_path):
+    provider = Provider({"STALE": frame(last="2026-09-24"), "BAD": frame()})
+    monkeypatch.setattr(daily, "load_config", lambda _: object())
+    monkeypatch.setattr(daily, "scan_ticker", lambda *args: (_ for _ in ()).throw(RuntimeError("scan")))
+    history, sent = paths(tmp_path)
+    original = history.read_bytes()
+    with pytest.raises(RuntimeError, match="analyses failed"):
+        daily.run_daily(
+            target_date=TARGET, provider_factory=lambda _: provider, notifier=None,
+            history_path=history, sent_state_path=sent,
+        )
+    assert history.read_bytes() == original
+
+
+def test_generic_oauth_failure_aborts_without_publishing(monkeypatch, tmp_path):
+    provider = Provider({"GOOD": frame(), "AUTH": KisAuthenticationError("OTHER", "redacted", 500)})
+    patch_scan(monkeypatch, {"GOOD": result("GOOD")})
+    history, sent = paths(tmp_path)
+    original = history.read_bytes()
+    with pytest.raises(RuntimeError, match="authentication"):
         daily.run_daily(
             target_date=TARGET, provider_factory=lambda _: provider, notifier=None,
             history_path=history, sent_state_path=sent,

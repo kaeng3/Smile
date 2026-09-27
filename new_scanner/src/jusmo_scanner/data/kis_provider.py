@@ -58,6 +58,10 @@ class KisApiError(Exception):
         return f"KisApiError(code={self.code!r}, message={self.message!r}, status={self.status!r})"
 
 
+class KisAuthenticationError(KisApiError):
+    """A sanitized OAuth token acquisition failure."""
+
+
 class Redactor:
     """Replaces every registered secret value with `***`."""
 
@@ -209,7 +213,7 @@ class TokenManager:
         if status != 200 or not token:
             code = (body.get("error_code") if isinstance(body, dict) else None) or f"HTTP_{status}"
             desc = (body.get("error_description") if isinstance(body, dict) else None) or "token request failed"
-            raise KisApiError(code, self._redactor.clean(desc), status) from None
+            raise KisAuthenticationError(code, self._redactor.clean(desc), status) from None
         self._redactor.add(token)
         self._token = str(token)
         self._expires_at = self._clock() + float(body.get("expires_in") or 86400)

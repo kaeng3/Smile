@@ -11,7 +11,7 @@ from typing import Any, Callable
 import pandas as pd
 
 from jusmo_scanner.config import load_config
-from jusmo_scanner.data.kis_provider import KisApiError, KisProvider, TOKEN_INVALID_CODES
+from jusmo_scanner.data.kis_provider import KisApiError, KisAuthenticationError, KisProvider, TOKEN_INVALID_CODES
 from jusmo_scanner.notifier.telegram import TelegramNotifier
 from jusmo_scanner.scanner.engine import scan_ticker
 from reporting import select_top_candidates, update_history, validate_history
@@ -77,6 +77,8 @@ def run_daily(
     failed = 0
     successful = 0
     fresh = 0
+    scan_attempted = 0
+    scan_completed = 0
     try:
         try:
             tickers = provider.get_tickers()
@@ -96,7 +98,9 @@ def run_daily(
                 fresh += 1
                 if len(df) < 240:
                     continue
+                scan_attempted += 1
                 scan = scan_ticker(df, ticker, cfg)
+                scan_completed += 1
                 if not scan.results:
                     continue
                 latest = scan.results[-1]
@@ -121,7 +125,8 @@ def run_daily(
                     }
                 )
             except KisApiError as exc:
-                if exc.code in TOKEN_INVALID_CODES or exc.status in {401, 403}:
+                if (isinstance(exc, KisAuthenticationError) or exc.code in TOKEN_INVALID_CODES
+                        or exc.status in {401, 403}):
                     raise RuntimeError(f"KIS authentication failed: {exc.code}") from None
                 if counted_success:
                     successful -= 1
@@ -134,6 +139,8 @@ def run_daily(
             raise RuntimeError("all ticker fetches failed")
         if fresh == 0:
             raise RuntimeError("no fresh market data for target session")
+        if scan_attempted > 0 and scan_completed == 0:
+            raise RuntimeError("all current-session analyses failed")
 
         session = {
             "date": target_date.strftime("%Y%m%d"),
