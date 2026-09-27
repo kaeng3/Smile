@@ -447,7 +447,7 @@
             border-radius: 12px; color: var(--text-sub); background: var(--card-bg); cursor: pointer;
         }
         .new-scanner-date.active { color: #fff; border-color: #5b9dff; background: rgba(91,157,255,.2); }
-        .new-scanner-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+        .new-scanner-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
         .new-scanner-card { padding: 18px; border: 1px solid var(--border-color); border-radius: 16px; background: var(--card-bg); }
         .new-scanner-rank { color: #8db8ff; font-weight: 800; font-size: .85rem; }
         .new-scanner-name { margin: 8px 0 3px; font-size: 1.1rem; font-weight: 800; }
@@ -456,11 +456,20 @@
         .new-scanner-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; color: var(--text-sub); font-size: .84rem; line-height: 1.45; }
         .new-scanner-metrics strong { display: block; color: var(--text-main); font-size: .95rem; }
         .new-scanner-chart { margin-top: 14px; border-top: 1px solid var(--border-color); padding-top: 12px; }
-        .new-scanner-chart svg { width: 100%; height: 128px; display: block; }
-        .new-scanner-chart-legend { display: flex; gap: 12px; margin-bottom: 5px; color: var(--text-sub); font-size: .74rem; }
+        .new-scanner-chart svg { width: 100%; height: auto; min-height: 280px; display: block; }
+        .new-scanner-chart-legend { display: flex; flex-wrap: wrap; gap: 7px 14px; margin-bottom: 8px; color: var(--text-sub); font-size: .74rem; }
+        .new-scanner-axis-label { fill: #9ca3af; font-size: 10px; }
+        .new-scanner-grid-line { stroke: rgba(255,255,255,.12); stroke-width: 1; stroke-dasharray: 3 3; }
+        .new-scanner-candle-wick { stroke-width: 1.2; }
+        .new-scanner-candle-body { stroke-width: 1; }
+        .new-scanner-volume-bar { opacity: .62; }
         .new-scanner-chart-empty { color: var(--text-sub); font-size: .8rem; padding: 18px 0 4px; text-align: center; }
         .new-scanner-empty { grid-column: 1/-1; padding: 42px 18px; text-align: center; color: var(--text-sub); border: 1px dashed var(--border-color); border-radius: 16px; }
 
+
+        @media (max-width: 1100px) {
+            .new-scanner-cards { grid-template-columns: 1fr; }
+        }
 
         @media (max-width: 600px) {
             h1 { font-size: 1.4rem; }
@@ -520,6 +529,7 @@
             .modal-header { padding: 12px 14px; }
             .modal-body { padding: 14px 12px; }
             .new-scanner-cards { grid-template-columns: 1fr; }
+            .new-scanner-chart svg { min-height: 230px; }
         }
     </style>
 
@@ -740,25 +750,74 @@
             }
             const points = item.chart.filter(point => point && Number.isFinite(point.close) && Number.isFinite(point.volume));
             if (points.length < 2) return '';
-            const width = 320, priceTop = 8, priceBottom = 86, volumeTop = 94, volumeBottom = 124;
-            const prices = points.map(point => Number(point.close));
-            if (Number.isFinite(item.estimated_cost)) prices.push(Number(item.estimated_cost));
-            const min = Math.min(...prices), max = Math.max(...prices), span = Math.max(max - min, 1);
+            const rich = points.every(point => ['open', 'high', 'low'].every(key => Number.isFinite(point[key])));
+            if (!rich) {
+                const width = 640, left = 48, right = 12, top = 12, bottom = 140;
+                const prices = points.map(point => Number(point.close));
+                if (Number.isFinite(item.estimated_cost)) prices.push(Number(item.estimated_cost));
+                const min = Math.min(...prices), max = Math.max(...prices), span = Math.max(max - min, 1);
+                const x = index => left + index * (width - left - right) / (points.length - 1);
+                const y = price => bottom - (price - min) * (bottom - top) / span;
+                const line = points.map((point, index) => `${x(index).toFixed(1)},${y(Number(point.close)).toFixed(1)}`).join(' ');
+                return `<div class="new-scanner-chart"><div class="new-scanner-chart-legend"><span>━ 종가</span><span style="color:#ffb45b">┄ 매집원가</span></div>
+                    <svg viewBox="0 0 ${width} 158" role="img" aria-label="${escapeNewScannerHtml(item.name)} 기존 종가 차트">
+                        <polyline points="${line}" fill="none" stroke="#7eb2ff" stroke-width="2.4" stroke-linejoin="round"/>
+                    </svg></div>`;
+            }
+
+            const width = 720, height = 360, left = 58, right = 18;
+            const priceTop = 18, priceBottom = 245, volumeTop = 278, volumeBottom = 332;
+            const plotWidth = width - left - right;
+            const priceValues = points.flatMap(point => [Number(point.low), Number(point.high)]);
+            ['ma20', 'ma60', 'ma120'].forEach(key => points.forEach(point => {
+                if (Number.isFinite(point[key])) priceValues.push(Number(point[key]));
+            }));
+            if (Number.isFinite(item.estimated_cost)) priceValues.push(Number(item.estimated_cost));
+            const rawMin = Math.min(...priceValues), rawMax = Math.max(...priceValues);
+            const padding = Math.max((rawMax - rawMin) * .07, rawMax * .005, 1);
+            const min = rawMin - padding, max = rawMax + padding, span = max - min;
             const maxVolume = Math.max(...points.map(point => Number(point.volume)), 1);
-            const x = index => index * width / (points.length - 1);
+            const step = plotWidth / points.length;
+            const x = index => left + step * (index + .5);
             const y = price => priceBottom - (price - min) * (priceBottom - priceTop) / span;
-            const line = points.map((point, index) => `${x(index).toFixed(1)},${y(Number(point.close)).toFixed(1)}`).join(' ');
-            const bars = points.map((point, index) => {
-                const h = Number(point.volume) / maxVolume * (volumeBottom - volumeTop);
-                return `<rect x="${Math.max(0, x(index) - 1.5).toFixed(1)}" y="${(volumeBottom - h).toFixed(1)}" width="3" height="${h.toFixed(1)}" fill="rgba(91,157,255,.38)"/>`;
+            const candleWidth = Math.max(3, Math.min(8, step * .64));
+            const formatPrice = value => Math.trunc(value).toLocaleString('ko-KR');
+            const dateLabel = value => `${value.slice(4,6)}.${value.slice(6,8)}`;
+            const ticks = Array.from({ length: 5 }, (_, index) => {
+                const value = max - span * index / 4;
+                const yy = priceTop + (priceBottom - priceTop) * index / 4;
+                return `<line class="new-scanner-grid-line" x1="${left}" y1="${yy}" x2="${width-right}" y2="${yy}"/>
+                    <text class="new-scanner-axis-label" x="${left-7}" y="${yy+3}" text-anchor="end">${formatPrice(value)}</text>`;
             }).join('');
+            const dateIndexes = [...new Set([0, Math.floor((points.length-1)/3), Math.floor((points.length-1)*2/3), points.length-1])];
+            const dates = dateIndexes.map(index => `<line class="new-scanner-grid-line" x1="${x(index)}" y1="${priceTop}" x2="${x(index)}" y2="${volumeBottom}"/>
+                <text class="new-scanner-axis-label" x="${x(index)}" y="352" text-anchor="middle">${dateLabel(points[index].date)}</text>`).join('');
+            const candles = points.map((point, index) => {
+                const rising = Number(point.close) >= Number(point.open);
+                const color = rising ? '#ff5c5c' : '#5b8cff';
+                const bodyTop = y(Math.max(Number(point.open), Number(point.close)));
+                const bodyBottom = y(Math.min(Number(point.open), Number(point.close)));
+                const bodyHeight = Math.max(bodyBottom - bodyTop, 1.5);
+                return `<line class="new-scanner-candle-wick" x1="${x(index).toFixed(1)}" y1="${y(Number(point.high)).toFixed(1)}" x2="${x(index).toFixed(1)}" y2="${y(Number(point.low)).toFixed(1)}" stroke="${color}"/>
+                    <rect class="new-scanner-candle-body" x="${(x(index)-candleWidth/2).toFixed(1)}" y="${bodyTop.toFixed(1)}" width="${candleWidth.toFixed(1)}" height="${bodyHeight.toFixed(1)}" fill="${color}" stroke="${color}"/>`;
+            }).join('');
+            const volumes = points.map((point, index) => {
+                const rising = Number(point.close) >= Number(point.open);
+                const barHeight = Number(point.volume) / maxVolume * (volumeBottom - volumeTop);
+                return `<rect class="new-scanner-volume-bar" x="${(x(index)-candleWidth/2).toFixed(1)}" y="${(volumeBottom-barHeight).toFixed(1)}" width="${candleWidth.toFixed(1)}" height="${Math.max(barHeight,1).toFixed(1)}" fill="${rising ? '#ff5c5c' : '#5b8cff'}"/>`;
+            }).join('');
+            const movingAverage = (key, color) => {
+                const values = points.map((point, index) => Number.isFinite(point[key]) ? `${x(index).toFixed(1)},${y(Number(point[key])).toFixed(1)}` : null).filter(Boolean);
+                return values.length > 1 ? `<polyline points="${values.join(' ')}" fill="none" stroke="${color}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>` : '';
+            };
             const costLine = Number.isFinite(item.estimated_cost)
-                ? `<line x1="0" y1="${y(Number(item.estimated_cost)).toFixed(1)}" x2="${width}" y2="${y(Number(item.estimated_cost)).toFixed(1)}" stroke="#ffb45b" stroke-width="1.5" stroke-dasharray="5 4"/>` : '';
+                ? `<line x1="${left}" y1="${y(Number(item.estimated_cost)).toFixed(1)}" x2="${width-right}" y2="${y(Number(item.estimated_cost)).toFixed(1)}" stroke="#ffb45b" stroke-width="1.7" stroke-dasharray="6 4"/>` : '';
             return `<div class="new-scanner-chart">
-                <div class="new-scanner-chart-legend"><span>━ 종가</span><span style="color:#ffb45b">┄ 매집원가</span><span>▥ 거래량</span></div>
-                <svg viewBox="0 0 ${width} 132" role="img" aria-label="${escapeNewScannerHtml(item.name)} 최근 60거래일 차트">
-                    ${bars}${costLine}<polyline points="${line}" fill="none" stroke="#7eb2ff" stroke-width="2.4" stroke-linejoin="round"/>
-                    <circle cx="${width}" cy="${y(points.at(-1).close).toFixed(1)}" r="4" fill="#ff5c5c"/>
+                <div class="new-scanner-chart-legend"><span style="color:#ff5c5c">■ 상승</span><span style="color:#5b8cff">■ 하락</span><span style="color:#ffd54a">━ 20일선</span><span style="color:#54c878">━ 60일선</span><span style="color:#7598ff">━ 120일선</span><span style="color:#ffb45b">┄ 매집원가</span></div>
+                <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeNewScannerHtml(item.name)} 최근 60거래일 일봉 차트">
+                    ${ticks}${dates}<line x1="${left}" y1="260" x2="${width-right}" y2="260" stroke="rgba(255,255,255,.35)"/>
+                    ${volumes}${candles}${movingAverage('ma20','#ffd54a')}${movingAverage('ma60','#54c878')}${movingAverage('ma120','#7598ff')}${costLine}
+                    <text class="new-scanner-axis-label" x="${left}" y="272">거래량</text>
                 </svg>
             </div>`;
         }
