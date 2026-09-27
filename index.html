@@ -441,6 +441,14 @@
         }
         .new-scanner-header h2 { margin-bottom: 8px; font-size: 1.35rem; }
         .new-scanner-status { color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; }
+        .new-scanner-guide {
+            margin: 0 0 18px; padding: 16px; border: 1px solid var(--border-color);
+            border-radius: 16px; background: rgba(255,255,255,.04);
+        }
+        .new-scanner-guide-title { margin-bottom: 10px; color: var(--text-main); font-weight: 800; }
+        .new-scanner-guide-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+        .new-scanner-guide-item { padding: 12px; border-radius: 12px; background: rgba(0,0,0,.18); color: var(--text-sub); font-size: .78rem; line-height: 1.5; }
+        .new-scanner-guide-item strong { display: block; margin-bottom: 4px; color: #b9d4ff; font-size: .86rem; }
         .new-scanner-dates { display: flex; gap: 8px; overflow-x: auto; margin-bottom: 18px; }
         .new-scanner-date {
             flex: 0 0 auto; padding: 9px 13px; border: 1px solid var(--border-color);
@@ -470,9 +478,11 @@
 
         @media (max-width: 1100px) {
             .new-scanner-cards { grid-template-columns: 1fr; }
+            .new-scanner-guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         @media (max-width: 600px) {
+            .new-scanner-guide-grid { grid-template-columns: 1fr; }
             h1 { font-size: 1.4rem; }
             .main-layout {
                 flex-direction: column;
@@ -603,6 +613,16 @@
                         <h2>🔎 김일구 New스캐너</h2>
                         <div class="new-scanner-status" id="new-scanner-status">최근 스캔 결과를 불러오는 중입니다.</div>
                     </div>
+                    <section class="new-scanner-guide" aria-label="상태 해석 안내">
+                        <div class="new-scanner-guide-title">상태 해석</div>
+                        <div class="new-scanner-guide-grid">
+                            <div class="new-scanner-guide-item"><strong>DORMANT · 휴식/압축</strong>매집원가와 이벤트 저점을 지키면서 거래량과 가격 변동이 줄어드는 구간입니다.</div>
+                            <div class="new-scanner-guide-item"><strong>IGNITION · 점화</strong>5일선 기울기가 올라가고 이동평균 돌파 또는 거래량 증가가 시작되는 구간입니다.</div>
+                            <div class="new-scanner-guide-item"><strong>BREAKOUT · 돌파</strong>거래량을 동반해 60일 고점, 240일선 또는 확인된 저항선을 넘어선 구간입니다.</div>
+                            <div class="new-scanner-guide-item"><strong>PULLBACK · 눌림</strong>돌파 뒤 고점에서 3~12% 조정받고 거래량이 줄면서 매집원가를 지키는 구간입니다.</div>
+                        </div>
+                    </section>
+
                     <div class="new-scanner-dates" id="new-scanner-dates"></div>
                     <div class="new-scanner-cards" id="new-scanner-cards"></div>
                 </div>
