@@ -83,10 +83,11 @@ def _validate_candidate(candidate: object) -> None:
             raise ValueError("candidate chart must contain at most 60 points")
         legacy_fields = {"date", "close", "volume"}
         rich_fields = legacy_fields | {"open", "high", "low", "ma20", "ma60", "ma120"}
-        event_fields = rich_fields | {"is_500eok"}
+        rich_fields_with_ma5 = rich_fields | {"ma5"}
+        event_fields = rich_fields_with_ma5 | {"is_500eok"}
         for point in chart:
             point_fields = set(point) if isinstance(point, dict) else set()
-            if point_fields not in (legacy_fields, rich_fields, event_fields):
+            if point_fields not in (legacy_fields, rich_fields, rich_fields_with_ma5, event_fields):
                 raise ValueError("candidate chart point is invalid")
             if not isinstance(point["date"], str) or not _DATE.fullmatch(point["date"]):
                 raise ValueError("candidate chart date is invalid")
@@ -96,7 +97,7 @@ def _validate_candidate(candidate: object) -> None:
                         or not math.isfinite(float(value)) or value < 0):
                     raise ValueError("candidate chart value is invalid")
             if point_fields != legacy_fields:
-                for field in ("ma20", "ma60", "ma120"):
+                for field in ({"ma20", "ma60", "ma120"} | ({"ma5"} if "ma5" in point else set())):
                     value = point[field]
                     if value is not None and (not isinstance(value, (int, float)) or isinstance(value, bool)
                                               or not math.isfinite(float(value)) or value < 0):
