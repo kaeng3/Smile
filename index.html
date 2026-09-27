@@ -817,10 +817,10 @@
             const costLine = Number.isFinite(item.estimated_cost)
                 ? `<line x1="${left}" y1="${y(Number(item.estimated_cost)).toFixed(1)}" x2="${width-right}" y2="${y(Number(item.estimated_cost)).toFixed(1)}" stroke="#ffb45b" stroke-width="1.7" stroke-dasharray="6 4"/>` : '';
             return `<div class="new-scanner-chart">
-                <div class="new-scanner-chart-legend"><span style="color:#ff5c5c">■ 상승</span><span style="color:#5b8cff">■ 하락</span><span style="color:#d6a800">━ 20일선</span><span style="color:#16803b">━ 60일선</span><span style="color:#315fc7">━ 120일선</span><span style="color:#d97706">┄ 매집원가</span><span style="color:#16a34a">▥ 500억봉</span></div>
+                <div class="new-scanner-chart-legend"><span style="color:#ff5c5c">■ 상승</span><span style="color:#5b8cff">■ 하락</span><span style="color:#7c3aed">━ 5일선</span><span style="color:#d6a800">━ 20일선</span><span style="color:#16803b">━ 60일선</span><span style="color:#315fc7">━ 120일선</span><span style="color:#d97706">┄ 매집원가</span><span style="color:#16a34a">▥ 500억봉</span></div>
                 <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeNewScannerHtml(item.name)} 최근 60거래일 일봉 차트">
                     ${eventBands}${ticks}${dates}<line x1="${left}" y1="260" x2="${width-right}" y2="260" stroke="rgba(31,41,55,.38)"/>
-                    ${volumes}${candles}${movingAverage('ma20','#d6a800')}${movingAverage('ma60','#16803b')}${movingAverage('ma120','#315fc7')}${costLine}
+                    ${volumes}${candles}${movingAverage('ma5','#7c3aed')}${movingAverage('ma20','#d6a800')}${movingAverage('ma60','#16803b')}${movingAverage('ma120','#315fc7')}${costLine}
                     <text class="new-scanner-axis-label" x="${left}" y="272">거래량</text>
                 </svg>
             </div>`;
