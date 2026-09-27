@@ -63,7 +63,7 @@ def _chart_points(df: pd.DataFrame, limit: int = 60) -> list[dict[str, Any]]:
         {
             "date": pd.Timestamp(row.date).strftime("%Y%m%d"),
             "close": float(row.close),
-            "volume": int(row.volume),
+            "volume": int(getattr(row, "volume", 0)),
         }
         for row in df.tail(limit).itertuples()
     ]
