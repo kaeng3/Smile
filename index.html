@@ -456,10 +456,11 @@
         .new-scanner-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; color: var(--text-sub); font-size: .84rem; line-height: 1.45; }
         .new-scanner-metrics strong { display: block; color: var(--text-main); font-size: .95rem; }
         .new-scanner-chart { margin-top: 14px; border-top: 1px solid var(--border-color); padding-top: 12px; }
-        .new-scanner-chart svg { width: 100%; height: auto; min-height: 280px; display: block; }
+        .new-scanner-chart svg { width: 100%; height: auto; min-height: 280px; display: block; background: #fff; border-radius: 10px; }
         .new-scanner-chart-legend { display: flex; flex-wrap: wrap; gap: 7px 14px; margin-bottom: 8px; color: var(--text-sub); font-size: .74rem; }
-        .new-scanner-axis-label { fill: #9ca3af; font-size: 10px; }
-        .new-scanner-grid-line { stroke: rgba(255,255,255,.12); stroke-width: 1; stroke-dasharray: 3 3; }
+        .new-scanner-axis-label { fill: #5f6368; font-size: 10px; }
+        .new-scanner-grid-line { stroke: rgba(31,41,55,.16); stroke-width: 1; stroke-dasharray: 3 3; }
+        .new-scanner-event-band { fill: rgba(34,197,94,.14); stroke: rgba(22,163,74,.38); stroke-width: 1; }
         .new-scanner-candle-wick { stroke-width: 1.2; }
         .new-scanner-candle-body { stroke-width: 1; }
         .new-scanner-volume-bar { opacity: .62; }
@@ -792,6 +793,9 @@
             const dateIndexes = [...new Set([0, Math.floor((points.length-1)/3), Math.floor((points.length-1)*2/3), points.length-1])];
             const dates = dateIndexes.map(index => `<line class="new-scanner-grid-line" x1="${x(index)}" y1="${priceTop}" x2="${x(index)}" y2="${volumeBottom}"/>
                 <text class="new-scanner-axis-label" x="${x(index)}" y="352" text-anchor="middle">${dateLabel(points[index].date)}</text>`).join('');
+            const eventBands = points.map((point, index) => point.is_500eok === true
+                ? `<rect class="new-scanner-event-band" x="${(x(index)-step/2).toFixed(1)}" y="${priceTop}" width="${step.toFixed(1)}" height="${volumeBottom-priceTop}"/>`
+                : '').join('');
             const candles = points.map((point, index) => {
                 const rising = Number(point.close) >= Number(point.open);
                 const color = rising ? '#ff5c5c' : '#5b8cff';
@@ -813,10 +817,10 @@
             const costLine = Number.isFinite(item.estimated_cost)
                 ? `<line x1="${left}" y1="${y(Number(item.estimated_cost)).toFixed(1)}" x2="${width-right}" y2="${y(Number(item.estimated_cost)).toFixed(1)}" stroke="#ffb45b" stroke-width="1.7" stroke-dasharray="6 4"/>` : '';
             return `<div class="new-scanner-chart">
-                <div class="new-scanner-chart-legend"><span style="color:#ff5c5c">■ 상승</span><span style="color:#5b8cff">■ 하락</span><span style="color:#ffd54a">━ 20일선</span><span style="color:#54c878">━ 60일선</span><span style="color:#7598ff">━ 120일선</span><span style="color:#ffb45b">┄ 매집원가</span></div>
+                <div class="new-scanner-chart-legend"><span style="color:#ff5c5c">■ 상승</span><span style="color:#5b8cff">■ 하락</span><span style="color:#d6a800">━ 20일선</span><span style="color:#16803b">━ 60일선</span><span style="color:#315fc7">━ 120일선</span><span style="color:#d97706">┄ 매집원가</span><span style="color:#16a34a">▥ 500억봉</span></div>
                 <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeNewScannerHtml(item.name)} 최근 60거래일 일봉 차트">
-                    ${ticks}${dates}<line x1="${left}" y1="260" x2="${width-right}" y2="260" stroke="rgba(255,255,255,.35)"/>
-                    ${volumes}${candles}${movingAverage('ma20','#ffd54a')}${movingAverage('ma60','#54c878')}${movingAverage('ma120','#7598ff')}${costLine}
+                    ${eventBands}${ticks}${dates}<line x1="${left}" y1="260" x2="${width-right}" y2="260" stroke="rgba(31,41,55,.38)"/>
+                    ${volumes}${candles}${movingAverage('ma20','#d6a800')}${movingAverage('ma60','#16803b')}${movingAverage('ma120','#315fc7')}${costLine}
                     <text class="new-scanner-axis-label" x="${left}" y="272">거래량</text>
                 </svg>
             </div>`;
