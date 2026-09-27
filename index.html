@@ -673,6 +673,27 @@
             })[char]);
         }
 
+        function isValidNewScannerSession(session) {
+            if (!session || typeof session !== 'object' || !/^\d{8}$/.test(session.date) ||
+                typeof session.generated_at !== 'string' || !Array.isArray(session.candidates)) return false;
+            const year = Number(session.date.slice(0, 4));
+            const month = Number(session.date.slice(4, 6));
+            const day = Number(session.date.slice(6, 8));
+            const parsedDate = new Date(Date.UTC(year, month - 1, day));
+            if (parsedDate.getUTCFullYear() !== year || parsedDate.getUTCMonth() !== month - 1 ||
+                parsedDate.getUTCDate() !== day) return false;
+            if (!['total_tickers', 'successful_tickers', 'failed_tickers'].every(key =>
+                Number.isInteger(session[key]) && session[key] >= 0)) return false;
+            return session.candidates.every(item => item && typeof item === 'object' &&
+                Number.isInteger(item.rank) && item.rank > 0 && typeof item.ticker === 'string' &&
+                typeof item.name === 'string' && item.date === session.date &&
+                ['IGNITION', 'BREAKOUT'].includes(item.state) &&
+                item.strategy_family === 'BOTTOM_ACCUMULATION' && item.cost_status === 'HOLD' &&
+                Number.isFinite(item.final_score) && Number.isFinite(item.close) &&
+                (item.estimated_cost === null || Number.isFinite(item.estimated_cost)) &&
+                (item.cost_distance === null || Number.isFinite(item.cost_distance)));
+        }
+
         async function loadNewScannerData() {
             if (newScannerLoaded) return;
             const status = document.getElementById('new-scanner-status');
@@ -680,7 +701,8 @@
                 const response = await fetch('new_scanner/results/history.json', { cache: 'no-store' });
                 if (!response.ok) throw new Error('HTTP');
                 const payload = await response.json();
-                if (payload.version !== 1 || !Array.isArray(payload.sessions)) throw new Error('SCHEMA');
+                if (payload.version !== 1 || !Array.isArray(payload.sessions) ||
+                    !payload.sessions.every(isValidNewScannerSession)) throw new Error('SCHEMA');
                 newScannerSessions = payload.sessions;
                 selectedNewScannerDate = newScannerSessions[0]?.date || '';
                 newScannerLoaded = true;

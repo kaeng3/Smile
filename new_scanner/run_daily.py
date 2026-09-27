@@ -11,7 +11,7 @@ from typing import Any, Callable
 import pandas as pd
 
 from jusmo_scanner.config import load_config
-from jusmo_scanner.data.kis_provider import KisProvider
+from jusmo_scanner.data.kis_provider import KisApiError, KisProvider, TOKEN_INVALID_CODES
 from jusmo_scanner.notifier.telegram import TelegramNotifier
 from jusmo_scanner.scanner.engine import scan_ticker
 from reporting import select_top_candidates, update_history, validate_history
@@ -27,7 +27,7 @@ def _atomic_json(path: Path, payload: dict[str, Any]) -> None:
     fd, temporary = tempfile.mkstemp(prefix=path.name + ".", suffix=".tmp", dir=path.parent)
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as handle:
-            json.dump(payload, handle, ensure_ascii=False, indent=2)
+            json.dump(payload, handle, ensure_ascii=False, indent=2, allow_nan=False)
             handle.write("\n")
         os.replace(temporary, path)
     except BaseException:
@@ -54,7 +54,8 @@ def _read_sent_state(path: Path) -> dict[str, Any]:
 
 
 def _state_value(value: Any) -> str:
-    return str(getattr(value, "value", value))
+    name = getattr(value, "name", None)
+    return str(name if name is not None else getattr(value, "value", value))
 
 
 def run_daily(
@@ -82,12 +83,14 @@ def run_daily(
         except Exception as exc:
             raise RuntimeError(f"KIS universe fetch failed: {type(exc).__name__}") from None
         for ticker in tickers:
+            counted_success = False
             try:
                 metadata = provider.ticker_metadata(ticker) or {}
                 if any(bool(metadata.get(flag)) for flag in ("halted", "admin", "liquidation")):
                     continue
                 df = provider.get_ohlcv(ticker)
                 successful += 1
+                counted_success = True
                 if df.empty or pd.Timestamp(df["date"].iloc[-1]).date() != target_date:
                     continue
                 fresh += 1
@@ -117,7 +120,15 @@ def run_daily(
                         "cost_distance": None if latest.cost_distance is None else float(latest.cost_distance),
                     }
                 )
+            except KisApiError as exc:
+                if exc.code in TOKEN_INVALID_CODES or exc.status in {401, 403}:
+                    raise RuntimeError(f"KIS authentication failed: {exc.code}") from None
+                if counted_success:
+                    successful -= 1
+                failed += 1
             except Exception:
+                if counted_success:
+                    successful -= 1
                 failed += 1
         if successful == 0:
             raise RuntimeError("all ticker fetches failed")

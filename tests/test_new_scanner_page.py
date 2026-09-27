@@ -23,6 +23,8 @@ class NewScannerPageTests(unittest.TestCase):
 
     def test_version_empty_and_error_states_are_explicit(self):
         self.assertIn("payload.version !== 1", HTML)
+        self.assertIn("isValidNewScannerSession", HTML)
+        self.assertIn("Number.isFinite", HTML)
         self.assertIn("오늘 신규 후보가 없습니다", HTML)
         self.assertIn("스캔 결과를 불러오지 못했습니다", HTML)
         self.assertIn("Array.isArray(payload.sessions)", HTML)

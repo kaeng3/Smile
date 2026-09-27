@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import math
 
 import pytest
 
@@ -97,5 +98,23 @@ def test_validate_history_does_not_mutate_input():
 def test_validate_history_rejects_unexpected_candidate_fields():
     payload = {"version": 1, "sessions": [session("20260925")]}
     payload["sessions"][0]["candidates"][0]["access_token"] = "secret"
+    with pytest.raises(ValueError):
+        validate_history(payload)
+
+
+@pytest.mark.parametrize(
+    ("field", "value"),
+    [
+        ("date", "20269999"),
+        ("final_score", math.nan),
+        ("estimated_cost", "10000"),
+        ("cost_distance", {}),
+        ("strategy_family", "HIGH_COST_TRACKING"),
+        ("cost_status", "BREACHED"),
+    ],
+)
+def test_validate_history_rejects_non_json_and_strategy_invalid_values(field, value):
+    payload = {"version": 1, "sessions": [session("20260925")]}
+    payload["sessions"][0]["candidates"][0][field] = value
     with pytest.raises(ValueError):
         validate_history(payload)

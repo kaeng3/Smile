@@ -10,7 +10,7 @@ WORKFLOW = ROOT / ".github" / "workflows" / "new_scanner.yml"
 class NewScannerWorkflowTests(unittest.TestCase):
     def test_schedule_runtime_secrets_cache_and_pages_contract(self):
         text = WORKFLOW.read_text(encoding="utf-8")
-        self.assertIn("cron: '55 6 * * 1-5'", text)
+        self.assertIn("cron: '5 7 * * 1-5'", text)
         self.assertIn("workflow_dispatch:", text)
         self.assertIn('group: "pages"', text)
         self.assertIn("python-version: '3.12'", text)
@@ -20,7 +20,16 @@ class NewScannerWorkflowTests(unittest.TestCase):
         self.assertIn("hashFiles('new_scanner/config/scanner.yaml')", text)
         self.assertIn("python -m pytest tests -q", text)
         self.assertIn("working-directory: new_scanner", text)
+        self.assertIn("${{ github.workspace }}/new_scanner/src", text)
+        self.assertIn("exchange-calendars==4.13.2", text)
         self.assertIn("actions/deploy-pages@v4", text)
+        self.assertIn("actions/cache/restore@v4", text)
+        self.assertIn("actions/cache/save@v4", text)
+        self.assertIn("github.run_attempt", text)
+        self.assertLess(text.index("Run daily scanner"), text.index("Save scanner cache and notification receipt"))
+        self.assertLess(text.index("Save scanner cache and notification receipt"), text.index("Commit scanner history"))
+        self.assertIn("git archive HEAD", text)
+        self.assertNotIn("path: '.'", text)
 
     def test_commit_scope_and_private_runtime_files(self):
         text = WORKFLOW.read_text(encoding="utf-8")

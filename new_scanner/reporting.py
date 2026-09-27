@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import copy
+import math
 import re
+from datetime import datetime
 from collections.abc import Iterable
 from typing import Any
 
@@ -50,11 +52,29 @@ def _validate_candidate(candidate: object) -> None:
         raise ValueError("candidate contains unexpected fields")
     if not isinstance(candidate["ticker"], str) or not candidate["ticker"]:
         raise ValueError("candidate ticker must be text")
+    if not isinstance(candidate["name"], str) or not candidate["name"]:
+        raise ValueError("candidate name must be text")
+    if not isinstance(candidate["date"], str) or not _DATE.fullmatch(candidate["date"]):
+        raise ValueError("candidate date must use YYYYMMDD")
+    try:
+        datetime.strptime(candidate["date"], "%Y%m%d")
+    except ValueError:
+        raise ValueError("candidate date is invalid") from None
     if candidate["state"] not in {"IGNITION", "BREAKOUT"}:
         raise ValueError("candidate state is invalid")
-    for field in ("rank", "final_score", "close"):
-        if not isinstance(candidate[field], (int, float)) or isinstance(candidate[field], bool):
+    if candidate["strategy_family"] != "BOTTOM_ACCUMULATION" or candidate["cost_status"] != "HOLD":
+        raise ValueError("candidate strategy or cost status is invalid")
+    if not isinstance(candidate["rank"], int) or isinstance(candidate["rank"], bool) or candidate["rank"] < 1:
+        raise ValueError("candidate rank must be a positive integer")
+    for field in ("final_score", "close"):
+        if (not isinstance(candidate[field], (int, float)) or isinstance(candidate[field], bool)
+                or not math.isfinite(float(candidate[field]))):
             raise ValueError(f"candidate {field} must be numeric")
+    for field in ("estimated_cost", "cost_distance"):
+        value = candidate[field]
+        if value is not None and (not isinstance(value, (int, float)) or isinstance(value, bool)
+                                  or not math.isfinite(float(value))):
+            raise ValueError(f"candidate {field} must be finite or null")
 
 
 def _validate_session(session: object) -> None:
@@ -68,6 +88,10 @@ def _validate_session(session: object) -> None:
         raise ValueError("session is missing required fields")
     if not isinstance(session["date"], str) or not _DATE.fullmatch(session["date"]):
         raise ValueError("session date must use YYYYMMDD")
+    try:
+        datetime.strptime(session["date"], "%Y%m%d")
+    except ValueError:
+        raise ValueError("session date is invalid") from None
     if not isinstance(session["generated_at"], str) or not session["generated_at"]:
         raise ValueError("session generated_at must be text")
     for field in ("total_tickers", "successful_tickers", "failed_tickers"):
@@ -77,6 +101,8 @@ def _validate_session(session: object) -> None:
         raise ValueError("session candidates must be a list")
     for candidate in session["candidates"]:
         _validate_candidate(candidate)
+        if candidate["date"] != session["date"]:
+            raise ValueError("candidate date must match session date")
 
 
 def validate_history(payload: object) -> dict[str, Any]:
