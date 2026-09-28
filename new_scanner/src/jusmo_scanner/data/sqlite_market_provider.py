@@ -48,6 +48,7 @@ class SQLiteMarketProvider(DataProvider):
         for column in ("open", "high", "low", "close", "volume"):
             frame[column] = pd.to_numeric(frame[column], errors="coerce")
         frame = frame.dropna(subset=["date", "close", "volume"]).copy()
+        frame = frame.drop_duplicates(subset=["date"], keep="last").sort_values("date").reset_index(drop=True)
         if frame.empty:
             return frame
         frame["trading_value"] = frame["close"] * frame["volume"]
