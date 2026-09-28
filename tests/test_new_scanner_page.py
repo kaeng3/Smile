@@ -1,15 +1,13 @@
 from pathlib import Path
 import unittest
 
-
 HTML = (Path(__file__).resolve().parents[1] / "index.html").read_text(encoding="utf-8")
-
 
 class NewScannerPageTests(unittest.TestCase):
     def test_lab2_is_replaced_without_changing_other_tabs(self):
         self.assertIn('id="nav-lab2">🔎 김일구 New스캐너</button>', HTML)
         self.assertIn('id="lab-content2"', HTML)
-        self.assertIn("🧪 베타 실험실 1", HTML)
+        self.assertIn("💰 500억봉 요약", HTML)
         self.assertIn("🧪 베타 실험실 3", HTML)
 
     def test_page_has_data_contract_and_required_containers(self):
@@ -31,8 +29,8 @@ class NewScannerPageTests(unittest.TestCase):
 
     def test_cards_render_chart_korean_state_and_truncated_numbers(self):
         self.assertIn("function renderNewScannerChart", HTML)
-        self.assertIn('IGNITION: \'점화\'', HTML)
-        self.assertIn('BREAKOUT: \'돌파\'', HTML)
+        self.assertIn("IGNITION: '점화'", HTML)
+        self.assertIn("BREAKOUT: '돌파'", HTML)
         self.assertIn("Math.trunc", HTML)
         self.assertIn('class="new-scanner-chart"', HTML)
 
@@ -48,7 +46,6 @@ class NewScannerPageTests(unittest.TestCase):
         self.assertIn('500억봉', HTML)
         self.assertIn('background: #fff', HTML)
         self.assertIn('grid-template-columns: repeat(2, minmax(0, 1fr))', HTML)
-
 
 if __name__ == "__main__":
     unittest.main()
