@@ -52,8 +52,10 @@ class SQLiteMarketProvider(DataProvider):
         if frame.empty:
             return frame
         frame["trading_value"] = frame["close"] * frame["volume"]
-        frame["market_cap"] = pd.NA
-        frame["free_float_shares"] = pd.NA
+        # Keep missing optional market data numeric. pd.NA creates an object-dtype value
+        # that fails inside numeric scoring when an event is present.
+        frame["market_cap"] = float("nan")
+        frame["free_float_shares"] = float("nan")
         return frame
 
     def close(self) -> None:
