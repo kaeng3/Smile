@@ -26,7 +26,7 @@ class SQLiteMarketProvider(DataProvider):
     def get_tickers(self) -> list[str]:
         with sqlite3.connect(self._db_path) as conn:
             rows = conn.execute("SELECT DISTINCT code FROM daily_prices ORDER BY code").fetchall()
-        return [str(row[0]) for row in rows]
+        return [str(row[0]) for row in rows if row[0] is not None]
 
     def ticker_metadata(self, ticker: str) -> dict[str, str]:
         with sqlite3.connect(self._db_path) as conn:
@@ -44,7 +44,12 @@ class SQLiteMarketProvider(DataProvider):
                 """, conn, params=(ticker,))
         if frame.empty:
             return frame
-        frame["date"] = pd.to_datetime(frame["date"])
+        frame["date"] = pd.to_datetime(frame["date"], errors="coerce")
+        for column in ("open", "high", "low", "close", "volume"):
+            frame[column] = pd.to_numeric(frame[column], errors="coerce")
+        frame = frame.dropna(subset=["date", "close", "volume"]).copy()
+        if frame.empty:
+            return frame
         frame["trading_value"] = frame["close"] * frame["volume"]
         frame["market_cap"] = pd.NA
         frame["free_float_shares"] = pd.NA
