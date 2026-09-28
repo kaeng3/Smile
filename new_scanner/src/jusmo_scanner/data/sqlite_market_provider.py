@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sqlite3
 from pathlib import Path
 
@@ -11,9 +12,32 @@ from .base import DataProvider, PriceAdjustmentMode, ShareCountBasis
 class SQLiteMarketProvider(DataProvider):
     """Read the shared cloud scanner OHLCV cache."""
 
-    def __init__(self, db_path: str | Path, target_date: str):
+    def __init__(
+        self,
+        db_path: str | Path,
+        target_date: str,
+        name_map_path: str | Path | None = None,
+    ):
         self._db_path = Path(db_path)
         self._target_date = target_date
+        self._name_map = self._load_name_map(name_map_path)
+
+    @staticmethod
+    def _load_name_map(path: str | Path | None) -> dict[str, str]:
+        if path is None:
+            return {}
+        try:
+            raw = json.loads(Path(path).read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return {}
+        if not isinstance(raw, dict):
+            return {}
+        names: dict[str, str] = {}
+        for code, value in raw.items():
+            name = value.get("name") if isinstance(value, dict) else value
+            if isinstance(name, str) and name.strip():
+                names[str(code)] = name.strip()
+        return names
 
     @property
     def price_adjustment_mode(self) -> PriceAdjustmentMode:
@@ -34,7 +58,10 @@ class SQLiteMarketProvider(DataProvider):
                 row = conn.execute("SELECT name FROM ticker_metadata WHERE code = ?", (ticker,)).fetchone()
             except sqlite3.OperationalError:
                 row = None
-        return {"name": row[0] if row and row[0] else ticker}
+        db_name = str(row[0]).strip() if row and row[0] else ""
+        if db_name and db_name != ticker:
+            return {"name": db_name}
+        return {"name": self._name_map.get(ticker, ticker)}
 
     def get_ohlcv(self, ticker: str) -> pd.DataFrame:
         with sqlite3.connect(self._db_path) as conn:
