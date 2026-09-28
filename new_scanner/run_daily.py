@@ -223,7 +223,7 @@ def run_daily(
 def _provider_factory(target: date):
     shared_db = ROOT.parent / "cloud_scanner" / "stock_ohlcv_cache.db"
     if shared_db.exists():
-        return SQLiteMarketProvider(shared_db, target.isoformat())
+        return SQLiteMarketProvider(shared_db, target.isoformat(), name_map_path=ROOT.parent / "latest_prices.json")
     start = target - timedelta(days=365 * 3 + 7)
     return KisProvider(
         start_date=start.isoformat(),
