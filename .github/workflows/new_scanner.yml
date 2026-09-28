@@ -8,11 +8,12 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: "new-scanner"
+  cancel-in-progress: true
 jobs:
   scan-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     env:
       PYTHONPATH: ${{ github.workspace }}/new_scanner/src
     environment:
