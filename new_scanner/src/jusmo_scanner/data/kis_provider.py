@@ -37,7 +37,7 @@ DAILY_PATH = "/uapi/domestic-stock/v1/quotations/inquire-daily-itemchartprice"
 DAILY_TR_ID = "FHKST03010100"
 PAGE_ROWS = 100                       # documented + observed: at most 100 rows per request, no tr_cont paging
 EARLIEST_FETCH_DATE = date(1980, 1, 1)
-DEFAULT_RATE_PER_SEC = 5.0            # documented real-account limit is higher (20/s); 5/s keeps a wide margin
+DEFAULT_RATE_PER_SEC = 2.0            # keep batch scans below observed KIS throttling bursts
 KST = timezone(timedelta(hours=9))
 MARKET_CLOSE_CACHE_HOUR = 16          # bars dated today are partial before this KST hour and are not cached
 OVERLAP_DAYS = 10                     # incremental refresh re-reads this many calendar days to detect restatement
@@ -228,7 +228,7 @@ class KisClient:
 
     def __init__(self, app_key: str, app_secret: str, transport: Transport, token_manager: TokenManager,
                  redactor: Redactor, base_url: str = REAL_BASE_URL, rate_per_sec: float = DEFAULT_RATE_PER_SEC,
-                 max_retries: int = 4, backoff_base: float = 0.5, backoff_cap: float = 10.0,
+                 max_retries: int = 4, backoff_base: float = 0.5, backoff_cap: float = 30.0,
                  clock: Callable[[], float] = time.monotonic, sleep: Callable[[float], None] = time.sleep) -> None:
         self._key, self._secret, self._transport = app_key, app_secret, transport
         self._tokens, self._redactor, self._base_url = token_manager, redactor, base_url.rstrip("/")
