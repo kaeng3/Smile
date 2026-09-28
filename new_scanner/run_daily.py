@@ -12,6 +12,7 @@ import pandas as pd
 
 from jusmo_scanner.config import load_config
 from jusmo_scanner.data.kis_provider import KisApiError, KisAuthenticationError, KisProvider, TOKEN_INVALID_CODES
+from jusmo_scanner.data.sqlite_market_provider import SQLiteMarketProvider
 from jusmo_scanner.notifier.telegram import TelegramNotifier
 from jusmo_scanner.scanner.engine import scan_ticker
 from reporting import select_top_candidates, update_history, validate_history
@@ -213,7 +214,10 @@ def run_daily(
             close()
 
 
-def _provider_factory(target: date) -> KisProvider:
+def _provider_factory(target: date):
+    shared_db = ROOT.parent / "cloud_scanner" / "stock_ohlcv_cache.db"
+    if shared_db.exists():
+        return SQLiteMarketProvider(shared_db, target.isoformat())
     start = target - timedelta(days=365 * 3 + 7)
     return KisProvider(
         start_date=start.isoformat(),
