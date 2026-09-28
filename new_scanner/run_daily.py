@@ -125,6 +125,7 @@ def run_daily(
     cfg = load_config(str(ROOT / "config" / "scanner.yaml"))
     rows: list[dict[str, Any]] = []
     failed = 0
+    failure_reasons: dict[str, int] = {}
     successful = 0
     fresh = 0
     scan_attempted = 0
@@ -176,13 +177,17 @@ def run_daily(
                     }
                 )
             except KisApiError as exc:
+                reason = f"KIS:{exc.code}"
+                failure_reasons[reason] = failure_reasons.get(reason, 0) + 1
                 if (isinstance(exc, KisAuthenticationError) or exc.code in TOKEN_INVALID_CODES
                         or exc.status in {401, 403}):
                     raise RuntimeError(f"KIS authentication failed: {exc.code}") from None
                 if counted_success:
                     successful -= 1
                 failed += 1
-            except Exception:
+            except Exception as exc:
+                reason = type(exc).__name__
+                failure_reasons[reason] = failure_reasons.get(reason, 0) + 1
                 if counted_success:
                     successful -= 1
                 failed += 1
@@ -193,6 +198,7 @@ def run_daily(
         if scan_attempted > 0 and scan_completed == 0:
             raise RuntimeError("all current-session analyses failed")
 
+        print(f"[SCANNER FAILURE REASONS] {failure_reasons}")
         session = {
             "date": target_date.strftime("%Y%m%d"),
             "generated_at": datetime.now(KST).isoformat(timespec="seconds"),
