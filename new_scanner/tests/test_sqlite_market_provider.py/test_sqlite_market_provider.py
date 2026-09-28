@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sqlite3
 
 import pandas as pd
@@ -49,3 +50,17 @@ def test_missing_market_data_does_not_crash_event_scan(tmp_path):
     assert frame["market_cap"].isna().all()
     result = scan_ticker(frame, "TEST", load_config("config/scanner.yaml"))
     assert result.events
+
+
+def test_ticker_metadata_uses_cached_name_when_db_name_is_code(tmp_path):
+    db_path = tmp_path / "market.db"
+    names_path = tmp_path / "latest_prices.json"
+    names_path.write_text(json.dumps({"TEST": {"name": "테스트종목"}}), encoding="utf-8")
+
+    with sqlite3.connect(db_path) as conn:
+        conn.execute("CREATE TABLE ticker_metadata (code TEXT, name TEXT)")
+        conn.execute("INSERT INTO ticker_metadata VALUES ('TEST', 'TEST')")
+
+    provider = SQLiteMarketProvider(db_path, "2026-02-10", name_map_path=names_path)
+
+    assert provider.ticker_metadata("TEST") == {"name": "테스트종목"}
