@@ -1,7 +1,5 @@
 name: Kim Ilgu New Scanner
 on:
-  push:
-    branches: [main]
   schedule:
     - cron: '5 7 * * 1-5'
   workflow_dispatch:
@@ -10,7 +8,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: "new-scanner"
+  group: "pages"
   cancel-in-progress: true
 jobs:
   scan-and-deploy:
@@ -42,6 +40,14 @@ jobs:
             new_scanner/state
           key: new-scanner-${{ runner.os }}-${{ hashFiles('new_scanner/config/scanner.yaml') }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: new-scanner-${{ runner.os }}-${{ hashFiles('new_scanner/config/scanner.yaml') }}-
+      - name: Restore shared market data cache
+        uses: actions/cache/restore@v4
+        with:
+          path: cloud_scanner/stock_ohlcv_cache.db
+          key: stock-db-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            stock-db-
+
       - name: Run site regression tests
         run: python -m unittest discover -s tests -v
       - name: Run scanner regression tests
