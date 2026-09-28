@@ -41,8 +41,8 @@ class SQLiteMarketProvider(DataProvider):
             return frame
         frame["date"] = pd.to_datetime(frame["date"])
         frame["trading_value"] = frame["close"] * frame["volume"]
-        frame["market_cap"] = pd.NA
-        frame["free_float_shares"] = pd.NA
+        frame["market_cap"] = float("nan")
+        frame["free_float_shares"] = float("nan")
         return frame
 
     def close(self) -> None:
