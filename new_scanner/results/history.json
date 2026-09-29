@@ -2,6 +2,14 @@
   "version": 1,
   "sessions": [
     {
+      "date": "20260929",
+      "generated_at": "2026-09-29T18:35:23+09:00",
+      "total_tickers": 2779,
+      "successful_tickers": 2779,
+      "failed_tickers": 0,
+      "candidates": []
+    },
+    {
       "date": "20260928",
       "generated_at": "2026-09-28T23:51:09+09:00",
       "total_tickers": 2777,
