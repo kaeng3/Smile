@@ -15,7 +15,7 @@ from jusmo_scanner.data.kis_provider import KisApiError, KisAuthenticationError,
 from jusmo_scanner.data.sqlite_market_provider import SQLiteMarketProvider
 from jusmo_scanner.notifier.telegram import TelegramNotifier
 from jusmo_scanner.scanner.engine import scan_ticker
-from reporting import select_top_candidates, update_history, validate_history
+from reporting import select_top_candidates, select_watchlist, update_history, validate_history
 from telegram_digest import send_digest
 
 
@@ -206,6 +206,7 @@ def run_daily(
             "successful_tickers": successful,
             "failed_tickers": failed,
             "candidates": select_top_candidates(rows),
+            "watchlist": select_watchlist(rows),
         }
         _atomic_json(history_path, update_history(existing, session))
         if notifier is not None:

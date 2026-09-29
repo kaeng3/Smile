@@ -44,7 +44,34 @@ def select_top_candidates(rows: Iterable[dict[str, Any]], limit: int = 5) -> lis
     return selected
 
 
-def _validate_candidate(candidate: object) -> None:
+# select_top_candidates는 '오늘 막 IGNITION/BREAKOUT으로 새로 전환된' 종목만
+# 골라서 하루에 0개가 나오는 날이 흔하다. select_watchlist는 그보다 넓게,
+# 신규 전환 여부와 무관하게 현재 유효한 4개 상태(DORMANT/IGNITION/BREAKOUT/
+# PULLBACK)에 있는 매집원가 유지 종목을 전부 후보군으로 보여주기 위한 것이다.
+_WATCHLIST_STATES = {"DORMANT", "IGNITION", "BREAKOUT", "PULLBACK"}
+
+
+def select_watchlist(rows: Iterable[dict[str, Any]], limit: int = 20) -> list[dict[str, Any]]:
+    eligible = [
+        row
+        for row in rows
+        if row.get("is_latest_bar") is True
+        and row.get("strategy_family") == "BOTTOM_ACCUMULATION"
+        and row.get("state") in _WATCHLIST_STATES
+        and row.get("cost_status") == "HOLD"
+    ]
+    eligible.sort(key=lambda row: (-float(row["final_score"]), str(row["ticker"])))
+    selected = []
+    for rank, row in enumerate(eligible[:limit], start=1):
+        public = {field: row.get(field) for field in _PUBLIC_FIELDS}
+        if "chart" in row:
+            public["chart"] = copy.deepcopy(row["chart"])
+        public["rank"] = rank
+        selected.append(public)
+    return selected
+
+
+def _validate_candidate(candidate: object, *, valid_states: frozenset[str] = frozenset({"IGNITION", "BREAKOUT"})) -> None:
     if not isinstance(candidate, dict):
         raise ValueError("candidate must be an object")
     required = set(_PUBLIC_FIELDS) | {"rank"}
@@ -62,7 +89,7 @@ def _validate_candidate(candidate: object) -> None:
         datetime.strptime(candidate["date"], "%Y%m%d")
     except ValueError:
         raise ValueError("candidate date is invalid") from None
-    if candidate["state"] not in {"IGNITION", "BREAKOUT"}:
+    if candidate["state"] not in valid_states:
         raise ValueError("candidate state is invalid")
     if candidate["strategy_family"] != "BOTTOM_ACCUMULATION" or candidate["cost_status"] != "HOLD":
         raise ValueError("candidate strategy or cost status is invalid")
@@ -133,6 +160,13 @@ def _validate_session(session: object) -> None:
         _validate_candidate(candidate)
         if candidate["date"] != session["date"]:
             raise ValueError("candidate date must match session date")
+    if "watchlist" in session:
+        if not isinstance(session["watchlist"], list):
+            raise ValueError("session watchlist must be a list")
+        for item in session["watchlist"]:
+            _validate_candidate(item, valid_states=frozenset(_WATCHLIST_STATES))
+            if item["date"] != session["date"]:
+                raise ValueError("watchlist item date must match session date")
 
 
 def validate_history(payload: object) -> dict[str, Any]:

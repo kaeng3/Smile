@@ -5,7 +5,7 @@ import math
 
 import pytest
 
-from reporting import select_top_candidates, update_history, validate_history
+from reporting import select_top_candidates, select_watchlist, update_history, validate_history
 
 
 def row(ticker: str, **overrides):
@@ -135,5 +135,57 @@ def test_validate_history_accepts_rich_candlestick_chart_point():
 def test_validate_history_rejects_non_json_and_strategy_invalid_values(field, value):
     payload = {"version": 1, "sessions": [session("20260925")]}
     payload["sessions"][0]["candidates"][0][field] = value
+    with pytest.raises(ValueError):
+        validate_history(payload)
+
+
+def test_select_watchlist_includes_dormant_and_pullback_without_new_transition():
+    valid = [
+        row("000001", state="DORMANT", is_new_transition=False, final_score=90.0),
+        row("000002", state="IGNITION", is_new_transition=False, final_score=80.0),
+        row("000003", state="BREAKOUT", is_new_transition=True, final_score=70.0),
+        row("000004", state="PULLBACK", is_new_transition=False, final_score=60.0),
+    ]
+    invalid = [
+        row("100001", is_latest_bar=False),
+        row("100002", strategy_family="HIGH_COST_TRACKING"),
+        row("100003", state="INVALIDATED"),
+        row("100004", cost_status="BREACHED"),
+    ]
+
+    selected = select_watchlist(valid + invalid)
+
+    assert [item["ticker"] for item in selected] == ["000001", "000002", "000003", "000004"]
+    assert [item["rank"] for item in selected] == [1, 2, 3, 4]
+    assert all("is_latest_bar" not in item for item in selected)
+
+
+def test_select_watchlist_respects_limit():
+    rows = [row(f"{i:06d}", state="DORMANT", is_new_transition=False, final_score=float(i)) for i in range(30)]
+    selected = select_watchlist(rows, limit=20)
+    assert len(selected) == 20
+
+
+def test_validate_history_accepts_session_with_watchlist():
+    payload = {"version": 1, "sessions": [session("20260925")]}
+    watchlist_item = {
+        key: value
+        for key, value in row("000660", date="20260925", state="DORMANT").items()
+        if key not in {"is_latest_bar", "is_new_transition"}
+    }
+    watchlist_item["rank"] = 1
+    payload["sessions"][0]["watchlist"] = [watchlist_item]
+    assert validate_history(payload) == payload
+
+
+def test_validate_history_rejects_watchlist_with_invalid_state():
+    payload = {"version": 1, "sessions": [session("20260925")]}
+    watchlist_item = {
+        key: value
+        for key, value in row("000660", date="20260925", state="INVALIDATED").items()
+        if key not in {"is_latest_bar", "is_new_transition"}
+    }
+    watchlist_item["rank"] = 1
+    payload["sessions"][0]["watchlist"] = [watchlist_item]
     with pytest.raises(ValueError):
         validate_history(payload)
