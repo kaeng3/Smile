@@ -21895,5 +21895,23 @@
     "pattern": "양음양 패턴 1 (수급 강세)",
     "status": "tracking",
     "registered_at": "2026-09-28 08:09:56"
+  },
+  "213500": {
+    "code": "213500",
+    "name": "한솔제지",
+    "anchor_date": "2026-09-29",
+    "anchor_close": 7320,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-29 08:06:24"
+  },
+  "005030": {
+    "code": "005030",
+    "name": "부산주공",
+    "anchor_date": "2026-09-29",
+    "anchor_close": 39,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-09-29 08:06:24"
   }
 }
