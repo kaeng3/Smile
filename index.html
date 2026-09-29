@@ -474,6 +474,7 @@
         .new-scanner-volume-bar { opacity: .62; }
         .new-scanner-chart-empty { color: var(--text-sub); font-size: .8rem; padding: 18px 0 4px; text-align: center; }
         .new-scanner-empty { grid-column: 1/-1; padding: 42px 18px; text-align: center; color: var(--text-sub); border: 1px dashed var(--border-color); border-radius: 16px; }
+        .new-scanner-section-title { grid-column: 1/-1; font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
 
 
         @media (max-width: 1100px) {
@@ -846,26 +847,12 @@
             </div>`;
         }
 
-        function renderNewScannerCards() {
-            const status = document.getElementById('new-scanner-status');
-            const cards = document.getElementById('new-scanner-cards');
-            const session = newScannerSessions.find(item => item.date === selectedNewScannerDate);
-            if (!session) {
-                status.textContent = '아직 저장된 스캔 결과가 없습니다.';
-                cards.innerHTML = '<div class="new-scanner-empty">오늘 신규 후보가 없습니다.</div>';
-                return;
-            }
-            status.textContent = `${session.date} 기준 · ${session.successful_tickers}개 분석 · ${session.failed_tickers}개 실패`;
-            if (!Array.isArray(session.candidates) || session.candidates.length === 0) {
-                cards.innerHTML = '<div class="new-scanner-empty">오늘 신규 후보가 없습니다.</div>';
-                return;
-            }
-            cards.innerHTML = session.candidates.map(item => {
-                const cost = item.estimated_cost == null ? '-' : `${Math.trunc(Number(item.estimated_cost)).toLocaleString('ko-KR')}원`;
-                const distance = item.cost_distance == null ? '-' : `${(Number(item.cost_distance) * 100).toFixed(2)}%`;
-                const stateLabel = ({ IGNITION: '점화', BREAKOUT: '돌파' })[item.state] || item.state;
-                return `<article class="new-scanner-card">
-                    <div class="new-scanner-rank">TOP ${Number(item.rank)}</div>
+        function buildNewScannerCard(item, rankLabel) {
+            const cost = item.estimated_cost == null ? '-' : `${Math.trunc(Number(item.estimated_cost)).toLocaleString('ko-KR')}원`;
+            const distance = item.cost_distance == null ? '-' : `${(Number(item.cost_distance) * 100).toFixed(2)}%`;
+            const stateLabel = ({ DORMANT: '휴식', IGNITION: '점화', BREAKOUT: '돌파', PULLBACK: '눌림' })[item.state] || item.state;
+            return `<article class="new-scanner-card">
+                    <div class="new-scanner-rank">${rankLabel}</div>
                     <div class="new-scanner-name">${escapeNewScannerHtml(item.name)}</div>
                     <div class="new-scanner-code">${escapeNewScannerHtml(item.ticker)}</div>
                     <div class="new-scanner-state">${escapeNewScannerHtml(stateLabel)} · ${escapeNewScannerHtml(item.state)}</div>
@@ -876,7 +863,34 @@
                         <div>최종점수<strong>${Number(item.final_score).toFixed(1)}</strong></div>
                     </div>${renderNewScannerChart(item)}
                 </article>`;
-            }).join('');
+        }
+
+        function renderNewScannerCards() {
+            const status = document.getElementById('new-scanner-status');
+            const cards = document.getElementById('new-scanner-cards');
+            const session = newScannerSessions.find(item => item.date === selectedNewScannerDate);
+            if (!session) {
+                status.textContent = '아직 저장된 스캔 결과가 없습니다.';
+                cards.innerHTML = '<div class="new-scanner-empty">오늘 신규 후보가 없습니다.</div>';
+                return;
+            }
+            status.textContent = `${session.date} 기준 · ${session.successful_tickers}개 분석 · ${session.failed_tickers}개 실패`;
+
+            const candidates = Array.isArray(session.candidates) ? session.candidates : [];
+            const watchlist = Array.isArray(session.watchlist) ? session.watchlist : [];
+
+            const topSectionHtml = candidates.length > 0
+                ? candidates.map(item => buildNewScannerCard(item, `TOP ${Number(item.rank)}`)).join('')
+                : '<div class="new-scanner-empty">오늘 신규 후보(TOP5)가 없습니다.</div>';
+
+            let html = `<div class="new-scanner-section-title">🏆 오늘의 신규 후보 (TOP5)</div>${topSectionHtml}`;
+
+            html += `<div class="new-scanner-section-title" style="margin-top:24px;">📋 후보종목 (관심 종목군)</div>`;
+            html += watchlist.length > 0
+                ? watchlist.map(item => buildNewScannerCard(item, `관심 ${Number(item.rank)}`)).join('')
+                : '<div class="new-scanner-empty">현재 조건에 맞는 후보종목이 없습니다.</div>';
+
+            cards.innerHTML = html;
         }
 
         function switchStrategy(strat) {
