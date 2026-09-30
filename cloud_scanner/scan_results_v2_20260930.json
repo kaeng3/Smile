@@ -64,18 +64,18 @@
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
   {
-    "code": "010280",
-    "name": "아이티센엔텍",
-    "close": 6060,
-    "rate": 19.291338582677163,
-    "match_type": "predictive",
-    "pattern": "양음양 v2 패턴 1 (눌림목)"
-  },
-  {
     "code": "071090",
     "name": "하이스틸",
     "close": 3815,
     "rate": 16.3109756097561,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "010280",
+    "name": "아이티센엔텍",
+    "close": 6060,
+    "rate": 19.291338582677163,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
