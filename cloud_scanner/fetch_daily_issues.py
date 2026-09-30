@@ -104,7 +104,7 @@ def generate_daily_issues(target_date_str):
             "headlines": headlines
         })
         
-    # daily_issues.json 에 저장 (누적 또는 덮어쓰기)
+    # daily_issues.json 에 저장 (누적 또는 덮어쓰기) - 최근 5영업일만 보관하는 롤링 캐시
     issues_file = os.path.join(system_dir, "daily_issues.json")
     all_issues = {}
     if os.path.exists(issues_file):
@@ -124,8 +124,37 @@ def generate_daily_issues(target_date_str):
             
     with open(issues_file, 'w', encoding='utf-8') as f:
         json.dump(all_issues, f, ensure_ascii=False, indent=2)
-        
-    print(f"[{target_date_str}] 주요 이슈 요약 완료 및 저장.")
+
+    # ai_summary_archive.json: 종목코드별로 AI 요약을 영구 보관(5일 롤링과 무관).
+    # 종목 상세 모달의 "AI 요약 이력" 섹션에서 이 파일을 그대로 사용한다.
+    archive_file = os.path.join(system_dir, "ai_summary_archive.json")
+    archive = {}
+    if os.path.exists(archive_file):
+        with open(archive_file, 'r', encoding='utf-8') as f:
+            try:
+                archive = json.load(f)
+            except Exception:
+                archive = {}
+
+    MAX_ENTRIES_PER_STOCK = 200
+    for issue in issues:
+        code = issue["code"]
+        entries = archive.get(code, [])
+        # 같은 날짜 재실행 시 중복 저장되지 않도록 그날 항목은 교체
+        entries = [e for e in entries if e.get("date") != target_date_str]
+        entries.append({
+            "date": target_date_str,
+            "name": issue["name"],
+            "rate": issue["rate"],
+            "summary": issue["summary"],
+        })
+        entries.sort(key=lambda e: e["date"])
+        archive[code] = entries[-MAX_ENTRIES_PER_STOCK:]
+
+    with open(archive_file, 'w', encoding='utf-8') as f:
+        json.dump(archive, f, ensure_ascii=False, indent=2)
+
+    print(f"[{target_date_str}] 주요 이슈 요약 완료 및 저장. (영구 아카이브 {len(issues)}건 반영)")
 
 if __name__ == "__main__":
     today = datetime.datetime.now().strftime("%Y%m%d")

@@ -982,6 +982,7 @@
         let financialsDB = {};
         let shareholdersDB = {};
         let sectorDB = {};
+        let aiSummaryArchiveDB = {};
         let featuredNewsDB = {};
 
         async function loadData() {
@@ -1053,6 +1054,13 @@
                 if (resSec.ok) sectorDB = await resSec.json();
             } catch (e) {
                 console.error("stock_sector.json 로딩 실패:", e);
+            }
+
+            try {
+                const resArchive = await fetch('ai_summary_archive.json?t=' + Date.now());
+                if (resArchive.ok) aiSummaryArchiveDB = await resArchive.json();
+            } catch (e) {
+                console.error("ai_summary_archive.json 로딩 실패:", e);
             }
 
             try {
@@ -1305,6 +1313,27 @@
                     <div id="related-stocks-body">${buildRelatedStocksGrid(code, null)}</div>
                 </div>`;
 
+            // ── 4.5. AI 요약 이력 (날짜 롤링과 무관하게 종목별로 영구 보관) ──
+            const archiveEntries = (aiSummaryArchiveDB[code] || []).slice().sort((a, b) => b.date.localeCompare(a.date));
+            let aiArchiveHtml = `<div style="${headStyle}">🧠 AI 급등 이슈 요약 이력 ${archiveEntries.length ? `(${archiveEntries.length}건)` : ''}</div>`;
+            if (archiveEntries.length === 0) {
+                aiArchiveHtml += `<div style="font-size:0.85rem; color:var(--text-sub);">아직 기록된 AI 요약이 없습니다. (500억/150억봉 발생 시 자동으로 쌓여요)</div>`;
+            } else {
+                aiArchiveHtml += archiveEntries.map(e => {
+                    const isUp = (e.rate || 0) >= 0;
+                    const y = e.date.slice(0, 4), m = e.date.slice(4, 6), d = e.date.slice(6, 8);
+                    return `
+                        <div style="margin-bottom:10px; padding:10px 12px; background:rgba(255,255,255,0.04); border-radius:8px;">
+                            <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-sub); margin-bottom:4px;">
+                                <span>📅 ${y}.${m}.${d}</span>
+                                <span style="color:${isUp ? '#4ade80' : '#f87171'};">${isUp ? '+' : ''}${(e.rate || 0).toFixed(2)}%</span>
+                            </div>
+                            <div style="font-size:0.9rem; color:var(--text-main); line-height:1.5;">${e.summary}</div>
+                        </div>`;
+                }).join('');
+            }
+            aiArchiveHtml = `<div style="${sectionStyle}">${aiArchiveHtml}</div>`;
+
             // ── 5. 종목뉴스 (연도 > 월별로 묶어서 접었다 펼치기) ──────────────
             const list = newsHistoryDB[code] || [];
             let newsHtml = `<div style="${headStyle}">📰 종목뉴스 ${list.length ? `(${list.length}건)` : ''}</div>`;
@@ -1357,7 +1386,7 @@
                 }).join('');
             }
 
-            bodyEl.innerHTML = overviewHtml + financeHtml + themeSectionHtml + relatedHtml + newsHtml;
+            bodyEl.innerHTML = overviewHtml + financeHtml + themeSectionHtml + relatedHtml + aiArchiveHtml + newsHtml;
 
             overlay.classList.add('active');
 
