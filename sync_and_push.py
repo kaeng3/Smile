@@ -272,19 +272,22 @@ with open(history_file, 'w', encoding='utf-8') as f:
 
 print(f"[SYNC] scan_history.json 완전 갱신 완료!")
 
-# ── 6.5. 당일 500억봉 이슈 AI 요약 실행 ─────────────────────────
-print("[SYNC] 당일 500억봉/150억봉 주요 이슈 분석(Gemini) 실행...")
-try:
-    subprocess.run([sys.executable, os.path.join(SCANNER_DIR, "fetch_daily_issues.py")], check=False)
-except Exception as e:
-    print(f"[SYNC] 이슈 분석 중 오류 발생: {e}")
-
-# ── 6.6. 베타실험실1: 오늘 스캔 종목 특징주 뉴스(섹터별) 수집 ─────────────
+# ── 6.5. 베타실험실1: 오늘 스캔 종목 특징주 뉴스(섹터별) 수집 ─────────────
+# (daily_issues.json의 AI 요약이 이 결과를 재사용하므로 반드시 먼저 실행해야 함 -
+#  순서가 바뀌면 같은 '{종목명} 특징주' 검색을 몇 분 간격으로 두 번 하게 되어,
+#  그 사이 새 기사가 올라올 경우 먼저 도는 쪽만 0건으로 잡히는 문제가 있었음)
 print("[SYNC] 특징주 뉴스(섹터별) 수집 실행...")
 try:
     subprocess.run([sys.executable, os.path.join(SCANNER_DIR, "fetch_featured_stock_news.py")], check=False, cwd=GIT_DIR)
 except Exception as e:
     print(f"[SYNC] 특징주 뉴스 수집 중 오류 발생: {e}")
+
+# ── 6.6. 당일 500억봉 이슈 AI 요약 실행 (위에서 수집한 특징주 뉴스를 재사용) ──
+print("[SYNC] 당일 500억봉/150억봉 주요 이슈 분석(Gemini) 실행...")
+try:
+    subprocess.run([sys.executable, os.path.join(SCANNER_DIR, "fetch_daily_issues.py")], check=False)
+except Exception as e:
+    print(f"[SYNC] 이슈 분석 중 오류 발생: {e}")
 
 # ── 7. PDF 이동 및 오래된 데이터 삭제 (클라우드 환경 대응) ─────────────────────────────
 for prefix in ['김일청의_양음양기법', '김일청의_양음양기법_v2전략', '김일청의_포도시차트', '이동평균선과_500억봉_및_150억봉_분석보고서']:

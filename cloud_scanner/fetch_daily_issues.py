@@ -4,18 +4,30 @@ import json
 import datetime
 import requests
 
-from fetch_featured_stock_news import get_featured_news
 
-def get_news_headlines(stock_name):
-    """이미 검증된 get_featured_news()를 재사용해서 '{종목명} 특징주' 오늘자 뉴스 제목만 뽑는다.
-    (예전엔 여기 자체 구현이 네이버의 새 SDS 컴포넌트 구조를 못 따라가서
-    매번 0건만 나오고 있었음 - fetch_featured_stock_news.py 쪽은 이미 고쳐져 있었음)"""
-    today = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=9)
+def get_news_headlines(code, system_dir, target_date_str):
+    """fetch_featured_stock_news.py가 이미 만들어둔 featured_stock_news.json에서
+    이 종목의 오늘자 특징주 기사 제목만 뽑는다.
+
+    예전엔 여기서 get_featured_news()를 별도로 한 번 더 호출했는데, 이 스크립트가
+    fetch_featured_stock_news.py보다 먼저 실행되다 보니 같은 '{종목명} 특징주' 검색을
+    몇 분 간격으로 두 번 하는 꼴이었다. 그 사이에 실제 기사가 막 올라오면
+    먼저 도는 쪽(여기)만 0건으로 잡히는 경우가 있었다(예: 2026-10-01 윈팩).
+    이제 fetch_featured_stock_news.py를 먼저 돌리고 그 결과를 그대로 재사용해서
+    같은 검색을 두 번 하지 않고, 결과도 완전히 일치하게 만든다."""
+    featured_path = os.path.join(system_dir, "featured_stock_news.json")
+    if not os.path.exists(featured_path):
+        return []
     try:
-        _, articles = get_featured_news(stock_name, today)
-        return [a['title'] for a in articles[:10]]
+        with open(featured_path, 'r', encoding='utf-8') as f:
+            all_featured = json.load(f)
+        day = all_featured.get(target_date_str, {})
+        info = day.get(code)
+        if not info:
+            return []
+        return [a['title'] for a in info.get('articles', [])[:10]]
     except Exception as e:
-        print(f"[{stock_name}] 뉴스 검색 실패: {e}")
+        print(f"[{code}] featured_stock_news.json 조회 실패: {e}")
         return []
 
 def summarize_issue_with_gemini(stock_name, headlines, api_key):
@@ -82,7 +94,7 @@ def generate_daily_issues(target_date_str):
         name = stock['name']
         code = stock['code']
         print(f"'{name}' 뉴스 검색 및 요약 중...")
-        headlines = get_news_headlines(name)
+        headlines = get_news_headlines(code, system_dir, target_date_str)
         summary = summarize_issue_with_gemini(name, headlines, api_key)
         
         issues.append({
