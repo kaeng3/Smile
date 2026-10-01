@@ -21913,5 +21913,32 @@
     "pattern": "양음양 패턴 1 (수급 강세)",
     "status": "tracking",
     "registered_at": "2026-09-29 08:06:24"
+  },
+  "044340": {
+    "code": "044340",
+    "name": "위닉스",
+    "anchor_date": "2026-10-01",
+    "anchor_close": 2775,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-10-01 11:44:49"
+  },
+  "476830": {
+    "code": "476830",
+    "name": "알지노믹스",
+    "anchor_date": "2026-10-01",
+    "anchor_close": 29150,
+    "pattern": "양음양 v2 패턴 1 (눌림목)",
+    "status": "tracking",
+    "registered_at": "2026-10-01 11:46:46"
+  },
+  "490470": {
+    "code": "490470",
+    "name": "세미파이브",
+    "anchor_date": "2026-10-01",
+    "anchor_close": 20400,
+    "pattern": "양음양 v2 패턴 1 (눌림목)",
+    "status": "tracking",
+    "registered_at": "2026-10-01 11:46:46"
   }
 }
