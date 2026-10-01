@@ -1,30 +1,19 @@
 # -*- coding: utf-8 -*-
 import os
 import json
-import urllib.request
-import urllib.parse
-from bs4 import BeautifulSoup
-import requests
 import datetime
+import requests
+
+from fetch_featured_stock_news import get_featured_news
 
 def get_news_headlines(stock_name):
-    query = urllib.parse.quote(f"{stock_name} 특징주")
-    url = f"https://search.naver.com/search.naver?where=news&query={query}"
-    
-    headers = {'User-Agent': 'Mozilla/5.0'}
-    req = urllib.request.Request(url, headers=headers)
-    
+    """이미 검증된 get_featured_news()를 재사용해서 '{종목명} 특징주' 오늘자 뉴스 제목만 뽑는다.
+    (예전엔 여기 자체 구현이 네이버의 새 SDS 컴포넌트 구조를 못 따라가서
+    매번 0건만 나오고 있었음 - fetch_featured_stock_news.py 쪽은 이미 고쳐져 있었음)"""
+    today = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=9)
     try:
-        html = urllib.request.urlopen(req, timeout=5).read()
-        soup = BeautifulSoup(html, 'html.parser')
-        
-        articles = soup.select('a.news_tit, a[data-heatmap-target=".tit"]')
-        headlines = []
-        for a in articles[:10]:
-            title = a.get('title') or a.get_text(' ', strip=True)
-            if title:
-                headlines.append(title)
-        return headlines
+        _, articles = get_featured_news(stock_name, today)
+        return [a['title'] for a in articles[:10]]
     except Exception as e:
         print(f"[{stock_name}] 뉴스 검색 실패: {e}")
         return []
