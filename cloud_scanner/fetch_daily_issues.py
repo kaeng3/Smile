@@ -16,12 +16,23 @@ def get_news_headlines(code, system_dir, target_date_str):
     이제 fetch_featured_stock_news.py를 먼저 돌리고 그 결과를 그대로 재사용해서
     같은 검색을 두 번 하지 않고, 결과도 완전히 일치하게 만든다."""
     featured_path = os.path.join(system_dir, "featured_stock_news.json")
+    debug_lines = []
+    debug_lines.append(f"[DEBUG] featured_path={featured_path} exists={os.path.exists(featured_path)}")
+    if os.path.exists(featured_path):
+        debug_lines.append(f"[DEBUG] mtime={os.path.getmtime(featured_path)} size={os.path.getsize(featured_path)}")
+    try:
+        with open(os.path.join(system_dir, "debug_news_lookup.log"), 'a', encoding='utf-8') as dbg:
+            dbg.write("\n".join(debug_lines) + "\n")
+    except Exception:
+        pass
     if not os.path.exists(featured_path):
         return []
     try:
         with open(featured_path, 'r', encoding='utf-8') as f:
             all_featured = json.load(f)
         day = all_featured.get(target_date_str, {})
+        with open(os.path.join(system_dir, "debug_news_lookup.log"), 'a', encoding='utf-8') as dbg:
+            dbg.write(f"[DEBUG] code={code} target_date_str={target_date_str} day_keys_count={len(day)} code_in_day={code in day}\n")
         info = day.get(code)
         if not info:
             return []
