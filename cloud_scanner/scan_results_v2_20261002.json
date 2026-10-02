@@ -64,18 +64,18 @@
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
   {
-    "code": "067170",
-    "name": "오텍",
-    "close": 2840,
-    "rate": 7.372400756143667,
-    "match_type": "predictive",
-    "pattern": "양음양 v2 패턴 1 (눌림목)"
-  },
-  {
     "code": "006140",
     "name": "피제이전자",
     "close": 5070,
     "rate": 16.28440366972477,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "067170",
+    "name": "오텍",
+    "close": 2840,
+    "rate": 7.372400756143667,
     "match_type": "predictive",
     "pattern": "양음양 v2 패턴 1 (눌림목)"
   },
