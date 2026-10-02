@@ -47,40 +47,6 @@ def get_market_list():
             print("[get_market_list] 대체 종목목록도 실패:", e2)
             raise
 
-# 1. 양음양 기법 스캐너 (로컬 캐시 DB 기반 초고속 연산)
-def scan_date_optimized(stocks, target_date, stock_dfs=None):
-    print(f"[{target_date.strftime('%Y-%m-%d')}] 양음양 기법 스캔 시작...")
-    if stock_dfs is None:
-        stock_dfs = load_cached_stock_dfs(target_date)
-        
-    results = []
-    for stock in stocks:
-        code = stock.get('Code') or stock.get('code')
-        name = stock.get('Name') or stock.get('name')
-        df = stock_dfs.get(code)
-        if df is None or len(df) < 224:
-            continue
-            
-        try:
-            c_curr = df['Close'].iloc[-1]
-            c_prev = df['Close'].iloc[-2]
-            rate = ((c_curr - c_prev) / c_prev) * 100
-            
-            # 수급 및 눌림목 조건 검증
-            vol_ma20 = df['Volume'].rolling(20).mean().iloc[-1]
-            vol_curr = df['Volume'].iloc[-1]
-            
-            if vol_ma20 > 0 and vol_curr >= vol_ma20 * 1.2:
-                results.append({
-                    'code': code, 'name': name, 'close': int(c_curr), 'rate': float(rate),
-                    'match_type': 'predictive', 'pattern': '양음양 패턴 1 (수급 강세)'
-                })
-        except Exception:
-            pass
-            
-    print(f"양음양 최종 포착 완료: {len(results)}개 종목")
-    return results
-
 # 2. 포도시 차트 기법 스캐너 (로컬 캐시 DB 기반 초고속 연산)
 def scan_podosi_date(stocks, target_date, stock_dfs=None):
     print(f"[{target_date.strftime('%Y-%m-%d')}] 포도시 차트 기법 스캔 시작...")

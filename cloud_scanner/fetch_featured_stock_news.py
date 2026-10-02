@@ -24,14 +24,14 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 
 
 def get_today_stock_list(target_date_str):
-    """오늘(target_date_str) 양음양/v2/포도시/500억봉에 잡힌 종목을 code 기준으로 합친다."""
+    """오늘(target_date_str) 양음양 v2/포도시/500억봉에 잡힌 종목을 code 기준으로 합친다."""
     if not os.path.exists(SCAN_HISTORY_PATH):
         return {}
     with open(SCAN_HISTORY_PATH, 'r', encoding='utf-8') as f:
         scan_data = json.load(f)
     day = scan_data.get(target_date_str, {})
     stocks = {}
-    for key in ('yey', 'v2', 'podosi', 'b500m'):
+    for key in ('v2', 'podosi', 'b500m'):
         for s in day.get(key, []):
             code = s.get('code')
             if code and code not in stocks:

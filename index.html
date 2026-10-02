@@ -577,18 +577,17 @@
                     </div>
 
                     <div class="strategy-tabs">
-                        <button class="tab-btn active" onclick="switchStrategy('yey')">🔥 양음양 기법</button>
-                        <button class="tab-btn" onclick="switchStrategy('v2')">⚡ 양음양 v2전략</button>
-                        <button class="tab-btn" onclick="switchStrategy('podosi')">🍇 포도시 차트</button>
-                        <button class="tab-btn" onclick="switchStrategy('b500m')">💰 500억/150억 기준봉</button>
+                        <button class="tab-btn active" data-strategy="v2" onclick="switchStrategy('v2')">⚡ 양음양 v2전략</button>
+                        <button class="tab-btn" data-strategy="podosi" onclick="switchStrategy('podosi')">🍇 포도시 차트</button>
+                        <button class="tab-btn" data-strategy="b500m" onclick="switchStrategy('b500m')">💰 500억/150억 기준봉</button>
                     </div>
 
                     <div class="report-download-card" id="download-card">
                         <div>
-                            <div class="pdf-title" id="pdf-title-text">김일청의 양음양 기법 PDF 리포트</div>
+                            <div class="pdf-title" id="pdf-title-text">김일청의 양음양 v2전략 PDF 리포트</div>
                             <div class="pdf-sub" id="pdf-sub-text">고화질 차트 및 AI 종목별 실전 대응 전략 수록</div>
                         </div>
-                        <a href="김일청의_양음양기법_20260804.pdf" id="pdf-download-link" class="download-btn" target="_blank">
+                        <a href="#" id="pdf-download-link" class="download-btn" target="_blank">
                             📥 PDF 다운로드
                         </a>
                     </div>
@@ -642,7 +641,7 @@
     </div>
 
     <script>
-        let currentStrategy = 'yey';
+        let currentStrategy = 'v2';
         let availableDates = [];
         let selectedDate = '';
         let historyData = {};
@@ -891,11 +890,8 @@
 
         function switchStrategy(strat) {
             currentStrategy = strat;
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            if (strat === 'yey') document.querySelectorAll('.tab-btn')[0].classList.add('active');
-            if (strat === 'v2') document.querySelectorAll('.tab-btn')[1].classList.add('active');
-            if (strat === 'podosi') document.querySelectorAll('.tab-btn')[2].classList.add('active');
-            if (strat === 'b500m') document.querySelectorAll('.tab-btn')[3].classList.add('active');
+            // 버튼 순서가 아니라 data-strategy로 찾아서, 탭을 추가/삭제해도 강조가 어긋나지 않게 한다
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.strategy === strat));
 
             renderStrategy();
         }
@@ -907,17 +903,15 @@
             const pdfSub = document.getElementById('pdf-sub-text');
 
             let titleMap = {
-                yey: '김일청의 양음양 기법 PDF 리포트',
                 v2: '김일청의 양음양 v2전략 PDF 리포트',
                 podosi: '김일청의 포도시 차트 기법 PDF 리포트',
                 b500m: '김일청의 500억/150억 기준봉 분석 리포트'
             };
 
             let pdfFileMap = {
-                yey: `김일청의_양음양기법_${selectedDate}.pdf`,
                 v2: `김일청의_양음양기법_v2전략_${selectedDate}.pdf`,
                 podosi: `김일청의_포도시차트_${selectedDate}.pdf`,
-                b500m: `김일청의_양음양기법_${selectedDate}.pdf`
+                b500m: `이동평균선과_500억봉_및_150억봉_분석보고서_${selectedDate}.pdf`
             };
 
 

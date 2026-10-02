@@ -50,7 +50,7 @@ def run_step(step_label, args, cwd):
             f.write("\n".join(debug_lines))
         sys.exit(result.returncode)
 
-run_step("[STEP 1/3] 양음양 / v2 / 포도시 스캔 진행 중...", ["run_full_rescan.py"], CLOUD_SCANNER_DIR)
+run_step("[STEP 1/3] 양음양 v2 / 포도시 스캔 진행 중...", ["run_full_rescan.py"], CLOUD_SCANNER_DIR)
 run_step("[STEP 2/3] 500억봉 / 150억봉 스캔 진행 중...", ["run_scan_and_report.py"], CLOUD_SCANNER_DIR)
 run_step("[STEP 3/3] scan_history.json 갱신 및 파일 정리 진행 중...", ["sync_and_push.py"], BASE_DIR)
 

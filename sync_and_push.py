@@ -168,10 +168,6 @@ else:
     print("[SYNC] stock_overview.json/latest_prices.json 갱신 건너뜀 (기존 파일 유지)")
 
 # ── 4. 각 전략 스캔 결과 로드 ─────────────────────────────────────────
-print("[SYNC] 양음양 기법 로드 중...")
-yey_list  = load_scan_with_comments(f'scan_results_yey_{date_str}.json')
-print(f"  양음양: {len(yey_list)}개, 차트:{sum(1 for s in yey_list if s['chart'])}개, 코멘트:{sum(1 for s in yey_list if s['comment'])}개")
-
 print("[SYNC] 양음양 v2 로드 중...")
 v2_list   = load_scan_with_comments(f'scan_results_v2_{date_str}.json')
 print(f"  v2: {len(v2_list)}개, 차트:{sum(1 for s in v2_list if s['chart'])}개")
@@ -257,8 +253,12 @@ if not b500m_list:
     if prev:
         b500m_list = history_data[prev[0]].get('b500m', [])
 
+# 양음양 기법은 폐지됨: 예전 날짜 기록에 남은 'yey' 항목도 정리
+for day_data in history_data.values():
+    if isinstance(day_data, dict):
+        day_data.pop('yey', None)
+
 history_data[date_str] = {
-    'yey'   : yey_list,
     'v2'    : v2_list,
     'podosi': pod_list,
     'b500m' : b500m_list
@@ -297,7 +297,7 @@ except Exception as e:
     print(f"[SYNC] 이평선 근접 계산 중 오류 발생: {e}")
 
 # ── 7. PDF 이동 및 오래된 데이터 삭제 (클라우드 환경 대응) ─────────────────────────────
-for prefix in ['김일청의_양음양기법', '김일청의_양음양기법_v2전략', '김일청의_포도시차트', '이동평균선과_500억봉_및_150억봉_분석보고서']:
+for prefix in ['김일청의_양음양기법_v2전략', '김일청의_포도시차트', '이동평균선과_500억봉_및_150억봉_분석보고서']:
     src_pdf = os.path.join(GIT_DIR, f"{prefix}_{date_str}.pdf")
     if os.path.exists(src_pdf):
         print(f"[PDF] {prefix}_{date_str}.pdf 생성 확인 완료")

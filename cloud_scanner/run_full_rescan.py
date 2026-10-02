@@ -7,9 +7,8 @@ import socket
 socket.setdefaulttimeout(10.0)
 
 from local_data_manager import sync_stock_data, load_cached_stock_dfs
-from historical_scans_optimized import get_market_list, scan_date_optimized, scan_date_yey_v2, scan_podosi_date
+from historical_scans_optimized import get_market_list, scan_date_yey_v2, scan_podosi_date
 from historical_report_compiler import build_report_for_date
-from yangeumyang_tracker import register_anchor_stocks, scan_tracked_pullbacks
 
 target_date = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 if target_date.weekday() == 5:
@@ -32,39 +31,10 @@ stock_dfs = load_cached_stock_dfs(target_date)
 stocks = get_market_list()
 print(f"총 {len(stocks)}개 상장 종목 로컬 캐시 준비 완료.")
 
-# --- 1. 양음양 기법 일반 ---
-print("\n--- [1] 양음양 기법 로컬 초고속 스캔 ---")
-yey_results = scan_date_optimized(stocks, target_date, stock_dfs=stock_dfs)
-print(f"양음양 일반 포착 완료: {len(yey_results)}개 종목")
-
-register_anchor_stocks(yey_results, target_date)
-tracked_results = scan_tracked_pullbacks(target_date, stock_dfs=stock_dfs)
-
-combined_yey = list(yey_results)
-existing_codes = {s['code'] for s in combined_yey}
-for tr in tracked_results:
-    if tr['code'] not in existing_codes:
-        combined_yey.append(tr)
-
-yey_json = f"scan_results_yey_{date_str}.json"
-with open(yey_json, 'w', encoding='utf-8') as f:
-    json.dump(combined_yey, f, ensure_ascii=False, indent=2)
-
-build_report_for_date(
-    target_date,
-    technique_name='양음양 기법',
-    json_filename=yey_json,
-    pdf_filename_prefix='김일청의_양음양기법',
-    report_title='김일청의 양음양 기법 분석 리포트',
-    stock_dfs=stock_dfs
-)
-
 # --- 2. 양음양 v2 기법 ---
 print("\n--- [2] 양음양 v2 기법 로컬 초고속 스캔 ---")
 v2_results = scan_date_yey_v2(stocks, target_date, stock_dfs=stock_dfs)
 print(f"양음양 v2 포착 완료: {len(v2_results)}개 종목")
-
-register_anchor_stocks(v2_results, target_date)
 
 v2_json = f"scan_results_v2_{date_str}.json"
 with open(v2_json, 'w', encoding='utf-8') as f:
@@ -99,7 +69,6 @@ build_report_for_date(
 
 # --- 4. 대시보드 웹사이트용 latest 파일 자동 생성 ---
 import shutil
-shutil.copyfile(yey_json, 'scan_results_yey_latest.json')
 shutil.copyfile(v2_json, 'scan_results_v2_latest.json')
 shutil.copyfile(podosi_json, 'scan_results_podosi_latest.json')
 
@@ -109,15 +78,13 @@ pdf_sources = [desktop_dir, "."]
 for src in pdf_sources:
     if os.path.exists(src):
         try:
-            f1 = os.path.join(src, f"김일청의_양음양기법_{date_str}.pdf")
             f2 = os.path.join(src, f"김일청의_양음양기법_v2전략_{date_str}.pdf")
             f3 = os.path.join(src, f"김일청의_포도시차트_{date_str}.pdf")
-            if os.path.exists(f1): shutil.copyfile(f1, "김일청의_양음양기법_latest.pdf")
             if os.path.exists(f2): shutil.copyfile(f2, "김일청의_양음양기법_v2전략_latest.pdf")
             if os.path.exists(f3): shutil.copyfile(f3, "김일청의_포도시차트_latest.pdf")
         except Exception as e:
             print("PDF latest copy info:", e)
 
 print("\n==========================================")
-print(f" [{target_date.strftime('%Y-%m-%d')}] 전 종목 로컬 초고속 스캔 및 리포트 3종 발행 완료!")
+print(f" [{target_date.strftime('%Y-%m-%d')}] 전 종목 로컬 초고속 스캔 및 리포트 2종 발행 완료!")
 print("==========================================")
