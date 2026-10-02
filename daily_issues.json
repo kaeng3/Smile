@@ -337,10 +337,40 @@
       "code": "020150",
       "name": "롯데에너지머티리얼즈",
       "rate": 19.53,
-      "summary": "오늘 관련 뉴스를 찾지 못했습니다.",
-      "headlines": [],
-      "articles": [],
-      "news_source": "none"
+      "summary": "롯데에너지머티리얼즈는 2차전지 소재 관련 매수세가 유입되며 주가가 20% 급등했습니다.",
+      "headlines": [
+        "[특징주] '2차전지 소재'롯데에너지머티리얼즈…주가 20% 급등",
+        "[테오도르 시장분석]특징주와 테마주: 통신장비·반도체 소부장 등 성...",
+        "[오늘의특징주] 머큐리 상한가·티엠씨 29%↑…AI 데이터센터 광통신株...",
+        "[특징주] 외국인·기관, 한온시스템 '러브콜'…삼성전자·HLB제약은 '팔자..."
+      ],
+      "articles": [
+        {
+          "time": "11:41",
+          "title": "[특징주] '2차전지 소재'롯데에너지머티리얼즈…주가 20% 급등",
+          "press": "뉴스드림",
+          "link": "http://www.newsdream.kr/news/articleView.html?idxno=119336"
+        },
+        {
+          "time": "11:41",
+          "title": "[테오도르 시장분석]특징주와 테마주: 통신장비·반도체 소부장 등 성...",
+          "press": "파이낸스투데이",
+          "link": "https://www.fntoday.co.kr/news/articleView.html?idxno=394413"
+        },
+        {
+          "time": "12:41",
+          "title": "[오늘의특징주] 머큐리 상한가·티엠씨 29%↑…AI 데이터센터 광통신株...",
+          "press": "PPSS",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=313717"
+        },
+        {
+          "time": "12:41",
+          "title": "[특징주] 외국인·기관, 한온시스템 '러브콜'…삼성전자·HLB제약은 '팔자...",
+          "press": "뉴스티앤티",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=721269"
+        }
+      ],
+      "news_source": "featured"
     },
     {
       "code": "217590",
@@ -364,13 +394,13 @@
       "code": "225190",
       "name": "LK삼양",
       "rate": 18.37,
-      "summary": "스페이스X의 유인 우주선 국제우주정거장(ISS) 도킹 성공 소식에 힘입어 우주항공 테마 전반에 매수세가 몰리며 급등했습니다.",
+      "summary": "스페이스X의 유인 우주선 ISS 도킹 성공 소식에 힘입어, 우주항공 관련 테마로 매수세가 몰리며 급등했습니다.",
       "headlines": [
         "[특징주] 스페이스X 유인 우주선 ISS 도킹 성공에 우주항공주 강세"
       ],
       "articles": [
         {
-          "time": "11:17",
+          "time": "10:41",
           "title": "[특징주] 스페이스X 유인 우주선 ISS 도킹 성공에 우주항공주 강세",
           "press": "뉴스핌",
           "link": "https://www.newspim.com/news/view/20261002000365"
@@ -382,26 +412,10 @@
       "code": "209640",
       "name": "와이제이링크",
       "rate": 11.82,
-      "summary": "SMT 자동화 장비 수요 증가에 대한 기대감이 부각되며 주가가 14%대 급등하고 대량의 거래대금이 유입되었습니다.",
-      "headlines": [
-        "와이제이링크14%대 상승…SMT 자동화 수요에 거래 몰려",
-        "와이제이링크주가, 10월 2일 애프터마켓 4,125원 11.79% 상승"
-      ],
-      "articles": [
-        {
-          "time": "15:17",
-          "title": "와이제이링크14%대 상승…SMT 자동화 수요에 거래 몰려",
-          "press": "잡포스트",
-          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=230564"
-        },
-        {
-          "time": "18:17",
-          "title": "와이제이링크주가, 10월 2일 애프터마켓 4,125원 11.79% 상승",
-          "press": "중앙이코노미뉴스",
-          "link": "https://www.joongangenews.com/news/articleView.html?idxno=552508"
-        }
-      ],
-      "news_source": "general"
+      "summary": "오늘 관련 뉴스를 찾지 못했습니다.",
+      "headlines": [],
+      "articles": [],
+      "news_source": "none"
     }
   ]
 }
