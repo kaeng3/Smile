@@ -45,10 +45,15 @@ def collect_v2_stocks(scan_history):
     return stocks
 
 
-def recent_closes(cursor, code, limit=max(MA_PERIODS)):
-    """최근 limit개 종가(오래된 것 -> 최신 순)와 최신 날짜를 돌려준다."""
+CHART_BARS = 60  # 카드에 그릴 최근 거래일 수
+
+
+def recent_rows(cursor, code, limit=CHART_BARS + max(MA_PERIODS) - 1):
+    """최근 limit개 (date, open, high, low, close, volume) 행을 오래된 것 -> 최신 순으로.
+    차트 첫 봉부터 20일선을 그릴 수 있도록 CHART_BARS보다 19개 더 가져온다."""
     cursor.execute(
-        "SELECT date, close FROM daily_prices WHERE code = ? AND close > 0 ORDER BY date DESC LIMIT ?;",
+        "SELECT date, open, high, low, close, volume FROM daily_prices "
+        "WHERE code = ? AND close > 0 ORDER BY date DESC LIMIT ?;",
         (code, limit),
     )
     rows = cursor.fetchall()
@@ -56,10 +61,28 @@ def recent_closes(cursor, code, limit=max(MA_PERIODS)):
     return rows
 
 
+def build_chart(rows):
+    """renderMaChart(index.html)가 그리는 형식: 봉마다 OHLCV + ma5/10/15/20."""
+    closes = [float(r[4]) for r in rows]
+    chart = []
+    for i in range(max(0, len(rows) - CHART_BARS), len(rows)):
+        date, o, h, l, c, v = rows[i]
+        c = float(c)
+        point = {
+            'date': str(date).replace('-', ''),
+            'open': float(o or c), 'high': float(h or c), 'low': float(l or c), 'close': c,
+            'volume': int(v or 0),
+        }
+        for p in MA_PERIODS:
+            point[f'ma{p}'] = round(sum(closes[i - p + 1:i + 1]) / p, 2) if i + 1 >= p else None
+        chart.append(point)
+    return chart
+
+
 def analyze(code, info, rows):
     if len(rows) < min(MA_PERIODS):
         return None
-    closes = [float(r[1]) for r in rows]
+    closes = [float(r[4]) for r in rows]
     close = closes[-1]
     mas, distances, near = {}, {}, []
     for period in MA_PERIODS:
@@ -84,6 +107,7 @@ def analyze(code, info, rows):
         'mas': mas,
         'distances': distances,
         'near': near,
+        'chart': build_chart(rows),
     }
 
 
@@ -105,7 +129,7 @@ def main():
     cursor = conn.cursor()
     items = []
     for code, info in stocks.items():
-        result = analyze(code, info, recent_closes(cursor, code))
+        result = analyze(code, info, recent_rows(cursor, code))
         if result:
             items.append(result)
     conn.close()

@@ -562,7 +562,7 @@
                     <button class="nav-btn active" onclick="switchMainTab('scan')" id="nav-scan">📈 실전 스캔</button>
                     <button class="nav-btn" onclick="switchMainTab('lab')" id="nav-lab">💰 500억봉 요약</button>
                     <button class="nav-btn" onclick="switchMainTab('lab2')" id="nav-lab2">🔎 김일구 New스캐너</button>
-                    <button class="nav-btn" onclick="switchMainTab('lab3')" id="nav-lab3">🧪 베타 실험실 3</button>
+                    <button class="nav-btn" onclick="switchMainTab('lab3')" id="nav-lab3">📈 양음양v2 이평선 근접 종목</button>
                 </div>
             </div>
 
@@ -1083,13 +1083,90 @@
             renderLab1();
         }
 
+        const MA_LINE_COLORS = { 5: '#7c3aed', 10: '#f59e0b', 15: '#0d9488', 20: '#16a34a' };
+
+        // 최근 60거래일 일봉 + 5/10/15/20일선. 종목이 근처에 있는 이평선은 굵게 그린다.
+        function renderMaChart(item) {
+            const points = (item.chart || []).filter(p => p && ['open', 'high', 'low', 'close'].every(k => Number.isFinite(p[k])));
+            if (points.length < 2) return '<div class="new-scanner-chart"><div class="new-scanner-chart-empty">다음 스캔부터 차트가 표시됩니다.</div></div>';
+            const periods = [5, 10, 15, 20];
+            const width = 720, height = 360, left = 58, right = 18;
+            const priceTop = 18, priceBottom = 245, volumeTop = 278, volumeBottom = 332;
+            const priceValues = points.flatMap(p => [p.low, p.high]);
+            periods.forEach(n => points.forEach(p => { if (Number.isFinite(p['ma' + n])) priceValues.push(p['ma' + n]); }));
+            const rawMin = Math.min(...priceValues), rawMax = Math.max(...priceValues);
+            const pad = Math.max((rawMax - rawMin) * .07, rawMax * .005, 1);
+            const min = rawMin - pad, max = rawMax + pad, span = max - min;
+            const maxVolume = Math.max(...points.map(p => Number(p.volume) || 0), 1);
+            const step = (width - left - right) / points.length;
+            const x = i => left + step * (i + .5);
+            const y = v => priceBottom - (v - min) * (priceBottom - priceTop) / span;
+            const cw = Math.max(3, Math.min(8, step * .64));
+            const fmt = v => Math.trunc(v).toLocaleString('ko-KR');
+            const ticks = Array.from({ length: 5 }, (_, i) => {
+                const v = max - span * i / 4, yy = priceTop + (priceBottom - priceTop) * i / 4;
+                return `<line class="new-scanner-grid-line" x1="${left}" y1="${yy}" x2="${width - right}" y2="${yy}"/><text class="new-scanner-axis-label" x="${left - 7}" y="${yy + 3}" text-anchor="end">${fmt(v)}</text>`;
+            }).join('');
+            const idxs = [...new Set([0, Math.floor((points.length - 1) / 3), Math.floor((points.length - 1) * 2 / 3), points.length - 1])];
+            const dates = idxs.map(i => `<line class="new-scanner-grid-line" x1="${x(i)}" y1="${priceTop}" x2="${x(i)}" y2="${volumeBottom}"/><text class="new-scanner-axis-label" x="${x(i)}" y="352" text-anchor="middle">${points[i].date.slice(4, 6)}.${points[i].date.slice(6, 8)}</text>`).join('');
+            const candles = points.map((p, i) => {
+                const color = p.close >= p.open ? '#ff5c5c' : '#5b8cff';
+                const top = y(Math.max(p.open, p.close)), bh = Math.max(y(Math.min(p.open, p.close)) - top, 1.5);
+                return `<line class="new-scanner-candle-wick" x1="${x(i).toFixed(1)}" y1="${y(p.high).toFixed(1)}" x2="${x(i).toFixed(1)}" y2="${y(p.low).toFixed(1)}" stroke="${color}"/><rect class="new-scanner-candle-body" x="${(x(i) - cw / 2).toFixed(1)}" y="${top.toFixed(1)}" width="${cw.toFixed(1)}" height="${bh.toFixed(1)}" fill="${color}" stroke="${color}"/>`;
+            }).join('');
+            const volumes = points.map((p, i) => {
+                const bh = (Number(p.volume) || 0) / maxVolume * (volumeBottom - volumeTop);
+                return `<rect class="new-scanner-volume-bar" x="${(x(i) - cw / 2).toFixed(1)}" y="${(volumeBottom - bh).toFixed(1)}" width="${cw.toFixed(1)}" height="${Math.max(bh, 1).toFixed(1)}" fill="${p.close >= p.open ? '#ff5c5c' : '#5b8cff'}"/>`;
+            }).join('');
+            const near = item.near || [];
+            const lines = periods.map(n => {
+                const pts = points.map((p, i) => Number.isFinite(p['ma' + n]) ? `${x(i).toFixed(1)},${y(p['ma' + n]).toFixed(1)}` : null).filter(Boolean);
+                return pts.length > 1 ? `<polyline points="${pts.join(' ')}" fill="none" stroke="${MA_LINE_COLORS[n]}" stroke-width="${near.includes(n) ? 3.4 : 1.4}" stroke-linejoin="round" stroke-linecap="round" opacity="${near.includes(n) ? 1 : .75}"/>` : '';
+            }).join('');
+            const legend = periods.map(n => `<span style="color:${MA_LINE_COLORS[n]}; ${near.includes(n) ? 'font-weight:700;' : ''}">━ ${n}일선${near.includes(n) ? '(근처)' : ''}</span>`).join('');
+            return `<div class="new-scanner-chart">
+                <div class="new-scanner-chart-legend"><span style="color:#ff5c5c">■ 상승</span><span style="color:#5b8cff">■ 하락</span>${legend}</div>
+                <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${String(item.name).replace(/"/g, '&quot;')} 최근 ${points.length}거래일 일봉 차트">
+                    ${ticks}${dates}<line x1="${left}" y1="260" x2="${width - right}" y2="260" stroke="rgba(31,41,55,.38)"/>
+                    ${volumes}${candles}${lines}
+                    <text class="new-scanner-axis-label" x="${left}" y="272">거래량</text>
+                </svg>
+            </div>`;
+        }
+
+        function buildMaProximityCard(it, maPeriods) {
+            const isUp = (it.rate || 0) >= 0;
+            const fmtDate = s => `${s.slice(4, 6)}/${s.slice(6, 8)}`;
+            const chips = maPeriods.map(p => {
+                const key = String(p);
+                if (!(key in it.distances)) return '';
+                const isNear = it.near.includes(p);
+                const dist = it.distances[key];
+                const style = isNear
+                    ? `background:rgba(255,255,255,0.08); color:#ffffff; border:2px solid ${MA_LINE_COLORS[p]}; font-weight:700;`
+                    : 'background:rgba(255,255,255,0.03); color:var(--text-sub); border:1px solid var(--border-color);';
+                return `<span style="display:inline-block; margin:3px 4px 0 0; padding:4px 10px; border-radius:999px; font-size:0.85rem; ${style}">${p}일선 ${dist > 0 ? '+' : ''}${dist}%</span>`;
+            }).join('');
+            const safeName = String(it.name).replace(/'/g, "\\'");
+            return `
+                <div class="stock-card" style="text-align:left;" onclick="openNewsModal('${it.code}', '${safeName}')">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                        <div style="font-size:1.15rem; font-weight:700; color:var(--text-main);">${it.name} <span style="font-size:0.85rem; color:var(--text-sub); font-weight:400;">(${it.code})</span></div>
+                        <div class="stock-rate ${isUp ? 'rate-up' : 'rate-down'}">${isUp ? '+' : ''}${(it.rate || 0).toFixed(2)}%</div>
+                    </div>
+                    <div style="font-size:0.9rem; color:var(--text-sub); margin-bottom:6px;">종가 ${Math.round(it.close).toLocaleString('ko-KR')}원 · v2 포착일 ${it.captured_dates.map(fmtDate).join(', ')}</div>
+                    <div style="margin-bottom:10px;">${chips}</div>
+                    ${renderMaChart(it)}
+                </div>`;
+        }
+
         function renderLab3() {
             const body = document.getElementById('lab3-body');
             if (!body) return;
             const header = (sub) => `
                 <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
                     <div>
-                        <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 이평선 근접 종목 (양음양 v2 · 최근 5영업일)</div>
+                        <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">📈 양음양v2 이평선 근접 종목</div>
                         <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">${sub}</div>
                     </div>
                 </div>`;
@@ -1099,36 +1176,26 @@
             }
             const d = maProximityData;
             const items = d.items || [];
-            let html = header(`최근 ${d.source_dates.length}영업일 동안 양음양 v2에 잡힌 ${d.total_v2_stocks}종목 중, 최신 종가가 ${d.ma_periods.join('·')}일선의 ±${d.threshold_pct}% 이내에 있는 종목입니다. (${d.generated_at} 기준)`);
+            const periods = d.ma_periods || [5, 10, 15, 20];
+            let html = header(`최근 ${d.source_dates.length}영업일 동안 양음양 v2에 잡힌 ${d.total_v2_stocks}종목 중, 최신 종가가 이평선의 ±${d.threshold_pct}% 이내에 있는 종목을 이평선별로 나눴습니다. 여러 이평선 근처인 종목은 해당 분류마다 나옵니다. (${d.generated_at} 기준)`);
             if (items.length === 0) {
                 html += `<div style="text-align:center; padding:40px; color:var(--text-sub); border: 1px dashed rgba(255,255,255,0.4); border-radius: 12px;">현재 이평선 근처에 온 종목이 없습니다.</div>`;
                 body.innerHTML = html;
                 return;
             }
-            const fmtDate = s => `${s.slice(4, 6)}/${s.slice(6, 8)}`;
-            html += `<div class="stock-grid">${items.map(it => {
-                const isUp = (it.rate || 0) >= 0;
-                const chips = d.ma_periods.map(p => {
-                    const key = String(p);
-                    if (!(key in it.distances)) return '';
-                    const isNear = it.near.includes(p);
-                    const dist = it.distances[key];
-                    const style = isNear
-                        ? 'background:rgba(167,139,250,0.25); color:#ffffff; border:1px solid #a78bfa; font-weight:700;'
-                        : 'background:rgba(255,255,255,0.05); color:var(--text-sub); border:1px solid var(--border-color);';
-                    return `<span style="display:inline-block; margin:3px 4px 0 0; padding:4px 10px; border-radius:999px; font-size:0.85rem; ${style}">${p}일선 ${dist > 0 ? '+' : ''}${dist}%</span>`;
-                }).join('');
-                const safeName = String(it.name).replace(/'/g, "\\'");
-                return `
-                    <div class="stock-card" onclick="openNewsModal('${it.code}', '${safeName}')">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                            <div style="font-size:1.15rem; font-weight:700; color:var(--text-main);">${it.name} <span style="font-size:0.85rem; color:var(--text-sub); font-weight:400;">(${it.code})</span></div>
-                            <div class="stock-rate ${isUp ? 'rate-up' : 'rate-down'}">${isUp ? '+' : ''}${(it.rate || 0).toFixed(2)}%</div>
-                        </div>
-                        <div style="font-size:0.9rem; color:var(--text-sub); margin-bottom:6px;">종가 ${Math.round(it.close).toLocaleString('ko-KR')}원 · v2 포착일 ${it.captured_dates.map(fmtDate).join(', ')}</div>
-                        <div>${chips}</div>
-                    </div>`;
-            }).join('')}</div>`;
+            periods.forEach(p => {
+                const group = items
+                    .filter(it => it.near.includes(p))
+                    .sort((a, b) => Math.abs(a.distances[String(p)]) - Math.abs(b.distances[String(p)]));
+                const content = group.length
+                    ? `<div class="new-scanner-cards" style="margin-top:14px;">${group.map(it => buildMaProximityCard(it, periods)).join('')}</div>`
+                    : `<div style="text-align:center; padding:20px; color:var(--text-sub); margin-top:10px;">이 이평선 근처의 종목이 없습니다.</div>`;
+                html += `
+                    <details open style="margin-bottom:16px; border:1px solid var(--border-color); border-left:5px solid ${MA_LINE_COLORS[p]}; border-radius:12px; padding:14px 18px;">
+                        <summary style="cursor:pointer; font-size:1.15rem; font-weight:700; color:var(--text-main);">${p}일선 근처 · ${group.length}종목</summary>
+                        ${content}
+                    </details>`;
+            });
             body.innerHTML = html;
         }
 
