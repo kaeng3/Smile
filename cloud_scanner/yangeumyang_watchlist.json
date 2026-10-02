@@ -21940,5 +21940,14 @@
     "pattern": "양음양 v2 패턴 1 (눌림목)",
     "status": "tracking",
     "registered_at": "2026-10-01 11:46:46"
+  },
+  "005110": {
+    "code": "005110",
+    "name": "한창",
+    "anchor_date": "2026-10-02",
+    "anchor_close": 110,
+    "pattern": "양음양 패턴 1 (수급 강세)",
+    "status": "tracking",
+    "registered_at": "2026-10-02 07:35:23"
   }
 }
