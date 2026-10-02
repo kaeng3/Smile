@@ -68,10 +68,36 @@ def parse_time_text(time_text, today):
     return None  # 그 외 형식(절대 날짜 등)도 오늘인지 확신할 수 없어 일단 제외
 
 
+def parse_article_datetime(time_text, today):
+    """'3시간 전'/'2일 전'/'2026.10.01.' 같은 표기를 기사 시각(datetime)으로. 모르면 None.
+    'N일 전'·날짜만 있는 경우는 시각을 알 수 없어 그날 00:00으로 둔다."""
+    t = (time_text or '').strip()
+    base = today.replace(second=0, microsecond=0, tzinfo=None)
+    m = re.match(r'^(\d+)분 전$', t)
+    if m:
+        return base - datetime.timedelta(minutes=int(m.group(1)))
+    m = re.match(r'^(\d+)시간 전$', t)
+    if m:
+        return base - datetime.timedelta(hours=int(m.group(1)))
+    m = re.match(r'^(\d{2}):(\d{2})$', t)
+    if m:
+        return base.replace(hour=int(m.group(1)), minute=int(m.group(2)))
+    m = re.match(r'^(\d+)일 전$', t)
+    if m:
+        d = (base - datetime.timedelta(days=int(m.group(1)))).date()
+        return datetime.datetime(d.year, d.month, d.day)
+    m = re.match(r'^(\d{4})\.(\d{1,2})\.(\d{1,2})\.?(?:\s*(\d{1,2}):(\d{2}))?$', t)
+    if m:
+        hh = int(m.group(4)) if m.group(4) else 0
+        mm = int(m.group(5)) if m.group(5) else 0
+        return datetime.datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), hh, mm)
+    return None
+
+
 _RELEVANCE_WORDS = ('특징주', '호재', '계약', '수주', '승인', '임상', '공급', '상한가', '급등', '상승')
 
 
-def _search_naver_news(today, query, keep_title):
+def _search_naver_news(today, query, keep_title, lookback_days=0):
     """네이버 뉴스 검색(최신순) 결과에서 오늘자 기사의 시간/제목/언론사/링크를 모은다.
     (2026년 기준 네이버 뉴스 검색 결과는 SDS 컴포넌트 구조라 클래스명이 해시화되어 있어,
     data-heatmap-target / data-sds-comp 같은 안정적인 속성 기준으로 선택한다.)
@@ -106,8 +132,11 @@ def _search_naver_news(today, query, keep_title):
                 if subtext_el:
                     time_text = subtext_el.get_text(strip=True)
 
+            dt = parse_article_datetime(time_text, today)
             articles.append({
                 'time': parse_time_text(time_text, today),
+                'date': dt.strftime('%Y-%m-%d') if dt else None,
+                'datetime': dt.strftime('%Y-%m-%d %H:%M') if dt else None,
                 'title': title,
                 'press': press,
                 'link': link,
@@ -115,9 +144,24 @@ def _search_naver_news(today, query, keep_title):
     except Exception as e:
         print(f"[{query}] 뉴스 검색 실패: {e}")
 
-    articles = [a for a in articles if a['time']]
-    articles.sort(key=lambda a: a['time'])
-    return articles
+    if lookback_days <= 0:
+        articles = [a for a in articles if a['time']]
+        articles.sort(key=lambda a: a['time'])
+        return articles
+
+    # 최근 lookback_days일 기사까지 포함(전날 장마감 후 나온 재료 등). 날짜를 모르는 기사는 제외.
+    oldest = (today - datetime.timedelta(days=lookback_days)).date()
+    kept = []
+    for a in articles:
+        if not a['date']:
+            continue
+        if datetime.date.fromisoformat(a['date']) < oldest:
+            continue
+        if not a['time']:
+            a['time'] = a['date'][5:].replace('-', '/')  # 오늘이 아니면 화면에는 MM/DD로
+        kept.append(a)
+    kept.sort(key=lambda a: a['datetime'])
+    return kept
 
 
 def get_featured_news(stock_name, today):
@@ -130,10 +174,23 @@ def get_featured_news(stock_name, today):
     return stock_name, articles
 
 
-def get_general_news(stock_name, today, limit=10):
-    """특징주 기사가 없는 종목용 대체 검색: '{종목명}'으로 검색해서 제목에 종목명이
-    들어간 오늘자 기사만 모은다(최신 limit건)."""
-    articles = _search_naver_news(today, stock_name, lambda title: stock_name in title)
+def name_variants(stock_name, min_len=5):
+    """기사 제목에서 종목을 알아보기 위한 이름 후보.
+    긴 이름은 줄여 쓰는 경우가 많아('나라스페이스테크놀로지' -> '나라스페이스')
+    5글자 이상인 앞부분도 인정한다. 짧은 이름은 전체 이름만."""
+    name = stock_name.strip()
+    if len(name) <= min_len:
+        return [name]
+    return [name[:k] for k in range(len(name), min_len - 1, -1)]
+
+
+def get_general_news(stock_name, today, limit=10, lookback_days=3):
+    """'{종목명}'으로 검색해서, 제목에 종목명(또는 줄인 이름)이 들어간
+    최근 lookback_days일 기사를 모은다(최신 limit건)."""
+    variants = name_variants(stock_name)
+    articles = _search_naver_news(
+        today, stock_name, lambda title: any(v in title for v in variants), lookback_days=lookback_days
+    )
     return articles[-limit:]
 
 
