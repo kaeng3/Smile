@@ -289,6 +289,13 @@ try:
 except Exception as e:
     print(f"[SYNC] 이슈 분석 중 오류 발생: {e}")
 
+# ── 6.7. 베타실험실3: 최근 5일 v2 종목 중 5/10/15/20일선 근처 종목 ──────────
+print("[SYNC] 베타실험실3 이평선 근접 종목 계산 실행...")
+try:
+    subprocess.run([sys.executable, os.path.join(SCANNER_DIR, "compute_ma_proximity.py")], check=False)
+except Exception as e:
+    print(f"[SYNC] 이평선 근접 계산 중 오류 발생: {e}")
+
 # ── 7. PDF 이동 및 오래된 데이터 삭제 (클라우드 환경 대응) ─────────────────────────────
 for prefix in ['김일청의_양음양기법', '김일청의_양음양기법_v2전략', '김일청의_포도시차트', '이동평균선과_500억봉_및_150억봉_분석보고서']:
     src_pdf = os.path.join(GIT_DIR, f"{prefix}_{date_str}.pdf")

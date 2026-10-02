@@ -68,12 +68,15 @@ def parse_time_text(time_text, today):
     return None  # 그 외 형식(절대 날짜 등)도 오늘인지 확신할 수 없어 일단 제외
 
 
-def get_featured_news(stock_name, today):
-    """'{종목명} 특징주' 네이버 뉴스 검색 결과에서 시간/제목/언론사/링크를 모은다.
+_RELEVANCE_WORDS = ('특징주', '호재', '계약', '수주', '승인', '임상', '공급', '상한가', '급등', '상승')
+
+
+def _search_naver_news(today, query, keep_title):
+    """네이버 뉴스 검색(최신순) 결과에서 오늘자 기사의 시간/제목/언론사/링크를 모은다.
     (2026년 기준 네이버 뉴스 검색 결과는 SDS 컴포넌트 구조라 클래스명이 해시화되어 있어,
-    data-heatmap-target / data-sds-comp 같은 안정적인 속성 기준으로 선택한다.)"""
-    query = urllib.parse.quote(f"{stock_name} 특징주")
-    url = f"https://search.naver.com/search.naver?where=news&query={query}&sort=1"  # sort=1: 최신순
+    data-heatmap-target / data-sds-comp 같은 안정적인 속성 기준으로 선택한다.)
+    keep_title(title)이 False인 기사는 제외한다."""
+    url = f"https://search.naver.com/search.naver?where=news&query={urllib.parse.quote(query)}&sort=1"  # sort=1: 최신순
     articles = []
     try:
         resp = requests.get(url, headers=HEADERS, timeout=8)
@@ -88,9 +91,7 @@ def get_featured_news(stock_name, today):
 
             title_span = title_link.select_one('span.sds-comps-text-type-headline1')
             title = title_span.get_text(strip=True) if title_span else title_link.get_text(strip=True)
-            relevance_words = ('특징주', '호재', '계약', '수주', '승인', '임상', '공급', '상한가', '급등', '상승')
-            if stock_name not in title and not any(word in title for word in relevance_words):
-
+            if not keep_title(title):
                 continue
             seen_links.add(link)
 
@@ -112,11 +113,28 @@ def get_featured_news(stock_name, today):
                 'link': link,
             })
     except Exception as e:
-        print(f"[{stock_name}] 특징주 뉴스 검색 실패: {e}")
+        print(f"[{query}] 뉴스 검색 실패: {e}")
 
     articles = [a for a in articles if a['time']]
     articles.sort(key=lambda a: a['time'])
+    return articles
+
+
+def get_featured_news(stock_name, today):
+    """'{종목명} 특징주' 검색 결과 중 종목명이나 급등 관련 단어가 들어간 오늘자 기사."""
+    articles = _search_naver_news(
+        today,
+        f"{stock_name} 특징주",
+        lambda title: stock_name in title or any(word in title for word in _RELEVANCE_WORDS),
+    )
     return stock_name, articles
+
+
+def get_general_news(stock_name, today, limit=10):
+    """특징주 기사가 없는 종목용 대체 검색: '{종목명}'으로 검색해서 제목에 종목명이
+    들어간 오늘자 기사만 모은다(최신 limit건)."""
+    articles = _search_naver_news(today, stock_name, lambda title: stock_name in title)
+    return articles[-limit:]
 
 
 def main():

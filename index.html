@@ -630,12 +630,7 @@
 
                 <!-- 🧪 베타 실험실 3 영역 -->
                 <div id="lab-content3" style="display: none;">
-                    <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
-                        <div>
-                            <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 실험실 3에 오신 것을 환영합니다</div>
-                            <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">현재 베타 테스트 중인 새로운 투자 기법이나<br>실험적인 AI 분석 기능이 이곳에 추가될 예정입니다.</div>
-                        </div>
-                    </div>
+                    <div id="lab3-body"></div>
                 </div>
             </div>
         </div>
@@ -696,6 +691,7 @@
             } else if (tab === 'lab3') {
                 document.getElementById('nav-lab3').classList.add('active');
                 document.getElementById('lab-content3').style.display = 'block';
+                renderLab3();
             }
         }
 
@@ -983,6 +979,7 @@
         let shareholdersDB = {};
         let sectorDB = {};
         let aiSummaryArchiveDB = {};
+        let maProximityData = null;
         let featuredNewsDB = {};
 
         async function loadData() {
@@ -1064,6 +1061,13 @@
             }
 
             try {
+                const resMa = await fetch('ma_proximity.json?t=' + Date.now());
+                if (resMa.ok) maProximityData = await resMa.json();
+            } catch (e) {
+                console.error("ma_proximity.json 로딩 실패:", e);
+            }
+
+            try {
                 const resFeat = await fetch('featured_stock_news.json?t=' + Date.now());
                 if (resFeat.ok) featuredNewsDB = await resFeat.json();
             } catch (e) {
@@ -1079,60 +1083,128 @@
             renderLab1();
         }
 
+        function renderLab3() {
+            const body = document.getElementById('lab3-body');
+            if (!body) return;
+            const header = (sub) => `
+                <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
+                    <div>
+                        <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 이평선 근접 종목 (양음양 v2 · 최근 5영업일)</div>
+                        <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">${sub}</div>
+                    </div>
+                </div>`;
+            if (!maProximityData) {
+                body.innerHTML = header('아직 계산된 데이터가 없습니다. 다음 스캔 이후 표시됩니다.');
+                return;
+            }
+            const d = maProximityData;
+            const items = d.items || [];
+            let html = header(`최근 ${d.source_dates.length}영업일 동안 양음양 v2에 잡힌 ${d.total_v2_stocks}종목 중, 최신 종가가 ${d.ma_periods.join('·')}일선의 ±${d.threshold_pct}% 이내에 있는 종목입니다. (${d.generated_at} 기준)`);
+            if (items.length === 0) {
+                html += `<div style="text-align:center; padding:40px; color:var(--text-sub); border: 1px dashed rgba(255,255,255,0.4); border-radius: 12px;">현재 이평선 근처에 온 종목이 없습니다.</div>`;
+                body.innerHTML = html;
+                return;
+            }
+            const fmtDate = s => `${s.slice(4, 6)}/${s.slice(6, 8)}`;
+            html += `<div class="stock-grid">${items.map(it => {
+                const isUp = (it.rate || 0) >= 0;
+                const chips = d.ma_periods.map(p => {
+                    const key = String(p);
+                    if (!(key in it.distances)) return '';
+                    const isNear = it.near.includes(p);
+                    const dist = it.distances[key];
+                    const style = isNear
+                        ? 'background:rgba(167,139,250,0.25); color:#ffffff; border:1px solid #a78bfa; font-weight:700;'
+                        : 'background:rgba(255,255,255,0.05); color:var(--text-sub); border:1px solid var(--border-color);';
+                    return `<span style="display:inline-block; margin:3px 4px 0 0; padding:4px 10px; border-radius:999px; font-size:0.85rem; ${style}">${p}일선 ${dist > 0 ? '+' : ''}${dist}%</span>`;
+                }).join('');
+                const safeName = String(it.name).replace(/'/g, "\\'");
+                return `
+                    <div class="stock-card" onclick="openNewsModal('${it.code}', '${safeName}')">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                            <div style="font-size:1.15rem; font-weight:700; color:var(--text-main);">${it.name} <span style="font-size:0.85rem; color:var(--text-sub); font-weight:400;">(${it.code})</span></div>
+                            <div class="stock-rate ${isUp ? 'rate-up' : 'rate-down'}">${isUp ? '+' : ''}${(it.rate || 0).toFixed(2)}%</div>
+                        </div>
+                        <div style="font-size:0.9rem; color:var(--text-sub); margin-bottom:6px;">종가 ${Math.round(it.close).toLocaleString('ko-KR')}원 · v2 포착일 ${it.captured_dates.map(fmtDate).join(', ')}</div>
+                        <div>${chips}</div>
+                    </div>`;
+            }).join('')}</div>`;
+            body.innerHTML = html;
+        }
+
+        function buildIssueCard(item, featuredForDay) {
+            const isUp = (item.rate || 0) >= 0;
+            const rateClass = isUp ? 'rate-up' : 'rate-down';
+            const rateSign = isUp ? '+' : '';
+            const featuredInfo = featuredForDay[item.code];
+            const featuredArticles = (featuredInfo && featuredInfo.articles) || [];
+            // 특징주 기사가 있으면 그걸, 없으면 종목명으로 찾은 일반 뉴스(item.articles)를 보여준다
+            const isFeatured = featuredArticles.length > 0;
+            const articles = isFeatured ? featuredArticles : (item.articles || []);
+            const newsTitle = isFeatured
+                ? `📰 특징주 뉴스 (${articles.length}건)`
+                : (articles.length ? `📰 관련 뉴스 (${articles.length}건) <span style="font-weight:400; color:var(--text-sub); font-size:0.8rem;">· 특징주 기사가 없어 종목명으로 찾은 뉴스</span>` : '📰 관련 뉴스');
+            const articlesHtml = articles.length
+                ? `<ul style="list-style:none; padding-left:0; margin:0;">${articles.map(a => `
+                    <li style="margin-bottom:8px; font-size:0.85rem; line-height:1.5;">
+                        <span style="color:var(--text-sub); font-family:monospace;">${a.time || ''}</span>
+                        &nbsp;${a.title}
+                        ${a.press ? `<span style="color:var(--text-sub);"> — ${a.press}</span>` : ''}
+                        ${a.link ? ` · <a href="${a.link}" target="_blank" rel="noopener" style="color:#60a5fa;">기사 열기</a>` : ''}
+                    </li>`).join('')}</ul>`
+                : `오늘 관련 뉴스를 찾지 못했습니다.`;
+
+            return `
+                <div class="stock-card" style="padding: 24px; text-align: left; cursor: default; transform: none; box-shadow: none;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 16px;">
+                        <div style="font-size: 1.3rem; font-weight: 700; color: var(--text-main);">${item.name} <span style="font-size: 0.95rem; color: var(--text-sub); font-weight: 400;">(${item.code})</span></div>
+                        <div class="stock-rate ${rateClass}" style="font-size: 1.2rem;">${rateSign}${(item.rate || 0).toFixed(2)}%</div>
+                    </div>
+                    <div style="font-size: 0.95rem; color: #e8e8e8; font-weight: 700; margin-bottom: 10px;">📌 AI 급등 이슈 요약</div>
+                    <div style="font-size: 1rem; color: var(--text-main); line-height: 1.6; background: rgba(0,0,0,0.3); padding: 16px; border-radius: 10px; border-left: 4px solid #e8e8e8; margin-bottom:16px;">
+                        ${item.summary}
+                    </div>
+                    <div style="font-size: 0.95rem; color: #a78bfa; font-weight: 700; margin-bottom: 10px;">${newsTitle}</div>
+                    <div style="font-size: 0.9rem; color: var(--text-main); background: rgba(0,0,0,0.3); padding: 16px; border-radius: 10px; border-left: 4px solid #a78bfa;">
+                        ${articlesHtml}
+                    </div>
+                </div>`;
+        }
+
         function renderLab1() {
             const container = document.getElementById('lab-content');
-            if (!selectedDate || !container) return;
-            const issues = dailyIssuesDB[selectedDate] || [];
-            
+            if (!container) return;
+            // 선택 날짜와 무관하게 저장된 최근 5영업일을 최신순으로 모두 보여준다
+            const dates = Object.keys(dailyIssuesDB).sort().reverse().slice(0, 5);
+
             let html = `
                 <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
                     <div>
-                        <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 당일 500억봉 주요 이슈 분석</div>
-                        <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">선택된 날짜(${selectedDate})에 강력한 기준봉(당일 500억/150억)이 발생한 종목들의 핵심 재료를 AI가 요약합니다.</div>
+                        <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 500억봉 주요 이슈 분석 (최근 5영업일)</div>
+                        <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">강력한 기준봉(당일 500억/150억)이 발생한 종목들의 핵심 재료를 AI가 요약합니다. 날짜를 누르면 펼치거나 접을 수 있어요.</div>
                     </div>
                 </div>
             `;
-            
-            if (issues.length === 0) {
-                html += `<div style="text-align:center; padding:40px; color:var(--text-sub); border: 1px dashed rgba(255, 255, 255, 0.4); border-radius: 12px;">해당 날짜에 기준봉 종목이 없거나 이슈 데이터가 없습니다.</div>`;
-            } else {
-                const featured = featuredNewsDB[selectedDate] || {};
-                html += `<div style="display:flex; flex-direction:column; gap:15px;">`;
-                issues.forEach(item => {
-                    const isUp = (item.rate || 0) >= 0;
-                    const rateClass = isUp ? 'rate-up' : 'rate-down';
-                    const rateSign = isUp ? '+' : '';
-                    const featuredInfo = featured[item.code];
-                    const articles = (featuredInfo && featuredInfo.articles) || [];
-                    const articlesHtml = articles.length
-                        ? `<ul style="list-style:none; padding-left:0; margin:0;">${articles.map(a => `
-                            <li style="margin-bottom:8px; font-size:0.85rem; line-height:1.5;">
-                                <span style="color:var(--text-sub); font-family:monospace;">${a.time || ''}</span>
-                                &nbsp;${a.title}
-                                ${a.press ? `<span style="color:var(--text-sub);"> — ${a.press}</span>` : ''}
-                                ${a.link ? ` · <a href="${a.link}" target="_blank" rel="noopener" style="color:#60a5fa;">기사 열기</a>` : ''}
-                            </li>`).join('')}</ul>`
-                        : `관련 특징주 뉴스가 없습니다.`;
 
-                    html += `
-                        <div class="stock-card" style="padding: 24px; text-align: left; cursor: default; transform: none; box-shadow: none;">
-                            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 16px;">
-                                <div style="font-size: 1.3rem; font-weight: 700; color: var(--text-main);">${item.name} <span style="font-size: 0.95rem; color: var(--text-sub); font-weight: 400;">(${item.code})</span></div>
-                                <div class="stock-rate ${rateClass}" style="font-size: 1.2rem;">${rateSign}${(item.rate || 0).toFixed(2)}%</div>
-                            </div>
-                            <div style="font-size: 0.95rem; color: #e8e8e8; font-weight: 700; margin-bottom: 10px;">📌 AI 급등 이슈 요약</div>
-                            <div style="font-size: 1rem; color: var(--text-main); line-height: 1.6; background: rgba(0,0,0,0.3); padding: 16px; border-radius: 10px; border-left: 4px solid #e8e8e8; margin-bottom:16px;">
-                                ${item.summary}
-                            </div>
-                            <div style="font-size: 0.95rem; color: #a78bfa; font-weight: 700; margin-bottom: 10px;">📰 특징주 뉴스 ${articles.length ? `(${articles.length}건)` : ''}</div>
-                            <div style="font-size: 0.9rem; color: var(--text-main); background: rgba(0,0,0,0.3); padding: 16px; border-radius: 10px; border-left: 4px solid #a78bfa;">
-                                ${articlesHtml}
-                            </div>
-                        </div>
-                    `;
-                });
-                html += `</div>`;
+            if (dates.length === 0) {
+                html += `<div style="text-align:center; padding:40px; color:var(--text-sub); border: 1px dashed rgba(255, 255, 255, 0.4); border-radius: 12px;">저장된 이슈 데이터가 없습니다.</div>`;
+                container.innerHTML = html;
+                return;
             }
+
+            dates.forEach((date, idx) => {
+                const issues = dailyIssuesDB[date] || [];
+                const featured = featuredNewsDB[date] || {};
+                const label = `${date.slice(0, 4)}.${date.slice(4, 6)}.${date.slice(6, 8)}`;
+                const body = issues.length
+                    ? `<div style="display:flex; flex-direction:column; gap:15px; margin-top:14px;">${issues.map(item => buildIssueCard(item, featured)).join('')}</div>`
+                    : `<div style="text-align:center; padding:24px; color:var(--text-sub); margin-top:14px;">이 날짜에는 당일 기준봉 종목이 없었습니다.</div>`;
+                html += `
+                    <details ${idx === 0 ? 'open' : ''} style="margin-bottom:16px; border:1px solid var(--border-color); border-radius:12px; padding:14px 18px;">
+                        <summary style="cursor:pointer; font-size:1.1rem; font-weight:700; color:var(--text-main);">📅 ${label} ${idx === 0 ? '(최신)' : ''} · ${issues.length}종목</summary>
+                        ${body}
+                    </details>`;
+            });
 
             container.innerHTML = html;
         }
