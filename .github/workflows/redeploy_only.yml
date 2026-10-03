@@ -25,10 +25,18 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Build clean Pages artifact
+        # 커밋된 파일만 배포(캐시 DB 등 작업 폴더 파일 제외). 원본 뉴스 이력(약 81MB)은
+        # 사이트가 news/{코드}.json만 쓰므로 배포에서 뺀다.
+        run: |
+          mkdir -p "$RUNNER_TEMP/site"
+          git archive HEAD | tar -x -C "$RUNNER_TEMP/site"
+          rm -f "$RUNNER_TEMP/site/stock_news_history.json"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: ${{ runner.temp }}/site
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -93,7 +93,7 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build clean Pages artifact
         if: always()
-        run: mkdir -p "$RUNNER_TEMP/site" && git archive HEAD | tar -x -C "$RUNNER_TEMP/site"
+        run: mkdir -p "$RUNNER_TEMP/site" && git archive HEAD | tar -x -C "$RUNNER_TEMP/site" && rm -f "$RUNNER_TEMP/site/stock_news_history.json"
       - name: Upload Pages artifact
         if: always()
         uses: actions/upload-pages-artifact@v3
