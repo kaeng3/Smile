@@ -289,6 +289,13 @@ try:
 except Exception as e:
     print(f"[SYNC] 이슈 분석 중 오류 발생: {e}")
 
+# ── 6.65. 뉴스 이력(stock_news_history.json)을 종목별 파일(news/)로 분할 ──
+# 사이트는 종목 상세 창을 열 때 그 종목 파일만 받는다. 원본이 안 바뀌면 건너뜀.
+try:
+    subprocess.run([sys.executable, os.path.join(GIT_DIR, "split_news_history.py")], check=False)
+except Exception as e:
+    print(f"[SYNC] 뉴스 분할 중 오류 발생: {e}")
+
 # ── 6.7. 베타실험실3: 최근 5일 v2 종목 중 5/10/15/20일선 근처 종목 ──────────
 print("[SYNC] 베타실험실3 이평선 근접 종목 계산 실행...")
 try:

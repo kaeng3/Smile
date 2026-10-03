@@ -987,14 +987,6 @@
                 console.error("scan_history.json 로딩 실패:", e);
             }
 
-            try {
-                const resNews = await fetch('stock_news_history.json?t=' + Date.now());
-                if (resNews.ok) {
-                    newsHistoryDB = await resNews.json();
-                }
-            } catch (e) {
-                console.error("stock_news_history.json 로딩 실패:", e);
-            }
 
             try {
                 const resIssues = await fetch('daily_issues.json?t=' + Date.now());
@@ -1005,54 +997,12 @@
                 console.error("daily_issues.json 로딩 실패:", e);
             }
 
-            try {
-                const resOv = await fetch('stock_overview.json?t=' + Date.now());
-                if (resOv.ok) overviewDB = await resOv.json();
-            } catch (e) {
-                console.error("stock_overview.json 로딩 실패:", e);
-            }
 
-            try {
-                const resPr = await fetch('latest_prices.json?t=' + Date.now());
-                if (resPr.ok) latestPricesDB = await resPr.json();
-            } catch (e) {
-                console.error("latest_prices.json 로딩 실패:", e);
-            }
 
-            try {
-                const resTh = await fetch('stock_detail_themes.json?t=' + Date.now());
-                if (resTh.ok) themeDetailDB = await resTh.json();
-            } catch (e) {
-                console.error("stock_detail_themes.json 로딩 실패:", e);
-            }
 
-            try {
-                const resFin = await fetch('stock_financials.json?t=' + Date.now());
-                if (resFin.ok) financialsDB = await resFin.json();
-            } catch (e) {
-                console.error("stock_financials.json 로딩 실패:", e);
-            }
 
-            try {
-                const resSh = await fetch('stock_shareholders.json?t=' + Date.now());
-                if (resSh.ok) shareholdersDB = await resSh.json();
-            } catch (e) {
-                console.error("stock_shareholders.json 로딩 실패:", e);
-            }
 
-            try {
-                const resSec = await fetch('stock_sector.json?t=' + Date.now());
-                if (resSec.ok) sectorDB = await resSec.json();
-            } catch (e) {
-                console.error("stock_sector.json 로딩 실패:", e);
-            }
 
-            try {
-                const resArchive = await fetch('ai_summary_archive.json?t=' + Date.now());
-                if (resArchive.ok) aiSummaryArchiveDB = await resArchive.json();
-            } catch (e) {
-                console.error("ai_summary_archive.json 로딩 실패:", e);
-            }
 
             try {
                 const resMa = await fetch('ma_proximity.json?t=' + Date.now());
@@ -1384,7 +1334,61 @@
             }
         }
 
-        function openNewsModal(code, name) {
+        // 종목 상세 창에서만 쓰는 데이터는 처음 열 때 한 번만 받는다(사이트 첫 로딩을 가볍게).
+        let modalDataPromise = null;
+        function ensureModalData() {
+            if (!modalDataPromise) {
+                const files = {
+                    'stock_overview.json': v => overviewDB = v,
+                    'latest_prices.json': v => latestPricesDB = v,
+                    'stock_detail_themes.json': v => themeDetailDB = v,
+                    'stock_financials.json': v => financialsDB = v,
+                    'stock_shareholders.json': v => shareholdersDB = v,
+                    'stock_sector.json': v => sectorDB = v,
+                    'ai_summary_archive.json': v => aiSummaryArchiveDB = v,
+                };
+                modalDataPromise = Promise.all(Object.entries(files).map(async ([file, assign]) => {
+                    try {
+                        const res = await fetch(file + '?t=' + Date.now());
+                        if (res.ok) assign(await res.json());
+                    } catch (e) {
+                        console.error(file + ' 로딩 실패:', e);
+                    }
+                }));
+            }
+            return modalDataPromise;
+        }
+
+        // 뉴스 이력은 종목별 파일(news/{code}.json)만 받는다. 거의 안 바뀌는 파일이라 브라우저 캐시를 쓰도록 ?t=를 붙이지 않는다.
+        async function ensureStockNews(code) {
+            if (code in newsHistoryDB) return;
+            try {
+                const res = await fetch(`news/${code}.json`);
+                newsHistoryDB[code] = res.ok ? await res.json() : [];
+            } catch (e) {
+                console.error(`news/${code}.json 로딩 실패:`, e);
+                newsHistoryDB[code] = [];
+            }
+        }
+
+        let modalRequestId = 0;
+        async function openNewsModal(code, name) {
+            const overlay = document.getElementById('news-modal-overlay');
+            document.getElementById('modal-stock-title').innerText = `${name} (${code})`;
+            document.getElementById('modal-news-body').innerHTML =
+                '<div style="text-align:center; padding:40px; color:var(--text-sub);">불러오는 중...</div>';
+            if (!overlay.classList.contains('active')) {
+                overlay.classList.add('active');
+                // 스마트폰 뒤로가기 지원
+                history.pushState({ modalOpen: true }, '');
+            }
+            const requestId = ++modalRequestId;
+            await Promise.all([ensureModalData(), ensureStockNews(code)]);
+            if (requestId !== modalRequestId) return;  // 그사이 다른 종목을 눌렀으면 이 결과는 버림
+            renderStockModal(code, name);
+        }
+
+        function renderStockModal(code, name) {
             const overlay = document.getElementById('news-modal-overlay');
             const titleEl = document.getElementById('modal-stock-title');
             const bodyEl = document.getElementById('modal-news-body');
@@ -1569,11 +1573,6 @@
             }
 
             bodyEl.innerHTML = overviewHtml + financeHtml + themeSectionHtml + relatedHtml + aiArchiveHtml + newsHtml;
-
-            overlay.classList.add('active');
-
-            // 스마트폰 뒤로가기 지원
-            history.pushState({ modalOpen: true }, '');
         }
 
 

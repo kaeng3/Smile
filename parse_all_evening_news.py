@@ -169,6 +169,16 @@ out_json = r"C:\Users\pc\.gemini\antigravity\brain\c6997abd-5ccd-40e2-89a8-b4346
 with open(out_json, 'w', encoding='utf-8') as f:
     json.dump(final_news_db, f, ensure_ascii=False, indent=2)
 
+# 사이트용 종목별 파일(news/{종목코드}.json)도 같은 폴더에 함께 만든다.
+# (저장소에 stock_news_history.json만 올려도 매일 파이프라인이 자동으로 나누므로,
+#  news 폴더를 따로 올리지 않아도 된다.)
+news_dir = os.path.join(os.path.dirname(out_json), 'news')
+os.makedirs(news_dir, exist_ok=True)
+for code, items in final_news_db.items():
+    with open(os.path.join(news_dir, f"{code}.json"), 'w', encoding='utf-8') as f:
+        json.dump(items, f, ensure_ascii=False, separators=(',', ':'))
+print(f"종목별 뉴스 파일 {len(final_news_db)}개 생성: {news_dir}")
+
 print("==========================================")
 print(f"2022년~2026년 이브닝 정밀 보안 난독화 파싱 완수! {parsed_files_count}개 문서 파싱.")
 print(f"총 {len(final_news_db)}개 종목, 총 추출된 이브닝 뉴스/재료 건수: {sum(year_distribution.values())}건")
