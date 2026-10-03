@@ -1,0 +1,98 @@
+[
+  {
+    "code": "018880",
+    "name": "한온시스템",
+    "close": 3485,
+    "rate": 9.076682316118937,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "067630",
+    "name": "HLB생명과학",
+    "close": 4000,
+    "rate": 8.108108108108109,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "002710",
+    "name": "TCC스틸",
+    "close": 12810,
+    "rate": 14.374999999999998,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "112290",
+    "name": "와이씨켐",
+    "close": 12400,
+    "rate": 16.541353383458645,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "001250",
+    "name": "GS글로벌",
+    "close": 2840,
+    "rate": 7.169811320754717,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "011500",
+    "name": "한농화성",
+    "close": 14310,
+    "rate": 9.571209800918837,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "084990",
+    "name": "헬릭스미스",
+    "close": 3830,
+    "rate": 18.944099378881987,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "123010",
+    "name": "MSDI",
+    "close": 4115,
+    "rate": 17.739628040057227,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "071090",
+    "name": "하이스틸",
+    "close": 3815,
+    "rate": 16.3109756097561,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "010280",
+    "name": "아이티센엔텍",
+    "close": 6060,
+    "rate": 19.291338582677163,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "039610",
+    "name": "화성밸브",
+    "close": 6730,
+    "rate": 11.056105610561056,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "900070",
+    "name": "글로벌에스엠",
+    "close": 1159,
+    "rate": 17.307692307692307,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "code": "328130",
+    "name": "루닛",
+    "close": 11690,
+    "rate": 19.164118246687053,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "089010",
+    "name": "켐트로닉스",
+    "close": 25450,
+    "rate": 8.528784648187633,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "475960",
+    "name": "토모큐브",
+    "close": 31500,
+    "rate": 13.10592459605027,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "424870",
+    "name": "이뮨온시아",
+    "close": 3615,
+    "rate": 17.37012987012987,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "256840",
+    "name": "한국비엔씨",
+    "close": 2905,
+    "rate": 10.246679316888045,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "039860",
+    "name": "나노엔텍",
+    "close": 4465,
+    "rate": 6.563245823389022,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "242040",
+    "name": "나무AX",
+    "close": 3375,
+    "rate": 11.386138613861387,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "303810",
+    "name": "동국생명과학",
+    "close": 3310,
+    "rate": 18.21428571428571,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "036220",
+    "name": "오상헬스케어",
+    "close": 6830,
+    "rate": 7.053291536050156,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "105740",
+    "name": "디케이락",
+    "close": 8800,
+    "rate": 10.41405269761606,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "085670",
+    "name": "뉴프렉스",
+    "close": 3425,
+    "rate": 10.305958132045088,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "208370",
+    "name": "셀바스헬스케어",
+    "close": 2760,
+    "rate": 17.69722814498934,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "393210",
+    "name": "토마토시스템",
+    "close": 4425,
+    "rate": 8.990147783251231,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "299170",
+    "name": "더블유에스아이",
+    "close": 1571,
+    "rate": 15.429831006612785,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "315640",
+    "name": "딥노이드",
+    "close": 2210,
+    "rate": 14.21188630490956,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]
