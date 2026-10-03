@@ -24,13 +24,15 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+
+      - name: Restore generated data (data 브랜치)
+        id: pull
+        run: python data_store.py pull
 
       - name: Install System Fonts & Dependencies
         run: |
@@ -76,24 +78,17 @@ jobs:
           path: debug_scan_error.txt
           if-no-files-found: ignore
 
-      - name: Commit and Push Changes if Any
-        if: always()
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto Cloud Scan: $(date +'%Y-%m-%d')" && git push)
+      - name: Save generated data (data 브랜치)
+        # 스캔이 실패해도 오류 기록(debug_scan_error.txt)을 남기도록 always. 단, 데이터를 받지 못한 실행은 올리지 않음
+        if: always() && steps.pull.outcome == 'success'
+        run: python data_store.py push daily
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Build clean Pages artifact
-        # 커밋된 파일만 배포(캐시 DB 등 작업 폴더 파일 제외). 원본 뉴스 이력(약 81MB)은
-        # 사이트가 news/{코드}.json만 쓰므로 배포에서 뺀다.
-        run: |
-          mkdir -p "$RUNNER_TEMP/site"
-          git archive HEAD | tar -x -C "$RUNNER_TEMP/site"
-          rm -f "$RUNNER_TEMP/site/stock_news_history.json"
+        # main 코드 + data 브랜치 데이터를 합치고 종목별 뉴스(news/)를 만든다(원본 81MB는 제외)
+        run: python data_store.py site "$RUNNER_TEMP/site"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

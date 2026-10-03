@@ -24,12 +24,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Restore generated data (data 브랜치)
+        id: pull
+        run: python data_store.py pull
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -79,21 +80,14 @@ jobs:
             new_scanner/data/cache
             new_scanner/state
           key: new-scanner-${{ runner.os }}-${{ hashFiles('new_scanner/config/scanner.yaml') }}-${{ github.run_id }}-${{ github.run_attempt }}
-      - name: Commit scanner history when changed
-        id: changes
-        run: |
-          git add new_scanner/results/history.json
-          if git diff --cached --quiet; then exit 0; fi
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m "Auto New Scanner: $(date -u +'%Y-%m-%d')"
-          git push
+      - name: Commit scanner history to data branch
+        run: python data_store.py push new_scanner
       - name: Setup Pages
         if: always()
         uses: actions/configure-pages@v5
       - name: Build clean Pages artifact
-        if: always()
-        run: mkdir -p "$RUNNER_TEMP/site" && git archive HEAD | tar -x -C "$RUNNER_TEMP/site" && rm -f "$RUNNER_TEMP/site/stock_news_history.json"
+        if: always() && steps.pull.outcome == 'success'
+        run: python data_store.py site "$RUNNER_TEMP/site"
       - name: Upload Pages artifact
         if: always()
         uses: actions/upload-pages-artifact@v3

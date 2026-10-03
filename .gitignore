@@ -21,3 +21,23 @@ new_scanner/state/
 
 # 500억봉 차트 작업용 임시 폴더: 매일 새로 그리고 charts/날짜/로 복사하므로 커밋하지 않음
 cloud_scanner/charts/
+
+# ── 생성 데이터: main이 아닌 data 브랜치에 최신 1벌만 보관 (data_store.py) ──
+/charts/
+/*.pdf
+/news/
+/scan_history.json
+/daily_issues.json
+/featured_stock_news.json
+/ai_summary_archive.json
+/latest_prices.json
+/stock_overview.json
+/ma_proximity.json
+/stock_financials.json
+/stock_shareholders.json
+/stock_sector.json
+/debug_scan_error.txt
+cloud_scanner/scan_results_*.json
+new_scanner/results/history.json
+.data_pulled
+_site/

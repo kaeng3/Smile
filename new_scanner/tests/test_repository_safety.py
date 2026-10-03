@@ -16,7 +16,7 @@ def _is_ignored(path: str) -> bool:
     return result.returncode == 0
 
 
-def test_runtime_secrets_and_cache_are_ignored_but_public_history_is_tracked() -> None:
+def test_runtime_secrets_cache_and_generated_history_are_ignored() -> None:
     private_paths = [
         ".env",
         "new_scanner/.env",
@@ -26,4 +26,5 @@ def test_runtime_secrets_and_cache_are_ignored_but_public_history_is_tracked() -
     ]
 
     assert all(_is_ignored(path) for path in private_paths)
-    assert not _is_ignored("new_scanner/results/history.json")
+    # 결과 이력은 생성 데이터라 main이 아닌 data 브랜치에 보관(data_store.py)
+    assert _is_ignored("new_scanner/results/history.json")

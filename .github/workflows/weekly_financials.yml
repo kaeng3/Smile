@@ -21,6 +21,10 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Restore generated data (data 브랜치)
+        id: pull
+        run: python data_store.py pull
+
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
@@ -30,9 +34,5 @@ jobs:
         run: |
           python fetch_naver_financials.py
 
-      - name: Commit and Push Changes if Any
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add stock_financials.json stock_shareholders.json stock_sector.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Weekly Financials Update: $(date +'%Y-%m-%d')" && git push)
+      - name: Save generated data (data 브랜치)
+        run: python data_store.py push weekly

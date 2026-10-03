@@ -30,12 +30,13 @@ class NewScannerWorkflowTests(unittest.TestCase):
         self.assertIn("github.run_attempt", text)
         self.assertLess(text.index("Run daily scanner"), text.index("Save scanner cache and notification receipt"))
         self.assertLess(text.index("Save scanner cache and notification receipt"), text.index("Commit scanner history"))
-        self.assertIn("git archive HEAD", text)
+        self.assertIn("python data_store.py site", text)
         self.assertNotIn("path: '.'", text)
 
     def test_commit_scope_and_private_runtime_files(self):
         text = WORKFLOW.read_text(encoding="utf-8")
-        self.assertIn("git add new_scanner/results/history.json", text)
+        self.assertIn("python data_store.py pull", text)
+        self.assertIn("python data_store.py push new_scanner", text)
         self.assertNotIn("git add .", text)
         for path in ("new_scanner/data/cache/.kis_token.json", "new_scanner/state/sent.json"):
             result = subprocess.run(["git", "check-ignore", "--quiet", path], cwd=ROOT)
