@@ -18,3 +18,6 @@ app ket.txt
 new_scanner/.env
 new_scanner/data/cache/
 new_scanner/state/
+
+# 500억봉 차트 작업용 임시 폴더: 매일 새로 그리고 charts/날짜/로 복사하므로 커밋하지 않음
+cloud_scanner/charts/
