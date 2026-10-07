@@ -97,7 +97,79 @@ def parse_article_datetime(time_text, today):
 _RELEVANCE_WORDS = ('특징주', '호재', '계약', '수주', '승인', '임상', '공급', '상한가', '급등', '상승')
 
 
+NAVER_API_URL = 'https://openapi.naver.com/v1/search/news.json'
+
+
+def _naver_api_keys():
+    cid = os.environ.get('NAVER_CLIENT_ID', '').strip()
+    secret = os.environ.get('NAVER_CLIENT_SECRET', '').strip()
+    return (cid, secret) if cid and secret else None
+
+
+def _press_from_link(link):
+    host = urllib.parse.urlparse(link or '').netloc.lower()
+    return host[4:] if host.startswith('www.') else host
+
+
+def _fetch_naver_api(query, keys, display=100):
+    """네이버 공식 뉴스 검색 API(최신순). 실패하면 최대 3번까지 쉬었다가 다시 시도하고,
+    끝내 실패하면 예외를 올린다(빈 결과로 '뉴스 없음' 처리되지 않도록)."""
+    import time
+    headers = {'X-Naver-Client-Id': keys[0], 'X-Naver-Client-Secret': keys[1]}
+    params = {'query': query, 'display': display, 'sort': 'date'}
+    last_err = None
+    for attempt in range(3):
+        try:
+            resp = requests.get(NAVER_API_URL, headers=headers, params=params, timeout=10)
+            if resp.status_code == 200:
+                return resp.json().get('items', [])
+            last_err = f'HTTP {resp.status_code}: {resp.text[:120]}'
+            if resp.status_code in (401, 403):
+                break  # 키 문제는 재시도해도 소용없음
+        except Exception as e:
+            last_err = str(e)
+        time.sleep(1.5 * (attempt + 1))
+    raise RuntimeError(last_err)
+
+
+def _api_articles(today, query, keep_title, keys):
+    import html as _html
+    from email.utils import parsedate_to_datetime
+    articles, seen = [], set()
+    for it in _fetch_naver_api(query, keys):
+        title = _html.unescape(re.sub(r'<[^>]+>', '', it.get('title', ''))).strip()
+        link = it.get('originallink') or it.get('link')
+        if not link or link in seen or not keep_title(title):
+            continue
+        seen.add(link)
+        try:
+            dt = parsedate_to_datetime(it['pubDate']).replace(tzinfo=None)  # pubDate는 KST(+0900)
+        except Exception:
+            dt = None
+        is_today = dt is not None and dt.date() == today.date()
+        articles.append({
+            'time': dt.strftime('%H:%M') if is_today else None,
+            'date': dt.strftime('%Y-%m-%d') if dt else None,
+            'datetime': dt.strftime('%Y-%m-%d %H:%M') if dt else None,
+            'title': title,
+            'press': _press_from_link(it.get('originallink') or link),
+            'link': link,
+        })
+    return articles
+
+
 def _search_naver_news(today, query, keep_title, lookback_days=0):
+    """NAVER_CLIENT_ID/SECRET이 있으면 공식 API, 없으면(또는 API 실패 시) 검색 페이지 스크래핑."""
+    keys = _naver_api_keys()
+    if keys:
+        try:
+            return _filter_by_date(_api_articles(today, query, keep_title, keys), today, lookback_days)
+        except Exception as e:
+            print(f"[{query}] 네이버 API 실패 → 스크래핑으로 재시도: {e}")
+    return _scrape_naver_news(today, query, keep_title, lookback_days)
+
+
+def _scrape_naver_news(today, query, keep_title, lookback_days=0):
     """네이버 뉴스 검색(최신순) 결과에서 오늘자 기사의 시간/제목/언론사/링크를 모은다.
     (2026년 기준 네이버 뉴스 검색 결과는 SDS 컴포넌트 구조라 클래스명이 해시화되어 있어,
     data-heatmap-target / data-sds-comp 같은 안정적인 속성 기준으로 선택한다.)
@@ -144,6 +216,10 @@ def _search_naver_news(today, query, keep_title, lookback_days=0):
     except Exception as e:
         print(f"[{query}] 뉴스 검색 실패: {e}")
 
+    return _filter_by_date(articles, today, lookback_days)
+
+
+def _filter_by_date(articles, today, lookback_days):
     if lookback_days <= 0:
         articles = [a for a in articles if a['time']]
         articles.sort(key=lambda a: a['time'])
@@ -212,7 +288,7 @@ def main():
     print(f"[FEATURED] 대상 종목: {len(stocks)}개")
 
     results = {}
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4 if _naver_api_keys() else 8) as ex:
         futures = {ex.submit(get_featured_news, name, today): code for code, name in stocks.items()}
         code_by_name = {v: k for k, v in stocks.items()}
         for fut in concurrent.futures.as_completed(futures):
