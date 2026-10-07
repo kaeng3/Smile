@@ -209,7 +209,10 @@ def build_prompt(name, code, target_date_str, rate, trading_value, articles):
     for a in articles:
         when = a.get('datetime') or a.get('date') or '날짜 확인불가'
         press = f" ({a['press']})" if a.get('press') else ''
-        news_lines.append(f"- [{when}] {a['title']}{press}")
+        line = f"- [{when}] {a['title']}{press}"
+        if a.get('body'):
+            line += f"\n  내용: {a['body']}"
+        news_lines.append(line)
     values = {
         '{stock_name}': name,
         '{stock_code}': code,
@@ -299,6 +302,78 @@ def analyze_with_gemini(name, code, target_date_str, rate, trading_value, articl
     return None, "AI 요약 생성에 실패했습니다."
 
 
+INFOSTOCK_PRESS = '인포스탁 증시요약'
+
+
+def backfill_with_infostock(all_issues, api_key, today_str):
+    """인포스탁 증시요약은 무료로는 전일자부터 볼 수 있어, 지난 거래일 500억봉 종목의
+    AI 요약을 다음 날 보강한다. 날짜별로 한 번만 조회하고(infostock_checked),
+    사유가 있는 종목만 그 사유를 근거에 더해 다시 분석한다. 바뀐 날짜 목록을 돌려준다."""
+    try:
+        from fetch_infostock_reasons import fetch_reasons, SOURCE_PAGE
+    except Exception as e:
+        print(f"[INFOSTOCK] 모듈 로드 실패: {e}")
+        return []
+    changed = []
+    for date_str in sorted(all_issues):
+        issues = all_issues[date_str]
+        if date_str >= today_str or not issues or all(i.get('infostock_checked') for i in issues):
+            continue
+        try:
+            reasons = fetch_reasons(date_str, {i['name']: i['code'] for i in issues})
+        except Exception as e:
+            print(f"[INFOSTOCK] {date_str} 조회 실패(다음 실행 때 재시도): {e}")
+            continue
+        day = f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}"
+        hit = 0
+        for issue in issues:
+            issue['infostock_checked'] = True
+            info = reasons.get(issue['code'])
+            if not info:
+                continue
+            hit += 1
+            note = {
+                'time': '장마감', 'date': day, 'datetime': f"{day} 17:00",
+                'title': info['reason'], 'press': INFOSTOCK_PRESS, 'link': SOURCE_PAGE,
+            }
+            articles = [a for a in issue.get('articles') or [] if a.get('press') != INFOSTOCK_PRESS]
+            for_ai = articles + [dict(note, body=info.get('detail', ''))]  # 상세 원문은 AI 입력에만
+            analysis, summary = analyze_with_gemini(
+                issue['name'], issue['code'], date_str, issue.get('rate', 0.0),
+                issue.get('trading_value'), for_ai, api_key,
+            )
+            if analysis is None:
+                issue['infostock_checked'] = False  # AI 실패 시 다음 실행 때 다시
+                continue
+            issue['articles'] = articles + [note]
+            issue['headlines'] = [a['title'] for a in issue['articles']]
+            issue['analysis'], issue['summary'] = analysis, summary
+            if issue.get('news_source') in (None, 'none'):
+                issue['news_source'] = 'infostock'
+        print(f"[INFOSTOCK] {date_str}: 사유 {len(reasons)}종목 중 500억봉 {hit}종목 보강")
+        changed.append(date_str)
+    return changed
+
+
+def update_archive(archive, issues, date_str, max_entries=200):
+    for issue in issues:
+        code = issue["code"]
+        # 같은 날짜 재실행 시 중복 저장되지 않도록 그날 항목은 교체
+        entries = [e for e in archive.get(code, []) if e.get("date") != date_str]
+        main = (issue.get("analysis") or {}).get("main_material") or {}
+        entries.append({
+            "date": date_str,
+            "name": issue["name"],
+            "rate": issue["rate"],
+            "summary": issue["summary"],
+            "title": main.get("title"),
+            "event_type": main.get("event_type"),
+            "confidence": (issue.get("analysis") or {}).get("confidence"),
+        })
+        entries.sort(key=lambda e: e["date"])
+        archive[code] = entries[-max_entries:]
+
+
 def generate_daily_issues(target_date_str):
     current_dir = os.path.dirname(os.path.abspath(__file__))
     system_dir = os.path.dirname(current_dir)
@@ -361,6 +436,7 @@ def generate_daily_issues(target_date_str):
                 pass
                 
     all_issues[target_date_str] = issues
+    backfilled = backfill_with_infostock(all_issues, api_key, kst_now().strftime("%Y%m%d"))
     
     # 5일치만 보관
     sorted_dates = sorted(all_issues.keys(), reverse=True)
@@ -382,24 +458,10 @@ def generate_daily_issues(target_date_str):
             except Exception:
                 archive = {}
 
-    MAX_ENTRIES_PER_STOCK = 200
-    for issue in issues:
-        code = issue["code"]
-        entries = archive.get(code, [])
-        # 같은 날짜 재실행 시 중복 저장되지 않도록 그날 항목은 교체
-        entries = [e for e in entries if e.get("date") != target_date_str]
-        main = (issue.get("analysis") or {}).get("main_material") or {}
-        entries.append({
-            "date": target_date_str,
-            "name": issue["name"],
-            "rate": issue["rate"],
-            "summary": issue["summary"],
-            "title": main.get("title"),
-            "event_type": main.get("event_type"),
-            "confidence": (issue.get("analysis") or {}).get("confidence"),
-        })
-        entries.sort(key=lambda e: e["date"])
-        archive[code] = entries[-MAX_ENTRIES_PER_STOCK:]
+    update_archive(archive, issues, target_date_str)
+    for d in backfilled:
+        if d in all_issues:
+            update_archive(archive, all_issues[d], d)
 
     with open(archive_file, 'w', encoding='utf-8') as f:
         json.dump(archive, f, ensure_ascii=False, indent=2)
