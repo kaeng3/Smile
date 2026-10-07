@@ -563,6 +563,7 @@
                     <button class="nav-btn" onclick="switchMainTab('lab')" id="nav-lab">💰 500억봉 요약</button>
                     <button class="nav-btn" onclick="switchMainTab('lab2')" id="nav-lab2">🔎 김일구 New스캐너</button>
                     <button class="nav-btn" onclick="switchMainTab('lab3')" id="nav-lab3">📈 양음양v2 이평선 근접 종목</button>
+                    <button class="nav-btn" onclick="switchMainTab('lab4')" id="nav-lab4">🍇 포도시 이평선(20,60) 근접 종목</button>
                 </div>
             </div>
 
@@ -631,6 +632,11 @@
                 <div id="lab-content3" style="display: none;">
                     <div id="lab3-body"></div>
                 </div>
+
+                <!-- 🍇 포도시 이평선(20,60) 근접 종목 -->
+                <div id="lab-content4" style="display: none;">
+                    <div id="lab4-body"></div>
+                </div>
             </div>
         </div>
 
@@ -671,11 +677,13 @@
             document.getElementById('nav-lab').classList.remove('active');
             document.getElementById('nav-lab2').classList.remove('active');
             document.getElementById('nav-lab3').classList.remove('active');
+            document.getElementById('nav-lab4').classList.remove('active');
             
             document.getElementById('scan-content').style.display = 'none';
             document.getElementById('lab-content').style.display = 'none';
             document.getElementById('lab-content2').style.display = 'none';
             document.getElementById('lab-content3').style.display = 'none';
+            document.getElementById('lab-content4').style.display = 'none';
 
             if (tab === 'scan') {
                 document.getElementById('nav-scan').classList.add('active');
@@ -691,6 +699,10 @@
                 document.getElementById('nav-lab3').classList.add('active');
                 document.getElementById('lab-content3').style.display = 'block';
                 renderLab3();
+            } else if (tab === 'lab4') {
+                document.getElementById('nav-lab4').classList.add('active');
+                document.getElementById('lab-content4').style.display = 'block';
+                renderLab4();
             }
         }
 
@@ -974,6 +986,7 @@
         let sectorDB = {};
         let aiSummaryArchiveDB = {};
         let maProximityData = null;
+        let maProximityPodosiData = null;
         let featuredNewsDB = {};
 
         async function loadData() {
@@ -1012,6 +1025,13 @@
             }
 
             try {
+                const resMaP = await fetch('ma_proximity_podosi.json?t=' + Date.now());
+                if (resMaP.ok) maProximityPodosiData = await resMaP.json();
+            } catch (e) {
+                console.error("ma_proximity_podosi.json 로딩 실패:", e);
+            }
+
+            try {
                 const resFeat = await fetch('featured_stock_news.json?t=' + Date.now());
                 if (resFeat.ok) featuredNewsDB = await resFeat.json();
             } catch (e) {
@@ -1027,13 +1047,12 @@
             renderLab1();
         }
 
-        const MA_LINE_COLORS = { 5: '#7c3aed', 10: '#f59e0b', 15: '#0d9488', 20: '#16a34a' };
+        const MA_LINE_COLORS = { 5: '#7c3aed', 10: '#f59e0b', 15: '#0d9488', 20: '#16a34a', 60: '#ec4899' };
 
         // 최근 60거래일 일봉 + 5/10/15/20일선. 종목이 근처에 있는 이평선은 굵게 그린다.
-        function renderMaChart(item) {
+        function renderMaChart(item, periods = [5, 10, 15, 20]) {
             const points = (item.chart || []).filter(p => p && ['open', 'high', 'low', 'close'].every(k => Number.isFinite(p[k])));
             if (points.length < 2) return '<div class="new-scanner-chart"><div class="new-scanner-chart-empty">다음 스캔부터 차트가 표시됩니다.</div></div>';
-            const periods = [5, 10, 15, 20];
             const width = 720, height = 360, left = 58, right = 18;
             const priceTop = 18, priceBottom = 245, volumeTop = 278, volumeBottom = 332;
             const priceValues = points.flatMap(p => [p.low, p.high]);
@@ -1078,7 +1097,7 @@
             </div>`;
         }
 
-        function buildMaProximityCard(it, maPeriods) {
+        function buildMaProximityCard(it, maPeriods, scanLabel = 'v2') {
             const isUp = (it.rate || 0) >= 0;
             const fmtDate = s => `${s.slice(4, 6)}/${s.slice(6, 8)}`;
             const chips = maPeriods.map(p => {
@@ -1098,30 +1117,31 @@
                         <div style="font-size:1.15rem; font-weight:700; color:var(--text-main);">${it.name} <span style="font-size:0.85rem; color:var(--text-sub); font-weight:400;">(${it.code})</span></div>
                         <div class="stock-rate ${isUp ? 'rate-up' : 'rate-down'}">${isUp ? '+' : ''}${(it.rate || 0).toFixed(2)}%</div>
                     </div>
-                    <div style="font-size:0.9rem; color:var(--text-sub); margin-bottom:6px;">종가 ${Math.round(it.close).toLocaleString('ko-KR')}원 · v2 포착일 ${it.captured_dates.map(fmtDate).join(', ')}</div>
+                    <div style="font-size:0.9rem; color:var(--text-sub); margin-bottom:6px;">종가 ${Math.round(it.close).toLocaleString('ko-KR')}원 · ${scanLabel} 포착일 ${it.captured_dates.map(fmtDate).join(', ')}</div>
                     <div style="margin-bottom:10px;">${chips}</div>
-                    ${renderMaChart(it)}
+                    ${renderMaChart(it, maPeriods)}
                 </div>`;
         }
 
-        function renderLab3() {
-            const body = document.getElementById('lab3-body');
+        function renderMaLab(bodyId, data, title, scanLabel, defaultPeriods) {
+            const body = document.getElementById(bodyId);
             if (!body) return;
             const header = (sub) => `
                 <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
                     <div>
-                        <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">📈 양음양v2 이평선 근접 종목</div>
+                        <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">${title}</div>
                         <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">${sub}</div>
                     </div>
                 </div>`;
-            if (!maProximityData) {
+            if (!data) {
                 body.innerHTML = header('아직 계산된 데이터가 없습니다. 다음 스캔 이후 표시됩니다.');
                 return;
             }
-            const d = maProximityData;
+            const d = data;
             const items = d.items || [];
-            const periods = d.ma_periods || [5, 10, 15, 20];
-            let html = header(`최근 ${d.source_dates.length}영업일 동안 양음양 v2에 잡힌 ${d.total_v2_stocks}종목 중, 최신 종가가 이평선의 ±${d.threshold_pct}% 이내에 있는 종목을 이평선별로 나눴습니다. 여러 이평선 근처인 종목은 해당 분류마다 나옵니다. (${d.generated_at} 기준)`);
+            const periods = d.ma_periods || defaultPeriods;
+            const total = d.total_stocks ?? d.total_v2_stocks ?? 0;
+            let html = header(`최근 ${d.source_dates.length}영업일 동안 ${scanLabel}에 잡힌 ${total}종목 중, 최신 종가가 이평선의 ±${d.threshold_pct}% 이내에 있는 종목을 이평선별로 나눴습니다. 여러 이평선 근처인 종목은 해당 분류마다 나옵니다. (${d.generated_at} 기준)`);
             if (items.length === 0) {
                 html += `<div style="text-align:center; padding:40px; color:var(--text-sub); border: 1px dashed rgba(255,255,255,0.4); border-radius: 12px;">현재 이평선 근처에 온 종목이 없습니다.</div>`;
                 body.innerHTML = html;
@@ -1132,7 +1152,7 @@
                     .filter(it => it.near.includes(p))
                     .sort((a, b) => Math.abs(a.distances[String(p)]) - Math.abs(b.distances[String(p)]));
                 const content = group.length
-                    ? `<div class="new-scanner-cards" style="margin-top:14px;">${group.map(it => buildMaProximityCard(it, periods)).join('')}</div>`
+                    ? `<div class="new-scanner-cards" style="margin-top:14px;">${group.map(it => buildMaProximityCard(it, periods, scanLabel)).join('')}</div>`
                     : `<div style="text-align:center; padding:20px; color:var(--text-sub); margin-top:10px;">이 이평선 근처의 종목이 없습니다.</div>`;
                 html += `
                     <details open style="margin-bottom:16px; border:1px solid var(--border-color); border-left:5px solid ${MA_LINE_COLORS[p]}; border-radius:12px; padding:14px 18px;">
@@ -1141,6 +1161,14 @@
                     </details>`;
             });
             body.innerHTML = html;
+        }
+
+        function renderLab3() {
+            renderMaLab('lab3-body', maProximityData, '📈 양음양v2 이평선 근접 종목', 'v2', [5, 10, 15, 20]);
+        }
+
+        function renderLab4() {
+            renderMaLab('lab4-body', maProximityPodosiData, '🍇 포도시 이평선(20,60) 근접 종목', '포도시', [20, 60]);
         }
 
         const EVENT_TYPE_LABELS = {
