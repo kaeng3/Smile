@@ -2,6 +2,7 @@
 import os
 import json
 import datetime
+import time
 import requests
 
 
@@ -338,6 +339,7 @@ def backfill_with_infostock(all_issues, api_key, today_str):
             }
             articles = [a for a in issue.get('articles') or [] if a.get('press') != INFOSTOCK_PRESS]
             for_ai = articles + [dict(note, body=info.get('detail', ''))]  # 상세 원문은 AI 입력에만
+            time.sleep(4)  # 무료 Gemini 분당 호출 한도 대비(몰아서 부르면 실패함)
             analysis, summary = analyze_with_gemini(
                 issue['name'], issue['code'], date_str, issue.get('rate', 0.0),
                 issue.get('trading_value'), for_ai, api_key,
