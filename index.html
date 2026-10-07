@@ -1259,6 +1259,13 @@
                 </div>`;
         }
 
+        let lab1SelectedDate = null;
+
+        function selectLab1Date(d) {
+            lab1SelectedDate = d;
+            renderLab1();
+        }
+
         function renderLab1() {
             const container = document.getElementById('lab-content');
             if (!container) return;
@@ -1269,7 +1276,7 @@
                 <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
                     <div>
                         <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 500억봉 주요 이슈 분석 (최근 5영업일)</div>
-                        <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">강력한 기준봉(당일 500억/150억)이 발생한 종목들의 핵심 재료를 AI가 요약합니다. 날짜를 누르면 펼치거나 접을 수 있어요.</div>
+                        <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">강력한 기준봉(당일 500억/150억)이 발생한 종목들의 핵심 재료를 AI가 요약합니다. 위 날짜를 누르면 그날 종목을 볼 수 있어요.</div>
                     </div>
                 </div>
             `;
@@ -1280,19 +1287,18 @@
                 return;
             }
 
-            dates.forEach((date, idx) => {
-                const issues = dailyIssuesDB[date] || [];
-                const featured = featuredNewsDB[date] || {};
-                const label = `${date.slice(0, 4)}.${date.slice(4, 6)}.${date.slice(6, 8)}`;
-                const body = issues.length
-                    ? `<div style="display:flex; flex-direction:column; gap:15px; margin-top:14px;">${issues.map(item => buildIssueCard(item, featured)).join('')}</div>`
-                    : `<div style="text-align:center; padding:24px; color:var(--text-sub); margin-top:14px;">이 날짜에는 당일 기준봉 종목이 없었습니다.</div>`;
-                html += `
-                    <details ${idx === 0 ? 'open' : ''} style="margin-bottom:16px; border:1px solid var(--border-color); border-radius:12px; padding:14px 18px;">
-                        <summary style="cursor:pointer; font-size:1.1rem; font-weight:700; color:var(--text-main);">📅 ${label} ${idx === 0 ? '(최신)' : ''} · ${issues.length}종목</summary>
-                        ${body}
-                    </details>`;
-            });
+            if (!dates.includes(lab1SelectedDate)) lab1SelectedDate = dates[0];
+            html += `<div class="date-chips" style="margin-bottom:18px;">${dates.map((date, idx) => {
+                const n = (dailyIssuesDB[date] || []).length;
+                const label = `${date.slice(4, 6)}.${date.slice(6, 8)}${idx === 0 ? ' (최신)' : ''} · ${n}종목`;
+                return `<div class="date-chip ${date === lab1SelectedDate ? 'active' : ''}" onclick="selectLab1Date('${date}')">📅 ${label}</div>`;
+            }).join('')}</div>`;
+
+            const issues = dailyIssuesDB[lab1SelectedDate] || [];
+            const featured = featuredNewsDB[lab1SelectedDate] || {};
+            html += issues.length
+                ? `<div style="display:flex; flex-direction:column; gap:15px;">${issues.map(item => buildIssueCard(item, featured)).join('')}</div>`
+                : `<div style="text-align:center; padding:24px; color:var(--text-sub);">이 날짜에는 당일 기준봉 종목이 없었습니다.</div>`;
 
             container.innerHTML = html;
         }
