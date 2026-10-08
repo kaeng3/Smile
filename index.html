@@ -577,7 +577,7 @@
         .nf-cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px}
         .nf-cat{border:1px solid var(--border-color);border-radius:12px;background:var(--card-bg);padding:10px 12px}
         .nf-cat h4{margin:2px 0 8px;font-size:.95rem;color:var(--text-main)}.nf-cat h4 i{font-style:normal;color:var(--text-sub);font-size:.78rem;margin-left:4px}
-        .nf-cat summary{cursor:pointer;font-size:.78rem;color:var(--text-sub);padding:4px 0}
+        .nf-scroll{max-height:440px;overflow-y:auto;scrollbar-width:thin;padding-right:4px}
         .nf-li{display:flex;gap:8px;padding:6px 0;border-top:1px solid var(--border-color)}
         .nf-li .nf-title{margin:0;font-size:.88rem;font-weight:500}
         .nf-li .nf-score{flex:none;height:fit-content;font-size:.72rem}
@@ -1829,8 +1829,7 @@
             if (nfView === 'report') {
                 const by = {}; list.forEach(a => (by[a.cat || '기타'] = by[a.cat || '기타'] || []).push(a));
                 body = `<div class="nf-cats">${NF_CATS.filter(c => by[c]).map(c => { const xs = by[c].sort((x, y) => y.score - x.score);
-                    return `<div class="nf-cat"><h4>${nfEsc(c)} <i>${xs.length}</i></h4>${xs.slice(0, 8).map(nfItem).join('')}
-                      ${xs.length > 8 ? `<details><summary>+${xs.length - 8}건 더보기</summary>${xs.slice(8).map(nfItem).join('')}</details>` : ''}</div>`; }).join('')
+                    return `<div class="nf-cat"><h4>${nfEsc(c)} <i>${xs.length}</i></h4><div class="nf-scroll">${xs.map(nfItem).join('')}</div></div>`; }).join('')
                     || '<div class="nf-empty">조건에 맞는 기사가 없습니다</div>'}</div>`;
             } else {
                 if (nfSort === 'score') list.sort((x, y) => y.score - x.score);

@@ -23,6 +23,17 @@ def categorize(title, themes, F):
             if re.search(pat, t): return sec
     return "기타"
 
+def find_stocks(title, ST):
+    """종목명 매칭: 앞 글자가 한글·영문·숫자면 제외(추진시스템≠진시스템), 더 긴 이름에 포함된 짧은 이름 제거(HD현대마린솔루션 > HD현대)."""
+    hit = []
+    for n, c in ST.items():
+        i = title.find(n)
+        while i >= 0:
+            if i == 0 or not re.match(r"[가-힣A-Za-z0-9]", title[i - 1]): hit.append((n, c)); break
+            i = title.find(n, i + 1)
+    hit = [(n, c) for n, c in hit if not any(n != m and n in m for m, _ in hit)]
+    return [[n, c] for n, c in sorted(hit, key=lambda x: -len(x[0]))][:3]
+
 def main():
     F, KW, ST = load("feeds.json"), load("keywords.json"), load("stocks.json")
     old = {a["k"]: a for a in load("news.json", [])}
@@ -44,7 +55,7 @@ def main():
         hits = [(w, v) for w, v in hits if " " in w or not any(w in b.split() for b in bis)]
         eff = lambda w, v: v["w"] * (1 if " " in w or (v["themes"] and v["themes"][0][1] >= F["min_spec"]) else 0.3)
         hits.sort(key=lambda x: -eff(*x))
-        stocks = [[n, c] for n, c in ST.items() if n in title][:3]
+        stocks = find_stocks(title, ST)
         ev = [e for e in F["event_words"] if e in title]
         score = sum(eff(w, v) for w, v in hits[:2]) + (6 if stocks else 0) + (5 if ev and (stocks or hits) else 0)
         macro = any(w in title for ws in F["categories"].values() for w in ws)
@@ -58,6 +69,7 @@ def main():
                   "ev": ev[:2], "stocks": stocks, "themes": [t for t, _ in th.most_common(3)]}
         old[k]["cat"] = categorize(title, old[k]["themes"], F); old[k]["sess"] = session(now.strftime("%H:%M"))
         new += 1
+    for a in old.values(): a["stocks"] = find_stocks(a["title"], ST)
     cut = (now - datetime.timedelta(days=F["keep_days"] + 2)).strftime("%Y-%m-%d")
     arts = sorted((a for a in old.values() if a["seen"] >= cut), key=lambda a: a["seen"], reverse=True)
     json.dump(arts, open(os.path.join(D, "news.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
