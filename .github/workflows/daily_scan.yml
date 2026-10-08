@@ -34,6 +34,10 @@ jobs:
         id: pull
         run: python data_store.py pull
 
+      - name: Restore permanent archive (archive 브랜치)
+        id: archive_pull
+        run: python archive_store.py pull
+
       - name: Install System Fonts & Dependencies
         run: |
           sudo apt-get update
@@ -84,6 +88,10 @@ jobs:
         # 스캔이 실패해도 오류 기록(debug_scan_error.txt)을 남기도록 always. 단, 데이터를 받지 못한 실행은 올리지 않음
         if: always() && steps.pull.outcome == 'success'
         run: python data_store.py push daily
+
+      - name: Save permanent archive (archive 브랜치, 이력 보존)
+        if: always() && steps.archive_pull.outcome == 'success'
+        run: python archive_store.py push
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

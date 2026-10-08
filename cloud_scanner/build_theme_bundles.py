@@ -3,7 +3,7 @@
 build_theme_bundles.py
 500억봉 AI 요약을 테마별로 묶어 theme_bundles.json(테마꾸러미 탭)을 만든다.
 
-- 이벤트: 500억봉 요약 1건(날짜·종목). ai_summary_archive.json(영구) + daily_issues.json(최근 5일, 상세)
+- 이벤트: 500억봉 요약 1건(날짜·종목). event_archive/(영구, archive 브랜치) + daily_issues.json(최근 5일)
 - 테마 판정 순서: ① AI 테마 태그 ② 핵심 재료 제목/이유 ③ (①②가 없을 때만) 종목 테마 DB의 세부 테마
   어느 것이든 theme_dictionary.json의 aliases가 들어 있으면 그 표준 테마로 묶는다.
 - 사전에 없는 AI 태그는 'unmatched_tags'로 모아 사전 보강에 쓴다.
@@ -51,14 +51,25 @@ class ThemeMatcher:
         return {name for alias, name in self.aliases if alias in n or (len(n) >= 2 and n in alias)}
 
 
-def collect_events(archive, daily_issues):
+def collect_events(archive, daily_issues, stored=()):
+    """stored(event_archive 영구 보관) → daily_issues(최근 5일 상세) 순으로 덮고,
+    예전 요약 이력(archive)은 둘 다 없는 날짜·종목만 채운다."""
+    events = {}
+    for e in stored:
+        main = (e.get('analysis') or {}).get('main_material') or {}
+        events[(e['date'], e['code'])] = {
+            'date': e['date'], 'code': e['code'], 'name': e.get('name', ''), 'rate': e.get('rate', 0),
+            'trading_value': e.get('trading_value'), 'title': main.get('title'), 'summary': e.get('summary', ''),
+            'themes_raw': main.get('theme') or [], 'reason': main.get('reason') or '',
+        }
     detail = {}
     for date, items in daily_issues.items():
         for it in items:
             detail[(date, it['code'])] = it
-    events = {}
     for code, entries in archive.items():
         for e in entries:
+            if (e['date'], code) in events:
+                continue
             events[(e['date'], code)] = {
                 'date': e['date'], 'code': code, 'name': e.get('name', ''), 'rate': e.get('rate', 0),
                 'trading_value': e.get('trading_value'), 'title': e.get('title'), 'summary': e.get('summary', ''),
@@ -100,7 +111,13 @@ def build():
     dictionary = load('theme_dictionary.json', {'themes': []})
     matcher = ThemeMatcher(dictionary)
     groups = {t['name']: t.get('group', '기타') for t in dictionary.get('themes', [])}
-    events = collect_events(load('ai_summary_archive.json', {}), load('daily_issues.json', {}))
+    try:
+        from event_archive import load_all
+        stored = load_all()
+    except Exception as e:
+        print(f"[테마꾸러미] 영구 보관소 읽기 실패: {e}")
+        stored = []
+    events = collect_events(load('ai_summary_archive.json', {}), load('daily_issues.json', {}), stored)
     stock_themes = load('stock_detail_themes.json', {})
 
     sessions = sorted({e['date'] for e in events})

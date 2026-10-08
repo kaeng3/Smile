@@ -470,6 +470,13 @@ def generate_daily_issues(target_date_str):
     with open(archive_file, 'w', encoding='utf-8') as f:
         json.dump(archive, f, ensure_ascii=False, indent=2)
 
+    # 영구 보관소(event_archive/, archive 브랜치)에 분석 전문까지 반영 — 5일 롤링과 무관
+    try:
+        from event_archive import record
+        record(all_issues, archive)
+    except Exception as e:
+        print(f"[이벤트보관] 실패: {e}")
+
     print(f"[{target_date_str}] 주요 이슈 요약 완료 및 저장. (영구 아카이브 {len(issues)}건 반영)")
 
 if __name__ == "__main__":

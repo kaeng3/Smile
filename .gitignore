@@ -43,3 +43,5 @@ cloud_scanner/scan_results_*.json
 new_scanner/results/history.json
 .data_pulled
 _site/
+/event_archive/
+/.archive_pulled
