@@ -1,0 +1,42 @@
+name: News Keyword Feed (30min, 24h)
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "news-feed"
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Pull data branch
+        run: python data_store.py pull
+      - name: Collect news (RSS + portals) and score keywords
+        run: python news_feed/collect.py
+      - name: Push news data (data branch, last 5 days)
+        run: python data_store.py push news
+      - uses: actions/configure-pages@v5
+      - name: Build site
+        run: python3 data_store.py site "$RUNNER_TEMP/site"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

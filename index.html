@@ -543,6 +543,28 @@
             .new-scanner-cards { grid-template-columns: 1fr; }
             .new-scanner-chart svg { min-height: 230px; }
         }
+
+        /* 📰 뉴스 키워드 탭 */
+        .nf-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px;color:var(--text-sub);font-size:.85rem}
+        .nf-head b{color:var(--text-main)}
+        .nf-bar{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+        .nf-chip{padding:4px 10px;border-radius:99px;border:1px solid var(--border-color);background:var(--card-bg);color:var(--text-sub);font-size:.8rem;cursor:pointer}
+        .nf-chip.on{background:rgba(255,92,92,.18);border-color:var(--accent-red);color:#fff}
+        .nf-chip i{font-style:normal;opacity:.6;margin-left:4px}
+        .nf-ctl{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+        .nf-ctl input,.nf-ctl select{background:var(--card-bg);border:1px solid var(--border-color);border-radius:8px;color:var(--text-main);padding:7px 10px;font-size:.85rem}
+        .nf-ctl input{flex:1;min-width:180px}
+        .nf-item{padding:12px 14px;border:1px solid var(--border-color);border-radius:12px;background:var(--card-bg);margin-bottom:8px}
+        .nf-meta{font-size:.75rem;color:var(--text-sub);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+        .nf-score{padding:1px 7px;border-radius:6px;background:rgba(255,92,92,.15);color:var(--accent-red);font-weight:700}
+        .nf-title{display:block;margin:5px 0;font-size:.98rem;font-weight:600;color:var(--text-main);text-decoration:none;line-height:1.4}
+        .nf-title:hover{text-decoration:underline}
+        .nf-tags{display:flex;gap:5px;flex-wrap:wrap;font-size:.75rem}
+        .nf-tags span{padding:1px 7px;border-radius:5px;background:rgba(255,255,255,.07);color:var(--text-sub)}
+        .nf-tags .st{background:rgba(91,157,255,.15);color:var(--accent-blue)}
+        .nf-tags .ev{background:rgba(255,200,80,.15);color:#ffc850}
+        .nf-empty{padding:40px;text-align:center;color:var(--text-sub)}
+        .nf-sec{font-size:.8rem;color:var(--text-sub);margin-top:6px}
     </style>
 
 
@@ -565,6 +587,7 @@
                     <button class="nav-btn" onclick="switchMainTab('lab3')" id="nav-lab3">📈 양음양v2 이평선 근접 종목</button>
                     <button class="nav-btn" onclick="switchMainTab('lab4')" id="nav-lab4">🍇 포도시 이평선(20,60) 근접 종목</button>
                     <button class="nav-btn" onclick="switchMainTab('lab5')" id="nav-lab5">🧺 테마꾸러미</button>
+                    <button class="nav-btn" onclick="switchMainTab('lab6')" id="nav-lab6">📰 뉴스 키워드</button>
                 </div>
             </div>
 
@@ -643,6 +666,9 @@
                 <div id="lab-content5" style="display: none;">
                     <div id="lab5-body"></div>
                 </div>
+                <div id="lab-content6" style="display: none;">
+                    <div id="lab6-body"><div class="nf-empty">뉴스 불러오는 중…</div></div>
+                </div>
             </div>
         </div>
 
@@ -692,6 +718,8 @@
             document.getElementById('lab-content3').style.display = 'none';
             document.getElementById('lab-content4').style.display = 'none';
             document.getElementById('lab-content5').style.display = 'none';
+            document.getElementById('nav-lab6').classList.remove('active');
+            document.getElementById('lab-content6').style.display = 'none';
 
             if (tab === 'scan') {
                 document.getElementById('nav-scan').classList.add('active');
@@ -711,6 +739,10 @@
                 document.getElementById('nav-lab4').classList.add('active');
                 document.getElementById('lab-content4').style.display = 'block';
                 renderLab4();
+            } else if (tab === 'lab6') {
+                document.getElementById('nav-lab6').classList.add('active');
+                document.getElementById('lab-content6').style.display = 'block';
+                loadNewsFeed();
             } else if (tab === 'lab5') {
                 document.getElementById('nav-lab5').classList.add('active');
                 document.getElementById('lab-content5').style.display = 'block';
@@ -1726,6 +1758,49 @@
         window.addEventListener('popstate', (e) => {
             closeNewsModal();
         });
+
+        // ===== 📰 뉴스 키워드 탭 =====
+        let NF = null, nfDay = '', nfKw = '', nfTh = '', nfSort = 'time';
+        async function loadNewsFeed() {
+            if (!NF) {
+                try {
+                    const [a, s] = await Promise.all([
+                        fetch('news_feed/news.json?t=' + Date.now()).then(r => r.json()),
+                        fetch('news_feed/keyword_stats.json?t=' + Date.now()).then(r => r.json())]);
+                    NF = { arts: a, stats: s };
+                    nfDay = Object.keys(s.days).sort().reverse()[0] || '';
+                } catch (e) {
+                    document.getElementById('lab6-body').innerHTML = '<div class="nf-empty">아직 수집된 뉴스가 없습니다 (30분마다 자동 수집)</div>'; return;
+                }
+            }
+            renderNewsFeed();
+        }
+        function nfEsc(t) { return String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+        function renderNewsFeed() {
+            const S = NF.stats, days = Object.keys(S.days).sort().reverse(), d = S.days[nfDay] || {kw: [], th: [], n: 0};
+            const q = (document.getElementById('nf-q') || {}).value || '';
+            let list = NF.arts.filter(a => a.seen.startsWith(nfDay)
+                && (!nfKw || a.kws.includes(nfKw)) && (!nfTh || a.themes.includes(nfTh))
+                && (!q || (a.title + a.kws.join(' ') + a.stocks.map(x => x[0]).join(' ')).includes(q)));
+            if (nfSort === 'score') list.sort((x, y) => y.score - x.score);
+            const chip = (v, n, on, fn) => `<span class="nf-chip ${on ? 'on' : ''}" onclick="${fn}">${nfEsc(v)}${n !== null ? `<i>${n}</i>` : ''}</span>`;
+            document.getElementById('lab6-body').innerHTML = `
+              <div class="nf-head">📰 <b>뉴스 키워드</b> · 업데이트 ${nfEsc(S.updated)} · 출처 ${S.sources_ok}개 · 키워드 일치 기사만 저장(30분마다, 최근 5일)</div>
+              <div class="nf-bar">${days.map(x => chip(x.slice(5), S.days[x].n, x === nfDay, `nfDay='${x}';nfKw='';nfTh='';renderNewsFeed()`)).join('')}</div>
+              <div class="nf-sec">🔥 많이 나온 키워드</div>
+              <div class="nf-bar">${chip('전체', null, !nfKw, "nfKw='';renderNewsFeed()")}${d.kw.slice(0, 30).map(([k, n]) => chip('#' + k, n, k === nfKw, `nfKw=${JSON.stringify(k).replace(/"/g, '&quot;')};renderNewsFeed()`)).join('')}</div>
+              <div class="nf-sec">🧭 연관 테마</div>
+              <div class="nf-bar">${chip('전체', null, !nfTh, "nfTh='';renderNewsFeed()")}${d.th.slice(0, 15).map(([t, n]) => chip(t, n, t === nfTh, `nfTh=${JSON.stringify(t).replace(/"/g, '&quot;')};renderNewsFeed()`)).join('')}</div>
+              <div class="nf-ctl"><input id="nf-q" placeholder="제목·키워드·종목 검색" value="${nfEsc(q)}" oninput="renderNewsFeed()">
+                <select onchange="nfSort=this.value;renderNewsFeed()"><option value="time" ${nfSort === 'time' ? 'selected' : ''}>최신순</option><option value="score" ${nfSort === 'score' ? 'selected' : ''}>점수순</option></select></div>
+              <div class="nf-sec" style="margin-bottom:8px">${list.length}건</div>
+              ${list.slice(0, 300).map(a => `<div class="nf-item">
+                 <div class="nf-meta"><span class="nf-score">${a.score}</span><span>${nfEsc(a.seen.slice(11))}${a.time ? ' (' + nfEsc(a.time) + ')' : ''}</span><span>${nfEsc(a.press)}</span></div>
+                 <a class="nf-title" href="${nfEsc(a.url)}" target="_blank" rel="noopener">${nfEsc(a.title)}</a>
+                 <div class="nf-tags">${a.kws.map(k => `<span>#${nfEsc(k)}</span>`).join('')}${(a.ev || []).map(e => `<span class="ev">${nfEsc(e)}</span>`).join('')}${a.stocks.map(x => `<span class="st">${nfEsc(x[0])}</span>`).join('')}${a.themes.length ? `<span>→ ${a.themes.map(nfEsc).join(' · ')}</span>` : ''}</div>
+               </div>`).join('') || '<div class="nf-empty">조건에 맞는 기사가 없습니다</div>'}`;
+            const qi = document.getElementById('nf-q'); if (q && qi) { qi.focus(); qi.setSelectionRange(q.length, q.length); }
+        }
     </script>
 
     <!-- 📰 과거 뉴스 타임라인 모달 팝업 -->

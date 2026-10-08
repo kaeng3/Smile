@@ -43,6 +43,7 @@ OWNERS = {
     ],
     'new_scanner': ['new_scanner/results/history.json'],
     'weekly': ['stock_financials.json', 'stock_shareholders.json', 'stock_sector.json'],
+    'news': ['news_feed/news.json', 'news_feed/keyword_stats.json'],
 }
 
 
