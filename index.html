@@ -1779,7 +1779,7 @@
         });
 
         // ===== 📰 뉴스 탭: 시황 정리(인포스탁 전일) + 분야별 리포트 + 키워드 피드 =====
-        let NF = null, nfDay = '', nfKw = '', nfTh = '', nfSort = 'time', nfView = 'report', nfSess = '전체', nfBrief = '';
+        let NF = null, nfDay = '', nfKw = '', nfTh = '', nfSort = 'time', nfView = 'report', nfSess = '전체', nfBrief = '', nfQ = '';
         const NF_CATS = ['경제 일반','부동산','미중 패권','국제 - 미국','국제 - 중국','원자재','정부 정책','반도체','자동차','이차전지','전력 / 에너지',
                          'AI / 로봇','BIO / 의료','코인 / STO','IP / 엔터','조선 / 해운','국방 / 우주','건설 / 대북','정치','M&A / 공시','기타'];
         async function loadNewsFeed() {
@@ -1816,9 +1816,11 @@
             return `<div class="nf-li"><span class="nf-score">${a.score}</span><div><a class="nf-title" href="${nfEsc(a.url)}" target="_blank" rel="noopener">${nfEsc(a.title)}</a>
               <div class="nf-meta"><span>${nfEsc(a.press)}</span><span>${nfEsc(a.time || a.seen.slice(11))}</span>${a.stocks.map(x => `<span class="st">${nfEsc(x[0])}</span>`).join('')}${(a.ev || []).map(e => `<span class="ev">${nfEsc(e)}</span>`).join('')}</div></div></div>`;
         }
-        function renderNewsFeed() {
+        // 검색창은 다시 그리지 않고 결과만 바꿔야 한글 조합(ㅋ+ㅗ=코)이 깨지지 않는다
+        function nfSearch() { const t = document.createElement('div'); renderNewsFeed(t); document.getElementById('nf-body').innerHTML = t.querySelector('#nf-body').innerHTML; }
+        function renderNewsFeed(target) {
             const S = NF.stats, days = Object.keys(S.days).sort().reverse(), d = S.days[nfDay] || {kw: [], th: [], n: 0};
-            const q = (document.getElementById('nf-q') || {}).value || '';
+            const q = nfQ;
             const chip = (v, n, on, fn) => `<span class="nf-chip ${on ? 'on' : ''}" onclick="${fn}">${nfEsc(v)}${n !== null ? `<i>${n}</i>` : ''}</span>`;
             const J = v => JSON.stringify(v).replace(/"/g, '&quot;');
             let list = NF.arts.filter(a => a.seen.startsWith(nfDay) && (nfSess === '전체' || a.sess === nfSess)
@@ -1844,16 +1846,15 @@
                      <div class="nf-tags">${a.kws.map(k => `<span>#${nfEsc(k)}</span>`).join('')}${(a.ev || []).map(e => `<span class="ev">${nfEsc(e)}</span>`).join('')}${a.stocks.map(x => `<span class="st">${nfEsc(x[0])}</span>`).join('')}${a.themes.length ? `<span>→ ${a.themes.map(nfEsc).join(' · ')}</span>` : ''}</div>
                    </div>`).join('') || '<div class="nf-empty">조건에 맞는 기사가 없습니다</div>'}`;
             }
-            document.getElementById('lab6-body').innerHTML = `
+            (target || document.getElementById('lab6-body')).innerHTML = `
               <div class="nf-head">📰 <b>뉴스</b> · 업데이트 ${nfEsc(S.updated)} · 출처 ${S.sources_ok}개 · 30분마다 24시간 수집(최근 5일)</div>
               ${nfBriefHtml()}
               <div class="nf-bar">${days.map(x => chip(x.slice(5), S.days[x].n, x === nfDay, `nfDay='${x}';nfKw='';nfTh='';renderNewsFeed()`)).join('')}</div>
               <div class="nf-ctl">
                 <span class="nf-seg">${[['report', '🗂 분야별 리포트'], ['feed', '🔎 키워드 피드']].map(([v, n]) => `<span class="nf-chip ${nfView === v ? 'on' : ''}" onclick="nfView='${v}';renderNewsFeed()">${n}</span>`).join('')}</span>
                 <span class="nf-seg">${['전체', '장전', '장중', '장후'].map(s => chip(s, sessN(s), nfSess === s, `nfSess='${s}';renderNewsFeed()`)).join('')}</span>
-                <input id="nf-q" placeholder="제목·키워드·종목 검색" value="${nfEsc(q)}" oninput="renderNewsFeed()"></div>
-              ${body}`;
-            const qi = document.getElementById('nf-q'); if (q && qi) { qi.focus(); qi.setSelectionRange(q.length, q.length); }
+                <input id="nf-q" placeholder="제목·키워드·종목 검색" value="${nfEsc(q)}" oninput="nfQ=this.value;nfSearch()"></div>
+              <div id="nf-body">${body}</div>`;
         }
     </script>
 
