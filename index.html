@@ -565,6 +565,25 @@
         .nf-tags .ev{background:rgba(255,200,80,.15);color:#ffc850}
         .nf-empty{padding:40px;text-align:center;color:var(--text-sub)}
         .nf-sec{font-size:.8rem;color:var(--text-sub);margin-top:6px}
+        .nf-seg{display:flex;gap:6px;flex-wrap:wrap}
+        .nf-brief{border:1px solid var(--border-color);border-radius:12px;background:var(--card-bg);margin-bottom:12px;padding:0 14px 10px}
+        .nf-brief summary{cursor:pointer;padding:12px 0;font-weight:700;color:var(--text-main);list-style:none}
+        .nf-brief summary span{font-weight:400;color:var(--text-sub);font-size:.82rem;margin-left:8px}
+        .nf-bgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+        .nf-bgrid>div{max-height:420px;overflow:auto;font-size:.83rem;line-height:1.55;color:var(--text-sub)}
+        .nf-bgrid h5{color:var(--text-main);margin:6px 0;font-size:.82rem}.nf-bgrid p{margin:0 0 8px}.nf-bgrid b{color:var(--text-main)}
+        .nf-bgrid .up{color:var(--accent-red)}.nf-bgrid .dn{color:var(--accent-blue)}.nf-bgrid i{font-style:normal;font-size:.72rem;padding:0 5px;border-radius:4px;background:rgba(255,255,255,.08)}
+        .nf-src{font-size:.72rem;color:var(--text-sub);margin-top:6px;opacity:.7}
+        .nf-cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px}
+        .nf-cat{border:1px solid var(--border-color);border-radius:12px;background:var(--card-bg);padding:10px 12px}
+        .nf-cat h4{margin:2px 0 8px;font-size:.95rem;color:var(--text-main)}.nf-cat h4 i{font-style:normal;color:var(--text-sub);font-size:.78rem;margin-left:4px}
+        .nf-cat summary{cursor:pointer;font-size:.78rem;color:var(--text-sub);padding:4px 0}
+        .nf-li{display:flex;gap:8px;padding:6px 0;border-top:1px solid var(--border-color)}
+        .nf-li .nf-title{margin:0;font-size:.88rem;font-weight:500}
+        .nf-li .nf-score{flex:none;height:fit-content;font-size:.72rem}
+        .nf-meta .st{padding:0 6px;border-radius:4px;background:rgba(91,157,255,.15);color:var(--accent-blue)}
+        .nf-meta .ev{padding:0 6px;border-radius:4px;background:rgba(255,200,80,.15);color:#ffc850}
+        @media (max-width:700px){.nf-cats{grid-template-columns:1fr}}
     </style>
 
 
@@ -1759,46 +1778,82 @@
             closeNewsModal();
         });
 
-        // ===== 📰 뉴스 키워드 탭 =====
-        let NF = null, nfDay = '', nfKw = '', nfTh = '', nfSort = 'time';
+        // ===== 📰 뉴스 탭: 시황 정리(인포스탁 전일) + 분야별 리포트 + 키워드 피드 =====
+        let NF = null, nfDay = '', nfKw = '', nfTh = '', nfSort = 'time', nfView = 'report', nfSess = '전체', nfBrief = '';
+        const NF_CATS = ['경제 일반','부동산','미중 패권','국제 - 미국','국제 - 중국','원자재','정부 정책','반도체','자동차','이차전지','전력 / 에너지',
+                         'AI / 로봇','BIO / 의료','코인 / STO','IP / 엔터','조선 / 해운','국방 / 우주','건설 / 대북','정치','M&A / 공시','기타'];
         async function loadNewsFeed() {
             if (!NF) {
                 try {
-                    const [a, s] = await Promise.all([
+                    const [a, s, b] = await Promise.all([
                         fetch('news_feed/news.json?t=' + Date.now()).then(r => r.json()),
-                        fetch('news_feed/keyword_stats.json?t=' + Date.now()).then(r => r.json())]);
-                    NF = { arts: a, stats: s };
+                        fetch('news_feed/keyword_stats.json?t=' + Date.now()).then(r => r.json()),
+                        fetch('news_feed/brief.json?t=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null)]);
+                    NF = { arts: a, stats: s, brief: b };
                     nfDay = Object.keys(s.days).sort().reverse()[0] || '';
+                    nfBrief = b && b.days ? Object.keys(b.days).sort().reverse()[0] || '' : '';
                 } catch (e) {
                     document.getElementById('lab6-body').innerHTML = '<div class="nf-empty">아직 수집된 뉴스가 없습니다 (30분마다 자동 수집)</div>'; return;
                 }
             }
             renderNewsFeed();
         }
-        function nfEsc(t) { return String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+        function nfEsc(t) { return String(t ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+        function nfBriefHtml() {
+            const B = NF.brief; if (!B || !nfBrief) return '';
+            const d = B.days[nfBrief], ds = Object.keys(B.days).sort().reverse(), md = x => x.slice(4, 6) + '/' + x.slice(6);
+            let open = true; try { open = localStorage.getItem('nfBriefOpen') !== '0'; } catch (e) {}
+            return `<details class="nf-brief" ${open ? 'open' : ''} ontoggle="try{localStorage.setItem('nfBriefOpen',this.open?'1':'0')}catch(e){}">
+              <summary>📊 시황 정리 · ${md(nfBrief)} <span>${nfEsc(d.kospi)}</span></summary>
+              <div class="nf-bar">${ds.map(x => `<span class="nf-chip ${x === nfBrief ? 'on' : ''}" onclick="nfBrief='${x}';renderNewsFeed()">${md(x)}</span>`).join('')}</div>
+              <div class="nf-bgrid">
+                <div><h5>지수</h5><p>${nfEsc(d.kospi)}</p><p>${nfEsc(d.kosdaq)}</p><h5>테마시황</h5>${d.bullets.map(x => `<p>▷ ${nfEsc(x.length > 150 ? x.slice(0, 150) + '…' : x)}</p>`).join('')}</div>
+                <div><h5>특징 테마</h5>${d.themes.map(t => `<p><b class="${t.dir === 'down' ? 'dn' : 'up'}">${t.dir === 'down' ? '▼' : '▲'} ${nfEsc(t.theme)}</b><br>${nfEsc(t.reason)}<br><small>${t.stocks.map(nfEsc).join(', ')}</small></p>`).join('')}</div>
+                <div><h5>상한가·급등</h5>${d.surge.map(x => `<p><b>${nfEsc(x.name)}</b> <span class="up">+${x.rate.toFixed(1)}%</span>${x.days > 1 ? ` (${x.days}일)` : ''} <i>${nfEsc(x.rtype)}</i><br><small>${nfEsc(x.reason)}</small></p>`).join('')}</div>
+              </div><div class="nf-src">출처: 인포스탁 증시요약(전일자, 무료 범위) · 제목·요약만 표시</div></details>`;
+        }
+        function nfItem(a) {
+            return `<div class="nf-li"><span class="nf-score">${a.score}</span><div><a class="nf-title" href="${nfEsc(a.url)}" target="_blank" rel="noopener">${nfEsc(a.title)}</a>
+              <div class="nf-meta"><span>${nfEsc(a.press)}</span><span>${nfEsc(a.time || a.seen.slice(11))}</span>${a.stocks.map(x => `<span class="st">${nfEsc(x[0])}</span>`).join('')}${(a.ev || []).map(e => `<span class="ev">${nfEsc(e)}</span>`).join('')}</div></div></div>`;
+        }
         function renderNewsFeed() {
             const S = NF.stats, days = Object.keys(S.days).sort().reverse(), d = S.days[nfDay] || {kw: [], th: [], n: 0};
             const q = (document.getElementById('nf-q') || {}).value || '';
-            let list = NF.arts.filter(a => a.seen.startsWith(nfDay)
+            const chip = (v, n, on, fn) => `<span class="nf-chip ${on ? 'on' : ''}" onclick="${fn}">${nfEsc(v)}${n !== null ? `<i>${n}</i>` : ''}</span>`;
+            const J = v => JSON.stringify(v).replace(/"/g, '&quot;');
+            let list = NF.arts.filter(a => a.seen.startsWith(nfDay) && (nfSess === '전체' || a.sess === nfSess)
                 && (!nfKw || a.kws.includes(nfKw)) && (!nfTh || a.themes.includes(nfTh))
                 && (!q || (a.title + a.kws.join(' ') + a.stocks.map(x => x[0]).join(' ')).includes(q)));
-            if (nfSort === 'score') list.sort((x, y) => y.score - x.score);
-            const chip = (v, n, on, fn) => `<span class="nf-chip ${on ? 'on' : ''}" onclick="${fn}">${nfEsc(v)}${n !== null ? `<i>${n}</i>` : ''}</span>`;
+            const sessN = s => NF.arts.filter(a => a.seen.startsWith(nfDay) && (s === '전체' || a.sess === s)).length;
+            let body;
+            if (nfView === 'report') {
+                const by = {}; list.forEach(a => (by[a.cat || '기타'] = by[a.cat || '기타'] || []).push(a));
+                body = `<div class="nf-cats">${NF_CATS.filter(c => by[c]).map(c => { const xs = by[c].sort((x, y) => y.score - x.score);
+                    return `<div class="nf-cat"><h4>${nfEsc(c)} <i>${xs.length}</i></h4>${xs.slice(0, 8).map(nfItem).join('')}
+                      ${xs.length > 8 ? `<details><summary>+${xs.length - 8}건 더보기</summary>${xs.slice(8).map(nfItem).join('')}</details>` : ''}</div>`; }).join('')
+                    || '<div class="nf-empty">조건에 맞는 기사가 없습니다</div>'}</div>`;
+            } else {
+                if (nfSort === 'score') list.sort((x, y) => y.score - x.score);
+                body = `<div class="nf-sec">🔥 많이 나온 키워드</div>
+                  <div class="nf-bar">${chip('전체', null, !nfKw, "nfKw='';renderNewsFeed()")}${d.kw.slice(0, 30).map(([k, n]) => chip('#' + k, n, k === nfKw, `nfKw=${J(k)};renderNewsFeed()`)).join('')}</div>
+                  <div class="nf-sec">🧭 연관 테마</div>
+                  <div class="nf-bar">${chip('전체', null, !nfTh, "nfTh='';renderNewsFeed()")}${d.th.slice(0, 15).map(([t, n]) => chip(t, n, t === nfTh, `nfTh=${J(t)};renderNewsFeed()`)).join('')}</div>
+                  <div class="nf-sec" style="margin:8px 0">${list.length}건 · <select onchange="nfSort=this.value;renderNewsFeed()"><option value="time" ${nfSort === 'time' ? 'selected' : ''}>최신순</option><option value="score" ${nfSort === 'score' ? 'selected' : ''}>점수순</option></select></div>
+                  ${list.slice(0, 300).map(a => `<div class="nf-item">
+                     <div class="nf-meta"><span class="nf-score">${a.score}</span><span>${nfEsc(a.seen.slice(11))}${a.time ? ' (' + nfEsc(a.time) + ')' : ''}</span><span>${nfEsc(a.press)}</span><span>${nfEsc(a.cat || '')}</span></div>
+                     <a class="nf-title" href="${nfEsc(a.url)}" target="_blank" rel="noopener">${nfEsc(a.title)}</a>
+                     <div class="nf-tags">${a.kws.map(k => `<span>#${nfEsc(k)}</span>`).join('')}${(a.ev || []).map(e => `<span class="ev">${nfEsc(e)}</span>`).join('')}${a.stocks.map(x => `<span class="st">${nfEsc(x[0])}</span>`).join('')}${a.themes.length ? `<span>→ ${a.themes.map(nfEsc).join(' · ')}</span>` : ''}</div>
+                   </div>`).join('') || '<div class="nf-empty">조건에 맞는 기사가 없습니다</div>'}`;
+            }
             document.getElementById('lab6-body').innerHTML = `
-              <div class="nf-head">📰 <b>뉴스 키워드</b> · 업데이트 ${nfEsc(S.updated)} · 출처 ${S.sources_ok}개 · 키워드 일치 기사만 저장(30분마다, 최근 5일)</div>
+              <div class="nf-head">📰 <b>뉴스</b> · 업데이트 ${nfEsc(S.updated)} · 출처 ${S.sources_ok}개 · 30분마다 24시간 수집(최근 5일)</div>
+              ${nfBriefHtml()}
               <div class="nf-bar">${days.map(x => chip(x.slice(5), S.days[x].n, x === nfDay, `nfDay='${x}';nfKw='';nfTh='';renderNewsFeed()`)).join('')}</div>
-              <div class="nf-sec">🔥 많이 나온 키워드</div>
-              <div class="nf-bar">${chip('전체', null, !nfKw, "nfKw='';renderNewsFeed()")}${d.kw.slice(0, 30).map(([k, n]) => chip('#' + k, n, k === nfKw, `nfKw=${JSON.stringify(k).replace(/"/g, '&quot;')};renderNewsFeed()`)).join('')}</div>
-              <div class="nf-sec">🧭 연관 테마</div>
-              <div class="nf-bar">${chip('전체', null, !nfTh, "nfTh='';renderNewsFeed()")}${d.th.slice(0, 15).map(([t, n]) => chip(t, n, t === nfTh, `nfTh=${JSON.stringify(t).replace(/"/g, '&quot;')};renderNewsFeed()`)).join('')}</div>
-              <div class="nf-ctl"><input id="nf-q" placeholder="제목·키워드·종목 검색" value="${nfEsc(q)}" oninput="renderNewsFeed()">
-                <select onchange="nfSort=this.value;renderNewsFeed()"><option value="time" ${nfSort === 'time' ? 'selected' : ''}>최신순</option><option value="score" ${nfSort === 'score' ? 'selected' : ''}>점수순</option></select></div>
-              <div class="nf-sec" style="margin-bottom:8px">${list.length}건</div>
-              ${list.slice(0, 300).map(a => `<div class="nf-item">
-                 <div class="nf-meta"><span class="nf-score">${a.score}</span><span>${nfEsc(a.seen.slice(11))}${a.time ? ' (' + nfEsc(a.time) + ')' : ''}</span><span>${nfEsc(a.press)}</span></div>
-                 <a class="nf-title" href="${nfEsc(a.url)}" target="_blank" rel="noopener">${nfEsc(a.title)}</a>
-                 <div class="nf-tags">${a.kws.map(k => `<span>#${nfEsc(k)}</span>`).join('')}${(a.ev || []).map(e => `<span class="ev">${nfEsc(e)}</span>`).join('')}${a.stocks.map(x => `<span class="st">${nfEsc(x[0])}</span>`).join('')}${a.themes.length ? `<span>→ ${a.themes.map(nfEsc).join(' · ')}</span>` : ''}</div>
-               </div>`).join('') || '<div class="nf-empty">조건에 맞는 기사가 없습니다</div>'}`;
+              <div class="nf-ctl">
+                <span class="nf-seg">${[['report', '🗂 분야별 리포트'], ['feed', '🔎 키워드 피드']].map(([v, n]) => `<span class="nf-chip ${nfView === v ? 'on' : ''}" onclick="nfView='${v}';renderNewsFeed()">${n}</span>`).join('')}</span>
+                <span class="nf-seg">${['전체', '장전', '장중', '장후'].map(s => chip(s, sessN(s), nfSess === s, `nfSess='${s}';renderNewsFeed()`)).join('')}</span>
+                <input id="nf-q" placeholder="제목·키워드·종목 검색" value="${nfEsc(q)}" oninput="renderNewsFeed()"></div>
+              ${body}`;
             const qi = document.getElementById('nf-q'); if (q && qi) { qi.focus(); qi.setSelectionRange(q.length, q.length); }
         }
     </script>

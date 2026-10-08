@@ -1,6 +1,9 @@
 name: News Keyword Feed (30min, 24h)
 
 on:
+  push:
+    branches: [main]
+    paths: ['news_feed/**', '.github/workflows/news_feed.yml']
   schedule:
     - cron: '*/30 * * * *'
   workflow_dispatch:

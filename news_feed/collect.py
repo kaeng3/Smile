@@ -4,12 +4,24 @@ RSS·포털 기사를 모아 키워드 사전(keywords.json)·종목명(stocks.j
 키워드 사전은 PC '섹터 상승' 프로젝트의 keywords.py 결과를 복사해 갱신한다."""
 import json, os, sys, time, datetime, collections as C
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import tok, sources
+import re, tok, sources, brief
 D = os.path.dirname(os.path.abspath(__file__))
 KST = datetime.timezone(datetime.timedelta(hours=9))
 def load(n, d=None):
     p = os.path.join(D, n)
     return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else d
+
+def session(hhmm):
+    return "장전" if hhmm < "09:00" else ("장중" if hhmm < "15:30" else "장후")
+
+def categorize(title, themes, F):
+    """분야: 매크로 단어 우선(제목), 없으면 연관 테마 → 섹터."""
+    for cat, words in F["categories"].items():
+        if any(w in title for w in words): return cat
+    for t in themes:
+        for sec, pat in F["theme_sector"]:
+            if re.search(pat, t): return sec
+    return "기타"
 
 def main():
     F, KW, ST = load("feeds.json"), load("keywords.json"), load("stocks.json")
@@ -35,13 +47,16 @@ def main():
         stocks = [[n, c] for n, c in ST.items() if n in title][:3]
         ev = [e for e in F["event_words"] if e in title]
         score = sum(eff(w, v) for w, v in hits[:2]) + (6 if stocks else 0) + (5 if ev and (stocks or hits) else 0)
-        if not hits or score < F["store_min_score"]: continue
+        macro = any(w in title for ws in F["categories"].values() for w in ws)
+        if not ((hits and score >= F["store_min_score"]) or macro): continue
+        if macro: score = max(score, F["macro_score"])
         th = C.Counter()
         for _, v in hits[:3]:
             for t, s in v["themes"][:2]: th[t] += s
         old[k] = {"k": k, "seen": now.strftime("%Y-%m-%d %H:%M"), "time": it["time"], "press": it["press"],
                   "title": title, "url": it["url"], "score": round(score, 1), "kws": [w for w, _ in hits[:4]],
                   "ev": ev[:2], "stocks": stocks, "themes": [t for t, _ in th.most_common(3)]}
+        old[k]["cat"] = categorize(title, old[k]["themes"], F); old[k]["sess"] = session(now.strftime("%H:%M"))
         new += 1
     cut = (now - datetime.timedelta(days=F["keep_days"] + 2)).strftime("%Y-%m-%d")
     arts = sorted((a for a in old.values() if a["seen"] >= cut), key=lambda a: a["seen"], reverse=True)
@@ -52,6 +67,8 @@ def main():
     out = {d: {"n": s["n"], "kw": s["kw"].most_common(40), "th": s["th"].most_common(20)} for d, s in stats.items()}
     json.dump({"updated": now.strftime("%Y-%m-%d %H:%M"), "sources_ok": ok, "sources_bad": bad, "days": out},
               open(os.path.join(D, "keyword_stats.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+    try: brief.update()
+    except Exception as e: print("[brief] 오류:", repr(e))
     print(f"출처 {ok}개 성공/{len(bad)}개 실패, 기사 {len(items)}건 중 신규 저장 {new}건, 보관 {len(arts)}건")
 
 if __name__ == "__main__":
