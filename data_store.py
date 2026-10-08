@@ -38,7 +38,7 @@ OWNERS = {
         'charts', '*.pdf', 'cloud_scanner/scan_results_*.json',
         'scan_history.json', 'daily_issues.json', 'featured_stock_news.json',
         'ai_summary_archive.json',  # 종목별 AI 요약 이력: 5일 정리 대상이 아닌 영구 보관 파일
-        'latest_prices.json', 'stock_overview.json', 'ma_proximity.json', 'ma_proximity_podosi.json',
+        'latest_prices.json', 'stock_overview.json', 'ma_proximity.json', 'ma_proximity_podosi.json', 'theme_bundles.json',
         'debug_scan_error.txt',
     ],
     'new_scanner': ['new_scanner/results/history.json'],

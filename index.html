@@ -564,6 +564,7 @@
                     <button class="nav-btn" onclick="switchMainTab('lab2')" id="nav-lab2">🔎 김일구 New스캐너</button>
                     <button class="nav-btn" onclick="switchMainTab('lab3')" id="nav-lab3">📈 양음양v2 이평선 근접 종목</button>
                     <button class="nav-btn" onclick="switchMainTab('lab4')" id="nav-lab4">🍇 포도시 이평선(20,60) 근접 종목</button>
+                    <button class="nav-btn" onclick="switchMainTab('lab5')" id="nav-lab5">🧺 테마꾸러미</button>
                 </div>
             </div>
 
@@ -637,6 +638,11 @@
                 <div id="lab-content4" style="display: none;">
                     <div id="lab4-body"></div>
                 </div>
+
+                <!-- 🧺 테마꾸러미 -->
+                <div id="lab-content5" style="display: none;">
+                    <div id="lab5-body"></div>
+                </div>
             </div>
         </div>
 
@@ -678,12 +684,14 @@
             document.getElementById('nav-lab2').classList.remove('active');
             document.getElementById('nav-lab3').classList.remove('active');
             document.getElementById('nav-lab4').classList.remove('active');
+            document.getElementById('nav-lab5').classList.remove('active');
             
             document.getElementById('scan-content').style.display = 'none';
             document.getElementById('lab-content').style.display = 'none';
             document.getElementById('lab-content2').style.display = 'none';
             document.getElementById('lab-content3').style.display = 'none';
             document.getElementById('lab-content4').style.display = 'none';
+            document.getElementById('lab-content5').style.display = 'none';
 
             if (tab === 'scan') {
                 document.getElementById('nav-scan').classList.add('active');
@@ -703,6 +711,10 @@
                 document.getElementById('nav-lab4').classList.add('active');
                 document.getElementById('lab-content4').style.display = 'block';
                 renderLab4();
+            } else if (tab === 'lab5') {
+                document.getElementById('nav-lab5').classList.add('active');
+                document.getElementById('lab-content5').style.display = 'block';
+                loadThemeBundles();
             }
         }
 
@@ -1165,6 +1177,99 @@
 
         function renderLab3() {
             renderMaLab('lab3-body', maProximityData, '📈 양음양v2 이평선 근접 종목', 'v2', [5, 10, 15, 20]);
+        }
+
+        let themeBundlesData = null;
+        let themeBundlesLoaded = false;
+        let themeGroupFilter = '전체';
+        const THEME_GROUP_COLORS = { '바이오': '#22c55e', '반도체': '#3b82f6', 'AI·IT': '#a78bfa', '에너지': '#f59e0b', '우주·방산': '#06b6d4', '산업재': '#94a3b8', '소비재': '#ec4899', '이벤트': '#eab308' };
+
+        async function loadThemeBundles() {
+            if (!themeBundlesLoaded) {
+                try {
+                    const res = await fetch('theme_bundles.json?t=' + Date.now());
+                    if (res.ok) themeBundlesData = await res.json();
+                } catch (e) {
+                    console.error('theme_bundles.json 로딩 실패:', e);
+                }
+                themeBundlesLoaded = true;
+            }
+            renderLab5();
+        }
+
+        function setThemeGroup(g) {
+            themeGroupFilter = g;
+            renderLab5();
+        }
+
+        function buildThemeBundleCard(b, sessions, maxHeat) {
+            const esc = escapeNewScannerHtml;
+            const color = THEME_GROUP_COLORS[b.group] || '#9ca3af';
+            const fmt = d => `${d.slice(4, 6)}/${d.slice(6, 8)}`;
+            const tv = v => v ? `${Math.round(v / 1e8).toLocaleString('ko-KR')}억` : '';
+            const dots = sessions.map(d => {
+                const on = b.active_dates.includes(d);
+                return `<span title="${fmt(d)}" style="display:inline-block; width:22px; text-align:center; font-size:0.7rem; color:${on ? '#fff' : 'var(--text-sub)'};"><span style="display:block; width:12px; height:12px; margin:0 auto 2px; border-radius:50%; background:${on ? color : 'rgba(255,255,255,0.12)'};"></span>${fmt(d).slice(3)}</span>`;
+            }).join('');
+            const stocks = b.stocks.map(s => `<span onclick="event.stopPropagation(); openNewsModal('${s.code}', '${String(s.name).replace(/'/g, "\\'")}')" style="display:inline-block; cursor:pointer; margin:0 6px 6px 0; padding:4px 10px; border-radius:999px; font-size:0.85rem; border:1px solid ${s.code === b.leader_code ? color : 'var(--border-color)'}; color:var(--text-main); ${s.code === b.leader_code ? 'font-weight:700;' : ''}">${s.code === b.leader_code ? '👑 ' : ''}${esc(s.name)}${s.count > 1 ? ` ×${s.count}` : ''}</span>`).join('');
+            const events = b.events.map(e => `<li style="margin-bottom:8px; list-style:none;"><span style="color:var(--text-sub); font-family:monospace;">${fmt(e.date)}</span> <strong style="cursor:pointer;" onclick="event.stopPropagation(); openNewsModal('${e.code}', '${String(e.name).replace(/'/g, "\\'")}')">${esc(e.name)}</strong> <span class="${(e.rate || 0) >= 0 ? 'rate-up' : 'rate-down'}" style="font-size:0.85rem;">${(e.rate || 0) >= 0 ? '+' : ''}${Number(e.rate || 0).toFixed(2)}%</span> <span style="color:var(--text-sub); font-size:0.8rem;">${tv(e.trading_value)}</span><div style="font-size:0.9rem; color:var(--text-main); margin-top:2px;">${esc(e.title || e.summary || '')}${e.via === 'stock_db' ? ' <span style="color:var(--text-sub); font-size:0.75rem;">(종목 테마DB 기준)</span>' : ''}</div></li>`).join('');
+            return `
+                <details style="border:1px solid var(--border-color); border-left:5px solid ${color}; border-radius:12px; padding:14px 18px; background:var(--card-bg);">
+                    <summary style="cursor:pointer; list-style:none;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
+                            <div style="font-size:1.2rem; font-weight:700; color:var(--text-main);">${esc(b.theme)}
+                                <span style="font-size:0.75rem; font-weight:600; color:#000; background:${color}; padding:2px 8px; border-radius:999px; margin-left:6px; vertical-align:middle;">${esc(b.group)}</span>
+                                ${b.reignited ? '<span style="font-size:0.75rem; font-weight:700; color:#fff; background:#ef4444; padding:2px 8px; border-radius:999px; margin-left:4px; vertical-align:middle;">🔥 재점화</span>' : ''}
+                            </div>
+                            <div style="font-size:0.85rem; color:var(--text-sub);">최근 5일 <strong style="color:var(--text-main);">${b.recent_count}건</strong> · 누적 ${b.event_count}건 · ${b.stock_count}종목</div>
+                        </div>
+                        <div style="height:6px; background:rgba(255,255,255,0.08); border-radius:3px; margin:10px 0 8px;"><div style="height:6px; width:${Math.max(4, b.heat / maxHeat * 100).toFixed(0)}%; background:${color}; border-radius:3px;"></div></div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:10px; flex-wrap:wrap;">
+                            <div style="font-size:0.9rem; color:var(--text-main);">👑 대장 <strong>${esc(b.leader)}</strong> <span style="color:var(--text-sub);">· 최초 ${fmt(b.first_date)} · 최근 ${fmt(b.last_date)}</span></div>
+                            <div>${dots}</div>
+                        </div>
+                    </summary>
+                    <div style="margin-top:14px; padding-top:12px; border-top:1px solid var(--border-color);">
+                        <div style="font-size:0.85rem; color:var(--text-sub); margin-bottom:6px;">소속 종목 (누르면 상세)</div>
+                        <div>${stocks}</div>
+                        <div style="font-size:0.85rem; color:var(--text-sub); margin:10px 0 6px;">이벤트 타임라인</div>
+                        <ul style="margin:0; padding:0;">${events}</ul>
+                    </div>
+                </details>`;
+        }
+
+        function renderLab5() {
+            const body = document.getElementById('lab5-body');
+            if (!body) return;
+            const esc = escapeNewScannerHtml;
+            const d = themeBundlesData;
+            let html = `
+                <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
+                    <div>
+                        <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧺 테마꾸러미</div>
+                        <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">500억봉 AI 요약을 테마별로 모았습니다. 최근 5거래일 빈도와 거래대금으로 뜨거운 순서대로 정렬하고, 카드를 누르면 소속 종목과 날짜별 재료가 펼쳐집니다.${d ? ` (${d.generated_at} 기준 · 이벤트 ${d.total_events}건)` : ''}</div>
+                    </div>
+                </div>`;
+            if (!d || !(d.bundles || []).length) {
+                body.innerHTML = html + `<div style="text-align:center; padding:40px; color:var(--text-sub); border:1px dashed rgba(255,255,255,0.4); border-radius:12px;">${themeBundlesLoaded ? '아직 만들어진 테마꾸러미가 없습니다. 다음 스캔 이후 표시됩니다.' : '불러오는 중...'}</div>`;
+                return;
+            }
+            const groups = ['전체', ...new Set(d.bundles.map(b => b.group))];
+            html += `<div class="date-chips" style="margin-bottom:16px;">${groups.map(g => `<div class="date-chip ${g === themeGroupFilter ? 'active' : ''}" onclick="setThemeGroup('${g}')">${g === '전체' ? '🧺 ' : ''}${esc(g)}${g === '전체' ? '' : ` · ${d.bundles.filter(b => b.group === g).length}`}</div>`).join('')}</div>`;
+            const list = d.bundles.filter(b => themeGroupFilter === '전체' || b.group === themeGroupFilter);
+            const maxHeat = Math.max(...d.bundles.map(b => b.heat), 1);
+            html += `<div style="display:flex; flex-direction:column; gap:12px;">${list.map(b => buildThemeBundleCard(b, d.sessions || [], maxHeat)).join('')}</div>`;
+            const unmatched = (d.unmatched_tags || []).map(([t, n]) => `${esc(t)}${n > 1 ? `(${n})` : ''}`).join(', ');
+            const uncls = (d.unclassified || []).map(e => `${e.date.slice(4, 6)}/${e.date.slice(6, 8)} ${esc(e.name)}${e.title ? ` — ${esc(e.title)}` : ''}`).join('<br>');
+            if (unmatched || uncls) {
+                html += `
+                    <details style="margin-top:20px; border:1px dashed var(--border-color); border-radius:12px; padding:12px 16px; color:var(--text-sub); font-size:0.9rem;">
+                        <summary style="cursor:pointer;">🛠 사전 보강 후보 (테마 사전에 없는 태그 · 미분류 종목)</summary>
+                        ${unmatched ? `<div style="margin-top:10px;"><strong>사전에 없는 AI 태그:</strong> ${unmatched}</div>` : ''}
+                        ${uncls ? `<div style="margin-top:10px;"><strong>테마를 못 찾은 종목:</strong><br>${uncls}</div>` : ''}
+                    </details>`;
+            }
+            body.innerHTML = html;
         }
 
         function renderLab4() {

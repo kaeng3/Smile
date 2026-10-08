@@ -371,6 +371,8 @@ def update_archive(archive, issues, date_str, max_entries=200):
             "title": main.get("title"),
             "event_type": main.get("event_type"),
             "confidence": (issue.get("analysis") or {}).get("confidence"),
+            "themes": main.get("theme") or [],
+            "trading_value": issue.get("trading_value"),
         })
         entries.sort(key=lambda e: e["date"])
         archive[code] = entries[-max_entries:]

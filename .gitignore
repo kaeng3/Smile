@@ -34,6 +34,7 @@ cloud_scanner/charts/
 /stock_overview.json
 /ma_proximity.json
 /ma_proximity_podosi.json
+/theme_bundles.json
 /stock_financials.json
 /stock_shareholders.json
 /stock_sector.json
