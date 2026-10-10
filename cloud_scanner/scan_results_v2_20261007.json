@@ -1,0 +1,114 @@
+[
+  {
+    "code": "085620",
+    "name": "미래에셋생명",
+    "close": 23000,
+    "rate": 13.580246913580247,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "204270",
+    "name": "제이앤티씨",
+    "close": 26600,
+    "rate": 14.655172413793101,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "372320",
+    "name": "큐로셀",
+    "close": 25450,
+    "rate": 12.114537444933921,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "389470",
+    "name": "인벤티지랩",
+    "close": 30450,
+    "rate": 12.154696132596685,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "012210",
+    "name": "삼미금속",
+    "close": 13170,
+    "rate": 8.484349258649095,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "128820",
+    "name": "대성산업",
+    "close": 5060,
+    "rate": 19.058823529411764,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "042510",
+    "name": "라온시큐어",
+    "close": 16870,
+    "rate": 13.449899125756556,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "307750",
+    "name": "국전",
+    "close": 2825,
+    "rate": 18.200836820083683,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "095700",
+    "name": "제넥신",
+    "close": 3050,
+    "rate": 8.540925266903916,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "278650",
+    "name": "HLB바이오스텝",
+    "close": 4430,
+    "rate": 18.60776439089692,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "063160",
+    "name": "종근당바이오",
+    "close": 15200,
+    "rate": 12.342941611234295,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "253840",
+    "name": "수젠텍",
+    "close": 4940,
+    "rate": 8.096280087527353,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "114450",
+    "name": "그린생명과학",
+    "close": 2505,
+    "rate": 10.352422907488986,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "109820",
+    "name": "진매트릭스",
+    "close": 1830,
+    "rate": 12.893275755706354,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

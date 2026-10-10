@@ -1,0 +1,154 @@
+[
+  {
+    "code": "028300",
+    "name": "HLB",
+    "close": 47050,
+    "rate": 15.886699507389162,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "018670",
+    "name": "SK가스",
+    "close": 254000,
+    "rate": 6.498951781970649,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "024850",
+    "name": "HLB이노베이션",
+    "close": 17900,
+    "rate": 8.616504854368932,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "002710",
+    "name": "TCC스틸",
+    "close": 14740,
+    "rate": 8.621960206337508,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "115450",
+    "name": "HLB테라퓨틱스",
+    "close": 2840,
+    "rate": 15.212981744421908,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "340450",
+    "name": "지씨지놈",
+    "close": 10220,
+    "rate": 14.960629921259844,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "053300",
+    "name": "한국정보인증",
+    "close": 5590,
+    "rate": 7.088122605363985,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "054920",
+    "name": "한컴위드",
+    "close": 5490,
+    "rate": 9.580838323353294,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "115500",
+    "name": "케이씨에스",
+    "close": 12390,
+    "rate": 14.510166358595194,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "417500",
+    "name": "제이아이테크",
+    "close": 4715,
+    "rate": 9.778812572759023,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "000020",
+    "name": "동화약품",
+    "close": 5470,
+    "rate": 7.045009784735812,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "008970",
+    "name": "KBI동양철관",
+    "close": 1451,
+    "rate": 6.6911764705882355,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "136150",
+    "name": "원일티엔아이",
+    "close": 14160,
+    "rate": 9.767441860465116,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "003580",
+    "name": "HLB글로벌",
+    "close": 2115,
+    "rate": 19.491525423728813,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "263600",
+    "name": "덕우전자",
+    "close": 5530,
+    "rate": 6.551059730250482,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "067920",
+    "name": "이글루",
+    "close": 6580,
+    "rate": 11.904761904761903,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "187420",
+    "name": "HLB제넥스",
+    "close": 2140,
+    "rate": 11.40031233732431,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "046210",
+    "name": "HLB파나진",
+    "close": 1422,
+    "rate": 13.76,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "150900",
+    "name": "파수AI",
+    "close": 4600,
+    "rate": 16.01513240857503,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

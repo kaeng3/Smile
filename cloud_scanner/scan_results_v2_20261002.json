@@ -1,0 +1,90 @@
+[
+  {
+    "code": "020150",
+    "name": "롯데에너지머티리얼즈",
+    "close": 50900,
+    "rate": 18.925233644859812,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "078600",
+    "name": "대주전자재료",
+    "close": 106700,
+    "rate": 9.77366255144033,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "248070",
+    "name": "솔루엠",
+    "close": 17000,
+    "rate": 11.915734035549704,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "088800",
+    "name": "에이스테크",
+    "close": 2415,
+    "rate": 11.29032258064516,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "039560",
+    "name": "다산네트웍스",
+    "close": 2925,
+    "rate": 12.934362934362934,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "097800",
+    "name": "윈팩",
+    "close": 4180,
+    "rate": 6.361323155216285,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "032300",
+    "name": "한국파마",
+    "close": 8920,
+    "rate": 17.36842105263158,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "085670",
+    "name": "뉴프렉스",
+    "close": 3660,
+    "rate": 6.395348837209303,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "006140",
+    "name": "피제이전자",
+    "close": 5070,
+    "rate": 16.28440366972477,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "067170",
+    "name": "오텍",
+    "close": 2840,
+    "rate": 7.372400756143667,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "065440",
+    "name": "이루온",
+    "close": 1646,
+    "rate": 16.654854712969524,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

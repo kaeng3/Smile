@@ -1,0 +1,178 @@
+[
+  {
+    "code": "018290",
+    "name": "브이티",
+    "close": 13640,
+    "rate": 8.598726114649681,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "249420",
+    "name": "일동제약",
+    "close": 14890,
+    "rate": 1.707650273224044,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "354320",
+    "name": "알멕",
+    "close": 50300,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "228760",
+    "name": "지노믹트리",
+    "close": 11990,
+    "rate": -0.990916597853014,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "042370",
+    "name": "비츠로테크",
+    "close": 10980,
+    "rate": -4.6875,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "000650",
+    "name": "천일고속",
+    "close": 180300,
+    "rate": 30.08658008658009,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "419530",
+    "name": "SAMG엔터",
+    "close": 22100,
+    "rate": 23.948401570386988,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "128820",
+    "name": "대성산업",
+    "close": 5060,
+    "rate": 19.058823529411764,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "115500",
+    "name": "케이씨에스",
+    "close": 11990,
+    "rate": -3.2284100080710245,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "040300",
+    "name": "YTN",
+    "close": 2280,
+    "rate": 0.21978021978021978,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "067000",
+    "name": "조이시티",
+    "close": 1200,
+    "rate": 0.41841004184100417,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "389030",
+    "name": "지니너스",
+    "close": 2100,
+    "rate": -0.47393364928909953,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "065530",
+    "name": "와이어블",
+    "close": 1481,
+    "rate": -1.4637391882900865,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "004440",
+    "name": "삼일씨엔에스",
+    "close": 5430,
+    "rate": -1.2727272727272727,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "456070",
+    "name": "이엔셀",
+    "close": 6070,
+    "rate": -0.3284072249589491,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "315640",
+    "name": "딥노이드",
+    "close": 2220,
+    "rate": 0.4524886877828055,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "393210",
+    "name": "토마토시스템",
+    "close": 3525,
+    "rate": 1.4388489208633095,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "007460",
+    "name": "에이프로젠",
+    "close": 2230,
+    "rate": 1.82648401826484,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "900340",
+    "name": "윙입푸드",
+    "close": 1357,
+    "rate": -4.771929824561403,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "200350",
+    "name": "아티스트스튜디오",
+    "close": 4295,
+    "rate": 7.107231920199501,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "462510",
+    "name": "라메디텍",
+    "close": 3475,
+    "rate": -3.0683403068340307,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "429270",
+    "name": "시지트로닉스",
+    "close": 3360,
+    "rate": -6.9252077562326875,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  }
+]

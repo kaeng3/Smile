@@ -1,0 +1,74 @@
+[
+  {
+    "code": "006110",
+    "name": "삼아알미늄",
+    "close": 73700,
+    "rate": 10.164424514200299,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "033790",
+    "name": "피노",
+    "close": 11320,
+    "rate": 14.69098277608916,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "393890",
+    "name": "더블유씨피",
+    "close": 11190,
+    "rate": 6.67302192564347,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "115450",
+    "name": "HLB테라퓨틱스",
+    "close": 3280,
+    "rate": 12.714776632302405,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "187870",
+    "name": "디바이스",
+    "close": 15385,
+    "rate": 15.589782118707737,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "084990",
+    "name": "헬릭스미스",
+    "close": 4565,
+    "rate": 16.157760814249365,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "083500",
+    "name": "에프엔에스테크",
+    "close": 16660,
+    "rate": 14.738292011019283,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "217190",
+    "name": "제너셈",
+    "close": 9700,
+    "rate": 12.659698025551682,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "122350",
+    "name": "삼기",
+    "close": 1726,
+    "rate": 7.4719800747198,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

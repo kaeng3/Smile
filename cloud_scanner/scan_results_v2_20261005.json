@@ -1,0 +1,18 @@
+[
+  {
+    "code": "478340",
+    "name": "나라스페이스테크놀로지",
+    "close": 17450,
+    "rate": 16.878767582049566,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "006140",
+    "name": "피제이전자",
+    "close": 5690,
+    "rate": 12.22879684418146,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

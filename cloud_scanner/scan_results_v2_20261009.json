@@ -1,0 +1,18 @@
+[
+  {
+    "code": "005160",
+    "name": "동국산업",
+    "close": 4710,
+    "rate": 8.901734104046243,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "105740",
+    "name": "디케이락",
+    "close": 12050,
+    "rate": 9.44595821980018,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

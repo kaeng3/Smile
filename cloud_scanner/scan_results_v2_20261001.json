@@ -1,0 +1,242 @@
+[
+  {
+    "code": "011790",
+    "name": "SKC",
+    "close": 103900,
+    "rate": 7.66839378238342,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "000250",
+    "name": "삼천당제약",
+    "close": 198300,
+    "rate": 14.889918887601391,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "080220",
+    "name": "제주반도체",
+    "close": 88800,
+    "rate": 14.728682170542637,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "005290",
+    "name": "동진쎄미켐",
+    "close": 52800,
+    "rate": 10.22964509394572,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "003160",
+    "name": "디아이",
+    "close": 42100,
+    "rate": 15.18467852257182,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "083450",
+    "name": "GST",
+    "close": 54500,
+    "rate": 6.4453125,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "476830",
+    "name": "알지노믹스",
+    "close": 29150,
+    "rate": 19.958847736625515,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "248070",
+    "name": "솔루엠",
+    "close": 15190,
+    "rate": 17.478731631863884,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "490470",
+    "name": "세미파이브",
+    "close": 20400,
+    "rate": 12.831858407079647,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "045100",
+    "name": "한양이엔지",
+    "close": 35150,
+    "rate": 8.65533230293663,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "214430",
+    "name": "아이쓰리시스템",
+    "close": 81800,
+    "rate": 19.765739385065885,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "383310",
+    "name": "에코프로에이치엔",
+    "close": 24750,
+    "rate": 11.486486486486488,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "039440",
+    "name": "에스티아이",
+    "close": 25900,
+    "rate": 14.855875831485587,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "482630",
+    "name": "삼양엔씨켐",
+    "close": 15440,
+    "rate": 10.364546104360258,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "011560",
+    "name": "세보엠이씨",
+    "close": 25850,
+    "rate": 11.182795698924732,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "405100",
+    "name": "큐알티",
+    "close": 16310,
+    "rate": 15.346534653465346,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "234690",
+    "name": "녹십자웰빙",
+    "close": 11180,
+    "rate": 13.50253807106599,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "382800",
+    "name": "지앤비에스 에코",
+    "close": 6140,
+    "rate": 7.3426573426573425,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "432720",
+    "name": "퀄리타스반도체",
+    "close": 11940,
+    "rate": 9.641873278236915,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "396300",
+    "name": "HT로보틱스",
+    "close": 6030,
+    "rate": 8.64864864864865,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "102120",
+    "name": "어보브반도체",
+    "close": 8830,
+    "rate": 7.946210268948656,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "417500",
+    "name": "제이아이테크",
+    "close": 4360,
+    "rate": 7.654320987654321,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "001360",
+    "name": "삼성제약",
+    "close": 1453,
+    "rate": 11.855273287143957,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "011690",
+    "name": "와이투솔루션",
+    "close": 3605,
+    "rate": 6.814814814814815,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "105740",
+    "name": "디케이락",
+    "close": 10350,
+    "rate": 9.75609756097561,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "067000",
+    "name": "조이시티",
+    "close": 1215,
+    "rate": 7.52212389380531,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "365330",
+    "name": "에스와이스틸텍",
+    "close": 1682,
+    "rate": 7.338864071474155,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "225190",
+    "name": "LK삼양",
+    "close": 4175,
+    "rate": 19.97126436781609,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "033170",
+    "name": "시그네틱스",
+    "close": 3100,
+    "rate": 14.814814814814813,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "429270",
+    "name": "시지트로닉스",
+    "close": 3575,
+    "rate": 10.510046367851624,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]
