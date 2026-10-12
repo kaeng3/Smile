@@ -31,8 +31,9 @@ def main():
             print("올바른 날짜 형식이 아닙니다 (예: 20260714)")
             sys.exit(1)
     else:
-        target_date = datetime.datetime.now()
-        
+        from trading_day import scan_datetime
+        target_date = scan_datetime()
+
     date_str = target_date.strftime('%Y%m%d')
     date_display = target_date.strftime('%Y-%m-%d')
     

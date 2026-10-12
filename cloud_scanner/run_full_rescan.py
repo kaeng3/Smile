@@ -10,11 +10,8 @@ from local_data_manager import sync_stock_data, load_cached_stock_dfs
 from historical_scans_optimized import get_market_list, scan_date_yey_v2, scan_podosi_date
 from historical_report_compiler import build_report_for_date
 
-target_date = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-if target_date.weekday() == 5:
-    target_date = target_date - datetime.timedelta(days=1)
-elif target_date.weekday() == 6:
-    target_date = target_date - datetime.timedelta(days=2)
+from trading_day import scan_datetime
+target_date = scan_datetime()  # run_cloud_scan.py가 정한 거래일(SCAN_DATE)
 
 date_str = target_date.strftime('%Y%m%d')
 

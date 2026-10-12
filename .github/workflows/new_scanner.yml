@@ -58,8 +58,10 @@ jobs:
         run: python -m pytest tests -q
       - name: Resolve latest KRX session
         id: session
-        run: echo "date=$(python -c "import exchange_calendars as x,pandas as p; print(x.get_calendar('XKRX').date_to_session(p.Timestamp.now(tz='Asia/Seoul').normalize().tz_localize(None),direction='previous').date())")" >> "$GITHUB_OUTPUT"
+        # 일반 스캔과 같은 규칙: 00~09시 실행은 전날분, 휴장일이면 SKIP(스캔 건너뜀)
+        run: echo "date=$(python cloud_scanner/trading_day.py --iso)" >> "$GITHUB_OUTPUT"
       - name: Run daily scanner
+        if: steps.session.outputs.date != 'SKIP'
         working-directory: new_scanner
         env:
           KIS_APP_KEY: ${{ secrets.KIS_APP_KEY }}

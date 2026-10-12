@@ -273,7 +273,8 @@ def get_general_news(stock_name, today, limit=10, lookback_days=3):
 def main():
     # GitHub Actions 러너는 시스템 시각이 UTC라, 한국시간(KST=UTC+9) 기준으로 보정해서 사용
     today = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=9)
-    target_date_str = os.environ.get('FEATURED_NEWS_TARGET_DATE') or today.strftime('%Y%m%d')
+    target_date_str = (os.environ.get('FEATURED_NEWS_TARGET_DATE') or os.environ.get('SCAN_DATE')
+                       or today.strftime('%Y%m%d'))
 
     stocks = get_today_stock_list(target_date_str)
     if not stocks:

@@ -16,8 +16,14 @@ except Exception:
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CLOUD_SCANNER_DIR = os.path.join(BASE_DIR, 'cloud_scanner')
 
-now = datetime.datetime.now()
-date_str = now.strftime('%Y%m%d')
+sys.path.insert(0, CLOUD_SCANNER_DIR)
+from trading_day import resolve_scan_date, kst_now
+
+date_str = resolve_scan_date()
+if not date_str:
+    print(f"[{kst_now():%Y-%m-%d %H:%M}] 한국거래소 휴장일(주말·공휴일)이라 스캔을 건너뜁니다.")
+    sys.exit(0)
+os.environ['SCAN_DATE'] = date_str  # 하위 단계 모두 같은 거래일을 쓰도록
 
 print(f"==========================================")
 print(f" [{date_str}] GitHub Actions 클라우드 스캔 시작")

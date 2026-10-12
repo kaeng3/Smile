@@ -55,7 +55,8 @@ def _get_today_df_from_local_cache():
     """
     try:
         from local_data_manager import load_cached_stock_dfs
-        target_date = datetime.datetime.now()
+        from trading_day import scan_datetime
+        target_date = scan_datetime()
         stock_dfs = load_cached_stock_dfs(target_date)
         target_str = target_date.strftime('%Y-%m-%d')
         name_map = _load_name_map()

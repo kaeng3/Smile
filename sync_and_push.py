@@ -16,7 +16,9 @@ GIT_DIR       = os.path.dirname(os.path.abspath(__file__))
 SCANNER_DIR   = os.path.join(GIT_DIR, "cloud_scanner")
 ARTIFACT_BASE = GIT_DIR
 
-now      = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).replace(tzinfo=None)
+sys.path.insert(0, SCANNER_DIR)
+from trading_day import scan_datetime
+now      = scan_datetime()  # run_cloud_scan.py가 정한 거래일(SCAN_DATE), 없으면 한국시간 오늘
 date_str = now.strftime('%Y%m%d')
 print(f"[SYNC] {date_str} 스캔 결과 → 깃허브 폴더 동기화 시작...")
 

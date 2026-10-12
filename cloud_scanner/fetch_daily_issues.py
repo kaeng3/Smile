@@ -480,5 +480,5 @@ def generate_daily_issues(target_date_str):
     print(f"[{target_date_str}] 주요 이슈 요약 완료 및 저장. (영구 아카이브 {len(issues)}건 반영)")
 
 if __name__ == "__main__":
-    today = kst_now().strftime("%Y%m%d")
+    today = os.environ.get('SCAN_DATE') or kst_now().strftime("%Y%m%d")
     generate_daily_issues(today)

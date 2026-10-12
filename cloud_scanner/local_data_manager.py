@@ -239,7 +239,8 @@ def sync_stock_data(target_date=None):
     """
     init_db()
     if target_date is None:
-        target_date = datetime.datetime.now()
+        from trading_day import scan_datetime
+        target_date = scan_datetime()
     target_str = target_date.strftime('%Y-%m-%d')
 
     prune_old_data(target_date)
