@@ -1,0 +1,66 @@
+[
+  {
+    "code": "038500",
+    "name": "삼표시멘트",
+    "close": 7570,
+    "rate": 6.9209039548022595,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "084670",
+    "name": "동양고속",
+    "close": 43650,
+    "rate": 14.868421052631579,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "225530",
+    "name": "HC보광산업",
+    "close": 2475,
+    "rate": 13.53211009174312,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "142280",
+    "name": "녹십자엠에스",
+    "close": 4125,
+    "rate": 10.441767068273093,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "091590",
+    "name": "남화토건",
+    "close": 6400,
+    "rate": 15.523465703971121,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "228340",
+    "name": "동양파일",
+    "close": 3620,
+    "rate": 14.195583596214512,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "058730",
+    "name": "다스코",
+    "close": 3435,
+    "rate": 10.45016077170418,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "053950",
+    "name": "경남제약",
+    "close": 2200,
+    "rate": 10.055027513756878,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

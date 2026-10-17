@@ -1,0 +1,34 @@
+[
+  {
+    "code": "012750",
+    "name": "에스원",
+    "close": 97500,
+    "rate": 12.068965517241379,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "035760",
+    "name": "CJ ENM",
+    "close": 40100,
+    "rate": 12.640449438202248,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "089590",
+    "name": "제주항공",
+    "close": 5780,
+    "rate": 11.153846153846155,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "042510",
+    "name": "라온시큐어",
+    "close": 21150,
+    "rate": 18.421052631578945,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

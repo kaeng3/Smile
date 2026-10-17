@@ -1,0 +1,82 @@
+[
+  {
+    "code": "290650",
+    "name": "엘앤씨바이오",
+    "close": 59200,
+    "rate": 6.283662477558348,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "053800",
+    "name": "안랩",
+    "close": 85200,
+    "rate": 9.370988446726573,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "000400",
+    "name": "롯데손해보험",
+    "close": 2630,
+    "rate": 14.596949891067537,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "009470",
+    "name": "삼화전기",
+    "close": 28450,
+    "rate": 14.257028112449799,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "001210",
+    "name": "금호전기",
+    "close": 11910,
+    "rate": 7.588075880758807,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "255440",
+    "name": "야스",
+    "close": 9850,
+    "rate": 12.186788154897494,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "278650",
+    "name": "HLB바이오스텝",
+    "close": 6280,
+    "rate": 14.181818181818182,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "225530",
+    "name": "HC보광산업",
+    "close": 2862,
+    "rate": 15.636363636363637,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "002720",
+    "name": "국제약품",
+    "close": 4385,
+    "rate": 11.153358681875792,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "053450",
+    "name": "세코닉스",
+    "close": 3580,
+    "rate": 11.180124223602485,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

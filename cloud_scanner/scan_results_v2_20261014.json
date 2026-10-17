@@ -1,0 +1,58 @@
+[
+  {
+    "code": "011200",
+    "name": "HMM",
+    "close": 23450,
+    "rate": 6.83371298405467,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "028670",
+    "name": "팬오션",
+    "close": 7200,
+    "rate": 9.75609756097561,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "417200",
+    "name": "LS머트리얼즈",
+    "close": 16770,
+    "rate": 9.322033898305085,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "089590",
+    "name": "제주항공",
+    "close": 5200,
+    "rate": 17.249154453213077,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "225530",
+    "name": "HC보광산업",
+    "close": 3315,
+    "rate": 15.828092243186584,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "002720",
+    "name": "국제약품",
+    "close": 4770,
+    "rate": 8.779931584948688,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "054930",
+    "name": "유신",
+    "close": 23300,
+    "rate": 11.217183770883054,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

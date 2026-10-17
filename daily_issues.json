@@ -1,0 +1,4940 @@
+{
+  "20261012": [
+    {
+      "code": "302550",
+      "name": "리메드",
+      "rate": 9.81,
+      "trading_value": 30366836640.0,
+      "summary": "리메드는 미국 의료기기 유통사와의 대규모 OEM 공급계약 체결 및 비만치료제 시장 진출 기대감에 힘입어 상승했다.",
+      "analysis": {
+        "stock": "리메드",
+        "main_material": {
+          "title": "미국 의료기기 유통사와 650대 규모 OEM 공급계약",
+          "reason": "근력강화 자기자극기(MSMS)의 미국 본격 진출 소식과 함께 향후 5년간 '허 웨이 헬스' 클리닉에 순차 공급되는 OEM 계약 체결이 부각되었으며 이달 말 초도 물량 납품 예정임.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "의료기기",
+            "전자약",
+            "비만치료제"
+          ],
+          "origin_date": "2026-10-12"
+        },
+        "secondary_materials": [
+          {
+            "title": "웨이브톤3 미국 진출 발판 마련 및 비만치료제 시장 선점 기대",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "리메드, 글로벌 비만치료제 시장 '최대 난제' 해결로 美 진출…",
+            "date": "2026-10-12 10:22"
+          },
+          {
+            "headline": "美 본격 진출 소식 등에 급등",
+            "date": "2026-10-12 17:00"
+          }
+        ],
+        "summary": "리메드는 미국 의료기기 유통사와의 대규모 OEM 공급계약 체결 및 비만치료제 시장 진출 기대감에 힘입어 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "리메드, 글로벌 비만치료제 시장 '최대 난제' 해결로 美 진출…\"국책과...",
+        "리메드 20.98% 급등, 3200원…전자약 수출 확대 여부에 시선",
+        "리메드 주가, 10월 12일 애프터마켓 3,100원 17.20% 상승",
+        "美 본격 진출 소식 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 10:22",
+          "title": "리메드, 글로벌 비만치료제 시장 '최대 난제' 해결로 美 진출…\"국책과...",
+          "press": "newsprime.co.kr",
+          "link": "http://www.newsprime.co.kr/news/article.html?no=750500"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:50",
+          "title": "리메드 20.98% 급등, 3200원…전자약 수출 확대 여부에 시선",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=231715"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 16:32",
+          "title": "리메드 주가, 10월 12일 애프터마켓 3,100원 17.20% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16244809"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:00",
+          "title": "美 본격 진출 소식 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "084670",
+      "name": "동양고속",
+      "rate": 4.03,
+      "trading_value": 80885283300.0,
+      "summary": "동양고속은 서울고속터미널 재개발 기대감이 지속되며 상승세를 기록했습니다.",
+      "analysis": {
+        "stock": "동양고속",
+        "main_material": {
+          "title": "서울고속터미널 재개발 호재 기대감",
+          "reason": "서울고속터미널 부지 재개발 기대감이 지속되며 매수세가 유입되어 주가가 상승함.",
+          "event_type": "FOLLOW_UP",
+          "theme": [
+            "부동산개발",
+            "자산주"
+          ],
+          "origin_date": "2026-10-10"
+        },
+        "secondary_materials": [
+          {
+            "title": "동양고속 투자경고 지정",
+            "event_type": "NEGATIVE"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "[베스트&워스트] 동양고속 서울고속터미널 재개발 호재 65% 폭등",
+            "date": "2026-10-10 08:02"
+          },
+          {
+            "headline": "[특징주]동양고속, 서울고속터미널 재개발 기대 이어지며 15.52% 뛰어",
+            "date": "2026-10-12 12:58"
+          }
+        ],
+        "summary": "동양고속은 서울고속터미널 재개발 기대감이 지속되며 상승세를 기록했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[베스트&워스트] 동양고속 서울고속터미널 재개발 호재 65% 폭등…방산기...",
+        "동양고속 주가 17% 급등 4만4550원…3거래일 연속 상승, 부동산주 들썩이...",
+        "동양고속 주가, 10월 12일 장중 46,450원 22.24% 상승",
+        "동양고속, 오전 10시 33분 22.24% 상승",
+        "[특징주]동양고속, 서울고속터미널 재개발 기대 이어지며 15.52% 뛰어",
+        "동양고속 10% 뛰어…거래량 213만주 몰리며 변동성 확대",
+        "동양고속 주가, 10월 12일 장중 42,150원 10.92% 상승",
+        "[공시] 동양고속·츌립앤사이언스 '투자경고', 하이브·HLB제넥스 '공매..."
+      ],
+      "articles": [
+        {
+          "time": "10/10",
+          "date": "2026-10-10",
+          "datetime": "2026-10-10 08:02",
+          "title": "[베스트&워스트] 동양고속 서울고속터미널 재개발 호재 65% 폭등…방산기...",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2634024"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 10:16",
+          "title": "동양고속 주가 17% 급등 4만4550원…3거래일 연속 상승, 부동산주 들썩이...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=614361"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 10:34",
+          "title": "동양고속 주가, 10월 12일 장중 46,450원 22.24% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16244452"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 12:02",
+          "title": "동양고속, 오전 10시 33분 22.24% 상승",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=392248"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 12:58",
+          "title": "[특징주]동양고속, 서울고속터미널 재개발 기대 이어지며 15.52% 뛰어",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=925843"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:38",
+          "title": "동양고속 10% 뛰어…거래량 213만주 몰리며 변동성 확대",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=231692"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:50",
+          "title": "동양고속 주가, 10월 12일 장중 42,150원 10.92% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=554134"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 21:20",
+          "title": "[공시] 동양고속·츌립앤사이언스 '투자경고', 하이브·HLB제넥스 '공매...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=722512"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "002990",
+      "name": "금호건설",
+      "rate": 24.75,
+      "trading_value": 158352910290.0,
+      "summary": "금호건설은 호남 반도체 클러스터 조성 기대감에 따른 관련 테마 상승으로 급등했습니다.",
+      "analysis": {
+        "stock": "금호건설",
+        "main_material": {
+          "title": "호남 반도체 클러스터 조성 기대감",
+          "reason": "최태원 SK그룹 회장이 호남 반도체 클러스터 속도전을 강조했다는 소식 등에 힘입어 중소형 건설 테마와 함께 급등했습니다.",
+          "event_type": "NEW",
+          "theme": [
+            "반도체 클러스터",
+            "건설중소형주"
+          ],
+          "origin_date": "2026-10-12"
+        },
+        "secondary_materials": [
+          {
+            "title": "스마트안전관제시스템 특허 출원",
+            "event_type": "NEW"
+          },
+          {
+            "title": "구미 형곡 센트럴 아테라 분양 예정",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "금호전기",
+            "reason": "호남 반도체 클러스터 조성 기대감 관련 테마로 동반 급등했습니다.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "[특징주] 금호건설·금호전기, 호남 반도체 클러스터 조성 기대에 급등",
+            "date": "2026-10-12 15:40"
+          },
+          {
+            "headline": "최태원 SK그룹 회장, 호남 반도체 클러스터 속도전 강조 소식 등에 일부 건설 중소형 테마 상승 속 급등",
+            "date": "2026-10-12 17:00"
+          }
+        ],
+        "summary": "금호건설은 호남 반도체 클러스터 조성 기대감에 따른 관련 테마 상승으로 급등했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "유신·금호건설 주가 '불기둥'…건설 섹터는 단기 매물 폭탄에 '털썩'",
+        "금호건설 주가, 10월 12일 장중 13,730원 23.25% 상승",
+        "금호건설우 15.44% 상승…보통주 실적과 다른 수급 구조 유의",
+        "금호건설, '스마트안전관제시스템' 특허 출원···현장 안전관리 강화",
+        "[특징주] 금호건설·금호전기, 호남 반도체 클러스터 조성 기대에 급등",
+        "금호건설, 스마트폰 활용 건설현장 관제 기술 특허 등록 절차 진행",
+        "금호건설, 구미 형곡3주공 재건축 '형곡 센트럴 아테라' 11월 분양",
+        "금호건설, '형곡 센트럴 아테라' 11월 분양…구미 첫 아테라 적용",
+        "금호건설, 건설현장 안전관리 앞장···'스마트안전관제시스템' 기술 특...",
+        "금호건설, 자체 개발 '스마트안전관제시스템' 특허 출원… 64개 현장 확...",
+        "금호건설, 구미 '형곡 센트럴 아테라' 11월 분양…770세대 공급",
+        "금호건설, 구미 ‘형곡 센트럴 아테라’ 11월 분양",
+        "금호건설·금호전기는 왜 폭등했나…삼전닉스 호실적에도 코스피 급락했...",
+        "금호건설, 11월 '형곡센트럴아테라' 분양 예고",
+        "금호건설, '스마트안전관제시스템' 특허 출원",
+        "최태원 SK그룹 회장, 호남 반도체 클러스터 속도전 강조 소식 등에 일부 건설 중소형 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:54",
+          "title": "유신·금호건설 주가 '불기둥'…건설 섹터는 단기 매물 폭탄에 '털썩'",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=494502"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 15:04",
+          "title": "금호건설 주가, 10월 12일 장중 13,730원 23.25% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=554146"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 15:20",
+          "title": "금호건설우 15.44% 상승…보통주 실적과 다른 수급 구조 유의",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=231750"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 15:22",
+          "title": "금호건설, '스마트안전관제시스템' 특허 출원···현장 안전관리 강화",
+          "press": "koreastocknews.com",
+          "link": "http://www.koreastocknews.com/news/articleView.html?idxno=121691"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 15:40",
+          "title": "[특징주] 금호건설·금호전기, 호남 반도체 클러스터 조성 기대에 급등",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=7189"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 15:54",
+          "title": "금호건설, 스마트폰 활용 건설현장 관제 기술 특허 등록 절차 진행",
+          "press": "polinews.co.kr",
+          "link": "https://www.polinews.co.kr/news/articleView.html?idxno=745470"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 16:10",
+          "title": "금호건설, 구미 형곡3주공 재건축 '형곡 센트럴 아테라' 11월 분양",
+          "press": "ziksir.com",
+          "link": "https://www.ziksir.com/news/articleView.html?idxno=149049"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 16:24",
+          "title": "금호건설, '형곡 센트럴 아테라' 11월 분양…구미 첫 아테라 적용",
+          "press": "paxetv.com",
+          "link": "http://www.paxetv.com/news/articleView.html?idxno=283886"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 16:59",
+          "title": "금호건설, 건설현장 안전관리 앞장···'스마트안전관제시스템' 기술 특...",
+          "press": "enewstoday.co.kr",
+          "link": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2478774"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:20",
+          "title": "금호건설, 자체 개발 '스마트안전관제시스템' 특허 출원… 64개 현장 확...",
+          "press": "tournews21.com",
+          "link": "https://www.tournews21.com/news/articleView.html?idxno=145467"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:28",
+          "title": "금호건설, 구미 '형곡 센트럴 아테라' 11월 분양…770세대 공급",
+          "press": "inthenews.co.kr",
+          "link": "https://www.inthenews.co.kr/news/article.html?no=92951"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:47",
+          "title": "금호건설, 구미 ‘형곡 센트럴 아테라’ 11월 분양",
+          "press": "donga.com",
+          "link": "https://www.donga.com/news/Economy/article/all/20261012/134828160/1"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 19:44",
+          "title": "금호건설·금호전기는 왜 폭등했나…삼전닉스 호실적에도 코스피 급락했...",
+          "press": "kbmaeil.com",
+          "link": "https://www.kbmaeil.com/article/20261012500787"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 20:14",
+          "title": "금호건설, 11월 '형곡센트럴아테라' 분양 예고",
+          "press": "popcornnews.net",
+          "link": "http://www.popcornnews.net/news/articleView.html?idxno=135694"
+        },
+        {
+          "time": "00:44",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 00:44",
+          "title": "금호건설, '스마트안전관제시스템' 특허 출원",
+          "press": "sentv.co.kr",
+          "link": "https://www.sentv.co.kr/article/view/sentv202610130002"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:00",
+          "title": "최태원 SK그룹 회장, 호남 반도체 클러스터 속도전 강조 소식 등에 일부 건설 중소형 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "001210",
+      "name": "금호전기",
+      "rate": 30.39,
+      "trading_value": 139719949650.0,
+      "summary": "금호전기는 최태원 SK그룹 회장의 호남 반도체 클러스터 조성 속도전 발언 및 광주 방문 소식에 힘입어 상한가를 기록했습니다.",
+      "analysis": {
+        "stock": "금호전기",
+        "main_material": {
+          "title": "최태원 회장 호남 반도체 클러스터 속도전 발언",
+          "reason": "최태원 SK그룹 회장이 광주를 방문해 호남 반도체 클러스터 조성을 최대한 빨리 추진하겠다고 밝히면서 관련주로 부각되어 상한가를 기록함.",
+          "event_type": "NEW",
+          "theme": [
+            "반도체",
+            "호남 반도체 테마"
+          ],
+          "origin_date": "2026-10-12"
+        },
+        "secondary_materials": [],
+        "related_stocks": [
+          {
+            "stock": "금호건설",
+            "reason": "최태원 회장의 호남 반도체 속도전 발언 관련주로 함께 부각되어 상승함.",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "서산",
+            "reason": "호남 반도체 테마 강세 속에서 동반 상한가를 기록함.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "최태원 호남 반도체 속도전에…금호전기30%·금호건설 25%↑",
+            "date": "2026-10-12 11:14"
+          },
+          {
+            "headline": "최태원 SK그룹 회장, 호남 반도체 클러스터 부지 방문 소식 속 시장에서 관련주로 부각되며 상한가",
+            "date": "2026-10-12 17:00"
+          }
+        ],
+        "summary": "금호전기는 최태원 SK그룹 회장의 호남 반도체 클러스터 조성 속도전 발언 및 광주 방문 소식에 힘입어 상한가를 기록했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "최태원 호남 반도체 속도전에…금호전기30%·금호건설 25%↑[이런국장 저...",
+        "[특징주] 금호전기, 최태원 회장 광주 방문 영향 '上' 기록",
+        "“반도체 공장 빨리 짓겠다” 최태원 등장하자 상한가…금호전기·금호...",
+        "호남 반도체 테마 강세 속 금호전기·서산 상한가",
+        "금호전기·금호건설 회전율 상위권…급락장서 20개 중 16개 상승",
+        "호남 반도체 기대감에 서산 30% 급등…금호전기·금호건설도 강세",
+        "[특징주] 금호전기, 최태원 '호남 반도체 클러스터' 속도전 발언에 '上'",
+        "금호전기 상한가 1만1070원…거래대금 1321억원 집중",
+        "[특징주] 금호건설·금호전기, 호남 반도체 클러스터 조성 기대에 급등",
+        "최태원 \"호남 반도체 클러스터 최대한 빨리\"…금호전기·유신 상한가",
+        "[특징주] 금호전기, 최태원 호남 반도체 '속도전' 발언에 상한가 직행",
+        "[급등락주 짚어보기] 최태원 ‘호남 반도체’ 속도전에 금호전기·서산...",
+        "[주식마감] 최태원 광주 방문 소식에 금호전기 '上'... 공시 없는 상한가...",
+        "금호건설·금호전기는 왜 폭등했나…삼전닉스 호실적에도 코스피 급락했...",
+        "[상한가 종목] 금호전기-서산 이어 예선테크 등 마감",
+        "최태원 SK그룹 회장, 호남 반도체 클러스터 부지 방문 소식 속 시장에서 관련주로 부각되며 상한가"
+      ],
+      "articles": [
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 11:14",
+          "title": "최태원 호남 반도체 속도전에…금호전기30%·금호건설 25%↑[이런국장 저...",
+          "press": "sedaily.com",
+          "link": "https://www.sedaily.com/article/20100411?ref=naver"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 11:22",
+          "title": "[특징주] 금호전기, 최태원 회장 광주 방문 영향 '上' 기록",
+          "press": "jeonmae.co.kr",
+          "link": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1300325"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 11:35",
+          "title": "“반도체 공장 빨리 짓겠다” 최태원 등장하자 상한가…금호전기·금호...",
+          "press": "biz.heraldcorp.com",
+          "link": "https://biz.heraldcorp.com/article/10899509?ref=naver"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 11:46",
+          "title": "호남 반도체 테마 강세 속 금호전기·서산 상한가",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=392239"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 12:54",
+          "title": "금호전기·금호건설 회전율 상위권…급락장서 20개 중 16개 상승",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1791777131688791276"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 13:30",
+          "title": "호남 반도체 기대감에 서산 30% 급등…금호전기·금호건설도 강세",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1791779300688792276"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 13:56",
+          "title": "[특징주] 금호전기, 최태원 '호남 반도체 클러스터' 속도전 발언에 '上'",
+          "press": "ajunews.com",
+          "link": "https://www.ajunews.com/view/20261012134936604"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:24",
+          "title": "금호전기 상한가 1만1070원…거래대금 1321억원 집중",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=231667"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 15:40",
+          "title": "[특징주] 금호건설·금호전기, 호남 반도체 클러스터 조성 기대에 급등",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=7189"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 16:00",
+          "title": "최태원 \"호남 반도체 클러스터 최대한 빨리\"…금호전기·유신 상한가",
+          "press": "kado.net",
+          "link": "https://www.kado.net/news/articleView.html?idxno=2077510"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 16:00",
+          "title": "[특징주] 금호전기, 최태원 호남 반도체 '속도전' 발언에 상한가 직행",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=301878"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 16:50",
+          "title": "[급등락주 짚어보기] 최태원 ‘호남 반도체’ 속도전에 금호전기·서산...",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2634798"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 19:40",
+          "title": "[주식마감] 최태원 광주 방문 소식에 금호전기 '上'... 공시 없는 상한가...",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1186345"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 19:44",
+          "title": "금호건설·금호전기는 왜 폭등했나…삼전닉스 호실적에도 코스피 급락했...",
+          "press": "kbmaeil.com",
+          "link": "https://www.kbmaeil.com/article/20261012500787"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 21:30",
+          "title": "[상한가 종목] 금호전기-서산 이어 예선테크 등 마감",
+          "press": "econonews.co.kr",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=445579"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:00",
+          "title": "최태원 SK그룹 회장, 호남 반도체 클러스터 부지 방문 소식 속 시장에서 관련주로 부각되며 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "002150",
+      "name": "도화엔지니어링",
+      "rate": 9.84,
+      "trading_value": 287520240.0,
+      "summary": "도화엔지니어링은 일본 태양광 관련 불확실성 해소 및 우발채무 감소와 해외 EPC 사업 확대 기대감으로 상승했다.",
+      "analysis": {
+        "stock": "도화엔지니어링",
+        "main_material": {
+          "title": "해외 EPC 확대 기대 및 일본 태양광 불확실성 해소",
+          "reason": "일본 태양광 사업 정리로 우발채무가 줄어든 가운데 해외 EPC 사업 확대 기대감이 유입되며 주가가 상승했다.",
+          "event_type": "FOLLOW_UP",
+          "theme": [
+            "해외건설",
+            "EPC"
+          ],
+          "origin_date": "2026-10-12"
+        },
+        "secondary_materials": [
+          {
+            "title": "호남 반도체 산단 조사설계 공동수급체 참여 부각",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "유신",
+            "reason": "호남 반도체 산단 조사설계 컨소시엄에 함께 참여한 사실이 부각됨",
+            "relation": "BUSINESS"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "도화엔지니어링, 일본 태양광 손털고 우발채무 줄였지만…불확실성 여...",
+            "date": "2026-10-12 13:36"
+          },
+          {
+            "headline": "도화엔지니어링 5410원…해외 EPC 확대 기대에 거래 집중",
+            "date": "2026-10-12 15:22"
+          }
+        ],
+        "summary": "도화엔지니어링은 일본 태양광 관련 불확실성 해소 및 우발채무 감소와 해외 EPC 사업 확대 기대감으로 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "도화엔지니어링, 일본 태양광 손털고 우발채무 줄였지만…불확실성 여...",
+        "도화엔지니어링 5410원…해외 EPC 확대 기대에 거래 집중",
+        "도화엔지니어링 주가, 10월 12일 애프터마켓 5,530원 13.09% 상승",
+        "유신 컨소시엄, 호남 반도체 산단 조사설계 선점 소식 재부각 속 공동수급체로 참여 사실 부각에 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 13:36",
+          "title": "도화엔지니어링, 일본 태양광 손털고 우발채무 줄였지만…불확실성 여...",
+          "press": "wikileaks-kr.org",
+          "link": "http://www.wikileaks-kr.org/news/articleView.html?idxno=193107"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 15:22",
+          "title": "도화엔지니어링 5410원…해외 EPC 확대 기대에 거래 집중",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=231756"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 16:48",
+          "title": "도화엔지니어링 주가, 10월 12일 애프터마켓 5,530원 13.09% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16244850"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:00",
+          "title": "유신 컨소시엄, 호남 반도체 산단 조사설계 선점 소식 재부각 속 공동수급체로 참여 사실 부각에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "011330",
+      "name": "유니켐",
+      "rate": 12.8,
+      "trading_value": 189301320.0,
+      "summary": "유니켐은 미국 유연전자 기업 루미아 테크놀로지스의 지분 100% 인수 본계약을 체결하고 로봇 전자피부 사업 본격화에 나선다는 소식으로 급등했다.",
+      "analysis": {
+        "stock": "유니켐",
+        "main_material": {
+          "title": "미국 루미아 지분 100% 인수 본계약 체결",
+          "reason": "유니켐이 미국 유연전자 기업 루미아 테크놀로지스의 지분 100%를 인수하는 본계약을 체결하고 '로봇 전자피부' 사업을 본격화한다는 소식이 전해지며 급등했다.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "로봇",
+            "전자피부",
+            "M&A"
+          ],
+          "origin_date": "2026-10-12"
+        },
+        "secondary_materials": [
+          {
+            "title": "자동차 피혁 본업의 안정적 수익성 주목",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "유니켐, 美 루미아 지분 100% 인수 본계약…‘로봇 전자피부’ 사업 본...",
+            "date": "2026-10-12 14:02"
+          },
+          {
+            "headline": "美 루미아 인수 본계약 체결에 따른 로봇 사업 본격화 소식 등에 급등",
+            "date": "2026-10-12 17:00"
+          }
+        ],
+        "summary": "유니켐은 미국 유연전자 기업 루미아 테크놀로지스의 지분 100% 인수 본계약을 체결하고 로봇 전자피부 사업 본격화에 나선다는 소식으로 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[더벨][i-point] 유니켐, 미국 루미아 인수 본계약 \"로봇스킨 사업 본격...",
+        "유니켐, 美 루미아 지분 100% 인수 본계약…‘로봇 전자피부’ 사업 본...",
+        "유니켐 \"美 루미아 지분 100% 인수 본계약 서명\"",
+        "유니켐, 美 유연전자 기업 루미아 100% 인수 계약 \"로봇 전자피부 사업...",
+        "유니켐, 미국 루미아 지분 100% 인수 본계약 서명…로봇 전자피부 사업...",
+        "유니켐, 美 루미아 인수 본계약 성사…‘로봇 전자피부’ 사업화 본격화",
+        "유니켐, 미국 루미아 지분 인수 본계약 서명…'로봇 전자피부' 사업 속...",
+        "유니켐 주가, 10월 12일 장중 5,250원 19.86% 상승",
+        "유니켐, 美 루미아 100% 인수 본계약 서명…‘로봇 전자피부’ 사업화 ...",
+        "유니켐 20.09% 뛰어 5260원…자동차 피혁 수익성에 시선",
+        "유니켐, 美 루미아 인수 본계약 체결",
+        "美 루미아 인수 본계약 체결에 따른 로봇 사업 본격화 소식 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 13:38",
+          "title": "[더벨][i-point] 유니켐, 미국 루미아 인수 본계약 \"로봇스킨 사업 본격...",
+          "press": "thebell.co.kr",
+          "link": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202610121331150840102821"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:02",
+          "title": "유니켐, 美 루미아 지분 100% 인수 본계약…‘로봇 전자피부’ 사업 본...",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=03230806645612264&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:21",
+          "title": "유니켐 \"美 루미아 지분 100% 인수 본계약 서명\"",
+          "press": "newsis.com",
+          "link": "https://www.newsis.com/view/NISX20261012_0003822222"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:23",
+          "title": "유니켐, 美 유연전자 기업 루미아 100% 인수 계약 \"로봇 전자피부 사업...",
+          "press": "mt.co.kr",
+          "link": "https://www.mt.co.kr/stock/2026/10/12/2026101214114339108"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:27",
+          "title": "유니켐, 미국 루미아 지분 100% 인수 본계약 서명…로봇 전자피부 사업...",
+          "press": "seoul.co.kr",
+          "link": "https://www.seoul.co.kr/news/economy/2026/10/12/20261012500145?wlog_tag3=naver"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:50",
+          "title": "유니켐, 美 루미아 인수 본계약 성사…‘로봇 전자피부’ 사업화 본격화",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2634707"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:56",
+          "title": "유니켐, 미국 루미아 지분 인수 본계약 서명…'로봇 전자피부' 사업 속...",
+          "press": "hankyung.com",
+          "link": "https://www.hankyung.com/article/202610126196O"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 15:04",
+          "title": "유니켐 주가, 10월 12일 장중 5,250원 19.86% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=554149"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 15:05",
+          "title": "유니켐, 美 루미아 100% 인수 본계약 서명…‘로봇 전자피부’ 사업화 ...",
+          "press": "biz.chosun.com",
+          "link": "https://biz.chosun.com/industry/business_info/2026/10/12/AOGV3Z3TL5CBVHV67RLBES3XVU/?utm_source=naver&utm_medium=original&utm_campaign=biz"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 15:18",
+          "title": "유니켐 20.09% 뛰어 5260원…자동차 피혁 수익성에 시선",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=231747"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 16:12",
+          "title": "유니켐, 美 루미아 인수 본계약 체결",
+          "press": "hankookilbo.com",
+          "link": "https://www.hankookilbo.com/news/article/A2026101214540001070?did=NA"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:00",
+          "title": "美 루미아 인수 본계약 체결에 따른 로봇 사업 본격화 소식 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "0010F0",
+      "name": "보원케미칼",
+      "rate": 12.2,
+      "trading_value": 24000431100.0,
+      "summary": "보원케미칼은 상장 후 실적에 대한 시장의 재평가 기대감이 유입되며 상승함.",
+      "analysis": {
+        "stock": "보원케미칼",
+        "main_material": {
+          "title": "상장 후 실적 재평가 기대감",
+          "reason": "상장 이후 실적에 대한 시장의 재평가가 이루어지며 거래량이 급증하고 주가가 상승함.",
+          "event_type": "NEW",
+          "theme": [
+            "실적재평가"
+          ],
+          "origin_date": "2026-10-12"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "보원케미칼 3655원, 거래량 1047만주…상장 후 실적 재평가",
+            "date": "2026-10-12 15:20"
+          }
+        ],
+        "summary": "보원케미칼은 상장 후 실적에 대한 시장의 재평가 기대감이 유입되며 상승함.",
+        "confidence": "MEDIUM"
+      },
+      "headlines": [
+        "보원케미칼 3655원, 거래량 1047만주…상장 후 실적 재평가"
+      ],
+      "articles": [
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 15:20",
+          "title": "보원케미칼 3655원, 거래량 1047만주…상장 후 실적 재평가",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=231754"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "290650",
+      "name": "엘앤씨바이오",
+      "rate": 15.95,
+      "trading_value": 12579288000.0,
+      "summary": "엘앤씨바이오는 최소 820억원 규모의 '리투오' 미국 독점 공급계약 체결 소식이 전해지며 주가가 급등했다.",
+      "analysis": {
+        "stock": "엘앤씨바이오",
+        "main_material": {
+          "title": "미국 조직은행과 '리투오' 독점 공급계약 체결",
+          "reason": "미국 기업과 최소 6000만 달러(약 820억~837억원) 규모의 '리투오' 미국 독점 공급 계약을 체결하며 미국 진출 본격화 기대감이 반영되어 급등함.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "바이오",
+            "의료기기",
+            "미국진출"
+          ],
+          "origin_date": "2026-10-12"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "엘앤씨바이오, 리투오 美 독점 공급계약…최소 820억 원 규모",
+            "date": "2026-10-12 17:09"
+          },
+          {
+            "headline": "엘앤씨바이오, 美조직은행과 ‘리투오’ 독점 공급계약",
+            "date": "2026-10-12 18:02"
+          },
+          {
+            "headline": "[특징주] 엘앤씨바이오, 리투오 美 공급계약에 17% 넘게 급등",
+            "date": "2026-10-12 18:30"
+          }
+        ],
+        "summary": "엘앤씨바이오는 최소 820억원 규모의 '리투오' 미국 독점 공급계약 체결 소식이 전해지며 주가가 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "엘앤씨바이오, 리투오 美 독점 공급계약…최소 820억 원 규모",
+        "엘앤씨바이오, 리투오 미국 독점 공급계약…약 820억원 규모",
+        "엘앤씨바이오 ‘리투오’, 미국 독점 공급 계약…“최소 820억 규모”",
+        "엘앤씨바이오, '리투오' ﻿美 독점 공급계약 체결",
+        "엘앤씨바이오, ‘리투오’ 美 진출 본격화…820억원 공급계약",
+        "엘앤씨바이오, 美 리투오 독점 공급계약…6000만달러 약정, 공급은 내년...",
+        "엘앤씨바이오 '리투오', 미국서 820억원 공급계약 따냈다",
+        "엘앤씨바이오, 美조직은행과 ‘리투오’ 독점 공급계약",
+        "엘앤씨바이오 리투오, 6000만 달러 규모 미국 공급 계약 체결",
+        "엘앤씨바이오, 리투오 미국 독점 계약 체결…최소 820억 규모",
+        "[특징주] 엘앤씨바이오, 리투오 美 공급계약에 17% 넘게 급등",
+        "엘앤씨바이오, 美에 '리투오' 독점 공급계약…최소 837억원 규모",
+        "엘앤씨바이오, 미국 기업과 리투오 독점 공급계약 체결…최소 6000만달러",
+        "엘앤씨바이오, 美 진출 본격화…'리투오' 800억 독점 공급계약",
+        "엘앤씨바이오 '리투오', 미국서 6000만달러 규모 독점 공급계약"
+      ],
+      "articles": [
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:09",
+          "title": "엘앤씨바이오, 리투오 美 독점 공급계약…최소 820억 원 규모",
+          "press": "sedaily.com",
+          "link": "https://www.sedaily.com/article/20100589?ref=naver"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:14",
+          "title": "엘앤씨바이오, 리투오 미국 독점 공급계약…약 820억원 규모",
+          "press": "new.dailypharm.com",
+          "link": "https://new.dailypharm.com/user/news/343320?REFERER=NP"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:20",
+          "title": "엘앤씨바이오 ‘리투오’, 미국 독점 공급 계약…“최소 820억 규모”",
+          "press": "dt.co.kr",
+          "link": "https://www.dt.co.kr/article/12088599?ref=naver"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:24",
+          "title": "엘앤씨바이오, '리투오' ﻿美 독점 공급계약 체결",
+          "press": "pointdaily.co.kr",
+          "link": "https://www.pointdaily.co.kr/news/articleView.html?idxno=322005"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:52",
+          "title": "엘앤씨바이오, ‘리투오’ 美 진출 본격화…820억원 공급계약",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2634841"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:52",
+          "title": "엘앤씨바이오, 美 리투오 독점 공급계약…6000만달러 약정, 공급은 내년...",
+          "press": "digitalchosun.dizzo.com",
+          "link": "http://digitalchosun.dizzo.com/site/data/html_dir/2026/10/12/2026101280200.html"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:54",
+          "title": "엘앤씨바이오 '리투오', 미국서 820억원 공급계약 따냈다",
+          "press": "mdtoday.co.kr",
+          "link": "https://www.mdtoday.co.kr/news/articleView.html?idxno=618276"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 18:02",
+          "title": "엘앤씨바이오, 美조직은행과 ‘리투오’ 독점 공급계약",
+          "press": "dealsite.co.kr",
+          "link": "https://dealsite.co.kr/articles/170499"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 18:11",
+          "title": "엘앤씨바이오 리투오, 6000만 달러 규모 미국 공급 계약 체결",
+          "press": "health.chosun.com",
+          "link": "https://health.chosun.com/site/data/html_dir/2026/10/12/2026101202520.html"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 18:26",
+          "title": "엘앤씨바이오, 리투오 미국 독점 계약 체결…최소 820억 규모",
+          "press": "ebn.co.kr",
+          "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1727484"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 18:30",
+          "title": "[특징주] 엘앤씨바이오, 리투오 美 공급계약에 17% 넘게 급등",
+          "press": "biotimes.co.kr",
+          "link": "https://www.biotimes.co.kr/news/articleView.html?idxno=35148"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 19:34",
+          "title": "엘앤씨바이오, 美에 '리투오' 독점 공급계약…최소 837억원 규모",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=04624806645612264&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 19:48",
+          "title": "엘앤씨바이오, 미국 기업과 리투오 독점 공급계약 체결…최소 6000만달러",
+          "press": "thefirstmedia.net",
+          "link": "http://www.thefirstmedia.net/news/articleView.html?idxno=210628"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 22:58",
+          "title": "엘앤씨바이오, 美 진출 본격화…'리투오' 800억 독점 공급계약",
+          "press": "bosa.co.kr",
+          "link": "https://www.bosa.co.kr/news/articleView.html?idxno=3013733"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 23:16",
+          "title": "엘앤씨바이오 '리투오', 미국서 6000만달러 규모 독점 공급계약",
+          "press": "medipana.com",
+          "link": "https://www.medipana.com/news/articleView.html?idxno=419155"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "079650",
+      "name": "서산",
+      "rate": 29.25,
+      "trading_value": 20633210000.0,
+      "summary": "서산은 최태원 SK회장의 호남 반도체 클러스터 속도전 강조 소식에 따른 시멘트/레미콘 테마 강세 속에서 상한가를 기록했다.",
+      "analysis": {
+        "stock": "서산",
+        "main_material": {
+          "title": "시멘트/레미콘 테마 상승 및 상한가 진입",
+          "reason": "최태원 SK그룹 회장의 호남 반도체 클러스터 속도전 강조 소식 등에 힘입어 시멘트/레미콘 테마가 상승하는 가운데 상한가를 기록했다.",
+          "event_type": "NEW",
+          "theme": [
+            "시멘트",
+            "레미콘"
+          ],
+          "origin_date": "2026-10-12"
+        },
+        "secondary_materials": [
+          {
+            "title": "제23회 서산해미읍성축제 성황리 개최",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "최태원 SK그룹 회장, 호남 반도체 클러스터 속도전 강조 소식 등에 일부 시멘트/레미콘 테마 상승 속 상한가",
+            "date": "2026-10-12 17:00"
+          },
+          {
+            "headline": "[상한가 종목] 금호전기-서산 이어 예선테크 등 마감",
+            "date": "2026-10-12 21:30"
+          }
+        ],
+        "summary": "서산은 최태원 SK회장의 호남 반도체 클러스터 속도전 강조 소식에 따른 시멘트/레미콘 테마 강세 속에서 상한가를 기록했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "SGI서울보증 임직원, 서산서 멸종위기식물 식재",
+        "서산시, '자원봉사자 헌신이 빚은 결실'... 해미읍성축제 유공 격려",
+        "서산 해미읍성 축제에 24만 명 방문…지난해보다 15% 증가",
+        "24만 몰린 서산해미읍성축제, 무사고 이끈 자원봉사자들 빛났다",
+        "서산시, '행정·법률 상담 찾아간다'... 16일 달리는 국민신문고",
+        "24만명 몰린 서산해미읍성축제 성공적 마무리…이완섭 시장 \"역사성˙지...",
+        "이완섭 서산시장, 해미읍성축제 성공에 감사…\"시민·자원봉사자 덕분\"",
+        "서산시, 천수만 청정어장 재생 본격화…30억 원 투입",
+        "국민권익위, 16일 서산에서 달리는 국민신문고 운영",
+        "서산 해미읍성 축제에 24만여명 성황…연휴 덕에 작년보다 15%↑",
+        "이완섭 서산시장, \"해미읍성축제 성공은 시민과 자원봉사자의 힘\"",
+        "막 내린 제23회 서산해미읍성축제... 이완섭 시장 \"자원봉사자 질서유지...",
+        "[상한가 종목] 금호전기-서산 이어 예선테크 등 마감",
+        "24만여 명 환호… '제23회 서산해미읍성축제' 역사와 미래 잇고 폐막",
+        "제23회 서산해미읍성축제에 관광객 등 24만 명 방문…드론쇼·가수 공연...",
+        "최태원 SK그룹 회장, 호남 반도체 클러스터 속도전 강조 소식 등에 일부 시멘트/레미콘 테마 상승 속 상한가"
+      ],
+      "articles": [
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 16:58",
+          "title": "SGI서울보증 임직원, 서산서 멸종위기식물 식재",
+          "press": "g-enews.com",
+          "link": "https://www.g-enews.com/view.php?ud=202610121644422034e30fcb1ba8_1"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:06",
+          "title": "서산시, '자원봉사자 헌신이 빚은 결실'... 해미읍성축제 유공 격려",
+          "press": "newsworker.co.kr",
+          "link": "https://www.newsworker.co.kr/news/articleView.html?idxno=508086"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:10",
+          "title": "서산 해미읍성 축제에 24만 명 방문…지난해보다 15% 증가",
+          "press": "tjb.co.kr",
+          "link": "https://www.tjb.co.kr/news05/bodo/view/id/104691"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:34",
+          "title": "24만 몰린 서산해미읍성축제, 무사고 이끈 자원봉사자들 빛났다",
+          "press": "breaknews.com",
+          "link": "http://www.breaknews.com/1242406"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:36",
+          "title": "서산시, '행정·법률 상담 찾아간다'... 16일 달리는 국민신문고",
+          "press": "newsworker.co.kr",
+          "link": "https://www.newsworker.co.kr/news/articleView.html?idxno=508046"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 18:02",
+          "title": "24만명 몰린 서산해미읍성축제 성공적 마무리…이완섭 시장 \"역사성˙지...",
+          "press": "sportsworldi.com",
+          "link": "https://www.sportsworldi.com/newsView/20261012521395"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 18:28",
+          "title": "이완섭 서산시장, 해미읍성축제 성공에 감사…\"시민·자원봉사자 덕분\"",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=722464"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 18:34",
+          "title": "서산시, 천수만 청정어장 재생 본격화…30억 원 투입",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=722466"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 20:09",
+          "title": "국민권익위, 16일 서산에서 달리는 국민신문고 운영",
+          "press": "dynews.co.kr",
+          "link": "https://www.dynews.co.kr/news/articleView.html?idxno=868994"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 20:09",
+          "title": "서산 해미읍성 축제에 24만여명 성황…연휴 덕에 작년보다 15%↑",
+          "press": "dynews.co.kr",
+          "link": "https://www.dynews.co.kr/news/articleView.html?idxno=868996"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 20:16",
+          "title": "이완섭 서산시장, \"해미읍성축제 성공은 시민과 자원봉사자의 힘\"",
+          "press": "cctimes.kr",
+          "link": "http://www.cctimes.kr/news/articleView.html?idxno=931663"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 21:24",
+          "title": "막 내린 제23회 서산해미읍성축제... 이완섭 시장 \"자원봉사자 질서유지...",
+          "press": "ngonews.kr",
+          "link": "https://www.ngonews.kr/news/articleView.html?idxno=240379"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 21:30",
+          "title": "[상한가 종목] 금호전기-서산 이어 예선테크 등 마감",
+          "press": "econonews.co.kr",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=445579"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 21:32",
+          "title": "24만여 명 환호… '제23회 서산해미읍성축제' 역사와 미래 잇고 폐막",
+          "press": "nbntv.co.kr",
+          "link": "https://www.nbntv.co.kr/news/articleView.html?idxno=4025913"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 22:48",
+          "title": "제23회 서산해미읍성축제에 관광객 등 24만 명 방문…드론쇼·가수 공연...",
+          "press": "gukjenews.com",
+          "link": "https://www.gukjenews.com/news/articleView.html?idxno=3719346"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 17:00",
+          "title": "최태원 SK그룹 회장, 호남 반도체 클러스터 속도전 강조 소식 등에 일부 시멘트/레미콘 테마 상승 속 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    }
+  ],
+  "20261013": [
+    {
+      "code": "002720",
+      "name": "국제약품",
+      "rate": 12.99,
+      "trading_value": 98902569980.0,
+      "summary": "AI 요약 생성에 실패했습니다.",
+      "analysis": null,
+      "headlines": [
+        "국제약품 최대주주 측 보유주식 887주 증가, 지분율 37.95% 유지",
+        "경영 이어 지분도 받은 남태훈 국제약품 부회장 … 지주사 '우경'은 여전...",
+        "국제약품 3세 남태훈, 지분 10.7% 확보…승계 마지막 퍼즐은 '우경'",
+        "국제약품 이어 종근당도…제약업계 오너 3세 승계 '속도'",
+        "[특징주]국제약품, 조정 뒤 반등에 15.01% 뛰어…7일 상한가 가격 웃돌아",
+        "국제약품 16.05% 상승…거래량 2129만주로 확대",
+        "국제약품 주가, 10월 13일 4,495원 15.40% 상승",
+        "[특징주] 국제약품, 러시아 페스트 의심 사건에 강세…항생제 테마 수급...",
+        "금호전기 271%·국제약품 163%…급락장 속 회전율 급증"
+      ],
+      "articles": [
+        {
+          "time": "10/11",
+          "date": "2026-10-11",
+          "datetime": "2026-10-11 11:10",
+          "title": "국제약품 최대주주 측 보유주식 887주 증가, 지분율 37.95% 유지",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=614157"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 09:42",
+          "title": "경영 이어 지분도 받은 남태훈 국제약품 부회장 … 지주사 '우경'은 여전...",
+          "press": "biz.newdaily.co.kr",
+          "link": "https://biz.newdaily.co.kr/site/data/html/2026/10/12/2026101200072.html"
+        },
+        {
+          "time": "00:01",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 00:01",
+          "title": "국제약품 3세 남태훈, 지분 10.7% 확보…승계 마지막 퍼즐은 '우경'",
+          "press": "news.tf.co.kr",
+          "link": "https://news.tf.co.kr/read/economy/2375159.htm"
+        },
+        {
+          "time": "07:30",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 07:30",
+          "title": "국제약품 이어 종근당도…제약업계 오너 3세 승계 '속도'",
+          "press": "news.bizwatch.co.kr",
+          "link": "https://news.bizwatch.co.kr/article/healthcare/2026/10/12/0032"
+        },
+        {
+          "time": "13:04",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 13:04",
+          "title": "[특징주]국제약품, 조정 뒤 반등에 15.01% 뛰어…7일 상한가 가격 웃돌아",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=925967"
+        },
+        {
+          "time": "13:54",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 13:54",
+          "title": "국제약품 16.05% 상승…거래량 2129만주로 확대",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=231959"
+        },
+        {
+          "time": "16:00",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 16:00",
+          "title": "국제약품 주가, 10월 13일 4,495원 15.40% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16245691"
+        },
+        {
+          "time": "18:06",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 18:06",
+          "title": "[특징주] 국제약품, 러시아 페스트 의심 사건에 강세…항생제 테마 수급...",
+          "press": "biotimes.co.kr",
+          "link": "https://www.biotimes.co.kr/news/articleView.html?idxno=35193"
+        },
+        {
+          "time": "21:30",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 21:30",
+          "title": "금호전기 271%·국제약품 163%…급락장 속 회전율 급증",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1791894490689018276"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "079650",
+      "name": "서산",
+      "rate": 29.88,
+      "trading_value": 91996190280.0,
+      "summary": "서산은 최태원 SK그룹 회장의 호남 반도체 클러스터 속도전 강조 영향으로 시멘트/레미콘 테마가 강세를 보이며 상한가에 진입했다.",
+      "analysis": {
+        "stock": "서산",
+        "main_material": {
+          "title": "최태원 회장 호남 반도체 클러스터 강조 속 시멘트/레미콘 테마 상승",
+          "reason": "최태원 SK그룹 회장의 호남 반도체 클러스터 속도전 강조 영향 등으로 시멘트/레미콘 테마가 상승하며 상한가를 기록함.",
+          "event_type": "NEW",
+          "theme": [
+            "시멘트",
+            "레미콘"
+          ],
+          "origin_date": "2026-10-13"
+        },
+        "secondary_materials": [
+          {
+            "title": "서산시 파크골프장 4곳 신·증설 등 지역 정책 발표",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "최태원 SK그룹 회장, 호남 반도체 클러스터 속도전 강조 영향 등에 일부 시멘트/레미콘 테마 상승 속 상한가",
+            "date": "2026-10-13 17:00"
+          }
+        ],
+        "summary": "서산은 최태원 SK그룹 회장의 호남 반도체 클러스터 속도전 강조 영향으로 시멘트/레미콘 테마가 강세를 보이며 상한가에 진입했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "서산시 \"여권 묶음 배송 최대 5권 한 번에…배송비 최대 2만원 절감\"",
+        "서산시, 파크골프장 4곳 신·증설…166억 원 투입",
+        "서산시 수소충전소, 11월 부터 900원 인상…㎏당 9500원",
+        "서산시, 166억 원 투입해 파크골프장 4곳 확충",
+        "서산 일락사 \"시와 음악으로 쉬어가세요\"",
+        "서산 아파트서 불나 70명 대피…인명피해 없어",
+        "서산시 곳곳에 파크골프장 들어선다…166억 투입",
+        "서산시 '지역외 고액·고질 체납자'실태조사 징수 추진",
+        "서산시, '진드기매개감염병 예방'집중관리 나서",
+        "서산시, 월드뮤직그룹 '디에보' 콘서트 23일 개최",
+        "서산교육지원청, '특수교사 캘리그래피' 진로직업교육 역량 키운다",
+        "서산 석림동 아파트서 불...2400여만 원 재산 피해",
+        "서산 아파트 1층서 화재⋯주민 70명 대피",
+        "[공시] 애니메디솔루션 '거래정지', 서산·엑시콘 '투자경고' 등...61건",
+        "[상한가 종목] 하이퍼코퍼레이션-서산 이어 바이오인프라 등 마감",
+        "최태원 SK그룹 회장, 호남 반도체 클러스터 속도전 강조 영향 지속 등에 일부 시멘트/레미콘 테마 상승 속 상한가"
+      ],
+      "articles": [
+        {
+          "time": "16:42",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 16:42",
+          "title": "서산시 \"여권 묶음 배송 최대 5권 한 번에…배송비 최대 2만원 절감\"",
+          "press": "news1.kr",
+          "link": "https://www.news1.kr/local/daejeon-chungnam/6318654"
+        },
+        {
+          "time": "17:06",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:06",
+          "title": "서산시, 파크골프장 4곳 신·증설…166억 원 투입",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=722707"
+        },
+        {
+          "time": "17:10",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:10",
+          "title": "서산시 수소충전소, 11월 부터 900원 인상…㎏당 9500원",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=722708"
+        },
+        {
+          "time": "17:22",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:22",
+          "title": "서산시, 166억 원 투입해 파크골프장 4곳 확충",
+          "press": "breaknews.com",
+          "link": "http://www.breaknews.com/1242748"
+        },
+        {
+          "time": "17:22",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:22",
+          "title": "서산 일락사 \"시와 음악으로 쉬어가세요\"",
+          "press": "hyunbulnews.com",
+          "link": "https://www.hyunbulnews.com/news/articleView.html?idxno=505761"
+        },
+        {
+          "time": "17:35",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:35",
+          "title": "서산 아파트서 불나 70명 대피…인명피해 없어",
+          "press": "yna.co.kr",
+          "link": "https://www.yna.co.kr/view/AKR20261013169800063?input=1195m"
+        },
+        {
+          "time": "17:52",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:52",
+          "title": "서산시 곳곳에 파크골프장 들어선다…166억 투입",
+          "press": "sedaily.com",
+          "link": "https://www.sedaily.com/article/20101163?ref=naver"
+        },
+        {
+          "time": "17:54",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:54",
+          "title": "서산시 '지역외 고액·고질 체납자'실태조사 징수 추진",
+          "press": "ccdailynews.com",
+          "link": "https://www.ccdailynews.com/news/articleView.html?idxno=2446005"
+        },
+        {
+          "time": "17:54",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:54",
+          "title": "서산시, '진드기매개감염병 예방'집중관리 나서",
+          "press": "ccdailynews.com",
+          "link": "https://www.ccdailynews.com/news/articleView.html?idxno=2446004"
+        },
+        {
+          "time": "17:54",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:54",
+          "title": "서산시, 월드뮤직그룹 '디에보' 콘서트 23일 개최",
+          "press": "ccdailynews.com",
+          "link": "https://www.ccdailynews.com/news/articleView.html?idxno=2446002"
+        },
+        {
+          "time": "17:54",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:54",
+          "title": "서산교육지원청, '특수교사 캘리그래피' 진로직업교육 역량 키운다",
+          "press": "ccdailynews.com",
+          "link": "https://www.ccdailynews.com/news/articleView.html?idxno=2446006"
+        },
+        {
+          "time": "19:26",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 19:26",
+          "title": "서산 석림동 아파트서 불...2400여만 원 재산 피해",
+          "press": "newsfreezone.co.kr",
+          "link": "https://www.newsfreezone.co.kr/news/articleView.html?idxno=713675"
+        },
+        {
+          "time": "20:45",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 20:45",
+          "title": "서산 아파트 1층서 화재⋯주민 70명 대피",
+          "press": "tjmbc.co.kr",
+          "link": "https://tjmbc.co.kr/NewsArticle/867202"
+        },
+        {
+          "time": "20:52",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 20:52",
+          "title": "[공시] 애니메디솔루션 '거래정지', 서산·엑시콘 '투자경고' 등...61건",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=722758"
+        },
+        {
+          "time": "21:30",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 21:30",
+          "title": "[상한가 종목] 하이퍼코퍼레이션-서산 이어 바이오인프라 등 마감",
+          "press": "econonews.co.kr",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=445631"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:00",
+          "title": "최태원 SK그룹 회장, 호남 반도체 클러스터 속도전 강조 영향 지속 등에 일부 시멘트/레미콘 테마 상승 속 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "042510",
+      "name": "라온시큐어",
+      "rate": 6.11,
+      "trading_value": 231799033760.0,
+      "summary": "AI 요약 생성에 실패했습니다.",
+      "analysis": null,
+      "headlines": [
+        "AI 위조 잡고 실적까지 터졌다… 라온시큐어로 쏠린 시장 매수세 뚜렷",
+        "라온시큐어 주가, 10월 12일 장중 16,760원 8.90% 상승",
+        "라온시큐어 주가, 10월 12일 장중 16,400원 6.56% 상승",
+        "라온시큐어 4.09% 상승…디지털 인증 사업 성과에 관심",
+        "바이오인식 업종, 보안·스마트기기 적용 확대에 온기… 라온시큐어 신...",
+        "[급등주] 라온시큐어, +21.10% 강세",
+        "라온시큐어 주가, 급등세... 이유는?",
+        "라온시큐어 주가, 10월 13일 장중 19,660원 20.24% 상승",
+        "[특징주] 금융권 해킹 위험…'보안株' 라온시큐어 19.5%↑",
+        "라온시큐어 주가, 10월 13일 장중 18,350원 12.23% 상승",
+        "[특징주]안랩, 금융권 AI 해킹發 보안 투자 기대 재부각에 11.41% 치솟아",
+        "라온시큐어, 14%대 급등…코스피·코스닥 약세 흐름 속 이틀째 상승",
+        "[특징주] 라온시큐어, 코스닥 급락 속 14%대 급등…장중 1만9천930원",
+        "금호전기 회전율 187%·라온시큐어 105%…급락장서 거래 활발",
+        "거래대금 2440억원 집중된 라온시큐어, 4.46% 상승"
+      ],
+      "articles": [
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 10:10",
+          "title": "AI 위조 잡고 실적까지 터졌다… 라온시큐어로 쏠린 시장 매수세 뚜렷",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=494336"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 10:18",
+          "title": "라온시큐어 주가, 10월 12일 장중 16,760원 8.90% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=553987"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 10:22",
+          "title": "라온시큐어 주가, 10월 12일 장중 16,400원 6.56% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16244424"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:40",
+          "title": "라온시큐어 4.09% 상승…디지털 인증 사업 성과에 관심",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=231703"
+        },
+        {
+          "time": "09:44",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 09:44",
+          "title": "바이오인식 업종, 보안·스마트기기 적용 확대에 온기… 라온시큐어 신...",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=494756"
+        },
+        {
+          "time": "10:18",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 10:18",
+          "title": "[급등주] 라온시큐어, +21.10% 강세",
+          "press": "jeonmae.co.kr",
+          "link": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1300730"
+        },
+        {
+          "time": "10:20",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 10:20",
+          "title": "라온시큐어 주가, 급등세... 이유는?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1186414"
+        },
+        {
+          "time": "10:22",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 10:22",
+          "title": "라온시큐어 주가, 10월 13일 장중 19,660원 20.24% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16245374"
+        },
+        {
+          "time": "10:32",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 10:32",
+          "title": "[특징주] 금융권 해킹 위험…'보안株' 라온시큐어 19.5%↑",
+          "press": "newsdream.kr",
+          "link": "http://www.newsdream.kr/news/articleView.html?idxno=119846"
+        },
+        {
+          "time": "10:36",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 10:36",
+          "title": "라온시큐어 주가, 10월 13일 장중 18,350원 12.23% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=554416"
+        },
+        {
+          "time": "11:18",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 11:18",
+          "title": "[특징주]안랩, 금융권 AI 해킹發 보안 투자 기대 재부각에 11.41% 치솟아",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=925960"
+        },
+        {
+          "time": "11:38",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 11:38",
+          "title": "라온시큐어, 14%대 급등…코스피·코스닥 약세 흐름 속 이틀째 상승",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=614850"
+        },
+        {
+          "time": "12:02",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 12:02",
+          "title": "[특징주] 라온시큐어, 코스닥 급락 속 14%대 급등…장중 1만9천930원",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=925966"
+        },
+        {
+          "time": "12:52",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 12:52",
+          "title": "금호전기 회전율 187%·라온시큐어 105%…급락장서 거래 활발",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1791863471688905276"
+        },
+        {
+          "time": "13:58",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 13:58",
+          "title": "거래대금 2440억원 집중된 라온시큐어, 4.46% 상승",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=231968"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "225530",
+      "name": "HC보광산업",
+      "rate": 10.39,
+      "trading_value": 14214735468.0,
+      "summary": "HC보광산업은 시멘트·레미콘 관련 테마 상승과 골재 출하에 따른 실적 개선 기대감으로 상승했습니다.",
+      "analysis": {
+        "stock": "HC보광산업",
+        "main_material": {
+          "title": "시멘트·레미콘 테마 상승 및 골재 출하 기대감",
+          "reason": "시멘트 및 골재 관련 테마의 강세 속에서 실적 개선 및 골재 출하에 대한 기대감이 부각되며 상승함.",
+          "event_type": "RECYCLED",
+          "theme": [
+            "시멘트",
+            "레미콘",
+            "아스콘"
+          ],
+          "origin_date": "2026-10-12"
+        },
+        "secondary_materials": [
+          {
+            "title": "상반기 흑자전환 지속 여부 주목",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "삼표시멘트",
+            "reason": "시멘트 관련주로 동반 강세 흐름을 보임",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "삼표시멘트 등 시멘트 관련주 강세…서산 상한가, HC보광산업 두 자릿수...",
+            "date": "2026-10-12 12:46"
+          },
+          {
+            "headline": "HC보광산업 11.24% 상승…상반기 흑자전환 지속 여부 주목",
+            "date": "2026-10-12 15:20"
+          }
+        ],
+        "summary": "HC보광산업은 시멘트·레미콘 관련 테마 상승과 골재 출하에 따른 실적 개선 기대감으로 상승했습니다.",
+        "confidence": "MEDIUM"
+      },
+      "headlines": [
+        "삼표시멘트 등 시멘트 관련주 강세…서산 상한가, HC보광산업 두 자릿수...",
+        "HC보광산업 11.24% 상승…상반기 흑자전환 지속 여부 주목",
+        "HC보광산업 주가, 10월 13일 장중 2,935원 19.07% 상승",
+        "아스콘 관련주 방향성 탐색… HC보광산업, 실적 개선 기대감에 폭등랠리",
+        "HC보광산업 17.24% 상승…골재 출하와 흑자 지속 여부 주목",
+        "최태원 SK그룹 회장, 호남 반도체 클러스터 속도전 강조 영향 지속 등에 일부 시멘트/레미콘 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 12:46",
+          "title": "삼표시멘트 등 시멘트 관련주 강세…서산 상한가, HC보광산업 두 자릿수...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=614431"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 15:20",
+          "title": "HC보광산업 11.24% 상승…상반기 흑자전환 지속 여부 주목",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=231755"
+        },
+        {
+          "time": "10:44",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 10:44",
+          "title": "HC보광산업 주가, 10월 13일 장중 2,935원 19.07% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16245424"
+        },
+        {
+          "time": "14:34",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 14:34",
+          "title": "아스콘 관련주 방향성 탐색… HC보광산업, 실적 개선 기대감에 폭등랠리",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=494886"
+        },
+        {
+          "time": "14:36",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 14:36",
+          "title": "HC보광산업 17.24% 상승…골재 출하와 흑자 지속 여부 주목",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232049"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:00",
+          "title": "최태원 SK그룹 회장, 호남 반도체 클러스터 속도전 강조 영향 지속 등에 일부 시멘트/레미콘 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "009470",
+      "name": "삼화전기",
+      "rate": 17.66,
+      "trading_value": 9326905750.0,
+      "summary": "AI 요약 생성에 실패했습니다.",
+      "analysis": null,
+      "headlines": [
+        "[특징주] 폭락장서 삼화전기 13%대 급등…반도체주와 엇갈린 흐름",
+        "삼화전기 2만8700원…전해콘덴서 수요에 거래대금 109억원",
+        "삼화전기 주가, 10월 13일 애프터마켓 28,700원 15.03% 상승",
+        "[오늘의 특징주] 10월 13일"
+      ],
+      "articles": [
+        {
+          "time": "14:12",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 14:12",
+          "title": "[특징주] 폭락장서 삼화전기 13%대 급등…반도체주와 엇갈린 흐름",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=925980"
+        },
+        {
+          "time": "14:36",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 14:36",
+          "title": "삼화전기 2만8700원…전해콘덴서 수요에 거래대금 109억원",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232051"
+        },
+        {
+          "time": "16:32",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 16:32",
+          "title": "삼화전기 주가, 10월 13일 애프터마켓 28,700원 15.03% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16245723"
+        },
+        {
+          "time": "16:52",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 16:52",
+          "title": "[오늘의 특징주] 10월 13일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610130022"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "278650",
+      "name": "HLB바이오스텝",
+      "rate": 12.05,
+      "trading_value": 35138333280.0,
+      "summary": "HLB바이오스텝은 50억원 규모의 AI 기반 동물대체시험법(AI-NAMs) 국책과제 참여 소식이 전해지며 주가가 강세를 보였다.",
+      "analysis": {
+        "stock": "HLB바이오스텝",
+        "main_material": {
+          "title": "50억 원 규모 AI 비임상 국책과제 참여",
+          "reason": "산업통상부가 추진하는 50억원 규모의 AI-NAMs(동물대체시험법) 국책과제에 참여하여 AI 기반 바이오의약품 면역원성 예측 시스템 개발에 나선다는 소식이 부각되며 급등했다.",
+          "event_type": "NEW",
+          "theme": [
+            "AI",
+            "동물대체시험법",
+            "국책과제",
+            "CRO"
+          ],
+          "origin_date": "2026-10-13"
+        },
+        "secondary_materials": [
+          {
+            "title": "미국 자회사 리픽투 FDA 승인 및 NCCN 등재 기대감",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "HLB바이오스텝, 50억 규모 AI-NAMs 국책과제 참여…‘디지털 비임상 CRO’...",
+            "date": "2026-10-13 14:14"
+          },
+          {
+            "headline": "AI-NAMs(동물대체시험법) 국책과제 참여 소식에 급등",
+            "date": "2026-10-13 17:00"
+          }
+        ],
+        "summary": "HLB바이오스텝은 50억원 규모의 AI 기반 동물대체시험법(AI-NAMs) 국책과제 참여 소식이 전해지며 주가가 강세를 보였다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "HLB바이오스텝 주가, 급등세... 이유는?",
+        "HLB바이오스텝, 동물대체시험 국책과제 참여…AI 비임상 CRO 진출",
+        "HLB바이오스텝, AI로 바이오의약품 면역반응 예측한다",
+        "[특징주]HLB바이오스텝, 50억 원 AI 국책과제 참여에 18.08% 치솟아…디...",
+        "HLB바이오스텝 17.70% 상승…비임상 CRO 수주 확인 필요",
+        "HLB바이오스텝, 50억 규모 AI-NAMs 국책과제 참여…‘디지털 비임상 CRO’...",
+        "HLB바이오스텝 주가, 10월 13일 애프터마켓 5,950원대 12%대 오름세",
+        "HLB바이오스텝, 50억원 규모 AI 동물대체시험 국책과제 참여",
+        "HLB바이오스텝, 50억원 규모 AI·동물대체시험 결합 국책과제 참여",
+        "HLB바이오스텝, 50억원 규모 AI 비임상 국책과제 참여",
+        "HLB바이오스텝, AI로 바이오의약품 면역원성 예측...'AI-NAMs' 국책과제 ...",
+        "'바이오약 면역원성 예측' HLB바이오스텝, 50억대 국책과제서 AI 비임상...",
+        "HLB바이오스텝, AI 비임상 국책과제 참여 “50억원 규모”",
+        "HLB바이오스텝, AI 기반 동물대체시험 바이오의약품 면역원성 예측 국책...",
+        "HLB바이오스텝, 50억원 규모 AI 비임상 국책과제 참여",
+        "AI-NAMs(동물대체시험법) 국책과제 참여 소식에 급등"
+      ],
+      "articles": [
+        {
+          "time": "13:06",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 13:06",
+          "title": "HLB바이오스텝 주가, 급등세... 이유는?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1186524"
+        },
+        {
+          "time": "13:14",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 13:14",
+          "title": "HLB바이오스텝, 동물대체시험 국책과제 참여…AI 비임상 CRO 진출",
+          "press": "ziksir.com",
+          "link": "https://www.ziksir.com/news/articleView.html?idxno=149161"
+        },
+        {
+          "time": "13:59",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 13:59",
+          "title": "HLB바이오스텝, AI로 바이오의약품 면역반응 예측한다",
+          "press": "fnnews.com",
+          "link": "https://www.fnnews.com/news/202610131028502272"
+        },
+        {
+          "time": "14:04",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 14:04",
+          "title": "[특징주]HLB바이오스텝, 50억 원 AI 국책과제 참여에 18.08% 치솟아…디...",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=925978"
+        },
+        {
+          "time": "14:12",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 14:12",
+          "title": "HLB바이오스텝 17.70% 상승…비임상 CRO 수주 확인 필요",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232000"
+        },
+        {
+          "time": "14:14",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 14:14",
+          "title": "HLB바이오스텝, 50억 규모 AI-NAMs 국책과제 참여…‘디지털 비임상 CRO’...",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2635195"
+        },
+        {
+          "time": "16:18",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 16:18",
+          "title": "HLB바이오스텝 주가, 10월 13일 애프터마켓 5,950원대 12%대 오름세",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16245708"
+        },
+        {
+          "time": "16:37",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 16:37",
+          "title": "HLB바이오스텝, 50억원 규모 AI 동물대체시험 국책과제 참여",
+          "press": "etnews.com",
+          "link": "https://www.etnews.com/20261013000375"
+        },
+        {
+          "time": "16:42",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 16:42",
+          "title": "HLB바이오스텝, 50억원 규모 AI·동물대체시험 결합 국책과제 참여",
+          "press": "ebn.co.kr",
+          "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1727671"
+        },
+        {
+          "time": "16:58",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 16:58",
+          "title": "HLB바이오스텝, 50억원 규모 AI 비임상 국책과제 참여",
+          "press": "news1.kr",
+          "link": "https://www.news1.kr/bio/pharmaceutical-bio/6318692"
+        },
+        {
+          "time": "17:16",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:16",
+          "title": "HLB바이오스텝, AI로 바이오의약품 면역원성 예측...'AI-NAMs' 국책과제 ...",
+          "press": "e-science.co.kr",
+          "link": "https://www.e-science.co.kr/news/articleView.html?idxno=137220"
+        },
+        {
+          "time": "17:32",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:32",
+          "title": "'바이오약 면역원성 예측' HLB바이오스텝, 50억대 국책과제서 AI 비임상...",
+          "press": "catchnews.kr",
+          "link": "https://www.catchnews.kr/news/articleView.html?idxno=129246"
+        },
+        {
+          "time": "17:42",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:42",
+          "title": "HLB바이오스텝, AI 비임상 국책과제 참여 “50억원 규모”",
+          "press": "dt.co.kr",
+          "link": "https://www.dt.co.kr/article/12088881?ref=naver"
+        },
+        {
+          "time": "19:02",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 19:02",
+          "title": "HLB바이오스텝, AI 기반 동물대체시험 바이오의약품 면역원성 예측 국책...",
+          "press": "thefirstmedia.net",
+          "link": "http://www.thefirstmedia.net/news/articleView.html?idxno=210780"
+        },
+        {
+          "time": "22:54",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 22:54",
+          "title": "HLB바이오스텝, 50억원 규모 AI 비임상 국책과제 참여",
+          "press": "lawissue.co.kr",
+          "link": "https://www.lawissue.co.kr/view.php?ud=20261013225305605f4ab64559d_12"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:00",
+          "title": "AI-NAMs(동물대체시험법) 국책과제 참여 소식에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    }
+  ],
+  "20261014": [
+    {
+      "code": "128820",
+      "name": "대성산업",
+      "rate": 18.4,
+      "trading_value": 2129438640.0,
+      "summary": "대성산업은 서울고속버스터미널 재개발 및 LPG 수혜 테마의 상승세 속에서 급등하였다.",
+      "analysis": {
+        "stock": "대성산업",
+        "main_material": {
+          "title": "서울고속버스터미널 재개발 수혜 테마 상승",
+          "reason": "LPG 및 서울고속버스터미널 재개발 수혜 테마가 형성되면서 주가가 급등함.",
+          "event_type": "NEW",
+          "theme": [
+            "LPG",
+            "서울고속버스터미널 재개발"
+          ],
+          "origin_date": "2026-10-14"
+        },
+        "secondary_materials": [
+          {
+            "title": "계열 자본거래와 현금흐름 점검 관련 보도",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "대성산업 13.69% 급등…계열 자본거래와 현금흐름 점검",
+            "date": "2026-10-14 14:42"
+          },
+          {
+            "headline": "LPG(액화석유가스), 서울고속버스터미널 재개발 수혜 테마 상승 속 급등",
+            "date": "2026-10-14 17:00"
+          }
+        ],
+        "summary": "대성산업은 서울고속버스터미널 재개발 및 LPG 수혜 테마의 상승세 속에서 급등하였다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "대성산업 13.69% 급등…계열 자본거래와 현금흐름 점검",
+        "대성산업 주가, 10월 14일 애프터마켓 4,970원 18.33% 상승",
+        "LPG(액화석유가스), 서울고속버스터미널 재개발 수혜 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "14:42",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:42",
+          "title": "대성산업 13.69% 급등…계열 자본거래와 현금흐름 점검",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232304"
+        },
+        {
+          "time": "16:18",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 16:18",
+          "title": "대성산업 주가, 10월 14일 애프터마켓 4,970원 18.33% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16247028"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 17:00",
+          "title": "LPG(액화석유가스), 서울고속버스터미널 재개발 수혜 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "084670",
+      "name": "동양고속",
+      "rate": 22.13,
+      "trading_value": 38544518500.0,
+      "summary": "동양고속은 서울고속버스터미널 복합개발 기대감이 재부각되며 테마 내에서 강한 상승세를 기록했습니다.",
+      "analysis": {
+        "stock": "동양고속",
+        "main_material": {
+          "title": "서울고속버스터미널 복합개발 기대감",
+          "reason": "서울고속버스터미널 재개발 및 복합개발 기대감이 지속 부각되면서 매수세가 유입되어 주가가 급등했다.",
+          "event_type": "FOLLOW_UP",
+          "theme": [
+            "서울고속버스터미널재개발",
+            "자산주"
+          ],
+          "origin_date": "2026-10-12"
+        },
+        "secondary_materials": [
+          {
+            "title": "투자경고종목 지정 및 거래정지 예고",
+            "event_type": "NEGATIVE"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "천일고속",
+            "reason": "서울 고속버스터미널 복합개발 기대감 테마로 동반 강세를 보였다.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "[특징주]동양고속, 서울고속터미널 재개발 기대 이어지며 15.52% 뛰어",
+            "date": "2026-10-12 12:58"
+          },
+          {
+            "headline": "서울고속버스터미널 복합개발 기대감 재부각 등에 서울고속버스터미널 재개발 수혜 테마 상승 속 급등",
+            "date": "2026-10-14 17:00"
+          }
+        ],
+        "summary": "동양고속은 서울고속버스터미널 복합개발 기대감이 재부각되며 테마 내에서 강한 상승세를 기록했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[특징주]동양고속, 서울고속터미널 재개발 기대 이어지며 15.52% 뛰어",
+        "동양고속 10% 뛰어…거래량 213만주 몰리며 변동성 확대",
+        "동양고속 주가, 10월 12일 장중 42,150원 10.92% 상승",
+        "[공시] 동양고속·츌립앤사이언스 '투자경고', 하이브·HLB제넥스 '공매...",
+        "동양고속 주가 급등에 투자경고종목 지정",
+        "동양고속, 고속터미널 재개발 기대에 6거래일째 상승[특징주]",
+        "동양고속 주가, 10월 13일 장중 39,550원 4.24% 하락",
+        "\"23% 급등 뒤 10% 하락\"…동양고속, '롤러코스터' 급등락 [종목 NOW]",
+        "동양고속·천일고속, 서울 고터 복합개발 기대감에 강세[종목NOW]",
+        "'서울고터 재개발' 동양고속 5%대 강세…투자경고에도 급등 [핫종목]",
+        "동양고속 주가, 10월 14일 장중 36,300원 5.68% 상승",
+        "동양고속 주가, 10월 14일 장중 37,900원 10.33% 상승",
+        "동양고속 25.47% 급등…고속버스 본업과 수급 과열 분리해야",
+        "천일고속 29.78% 급등…동양고속도 24%대 상승",
+        "[공시] 동양고속·바이오인프라 '거래정지 예고', LS머트리얼즈·선익시...",
+        "서울고속버스터미널 복합개발 기대감 재부각 등에 서울고속버스터미널 재개발 수혜 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 12:58",
+          "title": "[특징주]동양고속, 서울고속터미널 재개발 기대 이어지며 15.52% 뛰어",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=925843"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:38",
+          "title": "동양고속 10% 뛰어…거래량 213만주 몰리며 변동성 확대",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=231692"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 14:50",
+          "title": "동양고속 주가, 10월 12일 장중 42,150원 10.92% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=554134"
+        },
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 21:20",
+          "title": "[공시] 동양고속·츌립앤사이언스 '투자경고', 하이브·HLB제넥스 '공매...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=722512"
+        },
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 09:36",
+          "title": "동양고속 주가 급등에 투자경고종목 지정",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=392401"
+        },
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 09:48",
+          "title": "동양고속, 고속터미널 재개발 기대에 6거래일째 상승[특징주]",
+          "press": "newsway.co.kr",
+          "link": "https://www.newsway.co.kr/news/view?ud=2026101309290924442"
+        },
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 10:34",
+          "title": "동양고속 주가, 10월 13일 장중 39,550원 4.24% 하락",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=554421"
+        },
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 11:36",
+          "title": "\"23% 급등 뒤 10% 하락\"…동양고속, '롤러코스터' 급등락 [종목 NOW]",
+          "press": "fnnews.com",
+          "link": "https://www.fnnews.com/news/202610131134102688"
+        },
+        {
+          "time": "09:42",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 09:42",
+          "title": "동양고속·천일고속, 서울 고터 복합개발 기대감에 강세[종목NOW]",
+          "press": "fnnews.com",
+          "link": "https://www.fnnews.com/news/202610140935544978"
+        },
+        {
+          "time": "09:57",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 09:57",
+          "title": "'서울고터 재개발' 동양고속 5%대 강세…투자경고에도 급등 [핫종목]",
+          "press": "news1.kr",
+          "link": "https://www.news1.kr/finance/general-stock/6319365"
+        },
+        {
+          "time": "10:28",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 10:28",
+          "title": "동양고속 주가, 10월 14일 장중 36,300원 5.68% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=554817"
+        },
+        {
+          "time": "10:54",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 10:54",
+          "title": "동양고속 주가, 10월 14일 장중 37,900원 10.33% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16246621"
+        },
+        {
+          "time": "13:34",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 13:34",
+          "title": "동양고속 25.47% 급등…고속버스 본업과 수급 과열 분리해야",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232230"
+        },
+        {
+          "time": "15:44",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 15:44",
+          "title": "천일고속 29.78% 급등…동양고속도 24%대 상승",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=392546"
+        },
+        {
+          "time": "21:06",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 21:06",
+          "title": "[공시] 동양고속·바이오인프라 '거래정지 예고', LS머트리얼즈·선익시...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=723029"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 17:00",
+          "title": "서울고속버스터미널 복합개발 기대감 재부각 등에 서울고속버스터미널 재개발 수혜 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "452280",
+      "name": "한선엔지니어링",
+      "rate": 28.06,
+      "trading_value": 49959469490.0,
+      "summary": "한선엔지니어링은 백악관의 알래스카 LNG 투자 언급 소식에 따른 피팅 및 밸브 테마 강세와 고체산화물 연료전지 모멘텀이 겹치며 급등함.",
+      "analysis": {
+        "stock": "한선엔지니어링",
+        "main_material": {
+          "title": "백악관 대변인의 한·알래스카 LNG 투자 언급",
+          "reason": "백악관 대변인의 첫 브리핑에서 한·알래스카 LNG 투자 언급 소식이 전해지며 피팅 및 밸브 테마가 상승세를 보였고, 관련주인 한선엔지니어링도 급등함.",
+          "event_type": "NEW",
+          "theme": [
+            "피팅",
+            "밸브",
+            "LNG"
+          ],
+          "origin_date": "2026-10-14"
+        },
+        "secondary_materials": [
+          {
+            "title": "고체산화물 연료전지(SOFC) 관련주 강세",
+            "event_type": "NEW"
+          },
+          {
+            "title": "2분기 이익 성장 재평가 및 원가 절감 기대감",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "백악관 대변인, 첫 브리핑서 '韓 알래스카 LNG 투자' 언급 소식 등에 피팅(관이음쇠)/밸브 테마 상승 속 급등",
+            "date": "2026-10-14 17:00"
+          },
+          {
+            "headline": "고체산화물 연료전지 관련주 일부 강세…한선엔지니어링 24%대 급등",
+            "date": "2026-10-14 13:12"
+          }
+        ],
+        "summary": "한선엔지니어링은 백악관의 알래스카 LNG 투자 언급 소식에 따른 피팅 및 밸브 테마 강세와 고체산화물 연료전지 모멘텀이 겹치며 급등함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "한선엔지니어링 주가, 급등세... 무슨 회사길래?",
+        "한선엔지니어링 주가, 10월 14일 장중 14,650원 16.73% 상승",
+        "고체산화물 연료전지 관련주 일부 강세…한선엔지니어링 24%대 급등, 비...",
+        "[더벨][현장 스토리] 원가 절감 나선 한선엔지니어링, 물류 자동화 거점...",
+        "한선엔지니어링 26.06% 급등…2분기 이익 성장 재평가",
+        "한선엔지니어링 주가, 10월 14일 장중 16,030원 27.73% 상승",
+        "한선엔지니어링 장중 23.9% 상승",
+        "[오늘의 특징주] 10월 14일",
+        "백악관 대변인, 첫 브리핑서 '韓 알래스카 LNG 투자' 언급 소식 등에 피팅(관이음쇠)/밸브 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "09:52",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 09:52",
+          "title": "한선엔지니어링 주가, 급등세... 무슨 회사길래?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1186685"
+        },
+        {
+          "time": "10:42",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 10:42",
+          "title": "한선엔지니어링 주가, 10월 14일 장중 14,650원 16.73% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16246598"
+        },
+        {
+          "time": "13:12",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 13:12",
+          "title": "고체산화물 연료전지 관련주 일부 강세…한선엔지니어링 24%대 급등, 비...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=615353"
+        },
+        {
+          "time": "13:32",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 13:32",
+          "title": "[더벨][현장 스토리] 원가 절감 나선 한선엔지니어링, 물류 자동화 거점...",
+          "press": "thebell.co.kr",
+          "link": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202610131554245160101213"
+        },
+        {
+          "time": "14:36",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:36",
+          "title": "한선엔지니어링 26.06% 급등…2분기 이익 성장 재평가",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232287"
+        },
+        {
+          "time": "14:44",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:44",
+          "title": "한선엔지니어링 주가, 10월 14일 장중 16,030원 27.73% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=554975"
+        },
+        {
+          "time": "15:56",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 15:56",
+          "title": "한선엔지니어링 장중 23.9% 상승",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=392549"
+        },
+        {
+          "time": "17:04",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 17:04",
+          "title": "[오늘의 특징주] 10월 14일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610140017"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 17:00",
+          "title": "백악관 대변인, 첫 브리핑서 '韓 알래스카 LNG 투자' 언급 소식 등에 피팅(관이음쇠)/밸브 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "396300",
+      "name": "HT로보틱스",
+      "rate": 12.97,
+      "trading_value": 46710541280.0,
+      "summary": "HT로보틱스는 코리아혁신성장 및 수소전력 등 주요 ETF 5종에 편입되면서 기관 자금 유입 기대감으로 상승했다.",
+      "analysis": {
+        "stock": "HT로보틱스",
+        "main_material": {
+          "title": "코리아혁신성장·수소전력 등 ETF 5종 편입",
+          "reason": "코리아혁신성장 및 수소전력 등 5개 ETF에 편입되면서 기관투자자 자금 유입 기대감으로 주가가 상승했다.",
+          "event_type": "NEW",
+          "theme": [
+            "ETF편입",
+            "수소전력"
+          ],
+          "origin_date": "2026-10-14"
+        },
+        "secondary_materials": [
+          {
+            "title": "AI 전력 ESS 수요 확대 및 K-배터리 반사이익 기대감",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "HT로보틱스, 코리아혁신성장·수소전력 등 ETF 5종 편입…기관투자자 관...",
+            "date": "2026-10-14 15:00"
+          },
+          {
+            "headline": "AI 전력發 ESS 수요 확대 전망 및 EU, 中 하이브리드 수입 제한에 따른 K-배터리 반사이익 기대감 등에 2차전지/ 전력저장장치(ESS)/ 전기차 테마 상승 속 급등",
+            "date": "2026-10-14 17:00"
+          }
+        ],
+        "summary": "HT로보틱스는 코리아혁신성장 및 수소전력 등 주요 ETF 5종에 편입되면서 기관 자금 유입 기대감으로 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "HT로보틱스, 코리아혁신성장·수소전력 등 ETF 5종 편입…기관투자자 관...",
+        "HT로보틱스 주가, 10월 14일 애프터마켓 7,230원 15.13% 상승",
+        "[오늘의 특징주] 10월 14일",
+        "AI 전력發 ESS 수요 확대 전망 및 EU, 中 하이브리드 수입 제한에 따른 K-배터리 반사이익 기대감 등에 2차전지/ 전력저장장치(ESS)/ 전기차 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "15:00",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 15:00",
+          "title": "HT로보틱스, 코리아혁신성장·수소전력 등 ETF 5종 편입…기관투자자 관...",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2635749"
+        },
+        {
+          "time": "16:54",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 16:54",
+          "title": "HT로보틱스 주가, 10월 14일 애프터마켓 7,230원 15.13% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16247064"
+        },
+        {
+          "time": "17:04",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 17:04",
+          "title": "[오늘의 특징주] 10월 14일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610140017"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 17:00",
+          "title": "AI 전력發 ESS 수요 확대 전망 및 EU, 中 하이브리드 수입 제한에 따른 K-배터리 반사이익 기대감 등에 2차전지/ 전력저장장치(ESS)/ 전기차 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "089590",
+      "name": "제주항공",
+      "rate": 21.1,
+      "trading_value": 10490105600.0,
+      "summary": "제주항공은 부산~마닐라 신규 취항 발표와 단거리 중심의 실적 개선 기대감, LCC 여객수 1위 기록 등이 부각되며 급등했다.",
+      "analysis": {
+        "stock": "제주항공",
+        "main_material": {
+          "title": "부산~마닐라 신규 취항 및 실적 개선 기대감",
+          "reason": "12월부터 부산~마닐라 노선 신규 취항 소식이 전해지고, 일본·중국 단거리 전략을 통한 올해 적자 탈출 전망과 3분기 여객수 LCC 1위 소식이 부각되며 매수세가 유입되었다.",
+          "event_type": "NEW",
+          "theme": [
+            "항공",
+            "LCC",
+            "여행"
+          ],
+          "origin_date": "2026-10-13"
+        },
+        "secondary_materials": [
+          {
+            "title": "올해 탑승객 최단기 1천만 명 돌파",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "제주항공, 12월부터 부산~마닐라 주 5회 신규 취항",
+            "date": "2026-10-13 16:43"
+          },
+          {
+            "headline": "제주항공 일본·중국 단거리 전략으로 올해 적자탈출 전망, 김이배 내년...",
+            "date": "2026-10-13 16:56"
+          },
+          {
+            "headline": "제주항공 23.99% 급등…수요 회복과 비용 구조 재평가",
+            "date": "2026-10-14 14:38"
+          }
+        ],
+        "summary": "제주항공은 부산~마닐라 신규 취항 발표와 단거리 중심의 실적 개선 기대감, LCC 여객수 1위 기록 등이 부각되며 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[기업] 제주항공, 12월부터 부산~마닐라 주 5회 신규 취항",
+        "제주항공 일본·중국 단거리 전략으로 올해 적자탈출 전망, 김이배 내년...",
+        "하늘길 넓히는 제주항공…부산발 마닐라 노선 12월부터 운항",
+        "제주항공, 부산~마닐라 신규 취항…12월 17일부터",
+        "제주항공, 부산-마닐라 노선 신규 취항…부산발 국제선 15개로 확대",
+        "제주항공, 12월 부산-마닐라 노선 신규 취항",
+        "제주항공, 12월 부산~마닐라 신규 취항…주 5회 운항",
+        "제주항공 부산-마닐라 취항…국제선 이용객 23%↑",
+        "제주항공 주가, 급등세... 어떤 회사길래?",
+        "제주항공 23.99% 급등…수요 회복과 비용 구조 재평가",
+        "LCC, 3Q 여객수 1위 '제주항공'…탑승률 1위 '이스타항공'",
+        "제주항공 주가, 10월 14일 애프터마켓 5,520원 23.77% 상승",
+        "[오늘의 특징주] 10월 14일",
+        "제주항공, 부산~마닐라 신규 취항…부산발 국제선 15개로 확대",
+        "[비즈투데이] 제주항공, 올해 탑승객 최단기 1천만 돌파"
+      ],
+      "articles": [
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 16:43",
+          "title": "[기업] 제주항공, 12월부터 부산~마닐라 주 5회 신규 취항",
+          "press": "ytn.co.kr",
+          "link": "https://www.ytn.co.kr/_ln/0102_202610131643070690"
+        },
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 16:56",
+          "title": "제주항공 일본·중국 단거리 전략으로 올해 적자탈출 전망, 김이배 내년...",
+          "press": "businesspost.co.kr",
+          "link": "https://www.businesspost.co.kr/BP?command=article_view&num=449189"
+        },
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 17:04",
+          "title": "하늘길 넓히는 제주항공…부산발 마닐라 노선 12월부터 운항",
+          "press": "nocutnews.co.kr",
+          "link": "https://www.nocutnews.co.kr/news/6590849?utm_source=naver&utm_medium=article&utm_campaign=20261013050336"
+        },
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 18:12",
+          "title": "제주항공, 부산~마닐라 신규 취항…12월 17일부터",
+          "press": "newsworks.co.kr",
+          "link": "https://www.newsworks.co.kr/news/articleView.html?idxno=856374"
+        },
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 18:20",
+          "title": "제주항공, 부산-마닐라 노선 신규 취항…부산발 국제선 15개로 확대",
+          "press": "g-enews.com",
+          "link": "https://www.g-enews.com/view.php?ud=202610131813169113ea14faf6f5_1"
+        },
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 19:00",
+          "title": "제주항공, 12월 부산-마닐라 노선 신규 취항",
+          "press": "hankookilbo.com",
+          "link": "https://www.hankookilbo.com/news/article/A2026101315030004544?did=NA"
+        },
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 19:16",
+          "title": "제주항공, 12월 부산~마닐라 신규 취항…주 5회 운항",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=04634646645612592&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "07:50",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 07:50",
+          "title": "제주항공 부산-마닐라 취항…국제선 이용객 23%↑",
+          "press": "news.kbs.co.kr",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8685159&ref=A"
+        },
+        {
+          "time": "11:00",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 11:00",
+          "title": "제주항공 주가, 급등세... 어떤 회사길래?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1186740"
+        },
+        {
+          "time": "14:38",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:38",
+          "title": "제주항공 23.99% 급등…수요 회복과 비용 구조 재평가",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232295"
+        },
+        {
+          "time": "15:02",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 15:02",
+          "title": "LCC, 3Q 여객수 1위 '제주항공'…탑승률 1위 '이스타항공'",
+          "press": "ebn.co.kr",
+          "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1727751"
+        },
+        {
+          "time": "16:16",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 16:16",
+          "title": "제주항공 주가, 10월 14일 애프터마켓 5,520원 23.77% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16247024"
+        },
+        {
+          "time": "17:04",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 17:04",
+          "title": "[오늘의 특징주] 10월 14일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610140017"
+        },
+        {
+          "time": "17:32",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 17:32",
+          "title": "제주항공, 부산~마닐라 신규 취항…부산발 국제선 15개로 확대",
+          "press": "m-i.kr",
+          "link": "https://www.m-i.kr/news/articleView.html?idxno=2005444"
+        },
+        {
+          "time": "20:06",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 20:06",
+          "title": "[비즈투데이] 제주항공, 올해 탑승객 최단기 1천만 돌파",
+          "press": "obsnews.co.kr",
+          "link": "https://www.obsnews.co.kr/news/articleView.html?idxno=1540509"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "039610",
+      "name": "화성밸브",
+      "rate": 17.0,
+      "trading_value": 23904447780.0,
+      "summary": "백악관의 알래스카 LNG 투자 언급 및 가스·플랜트 수주 기대감이 부각되며 가스관 테마로 묶여 급등함.",
+      "analysis": {
+        "stock": "화성밸브",
+        "main_material": {
+          "title": "백악관 알래스카 LNG 투자 언급 및 가스관 사업 테마 상승",
+          "reason": "백악관 대변인의 '한·알래스카 LNG 투자' 언급 소식과 가스·플랜트 수주 기대감이 부각되며 피팅/밸브 및 남-북-러 가스관사업 테마로 매수세가 유입되어 급등함.",
+          "event_type": "NEW",
+          "theme": [
+            "피팅/밸브",
+            "남-북-러 가스관사업",
+            "LNG"
+          ],
+          "origin_date": "2026-10-14"
+        },
+        "secondary_materials": [
+          {
+            "title": "가스 및 플랜트 수주 기대감 지속",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "화성밸브 주가, 상한가... 무슨 회사길래?",
+            "date": "2026-10-14 09:18"
+          },
+          {
+            "headline": "화성밸브 17.09% 올라…가스·플랜트 수주 기대 반영",
+            "date": "2026-10-14 14:48"
+          },
+          {
+            "headline": "백악관 대변인, 첫 브리핑서 '韓 알래스카 LNG 투자' 언급 소식 등에 피팅(관이음쇠)/밸브/ 남-북-러 가스관사업 테마 상승 속 급등",
+            "date": "2026-10-14 17:00"
+          }
+        ],
+        "summary": "백악관의 알래스카 LNG 투자 언급 및 가스·플랜트 수주 기대감이 부각되며 가스관 테마로 묶여 급등함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "화성밸브 주가, 상한가... 무슨 회사길래?",
+        "화성밸브 17.09% 올라…가스·플랜트 수주 기대 반영",
+        "백악관 대변인, 첫 브리핑서 '韓 알래스카 LNG 투자' 언급 소식 등에 피팅(관이음쇠)/밸브/ 남-북-러 가스관사업 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "09:18",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 09:18",
+          "title": "화성밸브 주가, 상한가... 무슨 회사길래?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1186671"
+        },
+        {
+          "time": "14:48",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:48",
+          "title": "화성밸브 17.09% 올라…가스·플랜트 수주 기대 반영",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232319"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 17:00",
+          "title": "백악관 대변인, 첫 브리핑서 '韓 알래스카 LNG 투자' 언급 소식 등에 피팅(관이음쇠)/밸브/ 남-북-러 가스관사업 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "010580",
+      "name": "에스엠벡셀",
+      "rate": 28.99,
+      "trading_value": 11871894800.0,
+      "summary": "에스엠벡셀은 서울대학교와의 공동 국책과제를 통해 저궤도 인공위성용 리튬이온 배터리 셀 및 팩 제조 기술을 확보하고 우주환경 시험을 통과했다는 소식에 상한가를 기록했습니다.",
+      "analysis": {
+        "stock": "에스엠벡셀",
+        "main_material": {
+          "title": "저궤도 위성용 배터리 제조 기술 확보",
+          "reason": "서울대학교와 공동 수행한 국책과제를 통해 저궤도 인공위성용 리튬이온 셀 및 2900Wh급 배터리팩 제조 기술을 확보하고 우주환경 시험을 통과했다고 밝혔기 때문입니다.",
+          "event_type": "NEW",
+          "theme": [
+            "우주항공",
+            "2차전지"
+          ],
+          "origin_date": "2026-10-14"
+        },
+        "secondary_materials": [
+          {
+            "title": "2차전지 및 전력저장장치(ESS) 테마 상승",
+            "event_type": "MARKET_THEME"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "에스엠벡셀, 저궤도 위성용 배터리 제조 기술 확보…우주환경 시험 통과",
+            "date": "2026-10-14 11:19"
+          },
+          {
+            "headline": "2차전지/ 전력저장장치(ESS) 테마 상승 속 저궤도 인공위성용 배터리 제조 기술 확보 소식에 상한가",
+            "date": "2026-10-14 17:00"
+          }
+        ],
+        "summary": "에스엠벡셀은 서울대학교와의 공동 국책과제를 통해 저궤도 인공위성용 리튬이온 배터리 셀 및 팩 제조 기술을 확보하고 우주환경 시험을 통과했다는 소식에 상한가를 기록했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "에스엠벡셀, 저궤도 위성 배터리 제조 기술 확보…우주항공 시장 공략",
+        "에스엠벡셀, 인공위성용 배터리 제조 기술 확보…우주항공 시장 공략",
+        "에스엠벡셀, 저궤도 위성용 배터리 제조 기술 확보…우주환경 시험 통과",
+        "에스엠벡셀, 저궤도 위성용 배터리 셀·팩 제조기술 확보",
+        "에스엠벡셀, 저궤도 위성배터리 제조기술 확보…리튬이온 셀·팩 개발",
+        "[속보] 에스엠벡셀 상한가 도달…VI 두 차례 발동되기도",
+        "에스엠벡셀 상한가…1490만주 거래로 회전율 확대",
+        "에스엠벡셀 주가, 10월 14일 애프터마켓 상한가 2,670원 29.93% 상승",
+        "2차전지/ 전력저장장치(ESS) 테마 상승 속 저궤도 인공위성용 배터리 제조 기술 확보 소식에 상한가"
+      ],
+      "articles": [
+        {
+          "time": "10:40",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 10:40",
+          "title": "에스엠벡셀, 저궤도 위성 배터리 제조 기술 확보…우주항공 시장 공략",
+          "press": "view.asiae.co.kr",
+          "link": "https://view.asiae.co.kr/article/2026101410400719516"
+        },
+        {
+          "time": "10:52",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 10:52",
+          "title": "에스엠벡셀, 인공위성용 배터리 제조 기술 확보…우주항공 시장 공략",
+          "press": "newsprime.co.kr",
+          "link": "http://www.newsprime.co.kr/news/article.html?no=750898"
+        },
+        {
+          "time": "11:19",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 11:19",
+          "title": "에스엠벡셀, 저궤도 위성용 배터리 제조 기술 확보…우주환경 시험 통과",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=03316086645612920&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "12:16",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 12:16",
+          "title": "에스엠벡셀, 저궤도 위성용 배터리 셀·팩 제조기술 확보",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261014000520"
+        },
+        {
+          "time": "13:56",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 13:56",
+          "title": "에스엠벡셀, 저궤도 위성배터리 제조기술 확보…리튬이온 셀·팩 개발",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2635699"
+        },
+        {
+          "time": "14:36",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:36",
+          "title": "[속보] 에스엠벡셀 상한가 도달…VI 두 차례 발동되기도",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=615387"
+        },
+        {
+          "time": "14:48",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:48",
+          "title": "에스엠벡셀 상한가…1490만주 거래로 회전율 확대",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232313"
+        },
+        {
+          "time": "16:32",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 16:32",
+          "title": "에스엠벡셀 주가, 10월 14일 애프터마켓 상한가 2,670원 29.93% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16247030"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 17:00",
+          "title": "2차전지/ 전력저장장치(ESS) 테마 상승 속 저궤도 인공위성용 배터리 제조 기술 확보 소식에 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "000650",
+      "name": "천일고속",
+      "rate": 29.78,
+      "trading_value": 18751451500.0,
+      "summary": "천일고속은 서울고속버스터미널 복합개발 기대감이 재부각되며 상한가(29.78%)를 기록함.",
+      "analysis": {
+        "stock": "천일고속",
+        "main_material": {
+          "title": "서울고속버스터미널 복합개발 기대감 재부각",
+          "reason": "서울고속버스터미널 부지 복합개발 기대감이 다시 부각되면서 투자 심리가 개선되어 상한가를 기록함.",
+          "event_type": "RECYCLED",
+          "theme": [
+            "서울고속버스터미널",
+            "복합개발"
+          ],
+          "origin_date": "확인불가"
+        },
+        "secondary_materials": [],
+        "related_stocks": [
+          {
+            "stock": "동양고속",
+            "reason": "서울고속버스터미널 복합개발 기대감에 동반 상승함.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "동양고속·천일고속, 서울 고터 복합개발 기대감에 강세[종목NOW]",
+            "date": "2026-10-14 09:42"
+          },
+          {
+            "headline": "서울고속버스터미널 복합개발 기대감 재부각 등에 서울고속버스터미널 재개발 수혜 테마 상승 속 상한가",
+            "date": "2026-10-14 17:00"
+          }
+        ],
+        "summary": "천일고속은 서울고속버스터미널 복합개발 기대감이 재부각되며 상한가(29.78%)를 기록함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "천일고속 주가, 10월 12일 애프터마켓 214,000원 3.17% 하락",
+        "동양고속·천일고속, 서울 고터 복합개발 기대감에 강세[종목NOW]",
+        "천일고속 주가, 급등세... 왜?",
+        "[특징주]천일고속, 서울고터 복합개발 기대 재부각에 14.94% 뛰어…터미...",
+        "천일고속 29.78% 급등해 22만4000원…상한가 변동성 확대",
+        "천일고속 29.78% 급등…동양고속도 24%대 상승",
+        "[주식마감] '서울고터 복합 개발' 기대감에 천일고속 상한가... 유니켐,...",
+        "서울고속버스터미널 복합개발 기대감 재부각 등에 서울고속버스터미널 재개발 수혜 테마 상승 속 상한가"
+      ],
+      "articles": [
+        {
+          "time": "10/12",
+          "date": "2026-10-12",
+          "datetime": "2026-10-12 16:06",
+          "title": "천일고속 주가, 10월 12일 애프터마켓 214,000원 3.17% 하락",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16244751"
+        },
+        {
+          "time": "09:42",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 09:42",
+          "title": "동양고속·천일고속, 서울 고터 복합개발 기대감에 강세[종목NOW]",
+          "press": "fnnews.com",
+          "link": "https://www.fnnews.com/news/202610140935544978"
+        },
+        {
+          "time": "10:04",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 10:04",
+          "title": "천일고속 주가, 급등세... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1186689"
+        },
+        {
+          "time": "11:34",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 11:34",
+          "title": "[특징주]천일고속, 서울고터 복합개발 기대 재부각에 14.94% 뛰어…터미...",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=926098"
+        },
+        {
+          "time": "13:32",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 13:32",
+          "title": "천일고속 29.78% 급등해 22만4000원…상한가 변동성 확대",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232226"
+        },
+        {
+          "time": "15:44",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 15:44",
+          "title": "천일고속 29.78% 급등…동양고속도 24%대 상승",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=392546"
+        },
+        {
+          "time": "19:40",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 19:40",
+          "title": "[주식마감] '서울고터 복합 개발' 기대감에 천일고속 상한가... 유니켐,...",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1186964"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 17:00",
+          "title": "서울고속버스터미널 복합개발 기대감 재부각 등에 서울고속버스터미널 재개발 수혜 테마 상승 속 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    }
+  ],
+  "20261015": [
+    {
+      "code": "010580",
+      "name": "에스엠벡셀",
+      "rate": 18.16,
+      "trading_value": 135469034690.0,
+      "summary": "에스엠벡셀은 저궤도 위성용 리튬이온 배터리 제조 기술 확보 및 우주환경 시험 통과 소식이 부각되며 이틀째 급등세를 기록했다.",
+      "analysis": {
+        "stock": "에스엠벡셀",
+        "main_material": {
+          "title": "저궤도 위성용 배터리 제조 기술 확보",
+          "reason": "에스엠벡셀이 저궤도 위성용 리튬이온 셀 및 팩 제조 기술을 확보하고 우주환경 시험을 통과하면서 관련 모멘텀으로 이틀째 급등세가 이어졌다.",
+          "event_type": "NEW",
+          "theme": [
+            "우주항공",
+            "배터리"
+          ],
+          "origin_date": "2026-10-14"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "에스엠벡셀, 저궤도 위성용 배터리 제조 기술 확보…우주환경 시험 통과",
+            "date": "2026-10-14 11:19"
+          },
+          {
+            "headline": "[특징주] 에스엠벡셀, 위성용 배터리 기술 확보에 이틀째 '급등'",
+            "date": "2026-10-15 10:23"
+          }
+        ],
+        "summary": "에스엠벡셀은 저궤도 위성용 리튬이온 배터리 제조 기술 확보 및 우주환경 시험 통과 소식이 부각되며 이틀째 급등세를 기록했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "에스엠벡셀, 저궤도 위성용 배터리 제조 기술 확보…우주환경 시험 통과",
+        "에스엠벡셀, 저궤도 위성용 배터리 셀·팩 제조기술 확보",
+        "에스엠벡셀, 저궤도 위성배터리 제조기술 확보…리튬이온 셀·팩 개발",
+        "[속보] 에스엠벡셀 상한가 도달…VI 두 차례 발동되기도",
+        "에스엠벡셀 상한가…1490만주 거래로 회전율 확대",
+        "에스엠벡셀 주가, 10월 14일 애프터마켓 상한가 2,670원 29.93% 상승",
+        "에스엠벡셀 주가, 급등세... 이유는?",
+        "[특징주] 에스엠벡셀, 위성용 배터리 기술 확보에 이틀째 '급등'",
+        "에스엠벡셀 주가 급등...저궤도 위성용 배터리 제조 기술 확보",
+        "[특징주]에스엠벡셀, 저궤도 위성용 배터리 기술 확보에 18.35% 올라…290...",
+        "에스엠벡셀 주가, 10월 15일 장중 3,080원 15.36% 상승",
+        "에스엠벡셀 주가, 10월 15일 장중 3,110원 16.48% 상승",
+        "에스엠벡셀 주가 이틀째 강세…위성 배터리 기술 확보",
+        "에스엠벡셀 15.92% 상승…거래량 2969만주 집중",
+        "[오늘의 특징주] 10월 15일",
+        "저궤도 인공위성용 배터리 제조 기술 확보 모멘텀 지속에 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 11:19",
+          "title": "에스엠벡셀, 저궤도 위성용 배터리 제조 기술 확보…우주환경 시험 통과",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=03316086645612920&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 12:16",
+          "title": "에스엠벡셀, 저궤도 위성용 배터리 셀·팩 제조기술 확보",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261014000520"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 13:56",
+          "title": "에스엠벡셀, 저궤도 위성배터리 제조기술 확보…리튬이온 셀·팩 개발",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2635699"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:36",
+          "title": "[속보] 에스엠벡셀 상한가 도달…VI 두 차례 발동되기도",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=615387"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:48",
+          "title": "에스엠벡셀 상한가…1490만주 거래로 회전율 확대",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232313"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 16:32",
+          "title": "에스엠벡셀 주가, 10월 14일 애프터마켓 상한가 2,670원 29.93% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16247030"
+        },
+        {
+          "time": "10:10",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:10",
+          "title": "에스엠벡셀 주가, 급등세... 이유는?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1187035"
+        },
+        {
+          "time": "10:23",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:23",
+          "title": "[특징주] 에스엠벡셀, 위성용 배터리 기술 확보에 이틀째 '급등'",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261015000412"
+        },
+        {
+          "time": "10:24",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:24",
+          "title": "에스엠벡셀 주가 급등...저궤도 위성용 배터리 제조 기술 확보",
+          "press": "gukjenews.com",
+          "link": "https://www.gukjenews.com/news/articleView.html?idxno=3722145"
+        },
+        {
+          "time": "10:34",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:34",
+          "title": "[특징주]에스엠벡셀, 저궤도 위성용 배터리 기술 확보에 18.35% 올라…290...",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=926203"
+        },
+        {
+          "time": "10:40",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:40",
+          "title": "에스엠벡셀 주가, 10월 15일 장중 3,080원 15.36% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=555185"
+        },
+        {
+          "time": "10:46",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:46",
+          "title": "에스엠벡셀 주가, 10월 15일 장중 3,110원 16.48% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16247748"
+        },
+        {
+          "time": "12:46",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 12:46",
+          "title": "에스엠벡셀 주가 이틀째 강세…위성 배터리 기술 확보",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=392793"
+        },
+        {
+          "time": "14:48",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 14:48",
+          "title": "에스엠벡셀 15.92% 상승…거래량 2969만주 집중",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232598"
+        },
+        {
+          "time": "16:58",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 16:58",
+          "title": "[오늘의 특징주] 10월 15일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610150018"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 17:00",
+          "title": "저궤도 인공위성용 배터리 제조 기술 확보 모멘텀 지속에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "042510",
+      "name": "라온시큐어",
+      "rate": 10.99,
+      "trading_value": 275341782600.0,
+      "summary": "라온시큐어가 정부의 '피지컬AI 안전망' 구축 연구개발 과제의 주관기관으로 선정되어 로봇 및 AI 보안 기술 개발 부각으로 급등했습니다.",
+      "analysis": {
+        "stock": "라온시큐어",
+        "main_material": {
+          "title": "정부 '피지컬AI 안전망' R&D 주관사 선정",
+          "reason": "과학기술정보통신부와 NIPA가 지원하는 피지컬AI 보안 기술개발 과제의 주관기관으로 선정되어 로봇과 AI 에이전트의 신원·권한 관리 기술을 개발한다는 소식이 부각됨.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "피지컬AI",
+            "보안",
+            "로봇",
+            "인증"
+          ],
+          "origin_date": "2026-10-15"
+        },
+        "secondary_materials": [],
+        "related_stocks": [
+          {
+            "stock": "센스톤",
+            "reason": "라온시큐어가 주관하는 피지컬AI 보안 기술개발 컨소시엄에 함께 참여하여 인증 분야를 분담함.",
+            "relation": "BUSINESS"
+          },
+          {
+            "stock": "틸론",
+            "reason": "라온시큐어가 주관하는 피지컬AI 보안 기술개발 컨소시엄에 참여함.",
+            "relation": "BUSINESS"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "라온시큐어, 정부 '피지컬AI 안전망' 구축 과제 주관사 맡는다",
+            "date": "2026-10-15 10:56"
+          },
+          {
+            "headline": "피지컬AI 보안기술 정부 연구개발 과제 주관기관 선정 소식 등에 급등",
+            "date": "2026-10-15 17:00"
+          }
+        ],
+        "summary": "라온시큐어가 정부의 '피지컬AI 안전망' 구축 연구개발 과제의 주관기관으로 선정되어 로봇 및 AI 보안 기술 개발 부각으로 급등했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "라온시큐어 주가, 10월 15일 장중 19,400원 6.59% 상승",
+        "라온시큐어 주가 4%대 상승…AI 관련주 부진 속 약진, 외국인·프로그램...",
+        "라온시큐어, 정부 '피지컬AI 안전망' 구축 과제 주관사 맡는다",
+        "라온시큐어, 피지컬AI 보안 과제 주관…장중 5.49% 상승",
+        "양자암호·양자컴퓨팅주 약세…라온시큐어는 13% 급등 왜?",
+        "[특징주] 라온시큐어, 코스닥 급락 속 피지컬AI 보안 과제 선정에 18.40%...",
+        "[특징주] 라온시큐어, 정부 '피지컬AI 보안' R&D 주관사 선정에 20%대 급...",
+        "라온시큐어 21.70% 급등…거래대금 2133억원 집중",
+        "라온시큐어, 정부 피지컬AI 보안 기술개발 주관사 선정",
+        "라온시큐어, 피지컬AI 안전망 구축 정부 과제 주관사 선정",
+        "[더벨][i-point] 라온시큐어, ‘피지컬AI 안전망’ 구축 나선다",
+        "증시 폭락에도 라온시큐어 17% 급등...보안주 약세 속 '나홀로 질주'",
+        "\"피지컬AI도 인증\"...라온시큐어, 개발 과제 주관기관 선정",
+        "[오늘의 특징주] 10월 15일",
+        "로봇도 신분증 챙긴다...라온시큐어, 피지컬AI 보안 개발",
+        "피지컬AI 보안기술 정부 연구개발 과제 주관기관 선정 소식 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "10:26",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:26",
+          "title": "라온시큐어 주가, 10월 15일 장중 19,400원 6.59% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=555161"
+        },
+        {
+          "time": "10:30",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:30",
+          "title": "라온시큐어 주가 4%대 상승…AI 관련주 부진 속 약진, 외국인·프로그램...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=615732"
+        },
+        {
+          "time": "10:56",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:56",
+          "title": "라온시큐어, 정부 '피지컬AI 안전망' 구축 과제 주관사 맡는다",
+          "press": "it-b.co.kr",
+          "link": "https://www.it-b.co.kr/news/articleView.html?idxno=90256"
+        },
+        {
+          "time": "12:48",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 12:48",
+          "title": "라온시큐어, 피지컬AI 보안 과제 주관…장중 5.49% 상승",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=392794"
+        },
+        {
+          "time": "13:12",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 13:12",
+          "title": "양자암호·양자컴퓨팅주 약세…라온시큐어는 13% 급등 왜?",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=495573"
+        },
+        {
+          "time": "13:56",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 13:56",
+          "title": "[특징주] 라온시큐어, 코스닥 급락 속 피지컬AI 보안 과제 선정에 18.40%...",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=926219"
+        },
+        {
+          "time": "13:56",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 13:56",
+          "title": "[특징주] 라온시큐어, 정부 '피지컬AI 보안' R&D 주관사 선정에 20%대 급...",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=301987"
+        },
+        {
+          "time": "13:58",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 13:58",
+          "title": "라온시큐어 21.70% 급등…거래대금 2133억원 집중",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232526"
+        },
+        {
+          "time": "15:16",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 15:16",
+          "title": "라온시큐어, 정부 피지컬AI 보안 기술개발 주관사 선정",
+          "press": "finomy.com",
+          "link": "http://www.finomy.com/news/articleView.html?idxno=263689"
+        },
+        {
+          "time": "15:52",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 15:52",
+          "title": "라온시큐어, 피지컬AI 안전망 구축 정부 과제 주관사 선정",
+          "press": "dailysecu.com",
+          "link": "https://www.dailysecu.com/news/articleView.html?idxno=208883"
+        },
+        {
+          "time": "15:58",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 15:58",
+          "title": "[더벨][i-point] 라온시큐어, ‘피지컬AI 안전망’ 구축 나선다",
+          "press": "thebell.co.kr",
+          "link": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202610151538325440107662"
+        },
+        {
+          "time": "16:38",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 16:38",
+          "title": "증시 폭락에도 라온시큐어 17% 급등...보안주 약세 속 '나홀로 질주'",
+          "press": "news.mtn.co.kr",
+          "link": "https://news.mtn.co.kr/article/2026101513515368336"
+        },
+        {
+          "time": "16:49",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 16:49",
+          "title": "\"피지컬AI도 인증\"...라온시큐어, 개발 과제 주관기관 선정",
+          "press": "zdnet.co.kr",
+          "link": "https://zdnet.co.kr/view/?no=20261015164815"
+        },
+        {
+          "time": "16:58",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 16:58",
+          "title": "[오늘의 특징주] 10월 15일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610150018"
+        },
+        {
+          "time": "20:12",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 20:12",
+          "title": "로봇도 신분증 챙긴다...라온시큐어, 피지컬AI 보안 개발",
+          "press": "thelec.kr",
+          "link": "https://www.thelec.kr/news/articleView.html?idxno=63794"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 17:00",
+          "title": "피지컬AI 보안기술 정부 연구개발 과제 주관기관 선정 소식 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "030960",
+      "name": "양지사",
+      "rate": 30.44,
+      "trading_value": 29608307850.0,
+      "summary": "양지사는 국내 증시 폭락 속에서 유통 주식 수가 적은 품절주로 부각되며 상한가를 기록했다.",
+      "analysis": {
+        "stock": "양지사",
+        "main_material": {
+          "title": "국내 증시 폭락 속 품절주 부각",
+          "reason": "국내 증시 폭락 장세 속에서 유통 주식 수가 적은 품절주로 시장에서 부각되며 상한가를 기록했다.",
+          "event_type": "NEW",
+          "theme": [
+            "품절주"
+          ],
+          "origin_date": "2026-10-15"
+        },
+        "secondary_materials": [
+          {
+            "title": "연말 성수기 수주 점검 기대감",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "국내 증시 폭락 속 품절주로 시장에서 부각되며 상한가",
+            "date": "2026-10-15 17:00"
+          },
+          {
+            "headline": "양지사 27.58% 상승…425만주 거래와 성수기 수주 점검",
+            "date": "2026-10-15 14:56"
+          }
+        ],
+        "summary": "양지사는 국내 증시 폭락 속에서 유통 주식 수가 적은 품절주로 부각되며 상한가를 기록했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "양지사 주가, 10월 13일 장중 4,780원 5.99% 상승",
+        "양지사 주가, 급등세... 무슨 회사길래?",
+        "양지사 주가, 10월 15일 장중 5,890원 24.00% 상승",
+        "양지사 주가, 10월 15일 장중 5,800원 22.11% 상승",
+        "양지사 27.58% 상승…425만주 거래와 성수기 수주 점검",
+        "국내 증시 폭락 속 품절주로 시장에서 부각되며 상한가"
+      ],
+      "articles": [
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 14:22",
+          "title": "양지사 주가, 10월 13일 장중 4,780원 5.99% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=554545"
+        },
+        {
+          "time": "09:34",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 09:34",
+          "title": "양지사 주가, 급등세... 무슨 회사길래?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1187004"
+        },
+        {
+          "time": "10:24",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:24",
+          "title": "양지사 주가, 10월 15일 장중 5,890원 24.00% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16247726"
+        },
+        {
+          "time": "10:38",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:38",
+          "title": "양지사 주가, 10월 15일 장중 5,800원 22.11% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=555182"
+        },
+        {
+          "time": "14:56",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 14:56",
+          "title": "양지사 27.58% 상승…425만주 거래와 성수기 수주 점검",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232616"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 17:00",
+          "title": "국내 증시 폭락 속 품절주로 시장에서 부각되며 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "176750",
+      "name": "듀켐바이오",
+      "rate": 29.25,
+      "trading_value": 27441894090.0,
+      "summary": "듀켐바이오는 일라이 릴리의 치매치료제 '키순라'의 국내 허가 기대감에 따른 치매 진단제 수요 증가 전망으로 급등세를 기록했습니다.",
+      "analysis": {
+        "stock": "듀켐바이오",
+        "main_material": {
+          "title": "일라이 릴리 치매치료제 키순라 국내 허가 기대감",
+          "reason": "일라이 릴리의 치매치료제 '키순라'의 국내 품목 허가 기대감이 지속되면서, 치매 진단제 수요가 증가할 것이라는 기대감에 주가가 상한가 및 급등세를 기록했다.",
+          "event_type": "FOLLOW_UP",
+          "theme": [
+            "제약바이오",
+            "치매"
+          ],
+          "origin_date": "2026-10-13"
+        },
+        "secondary_materials": [
+          {
+            "title": "방사성의약품 공급망 부각",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "‘키썬라’는 한 번 더”…치매약 경쟁에 웃는 듀켐바이오",
+            "date": "2026-10-13 11:18"
+          },
+          {
+            "headline": "듀켐바이오 주가 10거래일간 26%↑…릴리 치매약 허가 앞두고 급등",
+            "date": "2026-10-14 10:20"
+          },
+          {
+            "headline": "[특징주] 듀켐바이오, 키순라 국내 허가 기대에 상한가…치매 진단 수요...",
+            "date": "2026-10-15 18:16"
+          }
+        ],
+        "summary": "듀켐바이오는 일라이 릴리의 치매치료제 '키순라'의 국내 허가 기대감에 따른 치매 진단제 수요 증가 전망으로 급등세를 기록했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "“‘키썬라’는 한 번 더”…치매약 경쟁에 웃는 듀켐바이오",
+        "듀켐바이오 주가 10거래일간 26%↑…릴리 치매약 허가 앞두고 급등",
+        "[분석_바이오테크 ⑭듀켐바이오] 시장은 장악했지만 실적은 아직... 대규...",
+        "듀켐바이오, 릴리 치매치료제 국내 허가 기대감에 13%대 급등[특징주]",
+        "[특징주] 듀켐바이오, 릴리 치매치료제 국내 허가 기대감에 10%대↑",
+        "듀켐바이오 주가, 급등세... 왜?",
+        "[특징주] 듀켐바이오, 치매치료제 국내 허가 기대감에 19% 급등",
+        "듀켐바이오 주가, 10월 15일 장중 8,000원 15.94% 상승",
+        "[특징주] 듀켐바이오, 치매약 '키순라' 국내 허가 기대감에 '급등'",
+        "듀켐바이오 주가, 10월 15일 장중 8,170원 18.41% 상승",
+        "[ET특징주] 치매약 '키순라' 국내 허가 기대감… 듀켐바이오 주가 21%↑",
+        "듀켐바이오 30% 상승…방사성의약품 공급망 주목",
+        "[오늘의 특징주] 뉴인텍·바이오인프라 상한가…멜콘·듀켐바이오에 매...",
+        "[주식] 코스피·코스닥 나란히 7%대 하락...듀켐바이오 홀로 상한가",
+        "[특징주] 듀켐바이오, 키순라 국내 허가 기대에 상한가…치매 진단 수요...",
+        "일라이 릴리 치료제 '키순라' 국내 품목 허가 기대감 지속 속 동사 치매 진단제 수요 증가 기대감 등에 상한가"
+      ],
+      "articles": [
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 11:18",
+          "title": "“‘키썬라’는 한 번 더”…치매약 경쟁에 웃는 듀켐바이오",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=02801126645612592&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 10:20",
+          "title": "듀켐바이오 주가 10거래일간 26%↑…릴리 치매약 허가 앞두고 급등",
+          "press": "forbeskorea.co.kr",
+          "link": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=402672"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 13:06",
+          "title": "[분석_바이오테크 ⑭듀켐바이오] 시장은 장악했지만 실적은 아직... 대규...",
+          "press": "newsworker.co.kr",
+          "link": "https://www.newsworker.co.kr/news/articleView.html?idxno=508572"
+        },
+        {
+          "time": "09:24",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 09:24",
+          "title": "듀켐바이오, 릴리 치매치료제 국내 허가 기대감에 13%대 급등[특징주]",
+          "press": "newsway.co.kr",
+          "link": "https://www.newsway.co.kr/news/view?ud=2026101509184008560"
+        },
+        {
+          "time": "09:44",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 09:44",
+          "title": "[특징주] 듀켐바이오, 릴리 치매치료제 국내 허가 기대감에 10%대↑",
+          "press": "biz.chosun.com",
+          "link": "https://biz.chosun.com/stock/stock_general/2026/10/15/3AFZA4I4UVF5PO7EYZSCP3M4CE/?utm_source=naver&utm_medium=original&utm_campaign=biz"
+        },
+        {
+          "time": "10:04",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:04",
+          "title": "듀켐바이오 주가, 급등세... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1187012"
+        },
+        {
+          "time": "10:28",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:28",
+          "title": "[특징주] 듀켐바이오, 치매치료제 국내 허가 기대감에 19% 급등",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=926201"
+        },
+        {
+          "time": "10:38",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:38",
+          "title": "듀켐바이오 주가, 10월 15일 장중 8,000원 15.94% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=555183"
+        },
+        {
+          "time": "10:52",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:52",
+          "title": "[특징주] 듀켐바이오, 치매약 '키순라' 국내 허가 기대감에 '급등'",
+          "press": "cstimes.com",
+          "link": "https://www.cstimes.com/news/articleView.html?idxno=724055"
+        },
+        {
+          "time": "11:06",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 11:06",
+          "title": "듀켐바이오 주가, 10월 15일 장중 8,170원 18.41% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16247776"
+        },
+        {
+          "time": "11:26",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 11:26",
+          "title": "[ET특징주] 치매약 '키순라' 국내 허가 기대감… 듀켐바이오 주가 21%↑",
+          "press": "etnews.com",
+          "link": "https://www.etnews.com/20261015000222"
+        },
+        {
+          "time": "14:54",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 14:54",
+          "title": "듀켐바이오 30% 상승…방사성의약품 공급망 주목",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232609"
+        },
+        {
+          "time": "16:45",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 16:45",
+          "title": "[오늘의 특징주] 뉴인텍·바이오인프라 상한가…멜콘·듀켐바이오에 매...",
+          "press": "ppss.kr",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=315721"
+        },
+        {
+          "time": "18:00",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 18:00",
+          "title": "[주식] 코스피·코스닥 나란히 7%대 하락...듀켐바이오 홀로 상한가",
+          "press": "hitnews.co.kr",
+          "link": "https://www.hitnews.co.kr/news/articleView.html?idxno=79933"
+        },
+        {
+          "time": "18:16",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 18:16",
+          "title": "[특징주] 듀켐바이오, 키순라 국내 허가 기대에 상한가…치매 진단 수요...",
+          "press": "biotimes.co.kr",
+          "link": "https://www.biotimes.co.kr/news/articleView.html?idxno=35281"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 17:00",
+          "title": "일라이 릴리 치료제 '키순라' 국내 품목 허가 기대감 지속 속 동사 치매 진단제 수요 증가 기대감 등에 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    }
+  ],
+  "20261016": [
+    {
+      "code": "491000",
+      "name": "리브스메드",
+      "rate": 32.93,
+      "trading_value": 48208300000.0,
+      "summary": "리브스메드는 수술 로봇 '스타크' 허가 기대감과 주력 제품의 흑자 전환 전망이 부각되며 급등했다.",
+      "analysis": {
+        "stock": "리브스메드",
+        "main_material": {
+          "title": "수술 로봇 '스타크' 허가 기대감",
+          "reason": "국내 1호 수술로봇 스타크 허가 목표 및 수술기구·로봇 사업에 대한 시장의 관심이 부각되며 상한가에 근접하는 급등세를 기록했다.",
+          "event_type": "NEW",
+          "theme": [
+            "의료로봇",
+            "의료기기"
+          ],
+          "origin_date": "2026-10-13"
+        },
+        "secondary_materials": [
+          {
+            "title": "'아티센셜 프로' 4분기 흑자 전환 기대",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "[리브스메드 수술로봇 도전기] 국내 1호 수술로봇 스타크, 핵심 경...",
+            "date": "2026-10-13 16:38"
+          },
+          {
+            "headline": "리브스메드, 4분기 '아티센셜 프로' 흑자 전환 시험대···핸드헬드·로...",
+            "date": "2026-10-16 13:19"
+          },
+          {
+            "headline": "[주식] 리브스메드, 수술 로봇 '스타크' 허가 목표...상한가 직행",
+            "date": "2026-10-16 18:52"
+          }
+        ],
+        "summary": "리브스메드는 수술 로봇 '스타크' 허가 기대감과 주력 제품의 흑자 전환 전망이 부각되며 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[더벨][리브스메드 수술로봇 도전기] 국내 1호 수술로봇 스타크, 핵심 경...",
+        "[더벨][리브스메드 수술로봇 도전기] 리브스메드 수익 구조, 로봇보다 ...",
+        "리브스메드 주가, 급등세... 어떤 회사길래?",
+        "리브스메드, 4분기 '아티센셜 프로' 흑자 전환 시험대···핸드헬드·로...",
+        "리브스메드 상한가 근접…수술기구·로봇 사업 주목",
+        "리브스메드 주가, 10월 16일 43,600원 28.24% 급등",
+        "[오늘의 특징주] 10월 16일",
+        "[주식] 리브스메드, 수술 로봇 '스타크' 허가 목표...상한가 직행"
+      ],
+      "articles": [
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 16:38",
+          "title": "[더벨][리브스메드 수술로봇 도전기] 국내 1호 수술로봇 스타크, 핵심 경...",
+          "press": "thebell.co.kr",
+          "link": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202610081603569760109041"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 16:28",
+          "title": "[더벨][리브스메드 수술로봇 도전기] 리브스메드 수익 구조, 로봇보다 ...",
+          "press": "thebell.co.kr",
+          "link": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202610121350299920101371"
+        },
+        {
+          "time": "10:26",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 10:26",
+          "title": "리브스메드 주가, 급등세... 어떤 회사길래?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1187293"
+        },
+        {
+          "time": "13:19",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 13:19",
+          "title": "리브스메드, 4분기 '아티센셜 프로' 흑자 전환 시험대···핸드헬드·로...",
+          "press": "greened.kr",
+          "link": "https://www.greened.kr/news/articleView.html?idxno=352237"
+        },
+        {
+          "time": "14:24",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 14:24",
+          "title": "리브스메드 상한가 근접…수술기구·로봇 사업 주목",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232832"
+        },
+        {
+          "time": "15:56",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 15:56",
+          "title": "리브스메드 주가, 10월 16일 43,600원 28.24% 급등",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16249010"
+        },
+        {
+          "time": "16:48",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 16:48",
+          "title": "[오늘의 특징주] 10월 16일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610160009"
+        },
+        {
+          "time": "18:52",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 18:52",
+          "title": "[주식] 리브스메드, 수술 로봇 '스타크' 허가 목표...상한가 직행",
+          "press": "hitnews.co.kr",
+          "link": "https://www.hitnews.co.kr/news/articleView.html?idxno=79983"
+        }
+      ],
+      "news_source": "featured"
+    },
+    {
+      "code": "396300",
+      "name": "HT로보틱스",
+      "rate": 23.5,
+      "trading_value": 275919614700.0,
+      "summary": "HT로보틱스는 북미 ESS 엔드플레이트 누적 생산 200만개 돌파 소식과 ETF 편입 기대감이 부각되며 상승했다.",
+      "analysis": {
+        "stock": "HT로보틱스",
+        "main_material": {
+          "title": "북미 ESS 엔드플레이트 200만개 돌파",
+          "reason": "북미 AI 전력망 관련 ESS 엔드플레이트 누적 생산량이 200만개를 돌파하며 미국 공략 속도가 부각됨에 따라 주가가 급등했다.",
+          "event_type": "NEW",
+          "theme": [
+            "ESS",
+            "북미공급망",
+            "AI전력망"
+          ],
+          "origin_date": "2026-10-15"
+        },
+        "secondary_materials": [
+          {
+            "title": "코리아혁신성장·수소전력 등 ETF 5종 편입",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "HT로보틱스, 북미 ESS 엔드플레이트 누적 생산 200만개 돌파…美 공급망...",
+            "date": "2026-10-15 07:56"
+          },
+          {
+            "headline": "HT로보틱스, 코리아혁신성장·수소전력 등 ETF 5종 편입…기관투자자 관...",
+            "date": "2026-10-14 15:00"
+          }
+        ],
+        "summary": "HT로보틱스는 북미 ESS 엔드플레이트 누적 생산 200만개 돌파 소식과 ETF 편입 기대감이 부각되며 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "HT로보틱스, 코리아혁신성장·수소전력 등 ETF 5종 편입…기관투자자 관...",
+        "HT로보틱스 주가, 10월 14일 애프터마켓 7,230원 15.13% 상승",
+        "HT로보틱스, 북미 ESS 엔드플레이트 누적 생산 200만개 돌파…美 공급망...",
+        "HT로보틱스, 북미 AI 전력망 선점…ESS 엔드플레이트 '200만개' 돌파",
+        "HT로보틱스 주가, 10월 15일 장중 7,250원 5.53% 상승",
+        "HT로보틱스 주가, 10월 15일 장중 7,420원 8.01% 상승",
+        "[더벨][i-point] HT로보틱스, ESS 부품 200만개…미국 공략 속도",
+        "HT로보틱스 5.68% 상승…로봇·ESS 부품 확장 주목",
+        "HT로보틱스 주가, 10월 16일 장중 8,140원 13.85% 상승",
+        "HT로보틱스 주가, 급등세... 왜?",
+        "HT로보틱스 주가, 10월 16일 장중 8,560원 19.72% 급등",
+        "[특징주] 외국인·기관, 삼성중공업 동반 매수…삼성전자·대한항공은 ...",
+        "HT로보틱스 회전율 77%…코스닥 신규상장주 거래 활발",
+        "HT로보틱스 22.38% 급등…로봇·ESS 정밀부품 확대",
+        "[오늘의 특징주] 10월 16일"
+      ],
+      "articles": [
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 15:00",
+          "title": "HT로보틱스, 코리아혁신성장·수소전력 등 ETF 5종 편입…기관투자자 관...",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2635749"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 16:54",
+          "title": "HT로보틱스 주가, 10월 14일 애프터마켓 7,230원 15.13% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16247064"
+        },
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 07:56",
+          "title": "HT로보틱스, 북미 ESS 엔드플레이트 누적 생산 200만개 돌파…美 공급망...",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2635930"
+        },
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 08:44",
+          "title": "HT로보틱스, 북미 AI 전력망 선점…ESS 엔드플레이트 '200만개' 돌파",
+          "press": "mt.co.kr",
+          "link": "https://www.mt.co.kr/stock/2026/10/15/2026101508391583408"
+        },
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:10",
+          "title": "HT로보틱스 주가, 10월 15일 장중 7,250원 5.53% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16247710"
+        },
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 10:26",
+          "title": "HT로보틱스 주가, 10월 15일 장중 7,420원 8.01% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=555162"
+        },
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 11:38",
+          "title": "[더벨][i-point] HT로보틱스, ESS 부품 200만개…미국 공략 속도",
+          "press": "thebell.co.kr",
+          "link": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202610151106306120107075"
+        },
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 14:30",
+          "title": "HT로보틱스 5.68% 상승…로봇·ESS 부품 확장 주목",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232555"
+        },
+        {
+          "time": "09:52",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 09:52",
+          "title": "HT로보틱스 주가, 10월 16일 장중 8,140원 13.85% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=555533"
+        },
+        {
+          "time": "10:34",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 10:34",
+          "title": "HT로보틱스 주가, 급등세... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1187297"
+        },
+        {
+          "time": "10:46",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 10:46",
+          "title": "HT로보틱스 주가, 10월 16일 장중 8,560원 19.72% 급등",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16248794"
+        },
+        {
+          "time": "11:32",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 11:32",
+          "title": "[특징주] 외국인·기관, 삼성중공업 동반 매수…삼성전자·대한항공은 ...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=723333"
+        },
+        {
+          "time": "12:38",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 12:38",
+          "title": "HT로보틱스 회전율 77%…코스닥 신규상장주 거래 활발",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1792121831689347276"
+        },
+        {
+          "time": "13:44",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 13:44",
+          "title": "HT로보틱스 22.38% 급등…로봇·ESS 정밀부품 확대",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232778"
+        },
+        {
+          "time": "16:48",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 16:48",
+          "title": "[오늘의 특징주] 10월 16일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610160009"
+        }
+      ],
+      "news_source": "featured"
+    },
+    {
+      "code": "452280",
+      "name": "한선엔지니어링",
+      "rate": 12.06,
+      "trading_value": 135240988700.0,
+      "summary": "한선엔지니어링은 고체산화물 연료전지 및 기계·로봇 테마의 매수세 확산과 실적 성장 재평가 기대감으로 상승했습니다.",
+      "analysis": {
+        "stock": "한선엔지니어링",
+        "main_material": {
+          "title": "고체산화물 연료전지 및 기계·로봇주 강세",
+          "reason": "고체산화물 연료전지(SOFC) 관련주로 부각되며 매수세가 유입되었고, 기계 및 로봇주 전반으로 매수세가 확산됨.",
+          "event_type": "NEW",
+          "theme": [
+            "고체산화물연료전지",
+            "기계·로봇"
+          ],
+          "origin_date": "2026-10-14"
+        },
+        "secondary_materials": [
+          {
+            "title": "물류 자동화 거점 구축 및 2분기 이익 성장 재평가",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "로보티즈",
+            "reason": "기계·로봇주 매수세 확산 과정에서 함께 언급됨",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "고체산화물 연료전지 관련주 일부 강세…한선엔지니어링 24%대 급등",
+            "date": "2026-10-14 13:12"
+          },
+          {
+            "headline": "한선엔지니어링 26.06% 급등…2분기 이익 성장 재평가",
+            "date": "2026-10-14 14:36"
+          },
+          {
+            "headline": "한선엔지니어링·로보티즈 불꽃랠리…기계·로봇주 매수세 확산",
+            "date": "2026-10-16 13:50"
+          }
+        ],
+        "summary": "한선엔지니어링은 고체산화물 연료전지 및 기계·로봇 테마의 매수세 확산과 실적 성장 재평가 기대감으로 상승했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "한선엔지니어링 주가, 급등세... 무슨 회사길래?",
+        "한선엔지니어링 주가, 10월 14일 장중 14,650원 16.73% 상승",
+        "고체산화물 연료전지 관련주 일부 강세…한선엔지니어링 24%대 급등, 비...",
+        "[더벨][현장 스토리] 원가 절감 나선 한선엔지니어링, 물류 자동화 거점...",
+        "한선엔지니어링 26.06% 급등…2분기 이익 성장 재평가",
+        "한선엔지니어링 주가, 10월 14일 장중 16,030원 27.73% 상승",
+        "한선엔지니어링 장중 23.9% 상승",
+        "한선엔지니어링 주가, 급등세... 최근 주가 흐름은?",
+        "한선엔지니어링 주가, 10월 16일 장중 16,710원 13.91% 상승",
+        "한선엔지니어링 주가, 10월 16일 장중 17,180원 17.11% 상승",
+        "한선엔지니어링·로보티즈 불꽃랠리…기계·로봇주 매수세 확산"
+      ],
+      "articles": [
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 09:52",
+          "title": "한선엔지니어링 주가, 급등세... 무슨 회사길래?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1186685"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 10:42",
+          "title": "한선엔지니어링 주가, 10월 14일 장중 14,650원 16.73% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16246598"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 13:12",
+          "title": "고체산화물 연료전지 관련주 일부 강세…한선엔지니어링 24%대 급등, 비...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=615353"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 13:32",
+          "title": "[더벨][현장 스토리] 원가 절감 나선 한선엔지니어링, 물류 자동화 거점...",
+          "press": "thebell.co.kr",
+          "link": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202610131554245160101213"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:36",
+          "title": "한선엔지니어링 26.06% 급등…2분기 이익 성장 재평가",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232287"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:44",
+          "title": "한선엔지니어링 주가, 10월 14일 장중 16,030원 27.73% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=554975"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 15:56",
+          "title": "한선엔지니어링 장중 23.9% 상승",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=392549"
+        },
+        {
+          "time": "10:30",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 10:30",
+          "title": "한선엔지니어링 주가, 급등세... 최근 주가 흐름은?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1187294"
+        },
+        {
+          "time": "10:32",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 10:32",
+          "title": "한선엔지니어링 주가, 10월 16일 장중 16,710원 13.91% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=555555"
+        },
+        {
+          "time": "11:08",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 11:08",
+          "title": "한선엔지니어링 주가, 10월 16일 장중 17,180원 17.11% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16248835"
+        },
+        {
+          "time": "13:50",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 13:50",
+          "title": "한선엔지니어링·로보티즈 불꽃랠리…기계·로봇주 매수세 확산",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=495927"
+        }
+      ],
+      "news_source": "general"
+    },
+    {
+      "code": "079650",
+      "name": "서산",
+      "rate": 22.22,
+      "trading_value": 86407658150.0,
+      "summary": "제공된 뉴스에는 지자체 행정 및 행사 관련 내용만 존재하여 종목의 급등을 설명할 수 있는 명확한 재료를 찾기 어렵다.",
+      "analysis": {
+        "stock": "서산",
+        "main_material": {
+          "title": "뚜렷한 재료 확인불가",
+          "reason": "제공된 뉴스는 주로 지자체(서산시)의 행정 소식, 봉사활동, 지역 행사 등으로 기업의 실적이나 주가 상승을 직접적으로 설명할 만한 뚜렷한 호재성 재료가 확인되지 않는다.",
+          "event_type": "RECYCLED",
+          "theme": [],
+          "origin_date": "확인불가"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "서산시, '생명연 분원 연계'... 융합그린바이오 포럼 개최",
+            "date": "2026-10-16 15:06"
+          },
+          {
+            "headline": "생명연 서산분원 가동 준비…서산시 바이오산업육성위원회 발족",
+            "date": "2026-10-16 15:56"
+          }
+        ],
+        "summary": "제공된 뉴스에는 지자체 행정 및 행사 관련 내용만 존재하여 종목의 급등을 설명할 수 있는 명확한 재료를 찾기 어렵다.",
+        "confidence": "LOW"
+      },
+      "headlines": [
+        "\"평생 꿈꿨던 등굣길\"…서산 할머니 20명의 특별한 하루",
+        "서산시, '대포차량 전면 단속'... 경찰 합동 번호판 영치",
+        "서산시, '생명연 분원 연계'... 융합그린바이오 포럼 개최",
+        "서산시, 생활 불편 민원 원스톱 서비스 SNS '민원 톡톡' 운영",
+        "서산시, 바이오산업 육성 본격화…지·산·학·연 네트워크 구축",
+        "서산시, 도로 파손·쓰레기 무단투기 SNS 생활 불편 접수",
+        "[윤경준의 이슈톡톡] 장갑순 서산시의회 의장 \"대산공단 체질 변화 시급...",
+        "서산시, 성인문해 마을학교 어르신들 \"설레는 등굣길\" 체험",
+        "생명연 서산분원 가동 준비…서산시 바이오산업육성위원회 발족",
+        "서산 개나리아파트 184세대 CO경보기 설치 및 가스안전점검 실시",
+        "\"국화꽃 피울 축제장서 구슬땀\"…서산시의회 환경 조성 봉사",
+        "농협서산시지부, 서산중앙고 스쿨팜(학교농장) 지원",
+        "서산시, 성인문해 마을학교 어르신들 설레는 등굣길 체험",
+        "서산시의회, 서산국화축제장 봉사활동 실시",
+        "서산시의회, '구슬땀 봉사'... 제26회 국화축제 준비 총력"
+      ],
+      "articles": [
+        {
+          "time": "14:28",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 14:28",
+          "title": "\"평생 꿈꿨던 등굣길\"…서산 할머니 20명의 특별한 하루",
+          "press": "news1.kr",
+          "link": "https://www.news1.kr/local/daejeon-chungnam/6322523"
+        },
+        {
+          "time": "14:46",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 14:46",
+          "title": "서산시, '대포차량 전면 단속'... 경찰 합동 번호판 영치",
+          "press": "newsworker.co.kr",
+          "link": "https://www.newsworker.co.kr/news/articleView.html?idxno=508976"
+        },
+        {
+          "time": "15:06",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 15:06",
+          "title": "서산시, '생명연 분원 연계'... 융합그린바이오 포럼 개최",
+          "press": "newsworker.co.kr",
+          "link": "https://www.newsworker.co.kr/news/articleView.html?idxno=508974"
+        },
+        {
+          "time": "15:06",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 15:06",
+          "title": "서산시, 생활 불편 민원 원스톱 서비스 SNS '민원 톡톡' 운영",
+          "press": "news.lghellovision.net",
+          "link": "http://news.lghellovision.net/news/articleView.html?idxno=558642"
+        },
+        {
+          "time": "15:08",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 15:08",
+          "title": "서산시, 바이오산업 육성 본격화…지·산·학·연 네트워크 구축",
+          "press": "news.lghellovision.net",
+          "link": "http://news.lghellovision.net/news/articleView.html?idxno=558631"
+        },
+        {
+          "time": "15:22",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 15:22",
+          "title": "서산시, 도로 파손·쓰레기 무단투기 SNS 생활 불편 접수",
+          "press": "breaknews.com",
+          "link": "http://www.breaknews.com/1243523"
+        },
+        {
+          "time": "15:30",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 15:30",
+          "title": "[윤경준의 이슈톡톡] 장갑순 서산시의회 의장 \"대산공단 체질 변화 시급...",
+          "press": "news.lghellovision.net",
+          "link": "http://news.lghellovision.net/news/articleView.html?idxno=558299"
+        },
+        {
+          "time": "15:30",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 15:30",
+          "title": "서산시, 성인문해 마을학교 어르신들 \"설레는 등굣길\" 체험",
+          "press": "shinailbo.co.kr",
+          "link": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5072607"
+        },
+        {
+          "time": "15:56",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 15:56",
+          "title": "생명연 서산분원 가동 준비…서산시 바이오산업육성위원회 발족",
+          "press": "newsis.com",
+          "link": "https://www.newsis.com/view/NISX20261016_0003829344"
+        },
+        {
+          "time": "16:58",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 16:58",
+          "title": "서산 개나리아파트 184세대 CO경보기 설치 및 가스안전점검 실시",
+          "press": "chungnamilbo.co.kr",
+          "link": "http://www.chungnamilbo.co.kr/news/articleView.html?idxno=915185"
+        },
+        {
+          "time": "17:22",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 17:22",
+          "title": "\"국화꽃 피울 축제장서 구슬땀\"…서산시의회 환경 조성 봉사",
+          "press": "news1.kr",
+          "link": "https://www.news1.kr/local/daejeon-chungnam/6322864"
+        },
+        {
+          "time": "17:28",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 17:28",
+          "title": "농협서산시지부, 서산중앙고 스쿨팜(학교농장) 지원",
+          "press": "chungnamilbo.co.kr",
+          "link": "http://www.chungnamilbo.co.kr/news/articleView.html?idxno=915141"
+        },
+        {
+          "time": "17:28",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 17:28",
+          "title": "서산시, 성인문해 마을학교 어르신들 설레는 등굣길 체험",
+          "press": "chungnamilbo.co.kr",
+          "link": "http://www.chungnamilbo.co.kr/news/articleView.html?idxno=915157"
+        },
+        {
+          "time": "17:56",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 17:56",
+          "title": "서산시의회, 서산국화축제장 봉사활동 실시",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=723422"
+        },
+        {
+          "time": "18:10",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 18:10",
+          "title": "서산시의회, '구슬땀 봉사'... 제26회 국화축제 준비 총력",
+          "press": "newsworker.co.kr",
+          "link": "https://www.newsworker.co.kr/news/articleView.html?idxno=509070"
+        }
+      ],
+      "news_source": "featured"
+    },
+    {
+      "code": "290650",
+      "name": "엘앤씨바이오",
+      "rate": 22.98,
+      "trading_value": 57214478100.0,
+      "summary": "엘앤씨바이오는 1447억 원 규모의 유상증자 구주주 청약이 103.92%의 청약률로 성공적으로 완판되었다는 소식에 급등했다.",
+      "analysis": {
+        "stock": "엘앤씨바이오",
+        "main_material": {
+          "title": "1447억 원 유상증자 구주주 청약 완판",
+          "reason": "1447억 원 규모의 대규모 유상증자에서 구주주 청약률이 103.92%를 기록하며 완판 및 일반 공모 생략 소식이 전해져 투자 심리가 개선됐다.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "바이오",
+            "유상증자"
+          ],
+          "origin_date": "2026-10-16"
+        },
+        "secondary_materials": [
+          {
+            "title": "피부 ECM 제품 '리투오' 해외 공급 확대 기대",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "엘앤씨바이오, 1447억 유상증자 구주주 청약 완판…동탄 통합센터 투자",
+            "date": "2026-10-16 14:08"
+          },
+          {
+            "headline": "엘앤씨바이오, 유상증자 구주주 청약률 103.92%",
+            "date": "2026-10-16 14:15"
+          }
+        ],
+        "summary": "엘앤씨바이오는 1447억 원 규모의 유상증자 구주주 청약이 103.92%의 청약률로 성공적으로 완판되었다는 소식에 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "엘앤씨바이오 18.69% 급등…리투오 해외 공급 확대 관심",
+        "엘앤씨바이오, 1447억 유상증자 구주주 청약 완판…동탄 통합센터 투자",
+        "엘앤씨바이오, 유상증자 구주주 청약률 103.92%",
+        "엘앤씨바이오, 1447억원 유상증자 청약률 103.92%…일반 공모 생략",
+        "[속보] 엘앤씨바이오 상한가 도달…KRX·NXT VI 잇따라 발동, 유상증자 ...",
+        "엘앤씨바이오, 1447억원 규모 유상증자 구주주 청약 완판",
+        "엘앤씨바이오, 1447억 유상증자 청약 완료…동탄 생산거점 투자",
+        "[단독] 엘앤씨바이오, ‘리투오 유통’ 자회사 IPO…중복상장 논란 불가...",
+        "엘앤씨바이오, 1447억 규모 유상증자 구주주 청약률 103.92% 기록",
+        "﻿[BIO톡]엘앤씨바이오, 1447억 원 유상증자 구주주 청약 완판 外 디티앤...",
+        "엘앤씨바이오 주가, 10월 16일 애프터마켓 70,100원 23.63% 상승",
+        "엘앤씨바이오, 성형외과 학술대회서 피부 ECM 제품 ‘리투오’ 소개",
+        "엘앤씨바이오, 성형외과의사회 학술대회서 '리투오' 활용 가능성 소개",
+        "엘앤씨바이오, 1447억 규모 유증 구주주 청약률 103.92% 기록",
+        "엘앤씨바이오, 1447억원 유상증자 청약 성공적"
+      ],
+      "articles": [
+        {
+          "time": "13:58",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 13:58",
+          "title": "엘앤씨바이오 18.69% 급등…리투오 해외 공급 확대 관심",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232806"
+        },
+        {
+          "time": "14:08",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 14:08",
+          "title": "엘앤씨바이오, 1447억 유상증자 구주주 청약 완판…동탄 통합센터 투자",
+          "press": "ebn.co.kr",
+          "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1728132"
+        },
+        {
+          "time": "14:15",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 14:15",
+          "title": "엘앤씨바이오, 유상증자 구주주 청약률 103.92%",
+          "press": "biz.chosun.com",
+          "link": "https://biz.chosun.com/science-chosun/bio/2026/10/16/Z735AHYREFDHBO63UJ7SH3QULE/?utm_source=naver&utm_medium=original&utm_campaign=biz"
+        },
+        {
+          "time": "14:24",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 14:24",
+          "title": "엘앤씨바이오, 1447억원 유상증자 청약률 103.92%…일반 공모 생략",
+          "press": "digitalchosun.dizzo.com",
+          "link": "http://digitalchosun.dizzo.com/site/data/html_dir/2026/10/16/2026101680120.html"
+        },
+        {
+          "time": "14:32",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 14:32",
+          "title": "[속보] 엘앤씨바이오 상한가 도달…KRX·NXT VI 잇따라 발동, 유상증자 ...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=616326"
+        },
+        {
+          "time": "14:53",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 14:53",
+          "title": "엘앤씨바이오, 1447억원 규모 유상증자 구주주 청약 완판",
+          "press": "mk.co.kr",
+          "link": "https://www.mk.co.kr/article/12177826"
+        },
+        {
+          "time": "15:07",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 15:07",
+          "title": "엘앤씨바이오, 1447억 유상증자 청약 완료…동탄 생산거점 투자",
+          "press": "sedaily.com",
+          "link": "https://www.sedaily.com/article/20102540?ref=naver"
+        },
+        {
+          "time": "15:44",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 15:44",
+          "title": "[단독] 엘앤씨바이오, ‘리투오 유통’ 자회사 IPO…중복상장 논란 불가...",
+          "press": "news.mtn.co.kr",
+          "link": "https://news.mtn.co.kr/article/2026101615174346306"
+        },
+        {
+          "time": "15:54",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 15:54",
+          "title": "엘앤씨바이오, 1447억 규모 유상증자 구주주 청약률 103.92% 기록",
+          "press": "businesspost.co.kr",
+          "link": "https://www.businesspost.co.kr/BP?command=article_view&num=449561"
+        },
+        {
+          "time": "16:08",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 16:08",
+          "title": "﻿[BIO톡]엘앤씨바이오, 1447억 원 유상증자 구주주 청약 완판 外 디티앤...",
+          "press": "getnews.co.kr",
+          "link": "https://www.getnews.co.kr/news/articleView.html?idxno=883815"
+        },
+        {
+          "time": "16:10",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 16:10",
+          "title": "엘앤씨바이오 주가, 10월 16일 애프터마켓 70,100원 23.63% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16249030"
+        },
+        {
+          "time": "16:47",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 16:47",
+          "title": "엘앤씨바이오, 성형외과 학술대회서 피부 ECM 제품 ‘리투오’ 소개",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=04467366645613576&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "16:56",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 16:56",
+          "title": "엘앤씨바이오, 성형외과의사회 학술대회서 '리투오' 활용 가능성 소개",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261016001298"
+        },
+        {
+          "time": "17:32",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 17:32",
+          "title": "엘앤씨바이오, 1447억 규모 유증 구주주 청약률 103.92% 기록",
+          "press": "dealsite.co.kr",
+          "link": "https://dealsite.co.kr/articles/170853"
+        },
+        {
+          "time": "18:14",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 18:14",
+          "title": "엘앤씨바이오, 1447억원 유상증자 청약 성공적",
+          "press": "srtimes.kr",
+          "link": "http://www.srtimes.kr/news/articleView.html?idxno=215032"
+        }
+      ],
+      "news_source": "featured"
+    },
+    {
+      "code": "046970",
+      "name": "우리로",
+      "rate": 18.59,
+      "trading_value": 94171885260.0,
+      "summary": "우리로는 중국 이터른그룹과 체결한 228억 원 규모의 대규모 AI 데이터센터용 광반도체 공급계약 소식에 힘입어 급등세를 기록했다.",
+      "analysis": {
+        "stock": "우리로",
+        "main_material": {
+          "title": "중국 이터른그룹과 228억 원 규모 광반도체 공급계약",
+          "reason": "지난해 매출의 절반 규모에 달하는 227억~228억 원 규모의 AI 데이터센터용 광반도체 공급계약 체결 소식이 전해지며 주가가 급등했다.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "광반도체",
+            "AI데이터센터",
+            "광통신부품"
+          ],
+          "origin_date": "2026-10-15"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "[속보] 우리로, 227억7777만원 규모 데이터센터용 광반도체 공급계약…...",
+            "date": "2026-10-15 15:46"
+          },
+          {
+            "headline": "우리로, 228억원 광반도체 수주..AI 데이터센터 사업 확대",
+            "date": "2026-10-15 16:51"
+          },
+          {
+            "headline": "[특징주] 우리로, 中 이터른그룹과 228억 공급 계약에 '급등'",
+            "date": "2026-10-16 10:18"
+          }
+        ],
+        "summary": "우리로는 중국 이터른그룹과 체결한 228억 원 규모의 대규모 AI 데이터센터용 광반도체 공급계약 소식에 힘입어 급등세를 기록했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "우리로 주가, 10월 15일 장중 업종 대비 큰 폭 약세",
+        "[속보] 우리로, 227억7777만원 규모 데이터센터용 광반도체 공급계약…...",
+        "우리로, 228억원 광반도체 공급 수주..AI 데이터센터 사업 확대",
+        "[특징주] 우리로, 228억원 광반도체 수주 소식에 10% 급등",
+        "우리로, 데이터센터용 광반도체 수주 소식에 '급등'",
+        "우리로, 장 초반 9% 급등…中 기업과 228억 광반도체 공급계약",
+        "[특징주] 우리로, 대규모 광반도체 공급 계약…강세",
+        "[특징주] 우리로, 中 이터른그룹과 228억 공급 계약에 '급등'",
+        "우리로 주가, 10월 16일 장중 8,080원 13.01% 상승",
+        "[특징주] 우리로, 228억원 광반도체 공급계약…주가 14%↑",
+        "우리로, 주가, 10월 16일 장중 8,400원 17.48% 상승",
+        "우리로 주가, 급등세... 왜?",
+        "[특징주] 우리로, 228억원 광반도체 공급 수주에 급등",
+        "[ET특징주] 우리로, '지난해 매출 절반 규모' 228억원 광반도체 수주… ...",
+        "우리로 16.50% 급등…광통신 부품 수요 관심"
+      ],
+      "articles": [
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 11:10",
+          "title": "우리로 주가, 10월 15일 장중 업종 대비 큰 폭 약세",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16247783"
+        },
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 15:46",
+          "title": "[속보] 우리로, 227억7777만원 규모 데이터센터용 광반도체 공급계약…...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=615910"
+        },
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 16:51",
+          "title": "우리로, 228억원 광반도체 공급 수주..AI 데이터센터 사업 확대",
+          "press": "fnnews.com",
+          "link": "https://www.fnnews.com/news/202610151639152742"
+        },
+        {
+          "time": "09:15",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 09:15",
+          "title": "[특징주] 우리로, 228억원 광반도체 수주 소식에 10% 급등",
+          "press": "biz.chosun.com",
+          "link": "https://biz.chosun.com/stock/stock_general/2026/10/16/LXI5DWU6IZCTPKHSCWC4HPB2NU/?utm_source=naver&utm_medium=original&utm_campaign=biz"
+        },
+        {
+          "time": "09:36",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 09:36",
+          "title": "우리로, 데이터센터용 광반도체 수주 소식에 '급등'",
+          "press": "hankyung.com",
+          "link": "https://www.hankyung.com/article/2026101657216"
+        },
+        {
+          "time": "09:38",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 09:38",
+          "title": "우리로, 장 초반 9% 급등…中 기업과 228억 광반도체 공급계약",
+          "press": "newsis.com",
+          "link": "https://www.newsis.com/view/NISX20261016_0003828573"
+        },
+        {
+          "time": "09:54",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 09:54",
+          "title": "[특징주] 우리로, 대규모 광반도체 공급 계약…강세",
+          "press": "ekn.kr",
+          "link": "https://www.ekn.kr/web/view.php?key=20261016021327027"
+        },
+        {
+          "time": "10:18",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 10:18",
+          "title": "[특징주] 우리로, 中 이터른그룹과 228억 공급 계약에 '급등'",
+          "press": "cstimes.com",
+          "link": "https://www.cstimes.com/news/articleView.html?idxno=724219"
+        },
+        {
+          "time": "10:32",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 10:32",
+          "title": "우리로 주가, 10월 16일 장중 8,080원 13.01% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=555545"
+        },
+        {
+          "time": "10:48",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 10:48",
+          "title": "[특징주] 우리로, 228억원 광반도체 공급계약…주가 14%↑",
+          "press": "newsdream.kr",
+          "link": "http://www.newsdream.kr/news/articleView.html?idxno=120163"
+        },
+        {
+          "time": "10:58",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 10:58",
+          "title": "우리로, 주가, 10월 16일 장중 8,400원 17.48% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16248812"
+        },
+        {
+          "time": "11:06",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 11:06",
+          "title": "우리로 주가, 급등세... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1187310"
+        },
+        {
+          "time": "12:04",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 12:04",
+          "title": "[특징주] 우리로, 228억원 광반도체 공급 수주에 급등",
+          "press": "biztribune.co.kr",
+          "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=360761"
+        },
+        {
+          "time": "14:02",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 14:02",
+          "title": "[ET특징주] 우리로, '지난해 매출 절반 규모' 228억원 광반도체 수주… ...",
+          "press": "etnews.com",
+          "link": "https://www.etnews.com/20261016000202"
+        },
+        {
+          "time": "14:16",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 14:16",
+          "title": "우리로 16.50% 급등…광통신 부품 수요 관심",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232816"
+        }
+      ],
+      "news_source": "featured"
+    },
+    {
+      "code": "178320",
+      "name": "서진시스템",
+      "rate": 16.25,
+      "trading_value": 62121034000.0,
+      "summary": "서진시스템은 블룸에너지에 대한 1064억원 규모의 SOFC 부품·모듈 공급 계약 모멘텀이 지속되며 상승함.",
+      "analysis": {
+        "stock": "서진시스템",
+        "main_material": {
+          "title": "블룸에너지 대상 SOFC 부품·모듈 1064억 공급",
+          "reason": "블룸에너지를 상대로 1064억원 규모의 SOFC(고체산화물연료전지) 부품 및 모듈 공급 계약을 체결한 사실이 부각되며 매수세가 유입됨.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "수소차",
+            "연료전지",
+            "SOFC"
+          ],
+          "origin_date": "2026-10-13"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "서진시스템, 블룸에너지에 SOFC 부품·모듈 1064억 공급",
+            "date": "2026-10-13 06:46"
+          },
+          {
+            "headline": "서진시스템 주가, 10월 16일 39,700원 12.78% 상승",
+            "date": "2026-10-16 16:00"
+          }
+        ],
+        "summary": "서진시스템은 블룸에너지에 대한 1064억원 규모의 SOFC 부품·모듈 공급 계약 모멘텀이 지속되며 상승함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "서진시스템, 블룸에너지에 SOFC 부품·모듈 1064억 공급",
+        "서진시스템 주가, 10월 15일 장중 35,800원 11.50% 하락",
+        "서진시스템 주가, 10월 16일 39,700원 12.78% 상승",
+        "코스닥 '급등'...알테오젠·펩트론·서진시스템 '껑충'"
+      ],
+      "articles": [
+        {
+          "time": "10/13",
+          "date": "2026-10-13",
+          "datetime": "2026-10-13 06:46",
+          "title": "서진시스템, 블룸에너지에 SOFC 부품·모듈 1064억 공급",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=392322"
+        },
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 13:54",
+          "title": "서진시스템 주가, 10월 15일 장중 35,800원 11.50% 하락",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=555297"
+        },
+        {
+          "time": "16:00",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 16:00",
+          "title": "서진시스템 주가, 10월 16일 39,700원 12.78% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16249015"
+        },
+        {
+          "time": "16:28",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 16:28",
+          "title": "코스닥 '급등'...알테오젠·펩트론·서진시스템 '껑충'",
+          "press": "choicenews.co.kr",
+          "link": "http://www.choicenews.co.kr/news/articleView.html?idxno=172300"
+        }
+      ],
+      "news_source": "general"
+    },
+    {
+      "code": "009190",
+      "name": "대양금속",
+      "rate": 29.83,
+      "trading_value": 29591237853.0,
+      "summary": "대양금속은 미국 알래스카 LNG 사업 및 에너지 인프라 투자 기대감이 부각되며 철강주 테마로 상승함.",
+      "analysis": {
+        "stock": "대양금속",
+        "main_material": {
+          "title": "미국 알래스카 LNG 및 에너지 인프라 투자 기대감",
+          "reason": "미국 알래스카 LNG 사업 재언급과 에너지 인프라 투자 기대감에 따라 철강주로 묶이며 매수세가 유입되어 상승함.",
+          "event_type": "NEW",
+          "theme": [
+            "LNG",
+            "에너지인프라",
+            "철강주"
+          ],
+          "origin_date": "2026-10-14"
+        },
+        "secondary_materials": [
+          {
+            "title": "반기 영업이익 30억원 실적",
+            "event_type": "NEW"
+          },
+          {
+            "title": "임시주주총회 한 달 연기 및 지배구조 일정 조정",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "대한제강",
+            "reason": "미국 알래스카 LNG 사업 재언급 관련 철강주로 함께 부각됨.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "[특징주] 美 알래스카 LNG 사업 재언급에 철강株 '대양금속·대한제강' ...",
+            "date": "2026-10-14 10:00"
+          },
+          {
+            "headline": "[마켓줌인] 미국 에너지 인프라 투자 기대감에...대양금속 상한가 등 철...",
+            "date": "2026-10-14 10:26"
+          }
+        ],
+        "summary": "대양금속은 미국 알래스카 LNG 사업 및 에너지 인프라 투자 기대감이 부각되며 철강주 테마로 상승함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "대양금속 주가, 상한가... 왜?",
+        "[특징주] 美 알래스카 LNG 사업 재언급에 철강株 '대양금속·대한제강' ...",
+        "[마켓줌인] 미국 에너지 인프라 투자 기대감에...대양금속 상한가 등 철...",
+        "대양금속, 임시주총 한 달 연기…지배구조 격변 속 일정 조정",
+        "대양금속 주가, 10월 14일 장중 793원 19.25% 상승",
+        "대양금속 17.89% 상승…반기 영업이익 30억원",
+        "[특징주] 대양금속 29.92% 급등…대한제강도 장중 강세",
+        "[전날 애프터마켓] 대양금속 상한가…삼전·SK하닉 소폭 상승",
+        "대양금속 주가, 10월 15일 장중 819원 5.95% 상승 중",
+        "대양금속 거래량 1261만주…니켈 가격과 차입금 점검",
+        "대양금속 주가, 급등세... 무슨 회사길래?",
+        "[특징주] 외국인·기관, 삼성중공업 동반 매수…삼성전자·대한항공은 ...",
+        "대양금속 24.16% 상승…2602만주 거래 속 원가 변수",
+        "대양금속 주가, 10월 16일 장중 1,029원 27.51% 상승",
+        "대양금속 주가, 10월 16일 애프터마켓 1,049원 29.99% 상승"
+      ],
+      "articles": [
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 09:30",
+          "title": "대양금속 주가, 상한가... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1186675"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 10:00",
+          "title": "[특징주] 美 알래스카 LNG 사업 재언급에 철강株 '대양금속·대한제강' ...",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261014000318"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 10:26",
+          "title": "[마켓줌인] 미국 에너지 인프라 투자 기대감에...대양금속 상한가 등 철...",
+          "press": "ntoday.co.kr",
+          "link": "https://www.ntoday.co.kr/news/articleView.html?idxno=130045"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 10:58",
+          "title": "대양금속, 임시주총 한 달 연기…지배구조 격변 속 일정 조정",
+          "press": "snmnews.com",
+          "link": "http://www.snmnews.com/news/articleView.html?idxno=575867"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:46",
+          "title": "대양금속 주가, 10월 14일 장중 793원 19.25% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=554993"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 14:48",
+          "title": "대양금속 17.89% 상승…반기 영업이익 30억원",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232318"
+        },
+        {
+          "time": "10/14",
+          "date": "2026-10-14",
+          "datetime": "2026-10-14 15:50",
+          "title": "[특징주] 대양금속 29.92% 급등…대한제강도 장중 강세",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=392548"
+        },
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 07:54",
+          "title": "[전날 애프터마켓] 대양금속 상한가…삼전·SK하닉 소폭 상승",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2635938"
+        },
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 13:54",
+          "title": "대양금속 주가, 10월 15일 장중 819원 5.95% 상승 중",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=555300"
+        },
+        {
+          "time": "10/15",
+          "date": "2026-10-15",
+          "datetime": "2026-10-15 15:00",
+          "title": "대양금속 거래량 1261만주…니켈 가격과 차입금 점검",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232626"
+        },
+        {
+          "time": "10:24",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 10:24",
+          "title": "대양금속 주가, 급등세... 무슨 회사길래?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1187292"
+        },
+        {
+          "time": "11:32",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 11:32",
+          "title": "[특징주] 외국인·기관, 삼성중공업 동반 매수…삼성전자·대한항공은 ...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=723333"
+        },
+        {
+          "time": "14:48",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 14:48",
+          "title": "대양금속 24.16% 상승…2602만주 거래 속 원가 변수",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=232871"
+        },
+        {
+          "time": "14:50",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 14:50",
+          "title": "대양금속 주가, 10월 16일 장중 1,029원 27.51% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=555702"
+        },
+        {
+          "time": "16:46",
+          "date": "2026-10-16",
+          "datetime": "2026-10-16 16:46",
+          "title": "대양금속 주가, 10월 16일 애프터마켓 1,049원 29.99% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16249061"
+        }
+      ],
+      "news_source": "featured"
+    }
+  ]
+}

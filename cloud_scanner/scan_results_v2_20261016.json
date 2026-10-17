@@ -1,0 +1,106 @@
+[
+  {
+    "code": "068270",
+    "name": "셀트리온",
+    "close": 193700,
+    "rate": 6.957482054113749,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "445680",
+    "name": "큐리옥스바이오시스템즈",
+    "close": 68200,
+    "rate": 19.649122807017545,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "293490",
+    "name": "카카오게임즈",
+    "close": 10330,
+    "rate": 6.604747162022703,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "171090",
+    "name": "선익시스템",
+    "close": 82900,
+    "rate": 12.330623306233063,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "006730",
+    "name": "서부T&D",
+    "close": 12770,
+    "rate": 7.85472972972973,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "253450",
+    "name": "스튜디오드래곤",
+    "close": 23250,
+    "rate": 7.142857142857142,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "039440",
+    "name": "에스티아이",
+    "close": 30450,
+    "rate": 14.04494382022472,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "452280",
+    "name": "한선엔지니어링",
+    "close": 16810,
+    "rate": 15.294924554183813,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "484120",
+    "name": "도우인시스",
+    "close": 23850,
+    "rate": 8.656036446469248,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "009470",
+    "name": "삼화전기",
+    "close": 31200,
+    "rate": 7.032590051457976,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "355690",
+    "name": "에이텀",
+    "close": 7870,
+    "rate": 15.905743740795286,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "039610",
+    "name": "화성밸브",
+    "close": 7440,
+    "rate": 14.285714285714285,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "015260",
+    "name": "에이엔피",
+    "close": 428,
+    "rate": 12.928759894459102,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]
