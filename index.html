@@ -584,6 +584,27 @@
         .nf-meta .st{padding:0 6px;border-radius:4px;background:rgba(91,157,255,.15);color:var(--accent-blue)}
         .nf-meta .ev{padding:0 6px;border-radius:4px;background:rgba(255,200,80,.15);color:#ffc850}
         @media (max-width:700px){.nf-cats{grid-template-columns:1fr}}
+
+        /* 📘 기본적 분석 탭 */
+        .fa-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+        .fa-pick{padding:8px 12px;border-radius:10px;border:1px solid var(--border-color);background:var(--card-bg);color:var(--text-sub);cursor:pointer;text-align:left;font:inherit;font-size:.85rem;line-height:1.35}
+        .fa-pick b{display:block;color:var(--text-main);font-size:.92rem}
+        .fa-pick.on{border-color:var(--accent-red);background:rgba(255,92,92,.12)}
+        .fa-doc{border:1px solid var(--border-color);border-radius:14px;background:var(--card-bg);padding:18px 20px;color:var(--text-sub);font-size:.92rem;line-height:1.65}
+        .fa-doc h1{color:var(--text-main);font-size:1.35rem;margin:0 0 6px}
+        .fa-doc h2{color:var(--text-main);font-size:1.08rem;margin:22px 0 8px;padding-top:12px;border-top:1px solid var(--border-color)}
+        .fa-doc h3{color:var(--text-main);font-size:.98rem;margin:14px 0 6px}
+        .fa-doc p{margin:0 0 10px}
+        .fa-doc b{color:var(--text-main)}
+        .fa-doc a{color:var(--accent-blue)}
+        .fa-doc ul{margin:0 0 10px;padding-left:20px}
+        .fa-doc li{margin:3px 0}
+        .fa-doc li.task{list-style:none;margin-left:-20px}
+        .fa-doc .fa-tbl{overflow-x:auto;margin:6px 0 12px}
+        .fa-doc table{border-collapse:collapse;width:100%;font-size:.84rem}
+        .fa-doc th,.fa-doc td{border:1px solid var(--border-color);padding:6px 9px;text-align:left;vertical-align:top}
+        .fa-doc th{color:var(--text-main);background:rgba(255,255,255,.05);white-space:nowrap}
+        @media (max-width:700px){.fa-doc{padding:14px 12px}}
     </style>
 
 
@@ -607,6 +628,7 @@
                     <button class="nav-btn" onclick="switchMainTab('lab4')" id="nav-lab4">🍇 포도시 이평선(20,60) 근접 종목</button>
                     <button class="nav-btn" onclick="switchMainTab('lab5')" id="nav-lab5">🧺 테마꾸러미</button>
                     <button class="nav-btn" onclick="switchMainTab('lab6')" id="nav-lab6">📰 뉴스 키워드</button>
+                    <button class="nav-btn" onclick="switchMainTab('lab7')" id="nav-lab7">📘 기본적 분석</button>
                 </div>
             </div>
 
@@ -688,6 +710,10 @@
                 <div id="lab-content6" style="display: none;">
                     <div id="lab6-body"><div class="nf-empty">뉴스 불러오는 중…</div></div>
                 </div>
+                <!-- 📘 기본적 분석 -->
+                <div id="lab-content7" style="display: none;">
+                    <div id="lab7-body"><div class="nf-empty">보고서 불러오는 중…</div></div>
+                </div>
             </div>
         </div>
 
@@ -739,6 +765,8 @@
             document.getElementById('lab-content5').style.display = 'none';
             document.getElementById('nav-lab6').classList.remove('active');
             document.getElementById('lab-content6').style.display = 'none';
+            document.getElementById('nav-lab7').classList.remove('active');
+            document.getElementById('lab-content7').style.display = 'none';
 
             if (tab === 'scan') {
                 document.getElementById('nav-scan').classList.add('active');
@@ -762,6 +790,10 @@
                 document.getElementById('nav-lab6').classList.add('active');
                 document.getElementById('lab-content6').style.display = 'block';
                 loadNewsFeed();
+            } else if (tab === 'lab7') {
+                document.getElementById('nav-lab7').classList.add('active');
+                document.getElementById('lab-content7').style.display = 'block';
+                loadFundamentalReports();
             } else if (tab === 'lab5') {
                 document.getElementById('nav-lab5').classList.add('active');
                 document.getElementById('lab-content5').style.display = 'block';
@@ -1855,6 +1887,94 @@
                 <span class="nf-seg">${['전체', '장전', '장중', '장후'].map(s => chip(s, sessN(s), nfSess === s, `nfSess='${s}';renderNewsFeed()`)).join('')}</span>
                 <input id="nf-q" placeholder="제목·키워드·종목 검색" value="${nfEsc(q)}" oninput="nfQ=this.value;nfSearch()"></div>
               <div id="nf-body">${body}</div>`;
+        }
+
+        // ===== 📘 기본적 분석: reports/fundamental/index.json 목록 + 마크다운 보고서 =====
+        const FA_DIR = 'reports/fundamental/';
+        let FA = null, faSel = '';
+        const faCache = {};
+        function faEsc(s) {
+            return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+        }
+        function faInline(text) {
+            // 마크다운 이스케이프 문자(\~ 등)를 먼저 걸러낸 뒤 HTML을 이스케이프하고 굵게·링크·코드만 변환
+            let s = faEsc(text.replace(/\\([~*_|\[\]()#-])/g, '$1'));
+            s = s.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+            s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+            s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) =>
+                /^(https?:\/\/|[\w.-]+\.md$)/.test(u) ? `<a href="${u}" target="_blank" rel="noopener">${t}</a>` : t);
+            return s;
+        }
+        function faCells(line) {
+            return line.trim().replace(/^\||\|$/g, '').split(/(?<!\\)\|/).map(c => c.trim());
+        }
+        function faMarkdown(md) {
+            const lines = md.replace(/\r/g, '').split('\n');
+            const out = [];
+            let i = 0;
+            while (i < lines.length) {
+                const line = lines[i];
+                if (!line.trim()) { i++; continue; }
+                const h = line.match(/^(#{1,3})\s+(.*)$/);
+                if (h) { out.push(`<h${h[1].length}>${faInline(h[2])}</h${h[1].length}>`); i++; continue; }
+                if (line.trim().startsWith('|')) {
+                    const rows = [];
+                    while (i < lines.length && lines[i].trim().startsWith('|')) rows.push(lines[i++]);
+                    const head = faCells(rows[0]);
+                    const bodyRows = rows.slice(rows[1] && /^\|?\s*:?-{3,}/.test(rows[1].trim()) ? 2 : 1);
+                    out.push(`<div class="fa-tbl"><table><thead><tr>${head.map(c => `<th>${faInline(c)}</th>`).join('')}</tr></thead><tbody>${
+                        bodyRows.map(r => `<tr>${faCells(r).map(c => `<td>${faInline(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`);
+                    continue;
+                }
+                if (/^\s*-\s+/.test(line)) {
+                    const items = [];
+                    while (i < lines.length && /^\s*-\s+/.test(lines[i])) {
+                        const t = lines[i++].replace(/^\s*-\s+/, '');
+                        const task = t.match(/^\[([ xX])\]\s+(.*)$/);
+                        items.push(task ? `<li class="task">${task[1] === ' ' ? '☐' : '☑'} ${faInline(task[2])}</li>` : `<li>${faInline(t)}</li>`);
+                    }
+                    out.push(`<ul>${items.join('')}</ul>`);
+                    continue;
+                }
+                const para = [];
+                while (i < lines.length && lines[i].trim() && !/^(#{1,3}\s|\s*-\s|\s*\|)/.test(lines[i])) para.push(lines[i++]);
+                out.push(`<p>${faInline(para.join(' '))}</p>`);
+            }
+            return out.join('');
+        }
+        async function loadFundamentalReports() {
+            const body = document.getElementById('lab7-body');
+            if (!FA) {
+                try {
+                    const list = await fetch(FA_DIR + 'index.json?t=' + Date.now()).then(r => r.json());
+                    FA = (Array.isArray(list) ? list : []).filter(r => r && r.file)
+                        .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+                } catch (e) {
+                    body.innerHTML = '<div class="nf-empty">보고서 목록을 불러오지 못했습니다.</div>'; return;
+                }
+                if (!FA.length) { body.innerHTML = '<div class="nf-empty">아직 등록된 보고서가 없습니다.</div>'; return; }
+                faSel = FA[0].file;
+            }
+            renderFundamentalReport();
+        }
+        async function renderFundamentalReport(file) {
+            if (file) faSel = file;
+            const body = document.getElementById('lab7-body');
+            const r = FA.find(x => x.file === faSel) || FA[0];
+            const picks = FA.map(x => `<button class="fa-pick ${x.file === r.file ? 'on' : ''}" data-file="${faEsc(x.file)}" onclick="renderFundamentalReport(this.dataset.file)">
+                <b>${faEsc(x.name)} <span style="font-weight:400;color:var(--text-sub)">${faEsc(x.code)}</span></b>${faEsc(x.date)} · ${faEsc(x.source || '')}</button>`).join('');
+            body.innerHTML = `<div class="nf-head">📘 <b>기본적 분석</b> · 공시 PDF로 정리한 종목별 학습 노트 (투자 권유 아님)</div>
+                <div class="fa-list">${picks}</div><div class="fa-doc" id="fa-doc">보고서 불러오는 중…</div>`;
+            try {
+                if (!faCache[r.file]) {
+                    const res = await fetch(FA_DIR + encodeURIComponent(r.file) + '?t=' + Date.now());
+                    if (!res.ok) throw new Error(res.status);
+                    faCache[r.file] = faMarkdown(await res.text());
+                }
+                if (faSel === r.file) document.getElementById('fa-doc').innerHTML = faCache[r.file];
+            } catch (e) {
+                document.getElementById('fa-doc').innerHTML = '<div class="nf-empty">보고서를 불러오지 못했습니다.</div>';
+            }
         }
     </script>
 
