@@ -586,6 +586,7 @@
         @media (max-width:700px){.nf-cats{grid-template-columns:1fr}}
 
         /* 📘 기본적 분석 탭 */
+        .fa-cats{margin:4px 0 12px}
         .fa-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
         .fa-pick{padding:8px 12px;border-radius:10px;border:1px solid var(--border-color);background:var(--card-bg);color:var(--text-sub);cursor:pointer;text-align:left;font:inherit;font-size:.85rem;line-height:1.35}
         .fa-pick b{display:block;color:var(--text-main);font-size:.92rem}
@@ -1942,36 +1943,56 @@
             }
             return out.join('');
         }
+        // index.json: {"categories": ["2차전지", "BIO"], "reports": [{date, code, name, category, source, file}]}
+        // categories 순서대로 하위 탭을 만들고, 목록에 없는 분류가 보고서에 있으면 뒤에 붙인다.
+        let FA_CATS = [], faCat = '';
         async function loadFundamentalReports() {
             const body = document.getElementById('lab7-body');
             if (!FA) {
                 try {
-                    const list = await fetch(FA_DIR + 'index.json?t=' + Date.now()).then(r => r.json());
-                    FA = (Array.isArray(list) ? list : []).filter(r => r && r.file)
+                    const data = await fetch(FA_DIR + 'index.json?t=' + Date.now()).then(r => r.json());
+                    const list = Array.isArray(data) ? data : (data.reports || []);
+                    FA = list.filter(r => r && r.file).map(r => ({ ...r, category: r.category || '기타' }))
                         .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+                    FA_CATS = Array.isArray(data.categories) ? data.categories.slice() : [];
+                    FA.forEach(r => { if (!FA_CATS.includes(r.category)) FA_CATS.push(r.category); });
                 } catch (e) {
                     body.innerHTML = '<div class="nf-empty">보고서 목록을 불러오지 못했습니다.</div>'; return;
                 }
-                if (!FA.length) { body.innerHTML = '<div class="nf-empty">아직 등록된 보고서가 없습니다.</div>'; return; }
-                faSel = FA[0].file;
+                if (!FA_CATS.length) { body.innerHTML = '<div class="nf-empty">아직 등록된 보고서가 없습니다.</div>'; return; }
+                faCat = FA_CATS.find(c => FA.some(r => r.category === c)) || FA_CATS[0];
+                faSel = (FA.find(r => r.category === faCat) || {}).file || '';
             }
+            renderFundamentalReport();
+        }
+        function selectFundamentalCategory(cat) {
+            faCat = cat;
+            faSel = (FA.find(r => r.category === cat) || {}).file || '';
             renderFundamentalReport();
         }
         async function renderFundamentalReport(file) {
             if (file) faSel = file;
             const body = document.getElementById('lab7-body');
-            const r = FA.find(x => x.file === faSel) || FA[0];
-            const picks = FA.map(x => `<button class="fa-pick ${x.file === r.file ? 'on' : ''}" data-file="${faEsc(x.file)}" onclick="renderFundamentalReport(this.dataset.file)">
+            const inCat = FA.filter(x => x.category === faCat);
+            const r = inCat.find(x => x.file === faSel) || inCat[0];
+            const tabs = FA_CATS.map(c => {
+                const n = FA.filter(x => x.category === c).length;
+                return `<button class="tab-btn ${c === faCat ? 'active' : ''}" data-cat="${faEsc(c)}" onclick="selectFundamentalCategory(this.dataset.cat)">${faEsc(c)} <span style="opacity:.6">${n}</span></button>`;
+            }).join('');
+            const picks = inCat.map(x => `<button class="fa-pick ${r && x.file === r.file ? 'on' : ''}" data-file="${faEsc(x.file)}" onclick="renderFundamentalReport(this.dataset.file)">
                 <b>${faEsc(x.name)} <span style="font-weight:400;color:var(--text-sub)">${faEsc(x.code)}</span></b>${faEsc(x.date)} · ${faEsc(x.source || '')}</button>`).join('');
             body.innerHTML = `<div class="nf-head">📘 <b>기본적 분석</b> · 공시 PDF로 정리한 종목별 학습 노트 (투자 권유 아님)</div>
-                <div class="fa-list">${picks}</div><div class="fa-doc" id="fa-doc">보고서 불러오는 중…</div>`;
+                <div class="strategy-tabs fa-cats">${tabs}</div>
+                ${r ? `<div class="fa-list">${picks}</div><div class="fa-doc" id="fa-doc">보고서 불러오는 중…</div>`
+                    : `<div class="nf-empty">${faEsc(faCat)} 분류에 등록된 보고서가 아직 없습니다.</div>`}`;
+            if (!r) return;
             try {
                 if (!faCache[r.file]) {
                     const res = await fetch(FA_DIR + encodeURIComponent(r.file) + '?t=' + Date.now());
                     if (!res.ok) throw new Error(res.status);
                     faCache[r.file] = faMarkdown(await res.text());
                 }
-                if (faSel === r.file) document.getElementById('fa-doc').innerHTML = faCache[r.file];
+                if (faSel === r.file || !faSel) document.getElementById('fa-doc').innerHTML = faCache[r.file];
             } catch (e) {
                 document.getElementById('fa-doc').innerHTML = '<div class="nf-empty">보고서를 불러오지 못했습니다.</div>';
             }
