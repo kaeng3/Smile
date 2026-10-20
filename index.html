@@ -605,6 +605,15 @@
         .fa-doc table{border-collapse:collapse;width:100%;font-size:.84rem}
         .fa-doc th,.fa-doc td{border:1px solid var(--border-color);padding:6px 9px;text-align:left;vertical-align:top}
         .fa-doc th{color:var(--text-main);background:rgba(255,255,255,.05);white-space:nowrap}
+        .fa-hlbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:-4px 0 10px;font-size:.8rem;color:var(--text-sub)}
+        .fa-hlbar button{background:none;border:1px solid var(--border-color);border-radius:8px;color:var(--text-sub);padding:3px 9px;font:inherit;cursor:pointer}
+        .fa-hlbar button:hover{color:var(--text-main);border-color:var(--accent-red)}
+        mark.fa-hl{color:inherit;border-radius:3px;padding:0 1px;cursor:pointer}
+        .fa-tool{position:fixed;z-index:9999;display:none;gap:5px;align-items:center;padding:6px 8px;background:#1d1d1f;border:1px solid var(--border-color);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+        .fa-tool button{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.25);cursor:pointer;font:700 .85rem/1 inherit;padding:0}
+        .fa-tool button.txt{background:#2b2b2e}
+        .fa-tool button.del{width:auto;border-radius:8px;padding:0 10px;background:#2b2b2e;color:var(--text-main);font-weight:600}
+        .fa-tool .sep{width:1px;height:20px;background:var(--border-color);margin:0 2px}
         @media (max-width:700px){.fa-doc{padding:14px 12px}}
     </style>
 
@@ -1983,7 +1992,7 @@
                 <b>${faEsc(x.name)} <span style="font-weight:400;color:var(--text-sub)">${faEsc(x.code)}</span></b>${faEsc(x.date)} · ${faEsc(x.source || '')}</button>`).join('');
             body.innerHTML = `<div class="nf-head">📘 <b>기본적 분석</b> · 공시 PDF로 정리한 종목별 학습 노트 (투자 권유 아님)</div>
                 <div class="strategy-tabs fa-cats">${tabs}</div>
-                ${r ? `<div class="fa-list">${picks}</div><div class="fa-doc" id="fa-doc">보고서 불러오는 중…</div>`
+                ${r ? `<div class="fa-list">${picks}</div><div class="fa-hlbar" id="fa-hlbar"></div><div class="fa-doc" id="fa-doc">보고서 불러오는 중…</div>`
                     : `<div class="nf-empty">${faEsc(faCat)} 분류에 등록된 보고서가 아직 없습니다.</div>`}`;
             if (!r) return;
             try {
@@ -1992,11 +2001,175 @@
                     if (!res.ok) throw new Error(res.status);
                     faCache[r.file] = faMarkdown(await res.text());
                 }
-                if (faSel === r.file || !faSel) document.getElementById('fa-doc').innerHTML = faCache[r.file];
+                if (faSel === r.file || !faSel) faShowDoc(r.file);
             } catch (e) {
                 document.getElementById('fa-doc').innerHTML = '<div class="nf-empty">보고서를 불러오지 못했습니다.</div>';
             }
         }
+
+        // ===== 🖍 기본적 분석 형광펜·글자색 (이 브라우저의 localStorage에 보고서별로 저장) =====
+        // 저장 형식: { "<보고서 파일명>": [{ s: 시작 글자 위치, e: 끝 위치, q: 칠한 글자, c: 색 키 }] }
+        const FA_HL_KEY = 'faHighlights:v1';
+        const FA_COLORS = [
+            { k: 'y', label: '노랑 형광펜', bg: '#ffe066' },
+            { k: 'g', label: '초록 형광펜', bg: '#8ce99a' },
+            { k: 'p', label: '분홍 형광펜', bg: '#faa2c1' },
+            { k: 'b', label: '하늘 형광펜', bg: '#a5d8ff' },
+            { k: 'r', label: '빨간 글자', fg: '#ff5c5c' },
+            { k: 'u', label: '파란 글자', fg: '#5b9dff' },
+        ];
+        let faHL = {};
+        try { faHL = JSON.parse(localStorage.getItem(FA_HL_KEY) || '{}') || {}; } catch (e) { faHL = {}; }
+        let faDocFile = '', faToolState = null;
+        function faHLSave() { try { localStorage.setItem(FA_HL_KEY, JSON.stringify(faHL)); } catch (e) {} }
+        function faShowDoc(file) {
+            const el = document.getElementById('fa-doc');
+            if (!el) return;
+            faDocFile = file;
+            el.innerHTML = faCache[file];
+            faApplyHL(el, faHL[file] || []);
+            faUpdateHLBar();
+        }
+        function faTextNodes(root) {
+            const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), out = [];
+            while (w.nextNode()) out.push(w.currentNode);
+            return out;
+        }
+        function faApplyHL(root, list) {
+            const full = root.textContent;
+            list.forEach((h, i) => {
+                let s = h.s, e = h.e;
+                if (full.slice(s, e) !== h.q) {          // 보고서가 고쳐져 위치가 밀렸으면 같은 글자를 다시 찾는다
+                    const j = full.indexOf(h.q);
+                    if (j < 0) return;
+                    s = j; e = j + h.q.length;
+                }
+                faWrap(root, s, e, i, h.c);
+            });
+        }
+        function faWrap(root, s, e, i, c) {
+            const col = FA_COLORS.find(x => x.k === c) || FA_COLORS[0];
+            let pos = 0;
+            for (const node of faTextNodes(root)) {
+                const len = node.data.length, ns = pos, ne = pos + len;
+                pos = ne;
+                if (!len || ne <= s || ns >= e) continue;
+                const a = Math.max(s, ns) - ns, b = Math.min(e, ne) - ns;
+                if (!node.data.slice(a, b).trim()) continue;
+                let t = node;
+                if (a > 0) t = t.splitText(a);
+                if (b - a < t.data.length) t.splitText(b - a);
+                const m = document.createElement('mark');
+                m.className = 'fa-hl';
+                m.dataset.i = i;
+                if (col.bg) { m.style.background = col.bg; m.style.color = '#111'; }
+                else { m.style.background = 'transparent'; m.style.color = col.fg; m.style.fontWeight = '700'; }
+                t.parentNode.insertBefore(m, t);
+                m.appendChild(t);
+            }
+        }
+        function faUpdateHLBar() {
+            const bar = document.getElementById('fa-hlbar');
+            if (!bar) return;
+            const n = (faHL[faDocFile] || []).length;
+            bar.innerHTML = `<span>🖍 글자를 드래그하면 형광펜·글자색을 칠할 수 있습니다. 칠한 곳을 누르면 지울 수 있습니다. (이 브라우저에만 저장)</span>` +
+                (n ? `<span>· 칠한 곳 ${n}개</span><button type="button" onclick="faClearHL()">이 보고서 모두 지우기</button>` : '');
+        }
+        function faClearHL() {
+            if (!faDocFile || !(faHL[faDocFile] || []).length) return;
+            delete faHL[faDocFile];
+            faHLSave();
+            faShowDoc(faDocFile);
+        }
+        function faOffset(root, node, off) {
+            const r = document.createRange();
+            r.setStart(root, 0);
+            r.setEnd(node, off);
+            return r.toString().length;
+        }
+        function faTool() {
+            let t = document.getElementById('fa-tool');
+            if (t) return t;
+            t = document.createElement('div');
+            t.id = 'fa-tool';
+            t.className = 'fa-tool';
+            // 버튼을 누를 때 드래그한 선택이 풀리지 않도록 기본 동작을 막는다
+            t.addEventListener('pointerdown', ev => ev.preventDefault());
+            t.addEventListener('mousedown', ev => ev.preventDefault());
+            document.body.appendChild(t);
+            return t;
+        }
+        function faHideTool() { const t = document.getElementById('fa-tool'); if (t) t.style.display = 'none'; faToolState = null; }
+        function faPlaceTool(t, rect) {
+            t.style.display = 'flex';
+            const w = t.offsetWidth, h = t.offsetHeight;
+            let x = rect.left + rect.width / 2 - w / 2, y = rect.top - h - 8;
+            if (y < 8) y = rect.bottom + 8;
+            x = Math.max(8, Math.min(x, window.innerWidth - w - 8));
+            t.style.left = x + 'px';
+            t.style.top = y + 'px';
+        }
+        function faShowColorTool(info) {
+            const t = faTool();
+            faToolState = { mode: 'add', ...info };
+            t.innerHTML = FA_COLORS.map(c => c.bg
+                ? `<button type="button" title="${c.label}" style="background:${c.bg}" onclick="faAddHL('${c.k}')"></button>`
+                : `<button type="button" class="txt" title="${c.label}" style="color:${c.fg}" onclick="faAddHL('${c.k}')">가</button>`)
+                .join('').replace('<button type="button" class="txt"', '<span class="sep"></span><button type="button" class="txt"');
+            faPlaceTool(t, info.rect);
+        }
+        function faShowEraseTool(i, rect) {
+            const t = faTool();
+            faToolState = { mode: 'erase', i };
+            t.innerHTML = `<button type="button" class="del" onclick="faRemoveHL(${i})">지우기</button>`;
+            faPlaceTool(t, rect);
+        }
+        function faSelectionInfo() {
+            const el = document.getElementById('fa-doc'), sel = window.getSelection();
+            if (!el || !sel || sel.isCollapsed || !sel.rangeCount) return null;
+            const r = sel.getRangeAt(0);
+            if (!el.contains(r.startContainer) || !el.contains(r.endContainer)) return null;
+            const s = faOffset(el, r.startContainer, r.startOffset), e = faOffset(el, r.endContainer, r.endOffset);
+            const q = el.textContent.slice(s, e);
+            if (!q.trim()) return null;
+            return { s, e, q, rect: r.getBoundingClientRect() };
+        }
+        function faAddHL(c) {
+            if (!faToolState || faToolState.mode !== 'add' || !faDocFile) return;
+            const { s, e, q } = faToolState;
+            (faHL[faDocFile] = faHL[faDocFile] || []).push({ s, e, q, c });
+            faHLSave();
+            try { window.getSelection().removeAllRanges(); } catch (err) {}
+            faHideTool();
+            faShowDoc(faDocFile);
+        }
+        function faRemoveHL(i) {
+            const list = faHL[faDocFile] || [];
+            if (i < 0 || i >= list.length) return;
+            list.splice(i, 1);
+            if (!list.length) delete faHL[faDocFile];
+            faHLSave();
+            faHideTool();
+            faShowDoc(faDocFile);
+        }
+        let faSelTimer = null;
+        document.addEventListener('selectionchange', () => {
+            clearTimeout(faSelTimer);
+            faSelTimer = setTimeout(() => {
+                const info = faSelectionInfo();
+                if (info) faShowColorTool(info);
+                else if (faToolState && faToolState.mode === 'add') faHideTool();
+            }, 200);
+        });
+        document.addEventListener('click', ev => {
+            const t = document.getElementById('fa-tool');
+            if (t && t.contains(ev.target)) return;
+            const m = ev.target.closest && ev.target.closest('#fa-doc mark.fa-hl');
+            const sel = window.getSelection();
+            if (m && (!sel || sel.isCollapsed)) { faShowEraseTool(Number(m.dataset.i), m.getBoundingClientRect()); return; }
+            if (faToolState && faToolState.mode === 'erase') faHideTool();
+        });
+        window.addEventListener('scroll', () => { if (faToolState && faToolState.mode === 'erase') faHideTool(); }, { passive: true });
     </script>
 
     <!-- 📰 과거 뉴스 타임라인 모달 팝업 -->
