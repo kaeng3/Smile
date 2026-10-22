@@ -1,0 +1,248 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d1117"><title>테마 점등</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#0b0f17;--panel:#121826;--card:#161d2d;--line:#232c40;--ink:#e8ecf4;--sub:#8a94a8;--faint:#5c667a;
+  --up:#ff4d5a;--up2:#ff8a65;--upper:#21d07a;--chip:#1f2940;--chipink:#b9c4dc;
+  --l0:#3a4357;--l1:#ff9f43;--l2:#ff4d5a;--l3:#c04dff;
+}
+*{box-sizing:border-box;margin:0}
+html,body{background:var(--bg);color:var(--ink);font-family:Pretendard,"Malgun Gothic",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+button,input{font:inherit;color:inherit}
+header{position:sticky;top:0;z-index:5;background:rgba(11,15,23,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;gap:12px;padding:12px 16px 8px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:18px;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.lamp{width:10px;height:10px;border-radius:50%;background:var(--up);box-shadow:0 0 10px var(--up)}
+.lamp.off{background:var(--faint);box-shadow:none}
+.meta{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--sub);flex-wrap:wrap}
+.pill{padding:3px 9px;border-radius:99px;background:var(--chip);font-size:12px;color:var(--chipink);white-space:nowrap}
+.pill b{color:var(--ink)}
+#q{margin-left:auto;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:13px;width:180px;outline:none}
+#q:focus{border-color:#3b4a6b}
+.tabs{display:flex;gap:4px;padding:0 12px;overflow-x:auto;scrollbar-width:none}
+.tab{background:none;border:0;padding:8px 10px 10px;font-size:14px;color:var(--sub);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
+.tab.on{color:var(--ink);border-color:var(--up);font-weight:700}
+.tab i{font-style:normal;font-size:11px;margin-left:4px;color:var(--faint)}
+#strip{display:flex;gap:6px;padding:10px 16px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line)}
+#strip:empty{display:none}
+.lit{display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:8px;background:var(--panel);border:1px solid var(--line);font-size:13px;white-space:nowrap;cursor:pointer}
+.lit .d{width:8px;height:8px;border-radius:50%}
+.lit em{font-style:normal;color:var(--up);font-weight:700}
+main{display:grid;grid-template-columns:1fr 300px;gap:14px;padding:14px 16px 40px;max-width:1700px;margin:0 auto}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;align-content:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;position:relative}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--lc)}
+.card.l0{opacity:.82}
+.card.pulse{animation:pulse 1.6s ease-out 3}
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--lc)}100%{box-shadow:0 0 0 14px transparent}}
+.ch{padding:11px 12px 6px 15px}
+.row1{display:flex;align-items:center;gap:8px}
+.dots{display:flex;gap:3px}.dots span{width:7px;height:7px;border-radius:50%;background:var(--l0)}
+.dots span.on{background:var(--lc);box-shadow:0 0 6px var(--lc)}
+.tn{font-weight:700;font-size:16px;letter-spacing:-.3px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.avg{font-weight:800;font-size:17px;color:var(--up);font-variant-numeric:tabular-nums}
+.stats{font-size:11.5px;color:var(--sub);margin-top:4px;display:flex;gap:8px;flex-wrap:wrap}
+.stats b{color:var(--ink);font-weight:600}
+.badge{font-size:10.5px;padding:1px 6px;border-radius:4px;background:#2a2f3d;color:var(--sub)}
+.badge.ind{background:#2b2240;color:#cfa8ff}
+.chips{display:flex;gap:4px;flex-wrap:wrap;margin-top:7px}
+.chip{font-size:11.5px;padding:2px 7px;border-radius:99px;background:var(--chip);color:var(--chipink)}
+.chip.hot{background:color-mix(in srgb,var(--lc) 22%,transparent);color:#fff}
+.st{display:grid;grid-template-columns:1fr auto;column-gap:10px;padding:6px 12px 6px 15px;border-top:1px solid var(--line)}
+.sn{font-size:14px;display:flex;align-items:center;gap:5px;min-width:0}
+.sn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.add{font-size:9.5px;padding:0 4px;border-radius:3px;background:#1d3a2c;color:#7ee2a8;flex:none}
+.sr{font-weight:800;font-size:14.5px;text-align:right;font-variant-numeric:tabular-nums}
+.ss{grid-column:1/3;display:flex;align-items:center;gap:8px;font-size:11px;color:var(--faint);margin-top:3px;font-variant-numeric:tabular-nums}
+.bar{flex:1;height:3px;background:#20283a;border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#3d5afe,#7c4dff)}
+.kw{color:#6f7a91}
+aside{position:sticky;top:120px;align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:12px;max-height:calc(100vh - 140px);overflow:auto}
+aside h3{font-size:14px;padding:12px 14px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel)}
+.al{padding:9px 14px;border-bottom:1px solid var(--line);font-size:13px}
+.al .t{color:var(--faint);font-size:11px;font-variant-numeric:tabular-nums}
+.al .n{font-weight:700}.al .x{color:var(--sub);font-size:12px;margin-top:2px}
+.early{display:flex;gap:8px;padding:10px 16px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(255,213,79,.06),transparent)}
+.early:empty{display:none}
+.ec{flex:none;min-width:230px;max-width:300px;background:var(--panel);border:1px solid #4a3f1c;border-radius:10px;padding:8px 10px;cursor:pointer}
+.ec .h{display:flex;justify-content:space-between;font-weight:700;font-size:14px}.ec .h span:first-child{color:#ffd54f}
+.ec .w{font-size:11.5px;color:#e6cf8a;margin-top:3px}.ec .m{font-size:11.5px;color:var(--sub);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rot{padding:7px 12px 9px 15px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--sub);line-height:1.6}
+.rot b{color:#9fb4ff;font-weight:600}
+.sec{font-size:12px;color:var(--faint);padding:10px 14px 4px;letter-spacing:.3px}
+.vi{padding:6px 14px;font-size:12.5px;border-bottom:1px solid var(--line);display:flex;gap:8px}
+.vi .t{color:var(--faint);font-variant-numeric:tabular-nums}.vi .th{color:var(--sub);margin-left:auto;font-size:11px}
+.pre{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:12px;grid-column:1/-1}
+.pre h4{font-size:14px;margin-bottom:6px}.pre div{font-size:13px;padding:3px 0;color:var(--chipink)}
+.brief{grid-column:1/-1;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.brief summary{cursor:pointer;padding:12px 14px;font-weight:700;font-size:14px;list-style:none;display:flex;gap:10px;align-items:center}
+.brief summary::-webkit-details-marker{display:none}.brief summary .s{font-weight:400;color:var(--sub);font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bgrid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.bcol{padding:10px 14px;border-right:1px solid var(--line);font-size:12.5px;line-height:1.55;max-height:360px;overflow:auto;scrollbar-width:thin}.bcol:last-child{border-right:0}
+.bcol h5{font-size:12px;color:var(--faint);margin-bottom:6px;font-weight:600}
+.bcol .it{margin-bottom:7px}.bcol .it b{color:var(--ink)}.bcol .st2{color:var(--sub);font-size:11.5px}
+.up{color:var(--up)}.dn{color:#4da3ff}
+.rt{font-size:10.5px;padding:0 5px;border-radius:3px;background:#262f45;color:var(--chipink);margin-left:4px}
+.why{padding:7px 12px 8px 15px;border-top:1px solid var(--line);font-size:11.5px;color:#e6cf8a;background:rgba(255,213,79,.04)}
+@media (max-width:900px){.bgrid{grid-template-columns:1fr}.bcol{border-right:0;border-bottom:1px solid var(--line)}}
+.kbl{color:#a9bcff;background:rgba(100,130,255,.05)}
+#kbroot{grid-column:1/-1;display:grid;grid-template-columns:330px 1fr;gap:14px}
+.kbp{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13px}
+.kbp h4{font-size:14px;margin-bottom:8px}.kbp .row{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-top:1px solid var(--line);cursor:pointer}
+.kbp .row:hover{color:#fff}.kbp .row i{font-style:normal;color:var(--sub);font-size:12px}
+#kbq{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:var(--ink);font-size:14px;outline:none;margin-bottom:10px}
+.kbc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;font-size:13px;line-height:1.6}
+.kbc h3{font-size:16px;margin-bottom:4px}.kbc .s{color:var(--sub);font-size:12px}
+.kbc .chips{margin:6px 0}.kbc .r{color:var(--sub);font-size:12px;border-top:1px dashed var(--line);padding-top:4px;margin-top:4px}
+.mbar{display:flex;gap:3px;align-items:flex-end;height:38px;margin:6px 0}.mbar div{flex:1;background:#33405e;border-radius:2px 2px 0 0;position:relative}
+.mbar div.hi{background:var(--l2)}.mlab{display:flex;gap:3px;font-size:10px;color:var(--faint)}.mlab span{flex:1;text-align:center}
+table.mac{width:100%;border-collapse:collapse;font-size:12px}table.mac td,table.mac th{padding:4px 3px;border-top:1px solid var(--line);text-align:right}
+table.mac td:first-child,table.mac th:first-child{text-align:left}.pos{color:var(--up)}.neg{color:#4da3ff}
+@media (max-width:900px){#kbroot{grid-template-columns:1fr}}
+.empty{padding:30px 14px;color:var(--faint);font-size:13px;text-align:center}
+@media (max-width:900px){
+  main{grid-template-columns:1fr;padding:10px 10px 40px}
+  aside{display:none}aside.show{display:block;position:static;max-height:none}
+  #grid.hide{display:none}
+  #q{width:100%;order:9;margin:0}
+  .top{padding:10px 12px 6px}#strip{padding:8px 12px}
+  #grid{grid-template-columns:1fr}
+  .card>.st:nth-child(n+6){display:none}
+  .ss.kw{display:none}
+}
+</style></head><body>
+<header>
+  <div class="top">
+    <div class="logo"><span class="lamp off" id="lamp"></span>테마 점등</div>
+    <div class="meta"><span class="pill" id="time">--:--:--</span><span class="pill" id="status">연결 중</span>
+      <span class="pill">상승 <b id="nr">0</b></span><span class="pill">점등 <b id="nl">0</b></span><span class="pill" id="wsst">실시간 -</span></div>
+    <input id="q" placeholder="테마·종목 검색" autocomplete="off">
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div class="early" id="early"></div>
+  <div id="strip"></div>
+</header>
+<main><div id="grid"></div>
+  <aside id="side"><h3>🔔 오늘 알람</h3><div id="alerts"></div><div class="sec">⚡ 초기 신호 기록 (기록 전용)</div><div id="earlylog"></div><div class="sec">🚨 상승 VI</div><div id="vilist"></div></aside></main>
+<script>
+const LC=["var(--l0)","var(--l1)","var(--l2)","var(--l3)"];
+const TABS=[["main","메인"],["kw","세부 키워드"],["is","인포스탁 테마"],["basket","바스켓"],["alerts","알람·초기·VI"],["kb","📚 테마 백과"]];
+let tab="main",D=null,prev={},first=true;
+try{tab=localStorage.getItem("tab")||"main"}catch(e){}
+const $=s=>document.querySelector(s), f=n=>Math.round(n).toLocaleString();
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function rateColor(m){return m.upper?"var(--upper)":m.rate>=10?"var(--up)":m.rate>=5?"var(--up2)":"var(--ink)"}
+function pick(t){
+  if(tab==="main") return !t.basket&&(t.kind==="hts"||t.independent&&t.level);
+  if(tab==="kw") return t.kind==="kw"&&!t.basket;
+  if(tab==="basket") return t.basket;
+  if(tab==="is") return t.kind==="is";
+  if(tab==="news") return false;
+  return false;
+}
+function card(t){
+  const mx=Math.max(...t.stocks.map(m=>m.amt),1), lv=t.level;
+  const badges=(t.basket?'<span class="badge">바스켓·알람제외</span>':'')+(t.kind==="kw"&&t.independent?'<span class="badge ind">독립</span>':'')+(t.kind==="kw"&&!t.independent&&t.parent?`<span class="badge">${esc(t.parent)}</span>`:'');
+  return `<div class="card l${lv}" id="c_${encodeURIComponent(t.theme)}" style="--lc:${LC[lv]}">
+   <div class="ch"><div class="row1"><div class="dots">${[1,2,3].map(i=>`<span class="${lv>=i?'on':''}"></span>`).join("")}</div>
+     <div class="tn" title="${esc(t.theme)}">${esc(t.theme)}</div><div class="avg">${t.avg5>0?'+':''}${t.avg5.toFixed(1)}%</div></div>
+    <div class="stats"><span>+5%↑ <b>${t.n5}</b></span><span>상한가 <b>${t.n_upper}</b></span><span>상승 <b>${t.n_up}</b>/${t.n_total}</span><span><b>${f(t.amt)}</b>억</span>${badges}</div>
+    ${t.chips.length?`<div class="chips">${t.chips.map(c=>`<span class="chip hot">#${esc(c)}</span>`).join("")}</div>`:""}</div>
+   ${t.stocks.slice(0,6).map(m=>`<div class="st"><div class="sn"><span>${esc(m.name)}</span>${m.added?'<em class="add">보완</em>':''}</div>
+     <div class="sr" style="color:${rateColor(m)}">${m.upper?'상':(m.rate>0?'+':'')+m.rate.toFixed(1)+'%'}</div>
+     <div class="ss"><span>${f(m.amt)}억</span><div class="bar"><i style="width:${Math.max(3,m.amt/mx*100)}%"></i></div><span>시총 ${f(m.cap)}억</span></div>
+     ${m.kw&&m.kw.length&&t.kind==="hts"?`<div class="ss kw">${m.kw.slice(0,3).map(k=>'#'+esc(k)).join(' ')}</div>`:''}</div>`).join("")}
+   ${t.why?`<div class="why">${esc(t.why)}</div>`:''}${t.kb?`<div class="why kbl">${esc(t.kb)}</div>`:''}
+   ${t.rot&&(t.rot.same.length||t.rot.next.length)?`<div class="rot">${t.rot.same.length?`같이 갈 후보 ${t.rot.same.map(r=>`<b>${esc(r[0])}</b> ${Math.round(r[1]*100)}%`).join(' · ')}<br>`:''}${t.rot.next.length?`다음날 후보 ${t.rot.next.map(r=>`<b>${esc(r[0])}</b> ${Math.round(r[1]*100)}%`).join(' · ')}`:''}</div>`:''}
+  </div>`;
+}
+function render(){
+  if(!D) return;
+  const q=$("#q").value.trim().toLowerCase();
+  $("#tabs").innerHTML=TABS.map(([k,n])=>`<button class="tab ${tab===k?'on':''}" data-k="${k}">${n}${k==="alerts"?`<i>${D.alerts.length}</i>`:k==="news"?`<i>${(D.news||[]).length}</i>`:''}</button>`).join("");
+  const lit=D.themes.filter(t=>t.level&&t.alertable).sort((a,b)=>b.level-a.level||b.score-a.score);
+  $("#strip").innerHTML=lit.map(t=>`<div class="lit" data-t="${encodeURIComponent(t.theme)}"><span class="d" style="background:${LC[t.level]};box-shadow:0 0 6px ${LC[t.level]}"></span>${esc(t.theme)} <em>+${t.avg5.toFixed(1)}%</em></div>`).join("");
+  const mob=matchMedia("(max-width:900px)").matches;
+  $("#side").classList.toggle("show",tab==="alerts"&&mob); $("#grid").classList.toggle("hide",tab==="alerts"&&mob);
+  let list=D.themes.filter(pick);
+  if(q) list=D.themes.filter(t=>t.theme.toLowerCase().includes(q)||t.stocks.some(m=>m.name.toLowerCase().includes(q)));
+  list.sort((a,b)=>(b.level-a.level)||(b.score-a.score));
+  const pre=(D.phase==="nxt"||D.phase==="exp")&&D.premarket&&D.premarket.length&&tab==="main"?`<div class="pre"><h4>🌅 장전 강세 테마 · ${esc(D.status)}</h4>${D.premarket.map((p,i)=>`<div>${i+1}. <b>${esc(p.theme)}</b> +5%↑ ${p.n5} · 평균 +${p.avg5.toFixed(1)}% — ${esc(p.lead)}</div>`).join("")}</div>`:"";
+  const bh="";
+  if(tab==="kb"){ if(!document.getElementById("kbroot")) kbInit(); }
+  else if(tab==="news"){ $("#grid").innerHTML=`<div class="brief" style="grid-column:1/-1">${(D.news||[]).map(n=>`<div class="al"><div class="t">${esc(n.time)} · ${esc(n.press)} · 점수 ${n.score}</div>
+      <div class="n"><a href="${esc(n.url)}" target="_blank" style="color:inherit;text-decoration:none">${esc(n.title)}</a></div>
+      <div class="x">${n.kws.map(k=>'#'+esc(k)).join(' ')}${n.themes.length?' → '+n.themes.map(esc).join(' · '):''}${n.stocks.length?' · '+n.stocks.map(esc).join(', '):''}</div></div>`).join("")||'<div class="empty">아직 키워드 뉴스가 없습니다 (07:00~20:00, 1분 간격)</div>'}</div>`; }
+  else $("#grid").innerHTML=pre+bh+(list.slice(0,80).map(card).join("")||'<div class="empty">표시할 테마가 없습니다</div>');
+
+  $("#early").innerHTML=(D.early_now||[]).map(e=>`<div class="ec" data-t="${encodeURIComponent(e.theme)}"><div class="h"><span>⚡ ${esc(e.theme)}</span><span>${e.ratio}배</span></div>
+     <div class="w">${e.why.map(esc).join(' · ')}</div><div class="m">${e.movers.slice(0,3).map(m=>`${esc(m.name)} +${m.rate.toFixed(1)}(↑${m.d_rate.toFixed(1)})`).join(' / ')}</div></div>`).join("");
+  $("#earlylog").innerHTML=(D.early||[]).map(e=>`<div class="al"><div class="t">${e.time} · 유입 ${f(e.inflow)}억 (${e.ratio}배)${e.vi?' · VI '+e.vi:''}</div><div class="n">⚡ ${esc(e.theme)}</div><div class="x">${e.why.map(esc).join(' · ')}</div></div>`).join("")||'<div class="empty">아직 없음</div>';
+  $("#vilist").innerHTML=(D.vi||[]).map(v=>`<div class="vi"><span class="t">${v.time.slice(0,2)}:${v.time.slice(2,4)}</span><span>${esc(v.name)} +${v.rate.toFixed(1)}%</span><span class="th">${esc(v.theme||'')}</span></div>`).join("")||'<div class="empty">아직 없음</div>';
+  $("#alerts").innerHTML=D.alerts.map(a=>`<div class="al" style="--lc:${LC[a.level]}"><div class="t">${a.time} · ${"🔴".repeat(a.level)}</div>
+     <div class="n">${esc(a.theme)}</div><div class="x">${esc(a.lead)} +${a.rate.toFixed(1)}%${a.chips.length?' · '+a.chips.map(c=>'#'+esc(c)).join(' '):''}</div></div>`).join("")||'<div class="empty">아직 알람이 없습니다<br>장중 09:03부터 울립니다</div>';
+  // 새로 단계가 오른 카드 강조
+  for(const t of D.themes){ if(!first&&t.level>(prev[t.theme]||0)){const el=document.getElementById("c_"+encodeURIComponent(t.theme)); el&&el.classList.add("pulse");} }
+  prev=Object.fromEntries(D.themes.map(t=>[t.theme,t.level])); first=false;
+}
+async function tick(){
+  try{
+    D=await (await fetch("/data",{cache:"no-store"})).json();
+    $("#time").textContent=D.time||"--:--:--"; $("#status").textContent=D.status;
+    $("#nr").textContent=D.n_risers||0; $("#nl").textContent=D.n_lit||0; $("#wsst").textContent="실시간 "+(D.ws||"-");
+    $("#lamp").classList.toggle("off",!(D.n_lit>0)); render();
+  }catch(e){$("#status").textContent="연결 끊김"}
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest(".tab"); if(b){tab=b.dataset.k; $("#grid").innerHTML="";try{localStorage.setItem("tab",tab)}catch(_){};$("#q").value="";render();scrollTo(0,0);return}
+  const l=e.target.closest(".lit,.ec"); if(l){const el=document.getElementById("c_"+l.dataset.t);
+    if(!el){tab="main";render();} (document.getElementById("c_"+l.dataset.t)||{}).scrollIntoView?.({behavior:"smooth",block:"center"});}
+});
+$("#q").addEventListener("input",render);
+
+let KBD=null;
+async function kbInit(){
+  $("#grid").innerHTML='<div id="kbroot"><div><input id="kbq" placeholder="테마·종목 검색 (예: 원자력, 방산, 한화에어로)" autocomplete="off"><div class="kbp" id="kbmon"></div><div class="kbp" id="kbmac" style="margin-top:12px"></div></div><div id="kbres"><div class="empty">불러오는 중…</div></div></div>';
+  if(!KBD){ try{ const g=u=>fetch(u).then(r=>r.json()); const [t,s,m]=await Promise.all([g("/kb/theme_kb.json"),g("/kb/stock_kb.json"),g("/kb/macro.json")]); KBD={t,s,m}; }
+    catch(e){ $("#kbres").innerHTML='<div class="empty">테마 백과 파일이 없습니다 (python theme_kb.py 실행)</div>'; return; } }
+  const mon=String(new Date().getMonth()+1).padStart(2,"0");
+  const hot=Object.entries(KBD.t).filter(([k,v])=>v.n>=20&&v.season[mon]).sort((a,b)=>b[1].season[mon]-a[1].season[mon]).slice(0,12);
+  $("#kbmon").innerHTML=`<h4>📅 ${+mon}월에 유독 자주 뜨던 테마</h4>`+hot.map(([k,v])=>`<div class="row" data-k="${esc(k)}"><span>${esc(k)}</span><i>평소의 ${v.season[mon]}배 · ${v.n}일</i></div>`).join("");
+  const M=KBD.m, fs=Object.entries(M.factors).sort((a,b)=>b[1].n-a[1].n);
+  $("#kbmac").innerHTML=`<h4>🌐 거시 요인별 코스피 반응 <span style="font-weight:400;color:var(--faint);font-size:11px">(${M.since.slice(0,4)}~, ${M.days}일 · 평소 상승확률 ${M.base_up}%)</span></h4>
+   <table class="mac"><tr><th>요인</th><th>언급</th><th>당일</th><th>다음날</th><th>↑확률</th></tr>${fs.map(([f,v])=>`<tr class="mrow" data-m="${esc(f)}" style="cursor:pointer"><td>${esc(f)}</td><td>${v.n}</td><td class="${v.same<0?'neg':'pos'}">${v.same>0?'+':''}${v.same}%</td><td class="${v.next<0?'neg':'pos'}">${v.next>0?'+':''}${v.next}%</td><td>${v.next_up}%</td></tr>`).join("")}</table>
+   <div id="kbmacd" class="s" style="margin-top:8px;color:var(--sub);font-size:12px">요인을 누르면 그 악재일에 강했던 테마를 보여줍니다</div>`;
+  $("#kbq").addEventListener("input",()=>kbSearch($("#kbq").value.trim()));
+  document.getElementById("kbroot").addEventListener("click",e=>{const r=e.target.closest("[data-k]"); if(r){$("#kbq").value=r.dataset.k; kbSearch(r.dataset.k);}
+    const m=e.target.closest("[data-m]"); if(m){const v=M.factors[m.dataset.m]; $("#kbmacd").innerHTML=`<b>${esc(m.dataset.m)}</b> 악재(−) ${v.neg}일 · 호재(+) ${v.pos}일<br>악재일 강세 테마: ${v.themes_on_bad.map(([t,n])=>`<span class="chip" data-k="${esc(t)}" style="cursor:pointer">${esc(t)} ${n}</span>`).join(" ")}<br>최근: ${v.recent.map(([d,r])=>`${d.slice(4,6)}/${d.slice(6)} ${r>0?'+':''}${r}%`).join(" · ")}`;}});
+  kbSearch($("#kbq").value.trim());
+}
+function kbTheme(k,v){
+  const ms=["01","02","03","04","05","06","07","08","09","10","11","12"], mx=Math.max(...ms.map(m=>v.season[m]||0),1);
+  return `<div class="kbc"><h3>${esc(k)} ${v.official?'<span class="badge">인포스탁 공식</span>':''}</h3>
+   <div class="s">13년 주도 <b>${v.n}</b>일 (최근 1년 ${v.recent}일) · 처음 ${v.first.slice(0,4)}.${v.first.slice(4,6)} · 마지막 ${v.last.slice(2,4)}.${v.last.slice(4,6)}.${v.last.slice(6)} · 평균 ${v.streak}일 지속(최장 ${v.max_streak}일)</div>
+   <div class="chips">역대 대장 ${v.leaders.map(x=>`<span class="chip hot" data-k="${esc(x[0])}" style="cursor:pointer">${esc(x[0])}</span>`).join("")}</div>
+   ${v.members.length?`<div class="chips">구성 ${v.members.slice(0,14).map(x=>`<span class="chip" data-k="${esc(x[0])}" style="cursor:pointer">${esc(x[0])}</span>`).join("")}</div>`:''}
+   <div class="mbar">${ms.map(m=>`<div class="${(v.season[m]||0)>=1.5?'hi':''}" style="height:${Math.max(4,(v.season[m]||0)/mx*100)}%" title="${+m}월 ${v.season[m]||0}배"></div>`).join("")}</div><div class="mlab">${ms.map(m=>`<span>${+m}</span>`).join("")}</div>
+   ${v.follow.length?`<div class="s">다음날 이어진 테마: ${v.follow.map(x=>`<span data-k="${esc(x[0])}" style="cursor:pointer;color:#9fb4ff">${esc(x[0])}</span> ${Math.round(x[1]*100)}%`).join(" · ")}</div>`:''}
+   ${v.reasons.map(([d,r])=>`<div class="r">${d.slice(2,4)}.${d.slice(4,6)}.${d.slice(6)} ${esc(r)}</div>`).join("")}</div>`;
+}
+function kbStock(c,v){
+  return `<div class="kbc"><h3>${esc(v.name)} <span class="s">${c}</span></h3>
+   <div class="s">상한가·급등 기록 <b>${v.n}</b>회${v.last?` · 마지막 ${v.last.slice(2,4)}.${v.last.slice(4,6)}.${v.last.slice(6)}`:''} ${v.rtype.map(([t,n])=>`<span class="badge">${esc(t)} ${n}</span>`).join(" ")}</div>
+   ${v.themes.length?`<div class="chips">소속 테마 ${v.themes.map(t=>`<span class="chip" data-k="${esc(t)}" style="cursor:pointer">${esc(t)}</span>`).join("")}</div>`:''}
+   ${v.reasons.map(([d,r,s])=>`<div class="r">${d.slice(2,4)}.${d.slice(4,6)}.${d.slice(6)} <span class="pos">+${(+r).toFixed(1)}%</span> ${esc(s)}</div>`).join("")}</div>`;
+}
+function kbSearch(q){
+  if(!KBD) return; const box=$("#kbres");
+  if(!q){ const top=Object.entries(KBD.t).sort((a,b)=>b[1].recent-a[1].recent).slice(0,8); box.innerHTML=`<div class="s" style="color:var(--sub);margin:0 0 8px">최근 1년 가장 자주 주도한 테마</div>`+top.map(([k,v])=>kbTheme(k,v)).join(""); return; }
+  const ql=q.replace(/\s/g,"").toLowerCase(), m=x=>x.replace(/\s/g,"").toLowerCase().includes(ql);
+  const ts=Object.entries(KBD.t).filter(([k])=>m(k)).sort((a,b)=>b[1].n-a[1].n).slice(0,6);
+  const ss=Object.entries(KBD.s).filter(([c,v])=>m(v.name)).sort((a,b)=>(b[1].name.replace(/\s/g,"").toLowerCase()===ql)-(a[1].name.replace(/\s/g,"").toLowerCase()===ql)||b[1].n-a[1].n).slice(0,4);
+  box.innerHTML=(ts.map(([k,v])=>kbTheme(k,v)).join("")+ss.map(([c,v])=>kbStock(c,v)).join(""))||'<div class="empty">검색 결과가 없습니다</div>';
+}
+
+tick(); setInterval(tick,3000);
+</script></body></html>

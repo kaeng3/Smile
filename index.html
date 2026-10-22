@@ -639,6 +639,7 @@
                     <button class="nav-btn" onclick="switchMainTab('lab5')" id="nav-lab5">🧺 테마꾸러미</button>
                     <button class="nav-btn" onclick="switchMainTab('lab6')" id="nav-lab6">📰 뉴스 키워드</button>
                     <button class="nav-btn" onclick="switchMainTab('lab7')" id="nav-lab7">📘 기본적 분석</button>
+                    <button class="nav-btn" onclick="switchMainTab('lab8')" id="nav-lab8">🔥 상승 테마</button>
                 </div>
             </div>
 
@@ -724,6 +725,11 @@
                 <div id="lab-content7" style="display: none;">
                     <div id="lab7-body"><div class="nf-empty">보고서 불러오는 중…</div></div>
                 </div>
+
+                <!-- 🔥 상승 테마 (PC 키움 테마 점등 알람 스냅샷) -->
+                <div id="lab-content8" style="display: none;">
+                    <div id="lab8-body"></div>
+                </div>
             </div>
         </div>
 
@@ -777,6 +783,8 @@
             document.getElementById('lab-content6').style.display = 'none';
             document.getElementById('nav-lab7').classList.remove('active');
             document.getElementById('lab-content7').style.display = 'none';
+            document.getElementById('nav-lab8').classList.remove('active');
+            document.getElementById('lab-content8').style.display = 'none';
 
             if (tab === 'scan') {
                 document.getElementById('nav-scan').classList.add('active');
@@ -808,7 +816,125 @@
                 document.getElementById('nav-lab5').classList.add('active');
                 document.getElementById('lab-content5').style.display = 'block';
                 loadThemeBundles();
+            } else if (tab === 'lab8') {
+                document.getElementById('nav-lab8').classList.add('active');
+                document.getElementById('lab-content8').style.display = 'block';
+                loadSectorSnapshot();
             }
+        }
+
+        // ===== 🔥 상승 테마: PC의 키움 테마 점등 알람이 올린 스냅샷(data 브랜치 sector_alarm/snapshot.json) =====
+        const SECTOR_SNAPSHOT_URLS = [
+            'https://raw.githubusercontent.com/kaeng3/Smile/data/sector_alarm/snapshot.json',
+            'sector_alarm/snapshot.json'
+        ];
+        const SECTOR_LEVEL = { 3: ['3단계 점등', '#ef4444'], 2: ['2단계', '#f97316'], 1: ['1단계', '#eab308'], 0: ['대기', 'rgba(255,255,255,0.25)'] };
+        const SECTOR_PHASE = { live: '장중', nxt: '장전 NXT', exp: '장전 예상체결', closed: '장 마감' };
+        let sectorSnapshot = null, sectorLoadedAt = 0, sectorShowAll = false, sectorQuery = '';
+
+        async function loadSectorSnapshot(force) {
+            if (!force && sectorSnapshot && Date.now() - sectorLoadedAt < 60000) { renderLab8(); return; }
+            for (const url of SECTOR_SNAPSHOT_URLS) {
+                try {
+                    const res = await fetch(url + '?t=' + Date.now(), { cache: 'no-store' });
+                    if (res.ok) { sectorSnapshot = await res.json(); sectorLoadedAt = Date.now(); break; }
+                } catch (e) { /* 다음 주소 시도 */ }
+            }
+            renderLab8();
+        }
+
+        function toggleSectorAll() { sectorShowAll = !sectorShowAll; renderLab8(); }
+        function setSectorQuery(v) {
+            sectorQuery = v;
+            const box = document.getElementById('sector-theme-list');
+            if (box) box.innerHTML = buildSectorThemeList();
+        }
+
+        function sectorStockChip(s) {
+            const esc = escapeNewScannerHtml;
+            const up = (s.rate || 0) >= 0;
+            const nm = String(s.name || s.code).replace(/'/g, "\\'");
+            return `<span onclick="event.stopPropagation(); openNewsModal('${s.code}', '${nm}')" style="display:inline-block; cursor:pointer; margin:0 6px 6px 0; padding:4px 10px; border-radius:999px; font-size:0.85rem; border:1px solid ${s.upper ? '#ef4444' : 'var(--border-color)'}; color:var(--text-main);">${s.upper ? '🔺 ' : ''}${esc(s.name)} <span class="${up ? 'rate-up' : 'rate-down'}">${up ? '+' : ''}${Number(s.rate || 0).toFixed(2)}%</span>${s.amt ? ` <span style="color:var(--text-sub); font-size:0.75rem;">${Math.round(s.amt).toLocaleString('ko-KR')}억</span>` : ''}${s.added ? ' <span style="font-size:0.7rem; color:#a78bfa;">보완</span>' : ''}</span>`;
+        }
+
+        function buildSectorThemeCard(t) {
+            const esc = escapeNewScannerHtml;
+            const [label, color] = SECTOR_LEVEL[t.level || 0] || SECTOR_LEVEL[0];
+            const kind = t.kind === 'hts' ? 'HTS' : t.kind === 'kw' ? '키워드' : t.kind === 'is' ? '공식테마' : '';
+            const chips = (t.chips || []).map(c => `<span style="display:inline-block; margin:0 4px 4px 0; padding:2px 8px; border-radius:999px; font-size:0.75rem; border:1px solid var(--border-color); color:var(--text-sub);">#${esc(c)}</span>`).join('');
+            const rname = r => esc(Array.isArray(r) ? r[0] : (r.theme || r.name || r));
+            const rotParts = [];
+            if (t.rot && (t.rot.same || []).length) rotParts.push(`같은 날 함께 뜬 테마: ${t.rot.same.map(rname).join(', ')}`);
+            if (t.rot && (t.rot.next || []).length) rotParts.push(`다음 날 이어진 테마: ${t.rot.next.map(rname).join(', ')}`);
+            if (t.rot && t.rot.persist != null) rotParts.push(`다음 날도 이어질 확률 ${Math.round(t.rot.persist * 100)}%`);
+            const rot = rotParts.length ? `<div style="margin-top:8px; font-size:0.85rem; color:var(--text-sub);">🔁 과거 패턴 · ${rotParts.join(' · ')}</div>` : '';
+            return `
+                <details ${t.level >= 2 ? 'open' : ''} style="border:1px solid var(--border-color); border-left:5px solid ${color}; border-radius:12px; padding:12px 16px; background:var(--card-bg);">
+                    <summary style="cursor:pointer; list-style:none;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+                            <div style="font-size:1.1rem; font-weight:700; color:var(--text-main);">${esc(t.theme)}
+                                <span style="font-size:0.72rem; font-weight:700; color:#000; background:${color}; padding:2px 8px; border-radius:999px; margin-left:6px; vertical-align:middle;">${label}</span>
+                                ${kind ? `<span style="font-size:0.72rem; color:var(--text-sub); margin-left:4px;">${kind}</span>` : ''}
+                                ${t.basket ? '<span style="font-size:0.72rem; color:var(--text-sub); margin-left:4px;">바스켓</span>' : ''}
+                            </div>
+                            <div style="font-size:0.85rem; color:var(--text-sub);">상승 <strong style="color:var(--text-main);">${t.n_up}</strong>/${t.n_total} · +5%↑ ${t.n5} · 상한가 ${t.n_upper} · 대장 <span class="rate-up">+${Number(t.leader || 0).toFixed(2)}%</span> · 거래대금 ${Math.round(t.amt || 0).toLocaleString('ko-KR')}억</div>
+                        </div>
+                    </summary>
+                    <div style="margin-top:10px;">${chips}<div>${(t.stocks || []).map(sectorStockChip).join('')}</div>${rot}</div>
+                </details>`;
+        }
+
+        function buildSectorThemeList() {
+            const d = sectorSnapshot;
+            const q = sectorQuery.trim();
+            let list = (d.themes || []).slice();
+            if (q) list = list.filter(t => t.theme.includes(q) || (t.stocks || []).some(s => String(s.name).includes(q)));
+            else if (!sectorShowAll) list = list.filter(t => (t.level || 0) > 0 || (t.n5 || 0) >= 2);
+            list.sort((a, b) => (b.level || 0) - (a.level || 0) || (b.score || 0) - (a.score || 0) || (b.amt || 0) - (a.amt || 0));
+            if (!list.length) return `<div style="text-align:center; padding:30px; color:var(--text-sub);">${q ? '검색 결과가 없습니다.' : '지금 점등되거나 +5% 종목이 2개 이상인 테마가 없습니다.'}</div>`;
+            return `<div style="display:flex; flex-direction:column; gap:10px;">${list.map(buildSectorThemeCard).join('')}</div>`;
+        }
+
+        function renderLab8() {
+            const body = document.getElementById('lab8-body');
+            if (!body) return;
+            const esc = escapeNewScannerHtml;
+            const d = sectorSnapshot;
+            let html = `
+                <div class="report-download-card" style="justify-content: center; text-align: center; padding: 32px; flex-direction: column; gap: 12px;">
+                    <div>
+                        <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🔥 상승 테마</div>
+                        <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">PC에서 돌아가는 키움 테마 점등 알람의 화면을 그대로 옮겨 왔습니다. 관심그룹·키워드 테마별로 몇 종목이 오르는지, 대장주와 거래대금, 점등 단계(1~3단계)를 보여줍니다.</div>
+                    </div>
+                </div>`;
+            if (!d) {
+                body.innerHTML = html + `<div style="text-align:center; padding:40px; color:var(--text-sub); border:1px dashed rgba(255,255,255,0.4); border-radius:12px;">아직 올라온 스냅샷이 없습니다.<br>PC에서 알람 프로그램(run.bat)을 켠 뒤 <b>publish_snapshot.bat</b>을 실행하면 이곳에 표시됩니다.</div>`;
+                return;
+            }
+            const stale = d.date && d.date !== new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+            const lit = (d.themes || []).filter(t => (t.level || 0) > 0);
+            html += `
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+                    ${[['기준', `${esc(d.date || '')} ${esc(d.time || '')}`], ['구간', SECTOR_PHASE[d.phase] || esc(d.phase || '')], ['상승 종목', `${d.n_risers ?? '-'}개`], ['점등 테마', `${lit.length}개`]].map(([k, v]) => `<div style="flex:1; min-width:120px; background:var(--card-bg); border:1px solid var(--border-color); border-radius:10px; padding:10px 14px;"><div style="font-size:0.8rem; color:var(--text-sub);">${k}</div><div style="font-size:1.05rem; font-weight:700; color:var(--text-main);">${v}</div></div>`).join('')}
+                </div>
+                ${stale ? `<div style="margin-bottom:12px; padding:10px 14px; border-radius:10px; background:rgba(234,179,8,0.15); color:#facc15; font-size:0.9rem;">⚠️ 오늘 자료가 아닙니다(${esc(d.date)} 기준). PC에서 알람과 업로드가 켜져 있는지 확인하세요.</div>` : ''}`;
+            const alerts = (d.alerts || []).slice(-12).reverse();
+            const early = (d.early || []).slice(-8).reverse();
+            if (alerts.length || early.length) {
+                html += `<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:10px; margin-bottom:14px;">
+                    <div style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:10px; padding:12px 14px;"><div style="font-weight:700; margin-bottom:6px; color:var(--text-main);">🚨 점등 알람</div>${alerts.map(a => `<div style="font-size:0.88rem; margin-bottom:4px; color:var(--text-main);"><span style="color:var(--text-sub); font-family:monospace;">${esc(a.time)}</span> ${esc(a.theme)} <span style="color:${(SECTOR_LEVEL[a.level] || SECTOR_LEVEL[0])[1]};">${a.level}단계</span> · ${esc(a.lead || '')} <span class="rate-up">+${Number(a.rate || 0).toFixed(1)}%</span></div>`).join('') || '<div style="color:var(--text-sub); font-size:0.85rem;">없음</div>'}</div>
+                    <div style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:10px; padding:12px 14px;"><div style="font-weight:700; margin-bottom:6px; color:var(--text-main);">⚡ 초기 신호</div>${early.map(e => `<div style="font-size:0.88rem; margin-bottom:4px; color:var(--text-main);"><span style="color:var(--text-sub); font-family:monospace;">${esc(e.time)}</span> ${esc(e.theme)} · ${esc(e.lead || '')} <span class="rate-up">+${Number(e.rate || 0).toFixed(1)}%</span><div style="font-size:0.78rem; color:var(--text-sub);">${(e.why || []).map(esc).join(' · ')}</div></div>`).join('') || '<div style="color:var(--text-sub); font-size:0.85rem;">없음</div>'}</div>
+                </div>`;
+            }
+            html += `
+                <div style="display:flex; gap:8px; align-items:center; margin-bottom:12px; flex-wrap:wrap;">
+                    <input type="search" placeholder="테마·종목 검색" value="${esc(sectorQuery)}" oninput="setSectorQuery(this.value)" style="flex:1; min-width:160px; padding:8px 12px; border-radius:10px; border:1px solid var(--border-color); background:var(--card-bg); color:var(--text-main); font-size:0.95rem;">
+                    <div class="date-chip ${sectorShowAll ? 'active' : ''}" onclick="toggleSectorAll()">${sectorShowAll ? '전체 테마 보는 중' : '전체 테마 보기'}</div>
+                    <div class="date-chip" onclick="loadSectorSnapshot(true)">🔄 새로고침</div>
+                </div>
+                <div id="sector-theme-list">${buildSectorThemeList()}</div>
+                <div style="margin-top:12px; font-size:0.8rem; color:var(--text-sub); text-align:right;">업로드 ${esc(d.published_at || '')}</div>`;
+            body.innerHTML = html;
         }
 
         let newScannerSessions = [];
