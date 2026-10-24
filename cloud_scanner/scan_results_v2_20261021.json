@@ -1,0 +1,82 @@
+[
+  {
+    "code": "456160",
+    "name": "지투지바이오",
+    "close": 42750,
+    "rate": 18.75,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "009900",
+    "name": "명신산업",
+    "close": 9450,
+    "rate": 11.702127659574469,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "300080",
+    "name": "플리토",
+    "close": 11710,
+    "rate": 8.930232558139535,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "039860",
+    "name": "나노엔텍",
+    "close": 4820,
+    "rate": 14.218009478672986,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "220260",
+    "name": "켐트로스",
+    "close": 4760,
+    "rate": 16.097560975609756,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "138360",
+    "name": "앤로보틱스",
+    "close": 1517,
+    "rate": 9.45165945165945,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "052460",
+    "name": "아이크래프트",
+    "close": 7440,
+    "rate": 19.806763285024154,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "088280",
+    "name": "쏘닉스",
+    "close": 4655,
+    "rate": 6.76605504587156,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "317240",
+    "name": "TS트릴리온",
+    "close": 1393,
+    "rate": 13.900245298446443,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "458350",
+    "name": "에스팀",
+    "close": 4410,
+    "rate": 16.205533596837945,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

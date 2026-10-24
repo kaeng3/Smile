@@ -1,0 +1,50 @@
+[
+  {
+    "code": "028050",
+    "name": "삼성E&A",
+    "close": 60500,
+    "rate": 8.422939068100359,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "065450",
+    "name": "빅텍",
+    "close": 4200,
+    "rate": 15.862068965517242,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "039980",
+    "name": "폴라리스AI",
+    "close": 5890,
+    "rate": 19.3515704154002,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "024740",
+    "name": "한일단조",
+    "close": 2435,
+    "rate": 7.7433628318584065,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "434480",
+    "name": "모니터랩",
+    "close": 3140,
+    "rate": 18.045112781954884,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "289220",
+    "name": "자이언트스텝",
+    "close": 1563,
+    "rate": 15.435745937961595,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "code": "030960",
+    "name": "양지사",
+    "close": 6880,
+    "rate": 19.444444444444446,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "065450",
+    "name": "빅텍",
+    "close": 3225,
+    "rate": 10.445205479452055,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

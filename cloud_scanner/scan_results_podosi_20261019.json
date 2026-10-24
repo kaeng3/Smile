@@ -1,0 +1,90 @@
+[
+  {
+    "code": "417200",
+    "name": "LS머트리얼즈",
+    "close": 14200,
+    "rate": 7.90273556231003,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "018290",
+    "name": "브이티",
+    "close": 12610,
+    "rate": -1.71473109898675,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "372320",
+    "name": "큐로셀",
+    "close": 23950,
+    "rate": 1.9148936170212765,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "000650",
+    "name": "천일고속",
+    "close": 222000,
+    "rate": 3.7383177570093453,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "128820",
+    "name": "대성산업",
+    "close": 4645,
+    "rate": 0.7592190889370932,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "419530",
+    "name": "SAMG엔터",
+    "close": 19520,
+    "rate": 4.552758435993573,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "084670",
+    "name": "동양고속",
+    "close": 38100,
+    "rate": 1.1952191235059761,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "006140",
+    "name": "피제이전자",
+    "close": 5200,
+    "rate": 3.792415169660679,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "032790",
+    "name": "엠젠솔루션",
+    "close": 1210,
+    "rate": 1.2552301255230125,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "215790",
+    "name": "이노인스트루먼트",
+    "close": 666,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "015260",
+    "name": "에이엔피",
+    "close": 300,
+    "rate": -29.906542056074763,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  }
+]

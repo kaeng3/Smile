@@ -1,0 +1,194 @@
+[
+  {
+    "code": "352820",
+    "name": "하이브",
+    "close": 176800,
+    "rate": -1.4492753623188406,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "290650",
+    "name": "엘앤씨바이오",
+    "close": 60600,
+    "rate": 2.886247877758913,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "445680",
+    "name": "큐리옥스바이오시스템즈",
+    "close": 58200,
+    "rate": -3.9603960396039604,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "336370",
+    "name": "솔루스첨단소재",
+    "close": 7940,
+    "rate": -6.698002350176263,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "372320",
+    "name": "큐로셀",
+    "close": 22650,
+    "rate": -4.025423728813559,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "425040",
+    "name": "티이엠씨",
+    "close": 13810,
+    "rate": -10.614886731391586,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "000650",
+    "name": "천일고속",
+    "close": 203000,
+    "rate": 10.44613710554951,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "452280",
+    "name": "한선엔지니어링",
+    "close": 14880,
+    "rate": -7.405102675793404,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "001250",
+    "name": "GS글로벌",
+    "close": 2835,
+    "rate": -7.954545454545454,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "243840",
+    "name": "신흥에스이씨",
+    "close": 5600,
+    "rate": -7.894736842105263,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "009470",
+    "name": "삼화전기",
+    "close": 28950,
+    "rate": -1.530612244897959,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "128820",
+    "name": "대성산업",
+    "close": 4150,
+    "rate": -3.935185185185185,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "138360",
+    "name": "앤로보틱스",
+    "close": 1694,
+    "rate": 2.4803387779794313,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "270660",
+    "name": "에브리봇",
+    "close": 13050,
+    "rate": -6.9186875891583455,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "307750",
+    "name": "국전",
+    "close": 2325,
+    "rate": -9.35672514619883,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "084670",
+    "name": "동양고속",
+    "close": 30900,
+    "rate": 3.3444816053511706,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "039980",
+    "name": "폴라리스AI",
+    "close": 5890,
+    "rate": 19.3515704154002,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "225530",
+    "name": "HC보광산업",
+    "close": 2230,
+    "rate": -6.302521008403361,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "005870",
+    "name": "휴니드",
+    "close": 5120,
+    "rate": 3.9593908629441623,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "046210",
+    "name": "HLB파나진",
+    "close": 1354,
+    "rate": -5.248425472358292,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "200350",
+    "name": "아티스트스튜디오",
+    "close": 3960,
+    "rate": -5.263157894736842,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "317240",
+    "name": "TS트릴리온",
+    "close": 1150,
+    "rate": -11.196911196911197,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "215790",
+    "name": "이노인스트루먼트",
+    "close": 666,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "012340",
+    "name": "뉴인텍",
+    "close": 544,
+    "rate": -28.98172323759791,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  }
+]
