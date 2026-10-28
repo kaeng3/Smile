@@ -40,6 +40,15 @@ def _load_stock_themes(system_dir):
     return _STOCK_THEMES
 
 
+def _market_theme_words(system_dir):
+    try:
+        with open(os.path.join(system_dir, 'theme_dictionary.json'), encoding='utf-8') as f:
+            d = json.load(f)
+        return {a for t in d.get('themes', []) for a in t.get('aliases', []) if len(a) >= 2}
+    except Exception:
+        return set()
+
+
 MANUAL_FILE = 'manual_analysis.json'
 
 
@@ -98,7 +107,10 @@ def get_news_articles(code, name, system_dir, target_date_str):
     try:
         from fetch_featured_stock_news import get_theme_news
         themes_db = _load_stock_themes(system_dir)
-        for theme in (themes_db.get(code) or {}).get('subthemes', [])[:2]:
+        market_words = _market_theme_words(system_dir)
+        # 인물·정책성 세부테마(예: 정치인 이름)는 엉뚱한 기사를 끌어오므로 테마 사전에 있는 '시장 테마'만 쓴다
+        subs = [t for t in (themes_db.get(code) or {}).get('subthemes', []) if any(w in t or t in w for w in market_words)]
+        for theme in subs[:2]:
             theme_news += get_theme_news(theme, kst_now(), limit=3)
     except Exception as e:
         print(f"[{name}] 테마 뉴스 검색 실패: {e}")
@@ -112,7 +124,7 @@ def get_news_articles(code, name, system_dir, target_date_str):
         merged.append(a)
     merged.sort(key=lambda a: a.get('datetime') or '')
     merged = merged[-MAX_NEWS_FOR_AI:]
-    for a in theme_news:  # 종목 기사 뒤에 붙인다(종목 기사 수를 줄이지 않음)
+    for a in theme_news:  # 종목 기사 뒤에 붙인다(종목 기사 수를 줄이지 않음). 화면 카드에는 안 보이고 AI 입력에만 쓰임
         key = a.get('link') or a.get('title')
         if key not in seen:
             seen.add(key)
@@ -267,6 +279,8 @@ def build_prompt(name, code, target_date_str, rate, trading_value, articles):
         when = a.get('datetime') or a.get('date') or '날짜 확인불가'
         press = f" ({a['press']})" if a.get('press') else ''
         line = f"- [{when}] {a['title']}{press}"
+        if a.get('theme_news'):
+            line += " ※종목명이 없는 테마 참고 기사: 이 종목과 실제로 이어질 때만 근거로 사용"
         if a.get('body'):
             line += f"\n  내용: {a['body']}"
         news_lines.append(line)
@@ -480,8 +494,9 @@ def generate_daily_issues(target_date_str):
             "trading_value": trading_value,
             "summary": summary,
             "analysis": analysis,
-            "headlines": [a['title'] for a in articles],
-            "articles": articles,
+            "headlines": [a['title'] for a in articles if not a.get('theme_news')],
+            "articles": [a for a in articles if not a.get('theme_news')],
+            "theme_news": [{k: a.get(k) for k in ('datetime', 'title', 'press', 'link', 'theme_news')} for a in articles if a.get('theme_news')],
             "news_source": source,
         })
         
