@@ -26,6 +26,46 @@ def _normalize_featured(article, target_date_str):
     return a
 
 
+_STOCK_THEMES = None
+
+
+def _load_stock_themes(system_dir):
+    global _STOCK_THEMES
+    if _STOCK_THEMES is None:
+        try:
+            with open(os.path.join(system_dir, 'stock_detail_themes.json'), encoding='utf-8') as f:
+                _STOCK_THEMES = json.load(f)
+        except Exception:
+            _STOCK_THEMES = {}
+    return _STOCK_THEMES
+
+
+MANUAL_FILE = 'manual_analysis.json'
+
+
+def apply_manual_overrides(all_issues, system_dir):
+    """사용자가 직접 바로잡은 해석(manual_analysis.json, main 브랜치)을 AI 결과보다 우선 적용.
+    형식: {"YYYYMMDD": {"종목코드": {"analysis": {...}, "summary": "...", "note": "..."}}}"""
+    path = os.path.join(system_dir, MANUAL_FILE)
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding='utf-8') as f:
+        manual = json.load(f)
+    touched = []
+    for date_str, by_code in manual.items():
+        for issue in all_issues.get(date_str, []):
+            m = by_code.get(issue['code'])
+            if not m:
+                continue
+            if m.get('analysis'):
+                issue['analysis'] = m['analysis']
+            issue['summary'] = m.get('summary') or (m.get('analysis') or {}).get('summary') or issue.get('summary')
+            issue['manual'] = True
+            if date_str not in touched:
+                touched.append(date_str)
+    return touched
+
+
 def get_news_articles(code, name, system_dir, target_date_str):
     """AI 분석에 넘길 뉴스를 (기사목록, 출처)로 돌려준다.
 
@@ -52,6 +92,17 @@ def get_news_articles(code, name, system_dir, target_date_str):
     except Exception as e:
         print(f"[{name}] 일반 뉴스 검색 실패: {e}")
 
+    # 테마 뉴스: 종목명이 없는 테마 재료(예: 이재용 로봇 점검 → 로봇주)를 잡기 위해
+    # 종목 테마 DB의 세부 테마 최대 2개로 당일 주요 기사를 몇 건 더한다.
+    theme_news = []
+    try:
+        from fetch_featured_stock_news import get_theme_news
+        themes_db = _load_stock_themes(system_dir)
+        for theme in (themes_db.get(code) or {}).get('subthemes', [])[:2]:
+            theme_news += get_theme_news(theme, kst_now(), limit=3)
+    except Exception as e:
+        print(f"[{name}] 테마 뉴스 검색 실패: {e}")
+
     merged, seen = [], set()
     for a in featured + general:
         key = a.get('link') or a.get('title')
@@ -61,9 +112,14 @@ def get_news_articles(code, name, system_dir, target_date_str):
         merged.append(a)
     merged.sort(key=lambda a: a.get('datetime') or '')
     merged = merged[-MAX_NEWS_FOR_AI:]
+    for a in theme_news:  # 종목 기사 뒤에 붙인다(종목 기사 수를 줄이지 않음)
+        key = a.get('link') or a.get('title')
+        if key not in seen:
+            seen.add(key)
+            merged.append(a)
 
-    source = 'featured' if featured else ('general' if merged else 'none')
-    print(f"  - 뉴스: 특징주 {len(featured)}건 + 일반 {len(general)}건 -> {len(merged)}건 ({source})")
+    source = 'featured' if featured else ('general' if general else ('theme' if merged else 'none'))
+    print(f"  - 뉴스: 특징주 {len(featured)}건 + 일반 {len(general)}건 + 테마 {len(theme_news)}건 -> {len(merged)}건 ({source})")
     return merged, source
 
 
@@ -441,6 +497,9 @@ def generate_daily_issues(target_date_str):
                 
     all_issues[target_date_str] = issues
     backfilled = backfill_with_infostock(all_issues, api_key, kst_now().strftime("%Y%m%d"))
+    for d in apply_manual_overrides(all_issues, system_dir):
+        if d not in backfilled:
+            backfilled.append(d)
     
     # 5일치만 보관
     sorted_dates = sorted(all_issues.keys(), reverse=True)

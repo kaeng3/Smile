@@ -270,6 +270,33 @@ def get_general_news(stock_name, today, limit=10, lookback_days=3):
     return articles[-limit:]
 
 
+_TOKEN_RE = re.compile(r'[0-9A-Za-z가-힣]{2,}')
+_THEME_STOP = {'특징주', '관련주', '주가', '상승', '급등', '강세', '하락', '종목', '오늘', '속보', '테마', '기대', '기대감'}
+
+
+def get_theme_news(theme, today, limit=4, lookback_days=1):
+    """종목 이름은 없지만 그 종목이 속한 테마를 움직인 당일(·전날) 큰 뉴스.
+    예: '이재용 로봇 손 점검' 기사는 원익홀딩스 이름이 없어도 로봇 테마 재료다.
+    '{테마}'로 검색해 제목에 테마어가 있는 기사 중, 여러 매체가 함께 다룬 이야기(제목 단어가 많이 겹치는 기사)를 우선."""
+    arts = _search_naver_news(today, theme, lambda t: theme in t, lookback_days=lookback_days)
+    toks = [set(_TOKEN_RE.findall(a['title'])) - _THEME_STOP - {theme} for a in arts]
+    scored, seen = [], set()
+    for i, a in enumerate(arts):
+        key = ''.join(sorted(toks[i]))[:40]
+        if key in seen:
+            continue
+        seen.add(key)
+        score = sum(1 for j, t in enumerate(toks) if j != i and len(toks[i] & t) >= 2)
+        scored.append((score, a.get('datetime') or '', a))
+    scored.sort(key=lambda x: (x[0], x[1]), reverse=True)
+    out = []
+    for score, _, a in scored[:limit]:
+        if score < 1:  # 한 매체만 다룬 단신은 제외
+            continue
+        out.append(dict(a, press=f"테마뉴스·{theme} · {a.get('press', '')}".strip(' ·'), theme_news=theme))
+    return out
+
+
 def main():
     # GitHub Actions 러너는 시스템 시각이 UTC라, 한국시간(KST=UTC+9) 기준으로 보정해서 사용
     today = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=9)
