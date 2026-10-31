@@ -1,0 +1,82 @@
+[
+  {
+    "code": "489790",
+    "name": "한화비전",
+    "close": 43700,
+    "rate": 9.25,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "017900",
+    "name": "광전자",
+    "close": 9370,
+    "rate": 19.97439180537772,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "079650",
+    "name": "서산",
+    "close": 7850,
+    "rate": 9.17941585535466,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "211270",
+    "name": "AP위성",
+    "close": 9510,
+    "rate": 12.278630460448642,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "443670",
+    "name": "에스피소프트",
+    "close": 5320,
+    "rate": 9.917355371900827,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "0011A0",
+    "name": "액스비스",
+    "close": 11270,
+    "rate": 9.205426356589147,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "025950",
+    "name": "동신건설",
+    "close": 10320,
+    "rate": 15.695067264573993,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "051630",
+    "name": "진양화학",
+    "close": 2495,
+    "rate": 14.449541284403669,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "010640",
+    "name": "진양폴리",
+    "close": 2680,
+    "rate": 10.2880658436214,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "308170",
+    "name": "씨티알모빌리티",
+    "close": 5110,
+    "rate": 14.18994413407821,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "code": "126340",
+    "name": "비나텍",
+    "close": 97500,
+    "rate": -9.260120986505353,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "354320",
+    "name": "알멕",
+    "close": 46700,
+    "rate": -16.15798922800718,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "000650",
+    "name": "천일고속",
+    "close": 196400,
+    "rate": -1.356102461074837,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "220100",
+    "name": "퓨쳐켐",
+    "close": 7630,
+    "rate": -4.7440699126092385,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "138360",
+    "name": "앤로보틱스",
+    "close": 1876,
+    "rate": -15.30474040632054,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "101360",
+    "name": "에코앤드림",
+    "close": 9440,
+    "rate": -6.719367588932807,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "300080",
+    "name": "플리토",
+    "close": 9500,
+    "rate": -9.003831417624522,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "039980",
+    "name": "폴라리스AI",
+    "close": 5100,
+    "rate": -8.60215053763441,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "005870",
+    "name": "휴니드",
+    "close": 4915,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "317240",
+    "name": "TS트릴리온",
+    "close": 1195,
+    "rate": 3.8227628149435278,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "289220",
+    "name": "자이언트스텝",
+    "close": 1190,
+    "rate": -8.672294704528012,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "206560",
+    "name": "덱스터",
+    "close": 911,
+    "rate": -4.004214963119073,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "060900",
+    "name": "에이전트AI",
+    "close": 2155,
+    "rate": -16.634429400386846,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "900100",
+    "name": "파이온엑스",
+    "close": 1501,
+    "rate": 24.049586776859506,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  }
+]

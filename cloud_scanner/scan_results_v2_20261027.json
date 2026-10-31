@@ -1,0 +1,34 @@
+[
+  {
+    "code": "035900",
+    "name": "JYP Ent.",
+    "close": 39600,
+    "rate": 9.090909090909092,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "253590",
+    "name": "네오셈",
+    "close": 17550,
+    "rate": 9.482220835932626,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "097520",
+    "name": "엠씨넥스",
+    "close": 20300,
+    "rate": 15.01416430594901,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "033340",
+    "name": "좋은사람들",
+    "close": 2270,
+    "rate": 11.00244498777506,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

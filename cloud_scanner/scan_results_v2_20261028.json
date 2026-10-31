@@ -1,0 +1,34 @@
+[
+  {
+    "code": "030530",
+    "name": "원익홀딩스",
+    "close": 27900,
+    "rate": 16.736401673640167,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "381620",
+    "name": "제닉스로보틱스",
+    "close": 5740,
+    "rate": 18.59504132231405,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "067920",
+    "name": "이글루",
+    "close": 6400,
+    "rate": 10.726643598615917,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "192250",
+    "name": "케이사인",
+    "close": 8990,
+    "rate": 9.902200488997554,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

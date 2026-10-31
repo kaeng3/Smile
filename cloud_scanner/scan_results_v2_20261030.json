@@ -1,0 +1,50 @@
+[
+  {
+    "code": "489790",
+    "name": "한화비전",
+    "close": 50800,
+    "rate": 16.247139588100687,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "263860",
+    "name": "지니언스",
+    "close": 27900,
+    "rate": 11.823647294589177,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "232680",
+    "name": "라온로보틱스",
+    "close": 10260,
+    "rate": 9.615384615384617,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "051630",
+    "name": "진양화학",
+    "close": 2780,
+    "rate": 11.422845691382765,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "042940",
+    "name": "상지건설",
+    "close": 7420,
+    "rate": 18.91025641025641,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "093240",
+    "name": "형지엘리트",
+    "close": 1702,
+    "rate": 18.52367688022284,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

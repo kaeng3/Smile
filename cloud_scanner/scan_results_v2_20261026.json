@@ -1,0 +1,42 @@
+[
+  {
+    "code": "211270",
+    "name": "AP위성",
+    "close": 9530,
+    "rate": 12.249705535924617,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "357880",
+    "name": "SKAI",
+    "close": 1951,
+    "rate": 15.37551744529864,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "241690",
+    "name": "유니테크노",
+    "close": 3025,
+    "rate": 19.094488188976378,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "458350",
+    "name": "에스팀",
+    "close": 4215,
+    "rate": 6.171284634760705,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "060900",
+    "name": "에이전트AI",
+    "close": 3060,
+    "rate": 10.071942446043165,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

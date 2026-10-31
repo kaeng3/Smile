@@ -1,0 +1,4571 @@
+{
+  "20261026": [
+    {
+      "code": "451760",
+      "name": "컨텍",
+      "rate": 29.89,
+      "trading_value": 52952961600.0,
+      "summary": "컨텍은 자체 지상국 인프라를 활용한 '대전샛-1호' 교신 성공 및 우주-지상 간 광통신 실증 임무 성공 소식이 부각되며 상한가를 기록했다.",
+      "analysis": {
+        "stock": "컨텍",
+        "main_material": {
+          "title": "자체 지상국으로 '대전샛' 교신 성공 및 우주 광통신 실증",
+          "reason": "컨텍은 자체 구축·운영 중인 지상국 인프라를 활용해 우주궤도에 진입한 '대전샛-1호'와의 양방향 데이터 송수신(교신)에 성공했으며, 미국의 저궤도위성과 우주-지상 간 광통신 실증 임무 성공 모멘텀이 지속되면서 상한가를 기록했다.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "우주항공",
+            "위성통신"
+          ],
+          "origin_date": "2026-10-26"
+        },
+        "secondary_materials": [
+          {
+            "title": "누리호 5차 위성 관제 미션 클리어 선언",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "자체 지상국 인프라로 '대전샛' 양방향 교신 성공 및 미국의 저궤도위성과 우주-지상 간 광통신 실증 임무 성공 모멘텀 지속에 상한가",
+            "date": "2026-10-26 17:00"
+          },
+          {
+            "headline": "[특징주] 컨텍, 韓 민관사절단 동행에 우주 광통신 실증 겹호재…상한가...",
+            "date": "2026-10-26 11:40"
+          }
+        ],
+        "summary": "컨텍은 자체 지상국 인프라를 활용한 '대전샛-1호' 교신 성공 및 우주-지상 간 광통신 실증 임무 성공 소식이 부각되며 상한가를 기록했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "컨텍 주가, 10월 26일 장중 9,160원 12.67% 상승",
+        "컨텍, 자체 지상국으로 '대전샛' 교신 성공",
+        "테오도르의 시장분석: 특징주와 테마주 \"의료AI와 바이오·헬스케어\"",
+        "컨텍 장중 9690원 터치…오전 10시 10.33% 상승",
+        "[특징주] 컨텍, 韓 민관사절단 동행에 우주 광통신 실증 겹호재…상한가...",
+        "[더벨][i-point] 컨텍, 자체 지상국으로 '대전샛' 교신 \"우주 지상국 서...",
+        "컨텍, '대전샛' 교신으로 민간 지상국 서비스 역량 선보여",
+        "컨텍, 자체 지상국으로 '대전샛-1호' 교신 성공",
+        "컨텍, 누리호 5차 위성 6기 양방향 송수신 등 '관제 미션 클리어' 선언",
+        "[오늘의 특징주] 루닛·아이씨에이치 상한가, 항암제 AI 협력·삼성전자...",
+        "컨텍 이틀째 상한가 흐름…우주 광통신 실증 뒤 거래 폭증",
+        "[오늘의 특징주] 루닛·씨어스·컨텍",
+        "컨텍, 자체 지상국 활용 위성 '대전샛' 교신 성공",
+        "컨텍, 자체 지상국으로 '대전샛' 교신 성공",
+        "컨텍, 주가 단기급등으로 27일 투자주의종목 지정",
+        "자체 지상국 인프라로 '대전샛' 양방향 교신 성공 및 미국의 저궤도위성과 우주-지상 간 광통신 실증 임무 성공 모멘텀 지속에 상한가"
+      ],
+      "articles": [
+        {
+          "time": "10:36",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 10:36",
+          "title": "컨텍 주가, 10월 26일 장중 9,160원 12.67% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=558157"
+        },
+        {
+          "time": "10:40",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 10:40",
+          "title": "컨텍, 자체 지상국으로 '대전샛' 교신 성공",
+          "press": "wowtv.co.kr",
+          "link": "http://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202610260048&t=NN"
+        },
+        {
+          "time": "11:02",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:02",
+          "title": "테오도르의 시장분석: 특징주와 테마주 \"의료AI와 바이오·헬스케어\"",
+          "press": "fntoday.co.kr",
+          "link": "https://www.fntoday.co.kr/news/articleView.html?idxno=396217"
+        },
+        {
+          "time": "11:10",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:10",
+          "title": "컨텍 장중 9690원 터치…오전 10시 10.33% 상승",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=397152"
+        },
+        {
+          "time": "11:40",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:40",
+          "title": "[특징주] 컨텍, 韓 민관사절단 동행에 우주 광통신 실증 겹호재…상한가...",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=302326"
+        },
+        {
+          "time": "11:48",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:48",
+          "title": "[더벨][i-point] 컨텍, 자체 지상국으로 '대전샛' 교신 \"우주 지상국 서...",
+          "press": "thebell.co.kr",
+          "link": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202610261132445160105676"
+        },
+        {
+          "time": "13:04",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 13:04",
+          "title": "컨텍, '대전샛' 교신으로 민간 지상국 서비스 역량 선보여",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=02938886645616856&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "14:30",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 14:30",
+          "title": "컨텍, 자체 지상국으로 '대전샛-1호' 교신 성공",
+          "press": "mt.co.kr",
+          "link": "https://www.mt.co.kr/future/2026/10/26/2026102610461884179"
+        },
+        {
+          "time": "14:36",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 14:36",
+          "title": "컨텍, 누리호 5차 위성 6기 양방향 송수신 등 '관제 미션 클리어' 선언",
+          "press": "zdnet.co.kr",
+          "link": "https://zdnet.co.kr/view/?no=20261026143528"
+        },
+        {
+          "time": "15:37",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 15:37",
+          "title": "[오늘의 특징주] 루닛·아이씨에이치 상한가, 항암제 AI 협력·삼성전자...",
+          "press": "ppss.kr",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=317364"
+        },
+        {
+          "time": "15:54",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 15:54",
+          "title": "컨텍 이틀째 상한가 흐름…우주 광통신 실증 뒤 거래 폭증",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234540"
+        },
+        {
+          "time": "17:04",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:04",
+          "title": "[오늘의 특징주] 루닛·씨어스·컨텍",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610260012"
+        },
+        {
+          "time": "17:56",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:56",
+          "title": "컨텍, 자체 지상국 활용 위성 '대전샛' 교신 성공",
+          "press": "joongdo.co.kr",
+          "link": "https://www.joongdo.co.kr/web/view.php?key=20261026010007517"
+        },
+        {
+          "time": "18:10",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 18:10",
+          "title": "컨텍, 자체 지상국으로 '대전샛' 교신 성공",
+          "press": "hellodd.com",
+          "link": "http://www.hellodd.com/news/articleView.html?idxno=113618"
+        },
+        {
+          "time": "20:10",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 20:10",
+          "title": "컨텍, 주가 단기급등으로 27일 투자주의종목 지정",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16258599"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:00",
+          "title": "자체 지상국 인프라로 '대전샛' 양방향 교신 성공 및 미국의 저궤도위성과 우주-지상 간 광통신 실증 임무 성공 모멘텀 지속에 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "328130",
+      "name": "루닛",
+      "rate": 30.69,
+      "trading_value": 60938732660.0,
+      "summary": "루닛은 미국 서밋 테라퓨틱스와 차세대 항암제 '이보네시맙'의 AI 바이오마커 연구 협력 소식을 전하며 상한가를 기록했다.",
+      "analysis": {
+        "stock": "루닛",
+        "main_material": {
+          "title": "美 서밋과 항암제 AI 연구 협력",
+          "reason": "미국 나스닥 상장 바이오 기업 서밋 테라퓨틱스와 차세대 면역항암제 '이보네시맙' 개발을 위한 AI 바이오마커 연구 협력을 체결하며 상한가를 기록했다.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "의료AI",
+            "제약바이오",
+            "신약개발"
+          ],
+          "origin_date": "2026-10-26"
+        },
+        "secondary_materials": [
+          {
+            "title": "AI 진단에서 AI 신약 개발로 사업 확장 기대",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "뷰노",
+            "reason": "의료AI 관련주로 동반 부각되며 주가가 상승했다.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "[특징주] 루닛, 美 서밋 테라퓨틱스와 항암제 AI 연구 협력에 상한가",
+            "date": "2026-10-26 19:00"
+          },
+          {
+            "headline": "美 서밋과 AI 바이오마커 연구 협력 소식 및 AI 신약 사업 재평가 기대감 등에 상한가",
+            "date": "2026-10-26 17:00"
+          }
+        ],
+        "summary": "루닛은 미국 서밋 테라퓨틱스와 차세대 항암제 '이보네시맙'의 AI 바이오마커 연구 협력 소식을 전하며 상한가를 기록했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "루닛, 美 서밋과 손잡고 차세대 항암제 개발에 AI 적용",
+        "루닛, 美 바이오 기업과 AI 바이오마커 발굴 협력",
+        "[퇴근길 7분 뉴스] 코스피9000·루닛·홈플러스·룰라",
+        "[급등락주 짚어보기] 루닛·뷰노 의료AI 동반 상한가…빅웨이브로보틱스...",
+        "코스닥 '급락'...로보티즈·원익홀딩스·삼현·루닛은 '껑충'",
+        "[MD 제약바이오] 루닛, 美 서밋과 차세대 면역항암제 AI 바이오마커 연...",
+        "루닛, 美 서밋과 이보네시맙 AI 바이오마커 연구 계약",
+        "[오늘의 특징주] 루닛·씨어스·컨텍",
+        "루닛, 美바이오기업과 면역항암제 개발 위한 AI 바이오마커 연구 협력",
+        "루닛, 서밋 테라퓨틱스와 ‘이보네시맙’ AI 바이오마커 연구 협력",
+        "[특징주] 루닛, 美 서밋 테라퓨틱스와 항암제 AI 연구 협력에 상한가",
+        "[주식마감] 삼성전자 벤더 코드 취득 소식에 아이씨에이치 '上'... 루닛,...",
+        "루닛, 美 서밋 테라퓨틱스와 차세대 항암제 ‘이보네시맙’ AI 바이오마...",
+        "[상한가 종목] 루닛-노을 이어 아이씨에이치 등 마감",
+        "루닛·아이씨에이치·뷰노 상한가…주식 상승률 상위권 휩쓸어",
+        "美 서밋과 AI 바이오마커 연구 협력 소식 및 AI 신약 사업 재평가 기대감 등에 상한가"
+      ],
+      "articles": [
+        {
+          "time": "16:03",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:03",
+          "title": "루닛, 美 서밋과 손잡고 차세대 항암제 개발에 AI 적용",
+          "press": "etnews.com",
+          "link": "https://www.etnews.com/20261026000386"
+        },
+        {
+          "time": "16:12",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:12",
+          "title": "루닛, 美 바이오 기업과 AI 바이오마커 발굴 협력",
+          "press": "inews24.com",
+          "link": "http://www.inews24.com/view/2019015"
+        },
+        {
+          "time": "16:12",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:12",
+          "title": "[퇴근길 7분 뉴스] 코스피9000·루닛·홈플러스·룰라",
+          "press": "news.dealsitetv.com",
+          "link": "https://news.dealsitetv.com/articles/177506"
+        },
+        {
+          "time": "16:24",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:24",
+          "title": "[급등락주 짚어보기] 루닛·뷰노 의료AI 동반 상한가…빅웨이브로보틱스...",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2640209"
+        },
+        {
+          "time": "16:30",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:30",
+          "title": "코스닥 '급락'...로보티즈·원익홀딩스·삼현·루닛은 '껑충'",
+          "press": "choicenews.co.kr",
+          "link": "http://www.choicenews.co.kr/news/articleView.html?idxno=172603"
+        },
+        {
+          "time": "16:50",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:50",
+          "title": "[MD 제약바이오] 루닛, 美 서밋과 차세대 면역항암제 AI 바이오마커 연...",
+          "press": "mydaily.co.kr",
+          "link": "https://www.mydaily.co.kr/page/view/2026102615400556620"
+        },
+        {
+          "time": "16:52",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:52",
+          "title": "루닛, 美 서밋과 이보네시맙 AI 바이오마커 연구 계약",
+          "press": "digitalchosun.dizzo.com",
+          "link": "http://digitalchosun.dizzo.com/site/data/html_dir/2026/10/26/2026102680188.html"
+        },
+        {
+          "time": "17:04",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:04",
+          "title": "[오늘의 특징주] 루닛·씨어스·컨텍",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610260012"
+        },
+        {
+          "time": "17:13",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:13",
+          "title": "루닛, 美바이오기업과 면역항암제 개발 위한 AI 바이오마커 연구 협력",
+          "press": "dt.co.kr",
+          "link": "https://www.dt.co.kr/article/12091340?ref=naver"
+        },
+        {
+          "time": "18:42",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 18:42",
+          "title": "루닛, 서밋 테라퓨틱스와 ‘이보네시맙’ AI 바이오마커 연구 협력",
+          "press": "medigatenews.com",
+          "link": "https://www.medigatenews.com/news/1039653084"
+        },
+        {
+          "time": "19:00",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 19:00",
+          "title": "[특징주] 루닛, 美 서밋 테라퓨틱스와 항암제 AI 연구 협력에 상한가",
+          "press": "biotimes.co.kr",
+          "link": "https://www.biotimes.co.kr/news/articleView.html?idxno=35601"
+        },
+        {
+          "time": "19:40",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 19:40",
+          "title": "[주식마감] 삼성전자 벤더 코드 취득 소식에 아이씨에이치 '上'... 루닛,...",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1189160"
+        },
+        {
+          "time": "21:23",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 21:23",
+          "title": "루닛, 美 서밋 테라퓨틱스와 차세대 항암제 ‘이보네시맙’ AI 바이오마...",
+          "press": "venturesquare.net",
+          "link": "https://www.venturesquare.net/1123102/"
+        },
+        {
+          "time": "21:30",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 21:30",
+          "title": "[상한가 종목] 루닛-노을 이어 아이씨에이치 등 마감",
+          "press": "econonews.co.kr",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=446253"
+        },
+        {
+          "time": "21:42",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 21:42",
+          "title": "루닛·아이씨에이치·뷰노 상한가…주식 상승률 상위권 휩쓸어",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1793018466690407276"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:00",
+          "title": "美 서밋과 AI 바이오마커 연구 협력 소식 및 AI 신약 사업 재평가 기대감 등에 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "380550",
+      "name": "뉴로핏",
+      "rate": 14.78,
+      "trading_value": 12659115840.0,
+      "summary": "뉴로핏은 뇌영상 AI 공급계약에 따른 상용화 기대감과 의료 AI 테마 강세에 힘입어 상승했다.",
+      "analysis": {
+        "stock": "뉴로핏",
+        "main_material": {
+          "title": "뇌영상 AI 공급계약 및 상용화 기대감",
+          "reason": "뇌영상 AI 공급계약 체결 이후 상용화 가속화에 대한 관심이 부각되며 의료 AI 테마와 함께 주가가 급등했다.",
+          "event_type": "FOLLOW_UP",
+          "theme": [
+            "의료AI",
+            "바이오·헬스케어"
+          ],
+          "origin_date": "2026-10-26"
+        },
+        "secondary_materials": [
+          {
+            "title": "의료 AI 주가 동반 강세 테마 형성",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "루닛",
+            "reason": "동일한 의료 AI 테마로 묶여 함께 강세를 보임",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "뷰노",
+            "reason": "동일한 의료 AI 테마로 묶여 함께 강세를 보임",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "[특징주] 건강관리기술株 16.55% 급등…루닛·뷰노 등 의료 AI주 강세",
+            "date": "2026-10-26 15:46"
+          },
+          {
+            "headline": "뉴로핏 16.67% 상승…뇌영상 AI 공급계약 뒤 상용화 속도 관심",
+            "date": "2026-10-26 16:18"
+          }
+        ],
+        "summary": "뉴로핏은 뇌영상 AI 공급계약에 따른 상용화 기대감과 의료 AI 테마 강세에 힘입어 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "테오도르의 시장분석: 특징주와 테마주 \"의료AI와 바이오·헬스케어\"",
+        "[특징주] 건강관리기술株 16.55% 급등…루닛·뷰노 등 의료 AI주 강세",
+        "뉴로핏 16.67% 상승…뇌영상 AI 공급계약 뒤 상용화 속도 관심",
+        "[공시] 에이전트AI '투자경고', OCI·뉴로핏 '공매도 금지' 등...31건"
+      ],
+      "articles": [
+        {
+          "time": "11:02",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:02",
+          "title": "테오도르의 시장분석: 특징주와 테마주 \"의료AI와 바이오·헬스케어\"",
+          "press": "fntoday.co.kr",
+          "link": "https://www.fntoday.co.kr/news/articleView.html?idxno=396217"
+        },
+        {
+          "time": "15:46",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 15:46",
+          "title": "[특징주] 건강관리기술株 16.55% 급등…루닛·뷰노 등 의료 AI주 강세",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=7674"
+        },
+        {
+          "time": "16:18",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:18",
+          "title": "뉴로핏 16.67% 상승…뇌영상 AI 공급계약 뒤 상용화 속도 관심",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234572"
+        },
+        {
+          "time": "20:48",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 20:48",
+          "title": "[공시] 에이전트AI '투자경고', OCI·뉴로핏 '공매도 금지' 등...31건",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=725036"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "241690",
+      "name": "유니테크노",
+      "rate": 17.12,
+      "trading_value": 13523592225.0,
+      "summary": "유니테크노는 휴머노이드 로봇 테마 상승 및 삼성SDI·LG엔솔의 ESS 공급망 확보 모멘텀이 부각되며 급등했다.",
+      "analysis": {
+        "stock": "유니테크노",
+        "main_material": {
+          "title": "삼성SDI·LG엔솔 ESS 공급망 확보 모멘텀",
+          "reason": "피지컬 AI 및 휴머노이드 로봇 테마가 상승하는 가운데, 삼성SDI와 LG에너지솔루션의 ESS 공급망 확보 모멘텀이 지속되면서 주가가 급등했다.",
+          "event_type": "FOLLOW_UP",
+          "theme": [
+            "피지컬AI",
+            "휴머노이드로봇",
+            "ESS"
+          ],
+          "origin_date": "2026-10-26"
+        },
+        "secondary_materials": [
+          {
+            "title": "상반기 실적 개선 및 중간배당 부각",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "삼성SDI",
+            "reason": "ESS 공급망 확보 관련 모멘텀 공유",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "LG에너지솔루션",
+            "reason": "ESS 공급망 확보 관련 모멘텀 공유",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "유니테크노 20.47% 상승…상반기 실적 개선·중간배당 부각",
+            "date": "2026-10-26 16:16"
+          },
+          {
+            "headline": "일부 피지컬 AI/휴머노이드 로봇 테마 상승 속 삼성SDI·LG엔솔 ESS 공급망 확보 모멘텀 지속 등에 급등",
+            "date": "2026-10-26 17:00"
+          }
+        ],
+        "summary": "유니테크노는 휴머노이드 로봇 테마 상승 및 삼성SDI·LG엔솔의 ESS 공급망 확보 모멘텀이 부각되며 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "유니테크노 20.47% 상승…상반기 실적 개선·중간배당 부각",
+        "일부 피지컬 AI/휴머노이드 로봇 테마 상승 속 삼성SDI·LG엔솔 ESS 공급망 확보 모멘텀 지속 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "16:16",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:16",
+          "title": "유니테크노 20.47% 상승…상반기 실적 개선·중간배당 부각",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234570"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:00",
+          "title": "일부 피지컬 AI/휴머노이드 로봇 테마 상승 속 삼성SDI·LG엔솔 ESS 공급망 확보 모멘텀 지속 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "458350",
+      "name": "에스팀",
+      "rate": 17.46,
+      "trading_value": 8489747625.0,
+      "summary": "에스팀은 아이엠폼과의 중국 시장 진출 및 K-패션·콘텐츠 사업 확대 MOU 체결 소식이 전해지며 주가가 급등함.",
+      "analysis": {
+        "stock": "에스팀",
+        "main_material": {
+          "title": "아이엠폼과 中 진출 및 K-콘텐츠 사업 확대 MOU",
+          "reason": "디지털 솔루션 기업 아이엠폼과 중국 시장 진출 및 K-패션·K-콘텐츠 사업 확대를 위한 업무협약을 체결했다는 소식이 전해지며 매수세가 유입됨.",
+          "event_type": "NEW",
+          "theme": [
+            "중국 관련주",
+            "K-콘텐츠",
+            "엔터"
+          ],
+          "origin_date": "2026-10-23"
+        },
+        "secondary_materials": [
+          {
+            "title": "글로벌 팬덤 수익화 및 신규 비즈니스 모델 확장 기대감",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "아이엠폼",
+            "reason": "에스팀과 중국 시장 진출 및 디지털 커머스 사업 확대를 위한 MOU를 공동 체결한 협력사",
+            "relation": "BUSINESS"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "아이엠폼과 중국 시장 진출 및 K-패션·K-콘텐츠 사업 확대를 위한 업무협약 체결 소식에 급등",
+            "date": "2026-10-26 17:00"
+          },
+          {
+            "headline": "에스팀-아이엠폼, 中 진출·신규 사업 확대 MOU",
+            "date": "2026-10-26 08:00"
+          }
+        ],
+        "summary": "에스팀은 아이엠폼과의 중국 시장 진출 및 K-패션·콘텐츠 사업 확대 MOU 체결 소식이 전해지며 주가가 급등함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "에스팀-아이엠폼, 中 진출·신규 사업 확대 MOU",
+        "에스팀 주가 환호성… 엔터주 주가 가른 글로벌 팬덤 수익화",
+        "에스팀, 아이엠폼과 손잡고 중국 패션·콘텐츠 사업 확대",
+        "에스팀 627만주 거래 속 14.02% 상승…상장 첫해 실적 주목",
+        "에스팀, 아이엠폼과 中 디지털 커머스 연대… K-콘텐츠 IP 확장 '정조준...",
+        "에스팀·아이엠폼, 중국 시장 진출 및 사업 확대 맞손",
+        "아이엠폼과 중국 시장 진출 및 K-패션·K-콘텐츠 사업 확대를 위한 업무협약 체결 소식에 급등"
+      ],
+      "articles": [
+        {
+          "time": "08:00",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 08:00",
+          "title": "에스팀-아이엠폼, 中 진출·신규 사업 확대 MOU",
+          "press": "newsis.com",
+          "link": "https://www.newsis.com/view/NISX20261026_0003840348"
+        },
+        {
+          "time": "13:04",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 13:04",
+          "title": "에스팀 주가 환호성… 엔터주 주가 가른 글로벌 팬덤 수익화",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=498443"
+        },
+        {
+          "time": "15:36",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 15:36",
+          "title": "에스팀, 아이엠폼과 손잡고 중국 패션·콘텐츠 사업 확대",
+          "press": "beyondpost.co.kr",
+          "link": "http://www.beyondpost.co.kr/view.php?ud=20261026153352651346a9e4dd7f_30"
+        },
+        {
+          "time": "16:18",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:18",
+          "title": "에스팀 627만주 거래 속 14.02% 상승…상장 첫해 실적 주목",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234576"
+        },
+        {
+          "time": "19:06",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 19:06",
+          "title": "에스팀, 아이엠폼과 中 디지털 커머스 연대… K-콘텐츠 IP 확장 '정조준...",
+          "press": "nc.press",
+          "link": "https://www.nc.press/news/articleView.html?idxno=629527"
+        },
+        {
+          "time": "21:12",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 21:12",
+          "title": "에스팀·아이엠폼, 중국 시장 진출 및 사업 확대 맞손",
+          "press": "hansbiz.co.kr",
+          "link": "http://www.hansbiz.co.kr/news/articleView.html?idxno=876460"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:00",
+          "title": "아이엠폼과 중국 시장 진출 및 K-패션·K-콘텐츠 사업 확대를 위한 업무협약 체결 소식에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "357880",
+      "name": "SKAI",
+      "rate": 18.99,
+      "trading_value": 28931464844.0,
+      "summary": "SKAI는 합성데이터 기업 스카이인텔리전스의 지분 확대 및 피지컬 AI 데이터 사업 강화 소식이 전해지며 주가가 급등했다.",
+      "analysis": {
+        "stock": "SKAI",
+        "main_material": {
+          "title": "합성데이터 기업 지분 66.9%로 확대",
+          "reason": "합성데이터 자회사인 스카이인텔리전스 지분을 66.9%로 확대하고 추가 투자 및 피지컬 AI 데이터 사업 강화 소식이 부각되며 급등했다.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "피지컬AI",
+            "합성데이터"
+          ],
+          "origin_date": "2026-10-26"
+        },
+        "secondary_materials": [
+          {
+            "title": "최대주주 대상 228억 원 규모 영구 CB 발행 결정",
+            "event_type": "CONFIRMATION"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "SKAI, 합성데이터 기업 지분 66.9%로 확대…피지컬 AI 데이터 사업 강화",
+            "date": "2026-10-26 09:32"
+          },
+          {
+            "headline": "SKAI, 최대주주에 228억 영구CB 발행 결정",
+            "date": "2026-10-25 09:34"
+          }
+        ],
+        "summary": "SKAI는 합성데이터 기업 스카이인텔리전스의 지분 확대 및 피지컬 AI 데이터 사업 강화 소식이 전해지며 주가가 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "SKAI 22일 장중 거래량 전 거래일 규모 넘어",
+        "SKAI, 최대주주에 228억 영구CB 발행 결정",
+        "SKAI, 합성데이터 기업 지분 66.9%로 확대…피지컬 AI 데이터 사업 강화",
+        "SKAI, 피지컬 AI 데이터 판 키운다..합성데이터 계열사 지분 66.9%로 확대",
+        "SKAI, 스카이인텔리전스 지분 66.9%로 확대…피지컬 AI 데이터 경쟁력 제...",
+        "SKAI 주가, 급등세... 무슨 회사길래?",
+        "테오도르의 시장분석: 특징주와 테마주 \"의료AI와 바이오·헬스케어\"",
+        "SKAI, 스카이인텔리전스 지분 66.9%로 확대…253억원 추가 투자",
+        "SKAI, 스카이인텔리전스 지분 66.9%로 확대…피지컬AI·데이터 사업 집중",
+        "[더벨][i-point] SKAI, 스카이인텔리전스 지분 추가 인수",
+        "[특징주] 외국인·기관, 루닛 동반 순매수…삼성전자·빅텍은 매매 엇갈...",
+        "SKAI, 합성데이터 자회사 지분 66.9%로 확대…피지컬 AI 사업 강화",
+        "SKAI 16.35% 상승…228억원 영구 CB 이후 재무구조 주목",
+        "SKAI, 스카이인텔리전스 지분 66.9%로 확대…253억 추가 투자",
+        "SKAI, 스카이인텔리전스 지분 66.92%로 확대",
+        "253.50억원 규모 스카이인텔리전스 주식 추가 양수 결정 모멘텀 지속 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/23",
+          "date": "2026-10-23",
+          "datetime": "2026-10-23 13:48",
+          "title": "SKAI 22일 장중 거래량 전 거래일 규모 넘어",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=395920"
+        },
+        {
+          "time": "10/25",
+          "date": "2026-10-25",
+          "datetime": "2026-10-25 09:34",
+          "title": "SKAI, 최대주주에 228억 영구CB 발행 결정",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=396775"
+        },
+        {
+          "time": "09:32",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 09:32",
+          "title": "SKAI, 합성데이터 기업 지분 66.9%로 확대…피지컬 AI 데이터 사업 강화",
+          "press": "view.asiae.co.kr",
+          "link": "https://view.asiae.co.kr/article/2026102609325800781"
+        },
+        {
+          "time": "09:36",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 09:36",
+          "title": "SKAI, 피지컬 AI 데이터 판 키운다..합성데이터 계열사 지분 66.9%로 확대",
+          "press": "kpenews.com",
+          "link": "https://kpenews.com/View.aspx?No=4278438"
+        },
+        {
+          "time": "09:44",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 09:44",
+          "title": "SKAI, 스카이인텔리전스 지분 66.9%로 확대…피지컬 AI 데이터 경쟁력 제...",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2639951"
+        },
+        {
+          "time": "10:34",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 10:34",
+          "title": "SKAI 주가, 급등세... 무슨 회사길래?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1188973"
+        },
+        {
+          "time": "11:02",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:02",
+          "title": "테오도르의 시장분석: 특징주와 테마주 \"의료AI와 바이오·헬스케어\"",
+          "press": "fntoday.co.kr",
+          "link": "https://www.fntoday.co.kr/news/articleView.html?idxno=396217"
+        },
+        {
+          "time": "11:02",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:02",
+          "title": "SKAI, 스카이인텔리전스 지분 66.9%로 확대…253억원 추가 투자",
+          "press": "ziksir.com",
+          "link": "https://www.ziksir.com/news/articleView.html?idxno=150693"
+        },
+        {
+          "time": "11:07",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:07",
+          "title": "SKAI, 스카이인텔리전스 지분 66.9%로 확대…피지컬AI·데이터 사업 집중",
+          "press": "ddaily.co.kr",
+          "link": "https://www.ddaily.co.kr/page/view/2026102611041953263"
+        },
+        {
+          "time": "11:48",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:48",
+          "title": "[더벨][i-point] SKAI, 스카이인텔리전스 지분 추가 인수",
+          "press": "thebell.co.kr",
+          "link": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202610261117175920104662"
+        },
+        {
+          "time": "11:58",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:58",
+          "title": "[특징주] 외국인·기관, 루닛 동반 순매수…삼성전자·빅텍은 매매 엇갈...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=724884"
+        },
+        {
+          "time": "14:36",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 14:36",
+          "title": "SKAI, 합성데이터 자회사 지분 66.9%로 확대…피지컬 AI 사업 강화",
+          "press": "thefirstmedia.net",
+          "link": "http://www.thefirstmedia.net/news/articleView.html?idxno=211720"
+        },
+        {
+          "time": "16:08",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:08",
+          "title": "SKAI 16.35% 상승…228억원 영구 CB 이후 재무구조 주목",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234562"
+        },
+        {
+          "time": "16:38",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:38",
+          "title": "SKAI, 스카이인텔리전스 지분 66.9%로 확대…253억 추가 투자",
+          "press": "greened.kr",
+          "link": "https://www.greened.kr/news/articleView.html?idxno=353051"
+        },
+        {
+          "time": "17:36",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:36",
+          "title": "SKAI, 스카이인텔리전스 지분 66.92%로 확대",
+          "press": "news.mtn.co.kr",
+          "link": "https://news.mtn.co.kr/article/2026102617282630512"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:00",
+          "title": "253.50억원 규모 스카이인텔리전스 주식 추가 양수 결정 모멘텀 지속 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "458870",
+      "name": "씨어스",
+      "rate": 18.14,
+      "trading_value": 15476013200.0,
+      "summary": "씨어스는 대웅제약을 통해 아주대병원에 AI 환자 모니터링 시스템 '씽크'를 공급했다는 소식이 전해지며 매수세가 몰려 급등했다.",
+      "analysis": {
+        "stock": "씨어스",
+        "main_material": {
+          "title": "아주대병원 AI 모니터링 '씽크' 공급",
+          "reason": "대웅제약이 아주대학교병원 342병상에 AI 기반 환자 모니터링 시스템 '씽크(thynC)'를 공급하고 운영을 시작했다는 소식이 부각되며 급등했다.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "의료AI",
+            "원격의료"
+          ],
+          "origin_date": "2026-10-26"
+        },
+        "secondary_materials": [
+          {
+            "title": "의료 AI 관련주 전반의 강세",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "루닛",
+            "reason": "의료 AI 테마군으로 함께 묶여 주가가 강세를 보임",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "뷰노",
+            "reason": "의료 AI 테마군으로 함께 묶여 주가가 강세를 보임",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "대웅제약, 아주대병원 342병상에 씨어스 AI 모니터링 '씽크' 공급",
+            "date": "2026-10-26 08:54"
+          },
+          {
+            "headline": "대웅제약, 아주대병원 342병상에 AI 모니터링 '씽크' 공급 소식에 급등",
+            "date": "2026-10-26 17:00"
+          }
+        ],
+        "summary": "씨어스는 대웅제약을 통해 아주대병원에 AI 환자 모니터링 시스템 '씽크'를 공급했다는 소식이 전해지며 매수세가 몰려 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[경력채용] 대웅제약, 휴젤, 코어라인소프트, 아주약품, 씨어스",
+        "대웅제약, 아주대병원 342병상에 씨어스 AI 모니터링 '씽크' 공급",
+        "[특징주]씨어스테크놀로지, 아주대병원 342병상 '씽크' 도입에 13.92% 뛰...",
+        "씨어스 주가, 10월 26일 장중 27,400원 15.61% 상승",
+        "씨어스, 장중 16%대 상승해 2만7000원대 거래",
+        "씨어스 17.72% 급등…입원환자 모니터링 확산 주목",
+        "[특징주] 건강관리기술株 16.55% 급등…루닛·뷰노 등 의료 AI주 강세",
+        "[오늘의 특징주] 루닛·씨어스·컨텍",
+        "대웅제약, 아주대병원 342병상에 AI 모니터링 '씽크' 공급 소식에 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/24",
+          "date": "2026-10-24",
+          "datetime": "2026-10-24 06:12",
+          "title": "[경력채용] 대웅제약, 휴젤, 코어라인소프트, 아주약품, 씨어스",
+          "press": "hitnews.co.kr",
+          "link": "https://www.hitnews.co.kr/news/articleView.html?idxno=80127"
+        },
+        {
+          "time": "08:54",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 08:54",
+          "title": "대웅제약, 아주대병원 342병상에 씨어스 AI 모니터링 '씽크' 공급",
+          "press": "mt.co.kr",
+          "link": "https://www.mt.co.kr/thebio/2026/10/26/2026102608472983124"
+        },
+        {
+          "time": "13:10",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 13:10",
+          "title": "[특징주]씨어스테크놀로지, 아주대병원 342병상 '씽크' 도입에 13.92% 뛰...",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=927240"
+        },
+        {
+          "time": "14:20",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 14:20",
+          "title": "씨어스 주가, 10월 26일 장중 27,400원 15.61% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=558271"
+        },
+        {
+          "time": "14:58",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 14:58",
+          "title": "씨어스, 장중 16%대 상승해 2만7000원대 거래",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=397260"
+        },
+        {
+          "time": "15:18",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 15:18",
+          "title": "씨어스 17.72% 급등…입원환자 모니터링 확산 주목",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234519"
+        },
+        {
+          "time": "15:46",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 15:46",
+          "title": "[특징주] 건강관리기술株 16.55% 급등…루닛·뷰노 등 의료 AI주 강세",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=7674"
+        },
+        {
+          "time": "17:04",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:04",
+          "title": "[오늘의 특징주] 루닛·씨어스·컨텍",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610260012"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:00",
+          "title": "대웅제약, 아주대병원 342병상에 AI 모니터링 '씽크' 공급 소식에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    }
+  ],
+  "20261027": [
+    {
+      "code": "411080",
+      "name": "샌즈랩",
+      "rate": 16.36,
+      "trading_value": 30094107680.0,
+      "summary": "샌즈랩은 미국의 PHP 보안 취약점 경고와 국내외 해킹 이슈 속 AI 보안 수요 기대감이 겹치며 상승했다.",
+      "analysis": {
+        "stock": "샌즈랩",
+        "main_material": {
+          "title": "미국 PHP 보안 취약점 경고 및 AI 보안 수요",
+          "reason": "미국의 'PHP' 보안 취약점 경고와 국내 금융권 해킹 여파 등으로 인해 보안 및 AI 소프트웨어 관련 수혜 기대감이 부각되며 급등함.",
+          "event_type": "NEW",
+          "theme": [
+            "보안",
+            "AI소프트웨어"
+          ],
+          "origin_date": "2026-10-26"
+        },
+        "secondary_materials": [
+          {
+            "title": "국내 금융권 해킹 여파 및 AI 에이전트 보안 위협 부각",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "美, 'PHP' 보안 취약점 경고… 보안주 수혜 전망에 샌즈랩 19%대 ↑",
+            "date": "2026-10-26 09:29"
+          },
+          {
+            "headline": "국내 금융권 해킹 여파 지속 및 캐서드럴, AI 에이전트로 12시간 만에 앤트로픽 내부망 침투 소식 등에 보안주(정보) 테마 상승 속 급등",
+            "date": "2026-10-27 17:00"
+          }
+        ],
+        "summary": "샌즈랩은 미국의 PHP 보안 취약점 경고와 국내외 해킹 이슈 속 AI 보안 수요 기대감이 겹치며 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "보안·AI 소프트웨어에 쏠린 눈… 트윔·샌즈랩 폭발적 강세",
+        "美, 'PHP' 보안 취약점 경고… 보안주 수혜 전망에 샌즈랩 19%대 ↑",
+        "샌즈랩 주가, 10월 26일 장중 6,850원 12.48% 상승",
+        "샌즈랩, PHP 취약점 부각에 장중 15%대 상승",
+        "[특징주]샌즈랩, 美 PHP 보안 취약점 경고에 8.53% 올라…장중 한때 20% ...",
+        "샌즈랩 주가, 10월 27일 장중 7,270원 9.82% 상승",
+        "샌즈랩 23.87% 상승, 8200원 마감…AI 보안 수요 기대에 23.87% 상승…수...",
+        "[오늘의 특징주] 10월 27일",
+        "국내 금융권 해킹 여파 지속 및 캐서드럴, AI 에이전트로 12시간 만에 앤트로픽 내부망 침투 소식 등에 보안주(정보) 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 09:08",
+          "title": "보안·AI 소프트웨어에 쏠린 눈… 트윔·샌즈랩 폭발적 강세",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=498333"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 09:29",
+          "title": "美, 'PHP' 보안 취약점 경고… 보안주 수혜 전망에 샌즈랩 19%대 ↑",
+          "press": "mt.co.kr",
+          "link": "https://www.mt.co.kr/stock/2026/10/26/2026102609082135612"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 10:38",
+          "title": "샌즈랩 주가, 10월 26일 장중 6,850원 12.48% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=558164"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:00",
+          "title": "샌즈랩, PHP 취약점 부각에 장중 15%대 상승",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=397148"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 13:12",
+          "title": "[특징주]샌즈랩, 美 PHP 보안 취약점 경고에 8.53% 올라…장중 한때 20% ...",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=927241"
+        },
+        {
+          "time": "14:48",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 14:48",
+          "title": "샌즈랩 주가, 10월 27일 장중 7,270원 9.82% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=558755"
+        },
+        {
+          "time": "15:48",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 15:48",
+          "title": "샌즈랩 23.87% 상승, 8200원 마감…AI 보안 수요 기대에 23.87% 상승…수...",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234841"
+        },
+        {
+          "time": "16:52",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 16:52",
+          "title": "[오늘의 특징주] 10월 27일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610270020"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 17:00",
+          "title": "국내 금융권 해킹 여파 지속 및 캐서드럴, AI 에이전트로 12시간 만에 앤트로픽 내부망 침투 소식 등에 보안주(정보) 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "199820",
+      "name": "제일일렉트릭",
+      "rate": 16.17,
+      "trading_value": 31700886000.0,
+      "summary": "제일일렉트릭은 미국 전력망 구축 및 전력 수요 확대 전망에 따른 전력설비 테마 강세 속에서 상승했다.",
+      "analysis": {
+        "stock": "제일일렉트릭",
+        "main_material": {
+          "title": "미국 전력망 구축 및 전력 수요 확대 기대감",
+          "reason": "미국 전력망 구축 및 전력 수요 확대 전망과 관련 전력설비 테마 상승 속에서 동반 급등했다.",
+          "event_type": null,
+          "theme": [
+            "전력설비"
+          ],
+          "origin_date": "2026-10-27"
+        },
+        "secondary_materials": [],
+        "related_stocks": [
+          {
+            "stock": "대한전선",
+            "reason": "독일 380㎸ 초고압 전력망 턴키 수주 등 전력설비 테마 상승을 견인함",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "제일일렉트릭 14.57% 상승, 6840원 마감…506만주 거래로 14.57% 상승…북...",
+            "date": "2026-10-27 15:52"
+          },
+          {
+            "headline": "미국 전력망 구축 및 전력 수요 확대 전망, 대한전선 獨 380㎸ 초고압 전력망 턴키 수주 등에 전력설비 테마 상승 속 급등",
+            "date": "2026-10-27 17:00"
+          }
+        ],
+        "summary": "제일일렉트릭은 미국 전력망 구축 및 전력 수요 확대 전망에 따른 전력설비 테마 강세 속에서 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "제일일렉트릭 14.57% 상승, 6840원 마감…506만주 거래로 14.57% 상승…북...",
+        "미국 전력망 구축 및 전력 수요 확대 전망, 대한전선 獨 380㎸ 초고압 전력망 턴키 수주 등에 전력설비 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "15:52",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 15:52",
+          "title": "제일일렉트릭 14.57% 상승, 6840원 마감…506만주 거래로 14.57% 상승…북...",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234855"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 17:00",
+          "title": "미국 전력망 구축 및 전력 수요 확대 전망, 대한전선 獨 380㎸ 초고압 전력망 턴키 수주 등에 전력설비 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "0011A0",
+      "name": "액스비스",
+      "rate": 29.7,
+      "trading_value": 392687040.0,
+      "summary": "액스비스는 2차전지 및 전기차 테마의 동반 상승과 함께 상한가를 기록했다.",
+      "analysis": {
+        "stock": "액스비스",
+        "main_material": {
+          "title": "2차전지 및 전기차 테마 상승 속 상한가",
+          "reason": "에코프로그룹의 양극재 공급 계약 추진 소식 및 삼성SDI·LG에너지솔루션 관련 소식에 힘입어 2차전지/전기차 테마가 상승하며 상한가를 기록했다.",
+          "event_type": "NEW",
+          "theme": [
+            "2차전지",
+            "전기차"
+          ],
+          "origin_date": "2026-10-27"
+        },
+        "secondary_materials": [],
+        "related_stocks": [
+          {
+            "stock": "에코프로그룹",
+            "reason": "중국 배터리사와 조 단위 양극재 공급 계약 추진",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "삼성SDI",
+            "reason": "아틀라스 배터리 담당 소식",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "LG에너지솔루션",
+            "reason": "아틀라스 배터리 담당 소식",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "액스비스 주가, 급등세... 왜?",
+            "date": "2026-10-27 14:04"
+          },
+          {
+            "headline": "에코프로그룹, 中 배터리사와 조 단위 양극재 공급 계약 추진 및 삼성SDI·LG에너지솔루션, 아틀라스 배터리 담당 소식 등에 2차전지/ 전기차 테마 상승 속 상한가",
+            "date": "2026-10-27 17:00"
+          }
+        ],
+        "summary": "액스비스는 2차전지 및 전기차 테마의 동반 상승과 함께 상한가를 기록했다.",
+        "confidence": "MEDIUM"
+      },
+      "headlines": [
+        "액스비스 주가, 급등세... 왜?",
+        "에코프로그룹, 中 배터리사와 조 단위 양극재 공급 계약 추진 및 삼성SDI·LG에너지솔루션, 아틀라스 배터리 담당 소식 등에 2차전지/ 전기차 테마 상승 속 상한가"
+      ],
+      "articles": [
+        {
+          "time": "14:04",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 14:04",
+          "title": "액스비스 주가, 급등세... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1189357"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 17:00",
+          "title": "에코프로그룹, 中 배터리사와 조 단위 양극재 공급 계약 추진 및 삼성SDI·LG에너지솔루션, 아틀라스 배터리 담당 소식 등에 2차전지/ 전기차 테마 상승 속 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "459550",
+      "name": "알트",
+      "rate": 10.85,
+      "trading_value": 17795681188.0,
+      "summary": "제공된 뉴스 내에서 주가 상승을 설명할 명확한 핵심 재료를 찾을 수 없다.",
+      "analysis": {
+        "stock": "알트",
+        "main_material": {
+          "title": "뚜렷한 재료 확인불가",
+          "reason": "제공된 뉴스에서 암호화폐 관련 일반 기사 외에 해당 종목의 구체적인 실적, 공시, 계약 등 주가 상승을 뒷받침할 명확한 재료를 확인할 수 없다.",
+          "event_type": "RECYCLED",
+          "theme": [],
+          "origin_date": "확인불가"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "알트 주가, 급등세... 무슨 회사길래?",
+            "date": "2026-10-27 10:10"
+          },
+          {
+            "headline": "알트 주가, 10월 27일 장중 1,850원 14.84% 상승",
+            "date": "2026-10-27 10:46"
+          }
+        ],
+        "summary": "제공된 뉴스 내에서 주가 상승을 설명할 명확한 핵심 재료를 찾을 수 없다.",
+        "confidence": "LOW"
+      },
+      "headlines": [
+        "코인 거래대금 27.4%↑…문버드·오덜리, 리플XRP 제친 알트코인 왜?",
+        "업비트 주요 코인 동반 하락…거래대금은 아이리스·오덜리 등 알트코인...",
+        "비트코인(BTC), 7만 5,000달러 추락 예측 비껴갔다...알트코인은 28% '뚝'",
+        "업비트 주간리포트 발표…종합지수 2.90%↓·알트코인 3.72% 하락",
+        "에테나(ENA) 6.00% 상승…알트코인 순환매에 0.2200달러 저항선 시험대",
+        "업비트 하락 종목 271개…비트코인·리플 약세 속 거래대금은 알트코인...",
+        "알트코인 조정국면…이더리움·체인링크, 핵심 지지선 시험대",
+        "알트 주가, 급등세... 무슨 회사길래?",
+        "알트 주가, 10월 27일 장중 1,850원 14.84% 상승",
+        "캔톤(CC) 3.82% 하락…알트코인 약세에 0.0950달러 지지선 시험대",
+        "사토시 나카모토의 숨은 업적 'UTXO'…알트코인까지 이어진 설계"
+      ],
+      "articles": [
+        {
+          "time": "10/25",
+          "date": "2026-10-25",
+          "datetime": "2026-10-25 09:42",
+          "title": "코인 거래대금 27.4%↑…문버드·오덜리, 리플XRP 제친 알트코인 왜?",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16257225"
+        },
+        {
+          "time": "10/25",
+          "date": "2026-10-25",
+          "datetime": "2026-10-25 20:38",
+          "title": "업비트 주요 코인 동반 하락…거래대금은 아이리스·오덜리 등 알트코인...",
+          "press": "coinreaders.com",
+          "link": "http://coinreaders.com/265104"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 00:02",
+          "title": "비트코인(BTC), 7만 5,000달러 추락 예측 비껴갔다...알트코인은 28% '뚝'",
+          "press": "coinreaders.com",
+          "link": "http://coinreaders.com/265117"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 09:48",
+          "title": "업비트 주간리포트 발표…종합지수 2.90%↓·알트코인 3.72% 하락",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=619200"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 13:06",
+          "title": "에테나(ENA) 6.00% 상승…알트코인 순환매에 0.2200달러 저항선 시험대",
+          "press": "coinreaders.com",
+          "link": "http://coinreaders.com/265191"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 13:06",
+          "title": "업비트 하락 종목 271개…비트코인·리플 약세 속 거래대금은 알트코인...",
+          "press": "coinreaders.com",
+          "link": "http://coinreaders.com/265196"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 13:54",
+          "title": "알트코인 조정국면…이더리움·체인링크, 핵심 지지선 시험대",
+          "press": "digitaltoday.co.kr",
+          "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709901"
+        },
+        {
+          "time": "10:10",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 10:10",
+          "title": "알트 주가, 급등세... 무슨 회사길래?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1189207"
+        },
+        {
+          "time": "10:46",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 10:46",
+          "title": "알트 주가, 10월 27일 장중 1,850원 14.84% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=558606"
+        },
+        {
+          "time": "15:16",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 15:16",
+          "title": "캔톤(CC) 3.82% 하락…알트코인 약세에 0.0950달러 지지선 시험대",
+          "press": "coinreaders.com",
+          "link": "http://coinreaders.com/265472"
+        },
+        {
+          "time": "20:16",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 20:16",
+          "title": "사토시 나카모토의 숨은 업적 'UTXO'…알트코인까지 이어진 설계",
+          "press": "digitaltoday.co.kr",
+          "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=710258"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "425420",
+      "name": "티에프이",
+      "rate": 22.9,
+      "trading_value": 22325878500.0,
+      "summary": "티에프이는 AI 투자 훈풍과 필라델피아 반도체지수 급등 속에서 반도체 테스트 부품 증설 기대감이 작용하여 상승했다.",
+      "analysis": {
+        "stock": "티에프이",
+        "main_material": {
+          "title": "반도체 테스트 부품 증설 및 AI 투자 훈풍",
+          "reason": "AI 투자 훈풍과 필라델피아 반도체지수 급등에 따른 반도체 관련주 상승 속에서, 반도체 테스트 부품 증설 기대감이 부각되며 급등함.",
+          "event_type": "NEW",
+          "theme": [
+            "반도체 장비/부품",
+            "AI"
+          ],
+          "origin_date": "2026-10-27"
+        },
+        "secondary_materials": [
+          {
+            "title": "삼성전자 및 SK하이닉스 주주환원 기대감",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "엑시콘",
+            "reason": "AI 투자 훈풍에 따른 반도체 장비주 동반 상승",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "AI 투자 훈풍에 반도체 장비주 급등…엑시콘·티에프이 두 자릿수 상승",
+            "date": "2026-10-27 10:30"
+          },
+          {
+            "headline": "티에프이 7만6600원으로 24.55% 급등…반도체 테스트 부품 증설 기대",
+            "date": "2026-10-27 15:16"
+          },
+          {
+            "headline": "앤트로픽 IPO 기대감 속 필라델피아 반도체지수(+2.82%) 급등 및 삼성전자·SK하이닉스 사상 최대 주주환원 기대감 등에 반도체 관련주 상승 속 급등",
+            "date": "2026-10-27 17:00"
+          }
+        ],
+        "summary": "티에프이는 AI 투자 훈풍과 필라델피아 반도체지수 급등 속에서 반도체 테스트 부품 증설 기대감이 작용하여 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "AI 투자 훈풍에 반도체 장비주 급등…엑시콘·티에프이 두 자릿수 상승",
+        "[오늘의 특징주] 이지트로닉스·캠시스·대원 상한가...로봇·반도체 관...",
+        "티에프이 7만6600원으로 24.55% 급등…반도체 테스트 부품 증설 기대",
+        "앤트로픽 IPO 기대감 속 필라델피아 반도체지수(+2.82%) 급등 및 삼성전자·SK하이닉스 사상 최대 주주환원 기대감 등에 반도체 관련주 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "10:30",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 10:30",
+          "title": "AI 투자 훈풍에 반도체 장비주 급등…엑시콘·티에프이 두 자릿수 상승",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=498790"
+        },
+        {
+          "time": "12:00",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 12:00",
+          "title": "[오늘의 특징주] 이지트로닉스·캠시스·대원 상한가...로봇·반도체 관...",
+          "press": "ppss.kr",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=317466"
+        },
+        {
+          "time": "15:16",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 15:16",
+          "title": "티에프이 7만6600원으로 24.55% 급등…반도체 테스트 부품 증설 기대",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234821"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 17:00",
+          "title": "앤트로픽 IPO 기대감 속 필라델피아 반도체지수(+2.82%) 급등 및 삼성전자·SK하이닉스 사상 최대 주주환원 기대감 등에 반도체 관련주 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "053800",
+      "name": "안랩",
+      "rate": 17.06,
+      "trading_value": 7529816000.0,
+      "summary": "안랩은 일본 제조업 대상 OT 보안 및 랜섬웨어 대응 솔루션 공략 소식과 국내외 보안 이슈에 따른 테마 상승이 맞물리며 급등함.",
+      "analysis": {
+        "stock": "안랩",
+        "main_material": {
+          "title": "일본 제조업 OT 보안 및 랜섬웨어 대응 솔루션 공략",
+          "reason": "안랩이 일본 현지 전시회 및 법인을 통해 제조업 구형 설비 및 랜섬웨어 대응을 위한 IT-OT 통합 보안 솔루션을 본격적으로 알리며 해외 시장 공략 기대감이 부각됨.",
+          "event_type": "NEW",
+          "theme": [
+            "정보보안",
+            "랜섬웨어",
+            "OT보안"
+          ],
+          "origin_date": "2026-10-25"
+        },
+        "secondary_materials": [
+          {
+            "title": "국내 금융권 해킹 여파 및 보안주 전반 테마 상승",
+            "event_type": "NEW"
+          },
+          {
+            "title": "PHP2Shell 확산 대응 국내 보안기업 공동 참여",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "안랩, 일본 제조업 보안시장 공략…랜섬웨어·구형 설비 대응 강화",
+            "date": "2026-10-25 14:23"
+          },
+          {
+            "headline": "국내 금융권 해킹 여파 지속 및 캐서드럴, AI 에이전트로 12시간 만에 앤트로픽 내부망 침투 소식 등에 보안주(정보) 테마 상승 속 급등",
+            "date": "2026-10-27 17:00"
+          }
+        ],
+        "summary": "안랩은 일본 제조업 대상 OT 보안 및 랜섬웨어 대응 솔루션 공략 소식과 국내외 보안 이슈에 따른 테마 상승이 맞물리며 급등함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "안랩, 일본 제조업 보안시장 공략…랜섬웨어·구형 설비 대응 강화",
+        "안랩, 제조현장 랜섬웨어 대응 보안솔루션으로 日공략",
+        "안랩, 일본 법인 강화·컨퍼런스 참가하며 시장 공략 나서",
+        "안랩, 日 보안시장 공략… 현지 전시회서 IT-OT 통합기술 선봬",
+        "日 제조업 랜섬웨어 위협...안랩, OT 보안 공략",
+        "안랩, 일본 제조업 OT 보안 시장 공략…랜섬웨어·생산설비 보호 기술 선...",
+        "안랩, 日 제조업 보안시장 공략 속도···IT·OT 통합 보안 앞세운다",
+        "안랩, 26일 오전 3%대 오른 8만800원",
+        "안랩 주가, 10월 26일 80,200원 2.30% 상승",
+        "“백신 넘어 산업보안으로”…안랩, 일본 시장 공략 강화",
+        "안랩 주가, 10월 27일 장중 87,000원 8.48% 상승",
+        "PHP2Shell 확산 막는다…안랩 등 국내 보안기업 14곳 공동 대응",
+        "안랩 15.59% 상승, 9만2700원 마감…사이버보안 투자 기대에 15.59% 상승",
+        "코스닥 '급등'...심텍·에코프로비엠·JYP·안랩 '껑충'",
+        "[AI 막는 AI] 안랩, AI로 보안경보 분석부터 대응까지",
+        "국내 금융권 해킹 여파 지속 및 캐서드럴, AI 에이전트로 12시간 만에 앤트로픽 내부망 침투 소식 등에 보안주(정보) 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/25",
+          "date": "2026-10-25",
+          "datetime": "2026-10-25 14:23",
+          "title": "안랩, 일본 제조업 보안시장 공략…랜섬웨어·구형 설비 대응 강화",
+          "press": "news.tvchosun.com",
+          "link": "https://news.tvchosun.com/site/data/html_dir/2026/10/25/2026102590043.html"
+        },
+        {
+          "time": "10/25",
+          "date": "2026-10-25",
+          "datetime": "2026-10-25 19:14",
+          "title": "안랩, 제조현장 랜섬웨어 대응 보안솔루션으로 日공략",
+          "press": "fnnews.com",
+          "link": "https://www.fnnews.com/news/202610251912294256"
+        },
+        {
+          "time": "10/25",
+          "date": "2026-10-25",
+          "datetime": "2026-10-25 20:26",
+          "title": "안랩, 일본 법인 강화·컨퍼런스 참가하며 시장 공략 나서",
+          "press": "datanet.co.kr",
+          "link": "https://www.datanet.co.kr/news/articleView.html?idxno=215331"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 00:31",
+          "title": "안랩, 日 보안시장 공략… 현지 전시회서 IT-OT 통합기술 선봬",
+          "press": "donga.com",
+          "link": "https://www.donga.com/news/Economy/article/all/20261025/134905006/2"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 08:10",
+          "title": "日 제조업 랜섬웨어 위협...안랩, OT 보안 공략",
+          "press": "thelec.kr",
+          "link": "https://www.thelec.kr/news/articleView.html?idxno=64219"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 10:18",
+          "title": "안랩, 일본 제조업 OT 보안 시장 공략…랜섬웨어·생산설비 보호 기술 선...",
+          "press": "e-science.co.kr",
+          "link": "https://www.e-science.co.kr/news/articleView.html?idxno=138071"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:08",
+          "title": "안랩, 日 제조업 보안시장 공략 속도···IT·OT 통합 보안 앞세운다",
+          "press": "enewstoday.co.kr",
+          "link": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2484242"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 13:02",
+          "title": "안랩, 26일 오전 3%대 오른 8만800원",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=397204"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:00",
+          "title": "안랩 주가, 10월 26일 80,200원 2.30% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16258397"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 17:46",
+          "title": "“백신 넘어 산업보안으로”…안랩, 일본 시장 공략 강화",
+          "press": "sentv.co.kr",
+          "link": "https://www.sentv.co.kr/article/view/sentv202610260132"
+        },
+        {
+          "time": "15:04",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 15:04",
+          "title": "안랩 주가, 10월 27일 장중 87,000원 8.48% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=558782"
+        },
+        {
+          "time": "15:30",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 15:30",
+          "title": "PHP2Shell 확산 막는다…안랩 등 국내 보안기업 14곳 공동 대응",
+          "press": "hansbiz.co.kr",
+          "link": "http://www.hansbiz.co.kr/news/articleView.html?idxno=876745"
+        },
+        {
+          "time": "15:50",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 15:50",
+          "title": "안랩 15.59% 상승, 9만2700원 마감…사이버보안 투자 기대에 15.59% 상승",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234852"
+        },
+        {
+          "time": "16:28",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 16:28",
+          "title": "코스닥 '급등'...심텍·에코프로비엠·JYP·안랩 '껑충'",
+          "press": "choicenews.co.kr",
+          "link": "http://www.choicenews.co.kr/news/articleView.html?idxno=172653"
+        },
+        {
+          "time": "17:01",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 17:01",
+          "title": "[AI 막는 AI] 안랩, AI로 보안경보 분석부터 대응까지",
+          "press": "etnews.com",
+          "link": "https://www.etnews.com/20261027000212"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 17:00",
+          "title": "국내 금융권 해킹 여파 지속 및 캐서드럴, AI 에이전트로 12시간 만에 앤트로픽 내부망 침투 소식 등에 보안주(정보) 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "078350",
+      "name": "한양디지텍",
+      "rate": 18.27,
+      "trading_value": 18601105800.0,
+      "summary": "필라델피아 반도체지수 급등과 반도체 업종 투자 심리 개선, 기관 매수세 유입에 힘입어 급등함.",
+      "analysis": {
+        "stock": "한양디지텍",
+        "main_material": {
+          "title": "반도체 관련주 동반 상승 및 실적 기대감",
+          "reason": "필라델피아 반도체지수 급등과 삼성전자·SK하이닉스 주주환원 기대감에 힘입어 반도체 관련주 전반이 상승세를 보였고 기관의 매수세가 유입됨.",
+          "event_type": "NEW",
+          "theme": [
+            "반도체",
+            "CXL"
+          ],
+          "origin_date": "2026-10-27"
+        },
+        "secondary_materials": [
+          {
+            "title": "2분기 영업이익 154억원 흑자전환 부각",
+            "event_type": "RECYCLED"
+          },
+          {
+            "title": "코스닥 기관 순매수 유입",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "앤트로픽 IPO 기대감 속 필라델피아 반도체지수(+2.82%) 급등 및 삼성전자·SK하이닉스 사상 최대 주주환원 기대감 등에 반도체 관련주 상승 속 급등",
+            "date": "2026-10-27 17:00"
+          },
+          {
+            "headline": "한양디지텍 17.03% 상승, 3만7450원 마감…2분기 영업이익 154억원 흑자전환",
+            "date": "2026-10-27 15:50"
+          },
+          {
+            "headline": "[코스닥 기관] 심텍 고영 알테오젠 한양디지텍 쓸어 담고 지엔씨에너지...",
+            "date": "2026-10-27 15:56"
+          }
+        ],
+        "summary": "필라델피아 반도체지수 급등과 반도체 업종 투자 심리 개선, 기관 매수세 유입에 힘입어 급등함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[리스트] MVP 상위 20선...한양디지텍 등 - 27일",
+        "[특징주] 외국인·기관 '삼성전자·BNK금융지주' 러브콜…'SK텔레콤'은 매...",
+        "[오늘의 특징주] 이지트로닉스·캠시스·대원 상한가...로봇·반도체 관...",
+        "한양디지텍 17.03% 상승, 3만7450원 마감…2분기 영업이익 154억원 흑자전...",
+        "[코스닥 기관] 심텍 고영 알테오젠 한양디지텍 쓸어 담고 지엔씨에너지...",
+        "앤트로픽 IPO 기대감 속 필라델피아 반도체지수(+2.82%) 급등 및 삼성전자·SK하이닉스 사상 최대 주주환원 기대감 등에 반도체 관련주 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "07:38",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 07:38",
+          "title": "[리스트] MVP 상위 20선...한양디지텍 등 - 27일",
+          "press": "itooza.com",
+          "link": "https://www.itooza.com/common/iview.php?no=2026102707152302137"
+        },
+        {
+          "time": "11:26",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 11:26",
+          "title": "[특징주] 외국인·기관 '삼성전자·BNK금융지주' 러브콜…'SK텔레콤'은 매...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=725128"
+        },
+        {
+          "time": "12:00",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 12:00",
+          "title": "[오늘의 특징주] 이지트로닉스·캠시스·대원 상한가...로봇·반도체 관...",
+          "press": "ppss.kr",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=317466"
+        },
+        {
+          "time": "15:50",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 15:50",
+          "title": "한양디지텍 17.03% 상승, 3만7450원 마감…2분기 영업이익 154억원 흑자전...",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234847"
+        },
+        {
+          "time": "15:56",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 15:56",
+          "title": "[코스닥 기관] 심텍 고영 알테오젠 한양디지텍 쓸어 담고 지엔씨에너지...",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=498970"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 17:00",
+          "title": "앤트로픽 IPO 기대감 속 필라델피아 반도체지수(+2.82%) 급등 및 삼성전자·SK하이닉스 사상 최대 주주환원 기대감 등에 반도체 관련주 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "092870",
+      "name": "엑시콘",
+      "rate": 21.98,
+      "trading_value": 18751679500.0,
+      "summary": "엑시콘은 AI 투자 훈풍과 필라델피아 반도체지수 급등, 그리고 검사장비 투자 주목 등에 힘입어 급등했다.",
+      "analysis": {
+        "stock": "엑시콘",
+        "main_material": {
+          "title": "AI 투자 훈풍 및 필라델피아 반도체지수 급등",
+          "reason": "앤트로픽 IPO 기대감과 필라델피아 반도체지수 급등, 삼성전자 및 SK하이닉스의 주주환원 기대감에 힘입어 반도체 장비주인 엑시콘이 두 자릿수 급등했다.",
+          "event_type": "NEW",
+          "theme": [
+            "반도체 장비",
+            "AI"
+          ],
+          "origin_date": "2026-10-27"
+        },
+        "secondary_materials": [
+          {
+            "title": "검사장비 투자와 유형자산 취득 주목",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "티에프이",
+            "reason": "AI 투자 훈풍에 따른 반도체 장비주 상승세에 함께 언급됨",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "AI 투자 훈풍에 반도체 장비주 급등…엑시콘·티에프이 두 자릿수 상승",
+            "date": "2026-10-27 10:30"
+          },
+          {
+            "headline": "엑시콘 5만7900원으로 21.77% 급등…검사장비 투자와 유형자산 취득 주목",
+            "date": "2026-10-27 15:04"
+          },
+          {
+            "headline": "앤트로픽 IPO 기대감 속 필라델피아 반도체지수(+2.82%) 급등 및 삼성전자·SK하이닉스 사상 최대 주주환원 기대감 등에 반도체 관련주 상승 속 급등",
+            "date": "2026-10-27 17:00"
+          }
+        ],
+        "summary": "엑시콘은 AI 투자 훈풍과 필라델피아 반도체지수 급등, 그리고 검사장비 투자 주목 등에 힘입어 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "AI 투자 훈풍에 반도체 장비주 급등…엑시콘·티에프이 두 자릿수 상승",
+        "[오늘의 특징주] 이지트로닉스·캠시스·대원 상한가...로봇·반도체 관...",
+        "엑시콘 5만7900원으로 21.77% 급등…검사장비 투자와 유형자산 취득 주목",
+        "[오늘의 특징주] 10월 27일",
+        "엑시콘, 투자경고종목 해제 후 1일간 투자주의종목 지정 예고",
+        "앤트로픽 IPO 기대감 속 필라델피아 반도체지수(+2.82%) 급등 및 삼성전자·SK하이닉스 사상 최대 주주환원 기대감 등에 반도체 관련주 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "10:30",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 10:30",
+          "title": "AI 투자 훈풍에 반도체 장비주 급등…엑시콘·티에프이 두 자릿수 상승",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=498790"
+        },
+        {
+          "time": "12:00",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 12:00",
+          "title": "[오늘의 특징주] 이지트로닉스·캠시스·대원 상한가...로봇·반도체 관...",
+          "press": "ppss.kr",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=317466"
+        },
+        {
+          "time": "15:04",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 15:04",
+          "title": "엑시콘 5만7900원으로 21.77% 급등…검사장비 투자와 유형자산 취득 주목",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234803"
+        },
+        {
+          "time": "16:52",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 16:52",
+          "title": "[오늘의 특징주] 10월 27일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610270020"
+        },
+        {
+          "time": "20:08",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 20:08",
+          "title": "엑시콘, 투자경고종목 해제 후 1일간 투자주의종목 지정 예고",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16259771"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 17:00",
+          "title": "앤트로픽 IPO 기대감 속 필라델피아 반도체지수(+2.82%) 급등 및 삼성전자·SK하이닉스 사상 최대 주주환원 기대감 등에 반도체 관련주 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    }
+  ],
+  "20261028": [
+    {
+      "code": "071970",
+      "name": "HD현대마린엔진",
+      "rate": 13.41,
+      "trading_value": 3089313800.0,
+      "summary": "HD현대마린엔진은 3분기 영업이익이 전년 동기대비 약 197% 급증하는 어닝 서프라이즈를 발표하며 주가가 상승함.",
+      "analysis": {
+        "stock": "HD현대마린엔진",
+        "main_material": {
+          "title": "3분기 어닝 서프라이즈 기록",
+          "reason": "연결기준 매출액과 영업이익이 전년 동기대비 각각 93.66%, 197.17% 급증하며 실적 호조에 따른 매수세가 유입됨.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "조선기자재",
+            "실적호조"
+          ],
+          "origin_date": "2026-10-28"
+        },
+        "secondary_materials": [
+          {
+            "title": "생산 효율 개선 및 엔진기계 부문 호조",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "[특징주] HD현대마린엔진, 3분기 '어닝 서프라이즈'에 20%↑",
+            "date": "2026-10-28 13:34"
+          },
+          {
+            "headline": "3분기 실적 호조 등에 급등",
+            "date": "2026-10-28 17:00"
+          }
+        ],
+        "summary": "HD현대마린엔진은 3분기 영업이익이 전년 동기대비 약 197% 급증하는 어닝 서프라이즈를 발표하며 주가가 상승함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[특징주] HD현대마린엔진, 3분기 '어닝 서프라이즈'에 20%↑",
+        "HD현대마린솔루션 '기업가치 올려라' 특명, 김성준 골텐스 인수로 선박...",
+        "HD현대마린엔진 3분기 매출 2114억…영업익 197.2%↑",
+        "3분기 실적 호조 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "13:34",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 13:34",
+          "title": "[특징주] HD현대마린엔진, 3분기 '어닝 서프라이즈'에 20%↑",
+          "press": "newsworks.co.kr",
+          "link": "https://www.newsworks.co.kr/news/articleView.html?idxno=901099"
+        },
+        {
+          "time": "16:34",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 16:34",
+          "title": "HD현대마린솔루션 '기업가치 올려라' 특명, 김성준 골텐스 인수로 선박...",
+          "press": "businesspost.co.kr",
+          "link": "https://www.businesspost.co.kr/BP?command=article_view&num=450539"
+        },
+        {
+          "time": "19:34",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 19:34",
+          "title": "HD현대마린엔진 3분기 매출 2114억…영업익 197.2%↑",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=397884"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:00",
+          "title": "3분기 실적 호조 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-10-28 16:34",
+          "title": "HJ重·제이오션重 등 4개 기업, 군산 해상풍력 클러스터 조성 '맞손'",
+          "press": "테마뉴스·풍력 · m-i.kr",
+          "link": "https://www.m-i.kr/news/articleView.html?idxno=2011519",
+          "theme_news": "풍력"
+        },
+        {
+          "datetime": "2026-10-28 18:38",
+          "title": "중공업·에너지 기업, 군산 해상풍력 클러스터 조성 맞손",
+          "press": "테마뉴스·풍력 · m-economynews.com",
+          "link": "https://www.m-economynews.com/news/article.html?no=72211",
+          "theme_news": "풍력"
+        },
+        {
+          "datetime": "2026-10-28 18:04",
+          "title": "유니슨·명운산업개발·제이오션·HJ중공업, 군산 해상풍력 클러스터 조...",
+          "press": "테마뉴스·풍력 · theguru.co.kr",
+          "link": "https://www.theguru.co.kr/news/article.html?no=108955",
+          "theme_news": "풍력"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "030530",
+      "name": "원익홀딩스",
+      "rate": 15.43,
+      "trading_value": 155326247100.0,
+      "summary": "이재용 회장이 취임 4주년에 삼성 로봇조직(RX사업추진실)을 찾아 휴머노이드의 '팔·손' 기술을 직접 점검하자, 로봇 핸드를 만드는 원익로보틱스를 자회사로 둔 원익홀딩스에 로봇 테마 매수가 몰려 급등했습니다(반도체 장비주 강세는 보조 요인).",
+      "analysis": {
+        "stock": "원익홀딩스",
+        "main_material": {
+          "title": "이재용 '로봇 손' 점검 → 로봇 핸드(원익로보틱스) 테마 부각",
+          "reason": "10/27 이재용 회장이 기념식 대신 삼성전자 RX사업추진실을 방문해 휴머노이드의 팔·손으로 물건을 집고 정밀 작업하는 기술을 집중 점검. 삼성이 '로봇 손'을 전면에 내세우자 국내 로봇 핸드 대표 기업 원익로보틱스(원익홀딩스 자회사)로 테마 매수가 유입. 삼성과의 직접 공급·협력 관계는 확인되지 않은 연상 테마.",
+          "event_type": "NEW",
+          "theme": [
+            "로봇",
+            "휴머노이드",
+            "로봇 핸드"
+          ],
+          "origin_date": "2026-10-27"
+        },
+        "secondary_materials": [
+          {
+            "title": "반도체 랠리 속 장비주 매수(원익IPS 등 반도체 계열 보유 지주사)",
+            "event_type": "FOLLOW_UP"
+          },
+          {
+            "title": "10/26 촉각센서 로봇팔·국민성장펀드의 원익로보틱스 투자 부각",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "레인보우로보틱스",
+            "reason": "삼성전자 자회사 로봇 업체",
+            "relation": "BUSINESS"
+          },
+          {
+            "stock": "로보티즈",
+            "reason": "로봇 액추에이터·핸드, 같은 로봇 테마",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "회장 취임 4주년 이재용, 첫 행보는 '로봇'…RX사업추진실 찾았다 (뉴스핌)",
+            "date": "2026-10-27"
+          },
+          {
+            "headline": "취임 4주년 맞이한 이재용 회장, 기념식 대신 로봇 '손' 살폈다 (인사이트)",
+            "date": "2026-10-27"
+          },
+          {
+            "headline": "원익홀딩스 2만8000원으로 17.89% 상승…반도체·로봇 자회사 가치 주목",
+            "date": "2026-10-28 14:12"
+          }
+        ],
+        "summary": "이재용 회장의 삼성 로봇 손 점검이 로봇 핸드 테마로 번지며 원익로보틱스를 둔 원익홀딩스가 급등(삼성과 직접 관계는 미확인).",
+        "confidence": "MEDIUM"
+      },
+      "headlines": [
+        "원익홀딩스 주가, 10월 26일 장중 23,550원 6.08% 상승",
+        "[속보] 원익홀딩스, 장 초반 2만4300원에 정적VI 발동…기준가 대비 10.2...",
+        "[특징주] 원익홀딩스, 26일 오전 장중 6.31% 상승",
+        "원익홀딩스 8.11% 상승…반도체 투자 회복 기대 반영",
+        "[특징주]원익홀딩스, 기관 순매수 속 6.08% 오른채 장 마감…장중 정적...",
+        "[코스닥 외국인] 피에스케이·심텍 담고 원익홀딩스·로보티즈는 팔았다",
+        "코스닥 '급락'...로보티즈·원익홀딩스·삼현·루닛은 '껑충'",
+        "[속보] 원익홀딩스 주가, 장초반부터 VI 발동하며 급등…2만9900원 터치에...",
+        "테오도르의 시장분석: 특징주와 테마주 \"생명보험, 조립사업·뉴로모픽...",
+        "[개장 시황] 반도체 폭풍 상승에 랠리 재개...코스피, 6,000선 진입 코앞",
+        "[특징주] 외국인·기관 삼성전자 동반 순매수…SK증권·대우건설 매도 ...",
+        "원익홀딩스 2만8000원으로 17.89% 상승…반도체·로봇 자회사 가치 주목",
+        "원익홀딩스·엑시콘도 주가 신바람…반도체 장비주로 번진 러브콜 봇물",
+        "[오늘의 특징주] 10월 28일",
+        "반도체 관련주 및 로봇(산업용/협동로봇 등) 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 10:58",
+          "title": "원익홀딩스 주가, 10월 26일 장중 23,550원 6.08% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=558185"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:00",
+          "title": "[속보] 원익홀딩스, 장 초반 2만4300원에 정적VI 발동…기준가 대비 10.2...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=619231"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 15:02",
+          "title": "[특징주] 원익홀딩스, 26일 오전 장중 6.31% 상승",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=397261"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 15:02",
+          "title": "원익홀딩스 8.11% 상승…반도체 투자 회복 기대 반영",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234491"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 15:40",
+          "title": "[특징주]원익홀딩스, 기관 순매수 속 6.08% 오른채 장 마감…장중 정적...",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=927274"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 15:48",
+          "title": "[코스닥 외국인] 피에스케이·심텍 담고 원익홀딩스·로보티즈는 팔았다",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=498534"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:30",
+          "title": "코스닥 '급락'...로보티즈·원익홀딩스·삼현·루닛은 '껑충'",
+          "press": "choicenews.co.kr",
+          "link": "http://www.choicenews.co.kr/news/articleView.html?idxno=172603"
+        },
+        {
+          "time": "09:56",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 09:56",
+          "title": "[속보] 원익홀딩스 주가, 장초반부터 VI 발동하며 급등…2만9900원 터치에...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=620153"
+        },
+        {
+          "time": "10:18",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 10:18",
+          "title": "테오도르의 시장분석: 특징주와 테마주 \"생명보험, 조립사업·뉴로모픽...",
+          "press": "fntoday.co.kr",
+          "link": "https://www.fntoday.co.kr/news/articleView.html?idxno=396419"
+        },
+        {
+          "time": "11:06",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 11:06",
+          "title": "[개장 시황] 반도체 폭풍 상승에 랠리 재개...코스피, 6,000선 진입 코앞",
+          "press": "businesskorea.co.kr",
+          "link": "https://www.businesskorea.co.kr/news/articleView.html?idxno=279837"
+        },
+        {
+          "time": "11:52",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 11:52",
+          "title": "[특징주] 외국인·기관 삼성전자 동반 순매수…SK증권·대우건설 매도 ...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=725402"
+        },
+        {
+          "time": "14:12",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 14:12",
+          "title": "원익홀딩스 2만8000원으로 17.89% 상승…반도체·로봇 자회사 가치 주목",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235020"
+        },
+        {
+          "time": "15:20",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 15:20",
+          "title": "원익홀딩스·엑시콘도 주가 신바람…반도체 장비주로 번진 러브콜 봇물",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=499339"
+        },
+        {
+          "time": "17:08",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:08",
+          "title": "[오늘의 특징주] 10월 28일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610280019"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:00",
+          "title": "반도체 관련주 및 로봇(산업용/협동로봇 등) 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-10-28 19:42",
+          "title": "LG전자, 누적 매출·영업익 사상 최대…AI·공조·로봇에 투자 확대(종합...",
+          "press": "테마뉴스·로봇 · newsway.co.kr",
+          "link": "https://www.newsway.co.kr/news/view?ud=2026102817460327595",
+          "theme_news": "로봇"
+        },
+        {
+          "datetime": "2026-10-28 20:40",
+          "title": "[뉴스+]LG전자, 3분기 누적 영업익 첫 4조원 돌파…냉각·로봇 사업 키운...",
+          "press": "테마뉴스·로봇 · businessplus.kr",
+          "link": "https://www.businessplus.kr/news/articleView.html?idxno=118895",
+          "theme_news": "로봇"
+        },
+        {
+          "datetime": "2026-10-28 19:50",
+          "title": "KB라이프, '에이지테크'로 시니어 돌봄 혁신… AI·로봇 현장 적용 확대",
+          "press": "테마뉴스·로봇 · insnews.co.kr",
+          "link": "https://www.insnews.co.kr/news/articleView.html?idxno=93568",
+          "theme_news": "로봇"
+        }
+      ],
+      "news_source": "featured",
+      "manual": true,
+      "infostock_checked": true
+    },
+    {
+      "code": "053800",
+      "name": "안랩",
+      "rate": 17.85,
+      "trading_value": 105599685800.0,
+      "summary": "안랩은 3분기 영업이익 호조와 금융권 해킹 확산에 따른 보안 수요 확대 기대감이 겹치며 급등했다.",
+      "analysis": {
+        "stock": "안랩",
+        "main_material": {
+          "title": "3분기 호실적 및 금융권 해킹 이슈",
+          "reason": "연이은 금융권 해킹 사태로 보안 수요가 급증한 가운데, 3분기 영업이익이 전년 대비 38.7% 증가하며 실적 호조를 기록하여 주가가 급등했다.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "보안주",
+            "정보보안"
+          ],
+          "origin_date": "2026-10-28"
+        },
+        "secondary_materials": [
+          {
+            "title": "공매도 금지 조치",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "지니언스",
+            "reason": "금융권 해킹 확산에 따른 보안주 수혜로 안랩과 함께 급등",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "엑스게이트",
+            "reason": "연이은 해킹 이슈로 보안주 테마 동반 상승",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "안랩, 3Q 잠정 영업익 109억원…전년比 38.7%↑",
+            "date": "2026-10-28 15:10"
+          },
+          {
+            "headline": "해킹 대란에 보안 수요 늘자···안랩, 3분기 영업익 39% ‘쑥’",
+            "date": "2026-10-28 15:51"
+          },
+          {
+            "headline": "[특징주] 금융권 해킹 확산에 보안주 급등…지니언스·에스피소프트 상...",
+            "date": "2026-10-28 16:13"
+          }
+        ],
+        "summary": "안랩은 3분기 영업이익 호조와 금융권 해킹 확산에 따른 보안 수요 확대 기대감이 겹치며 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "안랩, 3Q 잠정 영업익 109억원…전년比 38.7%↑",
+        "안랩 3분기 영업익 109억, 전년 대비 38.7%↑",
+        "안랩, 19.63% 올라 110,900원 마감…거래대금 1,294.2억원",
+        "해킹 대란에 보안 수요 늘자···안랩, 3분기 영업익 39% ‘쑥’",
+        "안랩 주가, 10월 28일 110,900원 19.63% 상승",
+        "보안 중요해지면서 안랩 3분기 실적 상승…영업익 전년比 39%증가",
+        "[특징주] 금융권 해킹 확산에 보안주 급등…지니언스·에스피소프트 상...",
+        "금융권 해킹 또 터졌다… 안랩·지니언스 등 보안주 수혜 기대",
+        "연이은 해킹에 보안주 급등…안랩·지니언스·엑스게이트 웃었다",
+        "안랩, 3분기 영업익 109억·전년比 38.7%↑..\"네트워크 보안 호조\"",
+        "[오늘의 특징주] 10월 28일",
+        "안랩, 3분기 영업익 39% 증가한 109억 원…보안 수요 확대",
+        "안랩, 3분기 영업익 109억…네트워크보안 '세 자릿수' 성장",
+        "안랩, 기업 사칭 테더 송금 유도 도메인 12개 확인",
+        "[공시] 안랩·네오리진 '공매도 금지', 한국알콜·프레스티지바이오파마...",
+        "보안주(정보) 테마 상승 속 3분기 매출액 및 영업이익 호조 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "15:10",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 15:10",
+          "title": "안랩, 3Q 잠정 영업익 109억원…전년比 38.7%↑",
+          "press": "m-i.kr",
+          "link": "https://www.m-i.kr/news/articleView.html?idxno=2011414"
+        },
+        {
+          "time": "15:20",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 15:20",
+          "title": "안랩 3분기 영업익 109억, 전년 대비 38.7%↑",
+          "press": "sidae.com",
+          "link": "https://www.sidae.com/article/2026102814561021108"
+        },
+        {
+          "time": "15:48",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 15:48",
+          "title": "안랩, 19.63% 올라 110,900원 마감…거래대금 1,294.2억원",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235117"
+        },
+        {
+          "time": "15:51",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 15:51",
+          "title": "해킹 대란에 보안 수요 늘자···안랩, 3분기 영업익 39% ‘쑥’",
+          "press": "mk.co.kr",
+          "link": "https://www.mk.co.kr/article/12188466"
+        },
+        {
+          "time": "15:52",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 15:52",
+          "title": "안랩 주가, 10월 28일 110,900원 19.63% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16260742"
+        },
+        {
+          "time": "16:02",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 16:02",
+          "title": "보안 중요해지면서 안랩 3분기 실적 상승…영업익 전년比 39%증가",
+          "press": "g-enews.com",
+          "link": "https://www.g-enews.com/view.php?ud=2026102815044730763d7a510102_1"
+        },
+        {
+          "time": "16:13",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 16:13",
+          "title": "[특징주] 금융권 해킹 확산에 보안주 급등…지니언스·에스피소프트 상...",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=7769"
+        },
+        {
+          "time": "16:20",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 16:20",
+          "title": "금융권 해킹 또 터졌다… 안랩·지니언스 등 보안주 수혜 기대",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=499391"
+        },
+        {
+          "time": "16:43",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 16:43",
+          "title": "연이은 해킹에 보안주 급등…안랩·지니언스·엑스게이트 웃었다",
+          "press": "ddaily.co.kr",
+          "link": "https://www.ddaily.co.kr/page/view/2026102816000595329"
+        },
+        {
+          "time": "16:52",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 16:52",
+          "title": "안랩, 3분기 영업익 109억·전년比 38.7%↑..\"네트워크 보안 호조\"",
+          "press": "ftoday.co.kr",
+          "link": "http://www.ftoday.co.kr/news/articleView.html?idxno=368348"
+        },
+        {
+          "time": "17:08",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:08",
+          "title": "[오늘의 특징주] 10월 28일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610280019"
+        },
+        {
+          "time": "17:48",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:48",
+          "title": "안랩, 3분기 영업익 39% 증가한 109억 원…보안 수요 확대",
+          "press": "yonhapnewstv.co.kr",
+          "link": "http://www.yonhapnewstv.co.kr/news/AKR20261028174754QWH"
+        },
+        {
+          "time": "18:32",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 18:32",
+          "title": "안랩, 3분기 영업익 109억…네트워크보안 '세 자릿수' 성장",
+          "press": "zdnet.co.kr",
+          "link": "https://zdnet.co.kr/view/?no=20261028182632"
+        },
+        {
+          "time": "18:38",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 18:38",
+          "title": "안랩, 기업 사칭 테더 송금 유도 도메인 12개 확인",
+          "press": "tokenpost.kr",
+          "link": "https://www.tokenpost.kr/news/blockchain/428431"
+        },
+        {
+          "time": "20:38",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 20:38",
+          "title": "[공시] 안랩·네오리진 '공매도 금지', 한국알콜·프레스티지바이오파마...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=725607"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:00",
+          "title": "보안주(정보) 테마 상승 속 3분기 매출액 및 영업이익 호조 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "069540",
+      "name": "빛과전자",
+      "rate": 20.89,
+      "trading_value": 160298534560.0,
+      "summary": "빛과전자는 미국 광통신업체로부터 25Gbps 광트랜시버 초도 양산 수주를 확보했다는 소식과 AI·6G·국방용 기술력 부각이 겹치며 상한가를 기록했다.",
+      "analysis": {
+        "stock": "빛과전자",
+        "main_material": {
+          "title": "美 광트랜시버 초도 양산 수주",
+          "reason": "미국 주요 광트랜시버 공급업체로부터 25Gbps 광트랜시버 초도 양산 발주를 접수하며 북미 시장 수출 본격화 기대감이 부각됨.",
+          "event_type": "NEW",
+          "theme": [
+            "광통신",
+            "5G",
+            "통신장비"
+          ],
+          "origin_date": "2026-10-28"
+        },
+        "secondary_materials": [
+          {
+            "title": "AI 데이터센터 및 6G·국방용 광트랜시버 기술 공개",
+            "event_type": "NEW"
+          },
+          {
+            "title": "전환사채(CB) 납입일 변경",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "빛샘전자",
+            "reason": "빛과전자 급등 속 같은 광통신 및 관련 테마주로 함께 언급되며 주가 변동을 보임.",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "대한광통신",
+            "reason": "광통신 테마 상승 과정에서 관련주로 동반 부각됨.",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "광전자",
+            "reason": "광통신 및 유사 테마주로 함께 기사에 언급됨.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "[특징주] 빛과전자, 美 광트랜시버 초도 양산 수주 소식에 급등",
+            "date": "2026-10-28 10:46"
+          },
+          {
+            "headline": "광통신(광케이블/광섬유 등)/ 통신장비/ 5G(5세대 이동통신) 테마 상승 속 美 광통신업체로부터 25G 광트랜시버 초도 양산 수주 소식에 상한가",
+            "date": "2026-10-28 17:00"
+          }
+        ],
+        "summary": "빛과전자는 미국 광통신업체로부터 25Gbps 광트랜시버 초도 양산 수주를 확보했다는 소식과 AI·6G·국방용 기술력 부각이 겹치며 상한가를 기록했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[특징주] 빛과전자, 美 광트랜시버 초도 양산 수주 소식에 급등",
+        "[속보] 빛과전자, 장중 상한가 껑충…빛샘전자·대한광통신·광전자도 ...",
+        "[개장 시황] 반도체 폭풍 상승에 랠리 재개...코스피, 6,000선 진입 코앞",
+        "빛과전자 주가, 상한가... 왜?",
+        "[특징주] 외국인·기관 삼성전자 동반 순매수…SK증권·대우건설 매도 ...",
+        "빛과전자, 美 25Gbps 광트랜시버 수주에 급등",
+        "빛과전자 주가 거침없는 질주… 5G 테마주에 매수세 몰렸다",
+        "빛과전자 4195원 상한가 근접…광통신 부품 기대에 거래량 급증",
+        "[오늘의 특징주] 10월 28일",
+        "빛과전자 주가, 10월 28일 애프터마켓 4,195원 29.88% 상승",
+        "빛과전자 CB 납입일 11월 6일로 변경",
+        "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상...",
+        "[특징주] 빛과전자, 美 글로벌 기업향 '광통신 핵심' 양산 본격화에 上...",
+        "[주식마감] 美 광통신사 공급 계약 소식에 빛과전자 상한가... 지니언스...",
+        "[상한가 종목] 빛과전자-지니언스 이어 피앤에스로보틱스 등 마감",
+        "광통신(광케이블/광섬유 등)/ 통신장비/ 5G(5세대 이동통신) 테마 상승 속 美 광통신업체로부터 25G 광트랜시버 초도 양산 수주 소식에 상한가"
+      ],
+      "articles": [
+        {
+          "time": "10:46",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 10:46",
+          "title": "[특징주] 빛과전자, 美 광트랜시버 초도 양산 수주 소식에 급등",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=302388"
+        },
+        {
+          "time": "11:02",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 11:02",
+          "title": "[속보] 빛과전자, 장중 상한가 껑충…빛샘전자·대한광통신·광전자도 ...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=620195"
+        },
+        {
+          "time": "11:06",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 11:06",
+          "title": "[개장 시황] 반도체 폭풍 상승에 랠리 재개...코스피, 6,000선 진입 코앞",
+          "press": "businesskorea.co.kr",
+          "link": "https://www.businesskorea.co.kr/news/articleView.html?idxno=279837"
+        },
+        {
+          "time": "11:22",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 11:22",
+          "title": "빛과전자 주가, 상한가... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1189558"
+        },
+        {
+          "time": "11:52",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 11:52",
+          "title": "[특징주] 외국인·기관 삼성전자 동반 순매수…SK증권·대우건설 매도 ...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=725402"
+        },
+        {
+          "time": "12:58",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 12:58",
+          "title": "빛과전자, 美 25Gbps 광트랜시버 수주에 급등",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=397756"
+        },
+        {
+          "time": "13:54",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 13:54",
+          "title": "빛과전자 주가 거침없는 질주… 5G 테마주에 매수세 몰렸다",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=499275"
+        },
+        {
+          "time": "14:02",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 14:02",
+          "title": "빛과전자 4195원 상한가 근접…광통신 부품 기대에 거래량 급증",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235006"
+        },
+        {
+          "time": "17:08",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:08",
+          "title": "[오늘의 특징주] 10월 28일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610280019"
+        },
+        {
+          "time": "17:30",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:30",
+          "title": "빛과전자 주가, 10월 28일 애프터마켓 4,195원 29.88% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16260827"
+        },
+        {
+          "time": "17:30",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:30",
+          "title": "빛과전자 CB 납입일 11월 6일로 변경",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=397838"
+        },
+        {
+          "time": "17:37",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:37",
+          "title": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상...",
+          "press": "ppss.kr",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=317848"
+        },
+        {
+          "time": "17:58",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:58",
+          "title": "[특징주] 빛과전자, 美 글로벌 기업향 '광통신 핵심' 양산 본격화에 上...",
+          "press": "newsprime.co.kr",
+          "link": "http://www.newsprime.co.kr/news/article.html?no=752842"
+        },
+        {
+          "time": "19:40",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 19:40",
+          "title": "[주식마감] 美 광통신사 공급 계약 소식에 빛과전자 상한가... 지니언스...",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1189743"
+        },
+        {
+          "time": "21:30",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 21:30",
+          "title": "[상한가 종목] 빛과전자-지니언스 이어 피앤에스로보틱스 등 마감",
+          "press": "econonews.co.kr",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=446364"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:00",
+          "title": "광통신(광케이블/광섬유 등)/ 통신장비/ 5G(5세대 이동통신) 테마 상승 속 美 광통신업체로부터 25G 광트랜시버 초도 양산 수주 소식에 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-10-28 09:58",
+          "title": "11월 BSI 연속 부정 전망…반도체 전자·통신장비 9개월만에 부정적",
+          "press": "테마뉴스·통신장비 · kookje.co.kr",
+          "link": "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0200&key=20261028.99099008117",
+          "theme_news": "통신장비"
+        },
+        {
+          "datetime": "2026-10-28 09:54",
+          "title": "[이 시각 시황] 국내증시 2거래일 연속 강세…반도체·통신장비·유리기...",
+          "press": "테마뉴스·통신장비 · biz.sbs.co.kr",
+          "link": "https://biz.sbs.co.kr/article_hub/20000342550?division=NAVER",
+          "theme_news": "통신장비"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "080580",
+      "name": "오킨스전자",
+      "rate": 11.52,
+      "trading_value": 37148146650.0,
+      "summary": "오킨스전자는 상반기 실적 호조 및 반도체 업종 전반의 상승세에 힘입어 상승했습니다.",
+      "analysis": {
+        "stock": "오킨스전자",
+        "main_material": {
+          "title": "상반기 실적 호조 및 반도체 관련주 동반 상승",
+          "reason": "상반기 영업이익 120억원 달성 등 실적 성장세와 반도체 관련주 전반의 상승세가 복합적으로 작용함.",
+          "event_type": "FOLLOW_UP",
+          "theme": [
+            "반도체",
+            "실적호조"
+          ],
+          "origin_date": "2026-10-27"
+        },
+        "secondary_materials": [
+          {
+            "title": "SK하이닉스 호실적 및 AI 반도체 투자 흥행 영향",
+            "event_type": "MARKET_THEME"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "SK하이닉스",
+            "reason": "3분기 호실적 및 주주환원정책 발표로 반도체 업종 전반의 투자 심리에 영향을 미침",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "오킨스전자 16.45% 상승, 2만6900원 마감…상반기 영업이익 120억원…번인...",
+            "date": "2026-10-27 15:50"
+          },
+          {
+            "headline": "앤트로픽 IPO·메타 자금 조달 흥행 속 SK하이닉스 3분기 호실적 및 주주환원정책 발표 등에 반도체 관련주 상승 속 급등",
+            "date": "2026-10-28 17:00"
+          }
+        ],
+        "summary": "오킨스전자는 상반기 실적 호조 및 반도체 업종 전반의 상승세에 힘입어 상승했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "오킨스전자 16.45% 상승, 2만6900원 마감…상반기 영업이익 120억원…번인...",
+        "[특징주] 외국인·기관 삼성전자 동반 순매수…SK증권·대우건설 매도 ...",
+        "앤트로픽 IPO·메타 자금 조달 흥행 속 SK하이닉스 3분기 호실적 및 주주환원정책 발표 등에 반도체 관련주 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/27",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 15:50",
+          "title": "오킨스전자 16.45% 상승, 2만6900원 마감…상반기 영업이익 120억원…번인...",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=234851"
+        },
+        {
+          "time": "11:52",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 11:52",
+          "title": "[특징주] 외국인·기관 삼성전자 동반 순매수…SK증권·대우건설 매도 ...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=725402"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:00",
+          "title": "앤트로픽 IPO·메타 자금 조달 흥행 속 SK하이닉스 3분기 호실적 및 주주환원정책 발표 등에 반도체 관련주 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "072950",
+      "name": "빛샘전자",
+      "rate": 18.66,
+      "trading_value": 76802945340.0,
+      "summary": "빛샘전자는 앤트로픽 IPO 추진 및 미국 AI 인프라 관련주 강세에 힘입어 광통신 부품 수요 부각 테마 속에서 급등함.",
+      "analysis": {
+        "stock": "빛샘전자",
+        "main_material": {
+          "title": "앤트로픽 IPO 및 AI 인프라 투자 기대감",
+          "reason": "앤트로픽 IPO 추진과 메타 자금 조달 흥행에 따른 미국 AI 인프라 관련주 강세 영향으로 광통신 테마가 동반 상승함.",
+          "event_type": "NEW",
+          "theme": [
+            "광통신",
+            "통신장비",
+            "AI 인프라"
+          ],
+          "origin_date": "2026-10-28"
+        },
+        "secondary_materials": [
+          {
+            "title": "광통신 부품 수요 부각에 따른 테마 강세",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "대한광통신",
+            "reason": "광통신 테마 상승 과정에서 함께 동반 강세를 보임",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "빛과전자",
+            "reason": "광통신 및 AI 인프라 관련주로 함께 묶여 주가 급등",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "광전자",
+            "reason": "동일 테마로 묶여 장 초반 동반 상승 흐름 기록",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "빛과전자·대한광통신·광전자·빛샘전자 도약…앤트로픽 IPO 추진 속 AI...",
+            "date": "2026-10-28 09:36"
+          },
+          {
+            "headline": "앤트로픽 IPO 기대감 지속·메타 자금 조달 흥행에 따른 美 AI 인프라 관련주 강세 영향 등에 광통신(광케이블/광섬유 등)/ 통신장비 테마 상승 속 급등",
+            "date": "2026-10-28 17:00"
+          }
+        ],
+        "summary": "빛샘전자는 앤트로픽 IPO 추진 및 미국 AI 인프라 관련주 강세에 힘입어 광통신 부품 수요 부각 테마 속에서 급등함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[특징주] 광통신주 장 초반 동반 강세…빛샘전자 7%↑·대한광통신 5%↑...",
+        "빛샘전자 주가, 10월 27일 장중 13,170원 3.21% 상승",
+        "빛과전자·대한광통신·광전자·빛샘전자 도약…앤트로픽 IPO 추진 속 AI...",
+        "[속보] 빛과전자, 장중 상한가 껑충…빛샘전자·대한광통신·광전자도 ...",
+        "멜콘 회전율 97%…샌즈랩·빛샘전자도 50% 넘어",
+        "빛샘전자 주가, 10월 28일 장중 15,530원 18.19% 상승",
+        "빛샘전자 1만5650원으로 19.10% 상승…광통신 부품 수요 부각",
+        "앤트로픽 IPO 기대감 지속·메타 자금 조달 흥행에 따른 美 AI 인프라 관련주 강세 영향 등에 광통신(광케이블/광섬유 등)/ 통신장비 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/27",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 09:10",
+          "title": "[특징주] 광통신주 장 초반 동반 강세…빛샘전자 7%↑·대한광통신 5%↑...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=619645"
+        },
+        {
+          "time": "10/27",
+          "date": "2026-10-27",
+          "datetime": "2026-10-27 14:52",
+          "title": "빛샘전자 주가, 10월 27일 장중 13,170원 3.21% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=558764"
+        },
+        {
+          "time": "09:36",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 09:36",
+          "title": "빛과전자·대한광통신·광전자·빛샘전자 도약…앤트로픽 IPO 추진 속 AI...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=620141"
+        },
+        {
+          "time": "11:02",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 11:02",
+          "title": "[속보] 빛과전자, 장중 상한가 껑충…빛샘전자·대한광통신·광전자도 ...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=620195"
+        },
+        {
+          "time": "12:46",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 12:46",
+          "title": "멜콘 회전율 97%…샌즈랩·빛샘전자도 50% 넘어",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1793159110690554276"
+        },
+        {
+          "time": "14:30",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 14:30",
+          "title": "빛샘전자 주가, 10월 28일 장중 15,530원 18.19% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=559145"
+        },
+        {
+          "time": "14:42",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 14:42",
+          "title": "빛샘전자 1만5650원으로 19.10% 상승…광통신 부품 수요 부각",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235078"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:00",
+          "title": "앤트로픽 IPO 기대감 지속·메타 자금 조달 흥행에 따른 美 AI 인프라 관련주 강세 영향 등에 광통신(광케이블/광섬유 등)/ 통신장비 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-10-28 09:58",
+          "title": "11월 BSI 연속 부정 전망…반도체 전자·통신장비 9개월만에 부정적",
+          "press": "테마뉴스·통신장비 · kookje.co.kr",
+          "link": "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0200&key=20261028.99099008117",
+          "theme_news": "통신장비"
+        },
+        {
+          "datetime": "2026-10-28 09:54",
+          "title": "[이 시각 시황] 국내증시 2거래일 연속 강세…반도체·통신장비·유리기...",
+          "press": "테마뉴스·통신장비 · biz.sbs.co.kr",
+          "link": "https://biz.sbs.co.kr/article_hub/20000342550?division=NAVER",
+          "theme_news": "통신장비"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "457370",
+      "name": "한켐",
+      "rate": 15.41,
+      "trading_value": 1038356820.0,
+      "summary": "삼성전기의 실적 호조 및 MLCC 관련 소식에 따른 테마 상승 분위기로 인해 동반 상승함.",
+      "analysis": {
+        "stock": "한켐",
+        "main_material": {
+          "title": "MLCC 테마 상승 속 동반 강세",
+          "reason": "삼성전기의 3분기 최대 실적 및 데이터센터용 MLCC LTA 진행 소식에 따른 MLCC 테마 전반의 상승세에 영향을 받음.",
+          "event_type": "RECYCLED",
+          "theme": [
+            "MLCC"
+          ],
+          "origin_date": "2026-10-28"
+        },
+        "secondary_materials": [],
+        "related_stocks": [
+          {
+            "stock": "삼성전기",
+            "reason": "3분기 역대 최대 분기 실적 달성 및 데이터센터용 MLCC LTA 진행 소식이 보도됨.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "삼성전기, 3분기 역대 최대 분기 실적 달성 속 컨콜서 '50여개 고객사와 데이터센터용 MLCC LTA 진행' 소식 등에 MLCC(적층세라믹콘덴서) 테마 상승 속 급등",
+            "date": "2026-10-28 17:00"
+          }
+        ],
+        "summary": "삼성전기의 실적 호조 및 MLCC 관련 소식에 따른 테마 상승 분위기로 인해 동반 상승함.",
+        "confidence": "MEDIUM"
+      },
+      "headlines": [
+        "삼성전기, 3분기 역대 최대 분기 실적 달성 속 컨콜서 '50여개 고객사와 데이터센터용 MLCC LTA 진행' 소식 등에 MLCC(적층세라믹콘덴서) 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "장마감",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:00",
+          "title": "삼성전기, 3분기 역대 최대 분기 실적 달성 속 컨콜서 '50여개 고객사와 데이터센터용 MLCC LTA 진행' 소식 등에 MLCC(적층세라믹콘덴서) 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "infostock",
+      "infostock_checked": true
+    },
+    {
+      "code": "125490",
+      "name": "한라캐스트",
+      "rate": 15.54,
+      "trading_value": 36776350830.0,
+      "summary": "한라캐스트는 엔비디아 관련 피지컬 AI 및 휴머노이드 로봇 테마가 확산되면서 매수세가 몰려 급등함.",
+      "analysis": {
+        "stock": "한라캐스트",
+        "main_material": {
+          "title": "휴머노이드 및 피지컬 AI 테마 강세",
+          "reason": "엔비디아 매디슨 황 방한 소식과 피지컬 AI 협력 기대감 등에 힘입어 휴머노이드 및 로봇 테마가 상승하며 동반 급등함.",
+          "event_type": "NEW",
+          "theme": [
+            "휴머노이드",
+            "피지컬 AI",
+            "로봇"
+          ],
+          "origin_date": "2026-10-28"
+        },
+        "secondary_materials": [],
+        "related_stocks": [
+          {
+            "stock": "레인보우로보틱스",
+            "reason": "휴머노이드 테마 상승 과정에서 함께 급등하며 기사에 동반 언급됨.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "한라캐스트·레인보우로보틱스 급등… 휴머노이드 테마 달아올랐다",
+            "date": "2026-10-28 14:14"
+          },
+          {
+            "headline": "엔비디아 매디슨 황, 내달 방한 소식 속 피지컬 AI 협력 기대감 등에 로봇/ 피지컬 AI/휴머노이드 로봇 테마 상승 속 급등",
+            "date": "2026-10-28 17:00"
+          }
+        ],
+        "summary": "한라캐스트는 엔비디아 관련 피지컬 AI 및 휴머노이드 로봇 테마가 확산되면서 매수세가 몰려 급등함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "한라캐스트·레인보우로보틱스 급등… 휴머노이드 테마 달아올랐다",
+        "한라캐스트 주가, 10월 28일 장중 11,350원 15.70% 상승",
+        "한라캐스트, 16.62% 올라 11,440원 마감…거래대금 420.4억원",
+        "엔비디아 매디슨 황, 내달 방한 소식 속 피지컬 AI 협력 기대감 등에 로봇(산업용/협동로봇 등)/ 피지컬 AI/휴머노이드 로봇/ 지능형로봇/인공지능(AI) 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "14:14",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 14:14",
+          "title": "한라캐스트·레인보우로보틱스 급등… 휴머노이드 테마 달아올랐다",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=499289"
+        },
+        {
+          "time": "14:40",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 14:40",
+          "title": "한라캐스트 주가, 10월 28일 장중 11,350원 15.70% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=559158"
+        },
+        {
+          "time": "15:50",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 15:50",
+          "title": "한라캐스트, 16.62% 올라 11,440원 마감…거래대금 420.4억원",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235123"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:00",
+          "title": "엔비디아 매디슨 황, 내달 방한 소식 속 피지컬 AI 협력 기대감 등에 로봇(산업용/협동로봇 등)/ 피지컬 AI/휴머노이드 로봇/ 지능형로봇/인공지능(AI) 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-10-28 19:42",
+          "title": "LG전자, 누적 매출·영업익 사상 최대…AI·공조·로봇에 투자 확대(종합...",
+          "press": "테마뉴스·로봇 · newsway.co.kr",
+          "link": "https://www.newsway.co.kr/news/view?ud=2026102817460327595",
+          "theme_news": "로봇"
+        },
+        {
+          "datetime": "2026-10-28 20:40",
+          "title": "[뉴스+]LG전자, 3분기 누적 영업익 첫 4조원 돌파…냉각·로봇 사업 키운...",
+          "press": "테마뉴스·로봇 · businessplus.kr",
+          "link": "https://www.businessplus.kr/news/articleView.html?idxno=118895",
+          "theme_news": "로봇"
+        },
+        {
+          "datetime": "2026-10-28 19:50",
+          "title": "KB라이프, '에이지테크'로 시니어 돌봄 혁신… AI·로봇 현장 적용 확대",
+          "press": "테마뉴스·로봇 · insnews.co.kr",
+          "link": "https://www.insnews.co.kr/news/articleView.html?idxno=93568",
+          "theme_news": "로봇"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    }
+  ],
+  "20261029": [
+    {
+      "code": "489790",
+      "name": "한화비전",
+      "rate": 21.51,
+      "trading_value": 48226096400.0,
+      "summary": "한화비전은 보안 및 반도체 장비 부문의 호실적에 힘입어 3분기 영업이익이 전년 동기 대비 183% 급증하며 주가가 강세를 보였습니다.",
+      "analysis": {
+        "stock": "한화비전",
+        "main_material": {
+          "title": "3분기 영업이익 1026억원, 전년비 183% 급증",
+          "reason": "시큐리티 판매 호조 및 반도체 장비 부문 성장으로 3분기 호실적을 기록하며 독립경영 성과가 부각됨",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "실적호조",
+            "보안주",
+            "반도체장비"
+          ],
+          "origin_date": "2026-10-29"
+        },
+        "secondary_materials": [
+          {
+            "title": "김동선 테크 부문 독립경영 성과 가시화",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "한화비전, 3Q 영업익 1026억…전년 동기비 183%↑",
+            "date": "2026-10-29 15:18"
+          },
+          {
+            "headline": "3분기 실적 호조에 급등 (인포스탁 증시요약)",
+            "date": "2026-10-29 17:00"
+          }
+        ],
+        "summary": "한화비전은 보안 및 반도체 장비 부문의 호실적에 힘입어 3분기 영업이익이 전년 동기 대비 183% 급증하며 주가가 강세를 보였습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "김동선 '테크 승부수' 통했다…한화비전 3분기 영업익 1026억",
+        "한화비전, 3Q 영업익 1026억…전년 동기비 183%↑",
+        "[특징주] 보안株 강세에 호실적까지…한화비전 22% 급등",
+        "한화비전, 시큐리티 판매 호조에 3Q 영업익 183%↑",
+        "김동선號 한화비전, 테크 성장 날개…3Q 영업익 1026억, 전년 대비 183% ...",
+        "김동선 '테크' 부문 성장 시동…한화비전, 3분기 영업익 1026억",
+        "한화비전, 3분기 영업익 1026억...전년比 183%↑",
+        "한화비전, 호실적…김동선 독립경영 첫 테크 성적표 '합격점'",
+        "한화비전, 올해 3분기 영업익 1026억원…전년비 183.4%↑",
+        "[CEO+] '독립경영' 한화 김동선, '테크부문' 새 역사 썼다…\"한화비전 세...",
+        "김동선의 한화비전, 3분기 영업익 1000억 넘겨",
+        "한화비전, 보안·반도체 장비 힘입어 영업익 183.3% ‘껑충’",
+        "[오늘의 특징주] 10월 29일",
+        "한화비전 3분기 매출 5734억원…영업이익 183% 증가",
+        "한화비전, 이익 증가분 63% 한화세미텍 몫…반도체 장비가 성장 주도",
+        "3분기 실적 호조에 급등"
+      ],
+      "articles": [
+        {
+          "time": "14:54",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 14:54",
+          "title": "김동선 '테크 승부수' 통했다…한화비전 3분기 영업익 1026억",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=04788806645617840&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "15:18",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 15:18",
+          "title": "한화비전, 3Q 영업익 1026억…전년 동기비 183%↑",
+          "press": "ekn.kr",
+          "link": "https://www.ekn.kr/web/view.php?key=20261029028132882"
+        },
+        {
+          "time": "15:25",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 15:25",
+          "title": "[특징주] 보안株 강세에 호실적까지…한화비전 22% 급등",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261029001015"
+        },
+        {
+          "time": "15:48",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 15:48",
+          "title": "한화비전, 시큐리티 판매 호조에 3Q 영업익 183%↑",
+          "press": "dealsite.co.kr",
+          "link": "https://dealsite.co.kr/articles/171644"
+        },
+        {
+          "time": "15:50",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 15:50",
+          "title": "김동선號 한화비전, 테크 성장 날개…3Q 영업익 1026억, 전년 대비 183% ...",
+          "press": "econovill.com",
+          "link": "https://www.econovill.com/news/articleView.html?idxno=755338"
+        },
+        {
+          "time": "16:34",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 16:34",
+          "title": "김동선 '테크' 부문 성장 시동…한화비전, 3분기 영업익 1026억",
+          "press": "news.tf.co.kr",
+          "link": "https://news.tf.co.kr/read/economy/2382567.htm"
+        },
+        {
+          "time": "16:36",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 16:36",
+          "title": "한화비전, 3분기 영업익 1026억...전년比 183%↑",
+          "press": "news.mtn.co.kr",
+          "link": "https://news.mtn.co.kr/article/2026102916203538400"
+        },
+        {
+          "time": "16:40",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 16:40",
+          "title": "한화비전, 호실적…김동선 독립경영 첫 테크 성적표 '합격점'",
+          "press": "news.bizwatch.co.kr",
+          "link": "https://news.bizwatch.co.kr/article/industry/2026/10/29/0044"
+        },
+        {
+          "time": "16:54",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 16:54",
+          "title": "한화비전, 올해 3분기 영업익 1026억원…전년비 183.4%↑",
+          "press": "srtimes.kr",
+          "link": "http://www.srtimes.kr/news/articleView.html?idxno=216233"
+        },
+        {
+          "time": "17:32",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 17:32",
+          "title": "[CEO+] '독립경영' 한화 김동선, '테크부문' 새 역사 썼다…\"한화비전 세...",
+          "press": "bizwnews.com",
+          "link": "http://www.bizwnews.com/news/articleView.html?idxno=150353"
+        },
+        {
+          "time": "18:20",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 18:20",
+          "title": "김동선의 한화비전, 3분기 영업익 1000억 넘겨",
+          "press": "starnewskorea.com",
+          "link": "https://www.starnewskorea.com/business-life/2026/10/29/2026102918171034479"
+        },
+        {
+          "time": "19:06",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 19:06",
+          "title": "한화비전, 보안·반도체 장비 힘입어 영업익 183.3% ‘껑충’",
+          "press": "sedaily.com",
+          "link": "https://www.sedaily.com/article/20108054?ref=naver"
+        },
+        {
+          "time": "20:18",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 20:18",
+          "title": "[오늘의 특징주] 10월 29일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610290020"
+        },
+        {
+          "time": "20:20",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 20:20",
+          "title": "한화비전 3분기 매출 5734억원…영업이익 183% 증가",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=398104"
+        },
+        {
+          "time": "21:44",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 21:44",
+          "title": "한화비전, 이익 증가분 63% 한화세미텍 몫…반도체 장비가 성장 주도",
+          "press": "sateconomy.co.kr",
+          "link": "http://sateconomy.co.kr/news/view/1065616849263159"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 17:00",
+          "title": "3분기 실적 호조에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-10-29 18:48",
+          "title": "삼성전자 \"내년 HBM 완판\"...반도체 장기호황 자신감",
+          "press": "테마뉴스·HBM · ytn.co.kr",
+          "link": "https://www.ytn.co.kr/_ln/0102_202610291848056053",
+          "theme_news": "HBM"
+        },
+        {
+          "datetime": "2026-10-29 19:12",
+          "title": "﻿\"AI 반도체 없어서 못 판다\"…삼성전자 \"내년 HBM 물량 완판\"",
+          "press": "테마뉴스·HBM · mdtoday.co.kr",
+          "link": "https://www.mdtoday.co.kr/news/articleView.html?idxno=621818",
+          "theme_news": "HBM"
+        },
+        {
+          "datetime": "2026-10-29 18:54",
+          "title": "\"내년 HBM 물량 목표가에 완판\" 삼성전자, 반도체 고점론 일축",
+          "press": "테마뉴스·HBM · fnnews.com",
+          "link": "https://www.fnnews.com/news/202610291853080631",
+          "theme_news": "HBM"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "017900",
+      "name": "광전자",
+      "rate": 19.73,
+      "trading_value": 121803731470.0,
+      "summary": "광전자는 마벨 테크놀로지의 루멘텀 인수 소식 및 AI 칩 관련 광통신 테마 부각으로 급등했다.",
+      "analysis": {
+        "stock": "광전자",
+        "main_material": {
+          "title": "마벨 테크놀로지 루멘텀 인수 및 AI 광통신 부각",
+          "reason": "마벨 테크놀로지의 루멘텀 홀딩스 인수 임박 소식과 앤트로픽 IPO 추진 기대감이 겹치며 광통신 및 AI 칩 관련주로 부각되어 급등했다.",
+          "event_type": "NEW",
+          "theme": [
+            "광통신",
+            "AI 칩"
+          ],
+          "origin_date": "2026-10-26"
+        },
+        "secondary_materials": [
+          {
+            "title": "일본 PFN·텐스토런트 광전자 융합 AI 칩 공동 개발",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "빛과전자",
+            "reason": "광통신 및 AI 관련주 테마로 동반 상승",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "빛샘전자",
+            "reason": "광통신 및 AI 관련주 테마로 동반 상승",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "대한광통신",
+            "reason": "광통신 및 AI 관련주 테마로 동반 상승",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "일본 PFN·텐스토런트, 광전자 융합 AI 칩 개발…차세대 프로세서 연구",
+            "date": "2026-10-26 09:46"
+          },
+          {
+            "headline": "마벨 테크놀로지, 루멘텀 홀딩스 인수 임박 소식 속 광통신 관련주로 부각되며 급등",
+            "date": "2026-10-29 17:00"
+          }
+        ],
+        "summary": "광전자는 마벨 테크놀로지의 루멘텀 인수 소식 및 AI 칩 관련 광통신 테마 부각으로 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "일본 PFN·텐스토런트, 광전자 융합 AI 칩 개발…차세대 프로세서 연구",
+        "빛과전자·대한광통신·광전자·빛샘전자 도약…앤트로픽 IPO 추진 속 AI...",
+        "[속보] 빛과전자, 장중 상한가 껑충…빛샘전자·대한광통신·광전자도 ...",
+        "광통신·광전자 부품 관련 미국 선물 24시간 하락",
+        "[속보] 광전자, 장초반 상한가 찍었다…주가 1만원 돌파에 27%대 급등",
+        "광전자 주가, 급등세... 왜?",
+        "광전자 주가, 10월 29일 장중 9,680원 21.15% 상승",
+        "광전자 9370원으로 17.27% 급등…거래대금 1386억원 집중",
+        "[오늘의 특징주] 10월 29일",
+        "마벨 테크놀로지, 루멘텀 홀딩스 인수 임박 소식 속 광통신 관련주로 부각되며 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 09:46",
+          "title": "일본 PFN·텐스토런트, 광전자 융합 AI 칩 개발…차세대 프로세서 연구",
+          "press": "bizwnews.com",
+          "link": "http://www.bizwnews.com/news/articleView.html?idxno=149895"
+        },
+        {
+          "time": "10/28",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 09:36",
+          "title": "빛과전자·대한광통신·광전자·빛샘전자 도약…앤트로픽 IPO 추진 속 AI...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=620141"
+        },
+        {
+          "time": "10/28",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 11:02",
+          "title": "[속보] 빛과전자, 장중 상한가 껑충…빛샘전자·대한광통신·광전자도 ...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=620195"
+        },
+        {
+          "time": "10/28",
+          "date": "2026-10-28",
+          "datetime": "2026-10-28 17:06",
+          "title": "광통신·광전자 부품 관련 미국 선물 24시간 하락",
+          "press": "tokenpost.kr",
+          "link": "https://www.tokenpost.kr/news/breaking/426335"
+        },
+        {
+          "time": "09:36",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 09:36",
+          "title": "[속보] 광전자, 장초반 상한가 찍었다…주가 1만원 돌파에 27%대 급등",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=620645"
+        },
+        {
+          "time": "10:04",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 10:04",
+          "title": "광전자 주가, 급등세... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1189799"
+        },
+        {
+          "time": "10:36",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 10:36",
+          "title": "광전자 주가, 10월 29일 장중 9,680원 21.15% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=559408"
+        },
+        {
+          "time": "14:54",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 14:54",
+          "title": "광전자 9370원으로 17.27% 급등…거래대금 1386억원 집중",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235316"
+        },
+        {
+          "time": "20:18",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 20:18",
+          "title": "[오늘의 특징주] 10월 29일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610290020"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 17:00",
+          "title": "마벨 테크놀로지, 루멘텀 홀딩스 인수 임박 소식 속 광통신 관련주로 부각되며 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "030960",
+      "name": "양지사",
+      "rate": 15.14,
+      "trading_value": 47257503480.0,
+      "summary": "AI 요약 생성에 실패했습니다.",
+      "analysis": null,
+      "headlines": [
+        "양지사 26일 장중 3.08% 상승",
+        "양지사 주가, 급등세... 무슨 회사길래?",
+        "[오늘의 특징주] 희토류 없는 LED에 서울반도체그룹 상한가...로봇·우주...",
+        "양지사 ‘양지솔루션 스마트펜 세트’, 문구생활 신제품 경진대회 산업...",
+        "양지사 오르고 신용평가주는 혼조…상업서비스주 차별화 '촉각'",
+        "양지사 17.52% 상승…800만주 거래, 성수기 수주 점검"
+      ],
+      "articles": [
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 14:54",
+          "title": "양지사 26일 장중 3.08% 상승",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=397259"
+        },
+        {
+          "time": "10:08",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 10:08",
+          "title": "양지사 주가, 급등세... 무슨 회사길래?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1189802"
+        },
+        {
+          "time": "11:12",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 11:12",
+          "title": "[오늘의 특징주] 희토류 없는 LED에 서울반도체그룹 상한가...로봇·우주...",
+          "press": "ppss.kr",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=317917"
+        },
+        {
+          "time": "14:48",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 14:48",
+          "title": "양지사 ‘양지솔루션 스마트펜 세트’, 문구생활 신제품 경진대회 산업...",
+          "press": "biz.chosun.com",
+          "link": "https://biz.chosun.com/industry/business_info/2026/10/29/RSYV576BPRC67EEJHT6SQYTNZ4/?utm_source=naver&utm_medium=original&utm_campaign=biz"
+        },
+        {
+          "time": "15:34",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 15:34",
+          "title": "양지사 오르고 신용평가주는 혼조…상업서비스주 차별화 '촉각'",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=499758"
+        },
+        {
+          "time": "15:54",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 15:54",
+          "title": "양지사 17.52% 상승…800만주 거래, 성수기 수주 점검",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235394"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "003220",
+      "name": "대원제약",
+      "rate": 23.18,
+      "trading_value": 311670080.0,
+      "summary": "대원제약은 위식도역류질환 P-CAB 신약 '파도프라잔'의 임상 3상 성공 및 연내 품목허가 신청 추진 소식에 상승했습니다.",
+      "analysis": {
+        "stock": "대원제약",
+        "main_material": {
+          "title": "P-CAB 신약 '파도프라잔' 임상 3상 성공 및 연내 허가 신청",
+          "reason": "위식도역류질환 치료제 신약 '파도프라잔(DW4421)'의 임상 3상에서 1차 평가변수를 충족하며 비열등성을 입증하고, 연내 품목허가 신청을 추진한다고 밝혔기 때문입니다.",
+          "event_type": "NEW",
+          "theme": [
+            "제약",
+            "바이오",
+            "신약개발"
+          ],
+          "origin_date": "2026-10-29"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "대원제약 'P-CAB 치료제 임상 3상 성공…연내 허가 신청",
+            "date": "2026-10-29 17:35"
+          },
+          {
+            "headline": "대원제약, P-CAB 신약 '파도프라잔' 임상 3상 성공",
+            "date": "2026-10-29 17:43"
+          },
+          {
+            "headline": "대원제약, ‘파도프라잔’ 위식도역류질환 임상 3상 1차 평가변수 충족",
+            "date": "2026-10-29 19:54"
+          }
+        ],
+        "summary": "대원제약은 위식도역류질환 P-CAB 신약 '파도프라잔'의 임상 3상 성공 및 연내 품목허가 신청 추진 소식에 상승했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "대원제약 \"P-CAB 치료제 임상 3상 성공…연내 허가 신청\"",
+        "대원제약, 위식도역류질환 신약 임상 3상 성공…연내 품목허가 신청 추...",
+        "대원제약, P-CAB 신약 '파도프라잔' 임상 3상 성공",
+        "대원제약, '파도프라잔' 3상 성공…연내 허가 신청 추진",
+        "대원제약,  P-CAB 신약 '파도프라잔' 3상 성공..연내 허가 신청",
+        "대원제약, P-CAB 신약 '파도프라잔' 임상 3상 성공…연내 품목허가 신청...",
+        "대원제약, 위식도역류질환 신약 3상 성공…연내 허가 신청",
+        "대원제약 “P-CAB 치료제 임상 3상 성공”…“연내 허가 신청”",
+        "대원제약, P-CAB 신약 '파도프라잔' 3상 성공… \"연내 품목허가 신청\"",
+        "[위클리오늘] 산업일반 소식_대원제약, 신세계까사(10.29)",
+        "대원제약, P-CAB 신약 '파도프라잔' 3상 성공…연내 품목허가 신청 추진",
+        "대원제약, 위식도역류질환 신약 임상 3상 성공…연내 허가 신청",
+        "대원제약 DW4421, 미란성 역류질환 3상서 비열등성",
+        "대원제약, ‘파도프라잔’ 위식도역류질환 임상 3상 1차 평가변수 충족",
+        "[바이오 브리프] SK바이오사이언스·대웅제약·대원제약·휴메딕스"
+      ],
+      "articles": [
+        {
+          "time": "17:35",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 17:35",
+          "title": "대원제약 \"P-CAB 치료제 임상 3상 성공…연내 허가 신청\"",
+          "press": "yna.co.kr",
+          "link": "https://www.yna.co.kr/view/AKR20261029187100017?input=1195m"
+        },
+        {
+          "time": "17:38",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 17:38",
+          "title": "대원제약, 위식도역류질환 신약 임상 3상 성공…연내 품목허가 신청 추...",
+          "press": "mydaily.co.kr",
+          "link": "https://www.mydaily.co.kr/page/view/2026102917370520821"
+        },
+        {
+          "time": "17:43",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 17:43",
+          "title": "대원제약, P-CAB 신약 '파도프라잔' 임상 3상 성공",
+          "press": "inews24.com",
+          "link": "http://www.inews24.com/view/2020583"
+        },
+        {
+          "time": "17:46",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 17:46",
+          "title": "대원제약, '파도프라잔' 3상 성공…연내 허가 신청 추진",
+          "press": "medicaltimes.com",
+          "link": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1171502&ref=naverpc"
+        },
+        {
+          "time": "17:48",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 17:48",
+          "title": "대원제약,  P-CAB 신약 '파도프라잔' 3상 성공..연내 허가 신청",
+          "press": "getnews.co.kr",
+          "link": "https://www.getnews.co.kr/news/articleView.html?idxno=885340"
+        },
+        {
+          "time": "17:49",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 17:49",
+          "title": "대원제약, P-CAB 신약 '파도프라잔' 임상 3상 성공…연내 품목허가 신청...",
+          "press": "etnews.com",
+          "link": "https://www.etnews.com/20261029000454"
+        },
+        {
+          "time": "17:56",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 17:56",
+          "title": "대원제약, 위식도역류질환 신약 3상 성공…연내 허가 신청",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=559749"
+        },
+        {
+          "time": "17:57",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 17:57",
+          "title": "대원제약 “P-CAB 치료제 임상 3상 성공”…“연내 허가 신청”",
+          "press": "dt.co.kr",
+          "link": "https://www.dt.co.kr/article/12092187?ref=naver"
+        },
+        {
+          "time": "18:02",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 18:02",
+          "title": "대원제약, P-CAB 신약 '파도프라잔' 3상 성공… \"연내 품목허가 신청\"",
+          "press": "medisobizanews.com",
+          "link": "http://www.medisobizanews.com/news/articleView.html?idxno=143768"
+        },
+        {
+          "time": "18:22",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 18:22",
+          "title": "[위클리오늘] 산업일반 소식_대원제약, 신세계까사(10.29)",
+          "press": "weeklytoday.com",
+          "link": "http://www.weeklytoday.com/news/articleView.html?idxno=800286"
+        },
+        {
+          "time": "18:28",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 18:28",
+          "title": "대원제약, P-CAB 신약 '파도프라잔' 3상 성공…연내 품목허가 신청 추진",
+          "press": "docdocdoc.co.kr",
+          "link": "http://www.docdocdoc.co.kr/news/articleView.html?idxno=3044121"
+        },
+        {
+          "time": "19:25",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 19:25",
+          "title": "대원제약, 위식도역류질환 신약 임상 3상 성공…연내 허가 신청",
+          "press": "biz.sbs.co.kr",
+          "link": "https://biz.sbs.co.kr/article_hub/20000343142?division=NAVER"
+        },
+        {
+          "time": "19:46",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 19:46",
+          "title": "대원제약 DW4421, 미란성 역류질환 3상서 비열등성",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=398086"
+        },
+        {
+          "time": "19:54",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 19:54",
+          "title": "대원제약, ‘파도프라잔’ 위식도역류질환 임상 3상 1차 평가변수 충족",
+          "press": "medigatenews.com",
+          "link": "https://www.medigatenews.com/news/1577780540"
+        },
+        {
+          "time": "20:14",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 20:14",
+          "title": "[바이오 브리프] SK바이오사이언스·대웅제약·대원제약·휴메딕스",
+          "press": "econovill.com",
+          "link": "https://www.econovill.com/news/articleView.html?idxno=755390"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-10-29 20:33",
+          "title": "경찰, '불법 리베이트 의혹' 대웅제약 본사 압수수색",
+          "press": "테마뉴스·제약 · news1.kr",
+          "link": "https://www.news1.kr/local/gyeonggi/6337044",
+          "theme_news": "제약"
+        },
+        {
+          "datetime": "2026-10-29 20:12",
+          "title": "경찰, '리베이트 의혹' 대웅제약 본사 압수수색",
+          "press": "테마뉴스·제약 · ytn.co.kr",
+          "link": "https://www.ytn.co.kr/_ln/0103_202610292012380830",
+          "theme_news": "제약"
+        },
+        {
+          "datetime": "2026-10-29 20:12",
+          "title": "경찰, '영업사원 불법 리베이트 의혹' 대웅제약 압수수색",
+          "press": "테마뉴스·제약 · kyeonggi.com",
+          "link": "https://www.kyeonggi.com/article/20261029580637",
+          "theme_news": "제약"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "0088M0",
+      "name": "메쥬",
+      "rate": 11.95,
+      "trading_value": 493620560.0,
+      "summary": "메쥬는 2026년 3분기 매출액 급증 및 영업이익 흑자전환 달성 공시가 발표되며 주가가 크게 상승했다.",
+      "analysis": {
+        "stock": "메쥬",
+        "main_material": {
+          "title": "2026년 3분기 흑자전환 및 대규모 매출 성장",
+          "reason": "2026년 3분기 별도기준 매출액이 전년 동기 대비 163.52% 증가하고 영업이익이 흑자전환을 기록하며 차세대 스마트 패치 등의 실적 성장이 부각되어 급등했다.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "실적호조",
+            "의료기기",
+            "스마트패치"
+          ],
+          "origin_date": "2026-10-29"
+        },
+        "secondary_materials": [
+          {
+            "title": "동아ST와 공동 심전도기기 '하이카디' 체험존 운영",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "동아ST",
+            "reason": "메쥬의 심전도기기 '하이카디' 관련 공동 체험행사를 진행한 협력 관계이다.",
+            "relation": "BUSINESS"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "메쥬, 3분기 매출 164% 증가…영업익 흑자전환",
+            "date": "2026-10-29"
+          },
+          {
+            "headline": "3분기 영업이익 흑자전환 등에 급등",
+            "date": "2026-10-29"
+          }
+        ],
+        "summary": "메쥬는 2026년 3분기 매출액 급증 및 영업이익 흑자전환 달성 공시가 발표되며 주가가 크게 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "동아ST, 메쥬와 'Pulse Day'서 심전도기기 '하이카디' 체험존 운영",
+        "동아ST·메쥬, 부산서 심전도 측정 행사…참가자 4명 부정맥 의심 소견",
+        "\"그 가격 아니면 안 사겠다\"…메쥬, LG생건 건물 호가보다 4억 낮게 매입",
+        "동아ST·메쥬, '펄스데이 인 부산'서 하이카디 체험존 운영",
+        "동아에스티·메쥬, '세계 맥박의 날' 부산 행사서 심전도 검진존 운영",
+        "동아ST·메쥬, ‘하이카디’로 심전도 체험…부정맥 조기발견 알린다",
+        "동아ST·메쥬, 부산서 심전도 체험존 운영…부정맥 의심 4명 확인",
+        "동아에스티·메쥬, '2026 Pulse Day'서 웨어러블 '하이카디' 체험존 성료",
+        "동아에스티-메쥬, '세계 맥박의 날'…하이카디 활용 심전도 측정 체험 ...",
+        "웨어러블로 심박·심전도 실시간 확인…동아에스티·메쥬 체험존 운영",
+        "메쥬, 3분기 매출 61억원 기록...M350 판매 본격화 및 LiveStudio 실적 견...",
+        "메쥬 12.21% 상승…웨어러블 환자감시장치 성장성 주목",
+        "메쥬, 3분기 매출 164%↑…“차세대 스마트 패치가 실적 견인”",
+        "메쥬, 3분기 매출 164% 증가…영업익 흑자전환",
+        "3분기 영업이익 흑자전환 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 10:18",
+          "title": "동아ST, 메쥬와 'Pulse Day'서 심전도기기 '하이카디' 체험존 운영",
+          "press": "medisobizanews.com",
+          "link": "http://www.medisobizanews.com/news/articleView.html?idxno=143580"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 10:52",
+          "title": "동아ST·메쥬, 부산서 심전도 측정 행사…참가자 4명 부정맥 의심 소견",
+          "press": "dailysmart.co.kr",
+          "link": "http://www.dailysmart.co.kr/news/articleView.html?idxno=131516"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:04",
+          "title": "\"그 가격 아니면 안 사겠다\"…메쥬, LG생건 건물 호가보다 4억 낮게 매입",
+          "press": "the-today.com",
+          "link": "https://www.the-today.com/news/articleView.html?idxno=92413"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:04",
+          "title": "동아ST·메쥬, '펄스데이 인 부산'서 하이카디 체험존 운영",
+          "press": "pharmnews.com",
+          "link": "https://www.pharmnews.com/news/articleView.html?idxno=307267"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:20",
+          "title": "동아에스티·메쥬, '세계 맥박의 날' 부산 행사서 심전도 검진존 운영",
+          "press": "nextdaily.co.kr",
+          "link": "https://www.nextdaily.co.kr/news/articleView.html?idxno=254182"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 11:52",
+          "title": "동아ST·메쥬, ‘하이카디’로 심전도 체험…부정맥 조기발견 알린다",
+          "press": "thepowernews.co.kr",
+          "link": "https://www.thepowernews.co.kr/view.php?ud=202610261122189997de3f0aa1be_7"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 13:16",
+          "title": "동아ST·메쥬, 부산서 심전도 체험존 운영…부정맥 의심 4명 확인",
+          "press": "discoverynews.kr",
+          "link": "https://www.discoverynews.kr/news/articleView.html?idxno=1104900"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 15:14",
+          "title": "동아에스티·메쥬, '2026 Pulse Day'서 웨어러블 '하이카디' 체험존 성료",
+          "press": "cstimes.com",
+          "link": "https://www.cstimes.com/news/articleView.html?idxno=725270"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 16:28",
+          "title": "동아에스티-메쥬, '세계 맥박의 날'…하이카디 활용 심전도 측정 체험 ...",
+          "press": "100ssd.co.kr",
+          "link": "https://www.100ssd.co.kr/news/articleView.html?idxno=213861"
+        },
+        {
+          "time": "10/26",
+          "date": "2026-10-26",
+          "datetime": "2026-10-26 18:26",
+          "title": "웨어러블로 심박·심전도 실시간 확인…동아에스티·메쥬 체험존 운영",
+          "press": "thepublic.kr",
+          "link": "https://www.thepublic.kr/news/articleView.html?idxno=323789"
+        },
+        {
+          "time": "15:46",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 15:46",
+          "title": "메쥬, 3분기 매출 61억원 기록...M350 판매 본격화 및 LiveStudio 실적 견...",
+          "press": "paxetv.com",
+          "link": "http://www.paxetv.com/news/articleView.html?idxno=285584"
+        },
+        {
+          "time": "15:56",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 15:56",
+          "title": "메쥬 12.21% 상승…웨어러블 환자감시장치 성장성 주목",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235401"
+        },
+        {
+          "time": "16:00",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 16:00",
+          "title": "메쥬, 3분기 매출 164%↑…“차세대 스마트 패치가 실적 견인”",
+          "press": "sedaily.com",
+          "link": "https://www.sedaily.com/article/20107858?ref=naver"
+        },
+        {
+          "time": "16:54",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 16:54",
+          "title": "메쥬, 3분기 매출 164% 증가…영업익 흑자전환",
+          "press": "sentv.co.kr",
+          "link": "https://www.sentv.co.kr/article/view/sentv202610290212"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 17:00",
+          "title": "3분기 영업이익 흑자전환 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    }
+  ],
+  "20261030": [
+    {
+      "code": "232680",
+      "name": "라온로보틱스",
+      "rate": 24.28,
+      "trading_value": 32558119560.0,
+      "summary": "라온로보틱스는 반도체 업황 호조에 따른 3분기 영업이익의 대폭 증가(전년비 259%↑) 공시 및 실적 발표로 급등했다.",
+      "analysis": {
+        "stock": "라온로보틱스",
+        "main_material": {
+          "title": "3분기 영업이익 전년 대비 259% 급증",
+          "reason": "반도체 업황 호조에 힘입어 3분기 매출과 영업이익이 크게 증가하며 실적 호조세를 기록함에 따라 매수세가 집중됨.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "실적호조",
+            "반도체"
+          ],
+          "origin_date": "2026-10-30"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "라온로보틱스, 반도체 업황 호조에 3분기 매출 265억·영업익 39억 달성",
+            "date": "2026-10-30 14:36"
+          }
+        ],
+        "summary": "라온로보틱스는 반도체 업황 호조에 따른 3분기 영업이익의 대폭 증가(전년비 259%↑) 공시 및 실적 발표로 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "라온로보틱스, 3분기 영업이익 39억원…전년 대비 259% 증가",
+        "라온로보틱스, 3Q 영업익 39억원…전년比 259%↑",
+        "[공시 Pick] 라온로보틱스, 3분기 영업익 259% 급증에 폭등",
+        "라온로보틱스, 3분기 영업익 39억…전년 비 259% ↑",
+        "라온로보틱스, 3분기 영업익 39억…전년比 259%↑",
+        "[특징주] 라온로보틱스, 3분기 영업익 259% '껑충'…주가 18%대 급등",
+        "라온로보틱스, 반도체 업황 호조에 3분기 매출 265억·영업익 39억 달성",
+        "라온로보틱스 1만750원으로 15.59% 급등…3분기 영업이익 39억원",
+        "라온로보틱스, 3분기 영업익 39억원·전년比 259%↑",
+        "[오늘의 특징주] 인텔리빅스 공모가 대비 236% 급등…SGA솔루션즈·라온...",
+        "[테크 안테나] 삼성전자 SK하이닉스 라온로보틱스",
+        "라온로보틱스, 3분기 영업익 39억원...전년비 259%↑",
+        "라온로보틱스 3분기 매출 2배…영업이익 39억원",
+        "인텔리빅스 244% 급등…라온로보틱스·보안주도 강세"
+      ],
+      "articles": [
+        {
+          "time": "11:18",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 11:18",
+          "title": "라온로보틱스, 3분기 영업이익 39억원…전년 대비 259% 증가",
+          "press": "newstown.co.kr",
+          "link": "http://www.newstown.co.kr/news/articleView.html?idxno=720250"
+        },
+        {
+          "time": "11:48",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 11:48",
+          "title": "라온로보틱스, 3Q 영업익 39억원…전년比 259%↑",
+          "press": "ebn.co.kr",
+          "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1729848"
+        },
+        {
+          "time": "12:40",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 12:40",
+          "title": "[공시 Pick] 라온로보틱스, 3분기 영업익 259% 급증에 폭등",
+          "press": "news2day.co.kr",
+          "link": "https://www.news2day.co.kr/article/20261030500177"
+        },
+        {
+          "time": "12:50",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 12:50",
+          "title": "라온로보틱스, 3분기 영업익 39억…전년 비 259% ↑",
+          "press": "etnews.com",
+          "link": "https://www.etnews.com/20261030000186"
+        },
+        {
+          "time": "13:24",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 13:24",
+          "title": "라온로보틱스, 3분기 영업익 39억…전년比 259%↑",
+          "press": "mt.co.kr",
+          "link": "https://www.mt.co.kr/stock/2026/10/30/2026103013204475449"
+        },
+        {
+          "time": "14:34",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 14:34",
+          "title": "[특징주] 라온로보틱스, 3분기 영업익 259% '껑충'…주가 18%대 급등",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=302557"
+        },
+        {
+          "time": "14:36",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 14:36",
+          "title": "라온로보틱스, 반도체 업황 호조에 3분기 매출 265억·영업익 39억 달성",
+          "press": "thedailypost.kr",
+          "link": "https://www.thedailypost.kr/news/articleView.html?idxno=116534"
+        },
+        {
+          "time": "15:18",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 15:18",
+          "title": "라온로보틱스 1만750원으로 15.59% 급등…3분기 영업이익 39억원",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235685"
+        },
+        {
+          "time": "15:52",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 15:52",
+          "title": "라온로보틱스, 3분기 영업익 39억원·전년比 259%↑",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261030000834"
+        },
+        {
+          "time": "16:24",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 16:24",
+          "title": "[오늘의 특징주] 인텔리빅스 공모가 대비 236% 급등…SGA솔루션즈·라온...",
+          "press": "ppss.kr",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=318285"
+        },
+        {
+          "time": "16:40",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 16:40",
+          "title": "[테크 안테나] 삼성전자 SK하이닉스 라온로보틱스",
+          "press": "daily.hankooki.com",
+          "link": "https://daily.hankooki.com/news/articleView.html?idxno=1420346"
+        },
+        {
+          "time": "17:58",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 17:58",
+          "title": "라온로보틱스, 3분기 영업익 39억원...전년비 259%↑",
+          "press": "thelec.kr",
+          "link": "https://www.thelec.kr/news/articleView.html?idxno=64629"
+        },
+        {
+          "time": "19:46",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 19:46",
+          "title": "라온로보틱스 3분기 매출 2배…영업이익 39억원",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=398510"
+        },
+        {
+          "time": "21:24",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 21:24",
+          "title": "인텔리빅스 244% 급등…라온로보틱스·보안주도 강세",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1793362923690736276"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured"
+    },
+    {
+      "code": "053800",
+      "name": "안랩",
+      "rate": 22.32,
+      "trading_value": 65813664000.0,
+      "summary": "금융권 해킹 확산 및 바이낸스 해킹 의혹에 따른 정보보안 테마의 급등과 3분기 이익 개선이 겹치며 상승했다.",
+      "analysis": {
+        "stock": "안랩",
+        "main_material": {
+          "title": "금융권 해킹 및 바이낸스 해킹 의혹",
+          "reason": "금융권 해킹 확산 및 바이낸스에서 발생한 8조 원대 해킹 의혹으로 인해 정보보안 관련주에 대한 투자 관심이 집중되며 급등했다.",
+          "event_type": "NEW",
+          "theme": [
+            "보안주",
+            "해킹 이슈"
+          ],
+          "origin_date": "2026-10-30"
+        },
+        "secondary_materials": [
+          {
+            "title": "3분기 실적 이익 개선",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "지니언스",
+            "reason": "IT 보안 투자 필수 인식 확산에 따라 동반 급등세 기록",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "라온시큐어",
+            "reason": "금융권 해킹 확산에 따른 보안주 관심 집중으로 동반 강세 기록",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "라온시큐어·안랩 강세…금융권 해킹 확산에 보안주 관심[특징주]",
+            "date": "2026-10-30 09:28"
+          },
+          {
+            "headline": "[특징주] 바이낸스서 8.4조 규모 해킹에 보안주 '강세'",
+            "date": "2026-10-30 13:18"
+          }
+        ],
+        "summary": "금융권 해킹 확산 및 바이낸스 해킹 의혹에 따른 정보보안 테마의 급등과 3분기 이익 개선이 겹치며 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[부고] 김기인(안랩 부사장)씨 장인상",
+        "안랩 공매도 금지 30일까지 연장",
+        "[부고] 김기인(안랩 부사장)씨 빙부상",
+        "\"IT 보안 투자는 필수\"…지니언스·안랩 급등 속 정보보안 업종 주가 지...",
+        "라온시큐어·안랩 강세…금융권 해킹 확산에 보안주 관심[특징주]",
+        "[특징주] 금융권 해킹 확산에 보안주 주목···안랩·라온시큐어 강세",
+        "안랩 주가, 10월 30일 장중 106,400원 6.29% 상승",
+        "[특징주] 라온시큐어, 금융권 해킹 확산에 따른 보안주 관심에 급등세",
+        "안랩 주가, 10월 30일 장중 107,800원 7.69% 상승",
+        "[특징주] 바이낸스서 8.4조 규모 해킹에 보안주 '강세'",
+        "안랩 11만5900원으로 15.78% 급등…3분기 이익 개선에 거래 집중",
+        "[특징주] 바이낸스 해킹 의혹에 보안주 급등…SGA솔루션즈 상한가",
+        "[주식도락] 안랩 주가는 훨훨 나는데…편입 ETF는 '부진'",
+        "코스닥 '급락'...원익홀딩스·안랩·라온시큐어는 '껑충'",
+        "[오늘의 특징주] 10월 30일"
+      ],
+      "articles": [
+        {
+          "time": "10/29",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 21:10",
+          "title": "[부고] 김기인(안랩 부사장)씨 장인상",
+          "press": "econonews.co.kr",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=446439"
+        },
+        {
+          "time": "06:30",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 06:30",
+          "title": "안랩 공매도 금지 30일까지 연장",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=398285"
+        },
+        {
+          "time": "06:36",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 06:36",
+          "title": "[부고] 김기인(안랩 부사장)씨 빙부상",
+          "press": "lcnews.co.kr",
+          "link": "https://www.lcnews.co.kr/news/articleView.html?idxno=210542"
+        },
+        {
+          "time": "09:20",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 09:20",
+          "title": "\"IT 보안 투자는 필수\"…지니언스·안랩 급등 속 정보보안 업종 주가 지...",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=499917"
+        },
+        {
+          "time": "09:28",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 09:28",
+          "title": "라온시큐어·안랩 강세…금융권 해킹 확산에 보안주 관심[특징주]",
+          "press": "newsway.co.kr",
+          "link": "https://www.newsway.co.kr/news/view?ud=2026103009200036350"
+        },
+        {
+          "time": "09:38",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 09:38",
+          "title": "[특징주] 금융권 해킹 확산에 보안주 주목···안랩·라온시큐어 강세",
+          "press": "finomy.com",
+          "link": "http://www.finomy.com/news/articleView.html?idxno=265156"
+        },
+        {
+          "time": "10:16",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 10:16",
+          "title": "안랩 주가, 10월 30일 장중 106,400원 6.29% 상승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16263288"
+        },
+        {
+          "time": "10:24",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 10:24",
+          "title": "[특징주] 라온시큐어, 금융권 해킹 확산에 따른 보안주 관심에 급등세",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=302556"
+        },
+        {
+          "time": "10:54",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 10:54",
+          "title": "안랩 주가, 10월 30일 장중 107,800원 7.69% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=559900"
+        },
+        {
+          "time": "13:18",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 13:18",
+          "title": "[특징주] 바이낸스서 8.4조 규모 해킹에 보안주 '강세'",
+          "press": "newsworks.co.kr",
+          "link": "https://www.newsworks.co.kr/news/articleView.html?idxno=901435"
+        },
+        {
+          "time": "14:34",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 14:34",
+          "title": "안랩 11만5900원으로 15.78% 급등…3분기 이익 개선에 거래 집중",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235603"
+        },
+        {
+          "time": "15:38",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 15:38",
+          "title": "[특징주] 바이낸스 해킹 의혹에 보안주 급등…SGA솔루션즈 상한가",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=7888"
+        },
+        {
+          "time": "16:10",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 16:10",
+          "title": "[주식도락] 안랩 주가는 훨훨 나는데…편입 ETF는 '부진'",
+          "press": "newsdream.kr",
+          "link": "http://www.newsdream.kr/news/articleView.html?idxno=121238"
+        },
+        {
+          "time": "16:44",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 16:44",
+          "title": "코스닥 '급락'...원익홀딩스·안랩·라온시큐어는 '껑충'",
+          "press": "choicenews.co.kr",
+          "link": "http://www.choicenews.co.kr/news/articleView.html?idxno=172782"
+        },
+        {
+          "time": "17:16",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 17:16",
+          "title": "[오늘의 특징주] 10월 30일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610300021"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured"
+    },
+    {
+      "code": "042510",
+      "name": "라온시큐어",
+      "rate": 14.95,
+      "trading_value": 113573066390.0,
+      "summary": "금융권 및 바이낸스 등 연이은 해킹 사고 확산 소식에 보안 관련주로 매수세가 몰리며 급등했습니다.",
+      "analysis": {
+        "stock": "라온시큐어",
+        "main_material": {
+          "title": "금융권 해킹 확산 및 바이낸스 해킹 의혹",
+          "reason": "금융권 및 대형 거래소(바이낸스) 등 전반적인 해킹 사고 확산에 따라 보안 및 인증 관련주로 매수세가 집중되며 급등했습니다.",
+          "event_type": "NEW",
+          "theme": [
+            "보안주",
+            "해킹/정보보안"
+          ],
+          "origin_date": "2026-10-30"
+        },
+        "secondary_materials": [
+          {
+            "title": "AI 보안 시장 개막 수혜 기대",
+            "event_type": "FOLLOW_UP"
+          },
+          {
+            "title": "양자암호·컴퓨팅 기술 테마 부각",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "안랩",
+            "reason": "금융권 해킹 확산 관련 보안주로 동반 강세 기록",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "아이씨티케이",
+            "reason": "AI 보안 및 보안주 상승 기류에 함께 부각",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "SGA솔루션즈",
+            "reason": "바이낸스 해킹 의혹 등 보안주 급등 속 상한가 기록",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "라온시큐어·안랩 강세…금융권 해킹 확산에 보안주 관심[특징주]",
+            "date": "2026-10-30 09:28"
+          },
+          {
+            "headline": "[특징주] 바이낸스서 8.4조 규모 해킹에 보안주 '강세'",
+            "date": "2026-10-30 13:18"
+          }
+        ],
+        "summary": "금융권 및 바이낸스 등 연이은 해킹 사고 확산 소식에 보안 관련주로 매수세가 몰리며 급등했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[모닝 리포트] \"라온시큐어, 금융권 보안 점검 확대에 인증·모의해킹 수...",
+        "AI 보안 시장 개막에 수혜 집중… 라온시큐어·아이씨티케이 '상승 기류...",
+        "라온시큐어·안랩 강세…금융권 해킹 확산에 보안주 관심[특징주]",
+        "[특징주] 금융권 해킹 확산에 보안주 주목···안랩·라온시큐어 강세",
+        "[특징주] 곳곳으로 번지는 해킹에…보안주 강세",
+        "[특징주] 라온시큐어, 금융권 해킹 확산에 따른 보안주 관심에 급등세",
+        "라온시큐어 주가, 10월 30일 장중 19,020원 14.23% 상승",
+        "라온시큐어 주가, 상한가... 이유는?",
+        "[특징주] 바이낸스서 8.4조 규모 해킹에 보안주 '강세'",
+        "[마켓줌인] 바이낸스 대규모 해킹 의혹에 라온시큐어 16%↑...보안株 '반...",
+        "라온시큐어 1만9340원으로 16.16% 급등…보안주에 매수세 집중",
+        "양자암호·컴퓨팅 기술 개척 경쟁…양자 테마, 라온시큐어 폭등 속 양극...",
+        "[특징주] 바이낸스 해킹 의혹에 보안주 급등…SGA솔루션즈 상한가",
+        "코스닥 '급락'...원익홀딩스·안랩·라온시큐어는 '껑충'",
+        "[오늘의 특징주] 10월 30일"
+      ],
+      "articles": [
+        {
+          "time": "10/29",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 08:38",
+          "title": "[모닝 리포트] \"라온시큐어, 금융권 보안 점검 확대에 인증·모의해킹 수...",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261029000090"
+        },
+        {
+          "time": "09:14",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 09:14",
+          "title": "AI 보안 시장 개막에 수혜 집중… 라온시큐어·아이씨티케이 '상승 기류...",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=499912"
+        },
+        {
+          "time": "09:28",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 09:28",
+          "title": "라온시큐어·안랩 강세…금융권 해킹 확산에 보안주 관심[특징주]",
+          "press": "newsway.co.kr",
+          "link": "https://www.newsway.co.kr/news/view?ud=2026103009200036350"
+        },
+        {
+          "time": "09:38",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 09:38",
+          "title": "[특징주] 금융권 해킹 확산에 보안주 주목···안랩·라온시큐어 강세",
+          "press": "finomy.com",
+          "link": "http://www.finomy.com/news/articleView.html?idxno=265156"
+        },
+        {
+          "time": "09:44",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 09:44",
+          "title": "[특징주] 곳곳으로 번지는 해킹에…보안주 강세",
+          "press": "biz.chosun.com",
+          "link": "https://biz.chosun.com/stock/stock_general/2026/10/30/6PNXOHIYDBCOFB4TAJ4SJYBZEA/?utm_source=naver&utm_medium=original&utm_campaign=biz"
+        },
+        {
+          "time": "10:24",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 10:24",
+          "title": "[특징주] 라온시큐어, 금융권 해킹 확산에 따른 보안주 관심에 급등세",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=302556"
+        },
+        {
+          "time": "11:08",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 11:08",
+          "title": "라온시큐어 주가, 10월 30일 장중 19,020원 14.23% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=559917"
+        },
+        {
+          "time": "11:20",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 11:20",
+          "title": "라온시큐어 주가, 상한가... 이유는?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1190110"
+        },
+        {
+          "time": "13:18",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 13:18",
+          "title": "[특징주] 바이낸스서 8.4조 규모 해킹에 보안주 '강세'",
+          "press": "newsworks.co.kr",
+          "link": "https://www.newsworks.co.kr/news/articleView.html?idxno=901435"
+        },
+        {
+          "time": "14:00",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 14:00",
+          "title": "[마켓줌인] 바이낸스 대규모 해킹 의혹에 라온시큐어 16%↑...보안株 '반...",
+          "press": "ntoday.co.kr",
+          "link": "https://www.ntoday.co.kr/news/articleView.html?idxno=130481"
+        },
+        {
+          "time": "14:44",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 14:44",
+          "title": "라온시큐어 1만9340원으로 16.16% 급등…보안주에 매수세 집중",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235623"
+        },
+        {
+          "time": "14:44",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 14:44",
+          "title": "양자암호·컴퓨팅 기술 개척 경쟁…양자 테마, 라온시큐어 폭등 속 양극...",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=500087"
+        },
+        {
+          "time": "15:38",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 15:38",
+          "title": "[특징주] 바이낸스 해킹 의혹에 보안주 급등…SGA솔루션즈 상한가",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=7888"
+        },
+        {
+          "time": "16:44",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 16:44",
+          "title": "코스닥 '급락'...원익홀딩스·안랩·라온시큐어는 '껑충'",
+          "press": "choicenews.co.kr",
+          "link": "http://www.choicenews.co.kr/news/articleView.html?idxno=172782"
+        },
+        {
+          "time": "17:16",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 17:16",
+          "title": "[오늘의 특징주] 10월 30일",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202610300021"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured"
+    },
+    {
+      "code": "051630",
+      "name": "진양화학",
+      "rate": 30.0,
+      "trading_value": 12176769740.0,
+      "summary": "진양화학은 약세장 속에서 뚜렷한 명확한 호재 없이 상한가를 기록했으며, 뉴스 상 구체적인 상승 원인은 확인되지 않는다.",
+      "analysis": {
+        "stock": "진양화학",
+        "main_material": {
+          "title": "약세장 속 개별 상한가 기록",
+          "reason": "약세장 속에서 뚜렷한 개별 호재 없이 거래량이 집중되며 상한가에 직행했으나, 제공된 뉴스만으로는 구체적인 상승 원인을 파악하기 어렵다.",
+          "event_type": "RECYCLED",
+          "theme": [
+            "품절주",
+            "개별주"
+          ],
+          "origin_date": "2026-10-30"
+        },
+        "secondary_materials": [
+          {
+            "title": "PVC 원가와 고객 편중 확인 관련 기사",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "진양화학 15.84% 상승…PVC 원가와 고객 편중 확인",
+            "date": "2026-10-29 15:54"
+          },
+          {
+            "headline": "[특징주] 진양화학, 약세장 속에서 '상한가' 직행 눈길",
+            "date": "2026-10-30 17:05"
+          }
+        ],
+        "summary": "진양화학은 약세장 속에서 뚜렷한 명확한 호재 없이 상한가를 기록했으며, 뉴스 상 구체적인 상승 원인은 확인되지 않는다.",
+        "confidence": "LOW"
+      },
+      "headlines": [
+        "진양화학 15.84% 상승…PVC 원가와 고객 편중 확인",
+        "진양화학 주가, 급등세... 이유는?",
+        "진양화학 상한가 3185원…거래량 509만주 집중",
+        "[급등락주 짚어보기] PHP 보안 취약점에 SGA솔루션즈 상한가…진양화학...",
+        "[특징주] 진양화학, 약세장 속에서 '상한가' 직행 눈길",
+        "[상한가 종목] 진양화학-형지엘리트 이어 SGA솔루션즈 등 마감"
+      ],
+      "articles": [
+        {
+          "time": "10/29",
+          "date": "2026-10-29",
+          "datetime": "2026-10-29 15:54",
+          "title": "진양화학 15.84% 상승…PVC 원가와 고객 편중 확인",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235396"
+        },
+        {
+          "time": "09:50",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 09:50",
+          "title": "진양화학 주가, 급등세... 이유는?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1190091"
+        },
+        {
+          "time": "16:06",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 16:06",
+          "title": "진양화학 상한가 3185원…거래량 509만주 집중",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235708"
+        },
+        {
+          "time": "16:26",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 16:26",
+          "title": "[급등락주 짚어보기] PHP 보안 취약점에 SGA솔루션즈 상한가…진양화학...",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2642409"
+        },
+        {
+          "time": "17:05",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 17:05",
+          "title": "[특징주] 진양화학, 약세장 속에서 '상한가' 직행 눈길",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=7899"
+        },
+        {
+          "time": "21:30",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 21:30",
+          "title": "[상한가 종목] 진양화학-형지엘리트 이어 SGA솔루션즈 등 마감",
+          "press": "econonews.co.kr",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=446499"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured"
+    },
+    {
+      "code": "003780",
+      "name": "진양산업",
+      "rate": 9.0,
+      "trading_value": 11962441150.0,
+      "summary": "폴리우레탄 사업 실적 점검 관련 보도에 따라 주가가 상승함.",
+      "analysis": {
+        "stock": "진양산업",
+        "main_material": {
+          "title": "폴리우레탄 사업 실적 점검 보도",
+          "reason": "폴리우레탄 사업 실적 점검 관련 기사가 보도되면서 매수세가 유입된 것으로 추정됨.",
+          "event_type": "RECYCLED",
+          "theme": [
+            "폴리우레탄"
+          ],
+          "origin_date": "2026-10-30"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "진양산업 10% 상승 6490원…폴리우레탄 사업 실적 점검",
+            "date": "2026-10-30 16:10"
+          }
+        ],
+        "summary": "폴리우레탄 사업 실적 점검 관련 보도에 따라 주가가 상승함.",
+        "confidence": "LOW"
+      },
+      "headlines": [
+        "진양산업 10% 상승 6490원…폴리우레탄 사업 실적 점검"
+      ],
+      "articles": [
+        {
+          "time": "16:10",
+          "date": "2026-10-30",
+          "datetime": "2026-10-30 16:10",
+          "title": "진양산업 10% 상승 6490원…폴리우레탄 사업 실적 점검",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235718"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general"
+    }
+  ]
+}
