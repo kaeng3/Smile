@@ -354,22 +354,27 @@ def analyze_with_gemini(name, code, target_date_str, rate, trading_value, articl
     if not api_key:
         return None, "AI 요약 생성에 실패했습니다. (API 키 없음)"
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent?key={api_key}"
+    models = ["gemini-flash-lite-latest", "gemini-flash-lite-latest", "gemini-flash-latest", "gemini-flash-latest"]
     payload = {
         "contents": [{"parts": [{"text": build_prompt(name, code, target_date_str, rate, trading_value, articles)}]}],
         "generationConfig": {"temperature": 0.2, "maxOutputTokens": 1500, "responseMimeType": "application/json"},
     }
-    for attempt in range(2):  # 형식이 깨진 응답이면 한 번 더 시도
+    # 503(구글 과부하)·429(한도)·형식 오류 대비: 최대 4번, 점점 길게 쉬고, 뒤 2번은 다른 모델로
+    import time as _time
+    for attempt, model in enumerate(models):
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
         try:
-            response = requests.post(url, headers={'Content-Type': 'application/json'}, json=payload, timeout=30)
+            response = requests.post(url, headers={'Content-Type': 'application/json'}, json=payload, timeout=40)
             response.raise_for_status()
             text = response.json()['candidates'][0]['content']['parts'][0]['text']
             analysis = parse_analysis(text)
             if analysis:
                 return analysis, analysis['summary'].strip()
-            print(f"[{name}] AI 응답 형식 오류 (시도 {attempt + 1}/2)")
+            print(f"[{name}] AI 응답 형식 오류 (시도 {attempt + 1}/{len(models)}, {model})")
         except Exception as e:
-            print(f"[{name}] Gemini 분석 실패 (시도 {attempt + 1}/2): {e}")
+            print(f"[{name}] Gemini 분석 실패 (시도 {attempt + 1}/{len(models)}, {model}): {str(e).split('?key=')[0]}")
+        if attempt < len(models) - 1:
+            _time.sleep((5, 15, 30)[attempt])
     return None, "AI 요약 생성에 실패했습니다."
 
 
@@ -510,6 +515,15 @@ def generate_daily_issues(target_date_str):
             except:
                 pass
                 
+    # 같은 날 다시 돌렸는데 AI가 실패한 종목은 앞서 성공한 해석을 그대로 둔다
+    prev = {i['code']: i for i in all_issues.get(target_date_str, [])}
+    for issue in issues:
+        old = prev.get(issue['code'])
+        if issue.get('analysis') is None and old and old.get('analysis'):
+            for k in ('analysis', 'summary', 'infostock_checked'):
+                if k in old:
+                    issue[k] = old[k]
+            print(f"[{issue['name']}] AI 실패 → 이전 해석 유지")
     all_issues[target_date_str] = issues
     backfilled = backfill_with_infostock(all_issues, api_key, kst_now().strftime("%Y%m%d"))
     for d in apply_manual_overrides(all_issues, system_dir):
