@@ -1,0 +1,4951 @@
+{
+  "20261102": [
+    {
+      "code": "180640",
+      "name": "한진칼",
+      "rate": 17.25,
+      "trading_value": 10405710000.0,
+      "summary": "호반그룹의 한진칼 최대주주 등극 및 기업결합 신고에 맞서 조원태 회장이 추가 지분 매입으로 대응하며 경영권 분쟁 기대감에 주가가 급등했다.",
+      "analysis": {
+        "stock": "한진칼",
+        "main_material": {
+          "title": "호반그룹 한진칼 최대주주 등극 및 지분 경쟁",
+          "reason": "호반그룹이 한진칼 지분을 추가 매입해 최대주주로 올라서며 공정위에 기업결합을 신고했고, 이에 조원태 한진그룹 회장이 370억 원 규모의 주식을 추가 매입하며 경영권 분쟁 격화 기대감으로 급등했다.",
+          "event_type": "FOLLOW_UP",
+          "theme": [
+            "경영권분쟁",
+            "최대주주변경"
+          ],
+          "origin_date": "2026-11-02"
+        },
+        "secondary_materials": [
+          {
+            "title": "조원태 회장, 370억 규모 한진칼 추가 지분 매입",
+            "event_type": "NEW"
+          },
+          {
+            "title": "호반그룹, 공정위에 한진칼 기업결합 신고",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "호반, 한진칼 최대주주 등극…대한항공 노리나?",
+            "date": "2026-11-02 21:32"
+          },
+          {
+            "headline": "호반, 한진칼 기업결합 신고에… 조원태, 370억 매입으로 대응",
+            "date": "2026-11-02 22:06"
+          },
+          {
+            "headline": "호반그룹, 공정위에 동사 관련 기업결합 신고 소식 등에 강세",
+            "date": "2026-11-02 17:00"
+          }
+        ],
+        "summary": "호반그룹의 한진칼 최대주주 등극 및 기업결합 신고에 맞서 조원태 회장이 추가 지분 매입으로 대응하며 경영권 분쟁 기대감에 주가가 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "호반, 한진칼 최대주주 등극…대한항공 노리나?",
+        "한진칼 최대주주 놓고 조원태·호반 지분 경쟁, 경영권 분쟁으로 번지나",
+        "호반, 한진칼 기업결합 신고에… 조원태, 370억 매입으로 대응",
+        "한진칼 최대주주 올라서려는 호반에 반격..조원태 회장, 370억 매입키로",
+        "호반·조원태 지분 확보 경쟁 불붙나…한진칼 NXT서 16% 급등",
+        "호반그룹, 한진칼 최대주주 됐나...공정위에 기업결합 신고",
+        "조원태, 한진칼 지분 370억어치 매입…애프터마켓서 급등",
+        "조원태 회장, 한진칼 32만5000주 '할인 매입'…매도자는 누구",
+        "조원태, 한진칼 지분 370억원 추가 매입…호반 추격 속 지분 강화",
+        "[호반그룹 한진칼 지분] 공정위, 호반그룹 한진칼 기업결합 심사 착수…...",
+        "한진칼 최대주주 눈앞 둔 호반… 조원태 “추가 지분 확보” 반격",
+        "한진칼 지분 경쟁 격화…조원태·호반그룹, 최대주주 자리 놓고 맞붙어",
+        "한진칼 지분 경쟁… 호반 추가매입에 조원태도 반격",
+        "호반 “한진칼 최대 주주 됐다”… 조원태 “한진칼 주식 더 산다”",
+        "한진칼 최대주주 놓고…조원태·호반그룹 혈투",
+        "호반그룹, 공정위에 동사 관련 기업결합 신고 소식 등에 강세"
+      ],
+      "articles": [
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 21:32",
+          "title": "호반, 한진칼 최대주주 등극…대한항공 노리나?",
+          "press": "news.tvchosun.com",
+          "link": "https://news.tvchosun.com/site/data/html_dir/2026/11/02/2026110290245.html"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 21:36",
+          "title": "한진칼 최대주주 놓고 조원태·호반 지분 경쟁, 경영권 분쟁으로 번지나",
+          "press": "autodaily.co.kr",
+          "link": "https://www.autodaily.co.kr/news/articleView.html?idxno=601714"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 22:06",
+          "title": "호반, 한진칼 기업결합 신고에… 조원태, 370억 매입으로 대응",
+          "press": "it.chosun.com",
+          "link": "https://it.chosun.com/news/articleView.html?idxno=3000000000076"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 22:08",
+          "title": "한진칼 최대주주 올라서려는 호반에 반격..조원태 회장, 370억 매입키로",
+          "press": "mt.co.kr",
+          "link": "https://www.mt.co.kr/industry/2026/11/02/2026110222001549442"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 22:14",
+          "title": "호반·조원태 지분 확보 경쟁 불붙나…한진칼 NXT서 16% 급등",
+          "press": "kukinews.com",
+          "link": "https://www.kukinews.com/article/view/kuk202611020228"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 22:53",
+          "title": "호반그룹, 한진칼 최대주주 됐나...공정위에 기업결합 신고",
+          "press": "ytn.co.kr",
+          "link": "https://www.ytn.co.kr/_ln/0102_202611022253288207"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 23:04",
+          "title": "조원태, 한진칼 지분 370억어치 매입…애프터마켓서 급등",
+          "press": "newsquest.co.kr",
+          "link": "https://www.newsquest.co.kr/news/articleView.html?idxno=304042"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 23:28",
+          "title": "조원태 회장, 한진칼 32만5000주 '할인 매입'…매도자는 누구",
+          "press": "ebn.co.kr",
+          "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1730181"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 23:43",
+          "title": "조원태, 한진칼 지분 370억원 추가 매입…호반 추격 속 지분 강화",
+          "press": "mydaily.co.kr",
+          "link": "https://www.mydaily.co.kr/page/view/2026110223425251114"
+        },
+        {
+          "time": "00:10",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 00:10",
+          "title": "[호반그룹 한진칼 지분] 공정위, 호반그룹 한진칼 기업결합 심사 착수…...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=622179"
+        },
+        {
+          "time": "00:15",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 00:15",
+          "title": "한진칼 최대주주 눈앞 둔 호반… 조원태 “추가 지분 확보” 반격",
+          "press": "kmib.co.kr",
+          "link": "https://www.kmib.co.kr/article/20261102502043"
+        },
+        {
+          "time": "00:18",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 00:18",
+          "title": "한진칼 지분 경쟁 격화…조원태·호반그룹, 최대주주 자리 놓고 맞붙어",
+          "press": "mdtoday.co.kr",
+          "link": "https://www.mdtoday.co.kr/news/articleView.html?idxno=622504"
+        },
+        {
+          "time": "00:31",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 00:31",
+          "title": "한진칼 지분 경쟁… 호반 추가매입에 조원태도 반격",
+          "press": "donga.com",
+          "link": "https://www.donga.com/news/Economy/article/all/20261102/134953341/2"
+        },
+        {
+          "time": "00:32",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 00:32",
+          "title": "호반 “한진칼 최대 주주 됐다”… 조원태 “한진칼 주식 더 산다”",
+          "press": "chosun.com",
+          "link": "https://www.chosun.com/economy/industry-company/2026/11/03/UYANJXOXS5HBFAI22VPWURZOOQ/?utm_source=naver&utm_medium=referral&utm_campaign=naver-news"
+        },
+        {
+          "time": "00:52",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 00:52",
+          "title": "한진칼 최대주주 놓고…조원태·호반그룹 혈투",
+          "press": "joongang.co.kr",
+          "link": "https://www.joongang.co.kr/article/25475184"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 17:00",
+          "title": "호반그룹, 공정위에 동사 관련 기업결합 신고 소식 등에 강세",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "030530",
+      "name": "원익홀딩스",
+      "rate": 13.17,
+      "trading_value": 138951049250.0,
+      "summary": "원익홀딩스는 삼성 P5 투자 직수혜 기대감과 반도체 및 로봇 자회사 관련 모멘텀이 부각되며 상승했다.",
+      "analysis": {
+        "stock": "원익홀딩스",
+        "main_material": {
+          "title": "삼성 P5 투자 가시화 및 반도체·로봇 자회사 기대감",
+          "reason": "삼성 P5 투자 직수혜 기대감과 함께 휴머노이드 로봇핸드 등 반도체 및 로봇 자회사 관련 모멘텀이 부각되며 매수세가 유입됨.",
+          "event_type": "NEW",
+          "theme": [
+            "반도체",
+            "로봇"
+          ],
+          "origin_date": "2026-11-02"
+        },
+        "secondary_materials": [
+          {
+            "title": "케어랩스 주식 24만2000주 추가 매수 계획",
+            "event_type": "NEW"
+          },
+          {
+            "title": "10월 반도체 수출 호조에 따른 반도체주 상승세",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "원익홀딩스, 삼성 P5 투자 가시화 '직수혜'…'휴머노이드 핵심' 로봇핸드...",
+            "date": "2026-11-02 08:16"
+          },
+          {
+            "headline": "원익홀딩스 3만2150원…반도체·로봇 자회사 기대에 8.98% 상승",
+            "date": "2026-11-02 14:46"
+          },
+          {
+            "headline": "10월 반도체 수출 호조 영향 등에 반도체 관련주 상승 속 급등",
+            "date": "2026-11-02 17:00"
+          }
+        ],
+        "summary": "원익홀딩스는 삼성 P5 투자 직수혜 기대감과 반도체 및 로봇 자회사 관련 모멘텀이 부각되며 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "10월 4주차 원익홀딩스 주가 3만원대 근접",
+        "원익홀딩스, 케어랩스 주식 24만2000주 추가 매수 계획",
+        "원익홀딩스, 삼성 P5 투자 가시화 '직수혜'…'휴머노이드 핵심' 로봇핸드...",
+        "두산로보틱스 도약, 원익홀딩스 5% 상승, 로봇주 엇갈린 흐름",
+        "원익홀딩스 주가, 11월 2일 장중 30,950원 4.92% 상승",
+        "원익홀딩스 3만2150원…반도체·로봇 자회사 기대에 8.98% 상승",
+        "[코스닥 외국인] 원익홀딩스 집중 매수…안랩은 대거 팔았다",
+        "코스닥 '활짝'...심텍·원익홀딩스·HLB·오이솔루션 '급등'",
+        "10월 반도체 수출 호조 영향 등에 반도체 관련주 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "10/31",
+          "date": "2026-10-31",
+          "datetime": "2026-10-31 12:08",
+          "title": "10월 4주차 원익홀딩스 주가 3만원대 근접",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=560073"
+        },
+        {
+          "time": "11/01",
+          "date": "2026-11-01",
+          "datetime": "2026-11-01 21:08",
+          "title": "원익홀딩스, 케어랩스 주식 24만2000주 추가 매수 계획",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=399190"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 08:16",
+          "title": "원익홀딩스, 삼성 P5 투자 가시화 '직수혜'…'휴머노이드 핵심' 로봇핸드...",
+          "press": "newsprime.co.kr",
+          "link": "http://www.newsprime.co.kr/news/article.html?no=753179"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 10:04",
+          "title": "두산로보틱스 도약, 원익홀딩스 5% 상승, 로봇주 엇갈린 흐름",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=622065"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 10:14",
+          "title": "원익홀딩스 주가, 11월 2일 장중 30,950원 4.92% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=560254"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 14:46",
+          "title": "원익홀딩스 3만2150원…반도체·로봇 자회사 기대에 8.98% 상승",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235908"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 15:50",
+          "title": "[코스닥 외국인] 원익홀딩스 집중 매수…안랩은 대거 팔았다",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=500644"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 16:34",
+          "title": "코스닥 '활짝'...심텍·원익홀딩스·HLB·오이솔루션 '급등'",
+          "press": "choicenews.co.kr",
+          "link": "http://www.choicenews.co.kr/news/articleView.html?idxno=172830"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 17:00",
+          "title": "10월 반도체 수출 호조 영향 등에 반도체 관련주 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-11-02 23:36",
+          "title": "네이버·지멘스, 산업용 AI 협력 논의 … 디지털 트윈·로봇 기술 글로벌...",
+          "press": "테마뉴스·로봇 · worktoday.co.kr",
+          "link": "http://www.worktoday.co.kr/news/articleView.html?idxno=91363",
+          "theme_news": "로봇"
+        },
+        {
+          "datetime": "2026-11-02 22:44",
+          "title": "대구시, AI·로봇 접목한 미래농업 기술 한자리에…KIEMSTA 2026 개막",
+          "press": "테마뉴스·로봇 · tk.newdaily.co.kr",
+          "link": "https://tk.newdaily.co.kr/site/data/html/2026/11/02/2026110200409.html",
+          "theme_news": "로봇"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "298040",
+      "name": "효성중공업",
+      "rate": 12.48,
+      "trading_value": 107088280000.0,
+      "summary": "효성중공업은 4분기 최대 실적 경신 전망과 역대급 수주잔고 부각, 그리고 서해안 에너지고속도로 초고압망 구축 소식이 겹치며 급등했다.",
+      "analysis": {
+        "stock": "효성중공업",
+        "main_material": {
+          "title": "4분기 최대 실적 경신 및 수주 호조",
+          "reason": "유안타증권 보고서를 통해 4분기 중공업 영업이익이 4,000억원을 상회하며 분기 최대 실적을 경신할 것이라는 전망이 부각되었고, 역대급 수주잔고와 연간 목표 초과 달성 가능성이 주목받았다.",
+          "event_type": "FOLLOW_UP",
+          "theme": [
+            "전력설비",
+            "풍력에너지",
+            "ESS"
+          ],
+          "origin_date": "2026-11-02"
+        },
+        "secondary_materials": [
+          {
+            "title": "서해안 에너지고속도로 국산 초고압망 구축",
+            "event_type": "NEW"
+          },
+          {
+            "title": "AI 데이터센터 전력난 속 ESS 및 전력망 테마 강세",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "HD현대에너지솔루션",
+            "reason": "AI 데이터센터 전력난에 따른 ESS 테마로 동반 상승",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "현대글로비스",
+            "reason": "코리아 밸류업 지수 강세 종목으로 동반 부각",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "풍력에너지/ 전력저장장치(ESS) 테마 상승 속 4분기 최대 실적 경신 전망 등에 급등",
+            "date": "2026-11-02 17:00"
+          },
+          {
+            "headline": "효성중공업, 서해안 에너지고속도로에 국산 초고압망 구축",
+            "date": "2026-11-02 15:27"
+          },
+          {
+            "headline": "코리아 밸류업 지수 강세에 효성중공업 급등…현대글로비스도 두 자릿수...",
+            "date": "2026-11-02 15:10"
+          }
+        ],
+        "summary": "효성중공업은 4분기 최대 실적 경신 전망과 역대급 수주잔고 부각, 그리고 서해안 에너지고속도로 초고압망 구축 소식이 겹치며 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "수주잔고 18.9조원 효성중공업, 206만3000원으로 급등",
+        "코리아 밸류업 지수 강세에 효성중공업 급등…현대글로비스도 두 자릿수...",
+        "효성중공업, 서해안 에너지고속도로에 국산 초고압망 구축",
+        "AI 데이터센터 전력난에 ESS 테마 급등…효성중공업·HD현대에너지솔루...",
+        "[코스피 지수선물 옵션] 반도체·방산·조선주 '신바람'…효성중공업 폭...",
+        "\"태풍 핑계 댄 3분기…수주잔고 18조 돌파, 멈추지 않는 효성중공업의 ...",
+        "\"실적은 주춤했지만 수주는 역대급…효성중공업, 단기 이익 부진보다 무...",
+        "풍력에너지/ 전력저장장치(ESS) 테마 상승 속 4분기 최대 실적 경신 전망 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 14:46",
+          "title": "수주잔고 18.9조원 효성중공업, 206만3000원으로 급등",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235906"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 15:10",
+          "title": "코리아 밸류업 지수 강세에 효성중공업 급등…현대글로비스도 두 자릿수...",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=500611"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 15:27",
+          "title": "효성중공업, 서해안 에너지고속도로에 국산 초고압망 구축",
+          "press": "hankyung.com",
+          "link": "https://www.hankyung.com/article/2026110294011"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 15:38",
+          "title": "AI 데이터센터 전력난에 ESS 테마 급등…효성중공업·HD현대에너지솔루...",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=500631"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 16:44",
+          "title": "[코스피 지수선물 옵션] 반도체·방산·조선주 '신바람'…효성중공업 폭...",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=500683"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 17:06",
+          "title": "\"태풍 핑계 댄 3분기…수주잔고 18조 돌파, 멈추지 않는 효성중공업의 ...",
+          "press": "newsquest.co.kr",
+          "link": "https://www.newsquest.co.kr/news/articleView.html?idxno=304015"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 21:20",
+          "title": "\"실적은 주춤했지만 수주는 역대급…효성중공업, 단기 이익 부진보다 무...",
+          "press": "newsquest.co.kr",
+          "link": "https://www.newsquest.co.kr/news/articleView.html?idxno=304039"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 17:00",
+          "title": "풍력에너지/ 전력저장장치(ESS) 테마 상승 속 4분기 최대 실적 경신 전망 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-11-02 19:40",
+          "title": "“수천억 손해 봐도 체코 원전 참여” 대우건설, 중재 요청…산업부 “...",
+          "press": "테마뉴스·원전 · seoul.co.kr",
+          "link": "https://www.seoul.co.kr/news/economy/2026/11/02/20261102500327?wlog_tag3=naver",
+          "theme_news": "원전"
+        },
+        {
+          "datetime": "2026-11-02 18:45",
+          "title": "대우건설 '체코 원전' 협상 중재 요청에…산업부 \"권한 없다\"",
+          "press": "테마뉴스·원전 · sisajournal.com",
+          "link": "https://www.sisajournal.com/news/articleView.html?idxno=392605",
+          "theme_news": "원전"
+        },
+        {
+          "datetime": "2026-11-02 18:18",
+          "title": "대우건설, 체코 원전 협상 결렬에 반발…\"산업부가 중재 나서야\"",
+          "press": "테마뉴스·원전 · daily.hankooki.com",
+          "link": "https://daily.hankooki.com/news/articleView.html?idxno=1420931",
+          "theme_news": "원전"
+        },
+        {
+          "datetime": "2026-11-02 17:14",
+          "title": "남동발전, 풍력기 비상탈출훈련 자체 개발·시행…현장 장비 활용",
+          "press": "테마뉴스·풍력 · asiatime.co.kr",
+          "link": "https://www.asiatime.co.kr/article/20261102500397",
+          "theme_news": "풍력"
+        },
+        {
+          "datetime": "2026-11-02 17:05",
+          "title": "남동발전, ‘현장 맞춤형 풍력기 비상탈출훈련’…국내 처음 실시",
+          "press": "테마뉴스·풍력 · busan.com",
+          "link": "https://www.busan.com/view/busan/view.php?code=2026110217011938511",
+          "theme_news": "풍력"
+        },
+        {
+          "datetime": "2026-11-02 16:49",
+          "title": "한국남동발전, 풍력발전기 비상탈출훈련 자체 개발…현장 장비로 실전 ...",
+          "press": "테마뉴스·풍력 · thetracker.co.kr",
+          "link": "https://thetracker.co.kr/View.aspx?No=4293880",
+          "theme_news": "풍력"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "010060",
+      "name": "OCI홀딩스",
+      "rate": 14.54,
+      "trading_value": 43990324300.0,
+      "summary": "OCI홀딩스는 3분기 양호한 실적 발표와 미국 중간선거를 앞둔 태양광에너지 테마의 강세에 힘입어 상승했다.",
+      "analysis": {
+        "stock": "OCI홀딩스",
+        "main_material": {
+          "title": "3분기 호실적 및 태양광 테마 상승",
+          "reason": "3분기 영업이익 680억원을 기록하며 실적을 공개한 가운데, 美 중간선거 앞두고 태양광에너지 테마가 상승하며 급등함.",
+          "event_type": "NEW",
+          "theme": [
+            "태양광에너지",
+            "신재생에너지"
+          ],
+          "origin_date": "2026-11-02"
+        },
+        "secondary_materials": [
+          {
+            "title": "반도체 및 AX 경쟁력 강화를 위한 임원 인사 단행",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "한화솔루션",
+            "reason": "신재생에너지 관련주로 함께 부각됨",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "HD현대에너지솔루션",
+            "reason": "태양광 테마 상승 시 함께 묶여 언급됨",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "OCI홀딩스, 3분기 영업익 680억원... 증권가 \"美무역확장법 232조 변수\"",
+            "date": "2026-11-02 10:16"
+          },
+          {
+            "headline": "신재생에너지 관련주 들썩…OCI홀딩스 8%대 급등, 한화솔루션·HD현대에...",
+            "date": "2026-11-02 10:54"
+          },
+          {
+            "headline": "美 중간선거 앞두고 민주당 우위 여론조사 속 수혜 기대감 등에 태양광에너지 테마 상승 속 급등",
+            "date": "2026-11-02 17:00"
+          }
+        ],
+        "summary": "OCI홀딩스는 3분기 양호한 실적 발표와 미국 중간선거를 앞둔 태양광에너지 테마의 강세에 힘입어 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "OCI홀딩스, 3분기 영업익 680억원... 증권가 \"美무역확장법 232조 변수\"",
+        "신재생에너지 관련주 들썩…OCI홀딩스 8%대 급등, 한화솔루션·HD현대에...",
+        "[인사] OCI홀딩스",
+        "한국수목원정원관리원, OCI홀딩스와 자생식물 보전 협력 확대",
+        "OCI홀딩스, 임원 인사...반도체·AX 경쟁력↑",
+        "3분기 실적 공개한 OCI홀딩스 12.06% 급등…18만6700원",
+        "OCI홀딩스 주가, 11월 2일 185,000원 11.04% 상승",
+        "美 중간선거 앞두고 민주당 우위 여론조사 속 수혜 기대감 등에 태양광에너지 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 10:16",
+          "title": "OCI홀딩스, 3분기 영업익 680억원... 증권가 \"美무역확장법 232조 변수\"",
+          "press": "biztribune.co.kr",
+          "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=361691"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 10:54",
+          "title": "신재생에너지 관련주 들썩…OCI홀딩스 8%대 급등, 한화솔루션·HD현대에...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=622098"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 12:14",
+          "title": "[인사] OCI홀딩스",
+          "press": "popcornnews.net",
+          "link": "http://www.popcornnews.net/news/articleView.html?idxno=138324"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 14:21",
+          "title": "한국수목원정원관리원, OCI홀딩스와 자생식물 보전 협력 확대",
+          "press": "news1.kr",
+          "link": "https://www.news1.kr/local/daejeon-chungnam/6339965"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 14:34",
+          "title": "OCI홀딩스, 임원 인사...반도체·AX 경쟁력↑",
+          "press": "news.dealsitetv.com",
+          "link": "https://news.dealsitetv.com/articles/177877"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 15:22",
+          "title": "3분기 실적 공개한 OCI홀딩스 12.06% 급등…18만6700원",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=235965"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 16:12",
+          "title": "OCI홀딩스 주가, 11월 2일 185,000원 11.04% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=560481"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 17:00",
+          "title": "美 중간선거 앞두고 민주당 우위 여론조사 속 수혜 기대감 등에 태양광에너지 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "163280",
+      "name": "에어레인",
+      "rate": 26.58,
+      "trading_value": 15275019060.0,
+      "summary": "제공된 뉴스 내에서 에어레인의 주가 상승을 설명할 수 있는 명확한 개별 재료를 찾을 수 없다.",
+      "analysis": {
+        "stock": "에어레인",
+        "main_material": {
+          "title": "뚜렷한 재료 확인불가",
+          "reason": "제공된 뉴스는 온실가스 감축 관련 테마 기사이나 에어레인과의 직접적인 사업 연관성을 확인할 수 있는 구체적인 사건이 없다.",
+          "event_type": "RECYCLED",
+          "theme": [
+            "온실가스"
+          ],
+          "origin_date": "확인불가"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "계룡시, 공공부문 온실가스 감축실적 2년 연속 충남 1위",
+            "date": "2026-11-02 18:10"
+          },
+          {
+            "headline": "계룡시, 공공부문 온실가스 감축률 35.7%… 충남 기초지자체 2년 연속 1...",
+            "date": "2026-11-02 17:30"
+          },
+          {
+            "headline": "계룡시, 공공부문 온실가스 감축률 35.7%…2년 연속 충남 1위",
+            "date": "2026-11-02 17:16"
+          }
+        ],
+        "summary": "제공된 뉴스 내에서 에어레인의 주가 상승을 설명할 수 있는 명확한 개별 재료를 찾을 수 없다.",
+        "confidence": "LOW"
+      },
+      "headlines": [],
+      "articles": [],
+      "theme_news": [
+        {
+          "datetime": "2026-11-02 18:10",
+          "title": "계룡시, 공공부문 온실가스 감축실적 2년 연속 충남 1위",
+          "press": "테마뉴스·온실가스 · gocj.net",
+          "link": "http://www.gocj.net/news/articleView.html?idxno=153967",
+          "theme_news": "온실가스"
+        },
+        {
+          "datetime": "2026-11-02 17:30",
+          "title": "계룡시, 공공부문 온실가스 감축률 35.7%… 충남 기초지자체 2년 연속 1...",
+          "press": "테마뉴스·온실가스 · newsfreezone.co.kr",
+          "link": "https://www.newsfreezone.co.kr/news/articleView.html?idxno=717223",
+          "theme_news": "온실가스"
+        },
+        {
+          "datetime": "2026-11-02 17:16",
+          "title": "계룡시, 공공부문 온실가스 감축률 35.7%…2년 연속 충남 1위",
+          "press": "테마뉴스·온실가스 · newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=726294",
+          "theme_news": "온실가스"
+        }
+      ],
+      "news_source": "theme",
+      "infostock_checked": true
+    },
+    {
+      "code": "184230",
+      "name": "SGA솔루션즈",
+      "rate": 29.9,
+      "trading_value": 25667141000.0,
+      "summary": "SGA솔루션즈는 북한 해킹조직의 바이낸스 공격 등 연이은 해킹 사고 발생에 따라 보안 관련주로 부각되며 상한가를 기록했습니다.",
+      "analysis": {
+        "stock": "SGA솔루션즈",
+        "main_material": {
+          "title": "북한 해킹조직의 바이낸스 공격에 따른 보안주 부각",
+          "reason": "북한 해킹조직의 가상자산 거래소 바이낸스 공격 및 연이은 해킹 사고 소식 속에서 보안 관련주로 부각되며 상한가(상승률 29.90%)를 기록했다.",
+          "event_type": "NEW",
+          "theme": [
+            "보안",
+            "해킹",
+            "북한 해킹"
+          ],
+          "origin_date": "2026-11-02"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "[특징주] SGA솔루션즈, \"北 해킹조직 바이낸스 공격에 5조원 순유출\" 가...",
+            "date": "2026-11-02 15:40"
+          },
+          {
+            "headline": "北 해킹조직 바이낸스 공격 소식 등 연이은 해킹 사고 속 관련주로 지속 부각되며 상한가",
+            "date": "2026-11-02 17:00"
+          }
+        ],
+        "summary": "SGA솔루션즈는 북한 해킹조직의 바이낸스 공격 등 연이은 해킹 사고 발생에 따라 보안 관련주로 부각되며 상한가를 기록했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "SGA솔루션즈 주가, 웃음꽃 활짝... 왜?",
+        "[특징주] SGA솔루션즈, \"北 해킹조직 바이낸스 공격에 5조원 순유출\" 가...",
+        "SGA솔루션즈 29.90% 급등…1165만주 손바뀜",
+        "SGA솔루션즈, 주가 급등으로 11월 3일 투자주의종목 지정",
+        "[공시] SOOP '공매도 금지', SGA솔루션즈 '투자경고종목 지정예고' 등......",
+        "北 해킹조직 바이낸스 공격 소식 등 연이은 해킹 사고 속 관련주로 지속 부각되며 상한가"
+      ],
+      "articles": [
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 13:02",
+          "title": "SGA솔루션즈 주가, 웃음꽃 활짝... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1190514"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 15:40",
+          "title": "[특징주] SGA솔루션즈, \"北 해킹조직 바이낸스 공격에 5조원 순유출\" 가...",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=302636"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 15:46",
+          "title": "SGA솔루션즈 29.90% 급등…1165만주 손바뀜",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236006"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 20:08",
+          "title": "SGA솔루션즈, 주가 급등으로 11월 3일 투자주의종목 지정",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16266445"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 20:46",
+          "title": "[공시] SOOP '공매도 금지', SGA솔루션즈 '투자경고종목 지정예고' 등......",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=726340"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 17:00",
+          "title": "北 해킹조직 바이낸스 공격 소식 등 연이은 해킹 사고 속 관련주로 지속 부각되며 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "460940",
+      "name": "피앤에스로보틱스",
+      "rate": 32.53,
+      "trading_value": 20252583960.0,
+      "summary": "피앤에스로보틱스는 재활로봇 제품군 확대 및 멕시코 대형 재활기관 수주에 따른 해외 진출 기대감이 부각되며 상승했다.",
+      "analysis": {
+        "stock": "피앤에스로보틱스",
+        "main_material": {
+          "title": "재활로봇 제품군 확대 및 해외 진출 기대감",
+          "reason": "멕시코 대형 재활기관 수주 및 재활로봇 사업 확대 기대감이 부각되며 상한가를 기록했다.",
+          "event_type": "NEW",
+          "theme": [
+            "로봇",
+            "의료로봇"
+          ],
+          "origin_date": "2026-11-02"
+        },
+        "secondary_materials": [
+          {
+            "title": "생성형 AI 혁명과 로봇 수요 폭증 기대",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "[특징주] 피앤에스로보틱스, 재활로봇 사업 확대 기대에 28%↑",
+            "date": "2026-11-02 11:04"
+          },
+          {
+            "headline": "[특징주] 피앤에스로보틱스, 재활로봇 제품군 확대 소식에 상한가",
+            "date": "2026-11-02 11:36"
+          },
+          {
+            "headline": "멕시코 대형 재활기관 수주로 해외 시장진출 확대 기대감 지속 등에 상한가",
+            "date": "2026-11-02 17:00"
+          }
+        ],
+        "summary": "피앤에스로보틱스는 재활로봇 제품군 확대 및 멕시코 대형 재활기관 수주에 따른 해외 진출 기대감이 부각되며 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[특징주] 피앤에스로보틱스, 재활로봇 사업 확대 기대에 28%↑",
+        "[특징주] 피앤에스로보틱스, 재활로봇 제품군 확대 소식에 상한가",
+        "[오전 시황] 샘표·피앤에스로보틱스 상한가…조선주 7%대↑",
+        "생성형 AI 혁명과 로봇 수요 폭증… 피앤에스로보틱스 주가 폭등랠리 계...",
+        "[상한가 종목] 샘표식품-HLB바이오스텝 이어 피앤에스로보틱스 등 마감",
+        "멕시코 대형 재활기관 수주로 해외 시장진출 확대 기대감 지속 등에 상한가"
+      ],
+      "articles": [
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 11:04",
+          "title": "[특징주] 피앤에스로보틱스, 재활로봇 사업 확대 기대에 28%↑",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261102000356"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 11:36",
+          "title": "[특징주] 피앤에스로보틱스, 재활로봇 제품군 확대 소식에 상한가",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=302596"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 12:22",
+          "title": "[오전 시황] 샘표·피앤에스로보틱스 상한가…조선주 7%대↑",
+          "press": "junggi.co.kr",
+          "link": "https://www.junggi.co.kr/news/articleView.html?idxno=38320"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 13:48",
+          "title": "생성형 AI 혁명과 로봇 수요 폭증… 피앤에스로보틱스 주가 폭등랠리 계...",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=500555"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 21:30",
+          "title": "[상한가 종목] 샘표식품-HLB바이오스텝 이어 피앤에스로보틱스 등 마감",
+          "press": "econonews.co.kr",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=446616"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 17:00",
+          "title": "멕시코 대형 재활기관 수주로 해외 시장진출 확대 기대감 지속 등에 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-11-02 23:36",
+          "title": "네이버·지멘스, 산업용 AI 협력 논의 … 디지털 트윈·로봇 기술 글로벌...",
+          "press": "테마뉴스·로봇 · worktoday.co.kr",
+          "link": "http://www.worktoday.co.kr/news/articleView.html?idxno=91363",
+          "theme_news": "로봇"
+        },
+        {
+          "datetime": "2026-11-02 22:44",
+          "title": "대구시, AI·로봇 접목한 미래농업 기술 한자리에…KIEMSTA 2026 개막",
+          "press": "테마뉴스·로봇 · tk.newdaily.co.kr",
+          "link": "https://tk.newdaily.co.kr/site/data/html/2026/11/02/2026110200409.html",
+          "theme_news": "로봇"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "396470",
+      "name": "워트",
+      "rate": 33.22,
+      "trading_value": 2211370120.0,
+      "summary": "워트는 삼성전자, SK하이닉스 및 대만 고객사 대상 EUV용 초정밀 온습도 제어장치(THC) 평가 완료 소식이 전해지며 상한가를 기록했다.",
+      "analysis": {
+        "stock": "워트",
+        "main_material": {
+          "title": "삼성·SK하이닉스·대만 대상 EUV용 THC 평가 완료",
+          "reason": "삼성전자 EUV 공정용 트랙 설비의 초정밀 온습도 제어장치(THC) 평가가 완료되어 구매주문 시 납품 가능한 상태이며, SK하이닉스 공급 및 대만 고객사 2차 검증 진행 소식이 부각됨.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "반도체 장비",
+            "EUV"
+          ],
+          "origin_date": "2026-11-02"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "반도체 관련주 상승 속 삼성·SK하이닉스·대만 고객사 'EUV용 초정밀 온습도 제어장치' 평가 완료 소식에 상한가",
+            "date": "2026-11-02 17:00"
+          }
+        ],
+        "summary": "워트는 삼성전자, SK하이닉스 및 대만 고객사 대상 EUV용 초정밀 온습도 제어장치(THC) 평가 완료 소식이 전해지며 상한가를 기록했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "워트·샘표 등 9개 종목 30% 육박…영광 거래대금 1조원 돌파",
+        "반도체 관련주 상승 속 삼성·SK하이닉스·대만 고객사 'EUV용 초정밀 온습도 제어장치' 평가 완료 소식에 상한가"
+      ],
+      "articles": [
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 21:32",
+          "title": "워트·샘표 등 9개 종목 30% 육박…영광 거래대금 1조원 돌파",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1793622602691074276"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 17:00",
+          "title": "반도체 관련주 상승 속 삼성·SK하이닉스·대만 고객사 'EUV용 초정밀 온습도 제어장치' 평가 완료 소식에 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    }
+  ],
+  "20261103": [
+    {
+      "code": "150900",
+      "name": "파수AI",
+      "rate": 17.83,
+      "trading_value": 37195164820.0,
+      "summary": "금융권 및 증권업권의 연이은 해킹 사고와 고객정보 유출 소식으로 인해 사이버 보안 관련주에 매수세가 몰리며 급등함.",
+      "analysis": {
+        "stock": "파수AI",
+        "main_material": {
+          "title": "금융권 연쇄 해킹 및 정보 유출",
+          "reason": "금융권 및 증권업권(한양증권 등)에서 연이어 해킹 사고와 고객정보 유출이 발생하면서 보안주 전반에 대한 투자 심리가 급격히 개선되었다.",
+          "event_type": "NEW",
+          "theme": [
+            "보안주",
+            "정보보안"
+          ],
+          "origin_date": "2026-11-03"
+        },
+        "secondary_materials": [
+          {
+            "title": "사이버 보안 차르 기구 설치 검토",
+            "event_type": "NEW"
+          },
+          {
+            "title": "대통령 순방단 개인정보 유출 소식",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "한싹",
+            "reason": "금융권 해킹 이슈로 파수AI와 함께 보안주 테마로 묶여 동반 상한가를 기록함.",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "드림시큐리티",
+            "reason": "금융권 해킹 관련 보안주 테마 상승 속에서 함께 언급됨.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "[특징주] 금융권 이어 증권업권에서도 연이어 해킹…보안주 上",
+            "date": "2026-11-03 09:32"
+          },
+          {
+            "headline": "한양증권 고객정보 유출 '보안주 급등'…한싹·파수AI 상한가",
+            "date": "2026-11-03 10:08"
+          },
+          {
+            "headline": "대통령 순방단 개인정보 유출 및 연이은 해킹 소식, 사이버 보안 차르 기구 설치 적극 검토 소식 등에 보안주(정보) 테마 상승 속 급등",
+            "date": "2026-11-03 17:00"
+          }
+        ],
+        "summary": "금융권 및 증권업권의 연이은 해킹 사고와 고객정보 유출 소식으로 인해 사이버 보안 관련주에 매수세가 몰리며 급등함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[특징주] 금융권 이어 증권업권에서도 연이어 해킹…보안주 上",
+        "금융권 잇단 해킹에 보안주 '들썩'…한싹·파수AI 상한가",
+        "[특징주] 금융권 해킹 확산에 보안주 급등···한싹·파수AI 상한가",
+        "[특징주] 금융권 해킹 사고 잇따르자 보안株 강세…'한싹·파수AI' 30%↑",
+        "한양증권 고객정보 유출 '보안주 급등'…한싹·파수AI 상한가[핫종목]",
+        "파수AI 주가, 급등세... 왜?",
+        "[오늘의 특징주] 한진칼·대한항공우 급등...파수AI·한싹 등 보안주도 ...",
+        "[특징주] 파수AI, 금융투자업계 연쇄 해킹 소식에 장중 20%대 강세",
+        "[특징주] 외국인 '드림시큐리티'·기관 '대한항공' 순매수…삼성전자는...",
+        "금융권 해킹에 보안주 급등…한싹 상한가·파수AI 15%대↑[이런국장 저...",
+        "[특징주] 금융권 해킹 사고에 보안주 강세…한싹·파수AI 나란히 급등",
+        "파수AI 21.17% 급등…데이터 보안에 기업용 AI 성장축 더했다",
+        "대통령 순방단 개인정보 유출 및 연이은 해킹 소식, 사이버 보안 차르 기구 설치 적극 검토 소식 등에 보안주(정보) 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "09:32",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:32",
+          "title": "[특징주] 금융권 이어 증권업권에서도 연이어 해킹…보안주 上",
+          "press": "biz.chosun.com",
+          "link": "https://biz.chosun.com/stock/stock_general/2026/11/03/645J2KJEZBCGNFSYU3HXCWGVNE/?utm_source=naver&utm_medium=original&utm_campaign=biz"
+        },
+        {
+          "time": "09:47",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:47",
+          "title": "금융권 잇단 해킹에 보안주 '들썩'…한싹·파수AI 상한가",
+          "press": "newsis.com",
+          "link": "https://www.newsis.com/view/NISX20261103_0003852265"
+        },
+        {
+          "time": "09:52",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:52",
+          "title": "[특징주] 금융권 해킹 확산에 보안주 급등···한싹·파수AI 상한가",
+          "press": "finomy.com",
+          "link": "http://www.finomy.com/news/articleView.html?idxno=265410"
+        },
+        {
+          "time": "10:03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:03",
+          "title": "[특징주] 금융권 해킹 사고 잇따르자 보안株 강세…'한싹·파수AI' 30%↑",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261103000261"
+        },
+        {
+          "time": "10:08",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:08",
+          "title": "한양증권 고객정보 유출 '보안주 급등'…한싹·파수AI 상한가[핫종목]",
+          "press": "news1.kr",
+          "link": "https://www.news1.kr/finance/market-exr/6340964"
+        },
+        {
+          "time": "10:42",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:42",
+          "title": "파수AI 주가, 급등세... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1190695"
+        },
+        {
+          "time": "10:51",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:51",
+          "title": "[오늘의 특징주] 한진칼·대한항공우 급등...파수AI·한싹 등 보안주도 ...",
+          "press": "ppss.kr",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=318713"
+        },
+        {
+          "time": "11:18",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 11:18",
+          "title": "[특징주] 파수AI, 금융투자업계 연쇄 해킹 소식에 장중 20%대 강세",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=302683"
+        },
+        {
+          "time": "11:46",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 11:46",
+          "title": "[특징주] 외국인 '드림시큐리티'·기관 '대한항공' 순매수…삼성전자는...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=726411"
+        },
+        {
+          "time": "15:14",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 15:14",
+          "title": "금융권 해킹에 보안주 급등…한싹 상한가·파수AI 15%대↑[이런국장 저...",
+          "press": "sedaily.com",
+          "link": "https://www.sedaily.com/article/20109659?ref=naver"
+        },
+        {
+          "time": "15:48",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 15:48",
+          "title": "[특징주] 금융권 해킹 사고에 보안주 강세…한싹·파수AI 나란히 급등",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=8014"
+        },
+        {
+          "time": "16:58",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 16:58",
+          "title": "파수AI 21.17% 급등…데이터 보안에 기업용 AI 성장축 더했다",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236276"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 17:00",
+          "title": "대통령 순방단 개인정보 유출 및 연이은 해킹 소식, 사이버 보안 차르 기구 설치 적극 검토 소식 등에 보안주(정보) 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "180640",
+      "name": "한진칼",
+      "rate": 21.58,
+      "trading_value": 185468997600.0,
+      "summary": "한진칼은 호반그룹과의 지분 경쟁 속에서 조원태 회장의 추가 지분 매입 공시가 전해지며 경영권 분쟁 재점화 기대감으로 상한가를 기록했다.",
+      "analysis": {
+        "stock": "한진칼",
+        "main_material": {
+          "title": "조원태 회장 vs 호반그룹 경영권 분쟁 재점화",
+          "reason": "호반그룹의 지분 추가 매입으로 최대주주 변경 가능성이 제기된 가운데, 조원태 회장이 책임경영 강화를 위해 JAL 보유 지분 0.48%를 시간외매수하는 등 지분 경쟁이 격화되면서 상한가를 기록했다.",
+          "event_type": "FOLLOW_UP",
+          "theme": [
+            "경영권 분쟁",
+            "최대주주 변경"
+          ],
+          "origin_date": "2026-11-03"
+        },
+        "secondary_materials": [
+          {
+            "title": "조원태 회장, 370억 규모 한진칼 지분 시간외매수 공시",
+            "event_type": "CONFIRMATION"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "한진칼우",
+            "reason": "한진칼 경영권 분쟁 및 지분 경쟁 기대감에 동반 상한가 기록",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "조원태·호반그룹 지분 경쟁 재점화 가능성 등에 상한가",
+            "date": "2026-11-03 17:00"
+          },
+          {
+            "headline": "조원태 회장, JAL 보유 한진칼 지분 0.48% 인수...370억원 규모",
+            "date": "2026-11-03 19:54"
+          }
+        ],
+        "summary": "한진칼은 호반그룹과의 지분 경쟁 속에서 조원태 회장의 추가 지분 매입 공시가 전해지며 경영권 분쟁 재점화 기대감으로 상한가를 기록했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "한진칼, 코스피 3.59% 급락에도 상한가…애프터마켓까지 이어진 독주",
+        "한진칼, 30% 급등… 지분경쟁 기대에 달아오른 투심",
+        "조원태 vs. 호반 지분 경쟁…한진칼 상한가 마감",
+        "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT",
+        "‘경영권 분쟁’ 한진칼, 급락장서 상한가…호반 다음 행보에 눈길",
+        "상한가로 치솟은 한진칼…조원태 vs 호반 지분 경쟁, 향후 변수는",
+        "한진칼 주식 더 사는 조원태…호반과 지분경쟁 2R",
+        "[주식마감] '경영권 분쟁 가능성' 한진칼·한진칼우 상한가... 깨끗한나...",
+        "조원태 회장, JAL 보유 한진칼 지분 0.48% 인수...370억원 규모",
+        "한진칼 지분 경쟁…호반그룹 vs 조원태 회장",
+        "대한항공 주인 바뀌나?‥한진칼 상한가 직행",
+        "한진칼우 30%·AP위성 29.98% 상승…7개 종목 상한가권",
+        "조원태, JAL 지분 회수 나선다…한진칼 경영권 분쟁 'SI 연합전' 번지나...",
+        "[상한가 종목] 한진칼-깨끗한나라 이어 AP위성 등 마감",
+        "한진칼 상한가에 다시 불거진 경영권 경쟁…호반·조원태 지분 확보전",
+        "조원태·호반그룹 지분 경쟁 재점화 가능성 등에 상한가"
+      ],
+      "articles": [
+        {
+          "time": "17:56",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 17:56",
+          "title": "한진칼, 코스피 3.59% 급락에도 상한가…애프터마켓까지 이어진 독주",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=622733"
+        },
+        {
+          "time": "18:16",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:16",
+          "title": "한진칼, 30% 급등… 지분경쟁 기대에 달아오른 투심",
+          "press": "fnnews.com",
+          "link": "https://www.fnnews.com/news/202611031814473519"
+        },
+        {
+          "time": "18:19",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:19",
+          "title": "조원태 vs. 호반 지분 경쟁…한진칼 상한가 마감",
+          "press": "biz.sbs.co.kr",
+          "link": "https://biz.sbs.co.kr/article_hub/20000344020?division=NAVER"
+        },
+        {
+          "time": "18:42",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:42",
+          "title": "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202611030022"
+        },
+        {
+          "time": "18:48",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:48",
+          "title": "‘경영권 분쟁’ 한진칼, 급락장서 상한가…호반 다음 행보에 눈길",
+          "press": "hani.co.kr",
+          "link": "https://www.hani.co.kr/arti/economy/economy_general/1285620.html"
+        },
+        {
+          "time": "18:56",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:56",
+          "title": "상한가로 치솟은 한진칼…조원태 vs 호반 지분 경쟁, 향후 변수는",
+          "press": "newsworks.co.kr",
+          "link": "https://www.newsworks.co.kr/news/articleView.html?idxno=901804"
+        },
+        {
+          "time": "19:02",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 19:02",
+          "title": "한진칼 주식 더 사는 조원태…호반과 지분경쟁 2R",
+          "press": "kookje.co.kr",
+          "link": "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0200&key=20261104.22010000830"
+        },
+        {
+          "time": "19:40",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 19:40",
+          "title": "[주식마감] '경영권 분쟁 가능성' 한진칼·한진칼우 상한가... 깨끗한나...",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1190902"
+        },
+        {
+          "time": "19:54",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 19:54",
+          "title": "조원태 회장, JAL 보유 한진칼 지분 0.48% 인수...370억원 규모",
+          "press": "insight.co.kr",
+          "link": "https://www.insight.co.kr/news/580502"
+        },
+        {
+          "time": "20:14",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 20:14",
+          "title": "한진칼 지분 경쟁…호반그룹 vs 조원태 회장",
+          "press": "obsnews.co.kr",
+          "link": "https://www.obsnews.co.kr/news/articleView.html?idxno=1542574"
+        },
+        {
+          "time": "20:30",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 20:30",
+          "title": "대한항공 주인 바뀌나?‥한진칼 상한가 직행",
+          "press": "imnews.imbc.com",
+          "link": "https://imnews.imbc.com/replay/2026/nwdesk/article/6862943_37004.html"
+        },
+        {
+          "time": "21:16",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 21:16",
+          "title": "한진칼우 30%·AP위성 29.98% 상승…7개 종목 상한가권",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1793708092691193276"
+        },
+        {
+          "time": "21:17",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 21:17",
+          "title": "조원태, JAL 지분 회수 나선다…한진칼 경영권 분쟁 'SI 연합전' 번지나...",
+          "press": "fnnews.com",
+          "link": "https://www.fnnews.com/news/202611032111561873"
+        },
+        {
+          "time": "21:30",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 21:30",
+          "title": "[상한가 종목] 한진칼-깨끗한나라 이어 AP위성 등 마감",
+          "press": "econonews.co.kr",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=446662"
+        },
+        {
+          "time": "22:24",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 22:24",
+          "title": "한진칼 상한가에 다시 불거진 경영권 경쟁…호반·조원태 지분 확보전",
+          "press": "betanews.net",
+          "link": "https://www.betanews.net/article/view/beta202611030177"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 17:00",
+          "title": "조원태·호반그룹 지분 경쟁 재점화 가능성 등에 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "211270",
+      "name": "AP위성",
+      "rate": 30.63,
+      "trading_value": 46311284400.0,
+      "summary": "AP위성이 3조 7000억 원 규모의 한국형 위성항법시스템(KPS) 사업 관련 핵심 시험·검증 장비(AVTS) 납품 완료 소식을 전하며 상한가를 기록함.",
+      "analysis": {
+        "stock": "AP위성",
+        "main_material": {
+          "title": "3조7000억 KPS 사업 핵심 장비 첫 납품",
+          "reason": "한국항공우주연구원에 한국형 위성항법시스템(KPS) 위성 비행모듈 시험·검증용 장비(AVTS) 납품을 완료했다고 밝히며 상한가를 기록함.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "우주항공",
+            "위성항법시스템",
+            "KPS"
+          ],
+          "origin_date": "2026-11-03"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "AP위성, 3조7235억원 한국형 GPS 사업 핵심 장비 납품…우주사업 확대",
+            "date": "2026-11-03 09:30"
+          },
+          {
+            "headline": "한국형 위성항법시스템(KPS) 위성 비행모듈 시험·검증용 장비 납품 완료 소식에 상한가",
+            "date": "2026-11-03 17:00"
+          }
+        ],
+        "summary": "AP위성이 3조 7000억 원 규모의 한국형 위성항법시스템(KPS) 사업 관련 핵심 시험·검증 장비(AVTS) 납품 완료 소식을 전하며 상한가를 기록함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "AP위성, KPS 위성 비행모듈 시험·검증 장비 납품",
+        "AP위성, 한국형 위성항법시스템 시험·검증 장비 납품 완료",
+        "AP위성, 3조7235억원 한국형 GPS 사업 핵심 장비 납품…우주사업 확대",
+        "3조7000억 우주사업 뚫었다…AP위성 핵심장비 첫 납품",
+        "AP위성, KPS 위성 시험장비 납품 완료...\"첫 AVTS 공급 실적 확보\"",
+        "AP위성 주가, 급등세... 이유는?",
+        "AP위성, 항우연에 전기지상지원장비 납품…KPS 사업 확대",
+        "AP위성, 항우연에 KPS 시험장비 납품",
+        "[오늘의 특징주] 한진칼·대한항공우 급등...파수AI·한싹 등 보안주도 ...",
+        "AP위성, 항우연에 한국형 위성항법시스템 시험·검증 장비 납품 완료",
+        "AP위성, 한국형 위성항법시스템 KPS 비행모듈 시험·검증용 AVTS 납품 완...",
+        "[특징주] AP위성, 3조 7000억 원 KPS 장비 첫 납품 소식에 22%대 급등",
+        "[특징주] AP위성, KPS 위성 시험장비 납품에 상한가…우주항법 사업 확대...",
+        "한진칼우 30%·AP위성 29.98% 상승…7개 종목 상한가권",
+        "[상한가 종목] 한진칼-깨끗한나라 이어 AP위성 등 마감",
+        "한국형 위성항법시스템(KPS) 위성 비행모듈 시험·검증용 장비 납품 완료 소식에 상한가"
+      ],
+      "articles": [
+        {
+          "time": "08:12",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 08:12",
+          "title": "AP위성, KPS 위성 비행모듈 시험·검증 장비 납품",
+          "press": "newsis.com",
+          "link": "https://www.newsis.com/view/NISX20261103_0003851931"
+        },
+        {
+          "time": "08:51",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 08:51",
+          "title": "AP위성, 한국형 위성항법시스템 시험·검증 장비 납품 완료",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261103000129"
+        },
+        {
+          "time": "09:30",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:30",
+          "title": "AP위성, 3조7235억원 한국형 GPS 사업 핵심 장비 납품…우주사업 확대",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=560574"
+        },
+        {
+          "time": "10:00",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:00",
+          "title": "3조7000억 우주사업 뚫었다…AP위성 핵심장비 첫 납품",
+          "press": "hankyung.com",
+          "link": "https://www.hankyung.com/article/202611032172i"
+        },
+        {
+          "time": "10:08",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:08",
+          "title": "AP위성, KPS 위성 시험장비 납품 완료...\"첫 AVTS 공급 실적 확보\"",
+          "press": "paxetv.com",
+          "link": "http://www.paxetv.com/news/articleView.html?idxno=285932"
+        },
+        {
+          "time": "10:32",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:32",
+          "title": "AP위성 주가, 급등세... 이유는?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1190679"
+        },
+        {
+          "time": "10:50",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:50",
+          "title": "AP위성, 항우연에 전기지상지원장비 납품…KPS 사업 확대",
+          "press": "bloter.net",
+          "link": "https://www.bloter.net/news/articleView.html?idxno=677525"
+        },
+        {
+          "time": "10:50",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:50",
+          "title": "AP위성, 항우연에 KPS 시험장비 납품",
+          "press": "hansbiz.co.kr",
+          "link": "http://www.hansbiz.co.kr/news/articleView.html?idxno=879113"
+        },
+        {
+          "time": "10:51",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:51",
+          "title": "[오늘의 특징주] 한진칼·대한항공우 급등...파수AI·한싹 등 보안주도 ...",
+          "press": "ppss.kr",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=318713"
+        },
+        {
+          "time": "10:56",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:56",
+          "title": "AP위성, 항우연에 한국형 위성항법시스템 시험·검증 장비 납품 완료",
+          "press": "sentv.co.kr",
+          "link": "https://www.sentv.co.kr/article/view/sentv202611030099"
+        },
+        {
+          "time": "11:14",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 11:14",
+          "title": "AP위성, 한국형 위성항법시스템 KPS 비행모듈 시험·검증용 AVTS 납품 완...",
+          "press": "hellot.net",
+          "link": "https://www.hellot.net/news/article.html?no=115985"
+        },
+        {
+          "time": "11:22",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 11:22",
+          "title": "[특징주] AP위성, 3조 7000억 원 KPS 장비 첫 납품 소식에 22%대 급등",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=302685"
+        },
+        {
+          "time": "15:41",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 15:41",
+          "title": "[특징주] AP위성, KPS 위성 시험장비 납품에 상한가…우주항법 사업 확대...",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=8012"
+        },
+        {
+          "time": "21:16",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 21:16",
+          "title": "한진칼우 30%·AP위성 29.98% 상승…7개 종목 상한가권",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1793708092691193276"
+        },
+        {
+          "time": "21:30",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 21:30",
+          "title": "[상한가 종목] 한진칼-깨끗한나라 이어 AP위성 등 마감",
+          "press": "econonews.co.kr",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=446662"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 17:00",
+          "title": "한국형 위성항법시스템(KPS) 위성 비행모듈 시험·검증용 장비 납품 완료 소식에 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-11-03 15:34",
+          "title": "스페이스X, 부스트모바일 인수 추진…미 통신 3사 거절에 우회로 모색",
+          "press": "테마뉴스·스페이스X · aitimes.com",
+          "link": "https://www.aitimes.com/news/articleView.html?idxno=216959",
+          "theme_news": "스페이스X"
+        },
+        {
+          "datetime": "2026-11-03 15:23",
+          "title": "스페이스X, 美 이동통신 시장 눈앞… 에코스타 부스트모바일 인수 추진",
+          "press": "테마뉴스·스페이스X · dt.co.kr",
+          "link": "https://www.dt.co.kr/article/12092887?ref=naver",
+          "theme_news": "스페이스X"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "267850",
+      "name": "아시아나IDT",
+      "rate": 12.56,
+      "trading_value": 20152446480.0,
+      "summary": "아시아나IDT는 한진칼을 둘러싼 지분 경쟁 재점화 가능성 부각에 따라 동반 상승했다.",
+      "analysis": {
+        "stock": "아시아나IDT",
+        "main_material": {
+          "title": "한진그룹 지분 경쟁 관련주 부각",
+          "reason": "한진칼의 조원태 회장과 호반그룹 간 지분 경쟁 재점화 가능성이 제기되면서, 계열사 및 관련주로 묶인 아시아나IDT의 주가가 상승한 것으로 추정된다.",
+          "event_type": "NEW",
+          "theme": [
+            "지분경쟁",
+            "한진그룹관련주"
+          ],
+          "origin_date": "2026-11-03"
+        },
+        "secondary_materials": [],
+        "related_stocks": [
+          {
+            "stock": "한진칼",
+            "reason": "조원태 회장과 호반그룹 간 지분 경쟁 재점화 가능성으로 함께 급등한 지주사.",
+            "relation": "DIRECT"
+          },
+          {
+            "stock": "대덕전자",
+            "reason": "특징주 기사에 함께 언급되었으나 직접적인 사업 연관성은 확인불가.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT",
+            "date": "2026-11-03 18:42"
+          },
+          {
+            "headline": "한진그룹 지주사 한진칼, 조원태·호반그룹 지분 경쟁 재점화 가능성 등에 급등",
+            "date": "2026-11-03 17:00"
+          }
+        ],
+        "summary": "아시아나IDT는 한진칼을 둘러싼 지분 경쟁 재점화 가능성 부각에 따라 동반 상승했다.",
+        "confidence": "MEDIUM"
+      },
+      "headlines": [
+        "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT",
+        "한진그룹 지주사 한진칼, 조원태·호반그룹 지분 경쟁 재점화 가능성 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "18:42",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:42",
+          "title": "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202611030022"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 17:00",
+          "title": "한진그룹 지주사 한진칼, 조원태·호반그룹 지분 경쟁 재점화 가능성 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "002320",
+      "name": "한진",
+      "rate": 18.84,
+      "trading_value": 18828918900.0,
+      "summary": "한진은 최대주주인 한진칼을 둘러싼 조원태 회장과 호반그룹 간의 경영권 지분 경쟁 재점화 기대감 및 관련주 동반 급등 영향으로 상승했다.",
+      "analysis": {
+        "stock": "한진",
+        "main_material": {
+          "title": "한진칼 경영권 분쟁 재점화",
+          "reason": "최대주주인 한진칼을 둘러싸고 조원태 회장과 호반그룹 간의 지분 경쟁 및 경영권 분쟁 재점화 가능성이 부각되며 관련주로 함께 급등함.",
+          "event_type": "FOLLOW_UP",
+          "theme": [
+            "경영권 분쟁",
+            "지분 경쟁"
+          ],
+          "origin_date": "2026-11-03"
+        },
+        "secondary_materials": [
+          {
+            "title": "한진, 한국광고학회 '올해의 브랜드상' 수상",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "한진칼",
+            "reason": "조원태 회장과 호반그룹 간의 지분 경쟁 및 경영권 분쟁의 직접적인 대상 종목임.",
+            "relation": "DIRECT"
+          },
+          {
+            "stock": "한진칼우",
+            "reason": "한진칼의 경영권 분쟁 이슈로 함께 상한가를 기록함.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "최대주주 한진칼, 조원태·호반그룹 지분 경쟁 재점화 가능성 등에 급등",
+            "date": "2026-11-03 17:00"
+          },
+          {
+            "headline": "‘경영권 분쟁’ 한진칼, 급락장서 상한가…호반 다음 행보에 눈길",
+            "date": "2026-11-03 18:48"
+          }
+        ],
+        "summary": "한진은 최대주주인 한진칼을 둘러싼 조원태 회장과 호반그룹 간의 경영권 지분 경쟁 재점화 기대감 및 관련주 동반 급등 영향으로 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "한진, 한국광고학회 ‘올해의 브랜드상’ 수상",
+        "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT",
+        "‘경영권 분쟁’ 한진칼, 급락장서 상한가…호반 다음 행보에 눈길",
+        "한진, ‘올해의 브랜드상’ 수상…“종합 물류 솔루션 기업 도약 결실”",
+        "상한가로 치솟은 한진칼…조원태 vs 호반 지분 경쟁, 향후 변수는",
+        "한진칼 주식 더 사는 조원태…호반과 지분경쟁 2R",
+        "[주식마감] '경영권 분쟁 가능성' 한진칼·한진칼우 상한가... 깨끗한나...",
+        "조원태 회장, JAL 보유 한진칼 지분 0.48% 인수...370억원 규모",
+        "한진칼 지분 경쟁…호반그룹 vs 조원태 회장",
+        "대한항공 주인 바뀌나?‥한진칼 상한가 직행",
+        "한진칼우 30%·AP위성 29.98% 상승…7개 종목 상한가권",
+        "조원태, JAL 지분 회수 나선다…한진칼 경영권 분쟁 'SI 연합전' 번지나...",
+        "[상한가 종목] 한진칼-깨끗한나라 이어 AP위성 등 마감",
+        "한진, 한국광고학회 '올해의 브랜드상' 수상…물류 서비스 다변화 주목",
+        "한진칼 상한가에 다시 불거진 경영권 경쟁…호반·조원태 지분 확보전",
+        "최대주주 한진칼, 조원태·호반그룹 지분 경쟁 재점화 가능성 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "18:34",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:34",
+          "title": "한진, 한국광고학회 ‘올해의 브랜드상’ 수상",
+          "press": "ksg.co.kr",
+          "link": "https://www.ksg.co.kr/news/main_newsView.jsp?pNum=148423"
+        },
+        {
+          "time": "18:42",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:42",
+          "title": "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202611030022"
+        },
+        {
+          "time": "18:48",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:48",
+          "title": "‘경영권 분쟁’ 한진칼, 급락장서 상한가…호반 다음 행보에 눈길",
+          "press": "hani.co.kr",
+          "link": "https://www.hani.co.kr/arti/economy/economy_general/1285620.html"
+        },
+        {
+          "time": "18:52",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:52",
+          "title": "한진, ‘올해의 브랜드상’ 수상…“종합 물류 솔루션 기업 도약 결실”",
+          "press": "economist.co.kr",
+          "link": "https://economist.co.kr/article/view/ecn202611030060"
+        },
+        {
+          "time": "18:56",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:56",
+          "title": "상한가로 치솟은 한진칼…조원태 vs 호반 지분 경쟁, 향후 변수는",
+          "press": "newsworks.co.kr",
+          "link": "https://www.newsworks.co.kr/news/articleView.html?idxno=901804"
+        },
+        {
+          "time": "19:02",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 19:02",
+          "title": "한진칼 주식 더 사는 조원태…호반과 지분경쟁 2R",
+          "press": "kookje.co.kr",
+          "link": "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0200&key=20261104.22010000830"
+        },
+        {
+          "time": "19:40",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 19:40",
+          "title": "[주식마감] '경영권 분쟁 가능성' 한진칼·한진칼우 상한가... 깨끗한나...",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1190902"
+        },
+        {
+          "time": "19:54",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 19:54",
+          "title": "조원태 회장, JAL 보유 한진칼 지분 0.48% 인수...370억원 규모",
+          "press": "insight.co.kr",
+          "link": "https://www.insight.co.kr/news/580502"
+        },
+        {
+          "time": "20:14",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 20:14",
+          "title": "한진칼 지분 경쟁…호반그룹 vs 조원태 회장",
+          "press": "obsnews.co.kr",
+          "link": "https://www.obsnews.co.kr/news/articleView.html?idxno=1542574"
+        },
+        {
+          "time": "20:30",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 20:30",
+          "title": "대한항공 주인 바뀌나?‥한진칼 상한가 직행",
+          "press": "imnews.imbc.com",
+          "link": "https://imnews.imbc.com/replay/2026/nwdesk/article/6862943_37004.html"
+        },
+        {
+          "time": "21:16",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 21:16",
+          "title": "한진칼우 30%·AP위성 29.98% 상승…7개 종목 상한가권",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1793708092691193276"
+        },
+        {
+          "time": "21:17",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 21:17",
+          "title": "조원태, JAL 지분 회수 나선다…한진칼 경영권 분쟁 'SI 연합전' 번지나...",
+          "press": "fnnews.com",
+          "link": "https://www.fnnews.com/news/202611032111561873"
+        },
+        {
+          "time": "21:30",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 21:30",
+          "title": "[상한가 종목] 한진칼-깨끗한나라 이어 AP위성 등 마감",
+          "press": "econonews.co.kr",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=446662"
+        },
+        {
+          "time": "22:20",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 22:20",
+          "title": "한진, 한국광고학회 '올해의 브랜드상' 수상…물류 서비스 다변화 주목",
+          "press": "biztribune.co.kr",
+          "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=361825"
+        },
+        {
+          "time": "22:24",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 22:24",
+          "title": "한진칼 상한가에 다시 불거진 경영권 경쟁…호반·조원태 지분 확보전",
+          "press": "betanews.net",
+          "link": "https://www.betanews.net/article/view/beta202611030177"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 17:00",
+          "title": "최대주주 한진칼, 조원태·호반그룹 지분 경쟁 재점화 가능성 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "0039P0",
+      "name": "매드업",
+      "rate": 9.91,
+      "trading_value": 29652611940.0,
+      "summary": "관련 뉴스를 찾지 못해 상승 재료를 확인할 수 없습니다.",
+      "analysis": {
+        "stock": "매드업",
+        "main_material": {
+          "title": "뚜렷한 재료 확인불가",
+          "reason": "기준일 전후로 이 종목 관련 뉴스를 찾지 못했습니다.",
+          "event_type": null,
+          "theme": [],
+          "origin_date": "확인불가"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [],
+        "summary": "관련 뉴스를 찾지 못해 상승 재료를 확인할 수 없습니다.",
+        "confidence": "LOW"
+      },
+      "headlines": [],
+      "articles": [],
+      "theme_news": [],
+      "news_source": "none",
+      "infostock_checked": true
+    },
+    {
+      "code": "376900",
+      "name": "로킷헬스케어",
+      "rate": 16.59,
+      "trading_value": 25400529600.0,
+      "summary": "로킷헬스케어는 미니피그(대동물)를 활용한 신장재생 패치 전임상 실험에서 신기능 회복 효과를 확인했다는 소식에 인체 임상 기대감이 유입되며 상승했다.",
+      "analysis": {
+        "stock": "로킷헬스케어",
+        "main_material": {
+          "title": "신장재생 패치 대동물 전임상 효과 확인",
+          "reason": "하버드 의대 연구팀과 협력해 진행한 미니피그(대동물) 실험에서 AI 초개인화 신장재생 패치의 기능 회복 효과를 정량적 수치로 확인하면서 인체 임상시험 성공 기대감이 부각되었다.",
+          "event_type": "NEW",
+          "theme": [
+            "바이오",
+            "재생의료",
+            "3D바이오프린팅"
+          ],
+          "origin_date": "2026-11-03"
+        },
+        "secondary_materials": [
+          {
+            "title": "세계 최초 신장재생 인체 임상시험 진행 중",
+            "event_type": "FOLLOW_UP"
+          },
+          {
+            "title": "3D 바이오프린팅 기술 상용화 기대감 지속",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "로킷헬스케어 \"미니피그 실험서 신장재생 패치 효과 수치로 확인\"",
+            "date": "2026-11-03 10:02"
+          },
+          {
+            "headline": "신장재생 패치 대동물 전임상서 개선 확인 소식에 급등",
+            "date": "2026-11-03 17:00"
+          }
+        ],
+        "summary": "로킷헬스케어는 미니피그(대동물)를 활용한 신장재생 패치 전임상 실험에서 신기능 회복 효과를 확인했다는 소식에 인체 임상 기대감이 유입되며 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "로킷헬스케어 \"미니피그 실험서 신장재생 패치 효과 수치로 확인\"",
+        "[N2 증시 풍향계] 대한항공·안랩·로킷헬스케어·인텔리박스 ‘강세’...",
+        "[특징주] 로킷헬스케어, 신장재생 패치 대동물 시험 성과에 23% ↑",
+        "[특징주] 로킷헬스케어, 신장재생 패치 개선 결과 확인.. '급등'",
+        "로킷헬스케어 주가 기세등등…3D 바이오프린팅 기술 상용화 기대",
+        "로킷헬스케어 주가, 장중 26%대 급등... 이유는?",
+        "[오늘의 특징주] 한진칼·대한항공우 급등...파수AI·한싹 등 보안주도 ...",
+        "로킷헬스케어, 미니피그 신장재생 실험서 정상 대비 신기능 80.3% 확인",
+        "로킷헬스케어 주가 20%대 급등…코스피·코스닥 동반 급락에도 '강세', ...",
+        "[특징주]로킷헬스케어, 신장재생 패치 대동물 시험 성과에 19.62% 뛰어…...",
+        "로킷헬스케어, 미니피그 신장 손상 모델서 재생 패치 기능 평가",
+        "로킷헬스케어, 동물실험서 신장재생 패치 효과 확인…인체 임상시험 돌...",
+        "로킷헬스케어 18.44% 상승…재생의료 사업 성장성과 적자 부담 교차",
+        "[특징주] 로킷헬스케어, 미니피그 신장재생 연구서 효과 확인으로 강세",
+        "로킷헬스케어, 미니피그 실험서 신장재생 패치 효과 확인",
+        "신장재생 패치 대동물 전임상서 개선 확인 소식에 급등"
+      ],
+      "articles": [
+        {
+          "time": "10:02",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:02",
+          "title": "로킷헬스케어 \"미니피그 실험서 신장재생 패치 효과 수치로 확인\"",
+          "press": "daily.hankooki.com",
+          "link": "https://daily.hankooki.com/news/articleView.html?idxno=1421093"
+        },
+        {
+          "time": "10:04",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:04",
+          "title": "[N2 증시 풍향계] 대한항공·안랩·로킷헬스케어·인텔리박스 ‘강세’...",
+          "press": "news2day.co.kr",
+          "link": "https://www.news2day.co.kr/article/20261103500064"
+        },
+        {
+          "time": "10:10",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:10",
+          "title": "[특징주] 로킷헬스케어, 신장재생 패치 대동물 시험 성과에 23% ↑",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261103000319"
+        },
+        {
+          "time": "10:34",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:34",
+          "title": "[특징주] 로킷헬스케어, 신장재생 패치 개선 결과 확인.. '급등'",
+          "press": "g-enews.com",
+          "link": "https://www.g-enews.com/view.php?ud=20261103102655502744093b5d4e_1"
+        },
+        {
+          "time": "10:36",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:36",
+          "title": "로킷헬스케어 주가 기세등등…3D 바이오프린팅 기술 상용화 기대",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=500863"
+        },
+        {
+          "time": "10:50",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:50",
+          "title": "로킷헬스케어 주가, 장중 26%대 급등... 이유는?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1190699"
+        },
+        {
+          "time": "10:51",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:51",
+          "title": "[오늘의 특징주] 한진칼·대한항공우 급등...파수AI·한싹 등 보안주도 ...",
+          "press": "ppss.kr",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=318713"
+        },
+        {
+          "time": "11:19",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 11:19",
+          "title": "로킷헬스케어, 미니피그 신장재생 실험서 정상 대비 신기능 80.3% 확인",
+          "press": "news1.kr",
+          "link": "https://www.news1.kr/bio/pharmaceutical-bio/6341179"
+        },
+        {
+          "time": "11:50",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 11:50",
+          "title": "로킷헬스케어 주가 20%대 급등…코스피·코스닥 동반 급락에도 '강세', ...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=622590"
+        },
+        {
+          "time": "12:42",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 12:42",
+          "title": "[특징주]로킷헬스케어, 신장재생 패치 대동물 시험 성과에 19.62% 뛰어…...",
+          "press": "namdonews.com",
+          "link": "https://www.namdonews.com/news/articleView.html?idxno=928020"
+        },
+        {
+          "time": "14:12",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 14:12",
+          "title": "로킷헬스케어, 미니피그 신장 손상 모델서 재생 패치 기능 평가",
+          "press": "lawissue.co.kr",
+          "link": "https://www.lawissue.co.kr/view.php?ud=202611031411322462204ead0791_12"
+        },
+        {
+          "time": "15:38",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 15:38",
+          "title": "로킷헬스케어, 동물실험서 신장재생 패치 효과 확인…인체 임상시험 돌...",
+          "press": "biz.chosun.com",
+          "link": "https://biz.chosun.com/science-chosun/bio/2026/11/03/NESMJ4KJ7VH4VBBGJOJZRXZDAQ/?utm_source=naver&utm_medium=original&utm_campaign=biz"
+        },
+        {
+          "time": "16:16",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 16:16",
+          "title": "로킷헬스케어 18.44% 상승…재생의료 사업 성장성과 적자 부담 교차",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236215"
+        },
+        {
+          "time": "18:20",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:20",
+          "title": "[특징주] 로킷헬스케어, 미니피그 신장재생 연구서 효과 확인으로 강세",
+          "press": "biotimes.co.kr",
+          "link": "https://www.biotimes.co.kr/news/articleView.html?idxno=35882"
+        },
+        {
+          "time": "19:25",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 19:25",
+          "title": "로킷헬스케어, 미니피그 실험서 신장재생 패치 효과 확인",
+          "press": "dt.co.kr",
+          "link": "https://www.dt.co.kr/article/12092995?ref=naver"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 17:00",
+          "title": "신장재생 패치 대동물 전임상서 개선 확인 소식에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured",
+      "infostock_checked": true
+    },
+    {
+      "code": "488280",
+      "name": "에스투더블유",
+      "rate": 11.05,
+      "trading_value": 21086644880.0,
+      "summary": "에스투더블유는 유럽 사이버보안 전시회 'it-sa'에서의 AI 보안 솔루션 공개 및 보안주 테마 상승세에 힘입어 상승함.",
+      "analysis": {
+        "stock": "에스투더블유",
+        "main_material": {
+          "title": "유럽 최대 사이버보안 전시서 AI 솔루션 공개",
+          "reason": "독일에서 개최된 유럽 최대 사이버보안 전시회 'it-sa 2026'에 참가해 AI 기반 안보·보안 솔루션을 선보이며 글로벌 시장 공략 기대감이 부각됨.",
+          "event_type": "NEW",
+          "theme": [
+            "보안주",
+            "인공지능(AI)"
+          ],
+          "origin_date": "2026-11-03"
+        },
+        "secondary_materials": [
+          {
+            "title": "금융권 해킹 사고 확산에 따른 보안주 테마 강세",
+            "event_type": "MARKET_THEME"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "한싹",
+            "reason": "금융권 해킹 사고 확산 관련 보안주로 동반 급등",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "파수AI",
+            "reason": "금융권 해킹 사고 확산 관련 보안주로 동반 급등",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "에스투더블유, 유럽 최대 사이버보안 전시서 AI 기반 안보·보안 솔루션...",
+            "date": "2026-11-03 09:32"
+          },
+          {
+            "headline": "보안주(정보) 테마 상승 속 유럽 ‘it-sa’서 AI 안보·보안 솔루션 소개 소식 등에 급등",
+            "date": "2026-11-03 17:00"
+          }
+        ],
+        "summary": "에스투더블유는 유럽 사이버보안 전시회 'it-sa'에서의 AI 보안 솔루션 공개 및 보안주 테마 상승세에 힘입어 상승함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "에스투더블유, 유럽 최대 사이버보안 전시서 AI 기반 안보·보안 솔루션...",
+        "[특징주] 금융권 해킹 확산에 보안주 급등···한싹·파수AI 상한가",
+        "[특징주] 금융권 해킹 사고 잇따르자 보안株 강세…'한싹·파수AI' 30%↑",
+        "에스투더블유, 'it-sa'서 AI 안보·보안 솔루션 선봬",
+        "에스투더블유, 독일 사이버보안 전시회 ‘it-sa 2026’ 참가…유럽 시장...",
+        "[특징주] 외국인 '드림시큐리티'·기관 '대한항공' 순매수…삼성전자는...",
+        "에스투더블유, 독일 it-sa 전시회서 AI 기반 안보·보안 솔루션 공개",
+        "에스투더블유 주가, 11월 3일 11,140원 14.73% 상승",
+        "보안주(정보) 테마 상승 속 유럽 ‘it-sa’서 AI 안보·보안 솔루션 소개 소식 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "09:32",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:32",
+          "title": "에스투더블유, 유럽 최대 사이버보안 전시서 AI 기반 안보·보안 솔루션...",
+          "press": "newsprime.co.kr",
+          "link": "http://www.newsprime.co.kr/news/article.html?no=753408"
+        },
+        {
+          "time": "09:52",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:52",
+          "title": "[특징주] 금융권 해킹 확산에 보안주 급등···한싹·파수AI 상한가",
+          "press": "finomy.com",
+          "link": "http://www.finomy.com/news/articleView.html?idxno=265410"
+        },
+        {
+          "time": "10:03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:03",
+          "title": "[특징주] 금융권 해킹 사고 잇따르자 보안株 강세…'한싹·파수AI' 30%↑",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261103000261"
+        },
+        {
+          "time": "10:08",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:08",
+          "title": "에스투더블유, 'it-sa'서 AI 안보·보안 솔루션 선봬",
+          "press": "ditoday.com",
+          "link": "https://ditoday.com/%ec%97%90%ec%8a%a4%ed%88%ac%eb%8d%94%eb%b8%94%ec%9c%a0-it-sa%ec%84%9c-ai-%ec%95%88%eb%b3%b4%c2%b7%eb%b3%b4%ec%95%88-%ec%86%94%eb%a3%a8%ec%85%98-%ec%84%a0%eb%b4%ac/"
+        },
+        {
+          "time": "10:30",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:30",
+          "title": "에스투더블유, 독일 사이버보안 전시회 ‘it-sa 2026’ 참가…유럽 시장...",
+          "press": "venturesquare.net",
+          "link": "https://www.venturesquare.net/1125148/"
+        },
+        {
+          "time": "11:46",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 11:46",
+          "title": "[특징주] 외국인 '드림시큐리티'·기관 '대한항공' 순매수…삼성전자는...",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=726411"
+        },
+        {
+          "time": "14:02",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 14:02",
+          "title": "에스투더블유, 독일 it-sa 전시회서 AI 기반 안보·보안 솔루션 공개",
+          "press": "dailysecu.com",
+          "link": "https://www.dailysecu.com/news/articleView.html?idxno=209290"
+        },
+        {
+          "time": "16:06",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 16:06",
+          "title": "에스투더블유 주가, 11월 3일 11,140원 14.73% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=560811"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 17:00",
+          "title": "보안주(정보) 테마 상승 속 유럽 ‘it-sa’서 AI 안보·보안 솔루션 소개 소식 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-11-03 23:02",
+          "title": "“기업 AI 핵심은 데이터”…스노우플레이크 ‘일하는 AI’ 확대",
+          "press": "테마뉴스·AI · edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=07101206645642112&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
+          "theme_news": "AI"
+        },
+        {
+          "datetime": "2026-11-03 23:00",
+          "title": "스노우플레이크, 기업 AI 활용 확대…'신뢰·효율·업무 혁신' 초점",
+          "press": "테마뉴스·AI · itdaily.kr",
+          "link": "https://www.itdaily.kr/news/articleView.html?idxno=242653",
+          "theme_news": "AI"
+        },
+        {
+          "datetime": "2026-11-03 23:44",
+          "title": "스노우플레이크, AI 에이전트 확산 속 ‘데이터 통제’ 강조",
+          "press": "테마뉴스·AI · byline.network",
+          "link": "https://byline.network/?p=9004111222625501",
+          "theme_news": "AI"
+        }
+      ],
+      "news_source": "featured",
+      "infostock_checked": true
+    }
+  ],
+  "20261104": [
+    {
+      "code": "389260",
+      "name": "대명에너지",
+      "rate": 24.66,
+      "trading_value": 53172986540.0,
+      "summary": "대명에너지는 미국 민주당의 의회 장악에 따른 태양광·풍력 등 신재생에너지 프로젝트주 수급 유입으로 급등했습니다.",
+      "analysis": {
+        "stock": "대명에너지",
+        "main_material": {
+          "title": "미국 민주당 의회 장악 및 신재생에너지주 수급 폭발",
+          "reason": "미국 의회 장악 소식 등으로 태양광 및 풍력 등 신재생에너지 관련주에 매수세가 몰리며 상한가 및 급등세를 기록함.",
+          "event_type": "NEW",
+          "theme": [
+            "신재생에너지",
+            "풍력",
+            "태양광",
+            "미국 민주당 정책"
+          ],
+          "origin_date": "2026-11-04"
+        },
+        "secondary_materials": [
+          {
+            "title": "풍력 및 태양광 개발사업 재평가",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "금양그린파워",
+            "reason": "신재생에너지 테마로 함께 급등",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "한화솔루션",
+            "reason": "태양광 관련주로 함께 부각",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "OCI홀딩스",
+            "reason": "태양광 관련주로 함께 부각",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "[특징주] 일부 신재생에너지주 '껑충'…대명에너지 상한가·금양그린파...",
+            "date": "2026-11-04 11:32"
+          },
+          {
+            "headline": "[특징주] 한화솔루션·OCI홀딩스 급등…美 민주당 의회 장악에 태양광주...",
+            "date": "2026-11-04 15:38"
+          },
+          {
+            "headline": "대명에너지 29.96% 급등…풍력·태양광 개발사업 재평가",
+            "date": "2026-11-04 16:16"
+          }
+        ],
+        "summary": "대명에너지는 미국 민주당의 의회 장악에 따른 태양광·풍력 등 신재생에너지 프로젝트주 수급 유입으로 급등했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[특징주] 일부 신재생에너지주 '껑충'…대명에너지 상한가·금양그린파...",
+        "대명에너지 28% 급등…신재생 프로젝트주 수급 폭발",
+        "[급등락주 짚어보기] 대명에너지·케이엔알시스템 '上'…신재생·로봇 ...",
+        "대명에너지 29.96% 급등…풍력·태양광 개발사업 재평가",
+        "[오늘의 특징주] 대명에너지·케이엔알시스템·에스피소프트",
+        "아리바이오홀딩스·대명에너지 등 5개 종목 29%대 급등",
+        "[상한가 종목] 대명에너지-아리바이오홀딩스 이어 케이엔알시스템 등 마...",
+        "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 태양광에너지/ 풍력에너지 테마 상승 속 상한가"
+      ],
+      "articles": [
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 11:32",
+          "title": "[특징주] 일부 신재생에너지주 '껑충'…대명에너지 상한가·금양그린파...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=623041"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 14:44",
+          "title": "대명에너지 28% 급등…신재생 프로젝트주 수급 폭발",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236485"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:08",
+          "title": "[급등락주 짚어보기] 대명에너지·케이엔알시스템 '上'…신재생·로봇 ...",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2644156"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:16",
+          "title": "대명에너지 29.96% 급등…풍력·태양광 개발사업 재평가",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236570"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:42",
+          "title": "[오늘의 특징주] 대명에너지·케이엔알시스템·에스피소프트",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202611040022"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 21:14",
+          "title": "아리바이오홀딩스·대명에너지 등 5개 종목 29%대 급등",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1793794387691330276"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 21:30",
+          "title": "[상한가 종목] 대명에너지-아리바이오홀딩스 이어 케이엔알시스템 등 마...",
+          "press": "econonews.co.kr",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=446721"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 17:00",
+          "title": "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 태양광에너지/ 풍력에너지 테마 상승 속 상한가",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true,
+      "manual": true
+    },
+    {
+      "code": "008830",
+      "name": "대동기어",
+      "rate": 20.5,
+      "trading_value": 67041033050.0,
+      "summary": "대동기어는 대동그룹의 새만금 피지컬 AI 로봇 팩토리 구축 사업 구상 발표와 중국 EYOU와의 로봇 액추에이터 합작법인 추진, 풍부한 수주잔고를 바탕으로 한 로봇·전동화 부품 기대감에 급등했다.",
+      "analysis": {
+        "stock": "대동기어",
+        "main_material": {
+          "title": "대동그룹, 새만금 피지컬 AI 로봇팜 팩토리 구상",
+          "reason": "대동그룹이 새만금 일대에 3,000억원을 투입해 피지컬 AI 로봇 팩토리 구축 사업을 발표하고, 中 EYOU와의 로봇 액추에이터 및 합작법인 추진 소식이 부각되며 급등했다.",
+          "event_type": "NEW",
+          "theme": [
+            "로봇",
+            "스마트팜",
+            "새만금"
+          ],
+          "origin_date": "2026-11-03"
+        },
+        "secondary_materials": [
+          {
+            "title": "1.9조원 규모 수주잔고 및 로봇 액추에이터·전동화 부품 기대감",
+            "event_type": "FOLLOW_UP"
+          },
+          {
+            "title": "국제 곡물값 상승 및 농기계 수출 확대 기대감에 따른 농업주 동반 강세",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "대동금속",
+            "reason": "대동그룹 계열사로 농기계 수출 확대 및 농업주 테마 속 함께 상한가 기록",
+            "relation": "BUSINESS"
+          },
+          {
+            "stock": "대동",
+            "reason": "대동그룹 지주사로 새만금 피지컬 AI 로봇 팩토리 사업 및 농업 로봇 개발에 함께 참여",
+            "relation": "BUSINESS"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "대동기어와 中로봇기업 EYOU, 합작법인으로 농업 휴머노이드 상용화 앞...",
+            "date": "2026-11-03 10:04"
+          },
+          {
+            "headline": "전후 재건(우크라/중동 전쟁 등) 테마 상승 속 대동그룹, 새만금 내 3,000억원 규모 '피지컬 AI 로봇 팜 팩토리' 사업 구상 발표 소식 등에 급등",
+            "date": "2026-11-04 17:00"
+          }
+        ],
+        "summary": "대동기어는 대동그룹의 새만금 피지컬 AI 로봇 팩토리 구축 사업 구상 발표와 중국 EYOU와의 로봇 액추에이터 합작법인 추진, 풍부한 수주잔고를 바탕으로 한 로봇·전동화 부품 기대감에 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "대동기어와 中로봇기업 EYOU, 합작법인으로 농업 휴머노이드 상용화 앞...",
+        "대동기어, 中 EYOU와 로봇 액추에이터 JV 추진",
+        "[클릭 e종목]\"대동기어, 1.9조 수주잔고에 로봇 액추에이터까지…전동화...",
+        "대동기어, 전동화·로봇 부품사로 변신 완료…\"1.9조원 수주잔고와 액추...",
+        "\"대동기어, 농기계 넘어 로봇 부품사로…1.9조 수주잔고에 액추에이터 ...",
+        "대동기어 주가, 갑작스런 급등세... 왜?",
+        "국제 곡물값 상승에 농업주 불기둥… 대동기어·대동금속 상한가 '정조...",
+        "‘현대차 효과?’… 대동기어 상한가·대동 10%대 급등",
+        "[특징주] 농기계 수출 확대 기대감에 관련株 '대동금속·대동기어' 30%↑",
+        "[N2 증시 풍향계] 심텍·코리아써키트·한진칼우·대동기어 ‘강세’…...",
+        "[특징주] 대동기어, 1조 9천억 수주잔고 및 현대차 협력 '로봇 부품' 기...",
+        "대동기어 17% 급등…로봇 감속기와 전동화 부품 기대 겹쳐",
+        "대동기어 주가, 11월 4일 6,220원 18.93% 상승",
+        "전후 재건(우크라/중동 전쟁 등) 테마 상승 속 대동그룹, 새만금 내 3,000억원 규모 '피지컬 AI 로봇 팜 팩토리' 사업 구상 발표 소식 등에 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:04",
+          "title": "대동기어와 中로봇기업 EYOU, 합작법인으로 농업 휴머노이드 상용화 앞...",
+          "press": "aflnews.co.kr",
+          "link": "https://www.aflnews.co.kr/news/articleView.html?idxno=330911"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 16:04",
+          "title": "대동기어, 中 EYOU와 로봇 액추에이터 JV 추진",
+          "press": "newsfarm.co.kr",
+          "link": "http://www.newsfarm.co.kr/news/articleView.html?idxno=102818"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 07:52",
+          "title": "[클릭 e종목]\"대동기어, 1.9조 수주잔고에 로봇 액추에이터까지…전동화...",
+          "press": "view.asiae.co.kr",
+          "link": "https://view.asiae.co.kr/article/2026110407523868311"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 08:24",
+          "title": "대동기어, 전동화·로봇 부품사로 변신 완료…\"1.9조원 수주잔고와 액추...",
+          "press": "newsprime.co.kr",
+          "link": "http://www.newsprime.co.kr/news/article.html?no=753585"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 09:04",
+          "title": "\"대동기어, 농기계 넘어 로봇 부품사로…1.9조 수주잔고에 액추에이터 ...",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=03444006645642440&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 09:26",
+          "title": "대동기어 주가, 갑작스런 급등세... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1190948"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 09:40",
+          "title": "국제 곡물값 상승에 농업주 불기둥… 대동기어·대동금속 상한가 '정조...",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=501120"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 09:48",
+          "title": "‘현대차 효과?’… 대동기어 상한가·대동 10%대 급등",
+          "press": "biz.heraldcorp.com",
+          "link": "https://biz.heraldcorp.com/article/10925028?ref=naver"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 09:48",
+          "title": "[특징주] 농기계 수출 확대 기대감에 관련株 '대동금속·대동기어' 30%↑",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261104000274"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 10:18",
+          "title": "[N2 증시 풍향계] 심텍·코리아써키트·한진칼우·대동기어 ‘강세’…...",
+          "press": "news2day.co.kr",
+          "link": "https://www.news2day.co.kr/article/20261104500132"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 13:08",
+          "title": "[특징주] 대동기어, 1조 9천억 수주잔고 및 현대차 협력 '로봇 부품' 기...",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=302853"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 15:24",
+          "title": "대동기어 17% 급등…로봇 감속기와 전동화 부품 기대 겹쳐",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236532"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 15:58",
+          "title": "대동기어 주가, 11월 4일 6,220원 18.93% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=561167"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 17:00",
+          "title": "전후 재건(우크라/중동 전쟁 등) 테마 상승 속 대동그룹, 새만금 내 3,000억원 규모 '피지컬 AI 로봇 팜 팩토리' 사업 구상 발표 소식 등에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "009830",
+      "name": "한화솔루션",
+      "rate": 18.63,
+      "trading_value": 378356526000.0,
+      "summary": "한화솔루션은 미국 민주당의 의회 장악(블루웨이브) 기대감에 따른 태양광 세액공제 복원 및 탈중국 수혜 전망으로 급등함.",
+      "analysis": {
+        "stock": "한화솔루션",
+        "main_material": {
+          "title": "美 민주당 의회 장악 및 태양광 수혜 기대",
+          "reason": "미국 민주당의 상·하원 장악 유력 소식과 함께 태양광 세액공제 복원 및 탈중국 정책 수혜 기대감이 부각되며 급등함.",
+          "event_type": "NEW",
+          "theme": [
+            "태양광",
+            "신재생에너지",
+            "미국 민주당 정책"
+          ],
+          "origin_date": "2026-11-04"
+        },
+        "secondary_materials": [
+          {
+            "title": "흑자 전환 확인 및 실적 개선 기대",
+            "event_type": "CONFIRMATION"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "OCI홀딩스",
+            "reason": "미국 민주당의 의회 장악 기대감에 따른 태양광·친환경주 강세 흐름을 함께 보임.",
+            "relation": "MARKET_THEME"
+          },
+          {
+            "stock": "대명에너지",
+            "reason": "신재생에너지 테마 상승 속에서 함께 부각됨.",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "美 민주당 하원 4년만에 탈환 '유력'…태양광·이차전지 급등",
+            "date": "2026-11-04 13:36"
+          },
+          {
+            "headline": "한화솔루션·OCI홀딩스 급등…민주당 상·하원 장악에 태양광주 강세",
+            "date": "2026-11-04 14:26"
+          }
+        ],
+        "summary": "한화솔루션은 미국 민주당의 의회 장악(블루웨이브) 기대감에 따른 태양광 세액공제 복원 및 탈중국 수혜 전망으로 급등함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "한화솔루션 주가, 급등세... 왜?",
+        "[특징주] 한화솔루션·OCI홀딩스 급등…美 민주당 의회 장악에 태양광주...",
+        "美 '블루웨이브' 친환경주 급등…한화솔루션 18%↑[핫종목](종합)",
+        "한화솔루션 18.64% 급등…대규모 증자와 태양광 투자 재평가",
+        "한화솔루션 주가, 11월 4일 애프터마켓 28,150원 19.28% 상승",
+        "한화솔루션㈜ 진천사업장·현대건설, 무재해 릴레이 캠페인 동참",
+        "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 태양광에너지/ 수소에너지(수소차/연료전지 등) 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 14:48",
+          "title": "한화솔루션 주가, 급등세... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1191122"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 15:38",
+          "title": "[특징주] 한화솔루션·OCI홀딩스 급등…美 민주당 의회 장악에 태양광주...",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=8057"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:19",
+          "title": "美 '블루웨이브' 친환경주 급등…한화솔루션 18%↑[핫종목](종합)",
+          "press": "news1.kr",
+          "link": "https://www.news1.kr/finance/general-stock/6343064"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:20",
+          "title": "한화솔루션 18.64% 급등…대규모 증자와 태양광 투자 재평가",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236579"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:28",
+          "title": "한화솔루션 주가, 11월 4일 애프터마켓 28,150원 19.28% 상승",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=561185"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:42",
+          "title": "한화솔루션㈜ 진천사업장·현대건설, 무재해 릴레이 캠페인 동참",
+          "press": "inews365.com",
+          "link": "https://www.inews365.com/news/article.html?no=942223"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 17:00",
+          "title": "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 태양광에너지/ 수소에너지(수소차/연료전지 등) 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-11-04 18:12",
+          "title": "코스피·코스닥 동반 상승 마감… LG엔솔·에코프로 등 2차전지주 강세...",
+          "press": "테마뉴스·2차전지 · gukjenews.com",
+          "link": "https://www.gukjenews.com/news/articleView.html?idxno=3742217",
+          "theme_news": "2차전지"
+        },
+        {
+          "datetime": "2026-11-04 16:14",
+          "title": "코스피, 극심한 변동성 끝에 0.6% 상승한 5680선 마감...2차전지·화학주...",
+          "press": "테마뉴스·2차전지 · pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=501286",
+          "theme_news": "2차전지"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true,
+      "manual": true
+    },
+    {
+      "code": "443670",
+      "name": "에스피소프트",
+      "rate": 13.3,
+      "trading_value": 57437901400.0,
+      "summary": "에스피소프트는 AI와 양자내성암호를 결합한 차세대 방화벽 개발 완료 및 연내 출시 소식이 전해지며 양자보안 관련 테마로 매수세가 유입되어 상승했다.",
+      "analysis": {
+        "stock": "에스피소프트",
+        "main_material": {
+          "title": "AI·양자내성암호 결합 차세대 방화벽 개발 완료",
+          "reason": "인공지능과 양자내성암호(PQC)를 결합한 차세대 방화벽 개발을 완료하고 연내 양자보안 시장 공략에 나선다는 소식이 부각되며 주가가 상승했다.",
+          "event_type": "NEW",
+          "theme": [
+            "양자보안",
+            "인공지능(AI)",
+            "보안"
+          ],
+          "origin_date": "2026-11-04"
+        },
+        "secondary_materials": [
+          {
+            "title": "주식소각 및 클라우드 사업 부각",
+            "event_type": "RECYCLED"
+          },
+          {
+            "title": "챗GPT 확산에 따른 AI 챗봇주 동반 상승",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "에스피소프트, AI·양자내성암호 결합 차세대 방화벽 개발…연내 출시",
+            "date": "2026-11-04 09:40"
+          },
+          {
+            "headline": "AI·PQC 결합 차세대 방화벽 개발 완료 소식에 급등",
+            "date": "2026-11-04 17:00"
+          }
+        ],
+        "summary": "에스피소프트는 AI와 양자내성암호를 결합한 차세대 방화벽 개발 완료 및 연내 출시 소식이 전해지며 양자보안 관련 테마로 매수세가 유입되어 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "에스피소프트 주가, 11월 3일 애프터마켓 4,520원 10.67% 하락",
+        "에스피소프트, AI·양자내성암호 결합 차세대 방화벽 개발…연내 출시 ...",
+        "에스피소프트, 'PHP 취약점 해결' AI·양자내성암호 결합 '차세대 방화벽...",
+        "에스피소프트, 양자보안 시장 진출…차세대 방화벽 개발 완료",
+        "에스피소프트 주가, 급등세... 이유는?",
+        "에스피소프트, AI·PQC 결합 차세대 방화벽 개발 완료",
+        "에스피소프트, AI·양자내성암호 기술 적용 '차세대 방화벽' 개발 완료",
+        "챗GPT 확산에 AI 챗봇주 들썩… 에스피소프트 주가 폭등랠리",
+        "거래량 1254만주 에스피소프트…주식소각·클라우드 사업 부각",
+        "[오늘의 특징주] 대명에너지·케이엔알시스템·에스피소프트",
+        "AI·PQC 결합 차세대 방화벽 개발 완료 소식에 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 16:56",
+          "title": "에스피소프트 주가, 11월 3일 애프터마켓 4,520원 10.67% 하락",
+          "press": "joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=560842"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 09:40",
+          "title": "에스피소프트, AI·양자내성암호 결합 차세대 방화벽 개발…연내 출시 ...",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2643880"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 09:42",
+          "title": "에스피소프트, 'PHP 취약점 해결' AI·양자내성암호 결합 '차세대 방화벽...",
+          "press": "newsprime.co.kr",
+          "link": "http://www.newsprime.co.kr/news/article.html?no=753616"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 09:43",
+          "title": "에스피소프트, 양자보안 시장 진출…차세대 방화벽 개발 완료",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=03558806645642440&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 09:48",
+          "title": "에스피소프트 주가, 급등세... 이유는?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1190958"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 09:49",
+          "title": "에스피소프트, AI·PQC 결합 차세대 방화벽 개발 완료",
+          "press": "newsis.com",
+          "link": "https://www.newsis.com/view/NISX20261104_0003854002"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 11:20",
+          "title": "에스피소프트, AI·양자내성암호 기술 적용 '차세대 방화벽' 개발 완료",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261104000538"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 13:44",
+          "title": "챗GPT 확산에 AI 챗봇주 들썩… 에스피소프트 주가 폭등랠리",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=501196"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:36",
+          "title": "거래량 1254만주 에스피소프트…주식소각·클라우드 사업 부각",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236595"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:42",
+          "title": "[오늘의 특징주] 대명에너지·케이엔알시스템·에스피소프트",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202611040022"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 17:00",
+          "title": "AI·PQC 결합 차세대 방화벽 개발 완료 소식에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "066970",
+      "name": "엘앤에프",
+      "rate": 11.5,
+      "trading_value": 26767485000.0,
+      "summary": "엘앤에프는 LG에너지솔루션과 1조원대 규모의 LFP 양극재 장기 공급 계약을 체결한 소식이 전해지며 급등했다. 같은 날 미국 중간선거 민주당 승리로 2차전지·태양광 정책 수혜주가 함께 올랐습니다.",
+      "analysis": {
+        "stock": "엘앤에프",
+        "main_material": {
+          "title": "LG에너지솔루션과 1조원대 LFP 양극재 공급 계약",
+          "reason": "LG에너지솔루션과 4년간 1조 349억원 규모의 LFP(리튬·인산·철) 양극재 장기 공급 계약을 체결하며 실적 회복 기대감이 집중됐다.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "이차전지",
+            "LFP양극재",
+            "LG에너지솔루션",
+            "미국 민주당 정책"
+          ],
+          "origin_date": "2026-11-03"
+        },
+        "secondary_materials": [
+          {
+            "title": "미국 중간선거 민주당 승리 → 전기차·IRA 정책 기대에 2차전지 동반 강세",
+            "event_type": "NEW"
+          },
+          {
+            "title": "미국 민주당 하원 탈환 유력에 따른 이차전지주 급등",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "LG에너지솔루션",
+            "reason": "엘앤에프와 1조원 규모의 LFP 양극재 공급 계약을 체결한 수요처임",
+            "relation": "BUSINESS"
+          },
+          {
+            "stock": "삼성SDI",
+            "reason": "미국 블루웨이브 수혜 및 ESS 수주 관련 동반 상승 종목으로 언급됨",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "엘앤에프, LG엔솔과 1조 원대 LFP 양극재 공급계약… 배터리 3사 모두 뚫...",
+            "date": "2026-11-03 17:41"
+          },
+          {
+            "headline": "엘앤에프, 1조349억원 규모 LFP 양극재 공급 계약 체결…LG에너지솔루션...",
+            "date": "2026-11-04 00:02"
+          },
+          {
+            "headline": "[특징주]美 민주당 하원 4년만에 탈환 '유력'…태양광·이차전지 급등 ...",
+            "date": "2026-11-04 13:36"
+          }
+        ],
+        "summary": "엘앤에프는 LG에너지솔루션과 1조원대 규모의 LFP 양극재 장기 공급 계약을 체결한 소식이 전해지며 급등했다. 같은 날 미국 중간선거 민주당 승리로 2차전지·태양광 정책 수혜주가 함께 올랐습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "엘앤에프, LG에너지솔루션에 1조원 규모 LFP 양극재 공급…2028년부터 4년...",
+        "엘앤에프, LFP 양극재 … LG엔솔에 1조원 공급",
+        "엘앤에프, LG엔솔과 1조 원대 LFP 양극재 공급계약… 배터리 3사 모두 뚫...",
+        "엘앤에프, LG에너지솔루션과 LFP 양극재 장기 공급 계약",
+        "엘앤에프, LG엔솔에 1조 LFP 양극재 공급",
+        "\"NCM 이어 LFP도 터졌다\"… 엘앤에프, LG엔솔에 1조 원 공급",
+        "엘앤에프, LG엔솔에 1조 규모 공급 계약",
+        "[Biz & Now] 엘앤에프, LG엔솔에 4년간 1조 규모 LFP 양극재 공급",
+        "엘앤에프, 1조349억원 규모 LFP 양극재 공급 계약 체결…LG에너지솔루션...",
+        "[코스피·코스닥, 삼성바이오로직스 엔비디아 엘앤에프 LG에너지솔루션...",
+        "[인터뷰]엘앤에프플러스 권혁원 \"LFP 증설 통한 투트랙으로 中 추월\"",
+        "엘앤에프, LG에너지솔루션과 1조원 대 공급계약 체결",
+        "엘앤에프 14.44% 급등…양극재 회복 기대에 매수 집중",
+        "[특징주] 엘앤에프, LG엔솔과 1조원대 LFP 양극재 장기 계약에 12%대 급등",
+        "[단독] 배터리 3사 잡은 엘앤에프, LFP 양극재 신공장 만든다",
+        "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 2차전지/ 전기차/ 전력저장장치(ESS) 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 16:56",
+          "title": "엘앤에프, LG에너지솔루션에 1조원 규모 LFP 양극재 공급…2028년부터 4년...",
+          "press": "pointdaily.co.kr",
+          "link": "https://www.pointdaily.co.kr/news/articleView.html?idxno=324664"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 17:07",
+          "title": "엘앤에프, LFP 양극재 … LG엔솔에 1조원 공급",
+          "press": "mk.co.kr",
+          "link": "https://www.mk.co.kr/article/12194992"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 17:41",
+          "title": "엘앤에프, LG엔솔과 1조 원대 LFP 양극재 공급계약… 배터리 3사 모두 뚫...",
+          "press": "hankookilbo.com",
+          "link": "https://www.hankookilbo.com/news/article/A2026110315210004803?did=NA"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:00",
+          "title": "엘앤에프, LG에너지솔루션과 LFP 양극재 장기 공급 계약",
+          "press": "datanet.co.kr",
+          "link": "https://www.datanet.co.kr/news/articleView.html?idxno=215576"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 18:03",
+          "title": "엘앤에프, LG엔솔에 1조 LFP 양극재 공급",
+          "press": "hankyung.com",
+          "link": "https://www.hankyung.com/article/2026110337321"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 20:42",
+          "title": "\"NCM 이어 LFP도 터졌다\"… 엘앤에프, LG엔솔에 1조 원 공급",
+          "press": "woodkorea.co.kr",
+          "link": "https://www.woodkorea.co.kr/news/articleView.html?idxno=92327"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 21:34",
+          "title": "엘앤에프, LG엔솔에 1조 규모 공급 계약",
+          "press": "idaegu.co.kr",
+          "link": "https://www.idaegu.co.kr/news/articleView.html?idxno=564307"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 00:02",
+          "title": "[Biz & Now] 엘앤에프, LG엔솔에 4년간 1조 규모 LFP 양극재 공급",
+          "press": "joongang.co.kr",
+          "link": "https://www.joongang.co.kr/article/25475499"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 00:02",
+          "title": "엘앤에프, 1조349억원 규모 LFP 양극재 공급 계약 체결…LG에너지솔루션...",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16267525"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 07:58",
+          "title": "[코스피·코스닥, 삼성바이오로직스 엔비디아 엘앤에프 LG에너지솔루션...",
+          "press": "public25.com",
+          "link": "https://www.public25.com/news/articleView.html?idxno=57827"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 08:40",
+          "title": "[인터뷰]엘앤에프플러스 권혁원 \"LFP 증설 통한 투트랙으로 中 추월\"",
+          "press": "bloter.net",
+          "link": "https://www.bloter.net/news/articleView.html?idxno=677532"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 08:58",
+          "title": "엘앤에프, LG에너지솔루션과 1조원 대 공급계약 체결",
+          "press": "tbc.co.kr",
+          "link": "https://www.tbc.co.kr/news/view?pno=20261103154908AE07903&id=212920"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 15:02",
+          "title": "엘앤에프 14.44% 급등…양극재 회복 기대에 매수 집중",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236511"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 15:32",
+          "title": "[특징주] 엘앤에프, LG엔솔과 1조원대 LFP 양극재 장기 계약에 12%대 급등",
+          "press": "widedaily.com",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=302856"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 18:20",
+          "title": "[단독] 배터리 3사 잡은 엘앤에프, LFP 양극재 신공장 만든다",
+          "press": "hankyung.com",
+          "link": "https://www.hankyung.com/article/2026110463951"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 17:00",
+          "title": "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 2차전지/ 전기차/ 전력저장장치(ESS) 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-11-04 18:12",
+          "title": "코스피·코스닥 동반 상승 마감… LG엔솔·에코프로 등 2차전지주 강세...",
+          "press": "테마뉴스·2차전지 · gukjenews.com",
+          "link": "https://www.gukjenews.com/news/articleView.html?idxno=3742217",
+          "theme_news": "2차전지"
+        },
+        {
+          "datetime": "2026-11-04 16:14",
+          "title": "코스피, 극심한 변동성 끝에 0.6% 상승한 5680선 마감...2차전지·화학주...",
+          "press": "테마뉴스·2차전지 · pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=501286",
+          "theme_news": "2차전지"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true,
+      "manual": true
+    },
+    {
+      "code": "282720",
+      "name": "금양그린파워",
+      "rate": 17.42,
+      "trading_value": 10308462750.0,
+      "summary": "미국 민주당의 의회 선거 우세에 따른 신재생에너지 정책 수혜 기대감과 신재생 EPC 수주잔고 부각으로 급등했습니다.",
+      "analysis": {
+        "stock": "금양그린파워",
+        "main_material": {
+          "title": "미국 민주당 선거 우세 속 신재생에너지 테마 상승",
+          "reason": "미국 민주당의 하원 탈환 및 상원 승리 우세에 따른 정책 수혜 기대감으로 태양광·풍력 등 신재생에너지 테마가 상승하며 동반 급등했습니다.",
+          "event_type": "NEW",
+          "theme": [
+            "신재생에너지",
+            "태양광에너지",
+            "풍력에너지"
+          ],
+          "origin_date": "2026-11-04"
+        },
+        "secondary_materials": [
+          {
+            "title": "신재생 EPC 수주잔고에 대한 시장 시선 부각",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "대명에너지",
+            "reason": "신재생에너지 테마 상승 과정에서 함께 상한가를 기록하며 동반 움직임",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "[특징주] 일부 신재생에너지주 '껑충'…대명에너지 상한가·금양그린파...",
+            "date": "2026-11-04 11:32"
+          },
+          {
+            "headline": "미 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 태양광에너지/ 풍력에너지/ 전력저장장치(ESS)/ 고체산화물 연료전지(SOFC) 테마 상승 속 급등",
+            "date": "2026-11-04 17:00"
+          }
+        ],
+        "summary": "미국 민주당의 의회 선거 우세에 따른 신재생에너지 정책 수혜 기대감과 신재생 EPC 수주잔고 부각으로 급등했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[특징주] 일부 신재생에너지주 '껑충'…대명에너지 상한가·금양그린파...",
+        "금양그린파워 19.91% 올라…신재생 EPC 수주잔고에 시선",
+        "금양그린파워 19.91% 올라…신재생 EPC 수주잔고에 시선",
+        "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 태양광에너지/ 풍력에너지/ 전력저장장치(ESS)/ 고체산화물 연료전지(SOFC) 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 11:32",
+          "title": "[특징주] 일부 신재생에너지주 '껑충'…대명에너지 상한가·금양그린파...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=623041"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:18",
+          "title": "금양그린파워 19.91% 올라…신재생 EPC 수주잔고에 시선",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236576"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:30",
+          "title": "금양그린파워 19.91% 올라…신재생 EPC 수주잔고에 시선",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236586"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 17:00",
+          "title": "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 태양광에너지/ 풍력에너지/ 전력저장장치(ESS)/ 고체산화물 연료전지(SOFC) 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "140410",
+      "name": "메지온",
+      "rate": 13.03,
+      "trading_value": 5852525250.0,
+      "summary": "메지온은 53억6400만원 규모의 유데나필 호주 특허권 양도 계약 체결 공시가 발표되면서 주가가 급등했다.",
+      "analysis": {
+        "stock": "메지온",
+        "main_material": {
+          "title": "유데나필 호주 특허권 양도 계약 체결",
+          "reason": "메지온이 약 53억6480만원(최근 매출액 대비 67.83%) 규모의 유데나필 호주 특허권 양도 계약을 체결했다고 공시하면서 투자 심리가 개선되어 급등했다.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "제약바이오",
+            "특허양도"
+          ],
+          "origin_date": "2026-11-04"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "[속보] 메지온, 유데나필 호주 특허권 53억6480만원에 양도…지난해 매...",
+            "date": "2026-11-04 14:08"
+          },
+          {
+            "headline": "53.64억원 규모 유데나필 호주 특허권 양도 계약 체결에 급등",
+            "date": "2026-11-04 17:00"
+          }
+        ],
+        "summary": "메지온은 53억6400만원 규모의 유데나필 호주 특허권 양도 계약 체결 공시가 발표되면서 주가가 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[속보] 메지온, 유데나필 호주 특허권 53억6480만원에 양도…지난해 매...",
+        "[특징주] 메지온, 유데나필 호주 특허권 53억원에 양도…주가 10% 상승",
+        "메지온, 유데나필 호주 특허권 400만달러에 양도",
+        "53.64억원 규모 유데나필 호주 특허권 양도 계약 체결에 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 14:08",
+          "title": "[속보] 메지온, 유데나필 호주 특허권 53억6480만원에 양도…지난해 매...",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=623113"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 14:12",
+          "title": "[특징주] 메지온, 유데나필 호주 특허권 53억원에 양도…주가 10% 상승",
+          "press": "newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=726679"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:14",
+          "title": "메지온, 유데나필 호주 특허권 400만달러에 양도",
+          "press": "press9.kr",
+          "link": "http://www.press9.kr/news/articleView.html?idxno=85591"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 17:00",
+          "title": "53.64억원 규모 유데나필 호주 특허권 양도 계약 체결에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "058730",
+      "name": "다스코",
+      "rate": 13.26,
+      "trading_value": 10802055880.0,
+      "summary": "다스코는 태양광에너지 및 전후 재건 테마의 동반 상승 흐름 속에서 급등세를 기록함.",
+      "analysis": {
+        "stock": "다스코",
+        "main_material": {
+          "title": "우크라이나·중동 등 전후 재건 및 태양광 테마 상승",
+          "reason": "태양광에너지 및 전후 재건(우크라이나, 중동 전쟁 등) 테마가 시장에서 부각되며 매수세가 유입되어 급등함.",
+          "event_type": "RECYCLED",
+          "theme": [
+            "태양광에너지",
+            "전후재건",
+            "우크라이나재건"
+          ],
+          "origin_date": "확인불가"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "태양광에너지, 전후 재건(우크라/중동 전쟁 등) 테마 상승 속 급등",
+            "date": "2026-11-04 17:00"
+          }
+        ],
+        "summary": "다스코는 태양광에너지 및 전후 재건 테마의 동반 상승 흐름 속에서 급등세를 기록함.",
+        "confidence": "MEDIUM"
+      },
+      "headlines": [
+        "태양광에너지, 전후 재건(우크라/중동 전쟁 등) 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "장마감",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 17:00",
+          "title": "태양광에너지, 전후 재건(우크라/중동 전쟁 등) 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "infostock",
+      "infostock_checked": true
+    },
+    {
+      "code": "091580",
+      "name": "상신이디피",
+      "rate": 20.73,
+      "trading_value": 8230431000.0,
+      "summary": "상신이디피는 미국 민주당의 선거 우세에 따른 2차전지 및 전기차 정책 수혜 기대감이 유입되며 급등했다.",
+      "analysis": {
+        "stock": "상신이디피",
+        "main_material": {
+          "title": "미국 민주당 선거 우세에 따른 2차전지 테마 상승",
+          "reason": "미국 민주당의 상·하원 승리 우세에 따른 정책 수혜 기대감이 유입되며 2차전지 및 전기차 테마 전반이 상승함에 따라 동반 급등했다.",
+          "event_type": "NEW",
+          "theme": [
+            "2차전지",
+            "전기차"
+          ],
+          "origin_date": "2026-11-04"
+        },
+        "secondary_materials": [
+          {
+            "title": "원통형 배터리 부품 수요 및 자금조달 변수 부각",
+            "event_type": "FOLLOW_UP"
+          },
+          {
+            "title": "삼성자산운용 지분 5.13% 신규 보고",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "상신이디피 23% 뛰어…원통형 배터리 부품 수요와 자금조달 변수",
+            "date": "2026-11-04 16:16"
+          },
+          {
+            "headline": "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 2차전지/ 전기차 테마 상승 속 급등",
+            "date": "2026-11-04 17:00"
+          }
+        ],
+        "summary": "상신이디피는 미국 민주당의 선거 우세에 따른 2차전지 및 전기차 정책 수혜 기대감이 유입되며 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "삼성자산운용 상신이디피 지분 5.13% 신규 보고",
+        "상신이디피 23% 뛰어…원통형 배터리 부품 수요와 자금조달 변수",
+        "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 2차전지/ 전기차 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 06:46",
+          "title": "삼성자산운용 상신이디피 지분 5.13% 신규 보고",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=399277"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:16",
+          "title": "상신이디피 23% 뛰어…원통형 배터리 부품 수요와 자금조달 변수",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236572"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 17:00",
+          "title": "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 2차전지/ 전기차 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-11-04 18:12",
+          "title": "코스피·코스닥 동반 상승 마감… LG엔솔·에코프로 등 2차전지주 강세...",
+          "press": "테마뉴스·2차전지 · gukjenews.com",
+          "link": "https://www.gukjenews.com/news/articleView.html?idxno=3742217",
+          "theme_news": "2차전지"
+        },
+        {
+          "datetime": "2026-11-04 16:14",
+          "title": "코스피, 극심한 변동성 끝에 0.6% 상승한 5680선 마감...2차전지·화학주...",
+          "press": "테마뉴스·2차전지 · pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=501286",
+          "theme_news": "2차전지"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "033790",
+      "name": "피노",
+      "rate": 14.82,
+      "trading_value": 4169824560.0,
+      "summary": "피노는 타법인 지분 인수와 사업재편 기대감이 부각되면서 상승했다.",
+      "analysis": {
+        "stock": "피노",
+        "main_material": {
+          "title": "타법인 지분 인수와 사업재편 기대",
+          "reason": "타법인 지분 인수 및 사업재편에 대한 기대감이 부각되며 주가가 상승했다.",
+          "event_type": "NEW",
+          "theme": [
+            "타법인 지분 인수",
+            "사업재편"
+          ],
+          "origin_date": "2026-11-04"
+        },
+        "secondary_materials": [
+          {
+            "title": "브랜드 수상 소식",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "피노 14.70% 올라…타법인 지분 인수와 사업재편 기대",
+            "date": "2026-11-04 16:34"
+          }
+        ],
+        "summary": "피노는 타법인 지분 인수와 사업재편 기대감이 부각되면서 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[2026 고객신뢰도 1위 프리미엄 브랜드] 피노켐",
+        "[2026 고객신뢰도 1위 프리미엄 브랜드] 피노",
+        "피노 14.70% 올라…타법인 지분 인수와 사업재편 기대",
+        "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 2차전지 테마 상승 속 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 08:02",
+          "title": "[2026 고객신뢰도 1위 프리미엄 브랜드] 피노켐",
+          "press": "forbeskorea.co.kr",
+          "link": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=402800"
+        },
+        {
+          "time": "11/02",
+          "date": "2026-11-02",
+          "datetime": "2026-11-02 08:02",
+          "title": "[2026 고객신뢰도 1위 프리미엄 브랜드] 피노",
+          "press": "forbeskorea.co.kr",
+          "link": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=402798"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:34",
+          "title": "피노 14.70% 올라…타법인 지분 인수와 사업재편 기대",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236593"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 17:00",
+          "title": "美 민주당, '하원 탈환'에 이어 상원도 승리 우세에 따른 정책 수혜 기대감 등에 2차전지 테마 상승 속 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-11-04 17:14",
+          "title": "모바일게임 '니케' PC 버전 해킹 비상… 계정 및 가상화폐 탈취 우려",
+          "press": "테마뉴스·모바일게임 · industrynews.co.kr",
+          "link": "https://www.industrynews.co.kr/news/articleView.html?idxno=88904",
+          "theme_news": "모바일게임"
+        },
+        {
+          "datetime": "2026-11-04 16:03",
+          "title": "모바일게임 '니케' 해킹…계정·가상화폐 지갑 탈취 우려",
+          "press": "테마뉴스·모바일게임 · yonhapnewstv.co.kr",
+          "link": "http://www.yonhapnewstv.co.kr/news/AKR20261104160236eVI",
+          "theme_news": "모바일게임"
+        },
+        {
+          "datetime": "2026-11-04 15:30",
+          "title": "모바일게임 '니케' 해킹…\"계정·가상화폐 지갑 탈취 위험\"(종합)",
+          "press": "테마뉴스·모바일게임 · yna.co.kr",
+          "link": "https://www.yna.co.kr/view/AKR20261104049351017?input=1195m",
+          "theme_news": "모바일게임"
+        }
+      ],
+      "news_source": "general",
+      "infostock_checked": true
+    }
+  ],
+  "20261105": [
+    {
+      "code": "208370",
+      "name": "셀바스헬스케어",
+      "rate": 13.79,
+      "trading_value": 18863789315.0,
+      "summary": "셀바스헬스케어는 의료기기 및 의료AI 테마 상승 속에서 AI 기반 진단·관리 솔루션 사업 확대 기대감이 부각되며 상승했다.",
+      "analysis": {
+        "stock": "셀바스헬스케어",
+        "main_material": {
+          "title": "AI 기반 진단 및 차세대 진단사업 확장 기대감",
+          "reason": "기존 의료기기 제조 역량을 바탕으로 한 AI 기반 진단 및 관리 솔루션 사업 확대 기대감이 부각되며 주가가 급등했다.",
+          "event_type": "NEW",
+          "theme": [
+            "의료AI",
+            "의료기기"
+          ],
+          "origin_date": "2026-11-05"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "셀바스헬스케어 주가, 급등세... 무슨 회사길래?",
+            "date": "2026-11-05 10:18"
+          },
+          {
+            "headline": "셀바스헬스케어 15% 급등…AI 진단·차세대 진단사업 확장[특징주]",
+            "date": "2026-11-05 11:21"
+          },
+          {
+            "headline": "일부 의료기기/ 의료AI 테마 상승 속 기존 의료기기 제조 역량을 바탕으로 AI 기반 진단·관리 솔루션 사업 확대 기대감 부각에 급등",
+            "date": "2026-11-05 17:00"
+          }
+        ],
+        "summary": "셀바스헬스케어는 의료기기 및 의료AI 테마 상승 속에서 AI 기반 진단·관리 솔루션 사업 확대 기대감이 부각되며 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "셀바스헬스케어 주가, 급등세... 무슨 회사길래?",
+        "셀바스헬스케어 15% 급등…AI 진단·차세대 진단사업 확장[특징주]",
+        "일부 의료기기/ 의료AI 테마 상승 속 기존 의료기기 제조 역량을 바탕으로 AI 기반 진단·관리 솔루션 사업 확대 기대감 부각에 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 10:18",
+          "title": "셀바스헬스케어 주가, 급등세... 무슨 회사길래?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1191260"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 11:21",
+          "title": "셀바스헬스케어 15% 급등…AI 진단·차세대 진단사업 확장[특징주]",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=04588726645642768&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 17:00",
+          "title": "일부 의료기기/ 의료AI 테마 상승 속 기존 의료기기 제조 역량을 바탕으로 AI 기반 진단·관리 솔루션 사업 확대 기대감 부각에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "109610",
+      "name": "에스와이",
+      "rate": 27.32,
+      "trading_value": 27018429025.0,
+      "summary": "에스와이는 미국정치 및 태양광 테마 속에서 독보적인 무타공 지붕 일체형 태양광(BIPV) 원천 기술 보유 사실이 부각되며 상승했다.",
+      "analysis": {
+        "stock": "에스와이",
+        "main_material": {
+          "title": "미국 태양광 테마 상승 및 BIPV 원천기술 부각",
+          "reason": "미국 정치 이슈 및 민주당 관련 태양광 호재 속에서 무타공 지붕 일체형 태양광(BIPV) 원천 기술 보유 사실이 부각되며 급등했다.",
+          "event_type": "NEW",
+          "theme": [
+            "태양광에너지",
+            "BIPV"
+          ],
+          "origin_date": "2026-11-05"
+        },
+        "secondary_materials": [
+          {
+            "title": "대형 구조물 특화 기술력 및 반도체 연관성 부각",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "에스와이, 美 민주당 압승에 태양광 '잭팟'…UL·FM 필수 인증으로 텍사...",
+            "date": "2026-11-05 10:44"
+          },
+          {
+            "headline": "일부 태양광에너지 테마 상승, 美 중간선거에서 민주당 압승 속 동사가 독보적인 '무타공 지붕 일체형 태양광(BIPV)' 원천 기술 및 탄탄한 대기업 시공 레퍼런스를 보유한 사실이 부각되며 급등",
+            "date": "2026-11-05 17:00"
+          }
+        ],
+        "summary": "에스와이는 미국정치 및 태양광 테마 속에서 독보적인 무타공 지붕 일체형 태양광(BIPV) 원천 기술 보유 사실이 부각되며 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "'전력 보강' 웰컴저축은행, 에스와이 제압하고 PBA 팀리그 2연승",
+        "웰컴저축은행, 에스와이 4-1 제압…새 외인 앞세워 PBA 팀리그 2연승",
+        "'강유진·T.응우옌 보강' 웰컴저축은행, 에스와이 완파…프로당구 PBA 팀...",
+        "‘추가 선발 효과’ 웰컴저축은행, 에스와이 꺾고 PBA 팀리그 2연승",
+        "'새 얼굴 효과 제대로 봤다!' 웰컴저축은행, 에스와이 꺾고 2연승 질주…...",
+        "PBA '전력 보강' 웰컴저축은행, 에스와이 꺾고 2연승",
+        "'강유진-T.응우옌' 추가 선발 효과 확실하네! 웰컴저축은행, 에스와이 꺾...",
+        "[당구] 웰컴저축은행, 에스와이 누르고 PBA 팀리그 2연승",
+        "'영입 효과' 웰컴저축은행, 응우옌쩐타인타오·강유진 활약에 에스와이...",
+        "\"퍼펙트큐도 소용없네\"…''한지은 2승' 에스와이, NH농협카드 4-2 제압 [...",
+        "[PC 국가대표] 에스와이이앤씨 - 대형 구조물 특화 기술력 강점…반도체...",
+        "에스와이, 美 민주당 압승에 태양광 '잭팟'…UL·FM 필수 인증으로 텍사...",
+        "일부 태양광에너지 테마 상승, 美 중간선거에서 민주당 압승 속 동사가 독보적인 '무타공 지붕 일체형 태양광(BIPV)' 원천 기술 및 탄탄한 대기업 시공 레퍼런스를 보유한 사실이 부각되며 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 08:20",
+          "title": "'전력 보강' 웰컴저축은행, 에스와이 제압하고 PBA 팀리그 2연승",
+          "press": "yna.co.kr",
+          "link": "https://www.yna.co.kr/view/AKR20261103027500007?input=1195m"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 08:34",
+          "title": "웰컴저축은행, 에스와이 4-1 제압…새 외인 앞세워 PBA 팀리그 2연승",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16266686"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:00",
+          "title": "'강유진·T.응우옌 보강' 웰컴저축은행, 에스와이 완파…프로당구 PBA 팀...",
+          "press": "swtvnews.com",
+          "link": "https://swtvnews.com/news/newsview.php?ncode=1065570638504307"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:02",
+          "title": "‘추가 선발 효과’ 웰컴저축은행, 에스와이 꺾고 PBA 팀리그 2연승",
+          "press": "dailian.co.kr",
+          "link": "https://www.dailian.co.kr/news/view/1709896/?sc=Naver"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:11",
+          "title": "'새 얼굴 효과 제대로 봤다!' 웰컴저축은행, 에스와이 꺾고 2연승 질주…...",
+          "press": "mydaily.co.kr",
+          "link": "https://www.mydaily.co.kr/page/view/2026110309103667392"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:23",
+          "title": "PBA '전력 보강' 웰컴저축은행, 에스와이 꺾고 2연승",
+          "press": "news.sbs.co.kr",
+          "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008827617&plink=ORI&cooper=NAVER"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 11:07",
+          "title": "'강유진-T.응우옌' 추가 선발 효과 확실하네! 웰컴저축은행, 에스와이 꺾...",
+          "press": "sportalkorea.com",
+          "link": "https://www.sportalkorea.com/news/articleView.html?idxno=2025052909553668578"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 12:48",
+          "title": "[당구] 웰컴저축은행, 에스와이 누르고 PBA 팀리그 2연승",
+          "press": "newscj.com",
+          "link": "https://www.newscj.com/news/articleView.html?idxno=3445451"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 16:03",
+          "title": "'영입 효과' 웰컴저축은행, 응우옌쩐타인타오·강유진 활약에 에스와이...",
+          "press": "maniareport.com",
+          "link": "https://www.maniareport.com/view.php?ud=2026110311025758276cf2d78c68_19"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 03:06",
+          "title": "\"퍼펙트큐도 소용없네\"…''한지은 2승' 에스와이, NH농협카드 4-2 제압 [...",
+          "press": "thebilliards.kr",
+          "link": "https://www.thebilliards.kr/news/articleView.html?idxno=32347"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 06:20",
+          "title": "[PC 국가대표] 에스와이이앤씨 - 대형 구조물 특화 기술력 강점…반도체...",
+          "press": "dnews.co.kr",
+          "link": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202611031404558090415"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 10:44",
+          "title": "에스와이, 美 민주당 압승에 태양광 '잭팟'…UL·FM 필수 인증으로 텍사...",
+          "press": "newsprime.co.kr",
+          "link": "http://www.newsprime.co.kr/news/article.html?no=753818"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 17:00",
+          "title": "일부 태양광에너지 테마 상승, 美 중간선거에서 민주당 압승 속 동사가 독보적인 '무타공 지붕 일체형 태양광(BIPV)' 원천 기술 및 탄탄한 대기업 시공 레퍼런스를 보유한 사실이 부각되며 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "041830",
+      "name": "인바디",
+      "rate": 21.16,
+      "trading_value": 6621341100.0,
+      "summary": "인바디는 3분기 영업이익이 전년 동기 대비 약 96% 급증하며 실적 호조를 기록한 영향으로 급등했습니다.",
+      "analysis": {
+        "stock": "인바디",
+        "main_material": {
+          "title": "3분기 어닝 서프라이즈 및 실적 호조",
+          "reason": "2026년 3분기 연결기준 영업이익이 전년 동기 대비 96.47% 증가한 193억 2300만 원을 기록하며 실적 호조에 따른 매수세가 유입됨.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "의료기기"
+          ],
+          "origin_date": "2026-11-05"
+        },
+        "secondary_materials": [
+          {
+            "title": "창립 30주년 기념 임직원 가족 초청 패밀리데이 개최",
+            "event_type": "NEW"
+          },
+          {
+            "title": "자사주 처분 공시 (76백만 원 규모)",
+            "event_type": "CONFIRMATION"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "[속보] 인바디, 3분기 영업이익 193억2300만원…전년 동기 대비 96.5% 증가",
+            "date": "2026-11-05 15:02"
+          },
+          {
+            "headline": "일부 의료기기 테마 상승 속 3분기 매출액 및 영업이익 호조에 급등",
+            "date": "2026-11-05 17:00"
+          }
+        ],
+        "summary": "인바디는 3분기 영업이익이 전년 동기 대비 약 96% 급증하며 실적 호조를 기록한 영향으로 급등했습니다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "인바디, 창립 30주년 맞아 임직원 가족 초청 '인바디 패밀리데이' 개최",
+        "인바디, 창립 30주년 맞아 임직원 가족과 패밀리데이",
+        "인바디, 창립 30주년 맞아 임직원 가족 초청 행사 개최",
+        "인바디, 창립 30주년 맞아 임직원 가족 초청…'패밀리데이' 개최",
+        "인바디, 창립 30주년 맞아 임직원 가족 초청 ‘인바디 패밀리데이’ 개...",
+        "인바디, 창립 30주년 임직원 가족 초청 행사 개최",
+        "인바디, 창립 30주년 맞아 임직원 가족 초청 행사 개최",
+        "인바디, 창립 30주년 기념 임직원 가족 초청 '패밀리데이' 개최",
+        "[속보] 인바디, 3분기 영업이익 193억2300만원…전년 동기 대비 96.5% 증가",
+        "인바디, 3분기 영업익 193억…전년비 96.5% ↑",
+        "인바디, 창립 30주년 임직원 가족 초청 '패밀리데이' 개최",
+        "인바디, 30주년 가족 초청…체성분·생산 공정 체험",
+        "인바디 3분기 영업익 96.5% 증가…순이익은 감소",
+        "한고은, 인바디 결과에 충격…♥남편엔 \"PT에 돈 얼마나 썼는데\" 타박 [...",
+        "'51세' 한고은, 50.6kg인데 인바디 결과에 충격…\"근육 사라지고 지방 늘...",
+        "일부 의료기기 테마 상승 속 3분기 매출액 및 영업이익 호조에 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 09:04",
+          "title": "인바디, 창립 30주년 맞아 임직원 가족 초청 '인바디 패밀리데이' 개최",
+          "press": "ftoday.co.kr",
+          "link": "http://www.ftoday.co.kr/news/articleView.html?idxno=368964"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 09:14",
+          "title": "인바디, 창립 30주년 맞아 임직원 가족과 패밀리데이",
+          "press": "kpanews.co.kr",
+          "link": "https://www.kpanews.co.kr/news/articleView.html?idxno=548166"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 10:10",
+          "title": "인바디, 창립 30주년 맞아 임직원 가족 초청 행사 개최",
+          "press": "lawissue.co.kr",
+          "link": "https://www.lawissue.co.kr/view.php?ud=202611051009002499204ead0791_12"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 10:30",
+          "title": "인바디, 창립 30주년 맞아 임직원 가족 초청…'패밀리데이' 개최",
+          "press": "bokuennews.com",
+          "link": "http://www.bokuennews.com/news/article.html?no=286689"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 11:08",
+          "title": "인바디, 창립 30주년 맞아 임직원 가족 초청 ‘인바디 패밀리데이’ 개...",
+          "press": "sedaily.com",
+          "link": "https://www.sedaily.com/article/20110580?ref=naver"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 12:56",
+          "title": "인바디, 창립 30주년 임직원 가족 초청 행사 개최",
+          "press": "medicaltimes.com",
+          "link": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1171645&ref=naverpc"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 13:52",
+          "title": "인바디, 창립 30주년 맞아 임직원 가족 초청 행사 개최",
+          "press": "news1.kr",
+          "link": "https://www.news1.kr/bio/healthcare/6344232"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 14:14",
+          "title": "인바디, 창립 30주년 기념 임직원 가족 초청 '패밀리데이' 개최",
+          "press": "sports.hankooki.com",
+          "link": "https://sports.hankooki.com/news/articleView.html?idxno=6942967"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 15:02",
+          "title": "[속보] 인바디, 3분기 영업이익 193억2300만원…전년 동기 대비 96.5% 증가",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=623633"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 15:03",
+          "title": "인바디, 3분기 영업익 193억…전년비 96.5% ↑",
+          "press": "biz.heraldcorp.com",
+          "link": "https://biz.heraldcorp.com/article/10927298?ref=naver"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 15:52",
+          "title": "인바디, 창립 30주년 임직원 가족 초청 '패밀리데이' 개최",
+          "press": "rapportian.com",
+          "link": "https://www.rapportian.com/news/articleView.html?idxno=242090"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 15:52",
+          "title": "인바디, 30주년 가족 초청…체성분·생산 공정 체험",
+          "press": "new.dailypharm.com",
+          "link": "https://new.dailypharm.com/user/news/344238?REFERER=NP"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 18:32",
+          "title": "인바디 3분기 영업익 96.5% 증가…순이익은 감소",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=401017"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 19:00",
+          "title": "한고은, 인바디 결과에 충격…♥남편엔 \"PT에 돈 얼마나 썼는데\" 타박 [...",
+          "press": "tvreport.co.kr",
+          "link": "https://www.tvreport.co.kr/breaking/article/1088648/"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 23:33",
+          "title": "'51세' 한고은, 50.6kg인데 인바디 결과에 충격…\"근육 사라지고 지방 늘...",
+          "press": "mydaily.co.kr",
+          "link": "https://www.mydaily.co.kr/page/view/2026110521150121186"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 17:00",
+          "title": "일부 의료기기 테마 상승 속 3분기 매출액 및 영업이익 호조에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    },
+    {
+      "code": "468530",
+      "name": "프로티나",
+      "rate": 20.91,
+      "trading_value": 25991142300.0,
+      "summary": "프로티나는 약 395억원 규모의 대규모 자금 조달 공시와 함께 AI 바이오파운드리 구축 및 신약 개발 추진 소식이 전해지며 주가가 급등했다.",
+      "analysis": {
+        "stock": "프로티나",
+        "main_material": {
+          "title": "395억 규모 자금 조달 및 AI 바이오파운드리 구축",
+          "reason": "사모 전환사채와 제3자배정 유상증자를 통해 약 395억원의 대규모 자금을 조달하고, 이를 AI 바이오파운드리 구축 및 신약 개발에 투입할 것이라는 소식이 부각되며 급등했다.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "제약바이오",
+            "AI바이오"
+          ],
+          "origin_date": "2026-11-05"
+        },
+        "secondary_materials": [
+          {
+            "title": "교보증권 초격차펀드 등 벤처캐피털 투자 참여",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "일부 제약/바이오 관련주 상승 속 395억원 자금 조달해 AI 바이오파운드리 구축 소식에 급등",
+            "date": "2026-11-05 17:00"
+          }
+        ],
+        "summary": "프로티나는 약 395억원 규모의 대규모 자금 조달 공시와 함께 AI 바이오파운드리 구축 및 신약 개발 추진 소식이 전해지며 주가가 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "프로티나, 365억 메자닌 조달…'초기 투자 벤처캐피털' 구원투수로",
+        "교보증권 공동운용 초격차펀드, 프로티나에 30억 투자…AI 바이오로 영역...",
+        "일부 제약/바이오 관련주 상승 속 395억원 자금 조달해 AI 바이오파운드리 구축 소식에 급등"
+      ],
+      "articles": [
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 14:56",
+          "title": "프로티나, 365억 메자닌 조달…'초기 투자 벤처캐피털' 구원투수로",
+          "press": "topdaily.kr",
+          "link": "https://www.topdaily.kr/articles/112725"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 15:00",
+          "title": "교보증권 공동운용 초격차펀드, 프로티나에 30억 투자…AI 바이오로 영역...",
+          "press": "sateconomy.co.kr",
+          "link": "https://sateconomy.co.kr/news/view/1065590649098968"
+        },
+        {
+          "time": "장마감",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 17:00",
+          "title": "일부 제약/바이오 관련주 상승 속 395억원 자금 조달해 AI 바이오파운드리 구축 소식에 급등",
+          "press": "인포스탁 증시요약",
+          "link": "https://infostock.co.kr/MarketNews/TodaySummary"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general",
+      "infostock_checked": true
+    }
+  ],
+  "20261106": [
+    {
+      "code": "004830",
+      "name": "덕성",
+      "rate": 18.96,
+      "trading_value": 9791065200.0,
+      "summary": "덕성은 코스피 폭락장 속에서 품절주 테마의 단기 매수세가 유입되면서 주가가 강세를 보였다.",
+      "analysis": {
+        "stock": "덕성",
+        "main_material": {
+          "title": "폭락장 속 품절주 단기 매수세 유입",
+          "reason": "코스피 장중 폭락 및 약세장 속에서 덕성을 비롯한 우선주 등 품절주로 단기 매수세가 몰리며 급등함.",
+          "event_type": "NEW",
+          "theme": [
+            "품절주",
+            "우선주"
+          ],
+          "origin_date": "2026-11-06"
+        },
+        "secondary_materials": [
+          {
+            "title": "덕성여대 등 네이버 AI 인재 양성 협력",
+            "event_type": "RECYCLED"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "코스피 장중 폭락에도 10종목 20% 이상 상승…덕성·한진칼우 강세",
+            "date": "2026-11-06 13:08"
+          },
+          {
+            "headline": "[특징주] 폭락장서 우선주 무더기 상한가…'품절주'에 몰린 단기 매수세",
+            "date": "2026-11-06 15:24"
+          }
+        ],
+        "summary": "덕성은 코스피 폭락장 속에서 품절주 테마의 단기 매수세가 유입되면서 주가가 강세를 보였다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "덕성여대·서울여대·성신여대, 네이버와 손잡고 AI 인재 양성 나선다",
+        "덕성·서울·성신여대, 네이버와 손잡고 'AI 인재' 키운다",
+        "덕성여대·서울여대·성신여대-네이버 커넥트재단, AI 인재 양성 MOU 체결",
+        "덕성·서울·성신여대, 네이버 커넥트재단과 AI 인재 양성 맞손",
+        "덕성여대·서울여대·성신여대·네이버, AI 인재 양성 맞손",
+        "덕성여대-서울여대-성신여대, 네이버와 AI 교육 협력 위해 '맞손'",
+        "\"전공 무관 AI 역량 키운다\" … 덕성·서울·성신여대, 네이버 커넥트재...",
+        "덕성여대, 서울여대·성신여대·네이버와 AI 인재 양성 협약",
+        "코스피 장중 폭락에도 10종목 20% 이상 상승…덕성·한진칼우 강세",
+        "덕성·서울·성신여대, 네이버 커넥트재단과 'AI 교육 협력' 맞손",
+        "덕성여대, DMZ 현장 답사 통해 분단·안보 현실 체험",
+        "덕성여대 정치외교학전공·자유전공제 1년생, 분단 현장 답사",
+        "[특징주] 폭락장서 우선주 무더기 상한가…'품절주'에 몰린 단기 매수세",
+        "[대학 뉴스브리핑] 이화여대·고려대·덕성여대",
+        "덕성여대 정치외교학전공, 고성·속초서 분단과 안보 현실 체험"
+      ],
+      "articles": [
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 17:05",
+          "title": "덕성여대·서울여대·성신여대, 네이버와 손잡고 AI 인재 양성 나선다",
+          "press": "enewstoday.co.kr",
+          "link": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2488993"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 17:20",
+          "title": "덕성·서울·성신여대, 네이버와 손잡고 'AI 인재' 키운다",
+          "press": "safetimes.co.kr",
+          "link": "https://www.safetimes.co.kr/news/articleView.html?idxno=247244"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 17:20",
+          "title": "덕성여대·서울여대·성신여대-네이버 커넥트재단, AI 인재 양성 MOU 체결",
+          "press": "news.unn.net",
+          "link": "https://news.unn.net/news/articleView.html?idxno=600074"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 17:24",
+          "title": "덕성·서울·성신여대, 네이버 커넥트재단과 AI 인재 양성 맞손",
+          "press": "weekly.hankooki.com",
+          "link": "https://weekly.hankooki.com/news/articleView.html?idxno=7192466"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 17:44",
+          "title": "덕성여대·서울여대·성신여대·네이버, AI 인재 양성 맞손",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=06628886645642768&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 18:18",
+          "title": "덕성여대-서울여대-성신여대, 네이버와 AI 교육 협력 위해 '맞손'",
+          "press": "popcornnews.net",
+          "link": "http://www.popcornnews.net/news/articleView.html?idxno=138919"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 18:56",
+          "title": "\"전공 무관 AI 역량 키운다\" … 덕성·서울·성신여대, 네이버 커넥트재...",
+          "press": "biz.newdaily.co.kr",
+          "link": "https://biz.newdaily.co.kr/site/data/html/2026/11/05/2026110500324.html"
+        },
+        {
+          "time": "09:20",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 09:20",
+          "title": "덕성여대, 서울여대·성신여대·네이버와 AI 인재 양성 협약",
+          "press": "kyosu.net",
+          "link": "https://www.kyosu.net/news/articleView.html?idxno=212123"
+        },
+        {
+          "time": "13:08",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 13:08",
+          "title": "코스피 장중 폭락에도 10종목 20% 이상 상승…덕성·한진칼우 강세",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1793937971691480276"
+        },
+        {
+          "time": "13:35",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 13:35",
+          "title": "덕성·서울·성신여대, 네이버 커넥트재단과 'AI 교육 협력' 맞손",
+          "press": "newsis.com",
+          "link": "https://www.newsis.com/view/NISX20261106_0003857773"
+        },
+        {
+          "time": "14:05",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 14:05",
+          "title": "덕성여대, DMZ 현장 답사 통해 분단·안보 현실 체험",
+          "press": "enewstoday.co.kr",
+          "link": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2489373"
+        },
+        {
+          "time": "14:44",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 14:44",
+          "title": "덕성여대 정치외교학전공·자유전공제 1년생, 분단 현장 답사",
+          "press": "newsfreezone.co.kr",
+          "link": "https://www.newsfreezone.co.kr/news/articleView.html?idxno=718059"
+        },
+        {
+          "time": "15:24",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 15:24",
+          "title": "[특징주] 폭락장서 우선주 무더기 상한가…'품절주'에 몰린 단기 매수세",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=8160"
+        },
+        {
+          "time": "15:52",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 15:52",
+          "title": "[대학 뉴스브리핑] 이화여대·고려대·덕성여대",
+          "press": "asiatime.co.kr",
+          "link": "https://www.asiatime.co.kr/article/20261106500294"
+        },
+        {
+          "time": "16:30",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 16:30",
+          "title": "덕성여대 정치외교학전공, 고성·속초서 분단과 안보 현실 체험",
+          "press": "popcornnews.net",
+          "link": "http://www.popcornnews.net/news/articleView.html?idxno=139067"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured"
+    },
+    {
+      "code": "020400",
+      "name": "대동금속",
+      "rate": 3.44,
+      "trading_value": 23671889620.0,
+      "summary": "대동금속은 농기계 수출 확대 기대감과 글로벌 인프라 투자에 따른 건설기계 테마 강세, 대동그룹 시너지가 부각되며 급등세를 보였음.",
+      "analysis": {
+        "stock": "대동금속",
+        "main_material": {
+          "title": "농기계 수출 확대 및 글로벌 인프라 투자 기대감",
+          "reason": "농기계 수출 확대 기대감과 글로벌 인프라 투자 및 건설기계주 강세 속에서 주물부품 생산능력과 대동그룹 시너지가 부각되며 연속 상한가 등 급등세를 기록함.",
+          "event_type": "NEW",
+          "theme": [
+            "농기계",
+            "건설기계"
+          ],
+          "origin_date": "2026-11-04"
+        },
+        "secondary_materials": [
+          {
+            "title": "그룹사 수주 호조 및 사업 확장",
+            "event_type": "FOLLOW_UP"
+          },
+          {
+            "title": "투자경고종목 지정 예고 및 지정",
+            "event_type": "NEGATIVE"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "대동기어",
+            "reason": "농기계 수출 확대 기대감 관련주로 함께 부각됨",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "[특징주] 농기계 수출 확대 기대감에 관련株 '대동금속·대동기어' 30%↑",
+            "date": "2026-11-04 09:48"
+          },
+          {
+            "headline": "대동금속 상한가 근접…주물부품 생산능력과 대동그룹 시너지 부각",
+            "date": "2026-11-04 16:16"
+          },
+          {
+            "headline": "대동금속 상한가 직행…글로벌 인프라 투자 기대에 건설기계주 '불기둥...",
+            "date": "2026-11-05 10:46"
+          }
+        ],
+        "summary": "대동금속은 농기계 수출 확대 기대감과 글로벌 인프라 투자에 따른 건설기계 테마 강세, 대동그룹 시너지가 부각되며 급등세를 보였음.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "[특징주] 농기계 수출 확대 기대감에 관련株 '대동금속·대동기어' 30%↑",
+        "대동금속·한진칼우 30% 육박…농기계·신재생에너지주 강세",
+        "대동금속 주가 장중 29.85% 상승해 2575원",
+        "[오전시황] 증시 급락 속 대동금속 상한가, 외국인 1조5640억원 순매도",
+        "대동금속 상한가 근접…주물부품 생산능력과 대동그룹 시너지 부각",
+        "대동금속 상한가 직행…글로벌 인프라 투자 기대에 건설기계주 '불기둥...",
+        "대동금속 이틀 연속 상한가...한진칼 경영권 경쟁·기업 구조개편주도 ...",
+        "[급등락주 짚어보기] 대동금속 사업 확장에 '上'…양 시장 하한가 無",
+        "대동금속, 5거래일 새 60% 급등으로 투자경고종목 지정 예고",
+        "[특징주] 대동금속 주가, 투자경고종목 지정 예고에도 강세",
+        "[속보] 대동금속, 거래량 199만주·상승률 주시…정적 VI 해제 상태",
+        "한진칼우 회전율 108%…대동금속 57%·에스와이 47% 손바뀜",
+        "곡물가 안정에 농업 테마주 주춤…대동금속·그린플러스는 '함박웃음'",
+        "[특징주] 대동금속, 그룹사 수주 호조에 11% 급등",
+        "대동금속, 주가 급등으로 11월 9일부터 투자경고종목 지정"
+      ],
+      "articles": [
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 09:48",
+          "title": "[특징주] 농기계 수출 확대 기대감에 관련株 '대동금속·대동기어' 30%↑",
+          "press": "newspim.com",
+          "link": "https://www.newspim.com/news/view/20261104000274"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 12:56",
+          "title": "대동금속·한진칼우 30% 육박…농기계·신재생에너지주 강세",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1793764505691213276"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 12:56",
+          "title": "대동금속 주가 장중 29.85% 상승해 2575원",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=400354"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 13:48",
+          "title": "[오전시황] 증시 급락 속 대동금속 상한가, 외국인 1조5640억원 순매도",
+          "press": "junggi.co.kr",
+          "link": "https://www.junggi.co.kr/news/articleView.html?idxno=38359"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:16",
+          "title": "대동금속 상한가 근접…주물부품 생산능력과 대동그룹 시너지 부각",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236571"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 10:46",
+          "title": "대동금속 상한가 직행…글로벌 인프라 투자 기대에 건설기계주 '불기둥...",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=501516"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 11:25",
+          "title": "대동금속 이틀 연속 상한가...한진칼 경영권 경쟁·기업 구조개편주도 ...",
+          "press": "ppss.kr",
+          "link": "https://www.ppss.kr/news/articleView.html?idxno=319178"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 16:24",
+          "title": "[급등락주 짚어보기] 대동금속 사업 확장에 '上'…양 시장 하한가 無",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2644739"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 20:34",
+          "title": "대동금속, 5거래일 새 60% 급등으로 투자경고종목 지정 예고",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16269301"
+        },
+        {
+          "time": "09:38",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 09:38",
+          "title": "[특징주] 대동금속 주가, 투자경고종목 지정 예고에도 강세",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1191526"
+        },
+        {
+          "time": "09:48",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 09:48",
+          "title": "[속보] 대동금속, 거래량 199만주·상승률 주시…정적 VI 해제 상태",
+          "press": "cbci.co.kr",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=623979"
+        },
+        {
+          "time": "13:26",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 13:26",
+          "title": "한진칼우 회전율 108%…대동금속 57%·에스와이 47% 손바뀜",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1793939051691481276"
+        },
+        {
+          "time": "13:44",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 13:44",
+          "title": "곡물가 안정에 농업 테마주 주춤…대동금속·그린플러스는 '함박웃음'",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=501910"
+        },
+        {
+          "time": "17:22",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 17:22",
+          "title": "[특징주] 대동금속, 그룹사 수주 호조에 11% 급등",
+          "press": "moneystorm.kr",
+          "link": "https://www.moneystorm.kr/news/articleView.html?idxno=8180"
+        },
+        {
+          "time": "20:12",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 20:12",
+          "title": "대동금속, 주가 급등으로 11월 9일부터 투자경고종목 지정",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16270274"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured"
+    },
+    {
+      "code": "261780",
+      "name": "아리바이오랩",
+      "rate": 12.4,
+      "trading_value": 2456856075.0,
+      "summary": "아리바이오랩이 아리바이오의 전환사채(CB)를 대규모로 양수하고 상호 지분 투자를 진행하면서 합병 기대감 등이 작용해 상승함.",
+      "analysis": {
+        "stock": "아리바이오랩",
+        "main_material": {
+          "title": "아리바이오 전환사채(CB) 양수 및 지분 투자",
+          "reason": "아리바이오랩이 아리바이오의 전환사채(CB)를 웃돈을 주고 양수하며 상호 지분 투자 및 합병 기대감이 부각됨.",
+          "event_type": "NEW",
+          "theme": [
+            "제약바이오",
+            "치매치료제"
+          ],
+          "origin_date": "2026-11-04"
+        },
+        "secondary_materials": [
+          {
+            "title": "아리바이오 알츠하이머 신약 AR1001 글로벌 3상 발표 임박 및 특허 확보",
+            "event_type": "FOLLOW_UP"
+          }
+        ],
+        "related_stocks": [
+          {
+            "stock": "아리바이오홀딩스",
+            "reason": "아리바이오 관련 재료로 동반 급등세 기록",
+            "relation": "MARKET_THEME"
+          }
+        ],
+        "evidence": [
+          {
+            "headline": "아리바이오랩, 아리바이오 50억 CB 100억에 인수… 상호 지분 투자로 결...",
+            "date": "2026-11-04 16:32"
+          },
+          {
+            "headline": "합병 사전 작업 시작됐나... 아리바이오랩, 아리바이오 CB에 ‘50억원 웃...",
+            "date": "2026-11-06 14:30"
+          }
+        ],
+        "summary": "아리바이오랩이 아리바이오의 전환사채(CB)를 대규모로 양수하고 상호 지분 투자를 진행하면서 합병 기대감 등이 작용해 상승함.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "아리바이오 ‘AR1001’, 글로벌 핵심 시장 특허 확보로 독점권 강화",
+        "아리바이오, 알츠하이머 신약 3상 결과 공개 임박…美·日 특허 확보",
+        "아리바이오 치매 치료제, 美·日 특허 확보",
+        "아리바이오, AR1001 글로벌 3상 발표 앞두고 日 특허 등록",
+        "아리바이오, '먹는 치매약' 특허 3대 시장 확보…임상 3상 결과 주목",
+        "아리바이오, 알츠하이머 치료제 AR1001 美·日 특허 확보…유럽 등록도...",
+        "[아리바이오의 도전과 가치] ②2026년의 전환점 - 계약과 투자로 넓힌 선...",
+        "아리바이오홀딩스 주가, 급등세... 왜?",
+        "아리바이오랩, 아리바이오 50억 CB 100억에 인수… 상호 지분 투자로 결...",
+        "[특징주] 아리바이오홀딩스,치매치료제 글로벌 3상 발표 앞두고 상한가...",
+        "[주식마감] '알츠하이머 특허 확보' 아리바이오홀딩스 상한가… 깨끗한...",
+        "아리바이오랩, 아리바이오 26회 CB 100억원 양수",
+        "아리바이오홀딩스·대명에너지 등 5개 종목 29%대 급등",
+        "[더벨]아리바이오랩, 3상 발표 앞둔 아리바이오 CB '웃돈 매입'",
+        "합병 사전 작업 시작됐나... 아리바이오랩, 아리바이오 CB에 ‘50억원 웃..."
+      ],
+      "articles": [
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:06",
+          "title": "아리바이오 ‘AR1001’, 글로벌 핵심 시장 특허 확보로 독점권 강화",
+          "press": "yakup.com",
+          "link": "https://www.yakup.com/news/index.html?mode=view&cat=12&nid=334669"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:24",
+          "title": "아리바이오, 알츠하이머 신약 3상 결과 공개 임박…美·日 특허 확보",
+          "press": "mdtoday.co.kr",
+          "link": "https://www.mdtoday.co.kr/news/articleView.html?idxno=622593"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:26",
+          "title": "아리바이오 치매 치료제, 美·日 특허 확보",
+          "press": "whosaeng.com",
+          "link": "http://www.whosaeng.com/174993"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 09:44",
+          "title": "아리바이오, AR1001 글로벌 3상 발표 앞두고 日 특허 등록",
+          "press": "pharmnews.com",
+          "link": "https://www.pharmnews.com/news/articleView.html?idxno=307555"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 10:38",
+          "title": "아리바이오, '먹는 치매약' 특허 3대 시장 확보…임상 3상 결과 주목",
+          "press": "hansbiz.co.kr",
+          "link": "http://www.hansbiz.co.kr/news/articleView.html?idxno=879199"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 16:44",
+          "title": "아리바이오, 알츠하이머 치료제 AR1001 美·日 특허 확보…유럽 등록도...",
+          "press": "newstopkorea.com",
+          "link": "https://www.newstopkorea.com/news/articleView.html?idxno=48739"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 10:00",
+          "title": "[아리바이오의 도전과 가치] ②2026년의 전환점 - 계약과 투자로 넓힌 선...",
+          "press": "biotimes.co.kr",
+          "link": "https://www.biotimes.co.kr/news/articleView.html?idxno=35826"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 10:36",
+          "title": "아리바이오홀딩스 주가, 급등세... 왜?",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1190994"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 16:32",
+          "title": "아리바이오랩, 아리바이오 50억 CB 100억에 인수… 상호 지분 투자로 결...",
+          "press": "etoday.co.kr",
+          "link": "https://www.etoday.co.kr/news/view/2644179"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 17:58",
+          "title": "[특징주] 아리바이오홀딩스,치매치료제 글로벌 3상 발표 앞두고 상한가...",
+          "press": "biotimes.co.kr",
+          "link": "https://www.biotimes.co.kr/news/articleView.html?idxno=35913"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 19:40",
+          "title": "[주식마감] '알츠하이머 특허 확보' 아리바이오홀딩스 상한가… 깨끗한...",
+          "press": "ggilbo.com",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1191209"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 20:16",
+          "title": "아리바이오랩, 아리바이오 26회 CB 100억원 양수",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=400542"
+        },
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 21:14",
+          "title": "아리바이오홀딩스·대명에너지 등 5개 종목 29%대 급등",
+          "press": "kjdaily.com",
+          "link": "http://www.kjdaily.com/article.php?aid=1793794387691330276"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 07:02",
+          "title": "[더벨]아리바이오랩, 3상 발표 앞둔 아리바이오 CB '웃돈 매입'",
+          "press": "thebell.co.kr",
+          "link": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202611041518563960106014"
+        },
+        {
+          "time": "14:30",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 14:30",
+          "title": "합병 사전 작업 시작됐나... 아리바이오랩, 아리바이오 CB에 ‘50억원 웃...",
+          "press": "biz.chosun.com",
+          "link": "https://biz.chosun.com/stock/market_trend/2026/11/06/GNZ7TXXBTVBNNNPBMRAMDOYSKQ/?utm_source=naver&utm_medium=original&utm_campaign=biz"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general"
+    },
+    {
+      "code": "181710",
+      "name": "NHN",
+      "rate": 13.11,
+      "trading_value": 13274469000.0,
+      "summary": "NHN이 NHN클라우드의 일본 도쿄 첫 파트너 세미나 개최를 통한 현지 AX 시장 공략 본격화 및 미국 데이터센터 규제 반사이익 기대감으로 급등했다.",
+      "analysis": {
+        "stock": "NHN",
+        "main_material": {
+          "title": "NHN클라우드, 일본 도쿄서 첫 파트너 세미나 개최",
+          "reason": "NHN클라우드가 일본 도쿄에서 첫 파트너 세미나 'CONNECT Seminar'를 개최하고 현지 파트너 생태계 구축 및 AX(AI 전환) 시장 공략을 본격화하면서 기대감이 유입됨.",
+          "event_type": "NEW",
+          "theme": [
+            "클라우드",
+            "AI",
+            "일본관련주"
+          ],
+          "origin_date": "2026-11-06"
+        },
+        "secondary_materials": [
+          {
+            "title": "미국 데이터센터 규제에 따른 반사이익 기대감",
+            "event_type": "NEW"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "NHN클라우드, 도쿄서 첫 파트너 세미나 개최…일본 AX 공략 속도",
+            "date": "2026-11-06 14:42"
+          },
+          {
+            "headline": "美 데이터센터 규제에 반사이익 기대감…NHN 23%↑[핫종목]",
+            "date": "2026-11-06 14:55"
+          }
+        ],
+        "summary": "NHN이 NHN클라우드의 일본 도쿄 첫 파트너 세미나 개최를 통한 현지 AX 시장 공략 본격화 및 미국 데이터센터 규제 반사이익 기대감으로 급등했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "NHN클라우드, 일본 파트너 생태계 구축 본격화",
+        "NHN클라우드, 도쿄서 첫 파트너 세미나 개최…일본 AX 공략 속도",
+        "美 데이터센터 규제에 반사이익 기대감…NHN 23%↑[핫종목]",
+        "NHN클라우드, 일본서 첫 파트너 세미나… 현지 사업 확대 추진",
+        "NHN 18.95% 급등…6만900원서 AI·게임 성장 기대 반영",
+        "NHN클라우드, 일본서 첫 파트너 세미나…현지 생태계 확대",
+        "NHN클라우드, 일본 파트너 생태계 구축…현지 사업 확대",
+        "NHN클라우드, 일본에서 첫 파트너 세미나 개최",
+        "코스피 6% 폭락에도 엘리스 19%·NHN 14% 급등…삼성SDS·LG CNS까지, AI 클...",
+        "[오늘의 특징주] SK하이닉스·NAVER·NHN",
+        "NHN클라우드, 日서 첫 파트너 세미나…현지 AI 시장 공략",
+        "NHN, 'AI 인프라'로 외형 성장…수익성·투자 부담은 과제",
+        "NHN클라우드, 일본에서 첫 파트너 세미나 개최",
+        "NHN클라우드, 일본 도쿄서 'CONNECT Seminar' 개최…현지 AX 시장 공략",
+        "NHN클라우드, 일본 현지 기업과 협력 확대…첫 파트너 행사 개최"
+      ],
+      "articles": [
+        {
+          "time": "14:38",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 14:38",
+          "title": "NHN클라우드, 일본 파트너 생태계 구축 본격화",
+          "press": "pointdaily.co.kr",
+          "link": "https://www.pointdaily.co.kr/news/articleView.html?idxno=325070"
+        },
+        {
+          "time": "14:42",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 14:42",
+          "title": "NHN클라우드, 도쿄서 첫 파트너 세미나 개최…일본 AX 공략 속도",
+          "press": "ziksir.com",
+          "link": "https://www.ziksir.com/news/articleView.html?idxno=152343"
+        },
+        {
+          "time": "14:55",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 14:55",
+          "title": "美 데이터센터 규제에 반사이익 기대감…NHN 23%↑[핫종목]",
+          "press": "news1.kr",
+          "link": "https://www.news1.kr/finance/general-stock/6345672"
+        },
+        {
+          "time": "15:10",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 15:10",
+          "title": "NHN클라우드, 일본서 첫 파트너 세미나… 현지 사업 확대 추진",
+          "press": "mediapen.com",
+          "link": "https://www.mediapen.com/news/view/1135767"
+        },
+        {
+          "time": "15:22",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 15:22",
+          "title": "NHN 18.95% 급등…6만900원서 AI·게임 성장 기대 반영",
+          "press": "job-post.co.kr",
+          "link": "https://www.job-post.co.kr/news/articleView.html?idxno=236953"
+        },
+        {
+          "time": "15:30",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 15:30",
+          "title": "NHN클라우드, 일본서 첫 파트너 세미나…현지 생태계 확대",
+          "press": "epnc.co.kr",
+          "link": "https://www.epnc.co.kr/news/articleView.html?idxno=409398"
+        },
+        {
+          "time": "15:38",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 15:38",
+          "title": "NHN클라우드, 일본 파트너 생태계 구축…현지 사업 확대",
+          "press": "m-i.kr",
+          "link": "https://www.m-i.kr/news/articleView.html?idxno=2015554"
+        },
+        {
+          "time": "15:50",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 15:50",
+          "title": "NHN클라우드, 일본에서 첫 파트너 세미나 개최",
+          "press": "byline.network",
+          "link": "https://byline.network/?p=9004111222626571"
+        },
+        {
+          "time": "16:18",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 16:18",
+          "title": "코스피 6% 폭락에도 엘리스 19%·NHN 14% 급등…삼성SDS·LG CNS까지, AI 클...",
+          "press": "topstarnews.net",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16270073"
+        },
+        {
+          "time": "16:44",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 16:44",
+          "title": "[오늘의 특징주] SK하이닉스·NAVER·NHN",
+          "press": "bigtanews.co.kr",
+          "link": "https://www.bigtanews.co.kr/article/view/big202611060012"
+        },
+        {
+          "time": "17:07",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 17:07",
+          "title": "NHN클라우드, 日서 첫 파트너 세미나…현지 AI 시장 공략",
+          "press": "fnnews.com",
+          "link": "https://www.fnnews.com/news/202611061703029002"
+        },
+        {
+          "time": "17:14",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 17:14",
+          "title": "NHN, 'AI 인프라'로 외형 성장…수익성·투자 부담은 과제",
+          "press": "newstomato.com",
+          "link": "http://www.newstomato.com/ReadNews.aspx?no=1319584&inflow=N"
+        },
+        {
+          "time": "17:24",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 17:24",
+          "title": "NHN클라우드, 일본에서 첫 파트너 세미나 개최",
+          "press": "cnbnews.com",
+          "link": "https://www.cnbnews.com/news/articleView.html?idxno=1022724"
+        },
+        {
+          "time": "17:42",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 17:42",
+          "title": "NHN클라우드, 일본 도쿄서 'CONNECT Seminar' 개최…현지 AX 시장 공략",
+          "press": "thedailypost.kr",
+          "link": "https://www.thedailypost.kr/news/articleView.html?idxno=116719"
+        },
+        {
+          "time": "18:22",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 18:22",
+          "title": "NHN클라우드, 일본 현지 기업과 협력 확대…첫 파트너 행사 개최",
+          "press": "worktoday.co.kr",
+          "link": "http://www.worktoday.co.kr/news/articleView.html?idxno=91614"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "featured"
+    },
+    {
+      "code": "119850",
+      "name": "지엔씨에너지",
+      "rate": 11.37,
+      "trading_value": 36426590400.0,
+      "summary": "지엔씨에너지는 기관의 집중 매수와 외국계 대량 보유 보고 등 수급적 요인으로 상승세를 기록했다.",
+      "analysis": {
+        "stock": "지엔씨에너지",
+        "main_material": {
+          "title": "기관 및 외국인의 대규모 매수세 유입",
+          "reason": "코스닥 기관의 집중 매수세와 JP모건 시큐리티즈의 5.07% 지분 보유 보고 등 수급 유입이 주가 상승을 견인한 것으로 추정된다.",
+          "event_type": "NEW",
+          "theme": [
+            "지분변동",
+            "기관/외인수급"
+          ],
+          "origin_date": "2026-11-05"
+        },
+        "secondary_materials": [
+          {
+            "title": "KB자산운용의 지엔씨에너지 지분 축소",
+            "event_type": "NEGATIVE"
+          }
+        ],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "[코스닥 기관] 알테오젠 지엔씨에너지 집중 매수…심텍·반도체주는 집...",
+            "date": "2026-11-05 15:56"
+          },
+          {
+            "headline": "JP모건 시큐리티즈, 지엔씨에너지 5.07% 보유 보고",
+            "date": "2026-11-06 19:14"
+          }
+        ],
+        "summary": "지엔씨에너지는 기관의 집중 매수와 외국계 대량 보유 보고 등 수급적 요인으로 상승세를 기록했다.",
+        "confidence": "MEDIUM"
+      },
+      "headlines": [
+        "[지분View] 지엔씨에너지, KB자산운용 지분 3.11%p 축소",
+        "KB자산운용, 지엔씨에너지 지분 4.10%로 감소",
+        "[코스닥 기관] 알테오젠 지엔씨에너지 집중 매수…심텍·반도체주는 집...",
+        "JP모건 시큐리티즈, 지엔씨에너지 5.07% 보유 보고"
+      ],
+      "articles": [
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 13:32",
+          "title": "[지분View] 지엔씨에너지, KB자산운용 지분 3.11%p 축소",
+          "press": "hansbiz.co.kr",
+          "link": "http://www.hansbiz.co.kr/news/articleView.html?idxno=879306"
+        },
+        {
+          "time": "11/03",
+          "date": "2026-11-03",
+          "datetime": "2026-11-03 14:38",
+          "title": "KB자산운용, 지엔씨에너지 지분 4.10%로 감소",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=399869"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 15:56",
+          "title": "[코스닥 기관] 알테오젠 지엔씨에너지 집중 매수…심텍·반도체주는 집...",
+          "press": "pinpointnews.co.kr",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=501657"
+        },
+        {
+          "time": "19:14",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 19:14",
+          "title": "JP모건 시큐리티즈, 지엔씨에너지 5.07% 보유 보고",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=401408"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-11-06 15:06",
+          "title": "서산시, 바이오가스 초과 생산 실적 판매…3억4000여만원 수입",
+          "press": "테마뉴스·바이오가스 · newstnt.com",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=727131",
+          "theme_news": "바이오가스"
+        },
+        {
+          "datetime": "2026-11-06 09:36",
+          "title": "서산시, 바이오가스 생산 실적 판매…3억 4천여만 원 확보",
+          "press": "테마뉴스·바이오가스 · news.lghellovision.net",
+          "link": "http://news.lghellovision.net/news/articleView.html?idxno=561295",
+          "theme_news": "바이오가스"
+        },
+        {
+          "datetime": "2026-11-06 09:26",
+          "title": "서산시, 바이오가스 생산 실적 판매 '3억 4000여만 원 확보'",
+          "press": "테마뉴스·바이오가스 · chungnamilbo.co.kr",
+          "link": "http://www.chungnamilbo.co.kr/news/articleView.html?idxno=919177",
+          "theme_news": "바이오가스"
+        }
+      ],
+      "news_source": "general"
+    },
+    {
+      "code": "317400",
+      "name": "자이에스앤디",
+      "rate": 9.85,
+      "trading_value": 10051435040.0,
+      "summary": "자이에스앤디는 영종 A18블록 계약 상대 변경 소식이 전해지며 주가가 상승했다.",
+      "analysis": {
+        "stock": "자이에스앤디",
+        "main_material": {
+          "title": "영종 A18블록 계약 상대 변경 공시",
+          "reason": "영종 A18블록의 계약 상대가 신영부동산신탁으로 변경되면서 관련 사업 진행에 대한 기대감이 작용함.",
+          "event_type": "CONFIRMATION",
+          "theme": [
+            "건설",
+            "부동산신탁"
+          ],
+          "origin_date": "2026-11-06"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "자이에스앤디 영종 A18블록 계약 상대 신영부동산신탁으로 변경",
+            "date": "2026-11-06 19:00"
+          }
+        ],
+        "summary": "자이에스앤디는 영종 A18블록 계약 상대 변경 소식이 전해지며 주가가 상승했다.",
+        "confidence": "MEDIUM"
+      },
+      "headlines": [
+        "자이에스앤디 영종 A18블록 계약 상대 신영부동산신탁으로 변경"
+      ],
+      "articles": [
+        {
+          "time": "19:00",
+          "date": "2026-11-06",
+          "datetime": "2026-11-06 19:00",
+          "title": "자이에스앤디 영종 A18블록 계약 상대 신영부동산신탁으로 변경",
+          "press": "vegannews.co.kr",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=401402"
+        }
+      ],
+      "theme_news": [],
+      "news_source": "general"
+    },
+    {
+      "code": "003010",
+      "name": "혜인",
+      "rate": 13.41,
+      "trading_value": 10784628760.0,
+      "summary": "혜인은 AI 데이터센터 전력 수요 급증에 따른 발전기 수주 확대 기대감이 부각되며 상승했다.",
+      "analysis": {
+        "stock": "혜인",
+        "main_material": {
+          "title": "AI 데이터센터 전력 수요 급증에 따른 발전기 수주 기대감",
+          "reason": "AI 데이터센터 전력 수요가 급증하면서 발전기 수주 확대 기대감이 유입되어 주가가 상승했다.",
+          "event_type": "NEW",
+          "theme": [
+            "AI데이터센터",
+            "전력설비",
+            "발전기"
+          ],
+          "origin_date": "2026-11-04"
+        },
+        "secondary_materials": [],
+        "related_stocks": [],
+        "evidence": [
+          {
+            "headline": "AI 데이터센터 전력 수요 급증…혜인, 발전기 수주 확대 기대",
+            "date": "2026-11-04 08:32"
+          }
+        ],
+        "summary": "혜인은 AI 데이터센터 전력 수요 급증에 따른 발전기 수주 확대 기대감이 부각되며 상승했다.",
+        "confidence": "HIGH"
+      },
+      "headlines": [
+        "AI 데이터센터 전력 수요 급증…혜인, 발전기 수주 확대 기대",
+        "하니, 뉴진스 민지·해린과 함께 스타랭킹 女아이돌 톱3..혜인 4위"
+      ],
+      "articles": [
+        {
+          "time": "11/04",
+          "date": "2026-11-04",
+          "datetime": "2026-11-04 08:32",
+          "title": "AI 데이터센터 전력 수요 급증…혜인, 발전기 수주 확대 기대",
+          "press": "edaily.co.kr",
+          "link": "https://www.edaily.co.kr/News/Read?newsId=03302966645642440&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article"
+        },
+        {
+          "time": "11/05",
+          "date": "2026-11-05",
+          "datetime": "2026-11-05 17:31",
+          "title": "하니, 뉴진스 민지·해린과 함께 스타랭킹 女아이돌 톱3..혜인 4위",
+          "press": "starnewskorea.com",
+          "link": "https://www.starnewskorea.com/star/2026/11/05/2026110517172859604"
+        }
+      ],
+      "theme_news": [
+        {
+          "datetime": "2026-11-06 16:30",
+          "title": "HD건설기계·HD현대사이트솔루션, 김장 김치 2500박스 이웃 나눔",
+          "press": "테마뉴스·건설기계 · g-enews.com",
+          "link": "https://www.g-enews.com/view.php?ud=202611061628216410112616b072_1",
+          "theme_news": "건설기계"
+        },
+        {
+          "datetime": "2026-11-06 15:06",
+          "title": "[ESG] HD건설기계·HD현대사이트솔루션, 1억3000만원 규모 김장 나눔",
+          "press": "테마뉴스·건설기계 · joongangenews.com",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=561789",
+          "theme_news": "건설기계"
+        },
+        {
+          "datetime": "2026-11-06 14:42",
+          "title": "HD건설기계·HD현대사이트솔루션, 김장 2500박스 나눔",
+          "press": "테마뉴스·건설기계 · magazine.hankyung.com",
+          "link": "https://magazine.hankyung.com/business/article/202611061005b",
+          "theme_news": "건설기계"
+        }
+      ],
+      "news_source": "general"
+    }
+  ]
+}

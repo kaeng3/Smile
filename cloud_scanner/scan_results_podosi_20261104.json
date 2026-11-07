@@ -1,0 +1,66 @@
+[
+  {
+    "code": "489790",
+    "name": "한화비전",
+    "close": 46400,
+    "rate": -3.232533889468196,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "017900",
+    "name": "광전자",
+    "close": 8750,
+    "rate": 0.34403669724770647,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "138360",
+    "name": "앤로보틱스",
+    "close": 1550,
+    "rate": -5.198776758409786,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "184230",
+    "name": "SGA솔루션즈",
+    "close": 2710,
+    "rate": -7.666098807495741,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "430690",
+    "name": "한싹",
+    "close": 2955,
+    "rate": -17.916666666666668,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "308170",
+    "name": "씨티알모빌리티",
+    "close": 3640,
+    "rate": -4.587155963302752,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "206400",
+    "name": "베노티앤알",
+    "close": 680,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "289220",
+    "name": "자이언트스텝",
+    "close": 1106,
+    "rate": -2.383053839364519,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "code": "035900",
+    "name": "JYP Ent.",
+    "close": 37450,
+    "rate": -3.479381443298969,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "220100",
+    "name": "퓨쳐켐",
+    "close": 7220,
+    "rate": 3.5868005738880915,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "138360",
+    "name": "앤로보틱스",
+    "close": 1748,
+    "rate": -0.39886039886039887,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "338840",
+    "name": "와이바이오로직스",
+    "close": 8830,
+    "rate": -0.11312217194570137,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "101170",
+    "name": "우림피티에스",
+    "close": 7550,
+    "rate": -0.13227513227513227,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "065450",
+    "name": "빅텍",
+    "close": 3115,
+    "rate": 1.4657980456026058,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "460940",
+    "name": "피앤에스로보틱스",
+    "close": 5480,
+    "rate": 24.122310305775766,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "005870",
+    "name": "휴니드",
+    "close": 4925,
+    "rate": 0.8188331627430911,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "042940",
+    "name": "상지건설",
+    "close": 6300,
+    "rate": -15.09433962264151,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "308170",
+    "name": "씨티알모빌리티",
+    "close": 4240,
+    "rate": -7.423580786026202,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "289220",
+    "name": "자이언트스텝",
+    "close": 1232,
+    "rate": 8.8339222614841,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "206400",
+    "name": "베노티앤알",
+    "close": 680,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "078590",
+    "name": "휴림에이텍",
+    "close": 2465,
+    "rate": -1.4000000000000001,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "060900",
+    "name": "에이전트AI",
+    "close": 2100,
+    "rate": 5.157736604907361,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "900100",
+    "name": "파이온엑스",
+    "close": 1193,
+    "rate": -10.368144252441773,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  }
+]

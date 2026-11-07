@@ -1,0 +1,58 @@
+[
+  {
+    "code": "006650",
+    "name": "대한유화",
+    "close": 88100,
+    "rate": 7.833537331701345,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "211270",
+    "name": "AP위성",
+    "close": 9300,
+    "rate": 14.532019704433496,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "267850",
+    "name": "아시아나IDT",
+    "close": 9960,
+    "rate": 10.913140311804009,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "067920",
+    "name": "이글루",
+    "close": 6590,
+    "rate": 6.462035541195476,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "150900",
+    "name": "파수AI",
+    "close": 5090,
+    "rate": 13.870246085011187,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "010640",
+    "name": "진양폴리",
+    "close": 3375,
+    "rate": 13.25503355704698,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "092300",
+    "name": "현우산업",
+    "close": 2690,
+    "rate": 14.225053078556263,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

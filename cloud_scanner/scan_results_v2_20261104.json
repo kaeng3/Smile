@@ -1,0 +1,58 @@
+[
+  {
+    "code": "032640",
+    "name": "LG유플러스",
+    "close": 15770,
+    "rate": 8.83367839889579,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "002900",
+    "name": "TYM",
+    "close": 6170,
+    "rate": 11.77536231884058,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "290690",
+    "name": "아리바이오홀딩스",
+    "close": 3175,
+    "rate": 14.828209764918626,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "199430",
+    "name": "케이엔알시스템",
+    "close": 14530,
+    "rate": 19.983484723369116,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "443670",
+    "name": "에스피소프트",
+    "close": 5090,
+    "rate": 10.054054054054054,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "282720",
+    "name": "금양그린파워",
+    "close": 7710,
+    "rate": 18.615384615384613,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "119500",
+    "name": "포메탈",
+    "close": 3140,
+    "rate": 17.60299625468165,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "code": "489790",
+    "name": "한화비전",
+    "close": 47950,
+    "rate": -9.698681732580038,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "017900",
+    "name": "광전자",
+    "close": 8720,
+    "rate": -2.787068004459309,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "092190",
+    "name": "서울바이오시스",
+    "close": 7850,
+    "rate": -9.143518518518519,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "138360",
+    "name": "앤로보틱스",
+    "close": 1635,
+    "rate": -6.464530892448512,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "430690",
+    "name": "한싹",
+    "close": 3600,
+    "rate": 29.03225806451613,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "042940",
+    "name": "상지건설",
+    "close": 5350,
+    "rate": -15.079365079365079,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "308170",
+    "name": "씨티알모빌리티",
+    "close": 3815,
+    "rate": -10.023584905660378,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "206400",
+    "name": "베노티앤알",
+    "close": 680,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "289220",
+    "name": "자이언트스텝",
+    "close": 1133,
+    "rate": -8.035714285714286,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "078590",
+    "name": "휴림에이텍",
+    "close": 2400,
+    "rate": -2.636916835699797,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  }
+]

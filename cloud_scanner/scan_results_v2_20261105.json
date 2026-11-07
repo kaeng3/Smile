@@ -1,0 +1,106 @@
+[
+  {
+    "code": "010130",
+    "name": "고려아연",
+    "close": 996000,
+    "rate": 15.813953488372093,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "035720",
+    "name": "카카오",
+    "close": 31975,
+    "rate": 11.8006993006993,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "0126Z0",
+    "name": "삼성에피스홀딩스",
+    "close": 363500,
+    "rate": 18.019480519480517,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "326030",
+    "name": "SK바이오팜",
+    "close": 91300,
+    "rate": 15.132408575031524,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "112610",
+    "name": "씨에스윈드",
+    "close": 48000,
+    "rate": 14.421930870083433,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "005300",
+    "name": "롯데칠성",
+    "close": 110800,
+    "rate": 7.156673114119923,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "041830",
+    "name": "인바디",
+    "close": 50300,
+    "rate": 12.026726057906458,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "089590",
+    "name": "제주항공",
+    "close": 6760,
+    "rate": 19.646017699115045,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "389260",
+    "name": "대명에너지",
+    "close": 14980,
+    "rate": 10.39056742815033,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "199430",
+    "name": "케이엔알시스템",
+    "close": 16200,
+    "rate": 11.493461803165864,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "109610",
+    "name": "에스와이",
+    "close": 2065,
+    "rate": 10.01598295151838,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "365330",
+    "name": "에스와이스틸텍",
+    "close": 1577,
+    "rate": 7.060420909708079,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "276730",
+    "name": "한울앤제주",
+    "close": 1271,
+    "rate": 9.948096885813149,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

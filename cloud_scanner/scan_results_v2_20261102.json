@@ -1,0 +1,26 @@
+[
+  {
+    "code": "030530",
+    "name": "원익홀딩스",
+    "close": 31750,
+    "rate": 8.732876712328768,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "443670",
+    "name": "에스피소프트",
+    "close": 5090,
+    "rate": 7.838983050847458,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "010660",
+    "name": "화천기계",
+    "close": 3355,
+    "rate": 11.647254575707153,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

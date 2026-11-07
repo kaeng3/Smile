@@ -1,0 +1,90 @@
+[
+  {
+    "code": "015760",
+    "name": "한국전력",
+    "close": 30400,
+    "rate": -3.79746835443038,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "0126Z0",
+    "name": "삼성에피스홀딩스",
+    "close": 358000,
+    "rate": -1.5130674002751032,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "468530",
+    "name": "프로티나",
+    "close": 52400,
+    "rate": -4.553734061930783,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "199430",
+    "name": "케이엔알시스템",
+    "close": 16320,
+    "rate": 0.7407407407407408,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "232680",
+    "name": "라온로보틱스",
+    "close": 10930,
+    "rate": -4.038630377524144,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "451760",
+    "name": "컨텍",
+    "close": 8710,
+    "rate": -8.122362869198312,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "211270",
+    "name": "AP위성",
+    "close": 8520,
+    "rate": -8.974358974358974,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "460940",
+    "name": "피앤에스로보틱스",
+    "close": 4710,
+    "rate": -5.421686746987952,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "184230",
+    "name": "SGA솔루션즈",
+    "close": 2410,
+    "rate": -3.5999999999999996,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "430690",
+    "name": "한싹",
+    "close": 2830,
+    "rate": -4.873949579831933,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "206400",
+    "name": "베노티앤알",
+    "close": 680,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  }
+]

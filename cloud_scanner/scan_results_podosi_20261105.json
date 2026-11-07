@@ -1,0 +1,82 @@
+[
+  {
+    "code": "015760",
+    "name": "한국전력",
+    "close": 31600,
+    "rate": 6.0402684563758395,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "468530",
+    "name": "프로티나",
+    "close": 54900,
+    "rate": 34.55882352941176,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "451760",
+    "name": "컨텍",
+    "close": 9480,
+    "rate": -13.186813186813188,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "232680",
+    "name": "라온로보틱스",
+    "close": 11390,
+    "rate": -5.320033250207814,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "211270",
+    "name": "AP위성",
+    "close": 9360,
+    "rate": -7.234886025768088,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "460940",
+    "name": "피앤에스로보틱스",
+    "close": 4980,
+    "rate": -1.7751479289940828,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "005870",
+    "name": "휴니드",
+    "close": 4400,
+    "rate": -14.0625,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "184230",
+    "name": "SGA솔루션즈",
+    "close": 2500,
+    "rate": -7.7490774907749085,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "430690",
+    "name": "한싹",
+    "close": 2975,
+    "rate": 0.676818950930626,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "206400",
+    "name": "베노티앤알",
+    "close": 680,
+    "rate": 0.0,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  }
+]
