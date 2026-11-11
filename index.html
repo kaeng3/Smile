@@ -1583,6 +1583,85 @@
                 </div>`;
         }
 
+        // ===== 500억봉 요약: 테마별 묶음 + 배지 (같은 재료 반복을 줄이고 '이 종목만의 포인트'가 보이게) =====
+        const ISSUE_THEME_COLORS = ['#3b82f6', '#22c55e', '#f59e0b', '#ec4899', '#06b6d4', '#a78bfa', '#ef4444', '#eab308'];
+
+        function issueMainTitle(item) {
+            const t = ((item.analysis || {}).main_material || {}).title;
+            return t || (item.analysis ? '' : 'AI 요약 대기 중');
+        }
+
+        function issueKindBadges(item, role) {
+            const esc = escapeNewScannerHtml;
+            const a = item.analysis || {};
+            const main = a.main_material || {};
+            const title = main.title || '';
+            const out = [];
+            if (role === 'leader') out.push(issueBadge('👑 대장', '#b45309'));
+            else if (role === 'follower') out.push(issueBadge('동반', 'rgba(255,255,255,0.18)'));
+            if (/확인불가/.test(title)) out.push(issueBadge('재료 확인불가', '#6b7280'));
+            else if (/실적|영업이익|어닝|매출|흑자/.test(title)) out.push(issueBadge('📊 실적', '#0891b2'));
+            else if (/수급|매수세|외국인|기관/.test(title)) out.push(issueBadge('💰 수급', '#7c3aed'));
+            else if (/계약|수주|공급/.test(title)) out.push(issueBadge('📝 수주·계약', '#059669'));
+            if (EVENT_TYPE_LABELS[main.event_type] && !/확인불가/.test(title)) out.push(issueBadge(...EVENT_TYPE_LABELS[main.event_type]));
+            if ((item.streak || 1) >= 2) out.push(issueBadge(`🔁 ${item.streak}일째`, '#be123c'));
+            if (a.confidence === 'LOW') out.push(issueBadge('신뢰도 낮음', 'rgba(255,255,255,0.18)'));
+            if (item.manual) out.push(issueBadge('✍️ 직접 정정', '#9333ea'));
+            if (!item.analysis) out.push(issueBadge('AI 실패', '#6b7280'));
+            return out.join('');
+        }
+
+        function buildCompactIssue(item, featured, role) {
+            const esc = escapeNewScannerHtml;
+            const up = (item.rate || 0) >= 0;
+            const tv = Number.isFinite(item.trading_value) && item.trading_value > 0 ? `${Math.round(item.trading_value / 1e8).toLocaleString('ko-KR')}억` : '';
+            const nm = String(item.name).replace(/'/g, "\\'");
+            return `
+                <details style="border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; background:var(--card-bg);">
+                    <summary style="cursor:pointer; list-style:none;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+                            <div style="font-size:1.1rem; font-weight:700; color:var(--text-main);"><span onclick="event.preventDefault(); event.stopPropagation(); openNewsModal('${item.code}', '${nm}')" style="cursor:pointer; text-decoration:underline dotted;">${esc(item.name)}</span>
+                                <span class="${up ? 'rate-up' : 'rate-down'}" style="font-size:1rem; margin-left:6px;">${up ? '+' : ''}${(item.rate || 0).toFixed(2)}%</span>
+                                ${tv ? `<span style="font-size:0.8rem; color:var(--text-sub); margin-left:4px;">${tv}</span>` : ''}
+                            </div>
+                            <div>${issueKindBadges(item, role)}</div>
+                        </div>
+                        <div style="margin-top:6px; font-size:1rem; color:var(--text-main); line-height:1.5;">▸ ${esc(issueMainTitle(item))}</div>
+                    </summary>
+                    <div style="margin-top:12px;">${buildIssueCard(item, featured)}</div>
+                </details>`;
+        }
+
+        function buildIssueGroups(issues, featured) {
+            const esc = escapeNewScannerHtml;
+            const groups = new Map();
+            issues.forEach(it => {
+                const key = (it.std_themes && it.std_themes[0]) || (((it.analysis || {}).main_material || {}).theme || [])[0] || '기타';
+                if (!groups.has(key)) groups.set(key, []);
+                groups.get(key).push(it);
+            });
+            const tvOf = it => it.trading_value || 0;
+            const ordered = [...groups.entries()].map(([k, v]) => [k, v.sort((a, b) => tvOf(b) - tvOf(a))])
+                .sort((a, b) => b[1].length - a[1].length || b[1].reduce((s, x) => s + tvOf(x), 0) - a[1].reduce((s, x) => s + tvOf(x), 0));
+            return `<div style="display:flex; flex-direction:column; gap:16px;">${ordered.map(([theme, list], gi) => {
+                const color = ISSUE_THEME_COLORS[gi % ISSUE_THEME_COLORS.length];
+                if (list.length === 1) {
+                    return `<div style="border-left:4px solid ${color}; padding-left:10px;"><div style="font-size:0.85rem; color:var(--text-sub); margin-bottom:6px;">#${esc(theme)}</div>${buildCompactIssue(list[0], featured, 'single')}</div>`;
+                }
+                const avg = list.reduce((s, x) => s + (x.rate || 0), 0) / list.length;
+                const chips = list.map(x => `<span style="display:inline-block; margin:0 6px 4px 0; font-size:0.85rem; color:var(--text-main);">${esc(x.name)} <span class="rate-up">+${(x.rate || 0).toFixed(1)}%</span></span>`).join(' · ');
+                return `
+                    <div style="border:1px solid ${color}; border-radius:14px; padding:14px; background:rgba(255,255,255,0.02);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
+                            <div style="font-size:1.15rem; font-weight:800; color:var(--text-main);">🧩 ${esc(theme)} <span style="font-size:0.9rem; font-weight:600; color:${color};">${list.length}종목 동반</span></div>
+                            <div style="font-size:0.85rem; color:var(--text-sub);">평균 <span class="rate-up">+${avg.toFixed(1)}%</span></div>
+                        </div>
+                        <div style="margin-bottom:10px; line-height:1.6;">${chips}</div>
+                        <div style="display:flex; flex-direction:column; gap:8px;">${list.map((x, i) => buildCompactIssue(x, featured, i === 0 ? 'leader' : 'follower')).join('')}</div>
+                    </div>`;
+            }).join('')}</div>`;
+        }
+
         let lab1SelectedDate = null;
 
         function selectLab1Date(d) {
@@ -1600,7 +1679,7 @@
                 <div class="report-download-card" style="justify-content: center; text-align: center; padding: 40px; flex-direction: column; gap: 15px;">
                     <div>
                         <div class="pdf-title" style="font-size: 1.5rem; margin-bottom: 10px;">🧪 500억봉 주요 이슈 분석 (최근 5영업일)</div>
-                        <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">강력한 기준봉(당일 500억/150억)이 발생한 종목들의 핵심 재료를 AI가 요약합니다. 위 날짜를 누르면 그날 종목을 볼 수 있어요.</div>
+                        <div class="pdf-sub" style="font-size: 0.95rem; line-height: 1.5;">강력한 기준봉(당일 500억/150억)이 발생한 종목을 테마별로 묶었습니다. 같은 테마는 한 묶음(👑 대장 = 거래대금 1위), 종목을 누르면 AI 분석과 뉴스가 펼쳐집니다.</div>
                     </div>
                 </div>
             `;
@@ -1621,7 +1700,7 @@
             const issues = dailyIssuesDB[lab1SelectedDate] || [];
             const featured = featuredNewsDB[lab1SelectedDate] || {};
             html += issues.length
-                ? `<div style="display:flex; flex-direction:column; gap:15px;">${issues.map(item => buildIssueCard(item, featured)).join('')}</div>`
+                ? buildIssueGroups(issues, featured)
                 : `<div style="text-align:center; padding:24px; color:var(--text-sub);">이 날짜에는 당일 기준봉 종목이 없었습니다.</div>`;
 
             container.innerHTML = html;

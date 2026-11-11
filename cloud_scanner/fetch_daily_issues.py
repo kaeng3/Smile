@@ -49,6 +49,40 @@ def _market_theme_words(system_dir):
         return set()
 
 
+def annotate_for_display(all_issues, system_dir):
+    """화면에서 테마별로 묶고 배지를 달 수 있게 표준 테마(std_themes)와 연속 등장일(streak)을 붙인다.
+    표준 테마 순서: AI 테마 태그 순 → 핵심 재료 제목 → (없으면) 종목 테마 DB."""
+    try:
+        from build_theme_bundles import ThemeMatcher
+        with open(os.path.join(system_dir, 'theme_dictionary.json'), encoding='utf-8') as f:
+            matcher = ThemeMatcher(json.load(f))
+    except Exception as e:
+        print(f"[표시용 테마] 사전 로드 실패: {e}")
+        return
+    themes_db = _load_stock_themes(system_dir)
+    dates = sorted(all_issues)
+    for idx, d in enumerate(dates):
+        for issue in all_issues[d]:
+            main = (issue.get('analysis') or {}).get('main_material') or {}
+            ordered = []
+            for tag in main.get('theme') or []:
+                ordered += sorted(matcher.match_tag(tag) - set(ordered))
+            title = main.get('title') or ''
+            if '확인불가' not in title:
+                ordered += sorted((matcher.match_text(title) | matcher.match_text(main.get('reason') or '')) - set(ordered))
+            if not ordered:
+                for sub in (themes_db.get(issue['code']) or {}).get('subthemes', [])[:6]:
+                    ordered += sorted(matcher.match_tag(sub) - set(ordered))
+            issue['std_themes'] = ordered
+            streak = 1
+            for prev in reversed(dates[:idx]):
+                if any(x['code'] == issue['code'] for x in all_issues[prev]):
+                    streak += 1
+                else:
+                    break
+            issue['streak'] = streak
+
+
 MANUAL_FILE = 'manual_analysis.json'
 
 
@@ -529,6 +563,7 @@ def generate_daily_issues(target_date_str):
     for d in apply_manual_overrides(all_issues, system_dir):
         if d not in backfilled:
             backfilled.append(d)
+    annotate_for_display(all_issues, system_dir)
     
     # 5일치만 보관
     sorted_dates = sorted(all_issues.keys(), reverse=True)
