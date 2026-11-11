@@ -1170,7 +1170,7 @@
                 return;
             }
 
-            grid.innerHTML = list.map(s => {
+            grid.innerHTML = buildScanGroups(list, s => {
                 const isUp = (s.rate || 0) >= 0;
                 const rateClass = isUp ? 'rate-up' : 'rate-down';
                 const rateSign = isUp ? '+' : '';
@@ -1199,13 +1199,92 @@
                             </div>
                             <div class="stock-rate ${rateClass}">${rateSign}${(s.rate || 0).toFixed(2)}%</div>
                         </div>
+                        ${scanCardBadges(s)}
                         ${themeBadge}
                         <div class="stock-pattern">${s.pattern || '상승 타점 포착'}</div>
                         ${chartHtml}
                         <div class="stock-comment">${s.comment || s.result_desc || '5일선 및 20일선 지지 흐름 점검'}</div>
                     </div>
                 `;
-            }).join('');
+            });
+        }
+
+        // ===== 실전 스캔: 테마별 묶음 + 배지 =====
+        let themeDictionary = null;   // theme_dictionary.json (테마꾸러미와 같은 표준 테마)
+        let scanGroupMode = true;     // false면 예전처럼 한 줄 격자
+        const SCAN_GROUP_COLORS = ['#3b82f6', '#22c55e', '#f59e0b', '#ec4899', '#06b6d4', '#a78bfa', '#ef4444', '#eab308'];
+
+        function toggleScanGroup() { scanGroupMode = !scanGroupMode; renderStrategy(); }
+
+        function scanStdTheme(s) {
+            const subs = [...(Array.isArray(s.subthemes) ? s.subthemes : []), ...((themeDetailDB[s.code] || {}).subthemes || [])];
+            const norm = x => String(x || '').replace(/\s+/g, '').toLowerCase();
+            for (const t of (themeDictionary && themeDictionary.themes) || []) {
+                const aliases = (t.aliases || []).map(norm).filter(a => a.length >= 2);
+                if (subs.some(sub => { const n = norm(sub); return n && aliases.some(a => n.includes(a) || a.includes(n)); })) return t.name;
+            }
+            return null;
+        }
+
+        function scanStreak(code) {
+            const dates = Object.keys(historyData).sort();
+            let i = dates.indexOf(selectedDate), n = 0;
+            while (i >= 0 && ((historyData[dates[i]] || {})[currentStrategy] || []).some(x => x.code === code)) { n++; i--; }
+            return n;
+        }
+
+        function scanCardBadges(s) {
+            const out = [];
+            if (s._role === 'leader') out.push(issueBadge('👑 대장', '#b45309'));
+            const streak = scanStreak(s.code);
+            if (streak >= 2) out.push(issueBadge(`🔁 ${streak}일째`, '#be123c'));
+            const day = historyData[selectedDate] || {};
+            if (currentStrategy !== 'b500m' && (day.b500m || []).some(x => x.code === s.code)) out.push(issueBadge('💥 500억봉', '#dc2626'));
+            if (currentStrategy !== 'v2' && (day.v2 || []).some(x => x.code === s.code)) out.push(issueBadge('양음양v2 겹침', 'rgba(255,255,255,0.18)'));
+            if (currentStrategy !== 'podosi' && (day.podosi || []).some(x => x.code === s.code)) out.push(issueBadge('포도시 겹침', 'rgba(255,255,255,0.18)'));
+            const issue = (dailyIssuesDB[selectedDate] || []).find(x => x.code === s.code);
+            if (issue) {
+                const title = ((issue.analysis || {}).main_material || {}).title || '';
+                if (/실적|영업이익|어닝|매출|흑자/.test(title)) out.push(issueBadge('📊 실적', '#0891b2'));
+                else if (/수급|매수세|외국인|기관/.test(title)) out.push(issueBadge('💰 수급', '#7c3aed'));
+                else if (/계약|수주|공급/.test(title)) out.push(issueBadge('📝 수주·계약', '#059669'));
+                if (issue.manual) out.push(issueBadge('✍️ 직접 정정', '#9333ea'));
+            }
+            return out.length ? `<div style="margin:2px 0 4px;">${out.join('')}</div>` : '';
+        }
+
+        function buildScanGroups(list, cardFn) {
+            const sorted = list.slice().sort((a, b) => (b.rate || 0) - (a.rate || 0));
+            if (!scanGroupMode) {
+                sorted.forEach(s => { s._role = null; });
+                return scanGroupToggle() + sorted.map(cardFn).join('');
+            }
+            const groups = new Map(), singles = [];
+            sorted.forEach(s => { const k = scanStdTheme(s) || '__none'; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(s); });
+            const multi = [...groups.entries()].filter(([k, v]) => k !== '__none' && v.length >= 2)
+                .sort((a, b) => b[1].length - a[1].length || b[1][0].rate - a[1][0].rate);
+            groups.forEach((v, k) => { if (k === '__none' || v.length < 2) singles.push(...v); });
+            singles.sort((a, b) => (b.rate || 0) - (a.rate || 0));
+            let html = scanGroupToggle();
+            multi.forEach(([theme, v], gi) => {
+                const color = SCAN_GROUP_COLORS[gi % SCAN_GROUP_COLORS.length];
+                const avg = v.reduce((t, x) => t + (x.rate || 0), 0) / v.length;
+                v.forEach((s, i) => { s._role = i === 0 ? 'leader' : null; });
+                html += `<div style="grid-column:1/-1; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-top:${gi ? 10 : 0}px; padding:10px 14px; border-radius:12px; border:1px solid ${color}; border-left:6px solid ${color};">
+                    <div style="font-size:1.15rem; font-weight:800; color:var(--text-main);">🧩 ${escapeNewScannerHtml(theme)} <span style="font-size:0.9rem; font-weight:600; color:${color};">${v.length}종목</span></div>
+                    <div style="font-size:0.9rem; color:var(--text-sub);">평균 <span class="rate-up">+${avg.toFixed(1)}%</span> · 👑 ${escapeNewScannerHtml(v[0].name)}</div></div>`;
+                html += v.map(cardFn).join('');
+            });
+            if (singles.length) {
+                singles.forEach(s => { s._role = null; });
+                if (multi.length) html += `<div style="grid-column:1/-1; margin-top:10px; padding:10px 14px; border-radius:12px; border:1px dashed var(--border-color); font-size:1.05rem; font-weight:700; color:var(--text-main);">🔹 단독 종목 <span style="font-size:0.9rem; color:var(--text-sub); font-weight:500;">${singles.length}종목 · 같은 테마 종목이 없음</span></div>`;
+                html += singles.map(cardFn).join('');
+            }
+            return html;
+        }
+
+        function scanGroupToggle() {
+            return `<div style="grid-column:1/-1; display:flex; justify-content:flex-end;"><div class="date-chip ${scanGroupMode ? 'active' : ''}" onclick="toggleScanGroup()">${scanGroupMode ? '🧩 테마별 묶음 보는 중' : '🧩 테마별로 묶어 보기'}</div></div>`;
         }
 
         let newsHistoryDB = {};
@@ -1253,6 +1332,13 @@
                 if (resMa.ok) maProximityData = await resMa.json();
             } catch (e) {
                 console.error("ma_proximity.json 로딩 실패:", e);
+            }
+
+            try {
+                const resDict = await fetch('theme_dictionary.json?t=' + Date.now());
+                if (resDict.ok) themeDictionary = await resDict.json();
+            } catch (e) {
+                console.error("theme_dictionary.json 로딩 실패:", e);
             }
 
             try {
