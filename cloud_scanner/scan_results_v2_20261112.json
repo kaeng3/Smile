@@ -1,0 +1,90 @@
+[
+  {
+    "code": "035900",
+    "name": "JYP Ent.",
+    "close": 44850,
+    "rate": 15.741935483870966,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "204270",
+    "name": "제이앤티씨",
+    "close": 19730,
+    "rate": 13.980358174465627,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "195870",
+    "name": "해성디에스",
+    "close": 45600,
+    "rate": 9.483793517406964,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "368770",
+    "name": "파이버프로",
+    "close": 10710,
+    "rate": 17.434210526315788,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "036710",
+    "name": "심텍홀딩스",
+    "close": 5540,
+    "rate": 14.699792960662524,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "263860",
+    "name": "지니언스",
+    "close": 30950,
+    "rate": 14.417744916820702,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "037270",
+    "name": "YG PLUS",
+    "close": 3245,
+    "rate": 12.089810017271157,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "211270",
+    "name": "AP위성",
+    "close": 10490,
+    "rate": 16.68520578420467,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "141000",
+    "name": "비아트론",
+    "close": 12180,
+    "rate": 19.88188976377953,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "187870",
+    "name": "디바이스",
+    "close": 10700,
+    "rate": 7.107107107107106,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "452190",
+    "name": "한빛레이저",
+    "close": 4510,
+    "rate": 17.447916666666664,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "code": "003490",
+    "name": "대한항공",
+    "close": 32300,
+    "rate": 8.754208754208754,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "020560",
+    "name": "아시아나항공",
+    "close": 8720,
+    "rate": 9.82367758186398,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "100840",
+    "name": "SNT에너지",
+    "close": 27550,
+    "rate": 14.315352697095435,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "298690",
+    "name": "에어부산",
+    "close": 1865,
+    "rate": 13.997555012224938,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "036710",
+    "name": "심텍홀딩스",
+    "close": 3905,
+    "rate": 6.258503401360545,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "443670",
+    "name": "에스피소프트",
+    "close": 5840,
+    "rate": 16.8,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "067290",
+    "name": "JW신약",
+    "close": 2400,
+    "rate": 12.676056338028168,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "282720",
+    "name": "금양그린파워",
+    "close": 9460,
+    "rate": 17.80821917808219,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "104620",
+    "name": "노랑풍선",
+    "close": 2960,
+    "rate": 10.861423220973784,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

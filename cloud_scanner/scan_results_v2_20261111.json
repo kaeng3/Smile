@@ -1,0 +1,66 @@
+[
+  {
+    "code": "034230",
+    "name": "파라다이스",
+    "close": 10550,
+    "rate": 6.9979716024340775,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "002900",
+    "name": "TYM",
+    "close": 7290,
+    "rate": 12.326656394453005,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "263860",
+    "name": "지니언스",
+    "close": 27050,
+    "rate": 7.984031936127744,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "080160",
+    "name": "모두투어",
+    "close": 10020,
+    "rate": 13.863636363636363,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "460940",
+    "name": "피앤에스로보틱스",
+    "close": 4970,
+    "rate": 10.567296996662959,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "208370",
+    "name": "셀바스헬스케어",
+    "close": 2470,
+    "rate": 9.777777777777779,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "104620",
+    "name": "노랑풍선",
+    "close": 3440,
+    "rate": 16.216216216216218,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "376930",
+    "name": "노을",
+    "close": 2375,
+    "rate": 18.453865336658353,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "code": "015760",
+    "name": "한국전력",
+    "close": 30650,
+    "rate": 1.322314049586777,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "0126Z0",
+    "name": "삼성에피스홀딩스",
+    "close": 339500,
+    "rate": -4.50070323488045,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "489790",
+    "name": "한화비전",
+    "close": 43700,
+    "rate": 4.545454545454546,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "035900",
+    "name": "JYP Ent.",
+    "close": 39300,
+    "rate": -4.842615012106537,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "046890",
+    "name": "서울반도체",
+    "close": 9400,
+    "rate": 5.1454138702460845,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "290690",
+    "name": "아리바이오홀딩스",
+    "close": 3465,
+    "rate": -8.81578947368421,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "199430",
+    "name": "케이엔알시스템",
+    "close": 14670,
+    "rate": -3.4868421052631575,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "451760",
+    "name": "컨텍",
+    "close": 9280,
+    "rate": 4.97737556561086,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "232680",
+    "name": "라온로보틱스",
+    "close": 10730,
+    "rate": 4.3774319066147855,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "211270",
+    "name": "AP위성",
+    "close": 8750,
+    "rate": 2.100350058343057,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "460940",
+    "name": "피앤에스로보틱스",
+    "close": 4495,
+    "rate": -1.208791208791209,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "163280",
+    "name": "에어레인",
+    "close": 3745,
+    "rate": -4.464285714285714,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "184230",
+    "name": "SGA솔루션즈",
+    "close": 2535,
+    "rate": 3.8934426229508197,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  }
+]

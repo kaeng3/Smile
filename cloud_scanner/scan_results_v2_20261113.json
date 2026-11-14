@@ -1,0 +1,106 @@
+[
+  {
+    "code": "003570",
+    "name": "SNT다이내믹스",
+    "close": 28000,
+    "rate": 9.161793372319687,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "053610",
+    "name": "프로텍",
+    "close": 69100,
+    "rate": 15.358931552587645,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "064960",
+    "name": "SNT모티브",
+    "close": 25450,
+    "rate": 9.2274678111588,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "048410",
+    "name": "현대바이오",
+    "close": 6260,
+    "rate": 12.186379928315413,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "263860",
+    "name": "지니언스",
+    "close": 34500,
+    "rate": 11.470113085621971,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "136540",
+    "name": "윈스테크넷",
+    "close": 12930,
+    "rate": 9.948979591836734,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "289080",
+    "name": "SV인베스트먼트",
+    "close": 2355,
+    "rate": 9.280742459396752,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "006660",
+    "name": "삼성공조",
+    "close": 10370,
+    "rate": 6.68724279835391,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "389140",
+    "name": "포바이포",
+    "close": 4675,
+    "rate": 16.00496277915633,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "234030",
+    "name": "싸이닉솔루션",
+    "close": 2880,
+    "rate": 17.551020408163264,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "104620",
+    "name": "노랑풍선",
+    "close": 3655,
+    "rate": 16.773162939297126,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "091590",
+    "name": "남화토건",
+    "close": 4805,
+    "rate": 10.714285714285714,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "246690",
+    "name": "TS인베스트먼트",
+    "close": 1793,
+    "rate": 15.67741935483871,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "code": "302440",
+    "name": "SK바이오사이언스",
+    "close": 42550,
+    "rate": 10.376134889753567,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "005090",
+    "name": "SGC에너지",
+    "close": 36200,
+    "rate": 10.030395136778116,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "003010",
+    "name": "혜인",
+    "close": 8950,
+    "rate": 9.547123623011016,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]
