@@ -1,0 +1,26 @@
+[
+  {
+    "code": "204620",
+    "name": "글로벌텍스프리",
+    "close": 6260,
+    "rate": 12.589928057553957,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "104620",
+    "name": "노랑풍선",
+    "close": 4810,
+    "rate": 16.183574879227052,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "140430",
+    "name": "카티스",
+    "close": 2820,
+    "rate": 18.238993710691823,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

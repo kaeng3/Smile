@@ -1,0 +1,154 @@
+[
+  {
+    "code": "090430",
+    "name": "아모레퍼시픽",
+    "close": 140400,
+    "rate": 7.093821510297483,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "352820",
+    "name": "하이브",
+    "close": 189700,
+    "rate": 14.139590854392297,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "008770",
+    "name": "호텔신라",
+    "close": 38500,
+    "rate": 10.0,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "034230",
+    "name": "파라다이스",
+    "close": 11610,
+    "rate": 10.676835081029552,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "089590",
+    "name": "제주항공",
+    "close": 8360,
+    "rate": 10.728476821192052,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "079900",
+    "name": "전진건설로봇",
+    "close": 42850,
+    "rate": 9.59079283887468,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "376300",
+    "name": "디어유",
+    "close": 23200,
+    "rate": 16.349047141424272,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "187660",
+    "name": "페니트리움바이오",
+    "close": 6660,
+    "rate": 13.073005093378608,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "204620",
+    "name": "글로벌텍스프리",
+    "close": 5560,
+    "rate": 10.317460317460316,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "003350",
+    "name": "한국화장품제조",
+    "close": 12900,
+    "rate": 17.05989110707804,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "439090",
+    "name": "마녀공장",
+    "close": 14150,
+    "rate": 6.231231231231231,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "200130",
+    "name": "콜마비앤에이치",
+    "close": 7780,
+    "rate": 10.668563300142248,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "261780",
+    "name": "아리바이오랩",
+    "close": 6020,
+    "rate": 13.799621928166353,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "419530",
+    "name": "SAMG엔터",
+    "close": 15250,
+    "rate": 8.309659090909092,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "473980",
+    "name": "노머스",
+    "close": 12350,
+    "rate": 13.92988929889299,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "362320",
+    "name": "청담글로벌",
+    "close": 5610,
+    "rate": 9.5703125,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "214420",
+    "name": "토니모리",
+    "close": 4585,
+    "rate": 16.075949367088608,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "123420",
+    "name": "위메이드플레이",
+    "close": 5470,
+    "rate": 7.889546351084813,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "027050",
+    "name": "코리아나",
+    "close": 1418,
+    "rate": 11.477987421383649,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

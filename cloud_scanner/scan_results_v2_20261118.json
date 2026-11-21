@@ -1,0 +1,90 @@
+[
+  {
+    "code": "277810",
+    "name": "레인보우로보틱스",
+    "close": 408000,
+    "rate": 19.823788546255507,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "030530",
+    "name": "원익홀딩스",
+    "close": 35100,
+    "rate": 9.6875,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "041510",
+    "name": "에스엠",
+    "close": 88400,
+    "rate": 15.104166666666666,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "437730",
+    "name": "삼현",
+    "close": 53400,
+    "rate": 11.25,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "241710",
+    "name": "코스메카코리아",
+    "close": 108300,
+    "rate": 8.408408408408409,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "100790",
+    "name": "미래에셋벤처투자",
+    "close": 15340,
+    "rate": 11.159420289855072,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "340570",
+    "name": "티앤엘",
+    "close": 27300,
+    "rate": 7.0588235294117645,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "051160",
+    "name": "지어소프트",
+    "close": 15060,
+    "rate": 7.648320228734811,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "134580",
+    "name": "엔키AX",
+    "close": 1665,
+    "rate": 8.3984375,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "381620",
+    "name": "제닉스로보틱스",
+    "close": 5990,
+    "rate": 9.306569343065693,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "170790",
+    "name": "파이오링크",
+    "close": 10090,
+    "rate": 11.61504424778761,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

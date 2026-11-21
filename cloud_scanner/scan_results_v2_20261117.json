@@ -1,0 +1,42 @@
+[
+  {
+    "code": "069960",
+    "name": "현대백화점",
+    "close": 96600,
+    "rate": 8.174692049272117,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "086450",
+    "name": "동국제약",
+    "close": 24650,
+    "rate": 10.786516853932584,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "490470",
+    "name": "세미파이브",
+    "close": 13090,
+    "rate": 13.529921942758023,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "047770",
+    "name": "코데즈컴바인",
+    "close": 2960,
+    "rate": 13.409961685823754,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "140430",
+    "name": "카티스",
+    "close": 2625,
+    "rate": 7.802874743326489,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]
