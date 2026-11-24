@@ -49,10 +49,12 @@ jobs:
         run: echo "TODAY=$(date -u +%Y%m%d)" >> "$GITHUB_ENV"
 
       - name: Restore stock OHLCV cache DB
-        uses: actions/cache@v4
+        # 복원과 저장을 나눈다: 예전엔 job이 끝날 때 저장돼서, 배포가 실패하면 그날 DB가 캐시에 안 남아
+        # 뒤이은 김일구 스캐너가 전날 DB로 돌다 'no fresh market data'로 같이 실패했음
+        uses: actions/cache/restore@v4
         with:
           path: cloud_scanner/stock_ohlcv_cache.db
-          key: stock-db-${{ env.TODAY }}
+          key: stock-db-${{ env.TODAY }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
             stock-db-
 
@@ -69,12 +71,20 @@ jobs:
         run: python -m unittest discover -s tests -v
 
       - name: Run Cloud Stock Scan
+        id: scan
         env:
           GEMINI_API_KEY: ${{ secrets.SMILE }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
         run: |
           python run_cloud_scan.py
+
+      - name: Save stock OHLCV cache DB (스캔 직후 저장, 배포 성공 여부와 무관)
+        if: always() && steps.scan.outcome == 'success'
+        uses: actions/cache/save@v4
+        with:
+          path: cloud_scanner/stock_ohlcv_cache.db
+          key: stock-db-${{ env.TODAY }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Upload scan failure log
         if: failure()
@@ -107,4 +117,13 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - name: Wait before retrying deploy (GitHub 일시 장애 대비)
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 120
+
+      - name: Deploy to GitHub Pages (retry)
+        if: steps.deployment.outcome == 'failure'
+        id: deployment_retry
         uses: actions/deploy-pages@v4
