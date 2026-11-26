@@ -163,6 +163,15 @@ def site(outdir):
             written, _ = write_split(json.load(f), os.path.join(outdir, 'news'))
         os.remove(source)  # 사이트는 news/{코드}.json만 쓴다
         print(f'[data] 종목별 뉴스 파일 {written}개 생성')
+    # New research screen: build only public metadata and keep legacy available on failure.
+    from smile2.site_release import release, fallback, add_entry
+    try:
+        result = release(outdir)
+        print('[smile2] release ready:', result)
+    except Exception as e:
+        print('[smile2] build unavailable:', type(e).__name__)
+        fallback(outdir)
+    add_entry(outdir)
     print(f'[data] 배포 폴더 준비 완료: {outdir}')
 
 

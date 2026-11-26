@@ -8,6 +8,9 @@ on:
       - '.github/workflows/smile2_verify.yml'
       - 'news_feed/sources.py'
       - 'news_feed/collect.py'
+      - 'data_store.py'
+      - '.github/workflows/news_feed.yml'
+      - '.github/workflows/redeploy_only.yml'
   workflow_dispatch:
 concurrency:
   group: smile2-verify-${{ github.head_ref || github.ref_name }}
@@ -46,6 +49,20 @@ jobs:
           python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/pre.json" --day 2026-11-26 --previous 2026-11-25 --edition pre --calendar
           python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/post.json" --day 2026-11-26 --previous 2026-11-25 --edition post --calendar
 
+      - name: Build actual Pages release in temporary directory
+        run: |
+          python data_store.py site "$RUNNER_TEMP/pages-test"
+          python - <<'PY'
+          import os,json
+          from pathlib import Path
+          p=Path(os.environ["RUNNER_TEMP"])/"pages-test"
+          d=json.loads((p/"smile2"/"manifest.json").read_text())
+          assert d["calendar_basis"]=="XKRX" and not d["history_included"] and not d["market_data_included"]
+          assert 'id="smile2-entry"' in (p/"index.html").read_text()
+          assert not (p/"smile2"/"stock_news_history.json").exists()
+          assert not (p/"smile2"/"patterns.py").exists()
+          print("Pages release build PASS",d)
+          PY
       - name: Build isolated browser preview and probe official feeds
         run: python -m smile2.pipeline --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/smile-preview" --day 2026-11-26 --previous 2026-11-25 --official --media --calendar
       - name: Browser smoke test (isolated local server)
