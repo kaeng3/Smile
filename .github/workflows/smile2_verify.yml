@@ -45,6 +45,7 @@ jobs:
           git fetch --depth=1 origin data
           git show FETCH_HEAD:news_feed/news.json > "$RUNNER_TEMP/news.json"
           python -m smile2.news_engine --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/events.json"
+          python -m smile2.quality --input "$RUNNER_TEMP/events.json" --output "$RUNNER_TEMP/quality.json"
           python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/pre.json" --day 2026-11-26 --previous 2026-11-25 --edition pre
           python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/post.json" --day 2026-11-26 --previous 2026-11-25 --edition post
 

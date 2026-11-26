@@ -18,6 +18,11 @@ FEEDS = {
     "금융위원회 보도설명": ("https://www.fsc.go.kr/about/fsc_bbs_rss/?fid=0112","정부 정책"),
     "미 연준 보도자료": ("https://www.federalreserve.gov/feeds/press_all.xml","국제 - 미국"),
     "미 연준 통화정책": ("https://www.federalreserve.gov/feeds/press_monetary.xml","국제 - 미국"),
+    "미 노동통계국 고용": ("https://www.bls.gov/feed/empsit.rss","국제 - 미국"),
+    "미 노동통계국 CPI": ("https://www.bls.gov/feed/cpi.rss","국제 - 미국"),
+    "미 노동통계국 PPI": ("https://www.bls.gov/feed/ppi.rss","국제 - 미국"),
+    "미 경제분석국": ("https://apps.bea.gov/rss/rss.xml","국제 - 미국"),
+    "미 증권거래위원회": ("https://www.sec.gov/news/pressreleases.rss","국제 - 미국"),
 }
 MAX_BYTES=4*1024*1024
 def get(url):
