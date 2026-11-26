@@ -36,6 +36,7 @@ jobs:
           node --check smile2/candidates.js
           node --check smile2/chart.js
           node --check smile2/history.js
+          node --check smile2/history_compare.js
           node --check smile2/themes.js
       - name: Aggregate-only existing history audit
         run: python -m smile2.audit_history stock_news_history.json
@@ -57,11 +58,26 @@ jobs:
           from pathlib import Path
           p=Path(os.environ["RUNNER_TEMP"])/"pages-test"
           d=json.loads((p/"smile2"/"manifest.json").read_text())
-          assert d["calendar_basis"]=="XKRX" and not d["history_included"] and not d["market_data_included"]
+          assert d["calendar_basis"]=="XKRX" and not d["history_included"]
           assert 'id="smile2-entry"' in (p/"index.html").read_text()
           assert not (p/"smile2"/"stock_news_history.json").exists()
           assert not (p/"smile2"/"patterns.py").exists()
           print("Pages release build PASS",d)
+          PY
+      - name: Validate real dated market observation schema (read only)
+        run: |
+          python - <<'PY'
+          import json,os
+          from datetime import date
+          from pathlib import Path
+          from smile2.market_brief import market_brief
+          p=Path(os.environ["RUNNER_TEMP"])/"pages-test"/"daily_issues.json"
+          d=json.loads(p.read_text())
+          latest=max(d)
+          day=date(int(latest[:4]),int(latest[4:6]),int(latest[6:]))
+          r=market_brief(d,day,{})
+          assert r["status"]=="available" and r["invalid_rows"]==0
+          print("Selected market observations PASS",r["day"],len(r["stocks"]))
           PY
       - name: Build isolated browser preview and probe official feeds
         run: python -m smile2.pipeline --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/smile-preview" --day 2026-11-26 --previous 2026-11-25 --official --media --calendar

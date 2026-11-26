@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import shutil
 import tempfile
-from .news_engine import KST
+from .news_engine import KST,parse_time
 from .pipeline import generate,read_rows,ASSETS
 from .calendar import session_window
 
@@ -31,7 +31,13 @@ def release(root,now=None,session=None):
         raise ValueError("Unexpected symlink")
     with tempfile.TemporaryDirectory(prefix="smile-release-",dir=root.parent) as tmp:
         output=Path(tmp)/"site"
-        result=generate(read_rows(news),day,prev,output,session=s)
+        extra=root/"news_feed"/"smile2-official.json"
+        official=json.loads(extra.read_text(encoding="utf-8")) if extra.is_file() else {}
+        market=root/"daily_issues.json"
+        observations=json.loads(market.read_text(encoding="utf-8")) if market.is_file() else {}
+        result=generate(read_rows(news),day,prev,output,session=s,
+                        official_rows=official.get("rows",[]),source_status=official.get("sources",[]),
+                        market_data=observations,market_available=now>=parse_time(s["close"]))
         # Stage before changing the generated site, and restore on failure.
         backup=Path(tmp)/"previous"
         if target.exists():

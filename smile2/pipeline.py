@@ -10,9 +10,10 @@ from .briefing import briefing
 from .quality import review
 from .official_feeds import collect
 from .media_probe import collect_media
+from .market_brief import market_brief
 
 ASSETS=("index.html","style.css","app.js","brief.html","brief.js","candidates.html",
-        "candidates.js","chart.js","history.html","history.js","themes.html","themes.js")
+        "candidates.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js")
 JSON_NAMES=("events.json","brief-pre.json","brief-post.json","quality.json",
             "official-status.json","media-status.json","manifest.json")
 
@@ -28,7 +29,10 @@ def public_rows(rows):
           "published_at","observed_at","seen","publication_verified_at")
     return [{k:r[k] for k in keys if k in r} for r in rows]
 
-def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18), session=None, media_rows=(), media_status=()):
+def data_market_available(data,day,available):
+    return available and market_brief(data,day,{})["status"]=="available"
+
+def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18), session=None, media_rows=(), media_status=(), market_data=None, market_available=False):
     if previous>=day:
         raise ValueError("Invalid previous session")
     output=Path(output).resolve()
@@ -39,10 +43,14 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
     additional=public_rows(media_rows)
     events=build(rows+additional)
     def report(edition):
-        result=briefing(rows,day,previous,edition,post_cutoff,session=session)
+        result=briefing(rows,day,previous,edition,post_cutoff,limit=max(50,len(rows)) if edition=="post" and market_available else 50,session=session)
         # Additional sources have not been calibrated against the existing score.
         # Keep them separate rather than assigning artificial importance.
         result["supplemental_media"]=briefing(additional,day,previous,edition,post_cutoff,limit=30,session=session)
+        if edition=="post":
+            result["market"]=market_brief(market_data if market_available else None,day,result)
+            result["events"]=result["events"][:50]
+            result["unknown_events_preview"]=result["unknown_events_preview"][:50]
         return result
     data={"events.json":events,
           "brief-pre.json":report("pre"),
@@ -52,7 +60,7 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
           "media-status.json":{"rows":len(additional),"sources":list(media_status),"checked_at":datetime.now(KST).isoformat()},
           "manifest.json":{"schema":1,"status":"research_preview","report_date":day.isoformat(),
                            "previous_trading_date":previous.isoformat(),"built_at":datetime.now(KST).isoformat(),
-                           "input_rows":len(rows)+len(additional),"media_rows":len(additional),"history_included":False,"market_data_included":False,
+                           "input_rows":len(rows)+len(additional),"media_rows":len(additional),"history_included":False,"market_data_included":data_market_available(market_data,day,market_available),
                            "official_rows":len(official_rows),"calendar_basis":"XKRX" if session else "unverified_nominal_hours"}}
     assets=Path(__file__).resolve().parent
     with tempfile.TemporaryDirectory(prefix=".smile-preview-",dir=output.parent) as tmp:
