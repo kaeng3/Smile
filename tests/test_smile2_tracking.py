@@ -36,6 +36,10 @@ class TrackingTests(unittest.TestCase):
         s["observations"]={}
         x=next(iter(merge(r,s)["items"].values()))
         self.assertEqual(x["state"],"당일 자료 미확인")
+    def test_error_priority(self):
+        r=merge({},snap("2026-11-25",[item("첫 꽃 후보")]))
+        s={**snap("2026-11-26",[],[{"code":"000100"}]),"observations":{}}
+        self.assertEqual(next(iter(merge(r,s)["items"].values()))["state"],"자료 오류·미확인")
     def test_reference_frozen(self):
         first=item("첫 꽃 후보");first["patterns"][0]["first"]={"close":100}
         r=merge({},snap("2026-11-25",[first]))

@@ -66,7 +66,7 @@ def merge(previous,snapshot):
         state="자료 오류·미확인" if item["code"] in bad else "미검출·재검토"
         if observed:
             state="미검출·"+observed["assessment"]
-        elif "observations" in snapshot and item["code"] not in observations:
+        elif item["code"] not in bad and "observations" in snapshot and item["code"] not in observations:
             state="당일 자료 미확인"
         history=list(item["history"])
         history.append({"day":day.isoformat(),"state":state,"observation":observed})
