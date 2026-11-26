@@ -1,14 +1,14 @@
 """Local-only, next-open forward-return study. No execution or trading advice."""
 import argparse
 from collections import defaultdict,Counter
-from datetime import date,timedelta
+from datetime import date
 from math import isfinite
 from dataclasses import dataclass
 from statistics import mean,median
 from pathlib import Path
 import json
 import re
-from .patterns import Rules,bars,scan
+from .patterns import Rules,bars,scan_at
 from .extended_patterns import Extensions
 from .session_check import require_sessions
 
@@ -34,7 +34,9 @@ def evaluate(records,r,start,end,horizons,extensions=None,verify_calendar=True,s
     b=bars(records)
     # Strictly cap data at study end, including outcome labels.
     b=[x for x in b if x["day"]<=end.isoformat()]
-    if verify_calendar and b:
+    if not b or not any(x["day"]>=start.isoformat() for x in b):
+        raise ValueError("No bars in study period")
+    if verify_calendar:
         require_sessions(b)
     if any(x["volume"]<=0 or x["value"]<=0 or not x["low"]*x["volume"]<=x["value"]<=x["high"]*x["volume"] for x in b):
         raise ValueError("Invalid turnover or zero-volume session")
@@ -42,8 +44,9 @@ def evaluate(records,r,start,end,horizons,extensions=None,verify_calendar=True,s
     for i,x in enumerate(b):
         # Inspect pre-period signals as well, so a previously detected episode
         # is not counted as a new signal solely because the study has started.
-        # The detector sees exactly the information available at this close.
-        for p in scan(b[:i+1],r,extensions):
+        # scan_at accesses only the current index and preceding bars.
+        # Normalize and sort once instead of revalidating every prefix.
+        for p in scan_at(b,i,r,extensions):
             # Keep first occurrence of each episode/state, rather than counting
             # every day that an unchanged support signal persists.
             key=(p["strategy"],p["first_day"],p["state"])

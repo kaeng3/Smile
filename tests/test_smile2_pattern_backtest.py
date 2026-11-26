@@ -1,6 +1,6 @@
 import unittest
 from datetime import date,timedelta
-from smile2.patterns import Rules
+from smile2.patterns import Rules,bars,scan,scan_at
 from smile2.pattern_backtest import evaluate,summarize,Costs
 R=Rules(5,2,.5,1,5,12,2,2,2,4)
 D=date(2026,1,1)
@@ -38,6 +38,16 @@ class BacktestTests(unittest.TestCase):
         with self.assertRaises(ValueError):Costs(0,float("nan"),0,0)
     def test_invalid_split(self):
         with self.assertRaises(ValueError):evaluate(sample(),R,D,D+timedelta(days=7),[1],verify_calendar=False,split=D)
+    def test_index_matches_truncated_input(self):
+        from smile2.extended_patterns import Extensions
+        b=bars(sample())
+        e=Extensions(5,.5,15,1,3,2,10,5,3,6,15,1,2)
+        for ext in (None,e):
+            for i in range(len(b)):
+                self.assertEqual(scan_at(b,i,R,ext),scan(b[:i+1],R,ext))
+    def test_no_bars_in_period(self):
+        with self.assertRaises(ValueError):
+            evaluate(sample(),R,D+timedelta(days=10),D+timedelta(days=12),[1],verify_calendar=False)
     def test_invalid_turnover_rejected(self):
         b=sample();b[-1]["value"]=1
         with self.assertRaises(ValueError):evaluate(b,R,D,D+timedelta(days=7),[1],verify_calendar=False)

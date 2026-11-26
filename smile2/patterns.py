@@ -91,9 +91,14 @@ def strong(b,i,r):
 
 def scan(records,r,extensions=None):
     b=bars(records)
-    if len(b)<2:
+    return scan_at(b,len(b)-1,r,extensions)
+
+def scan_at(b,i,r,extensions=None):
+    """Evaluate a validated, sorted series at index i, without future bars."""
+    if i<1:
         return []
-    i=len(b)-1
+    if i>=len(b):
+        raise ValueError("Index outside bars")
     m=metrics(b,i)
     results=[]
     # Completed candidates are not emitted again as first flowers.
@@ -138,7 +143,7 @@ def scan(records,r,extensions=None):
                             "state":state,"correction_body_top":top,"today":m,**first})
     if extensions is not None:
         from .extended_patterns import scan_extended,trend_box,older_resistance
-        extended=scan_extended(b,r,extensions)
+        extended=scan_extended(b,r,extensions,i=i)
         # Rising-channel hypothesis supersedes the horizontal label for its anchor.
         rising=[x for x in extended if x["strategy"]=="이일홍 상승형"]
         if rising:
