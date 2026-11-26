@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SMILE 2.0 · 리서치 미리보기</title><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head>
+<body>
+<a class="skip" href="#main">본문으로 이동</a>
+<div class="shell"><aside class="sidebar"><a class="brand" href="../">SMILE<span>STOCK RESEARCH</span></a><p class="nav-title">리서치</p><nav aria-label="리서치 메뉴">
+<a aria-current="page" href="#main">뉴스 사건 탐색</a><a href="#sources">수집 품질</a><a href="../">기존 홈페이지 · 기술적 분석 ↗</a>
+</nav><p class="nav-title">개발 예정</p><p class="future">장전 브리핑<br>장후 브리핑<br>후보 종목 추적<br>뉴스 아카이브<br>테마 연구</p><p class="side-note">개발 전용 미리보기<br>투자 판단은 원문 검증 후 진행</p></aside>
+<main id="main"><header><p class="eyebrow">RESEARCH / NEWS</p><h1>시장 재료 탐색</h1><p class="intro">수집 기사를 사건 후보로 묶어 읽습니다. 제목 기반 연결은 확정된 사실이나 수혜 관계가 아닙니다.</p></header>
+<section id="sources" aria-label="수집 품질" class="metrics"><div><span>입력 기사</span><strong id="input-count">—</strong></div><div><span>고유 원문 URL</span><strong id="url-count">—</strong></div><div><span>사건 후보</span><strong id="event-count">—</strong></div><div><span>발표 시각 미상</span><strong id="missing-count">—</strong></div></section>
+<div id="status" role="status" class="status">사건 데이터를 불러오는 중입니다.</div>
+<div class="controls"><label>뉴스 검색<input id="query" type="search" placeholder="종목, 테마, 뉴스 제목"></label><label>분야<select id="category"><option value="">전체</option></select></label><label>날짜<select id="date"><option value="">전체</option></select></label><label>표시 순서<select id="order"><option value="score">키워드 점수순</option><option value="recent">최신 수집순</option></select></label></div>
+<p id="results" aria-live="polite" class="small"></p>
+<section class="workspace"><div id="events" aria-label="사건 후보 목록"></div><aside class="detail" aria-label="선택한 사건" id="detail"><h2>사건 근거</h2><p>왼쪽에서 사건을 선택하세요.</p></aside></section>
+<button id="more" type="button" hidden>더 보기</button>
+<footer>Smile 2.0 · 제목 기반 시범 분석 · 장전·장후 정식 브리핑은 아직 제공하지 않습니다.</footer></main></div>
+</body></html>
