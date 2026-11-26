@@ -1,0 +1,79 @@
+"""Deterministic, as-of-safe briefing candidates; not investment conclusions."""
+import argparse
+from collections import Counter
+from datetime import date, datetime, time
+import json
+from pathlib import Path
+from .news_engine import KST, build, parse_time, seen_time
+
+def bounds(day, previous, edition, post_cutoff=time(18)):
+    if previous >= day:
+        raise ValueError("Previous trading date must precede report date")
+    if edition == "pre":
+        return datetime.combine(previous,time(15,30),KST),datetime.combine(day,time(9),KST)
+    if edition == "post":
+        if post_cutoff < time(15,30):
+            raise ValueError("Post cutoff must be at or after close")
+        return datetime.combine(day,time(9),KST),datetime.combine(day,post_cutoff,KST)
+    raise ValueError("Unknown edition")
+
+def briefing(rows, day, previous, edition, post_cutoff=time(18), limit=50):
+    if limit < 1:
+        raise ValueError("limit must be positive")
+    start,end=bounds(day,previous,edition,post_cutoff)
+    known,unknown=[],[]
+    future=late=0
+    for r in rows:
+        if not isinstance(r,dict):
+            continue
+        seen=seen_time(r.get("seen"))
+        pub=parse_time(r.get("published_at"))
+        if seen is None:
+            continue # no proof it was available at cutoff
+        if seen>=end:
+            late+=1
+            continue
+        if pub and pub>seen:
+            future+=1
+            continue
+        if pub and start<=pub<end:
+            known.append(r)
+        elif pub is None and start<=seen<end:
+            unknown.append(r)
+    primary=build(known)
+    fallback=build(unknown)
+    def rank(e):
+        # Existing keyword score is only a heuristic, not measured impact.
+        return (-e["keyword_score"],-e["source_count"],e["id"])
+    selected=sorted(primary["events"],key=rank)[:limit]
+    uncertain=sorted(fallback["events"],key=rank)[:limit]
+    return {"schema":1,"edition":edition,"report_date":day.isoformat(),
+            "previous_trading_date":previous.isoformat(),"start":start.isoformat(),
+            "cutoff_exclusive":end.isoformat(),"status":"candidate_only",
+            "published_articles":len(known),"unknown_articles":len(unknown),
+            "excluded_late_or_after_cutoff":late,"excluded_inconsistent_timestamp":future,
+            "published_events":primary["event_count"],"unknown_events":fallback["event_count"],
+            "categories":dict(Counter(e["category"] for e in primary["events"])),
+            "events":selected,"unknown_events_preview":uncertain,
+            "note":"Title-based candidates. Unknown publication times remain separate. No verified price causation or event occurrence times."}
+
+def main():
+    p=argparse.ArgumentParser()
+    p.add_argument("--input",type=Path,required=True)
+    p.add_argument("--output",type=Path,required=True)
+    p.add_argument("--day",type=date.fromisoformat,required=True)
+    p.add_argument("--previous",type=date.fromisoformat,required=True)
+    p.add_argument("--edition",choices=["pre","post"],required=True)
+    p.add_argument("--post-cutoff",type=time.fromisoformat,default=time(18))
+    a=p.parse_args()
+    rows=json.loads(a.input.read_text(encoding="utf-8"))
+    if not isinstance(rows,list):
+        p.error("Expected list of articles")
+    result=briefing(rows,a.day,a.previous,a.edition,a.post_cutoff)
+    a.output.parent.mkdir(parents=True,exist_ok=True)
+    tmp=a.output.with_suffix(".tmp")
+    tmp.write_text(json.dumps(result,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
+    tmp.replace(a.output)
+    print(json.dumps({k:v for k,v in result.items() if k not in ("events","unknown_events_preview")},ensure_ascii=False))
+if __name__=="__main__":
+    main()

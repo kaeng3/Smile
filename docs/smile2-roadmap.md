@@ -26,3 +26,8 @@ MIT 공개 저장소 affaan-m/ECC의 frontend-design-direction, cost-aware-llm-p
 
 ## 미해결
 전체 역사 데이터 수록 범위, 실시간 수집 검증, 기존 전략 회귀, 이일홍 수치 기준, 비공개 저장소 및 데이터 이전, 실제 AI 비용과 브리핑 운영 시각, 최종 배포 승인.
+
+## 시험 브리핑
+장전: 직전 거래일 15:30부터 당일 09:00 미만. 장후: 당일 09:00부터 18:00 미만(임시 설정, 운영 시간 미확정). 수집시각이 발행 마감 이후면 제외. 발표 미상은 별도 후보, 미래 시각 불일치 제외. 거래일은 호출자가 지정한다.
+`python -m smile2.briefing --input news_feed/news.json --output smile2/brief-pre.json --day 2026-11-26 --previous 2026-11-25 --edition pre`
+장후는 --edition post 및 --output smile2/brief-post.json. 정식 리포트나 실시간 주가 데이터 아님.

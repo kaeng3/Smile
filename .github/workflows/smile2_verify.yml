@@ -3,7 +3,7 @@ on:
   pull_request:
     paths:
       - 'smile2/**'
-      - 'tests/test_smile2.py'
+      - 'tests/test_smile2*.py'
       - '.github/workflows/smile2_verify.yml'
       - 'news_feed/sources.py'
       - 'news_feed/collect.py'
@@ -11,7 +11,7 @@ on:
     branches: ['feature/smile-2-remodel']
     paths:
       - 'smile2/**'
-      - 'tests/test_smile2.py'
+      - 'tests/test_smile2*.py'
       - '.github/workflows/smile2_verify.yml'
       - 'news_feed/sources.py'
       - 'news_feed/collect.py'
@@ -29,7 +29,16 @@ jobs:
       - name: Syntax and offline tests
         run: |
           python -m compileall -q smile2
-          python -m unittest discover -s tests -p test_smile2.py -v
+          python -m unittest discover -s tests -p 'test_smile2*.py' -v
           node --check smile2/app.js
+          node --check smile2/brief.js
       - name: Aggregate-only existing history audit
         run: python -m smile2.audit_history stock_news_history.json
+
+      - name: Real feed snapshot smoke test (read only)
+        run: |
+          git fetch --depth=1 origin data
+          git show FETCH_HEAD:news_feed/news.json > "$RUNNER_TEMP/news.json"
+          python -m smile2.news_engine --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/events.json"
+          python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/pre.json" --day 2026-11-26 --previous 2026-11-25 --edition pre
+          python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/post.json" --day 2026-11-26 --previous 2026-11-25 --edition post
