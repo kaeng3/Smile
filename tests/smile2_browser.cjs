@@ -1,0 +1,34 @@
+const {chromium}=require("playwright");
+const assert=require("node:assert/strict");
+(async()=>{
+ const browser=await chromium.launch({headless:true});
+ try{
+  const page=await browser.newPage({viewport:{width:1280,height:900}});
+  const errors=[];page.on("pageerror",e=>errors.push(e.message));
+  const url="http://127.0.0.1:8765";
+  await page.goto(url+"/index.html");
+  await page.locator(".event button").first().waitFor({timeout:30000});
+  await page.locator(".event button").first().click();
+  await page.locator("#detail .headline").waitFor();
+  await page.locator("#query").fill("zzzz-no-match-999999");
+  await page.getByText("조건에 맞는 사건이 없습니다.").waitFor();
+  await page.locator("#query").fill("");
+  await page.setViewportSize({width:390,height:844});
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),"mobile horizontal overflow");
+  await page.goto(url+"/brief.html?edition=pre");
+  await page.waitForFunction(()=>document.querySelector("#known").textContent!=="—");
+  await page.goto(url+"/candidates.html");
+  const candidate={schema:1,status:"research_candidates",as_of:"2026-11-26",errors:[],candidates:[{code:"000100",bars:[{day:"2026-11-26",open:100,high:115,low:95,close:110}],patterns:[{strategy:"이일홍",state:"첫 꽃 후보",first_day:"2026-11-26",today:{day:"2026-11-26",close:110},box:{upper:105,lower:90}}]}]};
+  await page.locator("#file").setInputFiles({name:"test.json",mimeType:"application/json",buffer:Buffer.from(JSON.stringify(candidate))});
+  await page.locator("#list button").first().click();
+  await page.locator("#detail svg").waitFor();
+  await page.goto(url+"/history.html");
+  const hist={"000100":[{date:"2026-11-26",stock_name:"테스트",category:"테스트",title:"예시 재료",content:"검증용 합성 자료"}]};
+  await page.locator("#file").setInputFiles({name:"synthetic.json",mimeType:"application/json",buffer:Buffer.from(JSON.stringify(hist))});
+  await page.locator("#query").fill("예시");
+  await page.locator("#submit").click();
+  await page.getByText("예시 재료",{exact:true}).waitFor();
+  assert.deepEqual(errors,[]);
+  console.log("Browser smoke: actual news search, briefing, local candidate SVG, local history, mobile layout PASS");
+ }finally{await browser.close()}
+})().catch(e=>{console.error(e);process.exitCode=1});
