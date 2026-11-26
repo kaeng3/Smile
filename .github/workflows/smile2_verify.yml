@@ -36,6 +36,7 @@ jobs:
           node --check smile2/candidates.js
           node --check smile2/chart.js
           node --check smile2/history.js
+          node --check smile2/history_compare.js
           node --check smile2/themes.js
       - name: Aggregate-only existing history audit
         run: python -m smile2.audit_history stock_news_history.json

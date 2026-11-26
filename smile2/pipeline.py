@@ -13,7 +13,7 @@ from .media_probe import collect_media
 from .market_brief import market_brief
 
 ASSETS=("index.html","style.css","app.js","brief.html","brief.js","candidates.html",
-        "candidates.js","chart.js","history.html","history.js","themes.html","themes.js")
+        "candidates.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js")
 JSON_NAMES=("events.json","brief-pre.json","brief-post.json","quality.json",
             "official-status.json","media-status.json","manifest.json")
 
@@ -43,12 +43,14 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
     additional=public_rows(media_rows)
     events=build(rows+additional)
     def report(edition):
-        result=briefing(rows,day,previous,edition,post_cutoff,session=session)
+        result=briefing(rows,day,previous,edition,post_cutoff,limit=max(50,len(rows)) if edition=="post" and market_available else 50,session=session)
         # Additional sources have not been calibrated against the existing score.
         # Keep them separate rather than assigning artificial importance.
         result["supplemental_media"]=briefing(additional,day,previous,edition,post_cutoff,limit=30,session=session)
         if edition=="post":
             result["market"]=market_brief(market_data if market_available else None,day,result)
+            result["events"]=result["events"][:50]
+            result["unknown_events_preview"]=result["unknown_events_preview"][:50]
         return result
     data={"events.json":events,
           "brief-pre.json":report("pre"),
