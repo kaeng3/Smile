@@ -32,6 +32,8 @@ jobs:
         run: python data_store.py pull
       - name: Collect news (RSS + portals) and score keywords
         run: python news_feed/collect.py
+      - name: Capture official RSS metadata
+        run: python -m smile2.supplemental_store --output news_feed/smile2-official.json
       - name: Push news data (data branch, last 5 days)
         run: python data_store.py push news
       - uses: actions/setup-python@v5
