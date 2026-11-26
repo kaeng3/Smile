@@ -89,7 +89,7 @@ def strong(b,i,r):
     m=metrics(b,i)
     return m["body_pct"]>=r.body_pct and m["volume_ratio_prev"] is not None and m["volume_ratio_prev"]>=r.volume_ratio_min
 
-def scan(records,r):
+def scan(records,r,extensions=None):
     b=bars(records)
     if len(b)<2:
         return []
@@ -136,9 +136,21 @@ def scan(records,r):
                    else "회복 진행" if m["candle"]=="bull" else "회복 대기")
             results.append({"strategy":"박스 돌파 후 조정·회복","pattern":"양"+"음"*(end-j)+("양" if m["candle"]=="bull" else ""),
                             "state":state,"correction_body_top":top,"today":m,**first})
+    if extensions is not None:
+        from .extended_patterns import scan_extended,trend_box,older_resistance
+        extended=scan_extended(b,r,extensions)
+        # Rising-channel hypothesis supersedes the horizontal label for its anchor.
+        rising=[x for x in extended if x["strategy"]=="이일홍 상승형"]
+        if rising:
+            results=[x for x in results if x["strategy"]!="이일홍"]
+        for x in results:
+            if x["strategy"]=="이일홍":
+                j=next(k for k,a in enumerate(b) if a["day"]==x["first_day"])
+                x["older_resistance"]=older_resistance(b,j,r.box_days,extensions.older_days)
+        results.extend(extended)
     return results
 
-def load_and_scan(path,r,expected_day,verify_calendar=False):
+def load_and_scan(path,r,expected_day,verify_calendar=False,extensions=None):
     d=json.loads(path.read_text(encoding="utf-8"))
     if d.get("source")!="DAUM_KRX_REGULAR" or d.get("schema")!=1:
         raise ValueError("Expected schema 1 DAUM_KRX_REGULAR")
@@ -151,7 +163,7 @@ def load_and_scan(path,r,expected_day,verify_calendar=False):
     if verify_calendar:
         from .session_check import require_sessions
         require_sessions(b)
-    return {"code":code,"as_of":expected_day,"patterns":scan(b,r),"bars":b[-40:]}
+    return {"code":code,"as_of":expected_day,"patterns":scan(b,r,extensions),"bars":b[-40:],"observation":metrics(b,len(b)-1)}
 
 def main():
     p=argparse.ArgumentParser()
@@ -160,22 +172,31 @@ def main():
     p.add_argument("--as-of",type=lambda s:date.fromisoformat(s).isoformat(),required=True)
     p.add_argument("--output",type=Path,required=True)
     p.add_argument("--verify-calendar",action="store_true")
+    p.add_argument("--extensions",type=Path,help="Explicit optional research hypotheses JSON")
     a=p.parse_args()
     r=Rules(**json.loads(a.rules.read_text(encoding="utf-8")))
+    extensions=None
+    if a.extensions:
+        from .extended_patterns import Extensions
+        extensions=Extensions(**json.loads(a.extensions.read_text(encoding="utf-8")))
     if a.verify_calendar:
         from .calendar import session_window
         session_window(date.fromisoformat(a.as_of))
     results,errors=[],[]
+    observations={}
+    examined=0
     for path in sorted(a.input_dir.glob("*.json")):
         if not re.fullmatch(r"[0-9A-Z]{6}",path.stem):
             continue
         try:
-            s=load_and_scan(path,r,a.as_of,a.verify_calendar)
+            s=load_and_scan(path,r,a.as_of,a.verify_calendar,extensions)
+            examined+=1
+            observations[s["code"]]=s["observation"]
             if s["patterns"]:
-                results.append(s)
+                results.append({k:v for k,v in s.items() if k!="observation"})
         except (ValueError,KeyError,TypeError,OSError) as e:
             errors.append({"code":path.stem,"reason":str(e)})
-    output={"schema":1,"as_of":a.as_of,"status":"research_candidates","calendar_verified":a.verify_calendar,"rules":vars(r),"candidates":results,"errors":errors}
+    output={"schema":1,"as_of":a.as_of,"status":"research_candidates","calendar_verified":a.verify_calendar,"rules":vars(r),"extensions":vars(extensions) if extensions else None,"candidates":results,"errors":errors,"examined":examined,"observations":observations,"source":"DAUM_KRX_REGULAR"}
     a.output.parent.mkdir(parents=True,exist_ok=True)
     temp=a.output.with_suffix(".tmp")
     temp.write_text(json.dumps(output,ensure_ascii=False,indent=2),encoding="utf-8")

@@ -84,7 +84,12 @@ jobs:
       - name: Browser smoke test (isolated local server)
         run: |
           npm install --prefix "$RUNNER_TEMP/browser" --no-save --ignore-scripts playwright@1.56.1
-          node "$RUNNER_TEMP/browser/node_modules/playwright/cli.js" install --with-deps chromium
+          # Ubuntu hosted runner already includes Chromium libraries. Try the actual
+          # browser launch first; install extra OS dependencies only if needed.
+          node "$RUNNER_TEMP/browser/node_modules/playwright/cli.js" install chromium
+          if ! NODE_PATH="$RUNNER_TEMP/browser/node_modules" node -e 'require("playwright").chromium.launch({headless:true}).then(b=>b.close()).catch(e=>{console.error(e.message);process.exit(1)})'; then
+            node "$RUNNER_TEMP/browser/node_modules/playwright/cli.js" install-deps chromium
+          fi
           python -m http.server 8765 --bind 127.0.0.1 --directory "$RUNNER_TEMP/smile-preview" > "$RUNNER_TEMP/smile-http.log" 2>&1 &
           server=$!
           trap 'kill "$server" 2>/dev/null || true' EXIT
