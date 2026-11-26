@@ -163,7 +163,7 @@ def load_and_scan(path,r,expected_day,verify_calendar=False,extensions=None):
     if verify_calendar:
         from .session_check import require_sessions
         require_sessions(b)
-    return {"code":code,"as_of":expected_day,"patterns":scan(b,r,extensions),"bars":b[-40:]}
+    return {"code":code,"as_of":expected_day,"patterns":scan(b,r,extensions),"bars":b[-40:],"observation":metrics(b,len(b)-1)}
 
 def main():
     p=argparse.ArgumentParser()
@@ -183,16 +183,20 @@ def main():
         from .calendar import session_window
         session_window(date.fromisoformat(a.as_of))
     results,errors=[],[]
+    observations={}
+    examined=0
     for path in sorted(a.input_dir.glob("*.json")):
         if not re.fullmatch(r"[0-9A-Z]{6}",path.stem):
             continue
         try:
             s=load_and_scan(path,r,a.as_of,a.verify_calendar,extensions)
+            examined+=1
+            observations[s["code"]]=s["observation"]
             if s["patterns"]:
-                results.append(s)
+                results.append({k:v for k,v in s.items() if k!="observation"})
         except (ValueError,KeyError,TypeError,OSError) as e:
             errors.append({"code":path.stem,"reason":str(e)})
-    output={"schema":1,"as_of":a.as_of,"status":"research_candidates","calendar_verified":a.verify_calendar,"rules":vars(r),"extensions":vars(extensions) if extensions else None,"candidates":results,"errors":errors}
+    output={"schema":1,"as_of":a.as_of,"status":"research_candidates","calendar_verified":a.verify_calendar,"rules":vars(r),"extensions":vars(extensions) if extensions else None,"candidates":results,"errors":errors,"examined":examined,"observations":observations,"source":"DAUM_KRX_REGULAR"}
     a.output.parent.mkdir(parents=True,exist_ok=True)
     temp=a.output.with_suffix(".tmp")
     temp.write_text(json.dumps(output,ensure_ascii=False,indent=2),encoding="utf-8")
