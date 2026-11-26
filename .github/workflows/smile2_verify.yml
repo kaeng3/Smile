@@ -30,7 +30,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12'
+      - run: python -m pip install exchange-calendars==4.13.2
       - name: Syntax and offline tests
         run: |
           python -m compileall -q smile2
@@ -49,11 +50,11 @@ jobs:
           git show FETCH_HEAD:news_feed/news.json > "$RUNNER_TEMP/news.json"
           python -m smile2.news_engine --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/events.json"
           python -m smile2.quality --input "$RUNNER_TEMP/events.json" --output "$RUNNER_TEMP/quality.json"
-          python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/pre.json" --day 2026-11-26 --previous 2026-11-25 --edition pre
-          python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/post.json" --day 2026-11-26 --previous 2026-11-25 --edition post
+          python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/pre.json" --day 2026-11-26 --previous 2026-11-25 --edition pre --calendar
+          python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/post.json" --day 2026-11-26 --previous 2026-11-25 --edition post --calendar
 
       - name: Build isolated browser preview and probe official feeds
-        run: python -m smile2.pipeline --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/smile-preview" --day 2026-11-26 --previous 2026-11-25 --official
+        run: python -m smile2.pipeline --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/smile-preview" --day 2026-11-26 --previous 2026-11-25 --official --calendar
       - uses: actions/upload-artifact@v4
         with:
           name: smile2-browser-preview

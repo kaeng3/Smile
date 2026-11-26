@@ -78,6 +78,8 @@ def prepare(row):
     except (ValueError,TypeError):
         score = 0
     return {"title":title,"url":url,"press":str(row.get("press") or urlsplit(url).hostname),
+            "source_feed":str(row.get("source_feed") or ""),
+            "source_kind":str(row.get("source_kind") or "news_metadata"),
             "published_at":published.isoformat() if published else None,
             "seen_at":seen.isoformat() if seen else None,
             "category":str(row.get("cat") or "기타"),"score":score,
@@ -111,6 +113,24 @@ def similar(a,b):
     ca,cb = {s[1] for s in a["stocks"]},{s[1] for s in b["stocks"]}
     return (not ca or not cb or bool(ca & cb)) and len(common)/len(ta|tb)>=0.72
 
+def stock_evidence(articles):
+    links={}
+    for a in articles:
+        # DART adapter supplies the filing issuer's stock code. This is not proof of benefit.
+        u=urlsplit(a["url"])
+        is_filing=(a.get("source_kind")=="official_disclosure" and a.get("source_feed")=="DART"
+                   and u.scheme=="https" and u.hostname=="dart.fss.or.kr"
+                   and u.path=="/dsaf001/main.do"
+                   and bool(re.fullmatch(r"\d{14}",dict(parse_qsl(u.query)).get("rcpNo",""))))
+        for name,code in a["stocks"]:
+            row=links.setdefault(code,{"code":code,"name":name,"relation":"title_mention_unverified","evidence":[]})
+            relation="official_filing_issuer" if is_filing else "title_mention_unverified"
+            if is_filing:
+                row["name"]=name
+                row["relation"]=relation
+            row["evidence"].append({"url":a["url"],"relation":relation})
+    return [links[c] for c in sorted(links)]
+
 def build(rows):
     prepared = [a for row in rows if isinstance(row,dict) if (a:=prepare(row))]
     prepared.sort(key=lambda a:(-a["score"],-clock(a).timestamp(),a["url"]))
@@ -131,12 +151,12 @@ def build(rows):
     result=[]
     for articles in groups:
         lead=articles[0]
-        stocks={s[1]:s[0] for a in articles for s in a["stocks"]}
+        stocks=stock_evidence(articles)
         result.append({"id":hashlib.sha256(lead["url"].encode()).hexdigest()[:20],
                        "headline":lead["title"],"category":lead["category"],
                        "keyword_score":lead["score"],"article_count":len(articles),
                        "source_count":len({a["press"] for a in articles}),
-                       "stocks":[{"code":c,"name":n,"relation":"title_mention_unverified"} for c,n in sorted(stocks.items())],
+                       "stocks":stocks,
                        "themes":sorted({t for a in articles for t in a["themes"]}),
                        "articles":articles,"status":"candidate_not_verified"})
     return {"schema":1,"method":"conservative_title_clustering_v1",

@@ -27,7 +27,7 @@ def public_rows(rows):
           "published_at","observed_at","seen","publication_verified_at")
     return [{k:r[k] for k in keys if k in r} for r in rows]
 
-def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18)):
+def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18), session=None):
     if previous>=day:
         raise ValueError("Invalid previous session")
     output=Path(output).resolve()
@@ -37,14 +37,14 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
     rows=public_rows(list(rows)+list(official_rows))
     events=build(rows)
     data={"events.json":events,
-          "brief-pre.json":briefing(rows,day,previous,"pre",post_cutoff),
-          "brief-post.json":briefing(rows,day,previous,"post",post_cutoff),
+          "brief-pre.json":briefing(rows,day,previous,"pre",post_cutoff,session=session),
+          "brief-post.json":briefing(rows,day,previous,"post",post_cutoff,session=session),
           "quality.json":review(events),
           "official-status.json":{"rows":len(official_rows),"sources":list(source_status),"checked_at":datetime.now(KST).isoformat()},
           "manifest.json":{"schema":1,"status":"research_preview","report_date":day.isoformat(),
                            "previous_trading_date":previous.isoformat(),"built_at":datetime.now(KST).isoformat(),
                            "input_rows":len(rows),"history_included":False,"market_data_included":False,
-                           "official_rows":len(official_rows)}}
+                           "official_rows":len(official_rows),"calendar_basis":"XKRX" if session else "unverified_nominal_hours"}}
     assets=Path(__file__).resolve().parent
     with tempfile.TemporaryDirectory(prefix=".smile-preview-",dir=output.parent) as tmp:
         stage=Path(tmp)/"site"
@@ -64,9 +64,15 @@ def main():
     p.add_argument("--previous",type=date.fromisoformat,required=True)
     p.add_argument("--post-cutoff",type=time.fromisoformat,default=time(18))
     p.add_argument("--official",action="store_true",help="Collect public official RSS, no API credentials")
+    p.add_argument("--calendar",action="store_true",help="Require XKRX calendar validation")
     args=p.parse_args()
     official,status=collect() if args.official else ([],[])
-    manifest=generate(read_rows(args.input),args.day,args.previous,args.output,official,status,args.post_cutoff)
+    if args.calendar:
+        from .calendar import session_window
+        session=session_window(args.day)
+    else:
+        session=None
+    manifest=generate(read_rows(args.input),args.day,args.previous,args.output,official,status,args.post_cutoff,session=session)
     print(json.dumps(manifest,ensure_ascii=False))
 if __name__=="__main__":
     main()

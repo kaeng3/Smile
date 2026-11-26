@@ -6,21 +6,31 @@ import json
 from pathlib import Path
 from .news_engine import KST, build, parse_time, seen_time
 
-def bounds(day, previous, edition, post_cutoff=time(18)):
+def bounds(day, previous, edition, post_cutoff=time(18), session=None):
     if previous >= day:
         raise ValueError("Previous trading date must precede report date")
+    opened=datetime.combine(day,time(9),KST)
+    closed=datetime.combine(day,time(15,30),KST)
+    previous_closed=datetime.combine(previous,time(15,30),KST)
+    if session is not None:
+        if session.get("day")!=day.isoformat() or session.get("previous")!=previous.isoformat() or session.get("calendar")!="XKRX":
+            raise ValueError("Calendar and requested trading dates disagree")
+        opened,closed,previous_closed=(parse_time(session[k]) for k in ("open","close","previous_close"))
+        if not all((opened,closed,previous_closed)) or not (previous_closed<opened<closed) or opened.date()!=day or closed.date()!=day or previous_closed.date()!=previous:
+            raise ValueError("Invalid exchange session times")
     if edition == "pre":
-        return datetime.combine(previous,time(15,30),KST),datetime.combine(day,time(9),KST)
+        return previous_closed,opened
     if edition == "post":
-        if post_cutoff < time(15,30):
+        end=datetime.combine(day,post_cutoff,KST)
+        if end<closed:
             raise ValueError("Post cutoff must be at or after close")
-        return datetime.combine(day,time(9),KST),datetime.combine(day,post_cutoff,KST)
+        return opened,end
     raise ValueError("Unknown edition")
 
-def briefing(rows, day, previous, edition, post_cutoff=time(18), limit=50):
+def briefing(rows, day, previous, edition, post_cutoff=time(18), limit=50, session=None):
     if limit < 1:
         raise ValueError("limit must be positive")
-    start,end=bounds(day,previous,edition,post_cutoff)
+    start,end=bounds(day,previous,edition,post_cutoff,session)
     known,unknown=[],[]
     future=late=0
     for r in rows:
@@ -54,6 +64,7 @@ def briefing(rows, day, previous, edition, post_cutoff=time(18), limit=50):
     return {"schema":1,"edition":edition,"report_date":day.isoformat(),
             "previous_trading_date":previous.isoformat(),"start":start.isoformat(),
             "cutoff_exclusive":end.isoformat(),"status":"candidate_only",
+            "calendar_basis":"XKRX" if session else "unverified_nominal_hours",
             "published_articles":len(known),"unknown_articles":len(unknown),
             "excluded_late_or_after_cutoff":late,"excluded_inconsistent_timestamp":future,
             "published_events":primary["event_count"],"unknown_events":fallback["event_count"],
@@ -69,11 +80,17 @@ def main():
     p.add_argument("--previous",type=date.fromisoformat,required=True)
     p.add_argument("--edition",choices=["pre","post"],required=True)
     p.add_argument("--post-cutoff",type=time.fromisoformat,default=time(18))
+    p.add_argument("--calendar",action="store_true",help="Require XKRX calendar validation")
     a=p.parse_args()
     rows=json.loads(a.input.read_text(encoding="utf-8"))
     if not isinstance(rows,list):
         p.error("Expected list of articles")
-    result=briefing(rows,a.day,a.previous,a.edition,a.post_cutoff)
+    if a.calendar:
+        from .calendar import session_window
+        session=session_window(a.day)
+    else:
+        session=None
+    result=briefing(rows,a.day,a.previous,a.edition,a.post_cutoff,session=session)
     a.output.parent.mkdir(parents=True,exist_ok=True)
     tmp=a.output.with_suffix(".tmp")
     tmp.write_text(json.dumps(result,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
