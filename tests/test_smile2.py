@@ -36,5 +36,21 @@ class NewsTests(unittest.TestCase):
         self.assertEqual(r["duplicate_stock_date_title"],1)
         self.assertNotIn("title",r)
 
+class SourceTimeTests(unittest.TestCase):
+    def test_rss_midnight_rollover(self):
+        from news_feed.sources import publication_time
+        self.assertEqual(publication_time("Wed, 25 Nov 2026 18:30:00 GMT"),"2026-11-26T03:30:00+09:00")
+        self.assertEqual(publication_time("2026-11-26T07:00:00+02:00"),"2026-11-26T14:00:00+09:00")
+        self.assertIsNone(publication_time("2026-11-26 07:00:00"))
+    def test_portal_does_not_invent_publication(self):
+        from unittest.mock import patch
+        from news_feed import sources
+        html='<a href="https://n.news.naver.com/mnews/article/001/123456">테스트용 뉴스 제목입니다</a>'
+        with patch.object(sources,"_get",return_value=html):
+            items=sources.fetch_portal("네이버 증권속보","https://news.naver.com/test")
+        self.assertEqual(len(items),1)
+        self.assertIsNone(items[0]["published_at"])
+        self.assertEqual(items[0]["time"],"")
+
 if __name__=="__main__":
     unittest.main()

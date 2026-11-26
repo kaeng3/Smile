@@ -47,7 +47,13 @@ def main():
     new = 0
     for it in items:
         k = sources.norm(it["title"])
-        if not k or k in old: continue
+        if not k: continue
+        if k in old:
+            # Backfill known publication timestamp only for the identical source URL.
+            if old[k].get("url") == it["url"] and it.get("published_at") and not old[k].get("published_at"):
+                old[k]["published_at"] = it["published_at"]
+                old[k]["source_feed"] = it.get("source_feed")
+            continue
         title = it["title"]
         cands = tok.candidates(title) | {w for w in tok.tokens(title) if w}
         hits = [(w, KW[w]) for w in cands if w in KW]
@@ -66,6 +72,7 @@ def main():
             for t, s in v["themes"][:2]: th[t] += s
         old[k] = {"k": k, "seen": now.strftime("%Y-%m-%d %H:%M"), "time": it["time"], "press": it["press"],
                   "title": title, "url": it["url"], "score": round(score, 1), "kws": [w for w, _ in hits[:4]],
+                  "published_at": it.get("published_at"), "source_feed": it.get("source_feed"),
                   "ev": ev[:2], "stocks": stocks, "themes": [t for t, _ in th.most_common(3)]}
         old[k]["cat"] = categorize(title, old[k]["themes"], F); old[k]["sess"] = session(now.strftime("%H:%M"))
         new += 1

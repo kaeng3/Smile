@@ -1,5 +1,23 @@
 """뉴스 출처 수집기 (RSS·포털) — 섹터 상승/news.py와 동일"""
 import re, time, html as H, urllib.request
+from datetime import datetime, timezone, timedelta
+from email.utils import parsedate_to_datetime
+
+KST = timezone(timedelta(hours=9))
+
+def publication_time(raw):
+    if not raw:
+        return None
+    raw = _clean(raw)
+    try:
+        d = parsedate_to_datetime(raw)
+    except (ValueError, TypeError, OverflowError):
+        try:
+            d = datetime.fromisoformat(raw.replace('Z', '+00:00'))
+        except (ValueError, TypeError, OverflowError):
+            return None
+    return d.astimezone(KST).isoformat() if d is not None and d.tzinfo else None
+
 def _get(url, timeout=8):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0)", "Accept": "*/*"})
     raw = urllib.request.urlopen(req, timeout=timeout).read()
@@ -26,7 +44,11 @@ def fetch_rss(name, url):
             hhmm = f"{(int(tm.group(1)) + 9) % 24:02d}:{tm.group(2)}"
         press = name.split()[0]
         if "news.google" in url and " - " in title: title, press = title.rsplit(" - ", 1)
-        out.append({"id": link, "title": title, "press": press, "time": hhmm, "url": link})
+        published = publication_time(d.group(1)) if d else None
+        if published:
+            hhmm = published[11:16]
+        out.append({"id": link, "title": title, "press": press, "time": hhmm, "url": link,
+                    "published_at": published, "source_feed": name})
     return out
 
 def norm(t):
@@ -55,5 +77,7 @@ def fetch_portal(name, url):
     for m in re.finditer(r'(?s)<a[^>]+href="(' + pat + r')[^"]*"[^>]*>(.*?)</a>', h):
         t = _clean(m.group(2))
         if 10 <= len(t) <= 120 and len(t) > len(best.get(m.group(1), "")): best[m.group(1)] = t
-    return [{"id": u, "title": t, "press": name.split()[0], "time": time.strftime("%H:%M"), "url": u} for u, t in best.items()]
+    # Portal list has no trustworthy publication timestamp. Do not invent one.
+    return [{"id": u, "title": t, "press": name.split()[0], "time": "", "url": u,
+             "published_at": None, "source_feed": name} for u, t in best.items()]
 
