@@ -1,0 +1,49 @@
+name: Smile 2 free-tier AI review (manual)
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_free_project:
+        description: 'Confirmed SMILE key project is Free tier; no linked billing'
+        type: boolean
+        required: true
+        default: false
+      edition:
+        description: 'Public briefing to analyze'
+        type: choice
+        options: [pre, post]
+        default: post
+      retain_review_artifact:
+        description: 'Retain public-metadata draft as repository-visible Actions artifact'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: smile2-free-ai
+  cancel-in-progress: false
+jobs:
+  review:
+    if: github.ref == 'refs/heads/main' && inputs.confirm_free_project
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install exchange-calendars==4.13.2
+      - run: python data_store.py pull
+      - name: Build public research input
+        run: python data_store.py site "$RUNNER_TEMP/ai-site"
+      - name: One free-tier-intended analysis request
+        env:
+          GEMINI_API_KEY: ${{ secrets.SMILE }}
+          EDITION: ${{ inputs.edition }}
+        run: |
+          python -m smile2.free_ai --input "$RUNNER_TEMP/ai-site/smile2/brief-$EDITION.json" --ledger news_feed/smile2-ai-ledger.json --output "$RUNNER_TEMP/smile2-ai-review.json" --confirm-free-project --github-ledger
+      - uses: actions/upload-artifact@v4
+        if: inputs.retain_review_artifact
+        with:
+          name: smile2-ai-unapproved-review
+          path: ${{ runner.temp }}/smile2-ai-review.json
+          retention-days: 3

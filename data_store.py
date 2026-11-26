@@ -43,6 +43,7 @@ OWNERS = {
     ],
     'new_scanner': ['new_scanner/results/history.json'],
     'weekly': ['stock_financials.json', 'stock_shareholders.json', 'stock_sector.json'],
+    'smile2_ai': ['news_feed/smile2-ai-ledger.json'],
     'news': ['news_feed/news.json', 'news_feed/keyword_stats.json', 'news_feed/brief.json', 'news_feed/smile2-official.json'],
 }
 
@@ -163,6 +164,9 @@ def site(outdir):
             written, _ = write_split(json.load(f), os.path.join(outdir, 'news'))
         os.remove(source)  # 사이트는 news/{코드}.json만 쓴다
         print(f'[data] 종목별 뉴스 파일 {written}개 생성')
+    ledger = os.path.join(outdir, 'news_feed', 'smile2-ai-ledger.json')
+    if os.path.isfile(ledger):
+        os.remove(ledger)  # reservation metadata is not a Pages asset
     # New research screen: build only public metadata and keep legacy available on failure.
     from smile2.site_release import release, fallback, add_entry
     try:
