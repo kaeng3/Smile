@@ -42,3 +42,16 @@ jobs:
           python -m smile2.news_engine --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/events.json"
           python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/pre.json" --day 2026-11-26 --previous 2026-11-25 --edition pre
           python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/post.json" --day 2026-11-26 --previous 2026-11-25 --edition post
+
+      - name: Build isolated browser preview (public news metadata only)
+        run: |
+          mkdir -p "$RUNNER_TEMP/smile-preview"
+          cp smile2/index.html smile2/style.css smile2/app.js smile2/brief.html smile2/brief.js "$RUNNER_TEMP/smile-preview/"
+          cp "$RUNNER_TEMP/events.json" "$RUNNER_TEMP/smile-preview/events.json"
+          cp "$RUNNER_TEMP/pre.json" "$RUNNER_TEMP/smile-preview/brief-pre.json"
+          cp "$RUNNER_TEMP/post.json" "$RUNNER_TEMP/smile-preview/brief-post.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: smile2-browser-preview
+          path: ${{ runner.temp }}/smile-preview
+          retention-days: 3
