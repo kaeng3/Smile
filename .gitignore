@@ -45,3 +45,6 @@ new_scanner/results/history.json
 _site/
 /event_archive/
 /.archive_pulled
+
+# Private research outputs: use a local directory outside the repository when possible.
+/smile2-local/
