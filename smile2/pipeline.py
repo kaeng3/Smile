@@ -11,7 +11,7 @@ from .quality import review
 from .official_feeds import collect
 
 ASSETS=("index.html","style.css","app.js","brief.html","brief.js","candidates.html",
-        "candidates.js","chart.js","history.html","history.js")
+        "candidates.js","chart.js","history.html","history.js","themes.html","themes.js")
 JSON_NAMES=("events.json","brief-pre.json","brief-post.json","quality.json",
             "official-status.json","manifest.json")
 

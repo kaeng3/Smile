@@ -138,7 +138,7 @@ def scan(records,r):
                             "state":state,"correction_body_top":top,"today":m,**first})
     return results
 
-def load_and_scan(path,r,expected_day):
+def load_and_scan(path,r,expected_day,verify_calendar=False):
     d=json.loads(path.read_text(encoding="utf-8"))
     if d.get("source")!="DAUM_KRX_REGULAR" or d.get("schema")!=1:
         raise ValueError("Expected schema 1 DAUM_KRX_REGULAR")
@@ -148,6 +148,9 @@ def load_and_scan(path,r,expected_day):
     b=bars(d["records"])
     if not b or b[-1]["day"]!=expected_day:
         raise ValueError("Stale or unexpected last session")
+    if verify_calendar:
+        from .session_check import require_sessions
+        require_sessions(b)
     return {"code":code,"as_of":expected_day,"patterns":scan(b,r),"bars":b[-40:]}
 
 def main():
@@ -156,19 +159,23 @@ def main():
     p.add_argument("--rules",type=Path,required=True)
     p.add_argument("--as-of",type=lambda s:date.fromisoformat(s).isoformat(),required=True)
     p.add_argument("--output",type=Path,required=True)
+    p.add_argument("--verify-calendar",action="store_true")
     a=p.parse_args()
     r=Rules(**json.loads(a.rules.read_text(encoding="utf-8")))
+    if a.verify_calendar:
+        from .calendar import session_window
+        session_window(date.fromisoformat(a.as_of))
     results,errors=[],[]
     for path in sorted(a.input_dir.glob("*.json")):
         if not re.fullmatch(r"[0-9A-Z]{6}",path.stem):
             continue
         try:
-            s=load_and_scan(path,r,a.as_of)
+            s=load_and_scan(path,r,a.as_of,a.verify_calendar)
             if s["patterns"]:
                 results.append(s)
         except (ValueError,KeyError,TypeError,OSError) as e:
             errors.append({"code":path.stem,"reason":str(e)})
-    output={"schema":1,"as_of":a.as_of,"status":"research_candidates","rules":vars(r),"candidates":results,"errors":errors}
+    output={"schema":1,"as_of":a.as_of,"status":"research_candidates","calendar_verified":a.verify_calendar,"rules":vars(r),"candidates":results,"errors":errors}
     a.output.parent.mkdir(parents=True,exist_ok=True)
     temp=a.output.with_suffix(".tmp")
     temp.write_text(json.dumps(output,ensure_ascii=False,indent=2),encoding="utf-8")

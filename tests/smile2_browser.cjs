@@ -28,6 +28,11 @@ const assert=require("node:assert/strict");
   await page.locator("#query").fill("예시");
   await page.locator("#submit").click();
   await page.getByText("예시 재료",{exact:true}).waitFor();
+  await page.goto(url+"/themes.html");
+  await page.locator("#basis").selectOption("seen");
+  await page.locator("#list button").first().click({timeout:30000});
+  await page.locator("#detail a").first().click();
+  await page.locator("#detail .headline").waitFor();
   assert.deepEqual(errors,[]);
   console.log("Browser smoke: actual news search, briefing, local candidate SVG, local history, mobile layout PASS");
  }finally{await browser.close()}
