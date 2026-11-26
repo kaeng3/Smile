@@ -108,3 +108,14 @@ jobs:
               raise SystemExit("No usable publication timestamps in live capture")
           PY
           python -m smile2.news_engine --input "$RUNNER_TEMP/fresh/news.json" --output "$RUNNER_TEMP/fresh-events.json"
+
+  coverage-probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Trial additional public media feeds (aggregate only)
+        run: python -m smile2.media_probe
