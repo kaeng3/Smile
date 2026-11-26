@@ -21,7 +21,7 @@ permissions:
   contents: read
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
@@ -71,9 +71,14 @@ jobs:
           python -m http.server 8765 --bind 127.0.0.1 --directory "$RUNNER_TEMP/smile-preview" > "$RUNNER_TEMP/smile-http.log" 2>&1 &
           server=$!
           trap 'kill "$server" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:8765/index.html >/dev/null; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:8765/index.html >/dev/null
           NODE_PATH="$RUNNER_TEMP/browser/node_modules" node tests/smile2_browser.cjs
   legacy-regression:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
