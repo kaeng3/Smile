@@ -1,0 +1,40 @@
+import unittest
+from smile2.news_engine import build, canonical_url, parse_time
+from smile2.audit_history import audit
+
+def row(title,url,**kwargs):
+    return dict(title=title,url=url,seen="2026-11-26 18:00",press="source",score=10,**kwargs)
+
+class NewsTests(unittest.TestCase):
+    def test_url_dedup(self):
+        r=build([row("기업 수주", "https://example.org/a?utm_source=x"),row("기업 수주","https://example.org/a")])
+        self.assertEqual(r["unique_url_count"],1)
+    def test_exact_title_multiple_sources(self):
+        r=build([row("기업 공급계약 체결","https://a.example/1"),row("[속보] 기업 공급계약 체결","https://b.example/2")])
+        self.assertEqual(r["event_count"],1)
+        self.assertEqual(r["events"][0]["article_count"],2)
+    def test_different_event_stage(self):
+        r=build([row("우주 기업 대형 위성 승인 신청","https://a.example/1"),row("우주 기업 대형 위성 승인","https://b.example/2")])
+        self.assertEqual(r["event_count"],2)
+    def test_unknown_publication(self):
+        r=build([row("기업 수주","https://example.org/a")])
+        self.assertEqual(r["missing_published_at"],1)
+        self.assertIsNone(r["events"][0]["articles"][0]["published_at"])
+    def test_timezone(self):
+        self.assertEqual(parse_time("2026-11-25T18:30:00Z").isoformat(),"2026-11-26T03:30:00+09:00")
+        self.assertIsNone(parse_time("2026-11-25T18:30:00"))
+    def test_invalid_link(self):
+        self.assertEqual(canonical_url("javascript:alert(1)"),"")
+        self.assertEqual(build([row("기업 수주","javascript:alert(1)")])["event_count"],0)
+    def test_stock_code(self):
+        r=build([row("기업 수주","https://a.example/1",stocks=[["예시","000100"],["예시2","0123A0"]])])
+        self.assertEqual([s["code"] for s in r["events"][0]["stocks"]],["000100","0123A0"])
+    def test_history(self):
+        r=audit({"000100":[{"date":"2022-01-01","title":"YQ==","content":"Yg==","enc":True},
+                           {"date":"2022-01-01","title":"YQ==","content":"Yg==","enc":True}]})
+        self.assertEqual(r["stock_news_rows"],2)
+        self.assertEqual(r["duplicate_stock_date_title"],1)
+        self.assertNotIn("title",r)
+
+if __name__=="__main__":
+    unittest.main()
