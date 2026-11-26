@@ -87,8 +87,16 @@ def prepare(row):
 def clock(a):
     return parse_time(a["published_at"]) or parse_time(a["seen_at"])
 
+def signature(text):
+    return re.findall(r"[+-]?\d[\d,.]*(?:%|억원|억|조원|조|만|원|달러)?",text)
+
+def stage(text):
+    return {x for x in ("검토","추진","신청","승인","허가","부인","철회","취소","완료","중단","예정","반려") if x in text}
+
 def similar(a,b):
     if abs((clock(a)-clock(b)).total_seconds())>48*3600:
+        return False
+    if signature(a["title"]) != signature(b["title"]) or stage(a["title"]) != stage(b["title"]):
         return False
     if normalize(a["title"]) == normalize(b["title"]):
         return True

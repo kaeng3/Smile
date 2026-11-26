@@ -4,7 +4,7 @@ from collections import Counter, defaultdict
 import json
 from pathlib import Path
 import re
-from .news_engine import normalize, tokens, parse_time
+from .news_engine import normalize, tokens, parse_time, signature, stage
 
 def grams(title):
     s=normalize(title).replace(" ","")
@@ -16,10 +16,6 @@ def jaccard(a,b):
 def representative(event):
     a=event["articles"][0]
     return a,parse_time(a.get("published_at")) or parse_time(a.get("seen_at"))
-
-def signature(text):
-    # Do not lose quantities, percentages or signs during normalization.
-    return re.findall(r"[+-]?\d[\d,.]*(?:%|억원|억|조원|조|만|원|달러)?",text)
 
 def review(data,limit=100):
     events=data["events"]
@@ -46,7 +42,6 @@ def review(data,limit=100):
             if ca and cb and not ca&cb:
                 continue
             # Different stages (plans, denial, approval) are kept apart.
-            stage=lambda s:{x for x in ("검토","추진","신청","승인","허가","부인","철회","취소","완료","중단","예정") if x in s}
             if stage(a["title"])!=stage(b["title"]):
                 continue
             char=jaccard(gs[i],gs[j]); word=jaccard(ts[i],ts[j])
