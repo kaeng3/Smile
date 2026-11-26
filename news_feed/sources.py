@@ -1,5 +1,40 @@
 """뉴스 출처 수집기 (RSS·포털) — 섹터 상승/news.py와 동일"""
 import re, time, html as H, urllib.request
+import hashlib
+from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
+from datetime import datetime, timezone, timedelta
+from email.utils import parsedate_to_datetime
+
+KST = timezone(timedelta(hours=9))
+
+def canonical_article_url(raw):
+    try:
+        u = urlsplit(str(raw or ""))
+        if u.scheme not in ("http", "https") or not u.hostname or u.username or u.password:
+            return ""
+        query = sorted((k, v) for k, v in parse_qsl(u.query, keep_blank_values=True)
+                       if not k.lower().startswith("utm_") and k.lower() not in {"ref", "fbclid", "gclid"})
+        return urlunsplit((u.scheme, u.netloc.lower(), u.path, urlencode(query), ""))
+    except ValueError:
+        return ""
+
+def article_key(raw):
+    canonical = canonical_article_url(raw)
+    return "u:" + hashlib.sha256(canonical.encode()).hexdigest() if canonical else ""
+
+def publication_time(raw):
+    if not raw:
+        return None
+    raw = _clean(raw)
+    try:
+        d = parsedate_to_datetime(raw)
+    except (ValueError, TypeError, OverflowError):
+        try:
+            d = datetime.fromisoformat(raw.replace('Z', '+00:00'))
+        except (ValueError, TypeError, OverflowError):
+            return None
+    return d.astimezone(KST).isoformat() if d is not None and d.tzinfo else None
+
 def _get(url, timeout=8):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0)", "Accept": "*/*"})
     raw = urllib.request.urlopen(req, timeout=timeout).read()
@@ -13,11 +48,11 @@ def _clean(x):
 
 def fetch_rss(name, url):
     """RSS/Atom → [{id,title,press,time,url}]"""
-    h = _get(url); out = []
+    h = _get(url); out = []; observed = datetime.now(KST).isoformat()
     for it in re.findall(r"(?s)<(?:item|entry)\b.*?</(?:item|entry)>", h)[:40]:
         t = re.search(r"(?s)<title[^>]*>(.*?)</title>", it)
         l = re.search(r"(?s)<link[^>]*>(.*?)</link>", it) or re.search(r'<link[^>]*href="([^"]+)"', it)
-        d = re.search(r"(?s)<(?:pubDate|dc:date|updated|published)>(.*?)</", it)
+        d = re.search(r"(?s)<(?:pubDate|published)>(.*?)</", it)
         if not t or not l: continue
         title, link = _clean(t.group(1)), _clean(l.group(1))
         tm = re.search(r"(\d{2}):(\d{2})", d.group(1)) if d else None
@@ -26,7 +61,11 @@ def fetch_rss(name, url):
             hhmm = f"{(int(tm.group(1)) + 9) % 24:02d}:{tm.group(2)}"
         press = name.split()[0]
         if "news.google" in url and " - " in title: title, press = title.rsplit(" - ", 1)
-        out.append({"id": link, "title": title, "press": press, "time": hhmm, "url": link})
+        published = publication_time(d.group(1)) if d else None
+        if published:
+            hhmm = published[11:16]
+        out.append({"id": link, "title": title, "press": press, "time": hhmm, "url": link,
+                    "published_at": published, "source_feed": name, "observed_at": observed})
     return out
 
 def norm(t):
@@ -50,10 +89,12 @@ def fetch_naver(pages=2):
 
 def fetch_portal(name, url):
     """네이버 속보/다음 경제 HTML: 기사 링크별로 가장 긴 링크 텍스트를 제목으로."""
-    h = _get(url); pat = r"https://n\.news\.naver\.com/mnews/article/\d+/\d+" if "naver" in url else r"https://v\.daum\.net/v/\d+"
+    h = _get(url); observed = datetime.now(KST).isoformat(); pat = r"https://n\.news\.naver\.com/mnews/article/\d+/\d+" if "naver" in url else r"https://v\.daum\.net/v/\d+"
     best = {}
     for m in re.finditer(r'(?s)<a[^>]+href="(' + pat + r')[^"]*"[^>]*>(.*?)</a>', h):
         t = _clean(m.group(2))
         if 10 <= len(t) <= 120 and len(t) > len(best.get(m.group(1), "")): best[m.group(1)] = t
-    return [{"id": u, "title": t, "press": name.split()[0], "time": time.strftime("%H:%M"), "url": u} for u, t in best.items()]
+    # Portal list has no trustworthy publication timestamp. Do not invent one.
+    return [{"id": u, "title": t, "press": name.split()[0], "time": "", "url": u,
+             "published_at": None, "source_feed": name, "observed_at": observed} for u, t in best.items()]
 

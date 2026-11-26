@@ -3,6 +3,8 @@ RSS·포털 기사를 모아 키워드 사전(keywords.json)·종목명(stocks.j
 점수 store_min_score 이상만 news.json에 누적(최근 keep_days일). keyword_stats.json = 날짜별 키워드·테마 빈도.
 키워드 사전은 PC '섹터 상승' 프로젝트의 keywords.py 결과를 복사해 갱신한다."""
 import json, os, sys, time, datetime, collections as C
+import argparse
+from pathlib import Path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import re, tok, sources, brief
 D = os.path.dirname(os.path.abspath(__file__))
@@ -34,20 +36,40 @@ def find_stocks(title, ST):
     hit = [(n, c) for n, c in hit if not any(n != m and n in m for m, _ in hit)]
     return [[n, c] for n, c in sorted(hit, key=lambda x: -len(x[0]))][:3]
 
-def main():
+def main(output_dir=None, update_brief=True):
     F, KW, ST = load("feeds.json"), load("keywords.json"), load("stocks.json")
-    old = {a["k"]: a for a in load("news.json", [])}
-    now = datetime.datetime.now(KST); items, ok, bad = [], 0, []
-    for name, url in F["portals"].items():
-        try: items += sources.fetch_portal(name, url); ok += 1
-        except Exception: bad.append(name)
-    for name, url in F["rss"].items():
-        try: items += sources.fetch_rss(name, url); ok += 1
-        except Exception: bad.append(name)
+    outdir = Path(output_dir) if output_dir is not None else Path(D)
+    outdir.mkdir(parents=True,exist_ok=True)
+    prior=outdir/"news.json"
+    old = {a["k"]: a for a in json.loads(prior.read_text(encoding="utf-8"))} if prior.exists() else {}
+    url_index = {sources.article_key(a.get("url")): k for k, a in old.items() if sources.article_key(a.get("url"))}
+    now = datetime.datetime.now(KST); items, ok, bad, health = [], 0, [], []
+    for kind, fetcher in (("portals", sources.fetch_portal), ("rss", sources.fetch_rss)):
+        for name, url in F[kind].items():
+            try:
+                result=fetcher(name,url)
+                items+=result
+                if result:
+                    ok+=1
+                else:
+                    bad.append(name)
+                health.append({"source":name,"status":"ok" if result else "empty","count":len(result)})
+            except Exception as e:
+                bad.append(name)
+                health.append({"source":name,"status":"failed","error_type":type(e).__name__,"count":0})
     new = 0
     for it in items:
-        k = sources.norm(it["title"])
-        if not k or k in old: continue
+        k = sources.article_key(it.get("url"))
+        if not k or not sources.norm(it["title"]): continue
+        if k in url_index:
+            stored = old[url_index[k]]
+            if it.get("published_at") and not stored.get("published_at"):
+                stored["published_at"] = it["published_at"]
+                stored["source_feed"] = it.get("source_feed")
+                # Record when this metadata became available (not original collection).
+                stored["publication_verified_at"] = it.get("observed_at")
+            continue
+        observed = datetime.datetime.fromisoformat(it.get("observed_at") or datetime.datetime.now(KST).isoformat())
         title = it["title"]
         cands = tok.candidates(title) | {w for w in tok.tokens(title) if w}
         hits = [(w, KW[w]) for w in cands if w in KW]
@@ -59,29 +81,44 @@ def main():
         ev = [e for e in F["event_words"] if e in title]
         score = sum(eff(w, v) for w, v in hits[:2]) + (6 if stocks else 0) + (5 if ev and (stocks or hits) else 0)
         macro = any(w in title for ws in F["categories"].values() for w in ws)
-        if not ((hits and score >= F["store_min_score"]) or macro): continue
+        if not (((hits or (stocks and ev)) and score >= F["store_min_score"]) or macro): continue
         if macro: score = max(score, F["macro_score"])
         th = C.Counter()
         for _, v in hits[:3]:
             for t, s in v["themes"][:2]: th[t] += s
-        old[k] = {"k": k, "seen": now.strftime("%Y-%m-%d %H:%M"), "time": it["time"], "press": it["press"],
+        old[k] = {"k": k, "seen": observed.strftime("%Y-%m-%d %H:%M"), "observed_at": observed.isoformat(), "time": it["time"], "press": it["press"],
                   "title": title, "url": it["url"], "score": round(score, 1), "kws": [w for w, _ in hits[:4]],
+                  "published_at": it.get("published_at"), "source_feed": it.get("source_feed"),
                   "ev": ev[:2], "stocks": stocks, "themes": [t for t, _ in th.most_common(3)]}
-        old[k]["cat"] = categorize(title, old[k]["themes"], F); old[k]["sess"] = session(now.strftime("%H:%M"))
+        old[k]["cat"] = categorize(title, old[k]["themes"], F); old[k]["sess"] = session(observed.strftime("%H:%M"))
+        url_index[k] = k
         new += 1
     for a in old.values(): a["stocks"] = find_stocks(a["title"], ST)
     cut = (now - datetime.timedelta(days=F["keep_days"] + 2)).strftime("%Y-%m-%d")
     arts = sorted((a for a in old.values() if a["seen"] >= cut), key=lambda a: a["seen"], reverse=True)
-    json.dump(arts, open(os.path.join(D, "news.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+    write_json(outdir/"news.json", arts)
     stats = C.defaultdict(lambda: {"kw": C.Counter(), "th": C.Counter(), "n": 0})
     for a in arts:
         s = stats[a["seen"][:10]]; s["n"] += 1; s["kw"].update(a["kws"]); s["th"].update(a["themes"])
     out = {d: {"n": s["n"], "kw": s["kw"].most_common(40), "th": s["th"].most_common(20)} for d, s in stats.items()}
-    json.dump({"updated": now.strftime("%Y-%m-%d %H:%M"), "sources_ok": ok, "sources_bad": bad, "days": out},
-              open(os.path.join(D, "keyword_stats.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
-    try: brief.update()
-    except Exception as e: print("[brief] 오류:", repr(e))
+    write_json(outdir/"keyword_stats.json", {"updated": datetime.datetime.now(KST).strftime("%Y-%m-%d %H:%M"), "sources_ok": ok, "sources_bad": bad, "days": out,
+              "source_health":health,"raw_articles":len(items),
+              "publication_timestamp_count":sum(bool(a.get("published_at")) for a in arts)})
+    if update_brief:
+        try: brief.update()
+        except Exception as e: print("[brief] 오류:", repr(e))
     print(f"출처 {ok}개 성공/{len(bad)}개 실패, 기사 {len(items)}건 중 신규 저장 {new}건, 보관 {len(arts)}건")
 
+def write_json(path, data):
+    temp=path.with_suffix(".tmp")
+    temp.write_text(json.dumps(data,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
+    temp.replace(path)
+
 if __name__ == "__main__":
-    main()
+    p=argparse.ArgumentParser()
+    p.add_argument("--output-dir",type=Path,help="Isolated capture folder; configuration stays in news_feed")
+    p.add_argument("--no-brief",action="store_true")
+    a=p.parse_args()
+    if a.output_dir and not a.no_brief:
+        p.error("Isolated capture requires --no-brief")
+    main(a.output_dir,not a.no_brief)
