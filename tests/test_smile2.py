@@ -52,5 +52,24 @@ class SourceTimeTests(unittest.TestCase):
         self.assertIsNone(items[0]["published_at"])
         self.assertEqual(items[0]["time"],"")
 
+class ArticleIdentityTests(unittest.TestCase):
+    def test_distinct_urls_with_same_title(self):
+        from news_feed.sources import article_key
+        self.assertNotEqual(article_key("https://example.org/a"),article_key("https://example.org/b"))
+        self.assertEqual(article_key("https://example.org/a?utm_source=x"),article_key("https://example.org/a"))
+        self.assertEqual(article_key("https://example.org/a?id=1") == article_key("https://example.org/a?id=2"),False)
+    def test_atom_updated_is_not_published(self):
+        from unittest.mock import patch
+        from news_feed import sources
+        xml='<entry><title>예시 기사</title><link href="https://example.org/a"/><updated>2026-11-26T02:00:00Z</updated></entry>'
+        with patch.object(sources,"_get",return_value=xml):
+            result=sources.fetch_rss("예시","https://example.org/rss")
+        self.assertEqual(len(result),1)
+        self.assertIsNone(result[0]["published_at"])
+        self.assertTrue(result[0]["observed_at"])
+    def test_precise_observation(self):
+        r=build([row("기업 수주","https://example.org/a",observed_at="2026-11-26T18:00:25+09:00")])
+        self.assertEqual(r["events"][0]["articles"][0]["seen_at"],"2026-11-26T18:00:25+09:00")
+
 if __name__=="__main__":
     unittest.main()

@@ -37,6 +37,7 @@ def find_stocks(title, ST):
 def main():
     F, KW, ST = load("feeds.json"), load("keywords.json"), load("stocks.json")
     old = {a["k"]: a for a in load("news.json", [])}
+    url_index = {sources.article_key(a.get("url")): k for k, a in old.items() if sources.article_key(a.get("url"))}
     now = datetime.datetime.now(KST); items, ok, bad = [], 0, []
     for name, url in F["portals"].items():
         try: items += sources.fetch_portal(name, url); ok += 1
@@ -46,14 +47,17 @@ def main():
         except Exception: bad.append(name)
     new = 0
     for it in items:
-        k = sources.norm(it["title"])
-        if not k: continue
-        if k in old:
-            # Backfill known publication timestamp only for the identical source URL.
-            if old[k].get("url") == it["url"] and it.get("published_at") and not old[k].get("published_at"):
-                old[k]["published_at"] = it["published_at"]
-                old[k]["source_feed"] = it.get("source_feed")
+        k = sources.article_key(it.get("url"))
+        if not k or not sources.norm(it["title"]): continue
+        if k in url_index:
+            stored = old[url_index[k]]
+            if it.get("published_at") and not stored.get("published_at"):
+                stored["published_at"] = it["published_at"]
+                stored["source_feed"] = it.get("source_feed")
+                # Record when this metadata became available (not original collection).
+                stored["publication_verified_at"] = it.get("observed_at")
             continue
+        observed = datetime.datetime.fromisoformat(it.get("observed_at") or datetime.datetime.now(KST).isoformat())
         title = it["title"]
         cands = tok.candidates(title) | {w for w in tok.tokens(title) if w}
         hits = [(w, KW[w]) for w in cands if w in KW]
@@ -70,11 +74,12 @@ def main():
         th = C.Counter()
         for _, v in hits[:3]:
             for t, s in v["themes"][:2]: th[t] += s
-        old[k] = {"k": k, "seen": now.strftime("%Y-%m-%d %H:%M"), "time": it["time"], "press": it["press"],
+        old[k] = {"k": k, "seen": observed.strftime("%Y-%m-%d %H:%M"), "observed_at": observed.isoformat(), "time": it["time"], "press": it["press"],
                   "title": title, "url": it["url"], "score": round(score, 1), "kws": [w for w, _ in hits[:4]],
                   "published_at": it.get("published_at"), "source_feed": it.get("source_feed"),
                   "ev": ev[:2], "stocks": stocks, "themes": [t for t, _ in th.most_common(3)]}
-        old[k]["cat"] = categorize(title, old[k]["themes"], F); old[k]["sess"] = session(now.strftime("%H:%M"))
+        old[k]["cat"] = categorize(title, old[k]["themes"], F); old[k]["sess"] = session(observed.strftime("%H:%M"))
+        url_index[k] = k
         new += 1
     for a in old.values(): a["stocks"] = find_stocks(a["title"], ST)
     cut = (now - datetime.timedelta(days=F["keep_days"] + 2)).strftime("%Y-%m-%d")

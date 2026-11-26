@@ -26,13 +26,17 @@ def briefing(rows, day, previous, edition, post_cutoff=time(18), limit=50):
     for r in rows:
         if not isinstance(r,dict):
             continue
-        seen=seen_time(r.get("seen"))
+        seen=parse_time(r.get("observed_at")) or seen_time(r.get("seen"))
         pub=parse_time(r.get("published_at"))
         if seen is None:
             continue # no proof it was available at cutoff
         if seen>=end:
             late+=1
             continue
+        verified=parse_time(r.get("publication_verified_at"))
+        if verified and verified>=end:
+            pub=None
+            r={**r,"published_at":None}
         if pub and pub>seen:
             future+=1
             continue

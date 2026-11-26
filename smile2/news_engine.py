@@ -63,7 +63,7 @@ def prepare(row):
     if not title or not url:
         return None
     published = parse_time(row.get("published_at"))
-    seen = seen_time(row.get("seen"))
+    seen = parse_time(row.get("observed_at")) or seen_time(row.get("seen"))
     if not (published or seen):
         return None
     stocks = []
