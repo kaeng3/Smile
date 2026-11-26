@@ -32,6 +32,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_smile2*.py' -v
           node --check smile2/app.js
           node --check smile2/brief.js
+          node --check smile2/candidates.js
       - name: Aggregate-only existing history audit
         run: python -m smile2.audit_history stock_news_history.json
 
@@ -46,7 +47,7 @@ jobs:
       - name: Build isolated browser preview (public news metadata only)
         run: |
           mkdir -p "$RUNNER_TEMP/smile-preview"
-          cp smile2/index.html smile2/style.css smile2/app.js smile2/brief.html smile2/brief.js "$RUNNER_TEMP/smile-preview/"
+          cp smile2/index.html smile2/style.css smile2/app.js smile2/brief.html smile2/brief.js smile2/candidates.html smile2/candidates.js "$RUNNER_TEMP/smile-preview/"
           cp "$RUNNER_TEMP/events.json" "$RUNNER_TEMP/smile-preview/events.json"
           cp "$RUNNER_TEMP/pre.json" "$RUNNER_TEMP/smile-preview/brief-pre.json"
           cp "$RUNNER_TEMP/post.json" "$RUNNER_TEMP/smile-preview/brief-post.json"
@@ -55,3 +56,6 @@ jobs:
           name: smile2-browser-preview
           path: ${{ runner.temp }}/smile-preview
           retention-days: 3
+
+      - name: Probe official feeds (aggregate only, no credentials)
+        run: python -m smile2.official_feeds --output "$RUNNER_TEMP/official.json"
