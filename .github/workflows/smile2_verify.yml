@@ -83,3 +83,26 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install exchange-calendars==4.13.2
       - run: python -m unittest discover -s tests -p 'test_*.py' -v
+
+  live-capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Capture public feeds without production writes
+        run: |
+          python news_feed/collect.py --output-dir "$RUNNER_TEMP/fresh" --no-brief
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          p=Path(os.environ["RUNNER_TEMP"])/"fresh"
+          s=json.loads((p/"keyword_stats.json").read_text())
+          rows=json.loads((p/"news.json").read_text())
+          print(json.dumps({"sources_ok":s["sources_ok"],"sources_bad":s["sources_bad"],"raw_articles":s["raw_articles"],"retained":len(rows),"publication_timestamp_count":s["publication_timestamp_count"],"source_health":s["source_health"]},ensure_ascii=False))
+          if not rows or not s["publication_timestamp_count"]:
+              raise SystemExit("No usable publication timestamps in live capture")
+          PY
+          python -m smile2.news_engine --input "$RUNNER_TEMP/fresh/news.json" --output "$RUNNER_TEMP/fresh-events.json"
