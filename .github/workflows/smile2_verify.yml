@@ -33,6 +33,8 @@ jobs:
           node --check smile2/app.js
           node --check smile2/brief.js
           node --check smile2/candidates.js
+          node --check smile2/chart.js
+          node --check smile2/history.js
       - name: Aggregate-only existing history audit
         run: python -m smile2.audit_history stock_news_history.json
 
@@ -47,7 +49,7 @@ jobs:
       - name: Build isolated browser preview (public news metadata only)
         run: |
           mkdir -p "$RUNNER_TEMP/smile-preview"
-          cp smile2/index.html smile2/style.css smile2/app.js smile2/brief.html smile2/brief.js smile2/candidates.html smile2/candidates.js "$RUNNER_TEMP/smile-preview/"
+          cp smile2/index.html smile2/style.css smile2/app.js smile2/brief.html smile2/brief.js smile2/candidates.html smile2/candidates.js smile2/chart.js smile2/history.html smile2/history.js "$RUNNER_TEMP/smile-preview/"
           cp "$RUNNER_TEMP/events.json" "$RUNNER_TEMP/smile-preview/events.json"
           cp "$RUNNER_TEMP/pre.json" "$RUNNER_TEMP/smile-preview/brief-pre.json"
           cp "$RUNNER_TEMP/post.json" "$RUNNER_TEMP/smile-preview/brief-post.json"

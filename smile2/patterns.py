@@ -148,7 +148,7 @@ def load_and_scan(path,r,expected_day):
     b=bars(d["records"])
     if not b or b[-1]["day"]!=expected_day:
         raise ValueError("Stale or unexpected last session")
-    return {"code":code,"as_of":expected_day,"patterns":scan(b,r)}
+    return {"code":code,"as_of":expected_day,"patterns":scan(b,r),"bars":b[-40:]}
 
 def main():
     p=argparse.ArgumentParser()
