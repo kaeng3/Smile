@@ -52,18 +52,8 @@ jobs:
           python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/pre.json" --day 2026-11-26 --previous 2026-11-25 --edition pre
           python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/post.json" --day 2026-11-26 --previous 2026-11-25 --edition post
 
-      - name: Build isolated browser preview (public news metadata only)
-        run: |
-          mkdir -p "$RUNNER_TEMP/smile-preview"
-          cp smile2/index.html smile2/style.css smile2/app.js smile2/brief.html smile2/brief.js smile2/candidates.html smile2/candidates.js smile2/chart.js smile2/history.html smile2/history.js "$RUNNER_TEMP/smile-preview/"
-          cp "$RUNNER_TEMP/events.json" "$RUNNER_TEMP/smile-preview/events.json"
-          cp "$RUNNER_TEMP/pre.json" "$RUNNER_TEMP/smile-preview/brief-pre.json"
-          cp "$RUNNER_TEMP/post.json" "$RUNNER_TEMP/smile-preview/brief-post.json"
-
-      - name: Probe official feeds (aggregate only, no credentials)
-        run: |
-          python -m smile2.official_feeds --output "$RUNNER_TEMP/official.json" --status-output "$RUNNER_TEMP/smile-preview/official-status.json"
-          cp "$RUNNER_TEMP/quality.json" "$RUNNER_TEMP/smile-preview/quality.json"
+      - name: Build isolated browser preview and probe official feeds
+        run: python -m smile2.pipeline --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/smile-preview" --day 2026-11-26 --previous 2026-11-25 --official
       - uses: actions/upload-artifact@v4
         with:
           name: smile2-browser-preview

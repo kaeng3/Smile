@@ -1,0 +1,12 @@
+# Smile 2.0 통합 시범 실행
+
+기존 data 브랜치의 공개 뉴스 메타데이터 JSON을 로컬에서 확보한 뒤 실행:
+
+```
+python -m smile2.pipeline --input /local/news.json --output /local/new-preview --day 2026-11-26 --previous 2026-11-25 --official
+python -m http.server 8000 --bind 127.0.0.1 --directory /local/new-preview
+```
+
+브라우저 http://127.0.0.1:8000 에서 뉴스, 브리핑, 출처 상태, 후보 및 로컬 자료 검색을 확인한다. 출력 경로는 존재하지 않는 새 폴더만 허용. 구독 이브닝 자료 및 실제 주가 원본, 비밀키는 포함하지 않는다. 로컬 이력/후보 화면은 사용자가 직접 파일을 선택한다. 기존 Pages 배포를 대체하지 않는다.
+
+--day 및 --previous는 실제 거래일을 호출자가 확인하여 지정해야 한다. --official은 실행 당시 조회 자료를 추가하며, 과거 마감 이후 관측된 자료는 해당 과거 브리핑에서 제외한다. 18시 마감은 임시 설정이다. 출처별 오류는 기록하며, 모든 출처 성공을 보장하지 않는다.
