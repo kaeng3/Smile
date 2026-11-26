@@ -132,6 +132,7 @@ def main():
     p=argparse.ArgumentParser()
     p.add_argument("--output",type=Path,required=True)
     p.add_argument("--dart-day",type=date.fromisoformat)
+    p.add_argument("--status-output",type=Path)
     a=p.parse_args()
     rows,status=collect()
     if a.dart_day:
@@ -148,6 +149,9 @@ def main():
     tmp=a.output.with_suffix(".tmp")
     tmp.write_text(json.dumps(rows,ensure_ascii=False),encoding="utf-8")
     tmp.replace(a.output)
-    print(json.dumps({"rows":len(rows),"sources":status},ensure_ascii=False))
+    report={"rows":len(rows),"sources":status,"checked_at":datetime.now(KST).isoformat()}
+    if a.status_output:
+        a.status_output.write_text(json.dumps(report,ensure_ascii=False),encoding="utf-8")
+    print(json.dumps(report,ensure_ascii=False))
 if __name__=="__main__":
     main()

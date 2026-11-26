@@ -91,7 +91,7 @@ def signature(text):
     return re.findall(r"[+-]?\d[\d,.]*(?:%|억원|억|조원|조|만|원|달러)?",text)
 
 def stage(text):
-    return {x for x in ("검토","추진","신청","승인","허가","부인","철회","취소","완료","중단","예정","반려") if x in text}
+    return {x for x in ("검토","추진","신청","승인","허가","부인","철회","취소","완료","중단","예정","반려","체결","증가","감소","상승","하락","흑자전환","적자전환") if x in text}
 
 def similar(a,b):
     if abs((clock(a)-clock(b)).total_seconds())>48*3600:

@@ -18,6 +18,9 @@ class QualityTests(unittest.TestCase):
                  row(2,"가나다기업 대규모 반도체 공장 증설 승인 완료")])
         self.assertEqual(d["event_count"],2)
         self.assertEqual(review(d)["review_pair_count"],0)
+    def test_opposite_direction_not_merged(self):
+        d=build([row(1,"기업 분기 실적 매출 10% 증가"),row(2,"기업 분기 실적 매출 10% 감소")])
+        self.assertEqual(d["event_count"],2)
     def test_signed_values_not_merged(self):
         d=build([row(1,"기업 실적 매출 +10%"),row(2,"기업 실적 매출 -10%")])
         self.assertEqual(d["event_count"],2)

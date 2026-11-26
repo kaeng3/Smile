@@ -17,6 +17,9 @@ on:
       - '.github/workflows/smile2_verify.yml'
       - 'news_feed/sources.py'
       - 'news_feed/collect.py'
+concurrency:
+  group: smile2-verify-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
@@ -56,14 +59,16 @@ jobs:
           cp "$RUNNER_TEMP/events.json" "$RUNNER_TEMP/smile-preview/events.json"
           cp "$RUNNER_TEMP/pre.json" "$RUNNER_TEMP/smile-preview/brief-pre.json"
           cp "$RUNNER_TEMP/post.json" "$RUNNER_TEMP/smile-preview/brief-post.json"
+
+      - name: Probe official feeds (aggregate only, no credentials)
+        run: |
+          python -m smile2.official_feeds --output "$RUNNER_TEMP/official.json" --status-output "$RUNNER_TEMP/smile-preview/official-status.json"
+          cp "$RUNNER_TEMP/quality.json" "$RUNNER_TEMP/smile-preview/quality.json"
       - uses: actions/upload-artifact@v4
         with:
           name: smile2-browser-preview
           path: ${{ runner.temp }}/smile-preview
           retention-days: 3
-
-      - name: Probe official feeds (aggregate only, no credentials)
-        run: python -m smile2.official_feeds --output "$RUNNER_TEMP/official.json"
 
       - name: Browser smoke test (isolated local server)
         run: |
