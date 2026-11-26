@@ -21,6 +21,21 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(json.loads((out/"brief-pre.json").read_text())["unknown_articles"],1)
             with self.assertRaises(FileExistsError):
                 generate(rows,date(2026,11,26),date(2026,11,25),out)
+    def test_additional_media_separate_and_as_of(self):
+        base={"title":"기존 기사","url":"https://example.org/base","seen":"2026-11-26 08:00"}
+        media={"title":"추가 기사","url":"https://news.google.com/rss/articles/a","seen":"2026-11-26 08:10",
+               "published_at":"2026-11-26T08:00:00+09:00","source_kind":"media_probe_aggregator"}
+        late={**media,"url":"https://news.google.com/rss/articles/b","seen":"2026-11-26 09:01"}
+        with tempfile.TemporaryDirectory() as tmp:
+            out=Path(tmp)/"preview"
+            generate([base],date(2026,11,26),date(2026,11,25),out,media_rows=[media,late])
+            d=json.loads((out/"brief-pre.json").read_text())
+            self.assertEqual(d["published_articles"],0)
+            self.assertEqual(d["supplemental_media"]["published_articles"],1)
+            self.assertEqual(d["supplemental_media"]["excluded_late_or_after_cutoff"],1)
+            e=json.loads((out/"events.json").read_text())
+            self.assertEqual(e["unique_url_count"],3)
+            self.assertEqual(d["supplemental_media"]["events"][0]["articles"][0]["link_kind"],"aggregator")
     def test_session_validation(self):
         with tempfile.TemporaryDirectory() as tmp:
             with self.assertRaises(ValueError):

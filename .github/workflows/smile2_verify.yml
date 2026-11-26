@@ -8,18 +8,10 @@ on:
       - '.github/workflows/smile2_verify.yml'
       - 'news_feed/sources.py'
       - 'news_feed/collect.py'
-  push:
-    branches: ['feature/smile-2-remodel']
-    paths:
-      - 'smile2/**'
-      - 'tests/test_smile2*.py'
-      - 'tests/smile2_browser.cjs'
-      - '.github/workflows/smile2_verify.yml'
-      - 'news_feed/sources.py'
-      - 'news_feed/collect.py'
+  workflow_dispatch:
 concurrency:
   group: smile2-verify-${{ github.head_ref || github.ref_name }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 permissions:
   contents: read
 jobs:
@@ -55,13 +47,7 @@ jobs:
           python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/post.json" --day 2026-11-26 --previous 2026-11-25 --edition post --calendar
 
       - name: Build isolated browser preview and probe official feeds
-        run: python -m smile2.pipeline --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/smile-preview" --day 2026-11-26 --previous 2026-11-25 --official --calendar
-      - uses: actions/upload-artifact@v4
-        with:
-          name: smile2-browser-preview
-          path: ${{ runner.temp }}/smile-preview
-          retention-days: 3
-
+        run: python -m smile2.pipeline --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/smile-preview" --day 2026-11-26 --previous 2026-11-25 --official --media --calendar
       - name: Browser smoke test (isolated local server)
         run: |
           npm install --prefix "$RUNNER_TEMP/browser" --no-save --ignore-scripts playwright@1.56.1
@@ -75,6 +61,11 @@ jobs:
           done
           curl -fsS http://127.0.0.1:8765/index.html >/dev/null
           NODE_PATH="$RUNNER_TEMP/browser/node_modules" node tests/smile2_browser.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: smile2-browser-preview
+          path: ${{ runner.temp }}/smile-preview
+          retention-days: 14
   legacy-regression:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
@@ -109,13 +100,3 @@ jobs:
           PY
           python -m smile2.news_engine --input "$RUNNER_TEMP/fresh/news.json" --output "$RUNNER_TEMP/fresh-events.json"
 
-  coverage-probe:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Trial additional public media feeds (aggregate only)
-        run: python -m smile2.media_probe

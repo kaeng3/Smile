@@ -9,11 +9,12 @@ from .news_engine import build, KST
 from .briefing import briefing
 from .quality import review
 from .official_feeds import collect
+from .media_probe import collect_media
 
 ASSETS=("index.html","style.css","app.js","brief.html","brief.js","candidates.html",
         "candidates.js","chart.js","history.html","history.js","themes.html","themes.js")
 JSON_NAMES=("events.json","brief-pre.json","brief-post.json","quality.json",
-            "official-status.json","manifest.json")
+            "official-status.json","media-status.json","manifest.json")
 
 def read_rows(path):
     rows=json.loads(path.read_text(encoding="utf-8"))
@@ -27,7 +28,7 @@ def public_rows(rows):
           "published_at","observed_at","seen","publication_verified_at")
     return [{k:r[k] for k in keys if k in r} for r in rows]
 
-def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18), session=None):
+def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18), session=None, media_rows=(), media_status=()):
     if previous>=day:
         raise ValueError("Invalid previous session")
     output=Path(output).resolve()
@@ -35,15 +36,23 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         raise FileExistsError("Choose a new empty destination; existing folders are never replaced")
     output.parent.mkdir(parents=True,exist_ok=True)
     rows=public_rows(list(rows)+list(official_rows))
-    events=build(rows)
+    additional=public_rows(media_rows)
+    events=build(rows+additional)
+    def report(edition):
+        result=briefing(rows,day,previous,edition,post_cutoff,session=session)
+        # Additional sources have not been calibrated against the existing score.
+        # Keep them separate rather than assigning artificial importance.
+        result["supplemental_media"]=briefing(additional,day,previous,edition,post_cutoff,limit=30,session=session)
+        return result
     data={"events.json":events,
-          "brief-pre.json":briefing(rows,day,previous,"pre",post_cutoff,session=session),
-          "brief-post.json":briefing(rows,day,previous,"post",post_cutoff,session=session),
+          "brief-pre.json":report("pre"),
+          "brief-post.json":report("post"),
           "quality.json":review(events),
           "official-status.json":{"rows":len(official_rows),"sources":list(source_status),"checked_at":datetime.now(KST).isoformat()},
+          "media-status.json":{"rows":len(additional),"sources":list(media_status),"checked_at":datetime.now(KST).isoformat()},
           "manifest.json":{"schema":1,"status":"research_preview","report_date":day.isoformat(),
                            "previous_trading_date":previous.isoformat(),"built_at":datetime.now(KST).isoformat(),
-                           "input_rows":len(rows),"history_included":False,"market_data_included":False,
+                           "input_rows":len(rows)+len(additional),"media_rows":len(additional),"history_included":False,"market_data_included":False,
                            "official_rows":len(official_rows),"calendar_basis":"XKRX" if session else "unverified_nominal_hours"}}
     assets=Path(__file__).resolve().parent
     with tempfile.TemporaryDirectory(prefix=".smile-preview-",dir=output.parent) as tmp:
@@ -65,6 +74,7 @@ def main():
     p.add_argument("--post-cutoff",type=time.fromisoformat,default=time(18))
     p.add_argument("--official",action="store_true",help="Collect public official RSS, no API credentials")
     p.add_argument("--calendar",action="store_true",help="Require XKRX calendar validation")
+    p.add_argument("--media",action="store_true",help="Include trial public media feeds; not calibrated importance")
     args=p.parse_args()
     official,status=collect() if args.official else ([],[])
     if args.calendar:
@@ -72,7 +82,8 @@ def main():
         session=session_window(args.day)
     else:
         session=None
-    manifest=generate(read_rows(args.input),args.day,args.previous,args.output,official,status,args.post_cutoff,session=session)
+    media,media_status=collect_media() if args.media else ([],[])
+    manifest=generate(read_rows(args.input),args.day,args.previous,args.output,official,status,args.post_cutoff,session=session,media_rows=media,media_status=media_status)
     print(json.dumps(manifest,ensure_ascii=False))
 if __name__=="__main__":
     main()

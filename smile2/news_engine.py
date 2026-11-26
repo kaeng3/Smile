@@ -77,7 +77,9 @@ def prepare(row):
             score = 0
     except (ValueError,TypeError):
         score = 0
-    return {"title":title,"url":url,"press":str(row.get("press") or urlsplit(url).hostname),
+    host=urlsplit(url).hostname or ""
+    link_kind="aggregator" if host=="news.google.com" or row.get("source_kind")=="media_probe_aggregator" else "portal" if host in ("n.news.naver.com","news.naver.com","v.daum.net","news.daum.net") else "source_url"
+    return {"title":title,"url":url,"link_kind":link_kind,"press":str(row.get("press") or urlsplit(url).hostname),
             "source_feed":str(row.get("source_feed") or ""),
             "source_kind":str(row.get("source_kind") or "news_metadata"),
             "published_at":published.isoformat() if published else None,

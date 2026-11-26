@@ -27,7 +27,7 @@ FEEDS={
     "파이낸셜포스트":(google_site("financialpost.co.kr"),"aggregator","기타"),
 }
 
-def probe():
+def collect_media():
     status=[]; rows=[]
     for name,(url,kind,category) in FEEDS.items():
         try:
@@ -36,6 +36,8 @@ def probe():
                 r["source_kind"]="media_probe_"+kind
                 r["score"]=0  # no claim of relevance and no Korean-dictionary scoring
                 r["source_feed"]=name
+                if kind=="direct" and name.startswith("CNBC "):
+                    r["press"]="CNBC"
             rows.extend(found)
             status.append({"source":name,"link_kind":kind,"status":"ok" if found else "empty","count":len(found),
                            "published_count":sum(bool(r["published_at"]) for r in found)})
@@ -43,6 +45,10 @@ def probe():
             status.append({"source":name,"link_kind":kind,"status":"failed","http_status":e.code})
         except Exception as e:
             status.append({"source":name,"link_kind":kind,"status":"failed","error_type":type(e).__name__})
+    return rows,status
+
+def probe():
+    rows,status=collect_media()
     return {"sources":status,"rows":len(rows),"unique_links":len({canonical_url(r["url"]) for r in rows}),
             "note":"Trial metadata only; aggregator URLs are not publisher URLs; no measured semantic recall."}
 
