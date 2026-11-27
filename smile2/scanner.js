@@ -52,6 +52,12 @@
         return asset.origin === base.origin && asset.pathname.startsWith(base.pathname) ? asset : null;
     }
 
+    const themeColors = new Map([
+        ['바이오', '#22c55e'], ['반도체', '#3b82f6'], ['AI·IT', '#a78bfa'],
+        ['에너지', '#f59e0b'], ['우주·방산', '#06b6d4'], ['산업재', '#94a3b8'],
+        ['소비재', '#ec4899'], ['이벤트', '#eab308']
+    ]);
+
     async function themes() {
         const data = await json('theme_bundles.json');
         const bundles = data.bundles || [];
@@ -65,9 +71,13 @@
             const visible = bundles.filter(b => !group.value || b.group === group.value);
             if (!visible.length) add(output, 'p', '등록된 테마꾸러미가 없습니다.', 'small');
             for (const bundle of visible) {
-                const row = add(output, 'details', null, 'event');
-                add(row, 'summary', [bundle.theme, bundle.group, bundle.reignited ? '재점화' : ''].filter(Boolean).join(' · '));
-                const meter = add(row, 'meter');
+                const row = add(output, 'details', null, 'event theme-bundle');
+                row.style.setProperty('--theme-color', themeColors.get(bundle.group) || '#94a3b8');
+                const summary = add(row, 'summary');
+                add(summary, 'span', bundle.theme);
+                if (bundle.group) add(summary, 'span', bundle.group, 'theme-bundle-badge');
+                if (bundle.reignited) add(summary, 'span', '재점화', 'tag');
+                const meter = add(add(summary, 'span', null, 'theme-bundle-strength'), 'meter');
                 meter.max = maxHeat;
                 meter.value = Number(bundle.heat) || 0;
                 meter.setAttribute('aria-label', bundle.theme + ' 최근 5거래일 강도');
