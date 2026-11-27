@@ -107,10 +107,12 @@ def high_play(b,i,e,r):
                 "width_pct":width,"method":"post_gap_high_body_box_candidate"}}
     return None
 
-def scan_extended(b,r,e):
+def scan_extended(b,r,e,i=None):
     from .patterns import metrics
-    if len(b)<2:return []
-    i=len(b)-1;m=metrics(b,i);out=[]
+    if i is None:i=len(b)-1
+    if i<1:return []
+    if i>=len(b):raise ValueError("Index outside bars")
+    m=metrics(b,i);out=[]
     previous=rising_first(b,i-1,r,e)
     if previous and m["candle"]=="bull":
         out.append({"strategy":"이일홍 상승형","state":"완성 후보","today":m,**previous})
