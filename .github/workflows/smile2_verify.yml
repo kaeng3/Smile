@@ -76,6 +76,10 @@ jobs:
               assert len(fa)==f["article_count"]
               print("Featured tagged coverage",edition,f["article_count"],len(f["events"]),len(f["unknown_events"]))
               assert all(e["material_stage"]["evidence_type"]=="title_only" for s in r["sections"]+r["unknown_sections"] for e in s["events"])
+              all_events=[e for s in r["sections"]+r["unknown_sections"] for e in s["events"]]
+              assert all(e["evidence_review"]["body_checked"] is False and e["evidence_review"]["independent_confirmation"]=="not_assessed" for e in all_events)
+              from collections import Counter
+              print("Editorial review reasons",edition,dict(Counter(x for e in all_events for x in e["evidence_review"]["review_reasons"])))
               print("Editorial coverage PASS",edition,r["published_events"],r["unknown_events"])
           a=json.loads((p/"smile2"/"taxonomy-audit.json").read_text())
           assert sum(a["new_counts"].values())==a["total"]

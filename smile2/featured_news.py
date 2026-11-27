@@ -4,6 +4,7 @@ from .briefing import briefing
 from .news_engine import parse_time,seen_time
 from .taxonomy import classify
 from .material_stage import material_stage
+from .editorial_evidence import annotate_event
 
 def featured_editions(rows,day,previous,edition,post_cutoff,session=None):
     tagged=[]
@@ -19,7 +20,7 @@ def featured_editions(rows,day,previous,edition,post_cutoff,session=None):
                            "press":r.get("featured_press") or r.get("press")})
     b=briefing(tagged,day,previous,edition,post_cutoff,limit=None,session=session)
     def order(events,field):
-        items=[{**e,"classification":classify(e["headline"],e.get("category","")),"material_stage":material_stage(e)} for e in events]
+        items=[annotate_event({**e,"classification":classify(e["headline"],e.get("category","")),"material_stage":material_stage(e)}) for e in events]
         return sorted(items,key=lambda e:max((a.get(field) or "" for a in e["articles"]),default=""),reverse=True)
     known=order(b["events"],"published_at");unknown=order(b["unknown_events_preview"],"seen_at")
     return {"method":"explicit_publisher_tag_only","events":known,"unknown_events":unknown,
