@@ -19,7 +19,7 @@ from .editorial_evidence import annotate_sections as annotate_evidence
 from .followup_news import followup
 
 ASSETS=("index.html","search.html","style.css","app.js","brief.html","brief.js","candidates.html",
-        "candidates.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js","editorial.html","editorial.css","editorial.js")
+        "candidates.js","candidate_history.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js","editorial.html","editorial.css","editorial.js")
 JSON_NAMES=("events.json","brief-pre.json","brief-post.json","quality.json",
             "official-status.json","media-status.json","manifest.json","editorial-pre.json","editorial-post.json","taxonomy-audit.json","editorial-followup.json")
 
