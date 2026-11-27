@@ -100,11 +100,26 @@ def signature(text):
 def stage(text):
     return {x for x in ("검토","추진","신청","승인","허가","부인","철회","취소","완료","중단","예정","반려","체결","증가","감소","상승","하락","흑자전환","적자전환") if x in text}
 
+def privacy_incident(title):
+    text=normalize(title)
+    if not re.search(r"개인\s*정보|개인\s*데이터",text) or not re.search(r"유출|노출",text):
+        return None
+    # Headlines starting with the affected company can omit the group prefix.
+    subject=re.match(r"^([a-z0-9]*[가-힣][가-힣a-z0-9]*)\s+(?:해킹|업무\s*시스템|외부\s*침입|개인\s*정보)",text)
+    if not subject:
+        return None
+    name={"cj올리브영":"올리브영"}.get(subject[1],subject[1])
+    size=re.search(r"(\d[\d,]*)\s*명",title)
+    return name,int(size[1].replace(",","")) if size else None
+
 def similar(a,b):
     if abs((clock(a)-clock(b)).total_seconds())>48*3600:
         return False
     if compatible_contract(a,b):
         return True
+    pa,pb=privacy_incident(a["title"]),privacy_incident(b["title"])
+    if pa and pb and clock(a).date()==clock(b).date() and pa[0]==pb[0]:
+        return pa[1] is None or pb[1] is None or pa[1]==pb[1]
     if signature(a["title"]) != signature(b["title"]) or stage(a["title"]) != stage(b["title"]):
         return False
     if normalize(a["title"]) == normalize(b["title"]):
