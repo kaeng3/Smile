@@ -82,12 +82,8 @@ def premarket_signals(sections):
             key=(-int(official),-len(coverage),-first.timestamp(),event["id"])
             eligible.append((key,section["id"],{**event,"premarket_signal":evidence}))
     picked={section["id"]:[] for section in sections}
-    total=0
     for _, category, event in sorted(eligible,key=lambda candidate:candidate[0]):
-        if total==12:
-            break
         if len(picked[category])<7:
             picked[category].append(event)
-            total+=1
     return [{**section,"events":picked[section["id"]],"count":len(picked[section["id"]])}
             for section in sections]
