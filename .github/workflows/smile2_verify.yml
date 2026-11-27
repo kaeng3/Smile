@@ -75,12 +75,23 @@ jobs:
               assert all(is_featured_title(a["title"]) for a in fa)
               assert len(fa)==f["article_count"]
               print("Featured tagged coverage",edition,f["article_count"],len(f["events"]),len(f["unknown_events"]))
+              assert all(e["material_stage"]["evidence_type"]=="title_only" for s in r["sections"]+r["unknown_sections"] for e in s["events"])
               print("Editorial coverage PASS",edition,r["published_events"],r["unknown_events"])
           a=json.loads((p/"smile2"/"taxonomy-audit.json").read_text())
           assert sum(a["new_counts"].values())==a["total"]
           print("Taxonomy distribution (not accuracy)",json.dumps({k:a[k] for k in ("total","review_required","new_counts")},ensure_ascii=False))
           print("Pages release build PASS",d)
           PY
+      - name: Freeze blind review candidate (not a quality score)
+        run: |
+          mkdir -p "$RUNNER_TEMP/editorial-review"
+          cp "$RUNNER_TEMP/pages-test/smile2/events.json" "$RUNNER_TEMP/editorial-review/events.json"
+          python -m smile2.editorial_eval sample --input "$RUNNER_TEMP/editorial-review/events.json" --size 150 --seed 2026-11-27-holdout-v1 --output "$RUNNER_TEMP/editorial-review/sample.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: editorial-review-candidate
+          path: ${{ runner.temp }}/editorial-review
+          retention-days: 14
       - name: Validate real dated market observation schema (read only)
         run: |
           python - <<'PY'
