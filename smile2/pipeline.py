@@ -1,6 +1,8 @@
 """Build a standalone public-metadata research preview; never include history archives."""
 import argparse
 from datetime import date, datetime, time
+from hashlib import sha256
+import re
 import json
 from pathlib import Path
 import shutil
@@ -100,6 +102,13 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
             # Old entry and briefing bookmarks now serve the same B editorial UI.
             source="editorial.html" if name in ("index.html","brief.html") else name
             shutil.copyfile(assets/source,stage/name)
+        # The landing page and briefing aliases serve the same versioned assets.
+        editorial=(stage/"editorial.html").read_text(encoding="utf-8")
+        for asset in ("editorial.js","editorial.css"):
+            digest=sha256((stage/asset).read_bytes()).hexdigest()[:12]
+            editorial=re.sub(re.escape(asset)+r'(?:\?[^"]*)?"',asset+'?v='+digest+'"',editorial)
+        for name in ("index.html","brief.html","editorial.html"):
+            (stage/name).write_text(editorial,encoding="utf-8")
         for name in JSON_NAMES:
             (stage/name).write_text(json.dumps(data[name],ensure_ascii=False,separators=(",",":")),encoding="utf-8")
         stage.rename(output)
