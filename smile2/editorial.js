@@ -38,8 +38,14 @@ if(e.premarket_signal){
 const v=e.evidence_review;if(v?.official_urls?.length)a.append(el("p","공식 자료 링크 "+fmt(v.official_urls.length)+"건 · 본문 미확인","meta"));
 if(e.followup_reasons?.length)a.append(el("p",e.followup_reasons.map(x=>({morning_gap:"07:00~08:00 별도 뉴스",late_pre:"장전 마감 이후 발견",late_post:"장후 마감 이후 발견",after_cutoff:"장후 마감 이후 발표/수집",late_timestamp:"발표시각 뒤늦게 확인",late_featured:"특징주 표기 뒤늦게 확인"}[x]||x)).join(" · "),"meta"));
 if(e.articles?.some(a=>a.retention_reasons?.length))a.append(el("p","기존 점수 미달 · 재료 단서로 추가 보관","meta"));
-const m=e.material_stage;if(m&&m.signals?.length){a.append(el("p","재료 단계 단서: "+m.signals.map(x=>x.label).join(" · ")+(m.review_required?" · 검토 우선":""),"meta"))} 
-if(e.themes?.length)a.append(el("p","관련 테마 (사전 기반): "+e.themes.slice(0,8).join(" · "),"meta"));
+const m=e.material_stage;
+const summaryParts=[];
+if(m?.signals?.length)summaryParts.push("재료: "+m.signals.map(x=>x.label).join(" · "));
+if(e.stocks?.length)summaryParts.push("언급 종목: "+e.stocks.slice(0,5).map(s=>s.name).join(", "));
+if(e.article_count>1)summaryParts.push("관련 기사 "+fmt(e.article_count)+"건");
+if(summaryParts.length)a.append(el("p","핵심 단서 (제목 기반): "+summaryParts.join(" / "),"sample-summary"));
+if(m&&m.signals?.length){a.append(el("p","재료 단계 단서: "+m.signals.map(x=>x.label).join(" · ")+(m.review_required?" · 검토 우선":""),"meta"))} 
+if(e.themes?.length)a.append(el("p","관련 테마 (사전 기반): "+e.themes.slice(0,8).map(String).join(" · "),"meta"));
 for(const s of (e.stocks||[]).slice(0,12)){a.append(el("span",s.name+" "+s.code+" · "+(s.relation==="official_filing_issuer"?"공시 기업":"제목 언급"),"tag"))}
 const d=el("details");d.append(el("summary",e.article_count>1?"관련 보도 "+fmt(e.article_count)+"건 및 분류 근거":"분류 근거 및 원문"));
 const c=e.classification||{};d.append(el("p","분류: "+(c.category_label||"미상")+" · "+(c.review_required?"검토 필요":"제목 단서 기반")+" · "+(c.matched_terms||[]).join(", ")),el("p","기존 분류: "+(c.source_category||"미상")));
