@@ -26,5 +26,31 @@ class LiveCaptureTests(unittest.TestCase):
             self.assertEqual(stats["sources_ok"],1)
             self.assertIn("empty",stats["sources_bad"])
             brief.assert_not_called()
+    def test_featured_below_threshold_and_later_tag(self):
+        f={"portals":{},"rss":{"news":"https://example.org/feed"},
+           "categories":{"경제":["금리"]},"theme_sector":[],"event_words":[],
+           "min_spec":.3,"store_min_score":100,"macro_score":6,"keep_days":5}
+        now=collect.datetime.datetime.now(collect.KST).isoformat()
+        def row(title,path):
+            return {"title":title,"url":"https://example.org/"+path,"press":"source","time":"08:00",
+                    "published_at":now,"observed_at":now}
+        def load(name,default=None):
+            return {"feeds.json":f,"keywords.json":{},"stocks.json":{}}[name]
+        with tempfile.TemporaryDirectory() as tmp,patch.object(collect,"load",side_effect=load),patch.object(collect.sources,"fetch_rss") as fetch:
+            fetch.return_value=[row("[특징주] 예시","tag"),row("일반 예시","drop"),row("금리 발표","later")]
+            collect.main(tmp,False)
+            path=Path(tmp)/"news.json"
+            data={a["url"]:a for a in json.loads(path.read_text(encoding="utf-8"))}
+            self.assertEqual(len(data),2)
+            self.assertEqual(data["https://example.org/tag"]["score"],0)
+            fetch.return_value=[row("[특징주] 금리 발표","later")]
+            collect.main(tmp,False)
+            data={a["url"]:a for a in json.loads(path.read_text(encoding="utf-8"))}
+            self.assertEqual(data["https://example.org/later"]["title"],"금리 발표")
+            self.assertEqual(data["https://example.org/later"]["featured_title"],"[특징주] 금리 발표")
+            self.assertEqual(data["https://example.org/later"]["featured_observed_at"],now)
+            stats=json.loads((Path(tmp)/"keyword_stats.json").read_text(encoding="utf-8"))
+            self.assertEqual(stats["featured_raw_count"],1)
+            self.assertEqual(stats["featured_retained_count"],2)
 if __name__=="__main__":
     unittest.main()

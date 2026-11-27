@@ -22,4 +22,14 @@ class FeaturedTests(unittest.TestCase):
         self.assertEqual(f["events"][0]["headline"],"[특징주] ABC 반도체 계약")
         self.assertEqual(f["events"][0]["classification"]["category_id"],"semi")
         self.assertEqual(f["unknown_events"][0]["headline"],"[특징주] DEF 게임")
+    def test_late_marker_not_backdated(self):
+        r={"title":"ABC 반도체 계약","url":"https://example.org/late-marker",
+           "observed_at":"2026-11-27T08:00:00+09:00","published_at":"2026-11-27T07:55:00+09:00",
+           "featured_title":"[특징주] ABC 반도체 계약","featured_observed_at":"2026-11-27T09:05:00+09:00"}
+        d,p=date(2026,11,27),date(2026,11,26)
+        self.assertEqual(featured_editions([r],d,p,"pre",time(18))["article_count"],0)
+        # Publication belongs to pre; newly found marker must not imply post publication.
+        self.assertEqual(featured_editions([r],d,p,"post",time(18))["article_count"],0)
+        r["featured_observed_at"]="2026-11-27T08:30:00+09:00"
+        self.assertEqual(featured_editions([r],d,p,"pre",time(18))["article_count"],1)
 if __name__=="__main__":unittest.main()

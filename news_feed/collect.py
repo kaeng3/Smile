@@ -63,6 +63,13 @@ def main(output_dir=None, update_brief=True):
         if not k or not sources.norm(it["title"]): continue
         if k in url_index:
             stored = old[url_index[k]]
+            # Record later publisher markers without rewriting the original title.
+            if sources.is_featured_title(it["title"]) and not sources.is_featured_title(stored.get("title")) and not stored.get("featured_title"):
+                stamp=it.get("observed_at")
+                if sources.publication_time(stamp):
+                    stored["featured_title"]=it["title"]
+                    stored["featured_observed_at"]=stamp
+                    stored["featured_press"]=it.get("press") or stored.get("press")
             if it.get("published_at") and not stored.get("published_at"):
                 stored["published_at"] = it["published_at"]
                 stored["source_feed"] = it.get("source_feed")
@@ -105,7 +112,9 @@ def main(output_dir=None, update_brief=True):
     out = {d: {"n": s["n"], "kw": s["kw"].most_common(40), "th": s["th"].most_common(20)} for d, s in stats.items()}
     write_json(outdir/"keyword_stats.json", {"updated": datetime.datetime.now(KST).strftime("%Y-%m-%d %H:%M"), "sources_ok": ok, "sources_bad": bad, "days": out,
               "source_health":health,"raw_articles":len(items),
-              "publication_timestamp_count":sum(bool(a.get("published_at")) for a in arts)})
+              "publication_timestamp_count":sum(bool(a.get("published_at")) for a in arts),
+              "featured_raw_count":sum(sources.is_featured_title(a.get("title")) for a in items),
+              "featured_retained_count":sum(sources.is_featured_title(a.get("title")) or sources.is_featured_title(a.get("featured_title")) for a in arts)})
     if update_brief:
         try: brief.update()
         except Exception as e: print("[brief] 오류:", repr(e))
