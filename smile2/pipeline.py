@@ -18,7 +18,7 @@ from .material_stage import annotate_sections
 from .editorial_evidence import annotate_sections as annotate_evidence
 from .followup_news import followup
 
-ASSETS=("index.html","style.css","app.js","brief.html","brief.js","candidates.html",
+ASSETS=("index.html","search.html","style.css","app.js","brief.html","brief.js","candidates.html",
         "candidates.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js","editorial.html","editorial.css","editorial.js")
 JSON_NAMES=("events.json","brief-pre.json","brief-post.json","quality.json",
             "official-status.json","media-status.json","manifest.json","editorial-pre.json","editorial-post.json","taxonomy-audit.json","editorial-followup.json")
@@ -91,7 +91,9 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         stage=Path(tmp)/"site"
         stage.mkdir()
         for name in ASSETS:
-            shutil.copyfile(assets/name,stage/name)
+            # Old entry and briefing bookmarks now serve the same B editorial UI.
+            source="editorial.html" if name in ("index.html","brief.html") else name
+            shutil.copyfile(assets/source,stage/name)
         for name in JSON_NAMES:
             (stage/name).write_text(json.dumps(data[name],ensure_ascii=False,separators=(",",":")),encoding="utf-8")
         stage.rename(output)

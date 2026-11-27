@@ -26,7 +26,7 @@ function show(g){selected=g.name;const d=$("detail");d.replaceChildren(el("h2",g
  for(const s of stocks.slice(0,30))d.append(el("p",s.name+" ("+s.code+") · "+s.events.size+"개 사건 언급","meta"));
  d.append(el("h2","관련 사건 후보"));
  for(const e of [...g.events].sort((a,b)=>b.score-a.score).slice(0,30)){
-  const p=el("p"),a=el("a",e.headline);a.href="index.html?event="+encodeURIComponent(e.id);p.append(a,el("span"," · 원문 "+e.count+"건","meta"));d.append(p);
+  const p=el("p"),a=el("a",e.headline);a.href="search.html?event="+encodeURIComponent(e.id);p.append(a,el("span"," · 원문 "+e.count+"건","meta"));d.append(p);
  }
  d.append(el("p","상위 30개 종목·사건 표시. 직접 수혜를 의미하지 않습니다.","small"));
 }

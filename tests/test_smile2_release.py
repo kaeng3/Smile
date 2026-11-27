@@ -18,7 +18,10 @@ class ReleaseTests(unittest.TestCase):
             self.assertEqual(set(p.name for p in (root/"smile2").iterdir()),set(ASSETS+JSON_NAMES))
             self.assertNotIn("PRIVATE_SENTINEL",(root/"smile2"/"events.json").read_text())
             add_entry(root);add_entry(root)
-            self.assertIn('href="./smile2/editorial.html"',(root/"index.html").read_text())
+            self.assertIn('href="./smile2/"',(root/"index.html").read_text())
+            self.assertEqual((root/"smile2"/"index.html").read_text(),(root/"smile2"/"editorial.html").read_text())
+            self.assertEqual((root/"smile2"/"brief.html").read_text(),(root/"smile2"/"editorial.html").read_text())
+            self.assertIn("app.js",(root/"smile2"/"search.html").read_text())
             self.assertIn("<main>scanner</main>",(root/"index.html").read_text())
             self.assertEqual((root/"index.html").read_text().count('id="smile2-entry"'),1)
     def test_failure_preserves_legacy(self):
