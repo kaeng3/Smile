@@ -17,6 +17,9 @@ class ReleaseTests(unittest.TestCase):
             (root/"smile2"/"internal.py").write_text("internal")
             release(root,session=SESSION)
             self.assertEqual(set(p.name for p in (root/"smile2").iterdir()),set(ASSETS+JSON_NAMES))
+            for page in ("candidates.html","history.html","themes.html"):
+                self.assertIn('src="scanner.js"',(root/"smile2"/page).read_text(encoding="utf-8"))
+            self.assertGreater((root/"smile2"/"scanner.js").stat().st_size,0)
             self.assertNotIn("PRIVATE_SENTINEL",(root/"smile2"/"events.json").read_text())
             add_entry(root);add_entry(root)
             self.assertIn('href="./smile2/"',(root/"index.html").read_text())
