@@ -49,6 +49,16 @@ class MarketTests(unittest.TestCase):
         self.assertEqual([a["material_kind"] for a in market["stocks"][0]["evidence"]],
                          ["disclosure","featured","news"])
 
+    def test_gemini_summary_requires_same_day_matching_article(self):
+        row={"code":"000100","name":"예시종목","rate":10,"trading_value":5000,
+             "articles":[{"title":"예시종목, 공동 개발","date":"2026-11-27","link":"https://example.org/article"}],
+             "analysis":{"confidence":"HIGH","summary":"공동 개발 착수 소식.","evidence":[{"headline":"예시종목, 공동 개발"}]}}
+        def result():
+            return market_brief({"20261127":[row]},date(2026,11,27),{})["stocks"][0]["gemini_material_summary"]
+        self.assertEqual(result(),{"text":"공동 개발 착수 소식.","url":"https://example.org/article"})
+        row["articles"][0]["date"]="2026-11-26"
+        self.assertIsNone(result())
+
     def test_preserve_first_seen(self):
         now=datetime(2026,11,26,18,tzinfo=KST)
         a={"url":"https://example.org/a","observed_at":"2026-11-26T08:00:00+09:00","published_at":None}
