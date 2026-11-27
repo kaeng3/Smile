@@ -28,6 +28,12 @@ class MarketTests(unittest.TestCase):
         r=market_brief({"20261126":[{"code":"000100","rate":10,"trading_value":123}]},date(2026,11,26),
            {"events":[{"articles":[{"title":"예시","url":"https://example.org/a","stocks":[["예시","000100"]]}]}]})
         self.assertEqual(r["stocks"][0]["evidence"][0]["relation"],"same_session_title_mention_not_causation")
+    def test_positive_rank_and_unknown_evidence(self):
+        rows=[{"code":"000100","rate":10,"trading_value":100},{"code":"000200","rate":25,"trading_value":200},{"code":"000300","rate":-5,"trading_value":300}]
+        event={"articles":[{"title":"예시","url":"https://example.org/unknown","stocks":[["예시","000200"]]}]}
+        r=market_brief({"20261127":rows},date(2026,11,27),{"unknown_events_preview":[event]})
+        self.assertEqual([s["code"] for s in r["stocks"]],["000200","000100"])
+        self.assertEqual(r["stocks"][0]["evidence"][0]["relation"],"publication_unknown_title_mention_not_causation")
     def test_preserve_first_seen(self):
         now=datetime(2026,11,26,18,tzinfo=KST)
         a={"url":"https://example.org/a","observed_at":"2026-11-26T08:00:00+09:00","published_at":None}

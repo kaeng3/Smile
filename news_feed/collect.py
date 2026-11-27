@@ -8,6 +8,7 @@ from pathlib import Path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import re, tok, sources, brief
 from retention_rules import retention_reasons
+from publication_meta import enrich_publication
 D = os.path.dirname(os.path.abspath(__file__))
 KST = datetime.timezone(datetime.timedelta(hours=9))
 def load(n, d=None):
@@ -37,7 +38,7 @@ def find_stocks(title, ST):
     hit = [(n, c) for n, c in hit if not any(n != m and n in m for m, _ in hit)]
     return [[n, c] for n, c in sorted(hit, key=lambda x: -len(x[0]))][:3]
 
-def main(output_dir=None, update_brief=True, audit_filter=False):
+def main(output_dir=None, update_brief=True, audit_filter=False, enrich=False):
     if audit_filter and (output_dir is None or update_brief):
         raise ValueError("Filter audit requires isolated capture without briefing")
     F, KW, ST = load("feeds.json"), load("keywords.json"), load("stocks.json")
@@ -75,6 +76,7 @@ def main(output_dir=None, update_brief=True, audit_filter=False):
                 stored["source_feed"] = it.get("source_feed")
                 # Record when this metadata became available (not original collection).
                 stored["publication_verified_at"] = it.get("observed_at")
+                stored["publication_basis"] = it.get("publication_basis") or "feed_published_field"
             continue
         observed = datetime.datetime.fromisoformat(it.get("observed_at") or datetime.datetime.now(KST).isoformat())
         title = it["title"]
@@ -112,7 +114,7 @@ def main(output_dir=None, update_brief=True, audit_filter=False):
             for t, s in v["themes"][:2]: th[t] += s
         old[k] = {"k": k, "seen": observed.strftime("%Y-%m-%d %H:%M"), "observed_at": observed.isoformat(), "time": it["time"], "press": it["press"],
                   "title": title, "url": it["url"], "score": round(score, 1), "kws": [w for w, _ in hits[:4]],
-                  "published_at": it.get("published_at"), "source_feed": it.get("source_feed"),
+                  "published_at": it.get("published_at"), "publication_basis":it.get("publication_basis"), "source_feed": it.get("source_feed"),
                   "ev": ev[:2], "stocks": stocks, "themes": [t for t, _ in th.most_common(3)]}
         if rescue:old[k]["retention_reasons"]=rescue
         old[k]["cat"] = categorize(title, old[k]["themes"], F); old[k]["sess"] = session(observed.strftime("%H:%M"))
@@ -121,6 +123,7 @@ def main(output_dir=None, update_brief=True, audit_filter=False):
     for a in old.values(): a["stocks"] = find_stocks(a["title"], ST)
     cut = (now - datetime.timedelta(days=F["keep_days"] + 2)).strftime("%Y-%m-%d")
     arts = sorted((a for a in old.values() if a["seen"] >= cut), key=lambda a: a["seen"], reverse=True)
+    timestamp_recovery=enrich_publication(arts) if enrich else {"attempted":0,"recovered":0,"enabled":False}
     write_json(outdir/"news.json", arts)
     retained_keys={sources.article_key(a.get("url")) for a in arts}
     if audit_filter:
@@ -143,6 +146,7 @@ def main(output_dir=None, update_brief=True, audit_filter=False):
     write_json(outdir/"keyword_stats.json", {"updated": datetime.datetime.now(KST).strftime("%Y-%m-%d %H:%M"), "sources_ok": ok, "sources_bad": bad, "days": out,
               "source_health":health,"raw_articles":len(items),
               "publication_timestamp_count":sum(bool(a.get("published_at")) for a in arts),
+              "publication_recovery":timestamp_recovery,
               "capture_started_at":now.isoformat(),"capture_completed_at":datetime.datetime.now(KST).isoformat(),
               "raw_unique_valid_urls":len(encountered),"raw_unique_not_retained":len(encountered-retained_keys),
               "material_rescued_unique_urls":len(rescued & retained_keys),
@@ -164,9 +168,10 @@ if __name__ == "__main__":
     p.add_argument("--output-dir",type=Path,help="Isolated capture folder; configuration stays in news_feed")
     p.add_argument("--no-brief",action="store_true")
     p.add_argument("--audit-filter",action="store_true",help="Isolated review of rejected public metadata; not published")
+    p.add_argument("--enrich-publication",action="store_true",help="Bounded public article metadata recovery in isolated capture")
     a=p.parse_args()
     if a.output_dir and not a.no_brief:
         p.error("Isolated capture requires --no-brief")
     if a.audit_filter and (not a.output_dir or not a.no_brief):
         p.error("--audit-filter requires --output-dir and --no-brief")
-    main(a.output_dir,not a.no_brief,a.audit_filter)
+    main(a.output_dir,not a.no_brief,a.audit_filter,a.enrich_publication or not a.output_dir)

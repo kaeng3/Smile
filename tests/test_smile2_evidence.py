@@ -10,12 +10,18 @@ SESSION={"day":"2026-11-26","previous":"2026-11-25","calendar":"XKRX",
 class SessionIntegrationTests(unittest.TestCase):
     def test_special_hours(self):
         start,end=bounds(DAY,PREV,"pre",session=SESSION)
-        self.assertEqual(end.hour,10)
-        result=briefing([{"title":"예시","url":"https://example.org/a","seen":"2026-11-26 09:30"}],DAY,PREV,"pre",session=SESSION)
+        self.assertEqual((end.hour,end.minute),(7,0))
+        rows=[{"title":"장전 예시","url":"https://example.org/a","seen":"2026-11-26 06:30"},{"title":"장후 예시","url":"https://example.org/b","seen":"2026-11-26 09:30"}]
+        result=briefing(rows,DAY,PREV,"pre",session=SESSION)
         self.assertEqual(result["unknown_articles"],1)
         self.assertEqual(result["calendar_basis"],"XKRX")
+        self.assertEqual(result["window_policy"],"smile3_fixed_kst_v1")
+        post=briefing(rows,DAY,PREV,"post",session=SESSION)
+        self.assertEqual(post["unknown_articles"],1)
+        self.assertEqual(post["start"][11:16],"08:00")
+        self.assertEqual(post["cutoff_exclusive"][11:16],"15:30")
         with self.assertRaises(ValueError):
-            bounds(DAY,PREV,"post",time(16),SESSION)
+            bounds(DAY,PREV,"post",time(14),SESSION)
     def test_mismatched_previous(self):
         with self.assertRaises(ValueError):
             bounds(DAY,date(2026,11,24),"pre",session=SESSION)

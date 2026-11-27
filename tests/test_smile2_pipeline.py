@@ -7,7 +7,7 @@ from smile2.pipeline import generate,ASSETS,JSON_NAMES
 
 class PipelineTests(unittest.TestCase):
     def test_allowlist_and_outputs(self):
-        rows=[{"title":"공개 예시 뉴스","url":"https://example.org/news","seen":"2026-11-26 08:00",
+        rows=[{"title":"공개 예시 뉴스","url":"https://example.org/news","seen":"2026-11-26 06:00",
                "content":"PRIVATE_SENTINEL","api_key":"SECRET_SENTINEL"}]
         with tempfile.TemporaryDirectory() as tmp:
             out=Path(tmp)/"preview"
@@ -22,10 +22,10 @@ class PipelineTests(unittest.TestCase):
             with self.assertRaises(FileExistsError):
                 generate(rows,date(2026,11,26),date(2026,11,25),out)
     def test_additional_media_separate_and_as_of(self):
-        base={"title":"기존 기사","url":"https://example.org/base","seen":"2026-11-26 08:00"}
-        media={"title":"추가 기사","url":"https://news.google.com/rss/articles/a","seen":"2026-11-26 08:10",
-               "published_at":"2026-11-26T08:00:00+09:00","source_kind":"media_probe_aggregator"}
-        late={**media,"url":"https://news.google.com/rss/articles/b","seen":"2026-11-26 09:01"}
+        base={"title":"기존 기사","url":"https://example.org/base","seen":"2026-11-26 06:00"}
+        media={"title":"추가 기사","url":"https://news.google.com/rss/articles/a","seen":"2026-11-26 06:10",
+               "published_at":"2026-11-26T06:00:00+09:00","source_kind":"media_probe_aggregator"}
+        late={**media,"url":"https://news.google.com/rss/articles/b","seen":"2026-11-26 07:01"}
         with tempfile.TemporaryDirectory() as tmp:
             out=Path(tmp)/"preview"
             generate([base],date(2026,11,26),date(2026,11,25),out,media_rows=[media,late])

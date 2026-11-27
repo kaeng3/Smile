@@ -32,13 +32,13 @@ def read_rows(path):
 def public_rows(rows):
     # Explicit allowlist: no article bodies, private archive excerpts, or API keys.
     keys=("title","url","press","source_feed","source_kind","cat","score","stocks","themes",
-          "published_at","observed_at","seen","publication_verified_at","featured_title","featured_observed_at","featured_press","retention_reasons")
+          "published_at","observed_at","seen","publication_verified_at","publication_basis","featured_title","featured_observed_at","featured_press","retention_reasons")
     return [{k:r[k] for k in keys if k in r} for r in rows]
 
 def data_market_available(data,day,available):
     return available and market_brief(data,day,{})["status"]=="available"
 
-def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18), session=None, media_rows=(), media_status=(), market_data=None, market_available=False, capture_stats=None,as_of=None):
+def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(15,30), session=None, media_rows=(), media_status=(), market_data=None, market_available=False, capture_stats=None,as_of=None):
     if previous>=day:
         raise ValueError("Invalid previous session")
     built=as_of or datetime.now(KST)
@@ -66,6 +66,11 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         full=briefing(rows,day,previous,edition,post_cutoff,limit=None,session=session)
         market=market_brief(market_data if market_available else None,day,full) if edition=="post" else None
         known=full.pop("events");unknown=full.pop("unknown_events_preview")
+        if market and market["status"]=="available":
+            rates={s["code"]:s["rate_pct"] for s in market["stocks"]}
+            def priority(e):
+                return -max((rates.get(s["code"],0) for s in e["stocks"]),default=0)
+            known.sort(key=priority);unknown.sort(key=priority)
         full.pop("categories",None)
         return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
                 "capture_health":capture_health(capture_stats,built), "market":market,"taxonomy_version":VERSION,"sections":annotate_evidence(annotate_sections(group(known))),
@@ -105,7 +110,7 @@ def main():
     p.add_argument("--output",type=Path,required=True)
     p.add_argument("--day",type=date.fromisoformat,required=True)
     p.add_argument("--previous",type=date.fromisoformat,required=True)
-    p.add_argument("--post-cutoff",type=time.fromisoformat,default=time(18))
+    p.add_argument("--post-cutoff",type=time.fromisoformat,default=time(15,30))
     p.add_argument("--official",action="store_true",help="Collect public official RSS, no API credentials")
     p.add_argument("--calendar",action="store_true",help="Require XKRX calendar validation")
     p.add_argument("--media",action="store_true",help="Include trial public media feeds; not calibrated importance")

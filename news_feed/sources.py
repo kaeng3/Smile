@@ -89,7 +89,7 @@ def fetch_rss(name, url):
     for it in re.findall(r"(?s)<(?:item|entry)\b.*?</(?:item|entry)>", h)[:RSS_ITEM_LIMIT]:
         t = re.search(r"(?s)<title[^>]*>(.*?)</title>", it)
         l = re.search(r"(?s)<link[^>]*>(.*?)</link>", it) or re.search(r'<link[^>]*href="([^"]+)"', it)
-        d = re.search(r"(?s)<(?:pubDate|published)>(.*?)</", it)
+        d = re.search(r"(?is)<(?:pubDate|published|dcterms:issued|dc:issued)\b[^>]*>(.*?)</", it)
         if not t or not l: continue
         title, link = _clean(t.group(1)), _clean(l.group(1))
         tm = re.search(r"(\d{2}):(\d{2})", d.group(1)) if d else None
@@ -102,7 +102,7 @@ def fetch_rss(name, url):
         if published:
             hhmm = published[11:16]
         out.append({"id": link, "title": title, "press": press, "time": hhmm, "url": link,
-                    "published_at": published, "source_feed": name, "observed_at": observed})
+                    "published_at": published, "publication_basis":"feed_published_field" if published else None, "source_feed": name, "observed_at": observed})
     return out
 
 def norm(t):

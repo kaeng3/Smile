@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from .news_engine import KST, build, parse_time, seen_time
 
-def bounds(day, previous, edition, post_cutoff=time(18), session=None):
+def bounds(day, previous, edition, post_cutoff=time(15,30), session=None):
     if previous >= day:
         raise ValueError("Previous trading date must precede report date")
     opened=datetime.combine(day,time(9),KST)
@@ -19,15 +19,15 @@ def bounds(day, previous, edition, post_cutoff=time(18), session=None):
         if not all((opened,closed,previous_closed)) or not (previous_closed<opened<closed) or opened.date()!=day or closed.date()!=day or previous_closed.date()!=previous:
             raise ValueError("Invalid exchange session times")
     if edition == "pre":
-        return previous_closed,opened
+        return datetime.combine(previous,time(15,30),KST),datetime.combine(day,time(7),KST)
     if edition == "post":
         end=datetime.combine(day,post_cutoff,KST)
-        if end<closed:
-            raise ValueError("Post cutoff must be at or after close")
-        return opened,end
+        if end<datetime.combine(day,time(15,30),KST):
+            raise ValueError("Post cutoff must be at or after nominal 15:30")
+        return datetime.combine(day,time(8),KST),end
     raise ValueError("Unknown edition")
 
-def briefing(rows, day, previous, edition, post_cutoff=time(18), limit=50, session=None):
+def briefing(rows, day, previous, edition, post_cutoff=time(15,30), limit=50, session=None):
     if limit is not None and limit < 1:
         raise ValueError("limit must be positive")
     start,end=bounds(day,previous,edition,post_cutoff,session)
@@ -64,7 +64,7 @@ def briefing(rows, day, previous, edition, post_cutoff=time(18), limit=50, sessi
     return {"schema":1,"edition":edition,"report_date":day.isoformat(),
             "previous_trading_date":previous.isoformat(),"start":start.isoformat(),
             "cutoff_exclusive":end.isoformat(),"status":"candidate_only",
-            "calendar_basis":"XKRX" if session else "unverified_nominal_hours",
+            "calendar_basis":"XKRX" if session else "unverified_nominal_hours","window_policy":"smile3_fixed_kst_v1",
             "published_articles":len(known),"unknown_articles":len(unknown),
             "excluded_late_or_after_cutoff":late,"excluded_inconsistent_timestamp":future,
             "published_events":primary["event_count"],"unknown_events":fallback["event_count"],
@@ -79,7 +79,7 @@ def main():
     p.add_argument("--day",type=date.fromisoformat,required=True)
     p.add_argument("--previous",type=date.fromisoformat,required=True)
     p.add_argument("--edition",choices=["pre","post"],required=True)
-    p.add_argument("--post-cutoff",type=time.fromisoformat,default=time(18))
+    p.add_argument("--post-cutoff",type=time.fromisoformat,default=time(15,30))
     p.add_argument("--calendar",action="store_true",help="Require XKRX calendar validation")
     a=p.parse_args()
     rows=json.loads(a.input.read_text(encoding="utf-8"))
