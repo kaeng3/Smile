@@ -157,7 +157,7 @@ jobs:
           python-version: '3.10'
       - name: Capture public feeds without production writes
         run: |
-          python news_feed/collect.py --output-dir "$RUNNER_TEMP/fresh" --no-brief
+          python news_feed/collect.py --output-dir "$RUNNER_TEMP/fresh" --no-brief --audit-filter
           python - <<'PY'
           import json, os
           from pathlib import Path
@@ -165,8 +165,18 @@ jobs:
           s=json.loads((p/"keyword_stats.json").read_text())
           rows=json.loads((p/"news.json").read_text())
           print(json.dumps({"sources_ok":s["sources_ok"],"sources_bad":s["sources_bad"],"raw_articles":s["raw_articles"],"retained":len(rows),"publication_timestamp_count":s["publication_timestamp_count"],"source_health":s["source_health"]},ensure_ascii=False))
+          audit=json.loads((p/"filter-audit.json").read_text())
+          assert audit["rejected_unique"]==s["score_filtered_unique_urls"]==len(audit["rows"])
+          assert len({a["url"] for a in audit["rows"]})==len(audit["rows"])
+          from collections import Counter
+          print("Filter audit",json.dumps({"rejected_unique":audit["rejected_unique"],"sample_size":len(audit["review_sample"]),"reasons":dict(Counter(a["reason"] for a in audit["rows"]))},ensure_ascii=False))
           if not rows or not s["publication_timestamp_count"]:
               raise SystemExit("No usable publication timestamps in live capture")
           PY
           python -m smile2.news_engine --input "$RUNNER_TEMP/fresh/news.json" --output "$RUNNER_TEMP/fresh-events.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: filter-exclusion-review
+          path: ${{ runner.temp }}/fresh/filter-audit.json
+          retention-days: 7
 

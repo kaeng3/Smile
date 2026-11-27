@@ -36,7 +36,9 @@ def find_stocks(title, ST):
     hit = [(n, c) for n, c in hit if not any(n != m and n in m for m, _ in hit)]
     return [[n, c] for n, c in sorted(hit, key=lambda x: -len(x[0]))][:3]
 
-def main(output_dir=None, update_brief=True):
+def main(output_dir=None, update_brief=True, audit_filter=False):
+    if audit_filter and (output_dir is None or update_brief):
+        raise ValueError("Filter audit requires isolated capture without briefing")
     F, KW, ST = load("feeds.json"), load("keywords.json"), load("stocks.json")
     outdir = Path(output_dir) if output_dir is not None else Path(D)
     outdir.mkdir(parents=True,exist_ok=True)
@@ -52,7 +54,7 @@ def main(output_dir=None, update_brief=True):
             if result:ok+=1
             else:bad.append(name)
     new = 0
-    rejected=set(); encountered=set()
+    rejected=set(); encountered=set(); audit_rows={}
     for it in items:
         k = sources.article_key(it.get("url"))
         if not k or not sources.norm(it["title"]): continue
@@ -88,6 +90,16 @@ def main(output_dir=None, update_brief=True):
         # Do not boost its score or assert it caused a price move.
         if not (((hits or (stocks and ev)) and score >= F["store_min_score"]) or macro or sources.is_featured_title(title)):
             rejected.add(k)
+            if audit_filter:
+                record={"url":sources.canonical_article_url(it["url"]),"title":title,
+                        "press":str(it.get("press") or ""),"source_feed":str(it.get("source_feed") or ""),
+                        "published_at":it.get("published_at"),"observed_at":observed.isoformat(),
+                        "score":round(score,3),"score_floor":F["store_min_score"],
+                        "keywords":[w for w,_ in hits[:4]],"stocks":stocks,"event_terms":ev,
+                        "reason":"score_below_floor" if hits or (stocks and ev) else "no_eligible_keyword_or_stock_event"}
+                # Preserve the strongest rejected variant for a URL; later acceptance wins.
+                if k not in audit_rows or score>audit_rows[k]["score"]:
+                    audit_rows[k]=record
             continue
         if macro: score = max(score, F["macro_score"])
         th = C.Counter()
@@ -104,6 +116,20 @@ def main(output_dir=None, update_brief=True):
     cut = (now - datetime.timedelta(days=F["keep_days"] + 2)).strftime("%Y-%m-%d")
     arts = sorted((a for a in old.values() if a["seen"] >= cut), key=lambda a: a["seen"], reverse=True)
     write_json(outdir/"news.json", arts)
+    retained_keys={sources.article_key(a.get("url")) for a in arts}
+    if audit_filter:
+        from hashlib import sha256
+        excluded=[audit_rows[k] for k in sorted(rejected-set(url_index))]
+        # Strictly bounded review artifact; no article bodies or credentials.
+        if len(excluded)>20000:
+            raise ValueError("Filter audit exceeds 20000 unique rejected URLs")
+        def rank(row):
+            return sha256(row["url"].encode("utf-8")).hexdigest()
+        write_json(outdir/"filter-audit.json",{"schema":1,"scope":"isolated_capture_only",
+                    "capture_started_at":now.isoformat(),"rejected_unique":len(excluded),
+                    "sample_method":"deterministic_url_hash_order",
+                    "review_sample":sorted(excluded,key=rank)[:150],
+                    "rows":excluded,"note":"Exclusion is not proof of irrelevance; no independent relevance labels."})
     stats = C.defaultdict(lambda: {"kw": C.Counter(), "th": C.Counter(), "n": 0})
     for a in arts:
         s = stats[a["seen"][:10]]; s["n"] += 1; s["kw"].update(a["kws"]); s["th"].update(a["themes"])
@@ -112,7 +138,7 @@ def main(output_dir=None, update_brief=True):
               "source_health":health,"raw_articles":len(items),
               "publication_timestamp_count":sum(bool(a.get("published_at")) for a in arts),
               "capture_started_at":now.isoformat(),"capture_completed_at":datetime.datetime.now(KST).isoformat(),
-              "raw_unique_valid_urls":len(encountered),"raw_unique_not_retained":len(encountered-set(url_index)),
+              "raw_unique_valid_urls":len(encountered),"raw_unique_not_retained":len(encountered-retained_keys),
               "score_filtered_unique_urls":len(rejected-set(url_index)),
               "featured_raw_count":sum(sources.is_featured_title(a.get("title")) for a in items),
               "featured_retained_count":sum(sources.is_featured_title(a.get("title")) or sources.is_featured_title(a.get("featured_title")) for a in arts)})
@@ -130,7 +156,10 @@ if __name__ == "__main__":
     p=argparse.ArgumentParser()
     p.add_argument("--output-dir",type=Path,help="Isolated capture folder; configuration stays in news_feed")
     p.add_argument("--no-brief",action="store_true")
+    p.add_argument("--audit-filter",action="store_true",help="Isolated review of rejected public metadata; not published")
     a=p.parse_args()
     if a.output_dir and not a.no_brief:
         p.error("Isolated capture requires --no-brief")
-    main(a.output_dir,not a.no_brief)
+    if a.audit_filter and (not a.output_dir or not a.no_brief):
+        p.error("--audit-filter requires --output-dir and --no-brief")
+    main(a.output_dir,not a.no_brief,a.audit_filter)

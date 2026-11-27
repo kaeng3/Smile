@@ -52,5 +52,28 @@ class LiveCaptureTests(unittest.TestCase):
             stats=json.loads((Path(tmp)/"keyword_stats.json").read_text(encoding="utf-8"))
             self.assertEqual(stats["featured_raw_count"],1)
             self.assertEqual(stats["featured_retained_count"],2)
+    def test_filter_audit_excludes_later_retained_duplicate(self):
+        f={"portals":{},"rss":{"news":"https://example.org/feed"},
+           "categories":{"경제":["금리"]},"theme_sector":[],"event_words":[],
+           "min_spec":.3,"store_min_score":100,"macro_score":6,"keep_days":5}
+        now=collect.datetime.datetime.now(collect.KST).isoformat()
+        def row(title,path):
+            return {"title":title,"url":"https://example.org/"+path,"press":"source","time":"08:00",
+                    "published_at":now,"observed_at":now,"source_feed":"news","body":"PRIVATE_SENTINEL"}
+        def load(name,default=None):
+            return {"feeds.json":f,"keywords.json":{},"stocks.json":{"예시기업":"000100"}}[name]
+        with tempfile.TemporaryDirectory() as tmp,patch.object(collect,"load",side_effect=load),patch.object(collect.sources,"fetch_rss",return_value=[
+            row("일반 예시","drop"),row("예시기업 동향","later"),row("[특징주] 예시기업 동향","later"),row("일반 예시","drop")]):
+            collect.main(tmp,False,True)
+            raw=(Path(tmp)/"filter-audit.json").read_text(encoding="utf-8")
+            audit=json.loads(raw)
+            self.assertEqual(audit["rejected_unique"],1)
+            self.assertEqual(audit["rows"][0]["url"],"https://example.org/drop")
+            self.assertEqual(audit["review_sample"],audit["rows"])
+            self.assertNotIn("PRIVATE_SENTINEL",raw)
+            stats=json.loads((Path(tmp)/"keyword_stats.json").read_text(encoding="utf-8"))
+            self.assertEqual(stats["score_filtered_unique_urls"],1)
+            self.assertEqual(stats["raw_unique_not_retained"],1)
+        with self.assertRaises(ValueError):collect.main(audit_filter=True)
 if __name__=="__main__":
     unittest.main()
