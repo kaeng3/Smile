@@ -17,7 +17,7 @@ if(m?.signals?.length){d.append(el("p","제목 단서일 뿐 실제 사건 확�
 if(v){d.append(el("p","출처 링크 "+fmt(v.source_link_count)+" · 포털 "+fmt(v.portal_link_count)+" · 검색 경유 "+fmt(v.aggregator_link_count)+" · 언론사명 "+fmt(v.publisher_count)+"개 (독립 검증 아님)"));for(const u of v.official_urls||[]){const p=el("p");p.append(link("공식 자료 연결 ↗",u));d.append(p)}}
 for(const row of e.articles||[]){const p=el("p");p.append(link(row.title,row.url),el("span"," · "+(row.press||"출처 미상")));d.append(p)}a.append(d);return a}
 function search(e,q){return !q||[e.headline,...(e.stocks||[]).flatMap(s=>[s.name,s.code]),...(e.themes||[]),...(e.articles||[]).map(a=>a.title)].join(" ").toLowerCase().includes(q)}
-function render(){if(!report)return;const q=$("query").value.trim().toLowerCase(),sections=featured?[{id:"featured",label:"[특징주] 모아보기",events:unknown?report.featured.unknown_events:report.featured.events}]:unknown?report.unknown_sections:report.sections;let count=0;for(const id of ["toc","toc-mobile","sections"])$(id).replaceChildren();
+function render(){if(!report)return;const q=$("query").value.trim().toLowerCase(),sections=featured?[{id:"featured",label:"[특징주] 모아보기",events:report.featured.events},...(report.featured.unknown_events?.length?[{id:"featured-unknown",label:"특징주 · 발표 시각 미확인",events:report.featured.unknown_events}]:[])]:unknown?report.unknown_sections:report.sections;let count=0;for(const id of ["toc","toc-mobile","sections"])$(id).replaceChildren();
 if(edition==="post"&&!featured){
     let matches=0;
     for(const group of $("market-list").children){
@@ -35,7 +35,7 @@ if(edition==="post"&&!featured){
 }
 for(const [i,s] of sections.entries()){const list=s.events.filter(e=>search(e,q));count+=list.length;const id="section-"+s.id;for(const nav of ["toc","toc-mobile"]){const a=el("a",null,list.length?"":"zero");a.href="#"+id;a.append(el("span",s.label),el("span",fmt(list.length)));$(nav).append(a)}
 const box=el("section",null,"section");box.id=id;const h=el("h2",featured?s.label:String(i+1).padStart(2,"0")+"  "+s.label);h.append(el("span",fmt(list.length)+"개 사건"));box.append(h);if(!list.length){box.append(el("p","해당 사건 없음","news small"));$("sections").append(box);continue}const body=el("div");let limit=5;const add=()=>{body.replaceChildren();for(const e of list.slice(0,limit))body.append(article(e));more.hidden=list.length<=limit;more.textContent="나머지 "+fmt(Math.max(0,list.length-limit))+"개 중 더 보기"};const more=el("button",null,"more");more.type="button";more.addEventListener("click",()=>{limit+=25;add()});box.append(body,more);add();$("sections").append(box)}
-$("results").textContent=fmt(count)+"개 사건 · "+(unknown?"수집 시각 기준 (발표 미상)":"발표 시각 확인")+(featured?" · 특징주 최신순 · 전체 펼침 가능":" · 분야별 5개 우선 표시, 전체 펼침 가능");if(!count)$("sections").prepend(el("p","검색 결과가 없습니다."));
+$("results").textContent=fmt(count)+"개 사건 · "+(featured?"특징주 최신순 · 발표 시각 미확인 별도 표시":(unknown?"수집 시각 기준 (발표 미상)":"발표 시각 확인")+" · 분야별 5개 우선 표시, 전체 펼침 가능");if(!count)$("sections").prepend(el("p","검색 결과가 없습니다."));
 }
 function captureHealth(){const c=report.capture_health||{};const labels={unknown:"최근 수집 상태 미확인",stale:"최근 수집 지연",partial:"최근 수집 일부 실패",success:"최근 수집원 응답 확인"};
 $("capture-summary").textContent=c.checked_at?"최근 뉴스 수집 "+c.checked_at.slice(0,16).replace("T"," ")+" KST"+(c.status==="partial"?" · 일부 출처 실패":c.status==="stale"?" · 수집 지연":""):"최근 뉴스 수집 시각 미확인";
@@ -121,6 +121,7 @@ for(const id of ["featured-nav","featured-mobile"])if(featured)$(id).setAttribut
 for(const id of ["pre","post"])if(id===edition&&!featured)$(id).setAttribute("aria-current","page");else $(id).removeAttribute("aria-current");
 $("market").hidden=edition!=="post"||featured;
 $("featured-note").hidden=!featured;
+if(featured)$("featured-note").textContent="당일 수집한 특징주 기사입니다. 발표 시각을 확인하지 못한 기사는 아래에 따로 표시합니다.";
 $("heading").textContent=featured?"[특징주] 모아보기":edition==="pre"?"장전 리포트":"장후 이브닝";render()}
 function route(){setView(location.hash==="#featured-view"?"featured":"all")}
 window.addEventListener("hashchange",()=>{if(report&&(!location.hash||location.hash==="#featured-view"))route()});

@@ -1,6 +1,8 @@
 """Build a standalone public-metadata research preview; never include history archives."""
 import argparse
 from datetime import date, datetime, time
+from hashlib import sha256
+import re
 import json
 from pathlib import Path
 import shutil
@@ -72,12 +74,6 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
                 return -max((rates.get(s["code"],0) for s in e["stocks"]),default=0)
             known.sort(key=priority);unknown.sort(key=priority)
         featured=featured_editions(rows,day,previous,edition,post_cutoff,session)
-        if edition=="post":
-            selected={s["code"] for s in (market or {}).get("stocks",[])}
-            featured["events"]=[e for e in featured["events"] if any(s["code"] in selected for s in e["stocks"])]
-            featured["unknown_events"]=[]
-            featured["known_article_count"]=featured["article_count"]=sum(e["article_count"] for e in featured["events"])
-            featured["unknown_article_count"]=0
         full.pop("categories",None)
         return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
                 "capture_health":capture_health(capture_stats,built), "market":market,"taxonomy_version":VERSION,"sections":annotate_evidence(annotate_sections(group(known))),
@@ -106,6 +102,13 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
             # Old entry and briefing bookmarks now serve the same B editorial UI.
             source="editorial.html" if name in ("index.html","brief.html") else name
             shutil.copyfile(assets/source,stage/name)
+        # The landing page and briefing aliases serve the same versioned assets.
+        editorial=(stage/"editorial.html").read_text(encoding="utf-8")
+        for asset in ("editorial.js","editorial.css"):
+            digest=sha256((stage/asset).read_bytes()).hexdigest()[:12]
+            editorial=re.sub(re.escape(asset)+r'(?:\?[^"]*)?"',asset+'?v='+digest+'"',editorial)
+        for name in ("index.html","brief.html","editorial.html"):
+            (stage/name).write_text(editorial,encoding="utf-8")
         for name in JSON_NAMES:
             (stage/name).write_text(json.dumps(data[name],ensure_ascii=False,separators=(",",":")),encoding="utf-8")
         stage.rename(output)
