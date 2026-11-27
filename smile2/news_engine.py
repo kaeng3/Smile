@@ -84,6 +84,7 @@ def prepare(row):
             "source_feed":str(row.get("source_feed") or ""),
             "source_kind":str(row.get("source_kind") or "news_metadata"),
             "published_at":published.isoformat() if published else None,
+            "publication_basis":row.get("publication_basis") if published and row.get("publication_basis") in ("feed_published_field","article_published_metadata") else None,
             "seen_at":seen.isoformat() if seen else None,
             "category":str(row.get("cat") or "기타"),"score":score,
             "stocks":stocks,"themes":[str(t) for t in row.get("themes") or []],

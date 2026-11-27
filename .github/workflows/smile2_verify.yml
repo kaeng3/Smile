@@ -9,6 +9,7 @@ on:
       - 'news_feed/sources.py'
       - 'news_feed/collect.py'
       - 'news_feed/retention_rules.py'
+      - 'news_feed/publication_meta.py'
       - 'data_store.py'
       - '.github/workflows/news_feed.yml'
       - '.github/workflows/redeploy_only.yml'
@@ -176,7 +177,7 @@ jobs:
           python-version: '3.10'
       - name: Capture public feeds without production writes
         run: |
-          python news_feed/collect.py --output-dir "$RUNNER_TEMP/fresh" --no-brief --audit-filter
+          python news_feed/collect.py --output-dir "$RUNNER_TEMP/fresh" --no-brief --audit-filter --enrich-publication
           python - <<'PY'
           import json, os
           from pathlib import Path
@@ -188,6 +189,7 @@ jobs:
           assert audit["rejected_unique"]==s["score_filtered_unique_urls"]==len(audit["rows"])
           assert len({a["url"] for a in audit["rows"]})==len(audit["rows"])
           from collections import Counter
+          print("Publication recovery",s.get("publication_recovery"))
           print("Material rescue count",s.get("material_rescued_unique_urls",0))
           print("Filter audit",json.dumps({"rejected_unique":audit["rejected_unique"],"sample_size":len(audit["review_sample"]),"reasons":dict(Counter(a["reason"] for a in audit["rows"]))},ensure_ascii=False))
           if not rows or not s["publication_timestamp_count"]:
