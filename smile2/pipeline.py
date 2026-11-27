@@ -11,11 +11,12 @@ from .quality import review
 from .official_feeds import collect
 from .media_probe import collect_media
 from .market_brief import market_brief
+from .taxonomy import group,audit,VERSION
 
 ASSETS=("index.html","style.css","app.js","brief.html","brief.js","candidates.html",
         "candidates.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js")
 JSON_NAMES=("events.json","brief-pre.json","brief-post.json","quality.json",
-            "official-status.json","media-status.json","manifest.json")
+            "official-status.json","media-status.json","manifest.json","editorial-pre.json","editorial-post.json","taxonomy-audit.json")
 
 def read_rows(path):
     rows=json.loads(path.read_text(encoding="utf-8"))
@@ -52,10 +53,20 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
             result["events"]=result["events"][:50]
             result["unknown_events_preview"]=result["unknown_events_preview"][:50]
         return result
+    def editorial(edition):
+        # Separate new report output; retain old 50-item reports and consumers.
+        full=briefing(rows,day,previous,edition,post_cutoff,limit=None,session=session)
+        known=full.pop("events");unknown=full.pop("unknown_events_preview")
+        full.pop("categories",None)
+        return {**full,"taxonomy_version":VERSION,"sections":group(known),
+                "unknown_sections":group(unknown),"note":"Title-only category research; not verified impact or article summary."}
     data={"events.json":events,
           "brief-pre.json":report("pre"),
           "brief-post.json":report("post"),
           "quality.json":review(events),
+          "editorial-pre.json":editorial("pre"),
+          "editorial-post.json":editorial("post"),
+          "taxonomy-audit.json":audit(events["events"]),
           "official-status.json":{"rows":len(official_rows),"sources":list(source_status),"checked_at":datetime.now(KST).isoformat()},
           "media-status.json":{"rows":len(additional),"sources":list(media_status),"checked_at":datetime.now(KST).isoformat()},
           "manifest.json":{"schema":1,"status":"research_preview","report_date":day.isoformat(),

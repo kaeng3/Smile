@@ -28,7 +28,7 @@ def bounds(day, previous, edition, post_cutoff=time(18), session=None):
     raise ValueError("Unknown edition")
 
 def briefing(rows, day, previous, edition, post_cutoff=time(18), limit=50, session=None):
-    if limit < 1:
+    if limit is not None and limit < 1:
         raise ValueError("limit must be positive")
     start,end=bounds(day,previous,edition,post_cutoff,session)
     known,unknown=[],[]

@@ -62,6 +62,16 @@ jobs:
           assert 'id="smile2-entry"' in (p/"index.html").read_text()
           assert not (p/"smile2"/"stock_news_history.json").exists()
           assert not (p/"smile2"/"patterns.py").exists()
+          for edition in ("pre","post"):
+              r=json.loads((p/"smile2"/f"editorial-{edition}.json").read_text())
+              for name,total in (("sections","published_events"),("unknown_sections","unknown_events")):
+                  sections=r[name]
+                  ids=[e["id"] for s in sections for e in s["events"]]
+                  assert len(sections)==26 and sum(s["count"] for s in sections)==r[total]==len(ids)==len(set(ids))
+              print("Editorial coverage PASS",edition,r["published_events"],r["unknown_events"])
+          a=json.loads((p/"smile2"/"taxonomy-audit.json").read_text())
+          assert sum(a["new_counts"].values())==a["total"]
+          print("Taxonomy distribution (not accuracy)",json.dumps({k:a[k] for k in ("total","review_required","new_counts")},ensure_ascii=False))
           print("Pages release build PASS",d)
           PY
       - name: Validate real dated market observation schema (read only)
