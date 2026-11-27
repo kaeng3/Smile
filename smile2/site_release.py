@@ -40,7 +40,7 @@ def release(root,now=None,session=None):
             stats=json.loads(stats_path.read_text(encoding="utf-8"))
         except (OSError,ValueError):
             stats=None
-        result=generate(read_rows(news),day,prev,output,session=s,capture_stats=stats,
+        result=generate(read_rows(news),day,prev,output,session=s,capture_stats=stats,as_of=now,
                         official_rows=official.get("rows",[]),source_status=official.get("sources",[]),
                         market_data=observations,market_available=now>=parse_time(s["close"]))
         # Stage before changing the generated site, and restore on failure.
@@ -78,7 +78,8 @@ def add_entry(root):
     marker='id="smile2-entry"'
     if marker in html:
         return
-    link='<p id="smile2-entry" style="margin:12px 0"><a href="./smile2/" style="display:inline-block;padding:10px 16px;border:1px solid currentColor;border-radius:8px;font-weight:700;color:inherit">SMILE 2.0 뉴스 연구실 ↗</a></p>'
+    target="./smile2/editorial.html" if (Path(root)/"smile2"/"editorial.html").is_file() else "./smile2/"
+    link='<p id="smile2-entry" style="margin:12px 0"><a href="'+target+'" style="display:inline-block;padding:10px 16px;border:1px solid currentColor;border-radius:8px;font-weight:700;color:inherit">SMILE 뉴스 연구실 ↗</a></p>'
     if "</header>" not in html:
         raise ValueError("Legacy header missing")
     p.write_text(html.replace("</header>",link+"</header>",1),encoding="utf-8")

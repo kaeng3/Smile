@@ -61,6 +61,10 @@ jobs:
           d=json.loads((p/"smile2"/"manifest.json").read_text())
           assert d["calendar_basis"]=="XKRX" and not d["history_included"]
           assert 'id="smile2-entry"' in (p/"index.html").read_text()
+          assert 'href="./smile2/editorial.html"' in (p/"index.html").read_text()
+          f=json.loads((p/"smile2"/"editorial-followup.json").read_text())
+          assert f["event_count"]==sum(s["count"] for s in f["sections"]+f["unknown_sections"])
+          print("Followup events",f["event_count"])
           assert not (p/"smile2"/"stock_news_history.json").exists()
           assert not (p/"smile2"/"patterns.py").exists()
           for edition in ("pre","post"):

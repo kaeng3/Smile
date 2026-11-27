@@ -16,11 +16,12 @@ from .featured_news import featured_editions
 from .capture_health import capture_health
 from .material_stage import annotate_sections
 from .editorial_evidence import annotate_sections as annotate_evidence
+from .followup_news import followup
 
 ASSETS=("index.html","style.css","app.js","brief.html","brief.js","candidates.html",
         "candidates.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js","editorial.html","editorial.css","editorial.js")
 JSON_NAMES=("events.json","brief-pre.json","brief-post.json","quality.json",
-            "official-status.json","media-status.json","manifest.json","editorial-pre.json","editorial-post.json","taxonomy-audit.json")
+            "official-status.json","media-status.json","manifest.json","editorial-pre.json","editorial-post.json","taxonomy-audit.json","editorial-followup.json")
 
 def read_rows(path):
     rows=json.loads(path.read_text(encoding="utf-8"))
@@ -37,9 +38,12 @@ def public_rows(rows):
 def data_market_available(data,day,available):
     return available and market_brief(data,day,{})["status"]=="available"
 
-def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18), session=None, media_rows=(), media_status=(), market_data=None, market_available=False, capture_stats=None):
+def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18), session=None, media_rows=(), media_status=(), market_data=None, market_available=False, capture_stats=None,as_of=None):
     if previous>=day:
         raise ValueError("Invalid previous session")
+    built=as_of or datetime.now(KST)
+    if built.tzinfo is None:raise ValueError("as_of must be timezone aware")
+    built=built.astimezone(KST)
     output=Path(output).resolve()
     if output.exists():
         raise FileExistsError("Choose a new empty destination; existing folders are never replaced")
@@ -63,11 +67,12 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         market=market_brief(market_data if market_available else None,day,full) if edition=="post" else None
         known=full.pop("events");unknown=full.pop("unknown_events_preview")
         full.pop("categories",None)
-        built=datetime.now(KST)
         return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
                 "capture_health":capture_health(capture_stats,built), "market":market,"taxonomy_version":VERSION,"sections":annotate_evidence(annotate_sections(group(known))),
                 "unknown_sections":annotate_evidence(annotate_sections(group(unknown))),"featured":featured_editions(rows,day,previous,edition,post_cutoff,session), "note":"Title-only category research; not verified impact or article summary."}
+    extra=followup(rows,day,previous,built,post_cutoff,session)
     data={"events.json":events,
+          "editorial-followup.json":extra,
           "brief-pre.json":report("pre"),
           "brief-post.json":report("post"),
           "quality.json":review(events),
@@ -77,7 +82,8 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
           "official-status.json":{"rows":len(official_rows),"sources":list(source_status),"checked_at":datetime.now(KST).isoformat()},
           "media-status.json":{"rows":len(additional),"sources":list(media_status),"checked_at":datetime.now(KST).isoformat()},
           "manifest.json":{"schema":1,"status":"research_preview","report_date":day.isoformat(),
-                           "previous_trading_date":previous.isoformat(),"built_at":datetime.now(KST).isoformat(),
+                           "previous_trading_date":previous.isoformat(),"built_at":built.isoformat(),
+                           "preferred_edition":"post" if built>=(parse_time(session["close"]) if session else datetime.combine(day,time(15,30),KST)) else "pre",
                            "input_rows":len(rows)+len(additional),"media_rows":len(additional),"history_included":False,"market_data_included":data_market_available(market_data,day,market_available),
                            "official_rows":len(official_rows),"calendar_basis":"XKRX" if session else "unverified_nominal_hours"}}
     assets=Path(__file__).resolve().parent
