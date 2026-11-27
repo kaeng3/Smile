@@ -335,9 +335,30 @@
         });
     }
 
+    function showChatStocks() {
+        const groups = [
+            ['윗꼬리 양봉 후 거감음봉', [['282720', '금양그린파워'], ['004540', '깨끗한나라']]],
+            ['장대양봉 후 거감음봉', [['250030', '진코스텍'], ['406820', '뷰티스킨'], ['417010', '나노팀']]],
+            ['이일홍 후보', [['048410', '현대바이오'], ['050890', '쏠리드'], ['174900', '앱클론'], ['298380', '에이비엘바이오'], ['340450', '지씨지놈'], ['039490', '키움증권'], ['005940', 'NH투자증권'], ['140410', '메지온']]],
+            ['조정 후 회복', [['277810', '레인보우로보틱스'], ['108490', '로보티즈'], ['457190', '이수스페셜티케미컬'], ['319400', '현대무벡스'], ['125490', '한라캐스트'], ['290550', '디케이티'], ['491000', '리브스메드']]],
+            ['기존 추적·별도 조회', [['060720', 'KH바텍'], ['192820', '코스맥스'], ['218410', 'RFHIC'], ['476830', '알지노믹스'], ['448900', '한국피아이엠'], ['264850', '이랜시스'], ['078590', '휴림에이텍']]]
+        ];
+        const section = document.createElement('details');
+        section.id = 'chat-stocks';
+        section.className = 'event';
+        panel.before(section);
+        add(section, 'summary', '이일홍 채팅방 조회 종목 · 2026-11-27');
+        for (const [label, stocks] of groups) {
+            add(section, 'h3', label);
+            const list = add(section, 'ul');
+            for (const [code, name] of stocks) stock(add(list, 'li'), code, name, name + ' · ' + code);
+        }
+    }
+
     const pages = {'themes.html': themes, 'candidates.html': scans, 'history.html': history};
     const run = pages[location.pathname.split('/').pop()];
     if (!panel || !run) return;
+    if (run === scans) showChatStocks();
     const status = panel.querySelector('[role=status]');
     run().then(() => status.remove(), () => {
         status.textContent = '기존 스캐너 자료를 불러오지 못했습니다.';
