@@ -97,6 +97,12 @@ jobs:
           a=json.loads((p/"smile2"/"taxonomy-audit.json").read_text())
           assert sum(a["new_counts"].values())==a["total"]
           print("Taxonomy distribution (not accuracy)",json.dumps({k:a[k] for k in ("total","review_required","new_counts")},ensure_ascii=False))
+          for edition in ("pre","post"):
+              r=json.loads((p/"smile2"/f"editorial-{edition}.json").read_text())
+              events=[e for s in r["sections"]+r["unknown_sections"] for e in s["events"]]
+              matches=[e for e in events if any("넥사다이내믹스" in a["title"] and "755" in a["title"] and "서버" in a["title"] for a in e["articles"])]
+              print("Nexa contract dedup",edition,[(e["headline"],e["article_count"],[a["title"] for a in e["articles"]]) for e in matches])
+              assert sum(e["article_count"] for e in events)==r["published_articles"]+r["unknown_articles"] or sum(e["article_count"] for e in events)<=r["published_articles"]+r["unknown_articles"]
           print("Pages release build PASS",d)
           PY
       - name: Freeze blind review candidate (not a quality score)

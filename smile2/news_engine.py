@@ -8,6 +8,7 @@ from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
+from .contract_identity import contract_identity, compatible_contract
 
 KST = timezone(timedelta(hours=9))
 STOP = {"특징주", "단독", "속보", "종합", "급등", "강세", "상승", "하락", "관련주", "주목", "기대"}
@@ -101,6 +102,8 @@ def stage(text):
 def similar(a,b):
     if abs((clock(a)-clock(b)).total_seconds())>48*3600:
         return False
+    if compatible_contract(a,b):
+        return True
     if signature(a["title"]) != signature(b["title"]) or stage(a["title"]) != stage(b["title"]):
         return False
     if normalize(a["title"]) == normalize(b["title"]):
@@ -138,17 +141,22 @@ def build(rows):
     prepared = [a for row in rows if isinstance(row,dict) if (a:=prepare(row))]
     prepared.sort(key=lambda a:(-a["score"],-clock(a).timestamp(),a["url"]))
     groups, by_url, index = [], {}, defaultdict(set)
+    contract_index=defaultdict(set)
     for a in prepared:
         if a["url"] in by_url:
             continue
         ts = tokens(a["title"])
         candidates = set().union(*(index[t] for t in ts)) if ts else set()
-        g = next((i for i in sorted(candidates) if similar(a,groups[i][0])),None)
+        key=contract_identity(a)
+        if key:candidates.update(contract_index[key])
+        # Complete-link comparison prevents a bridge headline from joining incompatible contracts.
+        g = next((i for i in sorted(candidates) if all(similar(a,x) for x in groups[i])),None)
         if g is None:
             g = len(groups)
             groups.append([])
         groups[g].append(a)
         by_url[a["url"]] = g
+        if key:contract_index[key].add(g)
         for t in ts:
             index[t].add(g)
     result=[]
@@ -162,7 +170,7 @@ def build(rows):
                        "stocks":stocks,
                        "themes":sorted({t for a in articles for t in a["themes"]}),
                        "articles":articles,"status":"candidate_not_verified"})
-    return {"schema":1,"method":"conservative_title_clustering_v1",
+    return {"schema":1,"method":"conservative_title_clustering_v2_contract_anchor",
             "input_count":len(rows),"accepted_count":len(prepared),
             "unique_url_count":len(by_url),"event_count":len(result),
             "missing_published_at":sum(a["published_at"] is None for a in prepared),

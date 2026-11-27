@@ -4,14 +4,14 @@ let edition=new URLSearchParams(location.search).get("edition");
 const fmt=n=>Number.isFinite(n)?n.toLocaleString("ko-KR",{maximumFractionDigits:2}):"미상";
 let report=null,extra=null,unknown=false,featured=false,followup=false;
 function link(text,raw){try{const u=new URL(raw);if(!["http:","https:"].includes(u.protocol)||u.username||u.password)throw Error();const a=el("a",text);a.href=u.href;a.target="_blank";a.rel="noopener noreferrer";return a}catch{return el("span",text)}}
-function article(e){const a=el("article",null,"news"),h=el("h3");const lead=e.articles?.[0];h.append(link(e.headline,lead?.url));a.append(h,el("p","제목 기반 · 본문 미확인","meta"));
+function article(e){const a=el("article",null,"news"),h=el("h3");const lead=e.articles?.[0];h.append(link(e.headline,lead?.url));a.append(h,el("p","제목 기반 · 본문 미확인"+(e.article_count>1?" · 관련 보도 "+fmt(e.article_count)+"건 묶음":""),"meta"));
 if(lead)a.append(el("p",String(lead.press||"출처 미상")+" · "+(lead.published_at?"발표 "+lead.published_at.slice(0,16).replace("T"," "):"발표 미상 · 수집 "+String(lead.seen_at||"미상").slice(0,16).replace("T"," "))+" · "+(lead.link_kind==="aggregator"?"검색 경유":lead.link_kind==="portal"?"포털":"출처 링크"),"meta"));
 const v=e.evidence_review;if(v?.official_urls?.length)a.append(el("p","공식 자료 링크 "+fmt(v.official_urls.length)+"건 · 본문 미확인","meta"));
 if(e.followup_reasons?.length)a.append(el("p",e.followup_reasons.map(x=>({morning_gap:"07:00~08:00 별도 뉴스",late_pre:"장전 마감 이후 발견",late_post:"장후 마감 이후 발견",after_cutoff:"장후 마감 이후 발표/수집",late_timestamp:"발표시각 뒤늦게 확인",late_featured:"특징주 표기 뒤늦게 확인"}[x]||x)).join(" · "),"meta"));
 if(e.articles?.some(a=>a.retention_reasons?.length))a.append(el("p","기존 점수 미달 · 재료 단서로 추가 보관","meta"));
 const m=e.material_stage;if(m&&m.signals?.length){a.append(el("p","재료 단계 단서: "+m.signals.map(x=>x.label).join(" · ")+(m.review_required?" · 검토 우선":""),"meta"))} 
 for(const s of (e.stocks||[]).slice(0,12)){a.append(el("span",s.name+" "+s.code+" · "+(s.relation==="official_filing_issuer"?"공시 기업":"제목 언급"),"tag"))}
-const d=el("details");d.append(el("summary","분류 근거 및 관련 기사 "+fmt(e.article_count)+"건"));
+const d=el("details");d.append(el("summary",e.article_count>1?"관련 보도 "+fmt(e.article_count)+"건 및 분류 근거":"분류 근거 및 원문"));
 const c=e.classification||{};d.append(el("p","분류: "+(c.category_label||"미상")+" · "+(c.review_required?"검토 필요":"제목 단서 기반")+" · "+(c.matched_terms||[]).join(", ")),el("p","기존 분류: "+(c.source_category||"미상")));
 if(m?.signals?.length){d.append(el("p","제목 단서일 뿐 실제 사건 확정 여부 및 가격 영향은 미확인"));for(const signal of m.signals)d.append(el("p",signal.label+" — "+signal.terms.join(", ")))}
 if(v){d.append(el("p","출처 링크 "+fmt(v.source_link_count)+" · 포털 "+fmt(v.portal_link_count)+" · 검색 경유 "+fmt(v.aggregator_link_count)+" · 언론사명 "+fmt(v.publisher_count)+"개 (독립 검증 아님)"));for(const u of v.official_urls||[]){const p=el("p");p.append(link("공식 자료 연결 ↗",u));d.append(p)}}
