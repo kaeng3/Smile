@@ -18,7 +18,21 @@ if(v){d.append(el("p","출처 링크 "+fmt(v.source_link_count)+" · 포털 "+fm
 for(const row of e.articles||[]){const p=el("p");p.append(link(row.title,row.url),el("span"," · "+(row.press||"출처 미상")));d.append(p)}a.append(d);return a}
 function search(e,q){return !q||[e.headline,...(e.stocks||[]).flatMap(s=>[s.name,s.code]),...(e.themes||[]),...(e.articles||[]).map(a=>a.title)].join(" ").toLowerCase().includes(q)}
 function render(){if(!report)return;const q=$("query").value.trim().toLowerCase(),sections=featured?[{id:"featured",label:"[특징주] 모아보기",events:unknown?report.featured.unknown_events:report.featured.events}]:unknown?report.unknown_sections:report.sections;let count=0;for(const id of ["toc","toc-mobile","sections"])$(id).replaceChildren();
-if(edition==="post"&&!featured){for(const row of $("market-list").children)row.hidden=!row.textContent.toLowerCase().includes(q);$("results").textContent=fmt([...$("market-list").children].filter(row=>!row.hidden).length)+"개 종목";return}
+if(edition==="post"&&!featured){
+    let matches=0;
+    for(const group of $("market-list").children){
+        let visible=0;
+        const matchTheme=group.firstElementChild.textContent.toLowerCase().includes(q);
+        for(const row of group.querySelectorAll(".market-row")){
+            row.hidden=!matchTheme&&!row.textContent.toLowerCase().includes(q);
+            if(!row.hidden)visible++;
+        }
+        group.hidden=visible===0;
+        matches+=visible;
+    }
+    $("results").textContent=fmt(matches)+"개 종목";
+    return;
+}
 for(const [i,s] of sections.entries()){const list=s.events.filter(e=>search(e,q));count+=list.length;const id="section-"+s.id;for(const nav of ["toc","toc-mobile"]){const a=el("a",null,list.length?"":"zero");a.href="#"+id;a.append(el("span",s.label),el("span",fmt(list.length)));$(nav).append(a)}
 const box=el("section",null,"section");box.id=id;const h=el("h2",featured?s.label:String(i+1).padStart(2,"0")+"  "+s.label);h.append(el("span",fmt(list.length)+"개 사건"));box.append(h);if(!list.length){box.append(el("p","해당 사건 없음","news small"));$("sections").append(box);continue}const body=el("div");let limit=5;const add=()=>{body.replaceChildren();for(const e of list.slice(0,limit))body.append(article(e));more.hidden=list.length<=limit;more.textContent="나머지 "+fmt(Math.max(0,list.length-limit))+"개 중 더 보기"};const more=el("button",null,"more");more.type="button";more.addEventListener("click",()=>{limit+=25;add()});box.append(body,more);add();$("sections").append(box)}
 $("results").textContent=fmt(count)+"개 사건 · "+(unknown?"수집 시각 기준 (발표 미상)":"발표 시각 확인")+(featured?" · 특징주 최신순 · 전체 펼침 가능":" · 분야별 5개 우선 표시, 전체 펼침 가능");if(!count)$("sections").prepend(el("p","검색 결과가 없습니다."));
@@ -26,7 +40,51 @@ $("results").textContent=fmt(count)+"개 사건 · "+(unknown?"수집 시각 기
 function captureHealth(){const c=report.capture_health||{};const labels={unknown:"최근 수집 상태 미확인",stale:"최근 수집 지연",partial:"최근 수집 일부 실패",success:"최근 수집원 응답 확인"};
 $("capture-summary").textContent=c.checked_at?"최근 뉴스 수집 "+c.checked_at.slice(0,16).replace("T"," ")+" KST"+(c.status==="partial"?" · 일부 출처 실패":c.status==="stale"?" · 수집 지연":""):"최근 뉴스 수집 시각 미확인";
 }
-function market(){if(edition!=="post")return;$("market").hidden=false;const m=report.market;$("market-note").textContent=m?.status==="available"?"당일 기준봉 스캐너 상승 종목 · 상승률 내림차순 · 전체 시장 순위 아님 · 거래대금 추정치":"당일 선별 종목 자료 없음";for(const s of m?.stocks||[]){const a=el("article",null,"market-row");a.append(el("h3",s.name+" ("+s.code+")"),el("p",fmt(s.rate_pct)+"% · 추정 거래대금 "+fmt(s.estimated_trading_value_won/1e8)+"억원"));const current=(s.evidence||[]).filter(e=>e.relation==="same_session_title_mention_not_causation");const matched=(s.scanner_references||[]).filter(e=>!current.some(item=>item.url===e.url));a.append(el("p",current.length?"당일 확인된 관련 뉴스·공시 · 상승과의 인과 미확인":"발표 시각을 확인한 당일 관련 뉴스·공시 없음","small"));for(const e of current){const p=el("p");p.append(link(e.title,e.url),el("span"," · "+(e.material_kind==="disclosure"?"공시 · ":e.material_kind==="featured"?"시황 · ":"")+String(e.published_at||"").slice(11,16)));a.append(p)}if(matched.length){a.append(el("p","종목명이 확인된 스캐너 참고 기사 · 발표 시각 미확인","small"));for(const e of matched){const p=el("p");p.append(link(e.title,e.url),el("span"," · "+e.date+(e.material_kind==="featured"?" · 시황":"")));a.append(p)}}const d=el("details");d.append(el("summary","발표 시각 미상 기사"));for(const e of [...(s.evidence||[]).filter(e=>e.relation!=="same_session_title_mention_not_causation"&&!matched.some(item=>item.url===e.url))]){const p=el("p");p.append(link(e.title,e.url),el("span"," · "+(e.relation==="legacy_scanner_reference_observation_time_unknown"?"기존 참고 · 수집 시각 미상":"발표 시각 미상 · 인과 미확인")));d.append(p)}if(d.children.length>1)a.append(d);$("market-list").append(a)}}
+function renderMarketRow(stock){
+    const s=stock;
+    const a=el("details",null,"market-row");
+    const heading=el("summary",null,"market-stock");
+    heading.append(el("span",s.name),el("strong","+"+fmt(s.rate_pct)+"%","market-gain"));
+    a.append(heading,el("p",s.code+" · 추정 거래대금 "+fmt(s.estimated_trading_value_won/1e8)+"억원","small"));
+    const current=(s.evidence||[]).filter(e=>e.relation==="same_session_title_mention_not_causation");const matched=(s.scanner_references||[]).filter(e=>!current.some(item=>item.url===e.url));a.append(el("p",current.length?"당일 확인된 관련 뉴스·공시 · 상승과의 인과 미확인":"발표 시각을 확인한 당일 관련 뉴스·공시 없음","small"));for(const e of current){const p=el("p");p.append(link(e.title,e.url),el("span"," · "+(e.material_kind==="disclosure"?"공시 · ":e.material_kind==="featured"?"시황 · ":"")+String(e.published_at||"").slice(11,16)));a.append(p)}if(matched.length){a.append(el("p","종목명이 확인된 스캐너 참고 기사 · 발표 시각 미확인","small"));for(const e of matched){const p=el("p");p.append(link(e.title,e.url),el("span"," · "+e.date+(e.material_kind==="featured"?" · 시황":"")));a.append(p)}}const d=el("details");d.append(el("summary","발표 시각 미상 기사"));for(const e of [...(s.evidence||[]).filter(e=>e.relation!=="same_session_title_mention_not_causation"&&!matched.some(item=>item.url===e.url))]){const p=el("p");p.append(link(e.title,e.url),el("span"," · "+(e.relation==="legacy_scanner_reference_observation_time_unknown"?"기존 참고 · 수집 시각 미상":"발표 시각 미상 · 인과 미확인")));d.append(p)}if(d.children.length>1)a.append(d);
+    return a;
+}
+async function market(){
+    if(edition!=="post")return;
+    const m=report.market;
+    const stocks=m?.stocks||[];
+    if(!stocks.length){$("market-note").textContent="당일 선별 종목 자료 없음";return;}
+    $("market-note").textContent="당일 기준봉 스캐너 상승 종목 · 종목을 누르면 관련 뉴스·공시가 펼쳐집니다.";
+    const day=String(report.report_date).replaceAll("-","");
+    const [bundles,brief]=await Promise.all(["../theme_bundles.json","../news_feed/brief.json"].map(async url=>{
+        try{const response=await fetch(url);return response.ok?await response.json():null;}catch{return null;}
+    }));
+    const snapshot=brief?.days?.[day];
+    for(const [key,label] of [["kospi","코스피"],["kosdaq","코스닥"]]){
+        const match=String(snapshot?.[key]||"").match(/([\d,]+\.\d+)\s*\(([+-]?\d+(?:\.\d+)?%)\)/);
+        if(match)$("market-indices").append(el("span",label+" "+match[1]+" ("+match[2]+")"));
+    }
+    const codes=new Set(stocks.map(stock=>stock.code));
+    const byCode=new Map();
+    for(const bundle of bundles?.bundles||[]){
+        for(const event of bundle.events||[]){
+            if(event.date===day&&codes.has(event.code)&&!byCode.has(event.code))byCode.set(event.code,bundle.theme);
+        }
+    }
+    const groups=new Map();
+    for(const stock of stocks){
+        const theme=byCode.get(stock.code)||"개별주";
+        if(!groups.has(theme))groups.set(theme,[]);
+        groups.get(theme).push(stock);
+    }
+    for(const [theme,items] of groups){
+        const group=el("section",null,"market-theme");
+        group.append(el("h3",theme));
+        for(const stock of items)group.append(renderMarketRow(stock));
+        $("market-list").append(group);
+    }
+    render();
+}
 $("query").addEventListener("input",render);
 function setView(view){featured=edition==="post"&&view==="featured";unknown=false;
 for(const id of ["featured-nav","featured-mobile"])if(featured)$(id).setAttribute("aria-current","page");else $(id).removeAttribute("aria-current");
