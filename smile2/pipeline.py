@@ -63,7 +63,7 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         return result
     def editorial(edition):
         # Separate new report output; retain old 50-item reports and consumers.
-        full=briefing(rows,day,previous,edition,post_cutoff,limit=None,session=session)
+        full=briefing(rows,day,previous,edition,post_cutoff,limit=None,session=session,include_late_pre=edition=="pre")
         market=market_brief(market_data if market_available else None,day,full) if edition=="post" else None
         known=full.pop("events");unknown=full.pop("unknown_events_preview")
         if market and market["status"]=="available":
@@ -71,10 +71,17 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
             def priority(e):
                 return -max((rates.get(s["code"],0) for s in e["stocks"]),default=0)
             known.sort(key=priority);unknown.sort(key=priority)
+        featured=featured_editions(rows,day,previous,edition,post_cutoff,session)
+        if edition=="post":
+            selected={s["code"] for s in (market or {}).get("stocks",[])}
+            featured["events"]=[e for e in featured["events"] if any(s["code"] in selected for s in e["stocks"])]
+            featured["unknown_events"]=[]
+            featured["known_article_count"]=featured["article_count"]=sum(e["article_count"] for e in featured["events"])
+            featured["unknown_article_count"]=0
         full.pop("categories",None)
         return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
                 "capture_health":capture_health(capture_stats,built), "market":market,"taxonomy_version":VERSION,"sections":annotate_evidence(annotate_sections(group(known))),
-                "unknown_sections":annotate_evidence(annotate_sections(group(unknown))),"featured":featured_editions(rows,day,previous,edition,post_cutoff,session), "note":"Title-only category research; not verified impact or article summary."}
+                "unknown_sections":annotate_evidence(annotate_sections(group(unknown))),"featured":featured, "note":"Title-only category research; not verified impact or article summary."}
     extra=followup(rows,day,previous,built,post_cutoff,session)
     data={"events.json":events,
           "editorial-followup.json":extra,

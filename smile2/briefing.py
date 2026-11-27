@@ -27,7 +27,7 @@ def bounds(day, previous, edition, post_cutoff=time(15,30), session=None):
         return datetime.combine(day,time(8),KST),end
     raise ValueError("Unknown edition")
 
-def briefing(rows, day, previous, edition, post_cutoff=time(15,30), limit=50, session=None):
+def briefing(rows, day, previous, edition, post_cutoff=time(15,30), limit=50, session=None, include_late_pre=False):
     if limit is not None and limit < 1:
         raise ValueError("limit must be positive")
     start,end=bounds(day,previous,edition,post_cutoff,session)
@@ -50,7 +50,14 @@ def briefing(rows, day, previous, edition, post_cutoff=time(15,30), limit=50, se
         if pub and pub>seen:
             future+=1
             continue
-        if pub and start<=pub<end:
+        # In the next pre-market edition, consider prior-session reports first
+        # observed after that close, plus the prior morning's 07:00–08:00 gap.
+        carry = (
+            include_late_pre and edition == "pre" and pub is not None
+            and pub.date() == previous
+            and (seen >= start or time(7) <= pub.time() < time(8))
+        )
+        if pub and (start<=pub<end or carry):
             known.append(r)
         elif pub is None and start<=seen<end:
             unknown.append(r)

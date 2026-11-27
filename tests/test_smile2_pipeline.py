@@ -42,3 +42,20 @@ class PipelineTests(unittest.TestCase):
                 generate([],date(2026,11,26),date(2026,11,26),Path(tmp)/"preview")
 if __name__=="__main__":
     unittest.main()
+
+class EditorialCarryTests(unittest.TestCase):
+    def test_prior_session_delays_go_through_next_premarket_selection(self):
+        from smile2.briefing import briefing
+        def article(key, published, observed):
+            return {"title":key,"url":"https://example.org/"+key,
+                    "published_at":published+"+09:00","observed_at":observed+"+09:00"}
+        rows=[
+            article("late","2026-11-26T12:00:00","2026-11-26T18:00:00"),
+            article("gap","2026-11-26T07:30:00","2026-11-26T07:45:00"),
+            article("already-covered","2026-11-26T12:00:00","2026-11-26T12:30:00"),
+            article("after-pre-cutoff","2026-11-26T13:00:00","2026-11-27T07:01:00"),
+            article("after-close","2026-11-26T16:00:00","2026-11-26T16:30:00"),
+        ]
+        result=briefing(rows,date(2026,11,27),date(2026,11,26),"pre",include_late_pre=True)
+        self.assertEqual({a["url"].rsplit("/",1)[-1] for e in result["events"] for a in e["articles"]},
+                         {"late","gap","after-close"})

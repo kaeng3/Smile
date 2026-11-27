@@ -4,6 +4,7 @@ from urllib.parse import urlsplit
 from math import isfinite
 import re
 from .news_engine import canonical_url
+from news_feed.sources import is_featured_title
 
 def finite(v):
     return isinstance(v,(int,float)) and not isinstance(v,bool) and isfinite(v)
@@ -46,7 +47,11 @@ def market_brief(data,day,report):
                 for name,code in a.get("stocks",[]):
                     u=canonical_url(a.get("url"))
                     if not u:continue
-                    links.setdefault(code,{}).setdefault(u,{"url":u,"title":a["title"],"published_at":a.get("published_at"),"relation":relation})
+                    title=a["title"]
+                    host=urlsplit(u).hostname or ""
+                    official=host in {"dart.fss.or.kr","kind.krx.co.kr","opendart.fss.or.kr"}
+                    kind="disclosure" if official else "featured" if is_featured_title(title) else "news"
+                    links.setdefault(code,{}).setdefault(u,{"url":u,"title":title,"published_at":a.get("published_at"),"relation":relation,"material_kind":kind})
     selected=[];seen=set();invalid=0
     for r in rows:
         if not isinstance(r,dict):
@@ -57,7 +62,10 @@ def market_brief(data,day,report):
         seen.add(code)
         if rate<=0:continue
         selected.append({"code":code,"name":str(r.get("name") or code),"rate_pct":rate,"estimated_trading_value_won":value,"trading_value_basis":"close_times_volume",
-                         "evidence":list(links.get(code,{}).values())[:5], "scanner_references":scanner_links(r,day)})
+                         "evidence":sorted(links.get(code,{}).values(),key=lambda a:(
+                             a["relation"]!="same_session_title_mention_not_causation",
+                             {"disclosure":0,"featured":1,"news":2}[a["material_kind"]]
+                         ))[:5], "scanner_references":scanner_links(r,day)})
     selected.sort(key=lambda r:(-r["rate_pct"],r["code"]))
     return {"status":"available" if selected else "empty","day":day.isoformat(),"stocks":selected,
             "scope":"selected_scanner_rows","invalid_rows":invalid,"ranking":"positive_return_descending",
