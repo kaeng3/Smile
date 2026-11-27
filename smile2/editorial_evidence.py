@@ -86,7 +86,7 @@ def premarket_signals(sections):
     for _, category, event in sorted(eligible,key=lambda candidate:candidate[0]):
         if total==12:
             break
-        if len(picked[category])<3:
+        if len(picked[category])<7:
             picked[category].append(event)
             total+=1
     return [{**section,"events":picked[section["id"]],"count":len(picked[section["id"]])}
