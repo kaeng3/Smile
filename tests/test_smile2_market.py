@@ -15,15 +15,18 @@ class MarketTests(unittest.TestCase):
         self.assertNotIn("UNVERIFIED_CAUSE",str(r))
         self.assertEqual(market_brief(d,date(2026,11,27),{})["status"],"unavailable")
     def test_legacy_estimate_and_references(self):
-        row={"code":"000100","rate":10,"trading_value":5000,"articles":[
-            {"title":"public","date":"2026-11-25","link":"https://example.org/a"},
-            {"title":"future","date":"2026-11-27","link":"https://example.org/b"},
-            {"title":"restricted","date":"2026-11-26","link":"https://infostock.example/a"},
-            {"title":"credential","date":"2026-11-26","link":"https://example.org/c?token=secret"}]}
+        row={"code":"000100","name":"예시종목","rate":10,"trading_value":5000,"articles":[
+            {"title":"[특징주] 예시종목, 강세","date":"2026-11-25","link":"https://example.org/a"},
+            {"title":"예시종목 미래","date":"2026-11-27","link":"https://example.org/b"},
+            {"title":"예시종목 제한","date":"2026-11-26","link":"https://infostock.example/a"},
+            {"title":"[특징주] 다른종목 급등","date":"2026-11-26","link":"https://example.org/unrelated"},
+            {"title":"예시종목자회사 급등","date":"2026-11-26","link":"https://example.org/similar"},
+            {"title":"예시종목 인증","date":"2026-11-26","link":"https://example.org/c?token=secret"}]}
         s=market_brief({"20261126":[row]},date(2026,11,26),{})["stocks"][0]
         self.assertEqual(s["trading_value_basis"],"close_times_volume")
         self.assertNotIn("trading_value_won",s)
-        self.assertEqual([a["title"] for a in s["scanner_references"]],["public"])
+        self.assertEqual([a["title"] for a in s["scanner_references"]],["[특징주] 예시종목, 강세"])
+        self.assertEqual(s["scanner_references"][0]["material_kind"],"featured")
     def test_links_not_causes(self):
         r=market_brief({"20261126":[{"code":"000100","rate":10,"trading_value":123}]},date(2026,11,26),
            {"events":[{"articles":[{"title":"예시","url":"https://example.org/a","stocks":[["예시","000100"]]}]}]})
