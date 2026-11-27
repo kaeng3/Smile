@@ -40,14 +40,13 @@ def market_brief(data,day,report):
     if not isinstance(rows,list):
         return {"status":"unavailable","day":day.isoformat(),"stocks":[],"scope":"selected_scanner_rows"}
     links={}
-    for e in report.get("events",[])+report.get("unknown_events_preview",[]):
-        for a in e.get("articles",[]):
-            for name,code in a.get("stocks",[]):
-                u=canonical_url(a.get("url"))
-                if not u:
-                    continue
-                links.setdefault(code,{})[u]={"url":u,"title":a["title"],"published_at":a.get("published_at"),
-                                               "relation":"same_session_title_mention_not_causation"}
+    for group,relation in ((report.get("events",[]),"same_session_title_mention_not_causation"),(report.get("unknown_events_preview",[]),"publication_unknown_title_mention_not_causation")):
+        for e in group:
+            for a in e.get("articles",[]):
+                for name,code in a.get("stocks",[]):
+                    u=canonical_url(a.get("url"))
+                    if not u:continue
+                    links.setdefault(code,{}).setdefault(u,{"url":u,"title":a["title"],"published_at":a.get("published_at"),"relation":relation})
     selected=[];seen=set();invalid=0
     for r in rows:
         if not isinstance(r,dict):
@@ -56,9 +55,10 @@ def market_brief(data,day,report):
         if not re.fullmatch(r"[0-9A-Z]{6}",code) or code in seen or not finite(rate) or not finite(value) or value<0:
             invalid+=1;continue
         seen.add(code)
+        if rate<=0:continue
         selected.append({"code":code,"name":str(r.get("name") or code),"rate_pct":rate,"estimated_trading_value_won":value,"trading_value_basis":"close_times_volume",
                          "evidence":list(links.get(code,{}).values())[:5], "scanner_references":scanner_links(r,day)})
     selected.sort(key=lambda r:(-r["rate_pct"],r["code"]))
     return {"status":"available" if selected else "empty","day":day.isoformat(),"stocks":selected,
-            "scope":"selected_scanner_rows","invalid_rows":invalid,
+            "scope":"selected_scanner_rows","invalid_rows":invalid,"ranking":"positive_return_descending",
             "note":"Existing dated scanner selection, not whole market. Legacy scanner trading value is close times volume, not actual executed turnover. News mentions are not causes. Scanner observation time is not recorded in this dataset."}

@@ -15,7 +15,7 @@ class FeaturedTests(unittest.TestCase):
               row("[특징주] DEF 게임","unknown",pub=None),
               row("[특징주] GHI 자동차","late",seen="2026-11-27T18:01:00+09:00"),
               row("급등주 XYZ","not-tagged")]
-        f=featured_editions(rows,date(2026,11,27),date(2026,11,26),"post",time(18))
+        f=featured_editions(rows,date(2026,11,27),date(2026,11,26),"post",time(15,30))
         self.assertEqual(f["article_count"],2)
         self.assertEqual(f["known_article_count"],1)
         self.assertEqual(f["unknown_article_count"],1)
@@ -24,12 +24,12 @@ class FeaturedTests(unittest.TestCase):
         self.assertEqual(f["unknown_events"][0]["headline"],"[특징주] DEF 게임")
     def test_late_marker_not_backdated(self):
         r={"title":"ABC 반도체 계약","url":"https://example.org/late-marker",
-           "observed_at":"2026-11-27T08:00:00+09:00","published_at":"2026-11-27T07:55:00+09:00",
+           "observed_at":"2026-11-27T06:00:00+09:00","published_at":"2026-11-27T05:55:00+09:00",
            "featured_title":"[특징주] ABC 반도체 계약","featured_observed_at":"2026-11-27T09:05:00+09:00"}
         d,p=date(2026,11,27),date(2026,11,26)
-        self.assertEqual(featured_editions([r],d,p,"pre",time(18))["article_count"],0)
+        self.assertEqual(featured_editions([r],d,p,"pre",time(15,30))["article_count"],0)
         # Publication belongs to pre; newly found marker must not imply post publication.
-        self.assertEqual(featured_editions([r],d,p,"post",time(18))["article_count"],0)
-        r["featured_observed_at"]="2026-11-27T08:30:00+09:00"
-        self.assertEqual(featured_editions([r],d,p,"pre",time(18))["article_count"],1)
+        self.assertEqual(featured_editions([r],d,p,"post",time(15,30))["article_count"],0)
+        r["featured_observed_at"]="2026-11-27T06:30:00+09:00"
+        self.assertEqual(featured_editions([r],d,p,"pre",time(15,30))["article_count"],1)
 if __name__=="__main__":unittest.main()

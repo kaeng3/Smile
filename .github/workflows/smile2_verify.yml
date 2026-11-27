@@ -49,8 +49,8 @@ jobs:
           git show FETCH_HEAD:news_feed/news.json > "$RUNNER_TEMP/news.json"
           python -m smile2.news_engine --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/events.json"
           python -m smile2.quality --input "$RUNNER_TEMP/events.json" --output "$RUNNER_TEMP/quality.json"
-          python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/pre.json" --day 2026-11-26 --previous 2026-11-25 --edition pre --calendar
-          python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/post.json" --day 2026-11-26 --previous 2026-11-25 --edition post --calendar
+          python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/pre.json" --day 2026-11-27 --previous 2026-11-26 --edition pre --calendar
+          python -m smile2.briefing --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/post.json" --day 2026-11-27 --previous 2026-11-26 --edition post --calendar
 
       - name: Build actual Pages release in temporary directory
         run: |
@@ -71,6 +71,13 @@ jobs:
           assert not (p/"smile2"/"patterns.py").exists()
           for edition in ("pre","post"):
               r=json.loads((p/"smile2"/f"editorial-{edition}.json").read_text())
+              assert r["start"][11:16]==("15:30" if edition=="pre" else "08:00")
+              assert r["cutoff_exclusive"][11:16]==("07:00" if edition=="pre" else "15:30")
+              print("Edition window",edition,r["start"],r["cutoff_exclusive"])
+              if edition=="post" and r["market"]["status"]=="available":
+                  rates=[s["rate_pct"] for s in r["market"]["stocks"]]
+                  assert rates==sorted(rates,reverse=True) and all(x>0 for x in rates)
+                  print("Post positive scanner stocks",len(rates),rates[:10])
               for name,total in (("sections","published_events"),("unknown_sections","unknown_events")):
                   sections=r[name]
                   ids=[e["id"] for s in sections for e in s["events"]]
@@ -118,7 +125,7 @@ jobs:
           print("Selected market observations PASS",r["day"],len(r["stocks"]))
           PY
       - name: Build isolated browser preview and probe official feeds
-        run: python -m smile2.pipeline --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/smile-preview" --day 2026-11-26 --previous 2026-11-25 --official --media --calendar
+        run: python -m smile2.pipeline --input "$RUNNER_TEMP/news.json" --output "$RUNNER_TEMP/smile-preview" --day 2026-11-27 --previous 2026-11-26 --official --media --calendar
       - name: Browser smoke test (isolated local server)
         run: |
           npm install --prefix "$RUNNER_TEMP/browser" --no-save --ignore-scripts playwright@1.56.1

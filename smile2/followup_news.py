@@ -7,8 +7,8 @@ from .editorial_evidence import annotate_sections as evidence_sections
 from news_feed.sources import is_featured_title
 
 def followup(rows,day,previous,as_of,post_cutoff,session=None):
-    start,opened=bounds(day,previous,"pre",post_cutoff,session)
-    _,end=bounds(day,previous,"post",post_cutoff,session)
+    start,pre_end=bounds(day,previous,"pre",post_cutoff,session)
+    post_start,end=bounds(day,previous,"post",post_cutoff,session)
     known=[];unknown=[];why={}
     for r in rows:
         seen=parse_time(r.get("observed_at")) or seen_time(r.get("seen"))
@@ -19,11 +19,12 @@ def followup(rows,day,previous,as_of,post_cutoff,session=None):
         if verified and verified>as_of:
             pub=None
         reasons=[]
-        if pub and start<=pub<opened and seen>=opened:reasons.append("late_pre")
-        if pub and opened<=pub<end and seen>=end:reasons.append("late_post")
+        if pub and start<=pub<pre_end and seen>=pre_end:reasons.append("late_pre")
+        if pub and post_start<=pub<end and seen>=end:reasons.append("late_post")
+        if pre_end<=(pub or seen)<post_start:reasons.append("morning_gap")
         if (pub and pub>=end) or (pub is None and seen>=end):reasons.append("after_cutoff")
-        relevant=pub is not None and start<=pub<end
-        cutoff=opened if pub and pub<opened else end
+        relevant=pub is not None and (start<=pub<pre_end or post_start<=pub<end)
+        cutoff=pre_end if pub and pub<pre_end else end
         if relevant and verified and cutoff<=verified<=as_of:reasons.append("late_timestamp")
         late_tag=(relevant and tagged and cutoff<=tagged<=as_of and tagged>=seen and is_featured_title(r.get("featured_title")))
         if late_tag:reasons.append("late_featured")
