@@ -46,7 +46,36 @@ function renderMarketRow(stock){
     const heading=el("summary",null,"market-stock");
     heading.append(el("span",s.name),el("strong","+"+fmt(s.rate_pct)+"%","market-gain"));
     a.append(heading,el("p",s.code+" · 추정 거래대금 "+fmt(s.estimated_trading_value_won/1e8)+"억원","small"));
-    const current=(s.evidence||[]).filter(e=>e.relation==="same_session_title_mention_not_causation");const matched=(s.scanner_references||[]).filter(e=>!current.some(item=>item.url===e.url));a.append(el("p",current.length?"당일 확인된 관련 뉴스·공시 · 상승과의 인과 미확인":"발표 시각을 확인한 당일 관련 뉴스·공시 없음","small"));for(const e of current){const p=el("p");p.append(link(e.title,e.url),el("span"," · "+(e.material_kind==="disclosure"?"공시 · ":e.material_kind==="featured"?"시황 · ":"")+String(e.published_at||"").slice(11,16)));a.append(p)}if(matched.length){a.append(el("p","종목명이 확인된 스캐너 참고 기사 · 발표 시각 미확인","small"));for(const e of matched){const p=el("p");p.append(link(e.title,e.url),el("span"," · "+e.date+(e.material_kind==="featured"?" · 시황":"")));a.append(p)}}const d=el("details");d.append(el("summary","발표 시각 미상 기사"));for(const e of [...(s.evidence||[]).filter(e=>e.relation!=="same_session_title_mention_not_causation"&&!matched.some(item=>item.url===e.url))]){const p=el("p");p.append(link(e.title,e.url),el("span"," · "+(e.relation==="legacy_scanner_reference_observation_time_unknown"?"기존 참고 · 수집 시각 미상":"발표 시각 미상 · 인과 미확인")));d.append(p)}if(d.children.length>1)a.append(d);
+    const current=(s.evidence||[]).filter(item=>item.relation==="same_session_title_mention_not_causation");
+    const references=(s.scanner_references||[]).filter(item=>!current.some(article=>article.url===item.url));
+    const summary=s.gemini_material_summary;
+    const lead=[...current,...references].find(item=>item.url===summary?.url)||current[0]||references[0];
+    function article(item){
+        const box=el("div",null,"market-article");
+        box.append(link(item.title,item.url));
+        const kind=item.material_kind==="disclosure"?"공시":item.material_kind==="featured"?"시황":"";
+        const time=item.published_at?item.published_at.slice(11,16):[item.date,"발표 시각 미확인"].filter(Boolean).join(" · ");
+        box.append(el("p",[kind,time].filter(Boolean).join(" · "),"small market-article-meta"));
+        return box;
+    }
+    if(lead){
+        const box=article(lead);
+        if(lead.url===summary?.url){
+            box.append(el("p","Gemini 재료 요약 · 인과 미확인","market-summary-label"),
+                       el("p",summary.text,"market-summary"));
+        }
+        a.append(box);
+    }else{
+        a.append(el("p","관련 뉴스·공시를 확인하지 못했습니다.","small"));
+    }
+    const more=[...current,...references,...(s.evidence||[])].filter((item,index,items)=>
+        item.url!==lead?.url&&items.findIndex(other=>other.url===item.url)===index);
+    if(more.length){
+        const extra=el("details",null,"market-more");
+        extra.append(el("summary","관련 기사 "+fmt(more.length)+"건 더 보기"));
+        for(const item of more)extra.append(article(item));
+        a.append(extra);
+    }
     return a;
 }
 async function market(){

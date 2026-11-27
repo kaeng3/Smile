@@ -66,11 +66,24 @@ def market_brief(data,day,report):
             invalid+=1;continue
         seen.add(code)
         if rate<=0:continue
+        references=scanner_links(r,day)
+        analysis=r.get("analysis")
+        summary=None
+        if isinstance(analysis,dict) and analysis.get("confidence") in {"HIGH","MEDIUM"}:
+            text=analysis.get("summary")
+            headlines=analysis.get("evidence")
+            if isinstance(text,str) and text.strip() and isinstance(headlines,list):
+                by_title={a["title"]:a["url"] for a in references if a["date"]==day.isoformat()}
+                for article in headlines:
+                    url=by_title.get(str(article.get("headline","")).strip()) if isinstance(article,dict) else None
+                    if url:
+                        summary={"text":text.strip()[:400],"url":url}
+                        break
         selected.append({"code":code,"name":str(r.get("name") or code),"rate_pct":rate,"estimated_trading_value_won":value,"trading_value_basis":"close_times_volume",
                          "evidence":sorted(links.get(code,{}).values(),key=lambda a:(
                              a["relation"]!="same_session_title_mention_not_causation",
                              {"disclosure":0,"featured":1,"news":2}[a["material_kind"]]
-                         ))[:5], "scanner_references":scanner_links(r,day)})
+                         ))[:5], "scanner_references":references,"gemini_material_summary":summary})
     selected.sort(key=lambda r:(-r["rate_pct"],r["code"]))
     return {"status":"available" if selected else "empty","day":day.isoformat(),"stocks":selected,
             "scope":"selected_scanner_rows","invalid_rows":invalid,"ranking":"positive_return_descending",
