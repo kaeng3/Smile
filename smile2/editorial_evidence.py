@@ -76,10 +76,14 @@ def premarket_signals(sections):
                     continue
                 coverage[publisher]=host
                 titles.add(title)
-            if not official and len(coverage)<2:
+            # Keep material single-source candidates, explicitly unverified.
+            material="material_cue" in event.get("evidence_review",{}).get("review_reasons",[])
+            confirmed_signal=official or len(coverage)>=2
+            if not confirmed_signal and not (material and coverage):
                 continue
-            evidence={"official":official,"sources_in_first_hour":len(coverage)}
-            key=(-int(official),-len(coverage),-first.timestamp(),event["id"])
+            evidence={"official":official,"sources_in_first_hour":len(coverage),
+                      "single_source_candidate":not confirmed_signal}
+            key=(-int(official),-int(confirmed_signal),-len(coverage),-event.get("keyword_score",0),-first.timestamp(),event["id"])
             eligible.append((key,section["id"],{**event,"premarket_signal":evidence}))
     picked={section["id"]:[] for section in sections}
     for _, category, event in sorted(eligible,key=lambda candidate:candidate[0]):
