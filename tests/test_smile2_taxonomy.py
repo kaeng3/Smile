@@ -17,6 +17,24 @@ class TaxonomyTests(unittest.TestCase):
         for title,old,expected in examples:
             with self.subTest(title=title):
                 self.assertEqual(classify(title,old)["category_id"],expected)
+    def test_development_sample_regressions(self):
+        examples=[
+          ("금리 인상에 엇갈리는 보험사 셈법","finance"),
+          ("신한은행, 신보·기보와 청년창업자에 2000억 대출","finance"),
+          ("현대차, 산불 대응 차량 실증 나선다","auto"),
+          ("컬리 개인정보 추가 유출","tech"),
+          ("CJ올리브영 해킹당했다","tech"),
+          ("시지메드텍, 코오롱제약과 인체조직 CDMO 첫 제품 공급","bio"),
+          ("한국은행 금융중개지원대출 한도 결정","economy"),
+          ("Federal Reserve issues FOMC statement","economy"),
+          ("코스피, 반도체지수 급락에 시험대","economy"),
+          ("바이오솔루션, 연골 재생치료 연구협력","bio"),
+          ("공시가율 안 올라도 보유세 껑충","infra"),
+          ("이유가 밝혀졌다","other"),
+        ]
+        for title,expected in examples:
+            with self.subTest(title=title):
+                self.assertEqual(classify(title)["category_id"],expected)
     def test_ambiguous_and_unknown(self):
         self.assertTrue(classify("반도체와 배터리 투자 확대")["review_required"])
         self.assertEqual(classify("오늘의 소식","반도체")["category_id"],"other")
