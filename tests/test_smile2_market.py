@@ -34,6 +34,18 @@ class MarketTests(unittest.TestCase):
         r=market_brief({"20261127":rows},date(2026,11,27),{"unknown_events_preview":[event]})
         self.assertEqual([s["code"] for s in r["stocks"]],["000200","000100"])
         self.assertEqual(r["stocks"][0]["evidence"][0]["relation"],"publication_unknown_title_mention_not_causation")
+    def test_disclosure_and_featured_before_general_news(self):
+        articles=[
+            {"title":"일반 뉴스","url":"https://example.org/news","stocks":[["상승주","000100"]]},
+            {"title":"[특징주] 상승주 급등","url":"https://example.org/featured","stocks":[["상승주","000100"]]},
+            {"title":"공급 계약 공시","url":"https://dart.fss.or.kr/dsaf001/main.do?rcpNo=123","stocks":[["상승주","000100"]]},
+            {"title":"관련 없는 뉴스","url":"https://example.org/unrelated","stocks":[["다른 종목","000200"]]},
+        ]
+        market=market_brief({"20261127":[{"code":"000100","rate":10,"trading_value":100}]},
+                            date(2026,11,27),{"events":[{"articles":articles}]})
+        self.assertEqual([a["material_kind"] for a in market["stocks"][0]["evidence"]],
+                         ["disclosure","featured","news"])
+
     def test_preserve_first_seen(self):
         now=datetime(2026,11,26,18,tzinfo=KST)
         a={"url":"https://example.org/a","observed_at":"2026-11-26T08:00:00+09:00","published_at":None}

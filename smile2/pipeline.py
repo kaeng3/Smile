@@ -76,6 +76,8 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
             selected={s["code"] for s in (market or {}).get("stocks",[])}
             featured["events"]=[e for e in featured["events"] if any(s["code"] in selected for s in e["stocks"])]
             featured["unknown_events"]=[]
+            featured["known_article_count"]=featured["article_count"]=sum(e["article_count"] for e in featured["events"])
+            featured["unknown_article_count"]=0
         full.pop("categories",None)
         return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
                 "capture_health":capture_health(capture_stats,built), "market":market,"taxonomy_version":VERSION,"sections":annotate_evidence(annotate_sections(group(known))),
