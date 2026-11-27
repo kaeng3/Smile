@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 import shutil
 import tempfile
-from .news_engine import build, KST, parse_time
+from .news_engine import build, KST, parse_time,seen_time
 from .briefing import briefing
 from .quality import review
 from .official_feeds import collect
@@ -65,7 +65,17 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         return result
     def editorial(edition):
         # Separate new report output; retain old 50-item reports and consumers.
-        full=briefing(rows,day,previous,edition,post_cutoff,limit=None,session=session,include_late_pre=edition=="pre")
+        edition_rows=rows
+        if edition=="pre":
+            # Display only today's news in the main editorial report. The original
+            # overnight briefing export retains its established window.
+            def on_report_day(row):
+                observed=parse_time(row.get("observed_at")) or seen_time(row.get("seen"))
+                published=parse_time(row.get("published_at"))
+                timestamp=published or observed
+                return timestamp is not None and timestamp.date()==day
+            edition_rows=[row for row in rows if on_report_day(row)]
+        full=briefing(edition_rows,day,previous,edition,post_cutoff,limit=None,session=session)
         market=market_brief(market_data if market_available else None,day,full) if edition=="post" else None
         known=full.pop("events");unknown=full.pop("unknown_events_preview")
         if market and market["status"]=="available":

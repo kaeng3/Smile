@@ -59,3 +59,28 @@ class EditorialCarryTests(unittest.TestCase):
         result=briefing(rows,date(2026,11,27),date(2026,11,26),"pre",include_late_pre=True)
         self.assertEqual({a["url"].rsplit("/",1)[-1] for e in result["events"] for a in e["articles"]},
                          {"late","gap","after-close"})
+
+class EditorialDateAndIncidentTests(unittest.TestCase):
+    def test_premarket_main_is_today_and_clusters_same_breach(self):
+        headlines=[
+            "올리브영, 해킹 공격에 직원·고객 포함 790명 이름·연락처 등 개인정보 유출",
+            "CJ올리브영, 해킹 당했다…임직원·고객 790명 개인정보 유출",
+            "CJ올리브영, 업무시스템 해킹으로 임직원·고객 개인정보 유출",
+            "CJ올리브영, 해킹으로 임직원·소비자 등 790명 개인정보 유출",
+            "CJ올리브영 업무 시스템 외부 침입…총 790명 개인정보 유출",
+            "CJ올리브영, 해킹으로 123명 개인정보 유출",
+            "다른기업 해킹으로 790명 개인정보 유출",
+        ]
+        rows=[{"title":title,"url":"https://example.org/"+str(i),
+               "published_at":"2026-11-27T04:00:00+09:00","seen":"2026-11-27 04:10"}
+              for i,title in enumerate(headlines)]
+        rows.append({"title":"전날 금융 뉴스","url":"https://example.org/previous",
+                     "published_at":"2026-11-26T21:00:00+09:00","seen":"2026-11-26 21:10"})
+        with tempfile.TemporaryDirectory() as tmp:
+            out=Path(tmp)/"preview"
+            generate(rows,date(2026,11,27),date(2026,11,26),out)
+            data=json.loads((out/"editorial-pre.json").read_text(encoding="utf-8"))
+            events=[e for section in data["sections"] for e in section["events"]]
+            self.assertEqual(sorted(e["article_count"] for e in events),[1,1,5])
+            self.assertTrue(all(a["published_at"].startswith("2026-11-27")
+                                for e in events for a in e["articles"]))
