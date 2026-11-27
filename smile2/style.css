@@ -40,3 +40,12 @@
 .scan-down { color: #315c94; }
 @media (max-width: 1050px) { .scan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 650px) { .scan-grid { grid-template-columns: minmax(0, 1fr); } }
+
+.theme-bundle { border-inline-start: 5px solid var(--theme-color); }
+.theme-bundle summary { min-width: 0; }
+.theme-bundle-badge { display: inline-block; margin-inline: 8px 0; padding: 1px 8px; border-radius: 999px; color: #202429; background: var(--theme-color); font-size: 12px; }
+.theme-bundle-strength { display: block; margin-top: 4px; }
+#scanner-data .theme-bundle meter { display: block; height: 12px; }
+.theme-bundle meter::-webkit-meter-bar { background: #eee9dd; border: 0; }
+.theme-bundle meter::-webkit-meter-optimum-value { background: var(--theme-color); }
+.theme-bundle meter::-moz-meter-bar { background: var(--theme-color); }
