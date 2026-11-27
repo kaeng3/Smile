@@ -3,9 +3,33 @@ const $=id=>document.getElementById(id),el=(tag,text,cls)=>{const n=document.cre
 let edition=new URLSearchParams(location.search).get("edition");
 const fmt=n=>Number.isFinite(n)?n.toLocaleString("ko-KR",{maximumFractionDigits:2}):"미상";
 let report=null,unknown=false,featured=false;
+const sampleDate="2026-11-27";
+const eveningSample=new Map([
+    ["economy",["증안펀드 규모와 공매도 금지 논의","증시안정펀드 규모를 둘러싼 논의와 공매도 금지 요구의 배경을 다룬 시장 분석입니다.","한국경제","22:00","https://www.hankyung.com/article/2026112749456"]],
+    ["world",["대만, 올해 성장률 전망 13.28%로 상향","AI 반도체와 서버 수출 호조를 반영해 성장률 전망을 11.05%에서 13.28%로 높였다는 보도입니다.","뉴시스","23:16","https://www.newsis.com/view/NISX20261127_0003886925"]],
+    ["commodity",["러시아, 항공유 수출 금지 내년 3월까지 연장","러시아가 항공유 수출 금지 조치를 연장했다는 보도입니다.","조선비즈","22:49","https://biz.chosun.com/international/international_economy/2026/11/27/HO7HQAHTSRFGZGZ3XIQT2L3BEA/"]],
+    ["policy",["자본시장 정상화, 국정 핵심 과제로 제시","자본시장대전환위원장에게 권한을 부여한다는 대통령 발언을 다룬 보도입니다.","조선비즈","23:29","https://biz.chosun.com/policy/politics/president_office/2026/11/27/K3VLRFHHOVA4XBZ3JYRR7TW3LA/"]],
+    ["semi",["엑시콘, 반도체 검사장비 특허 삼성전자와 공유","반도체 검사장비 국책과제에서 나온 특허를 공유한다는 보도입니다.","ZDNet Korea","22:14","https://zdnet.co.kr/view/?no=20261127221442"]],
+    ["tech",["인터넷우체국 해킹 관련 개인정보 유출 보도","하루치 자료 분석에서 약 11만 명의 개인정보 유출이 파악됐다는 보도입니다.","이투데이","23:16","https://www.etoday.co.kr/news/view/2654153"]],
+    ["bio",["버텍스, FDA 심사기간 연장 소식에 개장 전 하락","FDA가 생물의약품 심사 기간을 연장했다는 보도가 나왔습니다.","이데일리","22:31","https://www.edaily.co.kr/news/newspath.asp?newsid=03565366645649984"]],
+    ["corp",["SK하이닉스, 자사주 일일 매수 주문량 두 배로 확대","주주가치 제고 차원에서 일일 매수 주문량을 두 배로 늘렸다는 보도입니다.","조선비즈","23:06","https://biz.chosun.com/stock/stock_general/2026/11/27/MDATE45H6RAKHFEY4EU42BXLN4/"]]
+]);
+function showPremarketSample(){
+    if(edition!=="pre"||report.report_date!==sampleDate||report.sections.some(section=>section.events.length))return;
+    for(const section of report.sections){
+        const entry=eveningSample.get(section.id);
+        if(!entry)continue;
+        const [headline,sample_summary,press,time,url]=entry;
+        section.events=[{headline,sample_summary,article_count:1,stocks:[],articles:[{title:headline,press,url,published_at:sampleDate+"T"+time+":00+09:00"}]}];
+    }
+    $("date").textContent=sampleDate+" · 21:51~23:51 KST · 야간 수집 샘플";
+    $("status").hidden=false;
+    $("status").textContent="카테고리 편집 샘플 8건 · 정규 장전 기사와 별도";
+}
 function link(text,raw){try{const u=new URL(raw);if(!["http:","https:"].includes(u.protocol)||u.username||u.password)throw Error();const a=el("a",text);a.href=u.href;a.target="_blank";a.rel="noopener noreferrer";return a}catch{return el("span",text)}}
 function article(e){const a=el("article",null,"news"),h=el("h3");const lead=e.articles?.[0];h.append(link(e.headline,lead?.url));a.append(h,el("p","제목 기반 · 본문 미확인"+(e.article_count>1?" · 관련 보도 "+fmt(e.article_count)+"건 묶음":""),"meta"));
 if(lead)a.append(el("p",String(lead.press||"출처 미상")+" · "+(lead.published_at?"발표 "+lead.published_at.slice(0,16).replace("T"," "):"발표 미상 · 수집 "+String(lead.seen_at||"미상").slice(0,16).replace("T"," "))+" · "+(lead.link_kind==="aggregator"?"검색 경유":lead.link_kind==="portal"?"포털":"출처 링크"),"meta"));
+if(e.sample_summary){a.append(el("p",e.sample_summary,"sample-summary"));return a}
 const v=e.evidence_review;if(v?.official_urls?.length)a.append(el("p","공식 자료 링크 "+fmt(v.official_urls.length)+"건 · 본문 미확인","meta"));
 if(e.followup_reasons?.length)a.append(el("p",e.followup_reasons.map(x=>({morning_gap:"07:00~08:00 별도 뉴스",late_pre:"장전 마감 이후 발견",late_post:"장후 마감 이후 발견",after_cutoff:"장후 마감 이후 발표/수집",late_timestamp:"발표시각 뒤늦게 확인",late_featured:"특징주 표기 뒤늦게 확인"}[x]||x)).join(" · "),"meta"));
 if(e.articles?.some(a=>a.retention_reasons?.length))a.append(el("p","기존 점수 미달 · 재료 단서로 추가 보관","meta"));
@@ -126,5 +150,5 @@ $("heading").textContent=featured?"[특징주] 모아보기":edition==="pre"?"�
 function route(){setView(location.hash==="#featured-view"?"featured":"all")}
 window.addEventListener("hashchange",()=>{if(report&&(!location.hash||location.hash==="#featured-view"))route()});
 for(const id of ["featured-nav","featured-mobile"])$(id).addEventListener("click",e=>{e.preventDefault();const hash=e.currentTarget.getAttribute("href");if(location.hash!==hash)history.pushState(null,"",hash);if(report){route();$("heading").scrollIntoView({block:"start"})}});
-async function init(){try{if(!["pre","post"].includes(edition)){const response=await fetch("manifest.json",{cache:"no-store"});if(!response.ok)throw Error("manifest");const manifest=await response.json();edition=manifest.preferred_edition==="post"?"post":"pre"}for(const id of ["evening-extra-nav","featured-mobile"])$(id).hidden=edition!=="post";const r=await fetch("editorial-"+edition+".json",{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);report=await r.json();if(report.schema!==1||report.edition!==edition||report.sections?.length!==26||report.unknown_sections?.length!==26)throw Error("schema");$(edition).setAttribute("aria-current","page");$("heading").textContent=edition==="pre"?"장전 리포트":"장후 이브닝";$("date").textContent=report.report_date+" · "+(edition==="pre"?report.report_date+" 00:00":report.start.slice(0,16).replace("T"," "))+" ~ "+report.cutoff_exclusive.slice(0,16).replace("T"," ")+" KST";$("status").hidden=report.window_status!=="partial";$("status").textContent="수집 기간 진행 중 · 부분 리포트";captureHealth();market();route()}catch(e){report=null;$("status").hidden=false;$("status").textContent="리포트 자료를 읽을 수 없습니다. 뉴스 검색 화면을 이용해 주세요."}}
+async function init(){try{if(!["pre","post"].includes(edition)){const response=await fetch("manifest.json",{cache:"no-store"});if(!response.ok)throw Error("manifest");const manifest=await response.json();edition=manifest.preferred_edition==="post"?"post":"pre"}for(const id of ["evening-extra-nav","featured-mobile"])$(id).hidden=edition!=="post";const r=await fetch("editorial-"+edition+".json",{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);report=await r.json();if(report.schema!==1||report.edition!==edition||report.sections?.length!==26||report.unknown_sections?.length!==26)throw Error("schema");$(edition).setAttribute("aria-current","page");$("heading").textContent=edition==="pre"?"장전 리포트":"장후 이브닝";$("date").textContent=report.report_date+" · "+(edition==="pre"?report.report_date+" 00:00":report.start.slice(0,16).replace("T"," "))+" ~ "+report.cutoff_exclusive.slice(0,16).replace("T"," ")+" KST";$("status").hidden=report.window_status!=="partial";$("status").textContent="수집 기간 진행 중 · 부분 리포트";showPremarketSample();captureHealth();market();route()}catch(e){report=null;$("status").hidden=false;$("status").textContent="리포트 자료를 읽을 수 없습니다. 뉴스 검색 화면을 이용해 주세요."}}
 if(new URLSearchParams(location.search).has("event")||location.hash==="#sources"){location.replace("search.html"+location.search+location.hash)}else init();
