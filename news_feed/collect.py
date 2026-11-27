@@ -7,6 +7,7 @@ import argparse
 from pathlib import Path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import re, tok, sources, brief
+from retention_rules import retention_reasons
 D = os.path.dirname(os.path.abspath(__file__))
 KST = datetime.timezone(datetime.timedelta(hours=9))
 def load(n, d=None):
@@ -54,6 +55,7 @@ def main(output_dir=None, update_brief=True, audit_filter=False):
             if result:ok+=1
             else:bad.append(name)
     new = 0
+    rescued=set()
     rejected=set(); encountered=set(); audit_rows={}
     for it in items:
         k = sources.article_key(it.get("url"))
@@ -88,7 +90,9 @@ def main(output_dir=None, update_brief=True, audit_filter=False):
         macro = any(w in title for ws in F["categories"].values() for w in ws)
         # Preserve explicit publisher-labeled stock news even below the score floor.
         # Do not boost its score or assert it caused a price move.
-        if not (((hits or (stocks and ev)) and score >= F["store_min_score"]) or macro or sources.is_featured_title(title)):
+        ordinary=bool(((hits or (stocks and ev)) and score >= F["store_min_score"]) or macro or sources.is_featured_title(title))
+        rescue=retention_reasons(title) if not ordinary else []
+        if not ordinary and not rescue:
             rejected.add(k)
             if audit_filter:
                 record={"url":sources.canonical_article_url(it["url"]),"title":title,
@@ -101,6 +105,7 @@ def main(output_dir=None, update_brief=True, audit_filter=False):
                 if k not in audit_rows or score>audit_rows[k]["score"]:
                     audit_rows[k]=record
             continue
+        if rescue:rescued.add(k)
         if macro: score = max(score, F["macro_score"])
         th = C.Counter()
         for _, v in hits[:3]:
@@ -109,6 +114,7 @@ def main(output_dir=None, update_brief=True, audit_filter=False):
                   "title": title, "url": it["url"], "score": round(score, 1), "kws": [w for w, _ in hits[:4]],
                   "published_at": it.get("published_at"), "source_feed": it.get("source_feed"),
                   "ev": ev[:2], "stocks": stocks, "themes": [t for t, _ in th.most_common(3)]}
+        if rescue:old[k]["retention_reasons"]=rescue
         old[k]["cat"] = categorize(title, old[k]["themes"], F); old[k]["sess"] = session(observed.strftime("%H:%M"))
         url_index[k] = k
         new += 1
@@ -139,6 +145,7 @@ def main(output_dir=None, update_brief=True, audit_filter=False):
               "publication_timestamp_count":sum(bool(a.get("published_at")) for a in arts),
               "capture_started_at":now.isoformat(),"capture_completed_at":datetime.datetime.now(KST).isoformat(),
               "raw_unique_valid_urls":len(encountered),"raw_unique_not_retained":len(encountered-retained_keys),
+              "material_rescued_unique_urls":len(rescued & retained_keys),
               "score_filtered_unique_urls":len(rejected-set(url_index)),
               "featured_raw_count":sum(sources.is_featured_title(a.get("title")) for a in items),
               "featured_retained_count":sum(sources.is_featured_title(a.get("title")) or sources.is_featured_title(a.get("featured_title")) for a in arts)})

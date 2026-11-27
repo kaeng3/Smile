@@ -32,7 +32,7 @@ def read_rows(path):
 def public_rows(rows):
     # Explicit allowlist: no article bodies, private archive excerpts, or API keys.
     keys=("title","url","press","source_feed","source_kind","cat","score","stocks","themes",
-          "published_at","observed_at","seen","publication_verified_at","featured_title","featured_observed_at","featured_press")
+          "published_at","observed_at","seen","publication_verified_at","featured_title","featured_observed_at","featured_press","retention_reasons")
     return [{k:r[k] for k in keys if k in r} for r in rows]
 
 def data_market_available(data,day,available):

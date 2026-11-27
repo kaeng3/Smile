@@ -8,6 +8,7 @@ on:
       - '.github/workflows/smile2_verify.yml'
       - 'news_feed/sources.py'
       - 'news_feed/collect.py'
+      - 'news_feed/retention_rules.py'
       - 'data_store.py'
       - '.github/workflows/news_feed.yml'
       - '.github/workflows/redeploy_only.yml'
@@ -173,6 +174,7 @@ jobs:
           assert audit["rejected_unique"]==s["score_filtered_unique_urls"]==len(audit["rows"])
           assert len({a["url"] for a in audit["rows"]})==len(audit["rows"])
           from collections import Counter
+          print("Material rescue count",s.get("material_rescued_unique_urls",0))
           print("Filter audit",json.dumps({"rejected_unique":audit["rejected_unique"],"sample_size":len(audit["review_sample"]),"reasons":dict(Counter(a["reason"] for a in audit["rows"]))},ensure_ascii=False))
           if not rows or not s["publication_timestamp_count"]:
               raise SystemExit("No usable publication timestamps in live capture")

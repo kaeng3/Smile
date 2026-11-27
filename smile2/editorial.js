@@ -8,6 +8,7 @@ function article(e){const a=el("article",null,"news"),h=el("h3");const lead=e.ar
 if(lead)a.append(el("p",String(lead.press||"출처 미상")+" · "+(lead.published_at?"발표 "+lead.published_at.slice(0,16).replace("T"," "):"발표 미상 · 수집 "+String(lead.seen_at||"미상").slice(0,16).replace("T"," "))+" · "+(lead.link_kind==="aggregator"?"검색 경유":lead.link_kind==="portal"?"포털":"출처 링크"),"meta"));
 const v=e.evidence_review;if(v?.official_urls?.length)a.append(el("p","공식 자료 링크 "+fmt(v.official_urls.length)+"건 · 본문 미확인","meta"));
 if(e.followup_reasons?.length)a.append(el("p",e.followup_reasons.map(x=>({late_pre:"장전 마감 이후 발견",late_post:"장후 마감 이후 발견",after_cutoff:"장후 마감 이후 발표/수집",late_timestamp:"발표시각 뒤늦게 확인",late_featured:"특징주 표기 뒤늦게 확인"}[x]||x)).join(" · "),"meta"));
+if(e.articles?.some(a=>a.retention_reasons?.length))a.append(el("p","기존 점수 미달 · 재료 단서로 추가 보관","meta"));
 const m=e.material_stage;if(m&&m.signals?.length){a.append(el("p","재료 단계 단서: "+m.signals.map(x=>x.label).join(" · ")+(m.review_required?" · 검토 우선":""),"meta"))} 
 for(const s of (e.stocks||[]).slice(0,12)){a.append(el("span",s.name+" "+s.code+" · "+(s.relation==="official_filing_issuer"?"공시 기업":"제목 언급"),"tag"))}
 const d=el("details");d.append(el("summary","분류 근거 및 관련 기사 "+fmt(e.article_count)+"건"));
