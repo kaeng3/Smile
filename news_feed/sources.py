@@ -1,11 +1,17 @@
 """뉴스 출처 수집기 (RSS·포털) — 섹터 상승/news.py와 동일"""
 import re, time, html as H, urllib.request
 import hashlib
+import unicodedata
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 
 KST = timezone(timedelta(hours=9))
+
+def is_featured_title(title):
+    """Explicit publisher [특징주] label only, including normalized brackets."""
+    s=unicodedata.normalize("NFKC", H.unescape(str(title or "")))
+    return bool(re.search(r"\[\s*특징주\s*\]",s))
 
 def canonical_article_url(raw):
     try:

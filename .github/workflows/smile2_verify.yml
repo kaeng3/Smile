@@ -69,6 +69,12 @@ jobs:
                   sections=r[name]
                   ids=[e["id"] for s in sections for e in s["events"]]
                   assert len(sections)==26 and sum(s["count"] for s in sections)==r[total]==len(ids)==len(set(ids))
+              from news_feed.sources import is_featured_title
+              f=r["featured"]
+              fa=[a for e in f["events"]+f["unknown_events"] for a in e["articles"]]
+              assert all(is_featured_title(a["title"]) for a in fa)
+              assert len(fa)==f["article_count"]
+              print("Featured tagged coverage",edition,f["article_count"],len(f["events"]),len(f["unknown_events"]))
               print("Editorial coverage PASS",edition,r["published_events"],r["unknown_events"])
           a=json.loads((p/"smile2"/"taxonomy-audit.json").read_text())
           assert sum(a["new_counts"].values())==a["total"]

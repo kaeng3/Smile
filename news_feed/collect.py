@@ -81,7 +81,9 @@ def main(output_dir=None, update_brief=True):
         ev = [e for e in F["event_words"] if e in title]
         score = sum(eff(w, v) for w, v in hits[:2]) + (6 if stocks else 0) + (5 if ev and (stocks or hits) else 0)
         macro = any(w in title for ws in F["categories"].values() for w in ws)
-        if not (((hits or (stocks and ev)) and score >= F["store_min_score"]) or macro): continue
+        # Preserve explicit publisher-labeled stock news even below the score floor.
+        # Do not boost its score or assert it caused a price move.
+        if not (((hits or (stocks and ev)) and score >= F["store_min_score"]) or macro or sources.is_featured_title(title)): continue
         if macro: score = max(score, F["macro_score"])
         th = C.Counter()
         for _, v in hits[:3]:

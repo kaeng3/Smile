@@ -12,6 +12,7 @@ from .official_feeds import collect
 from .media_probe import collect_media
 from .market_brief import market_brief
 from .taxonomy import group,audit,VERSION
+from .featured_news import featured_editions
 
 ASSETS=("index.html","style.css","app.js","brief.html","brief.js","candidates.html",
         "candidates.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js","editorial.html","editorial.css","editorial.js")
@@ -62,7 +63,7 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         built=datetime.now(KST)
         return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
                 "market":market,"taxonomy_version":VERSION,"sections":group(known),
-                "unknown_sections":group(unknown),"note":"Title-only category research; not verified impact or article summary."}
+                "unknown_sections":group(unknown),"featured":featured_editions(rows,day,previous,edition,post_cutoff,session), "note":"Title-only category research; not verified impact or article summary."}
     data={"events.json":events,
           "brief-pre.json":report("pre"),
           "brief-post.json":report("post"),
