@@ -54,8 +54,9 @@ function renderMarketRow(stock){
         const box=el("div",null,"market-article");
         box.append(link(item.title,item.url));
         const kind=item.material_kind==="disclosure"?"공시":item.material_kind==="featured"?"시황":"";
-        const time=item.published_at?item.published_at.slice(11,16):[item.date,"발표 시각 미확인"].filter(Boolean).join(" · ");
-        box.append(el("p",[kind,time].filter(Boolean).join(" · "),"small market-article-meta"));
+        const time=item.published_at?item.published_at.slice(11,16):item.date;
+        const metadata=[kind,time].filter(Boolean).join(" · ");
+        if(metadata)box.append(el("p",metadata,"small market-article-meta"));
         return box;
     }
     if(lead){
