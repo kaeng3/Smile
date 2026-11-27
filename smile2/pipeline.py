@@ -5,17 +5,23 @@ import json
 from pathlib import Path
 import shutil
 import tempfile
-from .news_engine import build, KST
+from .news_engine import build, KST, parse_time
 from .briefing import briefing
 from .quality import review
 from .official_feeds import collect
 from .media_probe import collect_media
 from .market_brief import market_brief
+from .taxonomy import group,audit,VERSION
+from .featured_news import featured_editions
+from .capture_health import capture_health
+from .material_stage import annotate_sections
+from .editorial_evidence import annotate_sections as annotate_evidence
+from .followup_news import followup
 
-ASSETS=("index.html","style.css","app.js","brief.html","brief.js","candidates.html",
-        "candidates.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js")
+ASSETS=("index.html","search.html","style.css","app.js","brief.html","brief.js","candidates.html",
+        "candidates.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js","editorial.html","editorial.css","editorial.js")
 JSON_NAMES=("events.json","brief-pre.json","brief-post.json","quality.json",
-            "official-status.json","media-status.json","manifest.json")
+            "official-status.json","media-status.json","manifest.json","editorial-pre.json","editorial-post.json","taxonomy-audit.json","editorial-followup.json")
 
 def read_rows(path):
     rows=json.loads(path.read_text(encoding="utf-8"))
@@ -26,15 +32,18 @@ def read_rows(path):
 def public_rows(rows):
     # Explicit allowlist: no article bodies, private archive excerpts, or API keys.
     keys=("title","url","press","source_feed","source_kind","cat","score","stocks","themes",
-          "published_at","observed_at","seen","publication_verified_at")
+          "published_at","observed_at","seen","publication_verified_at","featured_title","featured_observed_at","featured_press","retention_reasons")
     return [{k:r[k] for k in keys if k in r} for r in rows]
 
 def data_market_available(data,day,available):
     return available and market_brief(data,day,{})["status"]=="available"
 
-def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18), session=None, media_rows=(), media_status=(), market_data=None, market_available=False):
+def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18), session=None, media_rows=(), media_status=(), market_data=None, market_available=False, capture_stats=None,as_of=None):
     if previous>=day:
         raise ValueError("Invalid previous session")
+    built=as_of or datetime.now(KST)
+    if built.tzinfo is None:raise ValueError("as_of must be timezone aware")
+    built=built.astimezone(KST)
     output=Path(output).resolve()
     if output.exists():
         raise FileExistsError("Choose a new empty destination; existing folders are never replaced")
@@ -52,14 +61,29 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
             result["events"]=result["events"][:50]
             result["unknown_events_preview"]=result["unknown_events_preview"][:50]
         return result
+    def editorial(edition):
+        # Separate new report output; retain old 50-item reports and consumers.
+        full=briefing(rows,day,previous,edition,post_cutoff,limit=None,session=session)
+        market=market_brief(market_data if market_available else None,day,full) if edition=="post" else None
+        known=full.pop("events");unknown=full.pop("unknown_events_preview")
+        full.pop("categories",None)
+        return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
+                "capture_health":capture_health(capture_stats,built), "market":market,"taxonomy_version":VERSION,"sections":annotate_evidence(annotate_sections(group(known))),
+                "unknown_sections":annotate_evidence(annotate_sections(group(unknown))),"featured":featured_editions(rows,day,previous,edition,post_cutoff,session), "note":"Title-only category research; not verified impact or article summary."}
+    extra=followup(rows,day,previous,built,post_cutoff,session)
     data={"events.json":events,
+          "editorial-followup.json":extra,
           "brief-pre.json":report("pre"),
           "brief-post.json":report("post"),
           "quality.json":review(events),
+          "editorial-pre.json":editorial("pre"),
+          "editorial-post.json":editorial("post"),
+          "taxonomy-audit.json":audit(events["events"]),
           "official-status.json":{"rows":len(official_rows),"sources":list(source_status),"checked_at":datetime.now(KST).isoformat()},
           "media-status.json":{"rows":len(additional),"sources":list(media_status),"checked_at":datetime.now(KST).isoformat()},
           "manifest.json":{"schema":1,"status":"research_preview","report_date":day.isoformat(),
-                           "previous_trading_date":previous.isoformat(),"built_at":datetime.now(KST).isoformat(),
+                           "previous_trading_date":previous.isoformat(),"built_at":built.isoformat(),
+                           "preferred_edition":"post" if built>=(parse_time(session["close"]) if session else datetime.combine(day,time(15,30),KST)) else "pre",
                            "input_rows":len(rows)+len(additional),"media_rows":len(additional),"history_included":False,"market_data_included":data_market_available(market_data,day,market_available),
                            "official_rows":len(official_rows),"calendar_basis":"XKRX" if session else "unverified_nominal_hours"}}
     assets=Path(__file__).resolve().parent
@@ -67,7 +91,9 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         stage=Path(tmp)/"site"
         stage.mkdir()
         for name in ASSETS:
-            shutil.copyfile(assets/name,stage/name)
+            # Old entry and briefing bookmarks now serve the same B editorial UI.
+            source="editorial.html" if name in ("index.html","brief.html") else name
+            shutil.copyfile(assets/source,stage/name)
         for name in JSON_NAMES:
             (stage/name).write_text(json.dumps(data[name],ensure_ascii=False,separators=(",",":")),encoding="utf-8")
         stage.rename(output)

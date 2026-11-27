@@ -8,6 +8,7 @@ on:
       - '.github/workflows/smile2_verify.yml'
       - 'news_feed/sources.py'
       - 'news_feed/collect.py'
+      - 'news_feed/retention_rules.py'
       - 'data_store.py'
       - '.github/workflows/news_feed.yml'
       - '.github/workflows/redeploy_only.yml'
@@ -33,6 +34,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_smile2*.py' -v
           node --check smile2/app.js
           node --check smile2/brief.js
+          node --check smile2/editorial.js
           node --check smile2/candidates.js
           node --check smile2/chart.js
           node --check smile2/history.js
@@ -60,10 +62,46 @@ jobs:
           d=json.loads((p/"smile2"/"manifest.json").read_text())
           assert d["calendar_basis"]=="XKRX" and not d["history_included"]
           assert 'id="smile2-entry"' in (p/"index.html").read_text()
+          assert 'href="./smile2/"' in (p/"index.html").read_text()
+          assert (p/"smile2"/"index.html").read_text()==(p/"smile2"/"editorial.html").read_text()==(p/"smile2"/"brief.html").read_text()
+          f=json.loads((p/"smile2"/"editorial-followup.json").read_text())
+          assert f["event_count"]==sum(s["count"] for s in f["sections"]+f["unknown_sections"])
+          print("Followup events",f["event_count"])
           assert not (p/"smile2"/"stock_news_history.json").exists()
           assert not (p/"smile2"/"patterns.py").exists()
+          for edition in ("pre","post"):
+              r=json.loads((p/"smile2"/f"editorial-{edition}.json").read_text())
+              for name,total in (("sections","published_events"),("unknown_sections","unknown_events")):
+                  sections=r[name]
+                  ids=[e["id"] for s in sections for e in s["events"]]
+                  assert len(sections)==26 and sum(s["count"] for s in sections)==r[total]==len(ids)==len(set(ids))
+              from news_feed.sources import is_featured_title
+              f=r["featured"]
+              fa=[a for e in f["events"]+f["unknown_events"] for a in e["articles"]]
+              assert all(is_featured_title(a["title"]) for a in fa)
+              assert len(fa)==f["article_count"]
+              print("Featured tagged coverage",edition,f["article_count"],len(f["events"]),len(f["unknown_events"]))
+              assert all(e["material_stage"]["evidence_type"]=="title_only" for s in r["sections"]+r["unknown_sections"] for e in s["events"])
+              all_events=[e for s in r["sections"]+r["unknown_sections"] for e in s["events"]]
+              assert all(e["evidence_review"]["body_checked"] is False and e["evidence_review"]["independent_confirmation"]=="not_assessed" for e in all_events)
+              from collections import Counter
+              print("Editorial review reasons",edition,dict(Counter(x for e in all_events for x in e["evidence_review"]["review_reasons"])))
+              print("Editorial coverage PASS",edition,r["published_events"],r["unknown_events"])
+          a=json.loads((p/"smile2"/"taxonomy-audit.json").read_text())
+          assert sum(a["new_counts"].values())==a["total"]
+          print("Taxonomy distribution (not accuracy)",json.dumps({k:a[k] for k in ("total","review_required","new_counts")},ensure_ascii=False))
           print("Pages release build PASS",d)
           PY
+      - name: Freeze blind review candidate (not a quality score)
+        run: |
+          mkdir -p "$RUNNER_TEMP/editorial-review"
+          cp "$RUNNER_TEMP/pages-test/smile2/events.json" "$RUNNER_TEMP/editorial-review/events.json"
+          python -m smile2.editorial_eval sample --input "$RUNNER_TEMP/editorial-review/events.json" --size 150 --seed 2026-11-27-holdout-v1 --output "$RUNNER_TEMP/editorial-review/sample.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: editorial-review-candidate
+          path: ${{ runner.temp }}/editorial-review
+          retention-days: 14
       - name: Validate real dated market observation schema (read only)
         run: |
           python - <<'PY'
@@ -125,7 +163,7 @@ jobs:
           python-version: '3.10'
       - name: Capture public feeds without production writes
         run: |
-          python news_feed/collect.py --output-dir "$RUNNER_TEMP/fresh" --no-brief
+          python news_feed/collect.py --output-dir "$RUNNER_TEMP/fresh" --no-brief --audit-filter
           python - <<'PY'
           import json, os
           from pathlib import Path
@@ -133,8 +171,19 @@ jobs:
           s=json.loads((p/"keyword_stats.json").read_text())
           rows=json.loads((p/"news.json").read_text())
           print(json.dumps({"sources_ok":s["sources_ok"],"sources_bad":s["sources_bad"],"raw_articles":s["raw_articles"],"retained":len(rows),"publication_timestamp_count":s["publication_timestamp_count"],"source_health":s["source_health"]},ensure_ascii=False))
+          audit=json.loads((p/"filter-audit.json").read_text())
+          assert audit["rejected_unique"]==s["score_filtered_unique_urls"]==len(audit["rows"])
+          assert len({a["url"] for a in audit["rows"]})==len(audit["rows"])
+          from collections import Counter
+          print("Material rescue count",s.get("material_rescued_unique_urls",0))
+          print("Filter audit",json.dumps({"rejected_unique":audit["rejected_unique"],"sample_size":len(audit["review_sample"]),"reasons":dict(Counter(a["reason"] for a in audit["rows"]))},ensure_ascii=False))
           if not rows or not s["publication_timestamp_count"]:
               raise SystemExit("No usable publication timestamps in live capture")
           PY
           python -m smile2.news_engine --input "$RUNNER_TEMP/fresh/news.json" --output "$RUNNER_TEMP/fresh-events.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: filter-exclusion-review
+          path: ${{ runner.temp }}/fresh/filter-audit.json
+          retention-days: 7
 

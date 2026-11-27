@@ -1,11 +1,22 @@
 """뉴스 출처 수집기 (RSS·포털) — 섹터 상승/news.py와 동일"""
 import re, time, html as H, urllib.request
 import hashlib
+import unicodedata
+from urllib.error import HTTPError, URLError
+import socket
+
+MAX_RESPONSE_BYTES=8*1024*1024
+RSS_ITEM_LIMIT=200
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 
 KST = timezone(timedelta(hours=9))
+
+def is_featured_title(title):
+    """Explicit publisher [특징주] label only, including normalized brackets."""
+    s=unicodedata.normalize("NFKC", H.unescape(str(title or "")))
+    return bool(re.search(r"\[\s*특징주\s*\]",s))
 
 def canonical_article_url(raw):
     try:
@@ -37,10 +48,36 @@ def publication_time(raw):
 
 def _get(url, timeout=8):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0)", "Accept": "*/*"})
-    raw = urllib.request.urlopen(req, timeout=timeout).read()
+    with urllib.request.urlopen(req, timeout=timeout) as response:
+        raw = response.read(MAX_RESPONSE_BYTES+1)
+    if len(raw)>MAX_RESPONSE_BYTES:
+        raise ValueError("Feed response exceeds safety limit")
     m = re.search(rb'encoding=["\']([\w-]+)', raw[:200])
     enc = (m.group(1).decode() if m else "utf-8").lower()
     return raw.decode("cp949" if enc in ("euc-kr", "ks_c_5601-1987") else enc, errors="replace")
+
+def fetch_checked(fetcher,name,url):
+    """One retry only for transient failures, never bypass access or rate limits."""
+    for attempt in (1,2):
+        try:
+            rows=fetcher(name,url)
+            return rows,{"source":name,"status":"ok" if rows else "empty",
+                         "count":len(rows),"attempts":attempt,
+                         "checked_at":datetime.now(KST).isoformat(),
+                         "timestamp_count":sum(bool(r.get("published_at")) for r in rows),
+                         "possible_truncation":len(rows)>=RSS_ITEM_LIMIT}
+        except Exception as e:
+            if isinstance(e,HTTPError):
+                transient=e.code in (500,502,503,504) and not (e.headers and e.headers.get("Retry-After"))
+            else:
+                transient=isinstance(e,TimeoutError) or isinstance(e,URLError) and isinstance(e.reason,TimeoutError)
+            if attempt==1 and transient:
+                time.sleep(1)
+                continue
+            info={"source":name,"status":"failed","count":0,"attempts":attempt,
+                  "error_type":type(e).__name__,"checked_at":datetime.now(KST).isoformat()}
+            if isinstance(e,HTTPError):info["http_status"]=e.code
+            return [],info
 
 def _clean(x):
     x = re.sub(r"(?s)<!\[CDATA\[(.*?)\]\]>", r"\1", x or "")
@@ -49,7 +86,7 @@ def _clean(x):
 def fetch_rss(name, url):
     """RSS/Atom → [{id,title,press,time,url}]"""
     h = _get(url); out = []; observed = datetime.now(KST).isoformat()
-    for it in re.findall(r"(?s)<(?:item|entry)\b.*?</(?:item|entry)>", h)[:40]:
+    for it in re.findall(r"(?s)<(?:item|entry)\b.*?</(?:item|entry)>", h)[:RSS_ITEM_LIMIT]:
         t = re.search(r"(?s)<title[^>]*>(.*?)</title>", it)
         l = re.search(r"(?s)<link[^>]*>(.*?)</link>", it) or re.search(r'<link[^>]*href="([^"]+)"', it)
         d = re.search(r"(?s)<(?:pubDate|published)>(.*?)</", it)

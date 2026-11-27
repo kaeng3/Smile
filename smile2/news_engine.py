@@ -86,7 +86,8 @@ def prepare(row):
             "seen_at":seen.isoformat() if seen else None,
             "category":str(row.get("cat") or "기타"),"score":score,
             "stocks":stocks,"themes":[str(t) for t in row.get("themes") or []],
-            "event_types":sorted(event_types(title))}
+            "event_types":sorted(event_types(title)),
+            "retention_reasons":[v for v in (row.get("retention_reasons") or []) if v in ("corporate","biotech","market","policy")]}
 
 def clock(a):
     return parse_time(a["published_at"]) or parse_time(a["seen_at"])
