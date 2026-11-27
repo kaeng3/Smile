@@ -37,6 +37,7 @@ jobs:
           node --check smile2/brief.js
           node --check smile2/editorial.js
           node --check smile2/candidates.js
+          node --check smile2/candidate_history.js
           node --check smile2/chart.js
           node --check smile2/history.js
           node --check smile2/history_compare.js
