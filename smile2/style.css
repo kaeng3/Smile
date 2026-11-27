@@ -4,3 +4,7 @@
 .review-pair{border-top:1px solid #d8d0bf;padding:8px 0}.review-pair button{display:block;font-size:14px;margin:5px 0}.review-pair .meta{margin:0}summary{cursor:pointer;font-weight:650}
 
 .history-import{margin-top:12px}.candidate-history{border-top:1px solid #d8d0bf;margin-top:20px;padding-top:16px}.candidate-history article{border-bottom:1px solid #e7e0d4;padding:10px 0}.candidate-history h3{font-size:15px;margin:5px 0}.candidate-history button{padding:5px 10px;background:#fffdf8;border:1px solid #c8bdab;border-radius:4px;cursor:pointer}.candidate-history input{max-width:100%}
+
+#scanner-data { margin-bottom: 2rem; }
+#scanner-data meter { width: 100%; }
+.scanner-report { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; }
