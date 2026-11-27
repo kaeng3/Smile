@@ -12,6 +12,10 @@ def finite(v):
 def scanner_links(row,day):
     """Legacy scanner article references; collection/verification time unknown."""
     result=[];seen=set()
+    name=str(row.get("name") or "").strip()
+    if not name:
+        return result
+    mention=re.compile(r"(?<![가-힣A-Za-z0-9])"+re.escape(name)+r"(?=$|[^가-힣A-Za-z0-9]|(?:은|는|이|가|도|의)(?![가-힣A-Za-z0-9]))",re.IGNORECASE)
     for a in row.get("articles",[]) or []:
         if not isinstance(a,dict):
             continue
@@ -28,12 +32,13 @@ def scanner_links(row,day):
         except ValueError:
             continue
         title=str(a.get("title") or "").strip()
-        if not title or not day-timedelta(days=3)<=d<=day:
+        if not mention.search(title) or not day-timedelta(days=3)<=d<=day:
             continue
         seen.add(u)
         result.append({"url":u,"title":title,"date":d.isoformat(),"press":press,
-                       "relation":"legacy_scanner_reference_observation_time_unknown"})
-    return sorted(result,key=lambda a:a["date"],reverse=True)[:8]
+                       "relation":"legacy_scanner_reference_observation_time_unknown",
+                       "material_kind":"featured" if is_featured_title(title) else "news"})
+    return sorted(result,key=lambda a:(a["date"],a["material_kind"]=="featured"),reverse=True)[:8]
 
 def market_brief(data,day,report):
     key=day.strftime("%Y%m%d")
