@@ -158,11 +158,14 @@ def build(rows):
     prepared.sort(key=lambda a:(-a["score"],-clock(a).timestamp(),a["url"]))
     groups, by_url, index = [], {}, defaultdict(set)
     contract_index=defaultdict(set)
+    title_index=defaultdict(set)
     for a in prepared:
         if a["url"] in by_url:
             continue
         ts = tokens(a["title"])
         candidates = set().union(*(index[t] for t in ts)) if ts else set()
+        title_key=normalize(a["title"])
+        if title_key:candidates.update(title_index[title_key])
         key=contract_identity(a)
         if key:candidates.update(contract_index[key])
         # Complete-link comparison prevents a bridge headline from joining incompatible contracts.
@@ -173,6 +176,7 @@ def build(rows):
         groups[g].append(a)
         by_url[a["url"]] = g
         if key:contract_index[key].add(g)
+        if title_key:title_index[title_key].add(g)
         for t in ts:
             index[t].add(g)
     result=[]
