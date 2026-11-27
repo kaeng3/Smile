@@ -33,6 +33,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_smile2*.py' -v
           node --check smile2/app.js
           node --check smile2/brief.js
+          node --check smile2/editorial.js
           node --check smile2/candidates.js
           node --check smile2/chart.js
           node --check smile2/history.js

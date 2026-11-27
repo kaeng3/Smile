@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import shutil
 import tempfile
-from .news_engine import build, KST
+from .news_engine import build, KST, parse_time
 from .briefing import briefing
 from .quality import review
 from .official_feeds import collect
@@ -14,7 +14,7 @@ from .market_brief import market_brief
 from .taxonomy import group,audit,VERSION
 
 ASSETS=("index.html","style.css","app.js","brief.html","brief.js","candidates.html",
-        "candidates.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js")
+        "candidates.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js","editorial.html","editorial.css","editorial.js")
 JSON_NAMES=("events.json","brief-pre.json","brief-post.json","quality.json",
             "official-status.json","media-status.json","manifest.json","editorial-pre.json","editorial-post.json","taxonomy-audit.json")
 
@@ -56,9 +56,12 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
     def editorial(edition):
         # Separate new report output; retain old 50-item reports and consumers.
         full=briefing(rows,day,previous,edition,post_cutoff,limit=None,session=session)
+        market=market_brief(market_data if market_available else None,day,full) if edition=="post" else None
         known=full.pop("events");unknown=full.pop("unknown_events_preview")
         full.pop("categories",None)
-        return {**full,"taxonomy_version":VERSION,"sections":group(known),
+        built=datetime.now(KST)
+        return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
+                "market":market,"taxonomy_version":VERSION,"sections":group(known),
                 "unknown_sections":group(unknown),"note":"Title-only category research; not verified impact or article summary."}
     data={"events.json":events,
           "brief-pre.json":report("pre"),
