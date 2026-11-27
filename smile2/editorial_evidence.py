@@ -3,6 +3,7 @@ from urllib.parse import urlsplit,parse_qs
 import re
 from .official_feeds import FEEDS
 from .taxonomy import classify
+from .news_engine import normalize, parse_time
 from .material_stage import material_stage
 
 OFFICIAL_HOSTS={name:urlsplit(url).hostname for name,(url,_) in FEEDS.items()}
@@ -48,3 +49,45 @@ def annotate_event(e):
 
 def annotate_sections(sections):
     return [{**s,"events":[annotate_event(e) for e in s["events"]]} for s in sections]
+
+def premarket_signals(sections):
+    """Editorial shortlist from observable source and timing signals."""
+    eligible=[]
+    for section in sections:
+        for event in section["events"]:
+            coverage={}
+            titles=set()
+            articles=event.get("articles",[])
+            times=[stamp for article in articles if (stamp:=parse_time(article.get("published_at")))]
+            if not times:
+                continue
+            first=min(times)
+            official=any(official_link(article) for article in articles)
+            for article in sorted(articles,key=lambda item:item.get("published_at") or ""):
+                stamp=parse_time(article.get("published_at"))
+                if not stamp or (stamp-first).total_seconds()>3600 or article.get("link_kind")!="source_url":
+                    continue
+                publisher=normalize(article.get("press"))
+                host=urlsplit(article.get("url") or "").hostname
+                title=normalize(article.get("title"))
+                if not publisher or not host or not title or title in titles:
+                    continue
+                if publisher in coverage or host in coverage.values():
+                    continue
+                coverage[publisher]=host
+                titles.add(title)
+            if not official and len(coverage)<2:
+                continue
+            evidence={"official":official,"sources_in_first_hour":len(coverage)}
+            key=(-int(official),-len(coverage),-first.timestamp(),event["id"])
+            eligible.append((key,section["id"],{**event,"premarket_signal":evidence}))
+    picked={section["id"]:[] for section in sections}
+    total=0
+    for _, category, event in sorted(eligible,key=lambda candidate:candidate[0]):
+        if total==12:
+            break
+        if len(picked[category])<3:
+            picked[category].append(event)
+            total+=1
+    return [{**section,"events":picked[section["id"]],"count":len(picked[section["id"]])}
+            for section in sections]
