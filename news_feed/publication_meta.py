@@ -2,7 +2,7 @@
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime,timedelta,timezone
 from html.parser import HTMLParser
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit,parse_qsl
 from urllib.request import Request,build_opener,HTTPRedirectHandler
 from urllib.error import HTTPError
 import json
@@ -57,13 +57,15 @@ def fetch_publication(url):
     try:
         u=urlsplit(url)
         if u.scheme!="https" or u.hostname not in HOSTS or u.username or u.password or u.port not in (None,443):return None,"unsupported"
+        if any(k.lower() in {"key","api_key","token","access_token","auth","signature","sig","session"} for k,v in parse_qsl(u.query)):return None,"credential_query"
         req=Request(url,headers={"User-Agent":"SmileResearch/3.0 (public metadata)","Accept":"text/html"})
         with build_opener(NoRedirect()).open(req,timeout=5) as res:
             if "text/html" not in res.headers.get("Content-Type","").lower():return None,"unsupported_content"
             raw=res.read(MAX_BYTES)
             enc=res.headers.get_content_charset() or "utf-8"
         parser=Metadata();parser.feed(raw.decode(enc,errors="replace"))
-        return parser.result(),"metadata"
+        result=parser.result()
+        return result,"metadata" if result else "missing_or_conflicting_metadata"
     except HTTPError as e:return None,"http_"+str(e.code)
     except Exception:return None,"fetch_failed"
 
