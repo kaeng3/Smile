@@ -100,36 +100,66 @@
             add(panel, 'p', '등록된 스캔 결과가 없습니다.', 'small');
             return;
         }
-        const controls = add(panel, 'div', null, 'controls');
-        const day = select(controls, '거래일', dates.map(value => [value, date(value)]));
-        const strategy = select(controls, '실전 전략', strategies);
+        let day = dates[0];
+        let strategy = strategies[0][0];
+        function choices(label, options, change) {
+            add(panel, 'h3', label, 'scan-label');
+            const group = add(panel, 'div', null, 'scan-choices');
+            group.setAttribute('role', 'group');
+            group.setAttribute('aria-label', label);
+            for (const [index, [value, text]] of options.entries()) {
+                const button = add(group, 'button', text);
+                button.type = 'button';
+                button.setAttribute('aria-pressed', String(index === 0));
+                button.addEventListener('click', () => {
+                    group.querySelector('[aria-pressed="true"]').setAttribute('aria-pressed', 'false');
+                    button.setAttribute('aria-pressed', 'true');
+                    change(value);
+                    render();
+                });
+            }
+        }
+        choices('최근 5거래일', dates.map(value => [value, date(value)]), value => { day = value; });
+        choices('실전 전략', strategies, value => { strategy = value; });
+        const controls = add(panel, 'div', null, 'controls scan-search');
         const query = add(add(controls, 'label', '종목명 또는 코드'), 'input');
         query.type = 'search';
         const output = add(panel, 'div');
         function render() {
             output.replaceChildren();
-            const results = (history[day.value]?.[strategy.value] || []).filter(item =>
-                normalize(item.name + ' ' + item.code).includes(normalize(query.value)));
-            const pdf = strategies.find(([key]) => key === strategy.value)[2] + day.value + '.pdf';
-            if (history[day.value]?.[strategy.value]?.length) link(output, '전략 PDF', '../' + encodeURIComponent(pdf));
-            add(output, 'p', results.length ? results.length + '종목' : '표시할 포착 종목이 없습니다.', 'small');
+            const all = history[day]?.[strategy] || [];
+            const results = all.filter(item => normalize(item.name + ' ' + item.code).includes(normalize(query.value)));
+            const [, label, prefix] = strategies.find(([key]) => key === strategy);
+            if (all.length) {
+                const report = add(output, 'div', null, 'event scan-report');
+                add(report, 'strong', label + ' 리포트 · ' + date(day));
+                link(report, '전략 PDF', '../' + encodeURIComponent(prefix + day + '.pdf'));
+            }
+            add(output, 'p', results.length ? results.length + '종목' : '표시할 포착 종목이 없습니다.', 'small').setAttribute('role', 'status');
+            const grid = add(output, 'div', null, 'scan-grid');
             for (const item of results) {
-                const row = add(output, 'details', null, 'event');
-                add(row, 'summary', [item.name, item.code, rate(item.rate), item.pattern].filter(Boolean).join(' · '));
-                if (item.comment || item.result_desc) add(row, 'p', item.comment || item.result_desc);
+                const row = add(grid, 'article', null, 'event scan-card');
+                const heading = add(row, 'div', null, 'scan-card-heading');
+                stock(add(heading, 'h3'), item.code, item.name);
+                if (rate(item.rate)) add(heading, 'strong', rate(item.rate), Number(item.rate) < 0 ? 'scan-down' : 'scan-up');
+                add(row, 'p', item.code, 'small scan-code');
+                const tags = [...new Set([item.category, ...(Array.isArray(item.subthemes) ? item.subthemes : [])].filter(Boolean))].slice(0, 6);
+                if (tags.length) {
+                    const badges = add(row, 'div', null, 'tags');
+                    for (const tag of tags) add(badges, 'span', tag, 'tag');
+                }
+                if (item.pattern) add(row, 'p', item.pattern, 'scan-pattern');
                 const chart = localAsset(item.chart, 'charts/');
                 if (chart) {
                     const image = add(row, 'img');
                     image.src = chart;
                     image.alt = item.name + ' 차트';
                     image.loading = 'lazy';
-                    image.style.maxWidth = '100%';
                 }
+                if (item.comment || item.result_desc) add(row, 'p', item.comment || item.result_desc, 'scan-comment');
                 stock(row, item.code, item.name, '종목 상세');
             }
         }
-        day.addEventListener('change', render);
-        strategy.addEventListener('change', render);
         query.addEventListener('input', render);
         render();
     }
@@ -305,9 +335,30 @@
         });
     }
 
+    function showChatStocks() {
+        const groups = [
+            ['윗꼬리 양봉 후 거감음봉', [['282720', '금양그린파워'], ['004540', '깨끗한나라']]],
+            ['장대양봉 후 거감음봉', [['250030', '진코스텍'], ['406820', '뷰티스킨'], ['417010', '나노팀']]],
+            ['이일홍 후보', [['048410', '현대바이오'], ['050890', '쏠리드'], ['174900', '앱클론'], ['298380', '에이비엘바이오'], ['340450', '지씨지놈'], ['039490', '키움증권'], ['005940', 'NH투자증권'], ['140410', '메지온']]],
+            ['조정 후 회복', [['277810', '레인보우로보틱스'], ['108490', '로보티즈'], ['457190', '이수스페셜티케미컬'], ['319400', '현대무벡스'], ['125490', '한라캐스트'], ['290550', '디케이티'], ['491000', '리브스메드']]],
+            ['기존 추적·별도 조회', [['060720', 'KH바텍'], ['192820', '코스맥스'], ['218410', 'RFHIC'], ['476830', '알지노믹스'], ['448900', '한국피아이엠'], ['264850', '이랜시스'], ['078590', '휴림에이텍']]]
+        ];
+        const section = document.createElement('details');
+        section.id = 'chat-stocks';
+        section.className = 'event';
+        panel.before(section);
+        add(section, 'summary', '이일홍 채팅방 조회 종목 · 2026-11-27');
+        for (const [label, stocks] of groups) {
+            add(section, 'h3', label);
+            const list = add(section, 'ul');
+            for (const [code, name] of stocks) stock(add(list, 'li'), code, name, name + ' · ' + code);
+        }
+    }
+
     const pages = {'themes.html': themes, 'candidates.html': scans, 'history.html': history};
     const run = pages[location.pathname.split('/').pop()];
     if (!panel || !run) return;
+    if (run === scans) showChatStocks();
     const status = panel.querySelector('[role=status]');
     run().then(() => status.remove(), () => {
         status.textContent = '기존 스캐너 자료를 불러오지 못했습니다.';
