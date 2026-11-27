@@ -46,21 +46,17 @@ def main(output_dir=None, update_brief=True):
     now = datetime.datetime.now(KST); items, ok, bad, health = [], 0, [], []
     for kind, fetcher in (("portals", sources.fetch_portal), ("rss", sources.fetch_rss)):
         for name, url in F[kind].items():
-            try:
-                result=fetcher(name,url)
-                items+=result
-                if result:
-                    ok+=1
-                else:
-                    bad.append(name)
-                health.append({"source":name,"status":"ok" if result else "empty","count":len(result)})
-            except Exception as e:
-                bad.append(name)
-                health.append({"source":name,"status":"failed","error_type":type(e).__name__,"count":0})
+            result,info=sources.fetch_checked(fetcher,name,url)
+            items+=result
+            health.append(info)
+            if result:ok+=1
+            else:bad.append(name)
     new = 0
+    rejected=set(); encountered=set()
     for it in items:
         k = sources.article_key(it.get("url"))
         if not k or not sources.norm(it["title"]): continue
+        encountered.add(k)
         if k in url_index:
             stored = old[url_index[k]]
             # Record later publisher markers without rewriting the original title.
@@ -90,7 +86,9 @@ def main(output_dir=None, update_brief=True):
         macro = any(w in title for ws in F["categories"].values() for w in ws)
         # Preserve explicit publisher-labeled stock news even below the score floor.
         # Do not boost its score or assert it caused a price move.
-        if not (((hits or (stocks and ev)) and score >= F["store_min_score"]) or macro or sources.is_featured_title(title)): continue
+        if not (((hits or (stocks and ev)) and score >= F["store_min_score"]) or macro or sources.is_featured_title(title)):
+            rejected.add(k)
+            continue
         if macro: score = max(score, F["macro_score"])
         th = C.Counter()
         for _, v in hits[:3]:
@@ -113,6 +111,9 @@ def main(output_dir=None, update_brief=True):
     write_json(outdir/"keyword_stats.json", {"updated": datetime.datetime.now(KST).strftime("%Y-%m-%d %H:%M"), "sources_ok": ok, "sources_bad": bad, "days": out,
               "source_health":health,"raw_articles":len(items),
               "publication_timestamp_count":sum(bool(a.get("published_at")) for a in arts),
+              "capture_started_at":now.isoformat(),"capture_completed_at":datetime.datetime.now(KST).isoformat(),
+              "raw_unique_valid_urls":len(encountered),"raw_unique_not_retained":len(encountered-set(url_index)),
+              "score_filtered_unique_urls":len(rejected-set(url_index)),
               "featured_raw_count":sum(sources.is_featured_title(a.get("title")) for a in items),
               "featured_retained_count":sum(sources.is_featured_title(a.get("title")) or sources.is_featured_title(a.get("featured_title")) for a in arts)})
     if update_brief:

@@ -35,7 +35,12 @@ def release(root,now=None,session=None):
         official=json.loads(extra.read_text(encoding="utf-8")) if extra.is_file() else {}
         market=root/"daily_issues.json"
         observations=json.loads(market.read_text(encoding="utf-8")) if market.is_file() else {}
-        result=generate(read_rows(news),day,prev,output,session=s,
+        stats_path=root/"news_feed"/"keyword_stats.json"
+        try:
+            stats=json.loads(stats_path.read_text(encoding="utf-8"))
+        except (OSError,ValueError):
+            stats=None
+        result=generate(read_rows(news),day,prev,output,session=s,capture_stats=stats,
                         official_rows=official.get("rows",[]),source_status=official.get("sources",[]),
                         market_data=observations,market_available=now>=parse_time(s["close"]))
         # Stage before changing the generated site, and restore on failure.

@@ -13,6 +13,7 @@ from .media_probe import collect_media
 from .market_brief import market_brief
 from .taxonomy import group,audit,VERSION
 from .featured_news import featured_editions
+from .capture_health import capture_health
 
 ASSETS=("index.html","style.css","app.js","brief.html","brief.js","candidates.html",
         "candidates.js","chart.js","history.html","history.js","themes.html","themes.js","history_compare.js","editorial.html","editorial.css","editorial.js")
@@ -34,7 +35,7 @@ def public_rows(rows):
 def data_market_available(data,day,available):
     return available and market_brief(data,day,{})["status"]=="available"
 
-def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18), session=None, media_rows=(), media_status=(), market_data=None, market_available=False):
+def generate(rows, day, previous, output, official_rows=(), source_status=(), post_cutoff=time(18), session=None, media_rows=(), media_status=(), market_data=None, market_available=False, capture_stats=None):
     if previous>=day:
         raise ValueError("Invalid previous session")
     output=Path(output).resolve()
@@ -62,7 +63,7 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         full.pop("categories",None)
         built=datetime.now(KST)
         return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
-                "market":market,"taxonomy_version":VERSION,"sections":group(known),
+                "capture_health":capture_health(capture_stats,built), "market":market,"taxonomy_version":VERSION,"sections":group(known),
                 "unknown_sections":group(unknown),"featured":featured_editions(rows,day,previous,edition,post_cutoff,session), "note":"Title-only category research; not verified impact or article summary."}
     data={"events.json":events,
           "brief-pre.json":report("pre"),
