@@ -71,7 +71,7 @@ class EditorialDateAndIncidentTests(unittest.TestCase):
             "CJ올리브영, 해킹으로 123명 개인정보 유출",
             "다른기업 해킹으로 790명 개인정보 유출",
         ]
-        rows=[{"title":title,"url":"https://example.org/"+str(i),
+        rows=[{"title":title,"url":"https://example"+str(i)+".org/article","press":"매체"+str(i),
                "published_at":"2026-11-27T04:00:00+09:00","seen":"2026-11-27 04:10"}
               for i,title in enumerate(headlines)]
         rows.append({"title":"전날 금융 뉴스","url":"https://example.org/previous",
@@ -81,6 +81,27 @@ class EditorialDateAndIncidentTests(unittest.TestCase):
             generate(rows,date(2026,11,27),date(2026,11,26),out)
             data=json.loads((out/"editorial-pre.json").read_text(encoding="utf-8"))
             events=[e for section in data["sections"] for e in section["events"]]
-            self.assertEqual(sorted(e["article_count"] for e in events),[1,1,5])
+            self.assertEqual([e["article_count"] for e in events],[5])
+            raw=json.loads((out/"events.json").read_text(encoding="utf-8"))
+            self.assertEqual(sorted(e["article_count"] for e in raw["events"]),[1,1,1,5])
             self.assertTrue(all(a["published_at"].startswith("2026-11-27")
                                 for e in events for a in e["articles"]))
+
+class PremarketSignalTests(unittest.TestCase):
+    def test_selection_uses_official_or_distinct_direct_hourly_coverage(self):
+        from smile2.editorial_evidence import premarket_signals
+        def article(press,host,title,time="05:00",kind="source_url"):
+            return {"press":press,"url":"https://"+host+"/news","title":title,
+                    "published_at":"2026-11-27T"+time+":00+09:00","link_kind":kind}
+        foundation=article("A","a.example","갑사 신규 계약")
+        events=[
+            {"id":"independent","articles":[foundation,article("B","b.example","갑사 공급 계약 보도","05:30")]},
+            {"id":"same-title","articles":[foundation,article("B","b.example","갑사 신규 계약","05:30")]},
+            {"id":"slow","articles":[foundation,article("B","b.example","갑사 공급 계약 보도","06:01")]},
+            {"id":"aggregator","articles":[foundation,article("B","b.example","갑사 공급 계약 보도","05:30","aggregator")]},
+            {"id":"official","articles":[{**foundation,"source_kind":"official_disclosure","source_feed":"DART",
+                         "url":"https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261127000001"}]},
+        ]
+        result=premarket_signals([{"id":"corp","count":len(events),"events":events}])[0]
+        self.assertEqual([event["id"] for event in result["events"]],["official","independent"])
+        self.assertEqual(result["count"],2)

@@ -17,7 +17,7 @@ from .taxonomy import group,audit,VERSION
 from .featured_news import featured_editions
 from .capture_health import capture_health
 from .material_stage import annotate_sections
-from .editorial_evidence import annotate_sections as annotate_evidence
+from .editorial_evidence import annotate_sections as annotate_evidence, premarket_signals
 from .followup_news import followup
 
 ASSETS=("index.html","search.html","style.css","app.js","brief.html","brief.js","candidates.html",
@@ -85,8 +85,11 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
             known.sort(key=priority);unknown.sort(key=priority)
         featured=featured_editions(rows,day,previous,edition,post_cutoff,session)
         full.pop("categories",None)
+        sections=annotate_evidence(annotate_sections(group(known)))
+        if edition=="pre":
+            sections=premarket_signals(sections)
         return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
-                "capture_health":capture_health(capture_stats,built), "market":market,"taxonomy_version":VERSION,"sections":annotate_evidence(annotate_sections(group(known))),
+                "capture_health":capture_health(capture_stats,built), "market":market,"taxonomy_version":VERSION,"sections":sections,
                 "unknown_sections":annotate_evidence(annotate_sections(group(unknown))),"featured":featured, "note":"Title-only category research; not verified impact or article summary."}
     extra=followup(rows,day,previous,built,post_cutoff,session)
     data={"events.json":events,

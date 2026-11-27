@@ -15,7 +15,7 @@ const eveningSample=new Map([
     ["corp",["SK하이닉스, 자사주 일일 매수 주문량 두 배로 확대","주주가치 제고 차원에서 일일 매수 주문량을 두 배로 늘렸다는 보도입니다.","조선비즈","23:06","https://biz.chosun.com/stock/stock_general/2026/11/27/MDATE45H6RAKHFEY4EU42BXLN4/"]]
 ]);
 function showPremarketSample(){
-    if(edition!=="pre"||report.report_date!==sampleDate||report.sections.some(section=>section.events.length))return;
+    if(new URLSearchParams(location.search).get("sample")!=="1"||edition!=="pre"||report.report_date!==sampleDate||report.sections.some(section=>section.events.length))return;
     for(const section of report.sections){
         const entry=eveningSample.get(section.id);
         if(!entry)continue;
@@ -30,6 +30,11 @@ function link(text,raw){try{const u=new URL(raw);if(!["http:","https:"].includes
 function article(e){const a=el("article",null,"news"),h=el("h3");const lead=e.articles?.[0];h.append(link(e.headline,lead?.url));a.append(h,el("p","제목 기반 · 본문 미확인"+(e.article_count>1?" · 관련 보도 "+fmt(e.article_count)+"건 묶음":""),"meta"));
 if(lead)a.append(el("p",String(lead.press||"출처 미상")+" · "+(lead.published_at?"발표 "+lead.published_at.slice(0,16).replace("T"," "):"발표 미상 · 수집 "+String(lead.seen_at||"미상").slice(0,16).replace("T"," "))+" · "+(lead.link_kind==="aggregator"?"검색 경유":lead.link_kind==="portal"?"포털":"출처 링크"),"meta"));
 if(e.sample_summary){a.append(el("p",e.sample_summary,"sample-summary"));return a}
+if(e.premarket_signal){
+    const signal=e.premarket_signal;
+    const reasons=[signal.official?"공식 자료 링크":null,signal.sources_in_first_hour>=2?"첫 보도 1시간 내 원문 "+fmt(signal.sources_in_first_hour)+"개 매체":null].filter(Boolean);
+    a.append(el("p",reasons.join(" · "),"meta"));
+}
 const v=e.evidence_review;if(v?.official_urls?.length)a.append(el("p","공식 자료 링크 "+fmt(v.official_urls.length)+"건 · 본문 미확인","meta"));
 if(e.followup_reasons?.length)a.append(el("p",e.followup_reasons.map(x=>({morning_gap:"07:00~08:00 별도 뉴스",late_pre:"장전 마감 이후 발견",late_post:"장후 마감 이후 발견",after_cutoff:"장후 마감 이후 발표/수집",late_timestamp:"발표시각 뒤늦게 확인",late_featured:"특징주 표기 뒤늦게 확인"}[x]||x)).join(" · "),"meta"));
 if(e.articles?.some(a=>a.retention_reasons?.length))a.append(el("p","기존 점수 미달 · 재료 단서로 추가 보관","meta"));
@@ -57,9 +62,10 @@ if(edition==="post"&&!featured){
     $("results").textContent=fmt(matches)+"개 종목";
     return;
 }
-for(const [i,s] of sections.entries()){const list=s.events.filter(e=>search(e,q));count+=list.length;const id="section-"+s.id;for(const nav of ["toc","toc-mobile"]){const a=el("a",null,list.length?"":"zero");a.href="#"+id;a.append(el("span",s.label),el("span",fmt(list.length)));$(nav).append(a)}
+for(const [i,s] of sections.entries()){const list=s.events.filter(e=>search(e,q));count+=list.length;const id="section-"+s.id;for(const nav of ["toc","toc-mobile"]){const a=el("a",null,list.length?"":"zero");a.href="#"+id;if(edition==="pre"&&!list.length)a.hidden=true;a.append(el("span",s.label),el("span",fmt(list.length)));$(nav).append(a)}
+if(edition==="pre"&&!list.length)continue;
 const box=el("section",null,"section");box.id=id;const h=el("h2",featured?s.label:String(i+1).padStart(2,"0")+"  "+s.label);h.append(el("span",fmt(list.length)+"개 사건"));box.append(h);if(!list.length){box.append(el("p","해당 사건 없음","news small"));$("sections").append(box);continue}const body=el("div");let limit=5;const add=()=>{body.replaceChildren();for(const e of list.slice(0,limit))body.append(article(e));more.hidden=list.length<=limit;more.textContent="나머지 "+fmt(Math.max(0,list.length-limit))+"개 중 더 보기"};const more=el("button",null,"more");more.type="button";more.addEventListener("click",()=>{limit+=25;add()});box.append(body,more);add();$("sections").append(box)}
-$("results").textContent=fmt(count)+"개 사건 · "+(featured?"특징주 최신순 · 발표 시각 미확인 별도 표시":(unknown?"수집 시각 기준 (발표 미상)":"발표 시각 확인")+" · 분야별 5개 우선 표시, 전체 펼침 가능");if(!count)$("sections").prepend(el("p","검색 결과가 없습니다."));
+$("results").textContent=fmt(count)+"개 사건 · "+(featured?"특징주 최신순 · 발표 시각 미확인 별도 표시":(unknown?"수집 시각 기준 (발표 미상)":"발표 시각 확인")+" · 분야별 5개 우선 표시, 전체 펼침 가능");if(!count)$("sections").prepend(el("p",edition==="pre"&&!q?"선별 기준을 충족한 뉴스가 없습니다.":"검색 결과가 없습니다."));
 }
 function captureHealth(){const c=report.capture_health||{};const labels={unknown:"최근 수집 상태 미확인",stale:"최근 수집 지연",partial:"최근 수집 일부 실패",success:"최근 수집원 응답 확인"};
 $("capture-summary").textContent=c.checked_at?"최근 뉴스 수집 "+c.checked_at.slice(0,16).replace("T"," ")+" KST"+(c.status==="partial"?" · 일부 출처 실패":c.status==="stale"?" · 수집 지연":""):"최근 뉴스 수집 시각 미확인";
@@ -150,5 +156,6 @@ $("heading").textContent=featured?"[특징주] 모아보기":edition==="pre"?"�
 function route(){setView(location.hash==="#featured-view"?"featured":"all")}
 window.addEventListener("hashchange",()=>{if(report&&(!location.hash||location.hash==="#featured-view"))route()});
 for(const id of ["featured-nav","featured-mobile"])$(id).addEventListener("click",e=>{e.preventDefault();const hash=e.currentTarget.getAttribute("href");if(location.hash!==hash)history.pushState(null,"",hash);if(report){route();$("heading").scrollIntoView({block:"start"})}});
-async function init(){try{if(!["pre","post"].includes(edition)){const response=await fetch("manifest.json",{cache:"no-store"});if(!response.ok)throw Error("manifest");const manifest=await response.json();edition=manifest.preferred_edition==="post"?"post":"pre"}for(const id of ["evening-extra-nav","featured-mobile"])$(id).hidden=edition!=="post";const r=await fetch("editorial-"+edition+".json",{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);report=await r.json();if(report.schema!==1||report.edition!==edition||report.sections?.length!==26||report.unknown_sections?.length!==26)throw Error("schema");$(edition).setAttribute("aria-current","page");$("heading").textContent=edition==="pre"?"장전 리포트":"장후 이브닝";$("date").textContent=report.report_date+" · "+(edition==="pre"?report.report_date+" 00:00":report.start.slice(0,16).replace("T"," "))+" ~ "+report.cutoff_exclusive.slice(0,16).replace("T"," ")+" KST";$("status").hidden=report.window_status!=="partial";$("status").textContent="수집 기간 진행 중 · 부분 리포트";showPremarketSample();captureHealth();market();route()}catch(e){report=null;$("status").hidden=false;$("status").textContent="리포트 자료를 읽을 수 없습니다. 뉴스 검색 화면을 이용해 주세요."}}
+async function init(){try{if(!["pre","post"].includes(edition)){const response=await fetch("manifest.json",{cache:"no-store"});if(!response.ok)throw Error("manifest");const manifest=await response.json();edition=manifest.preferred_edition==="post"?"post":"pre"}for(const id of ["evening-extra-nav","featured-mobile"])$(id).hidden=edition!=="post";const r=await fetch("editorial-"+edition+".json",{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);report=await r.json();if(report.schema!==1||report.edition!==edition||report.sections?.length!==26||report.unknown_sections?.length!==26)throw Error("schema");$(edition).setAttribute("aria-current","page");$("heading").textContent=edition==="pre"?"장전 리포트":"장후 이브닝";$("date").textContent=report.report_date+" · "+(edition==="pre"?report.report_date+" 00:00":report.start.slice(0,16).replace("T"," "))+" ~ "+report.cutoff_exclusive.slice(0,16).replace("T"," ")+" KST";$("status").hidden=report.window_status!=="partial";$("status").textContent="수집 기간 진행 중 · 부분 리포트";if(edition==="pre"&&report.window_status!=="partial"){$("status").hidden=false;$("status").textContent="장전 주요 뉴스 · 공식 자료 또는 첫 보도 1시간 내 여러 매체 보도";}
+showPremarketSample();captureHealth();market();route()}catch(e){report=null;$("status").hidden=false;$("status").textContent="리포트 자료를 읽을 수 없습니다. 뉴스 검색 화면을 이용해 주세요."}}
 if(new URLSearchParams(location.search).has("event")||location.hash==="#sources"){location.replace("search.html"+location.search+location.hash)}else init();
