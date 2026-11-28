@@ -61,7 +61,7 @@ class EditorialCarryTests(unittest.TestCase):
                          {"late","gap","after-close"})
 
 class EditorialDateAndIncidentTests(unittest.TestCase):
-    def test_premarket_main_is_today_and_clusters_same_breach(self):
+    def test_calendar_morning_includes_previous_evening_and_clusters_same_breach(self):
         headlines=[
             "올리브영, 해킹 공격에 직원·고객 포함 790명 이름·연락처 등 개인정보 유출",
             "CJ올리브영, 해킹 당했다…임직원·고객 790명 개인정보 유출",
@@ -78,14 +78,18 @@ class EditorialDateAndIncidentTests(unittest.TestCase):
                      "published_at":"2026-11-26T21:00:00+09:00","seen":"2026-11-26 21:10"})
         with tempfile.TemporaryDirectory() as tmp:
             out=Path(tmp)/"preview"
-            generate(rows,date(2026,11,27),date(2026,11,26),out)
+            from datetime import datetime
+            from smile2.news_engine import KST
+            generate(rows,date(2026,11,27),date(2026,11,26),out,as_of=datetime(2026,11,27,8,0,tzinfo=KST))
             data=json.loads((out/"editorial-pre.json").read_text(encoding="utf-8"))
             events=[e for section in data["sections"] for e in section["events"]]
-            self.assertEqual([e["article_count"] for e in events],[5])
+            self.assertEqual(sorted(e["article_count"] for e in events),[1,1,1,5])
+            self.assertEqual(data["published_events"],4)
+            self.assertEqual(data["start"],"2026-11-26T15:31:00+09:00")
+            self.assertEqual(data["cutoff_exclusive"],"2026-11-27T08:00:00+09:00")
             raw=json.loads((out/"events.json").read_text(encoding="utf-8"))
             self.assertEqual(sorted(e["article_count"] for e in raw["events"]),[1,1,1,5])
-            self.assertTrue(all(a["published_at"].startswith("2026-11-27")
-                                for e in events for a in e["articles"]))
+            self.assertEqual({a["url"] for e in events for a in e["articles"]},{r["url"] for r in rows})
 
 class PremarketSignalTests(unittest.TestCase):
     def test_selection_uses_official_or_distinct_direct_hourly_coverage(self):
