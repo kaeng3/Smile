@@ -1,0 +1,154 @@
+[
+  {
+    "code": "277810",
+    "name": "레인보우로보틱스",
+    "close": 467000,
+    "rate": 13.902439024390246,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "108490",
+    "name": "로보티즈",
+    "close": 290000,
+    "rate": 15.768463073852296,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "437730",
+    "name": "삼현",
+    "close": 62500,
+    "rate": 13.636363636363635,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "319400",
+    "name": "현대무벡스",
+    "close": 17140,
+    "rate": 6.525792417650715,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "950160",
+    "name": "코오롱티슈진",
+    "close": 14560,
+    "rate": 15.281076801266824,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "090360",
+    "name": "로보스타",
+    "close": 62800,
+    "rate": 10.369068541300527,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "466100",
+    "name": "클로봇",
+    "close": 18660,
+    "rate": 14.901477832512317,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "160190",
+    "name": "하이젠알앤엠",
+    "close": 16820,
+    "rate": 14.65576005453306,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "125490",
+    "name": "한라캐스트",
+    "close": 11430,
+    "rate": 13.618290258449303,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "056080",
+    "name": "유진로봇",
+    "close": 9450,
+    "rate": 16.81087762669963,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "348340",
+    "name": "뉴로메카",
+    "close": 15370,
+    "rate": 12.518301610541727,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "006220",
+    "name": "제주은행",
+    "close": 8690,
+    "rate": 7.28395061728395,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "389500",
+    "name": "에스비비테크",
+    "close": 39700,
+    "rate": 14.080459770114942,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "234340",
+    "name": "헥토파이낸셜",
+    "close": 18390,
+    "rate": 8.431603773584905,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "264850",
+    "name": "이랜시스",
+    "close": 4935,
+    "rate": 11.273957158962796,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "212560",
+    "name": "네오오토",
+    "close": 10810,
+    "rate": 17.75599128540305,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "282720",
+    "name": "금양그린파워",
+    "close": 10950,
+    "rate": 19.41112322791712,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "059120",
+    "name": "아진엑스텍",
+    "close": 6440,
+    "rate": 10.843373493975903,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "457600",
+    "name": "벡트로보틱스",
+    "close": 2225,
+    "rate": 7.487922705314009,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

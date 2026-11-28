@@ -1,0 +1,146 @@
+[
+  {
+    "code": "278470",
+    "name": "에이피알",
+    "close": 292000,
+    "rate": 10.815939278937382,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "090430",
+    "name": "아모레퍼시픽",
+    "close": 147800,
+    "rate": 6.17816091954023,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "257720",
+    "name": "실리콘투",
+    "close": 28900,
+    "rate": 12.890625,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "290650",
+    "name": "엘앤씨바이오",
+    "close": 23000,
+    "rate": 11.11111111111111,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "100790",
+    "name": "미래에셋벤처투자",
+    "close": 15440,
+    "rate": 10.285714285714285,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "358570",
+    "name": "지아이이노베이션",
+    "close": 8670,
+    "rate": 15.909090909090908,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "263860",
+    "name": "지니언스",
+    "close": 42050,
+    "rate": 17.13091922005571,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "448900",
+    "name": "한국피아이엠",
+    "close": 54500,
+    "rate": 6.237816764132553,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "060720",
+    "name": "KH바텍",
+    "close": 13300,
+    "rate": 9.105824446267432,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "003350",
+    "name": "한국화장품제조",
+    "close": 13530,
+    "rate": 12.189054726368159,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "042510",
+    "name": "라온시큐어",
+    "close": 15030,
+    "rate": 13.177710843373495,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "136540",
+    "name": "윈스테크넷",
+    "close": 12800,
+    "rate": 7.202680067001675,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "123330",
+    "name": "제닉",
+    "close": 16840,
+    "rate": 10.935441370223979,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "265740",
+    "name": "엔에프씨",
+    "close": 6540,
+    "rate": 10.65989847715736,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "123690",
+    "name": "한국화장품",
+    "close": 7270,
+    "rate": 7.385524372230429,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "067920",
+    "name": "이글루",
+    "close": 7080,
+    "rate": 13.099041533546327,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "380550",
+    "name": "뉴로핏",
+    "close": 5600,
+    "rate": 13.590263691683571,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "430690",
+    "name": "한싹",
+    "close": 4060,
+    "rate": 10.626702997275205,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

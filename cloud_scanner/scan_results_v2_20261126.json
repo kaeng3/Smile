@@ -1,0 +1,122 @@
+[
+  {
+    "code": "310210",
+    "name": "보로노이",
+    "close": 138700,
+    "rate": 18.344709897610922,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "078600",
+    "name": "대주전자재료",
+    "close": 87600,
+    "rate": 11.450381679389313,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "347700",
+    "name": "스피어",
+    "close": 22600,
+    "rate": 17.892540427751698,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "295310",
+    "name": "에이치브이엠",
+    "close": 58200,
+    "rate": 14.117647058823529,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "476830",
+    "name": "알지노믹스",
+    "close": 24900,
+    "rate": 14.746543778801843,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "204620",
+    "name": "글로벌텍스프리",
+    "close": 6450,
+    "rate": 7.321131447587355,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "027360",
+    "name": "아주IB투자",
+    "close": 2585,
+    "rate": 6.160164271047227,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "389470",
+    "name": "인벤티지랩",
+    "close": 23350,
+    "rate": 13.349514563106796,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "073490",
+    "name": "LIG아큐버",
+    "close": 39250,
+    "rate": 13.439306358381502,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "282720",
+    "name": "금양그린파워",
+    "close": 10640,
+    "rate": 9.465020576131687,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "179290",
+    "name": "엠아이텍",
+    "close": 3960,
+    "rate": 11.079943899018232,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "129920",
+    "name": "대성하이텍",
+    "close": 6130,
+    "rate": 6.423611111111111,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "209640",
+    "name": "와이제이링크",
+    "close": 3540,
+    "rate": 8.091603053435115,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "321370",
+    "name": "센서뷰",
+    "close": 1263,
+    "rate": 17.488372093023255,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "004540",
+    "name": "깨끗한나라",
+    "close": 1628,
+    "rate": 14.647887323943662,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]

@@ -1,0 +1,210 @@
+[
+  {
+    "code": "277810",
+    "name": "레인보우로보틱스",
+    "close": 463500,
+    "rate": -0.7494646680942184,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "352820",
+    "name": "하이브",
+    "close": 176900,
+    "rate": 2.6697620429483457,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "950160",
+    "name": "코오롱티슈진",
+    "close": 15200,
+    "rate": 4.395604395604396,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "100790",
+    "name": "미래에셋벤처투자",
+    "close": 15440,
+    "rate": 10.285714285714285,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "126340",
+    "name": "비나텍",
+    "close": 86600,
+    "rate": -8.26271186440678,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "358570",
+    "name": "지아이이노베이션",
+    "close": 8670,
+    "rate": 15.909090909090908,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "086900",
+    "name": "메디톡스",
+    "close": 70200,
+    "rate": 1.1527377521613833,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "112040",
+    "name": "위메이드",
+    "close": 14560,
+    "rate": 5.278380332610268,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "187660",
+    "name": "페니트리움바이오",
+    "close": 6800,
+    "rate": -11.917098445595855,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "448900",
+    "name": "한국피아이엠",
+    "close": 54500,
+    "rate": 6.237816764132553,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "101730",
+    "name": "위메이드맥스",
+    "close": 3825,
+    "rate": 2.0,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "206650",
+    "name": "유바이오로직스",
+    "close": 8770,
+    "rate": 0.45819014891179843,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "389500",
+    "name": "에스비비테크",
+    "close": 37750,
+    "rate": -4.91183879093199,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "475400",
+    "name": "씨메스로보틱스",
+    "close": 17200,
+    "rate": -1.4326647564469914,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "037270",
+    "name": "YG PLUS",
+    "close": 3070,
+    "rate": -3.1545741324921135,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "199430",
+    "name": "케이엔알시스템",
+    "close": 16380,
+    "rate": 3.802281368821293,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "282720",
+    "name": "금양그린파워",
+    "close": 9720,
+    "rate": -11.232876712328768,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "209640",
+    "name": "와이제이링크",
+    "close": 3275,
+    "rate": -3.106508875739645,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "217330",
+    "name": "싸이토젠",
+    "close": 2700,
+    "rate": -7.534246575342466,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "094850",
+    "name": "참좋은여행",
+    "close": 3865,
+    "rate": 0.25940337224383914,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  },
+  {
+    "code": "446840",
+    "name": "지슨",
+    "close": 4835,
+    "rate": -11.121323529411764,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "027050",
+    "name": "코리아나",
+    "close": 1257,
+    "rate": 3.45679012345679,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "406820",
+    "name": "뷰티스킨",
+    "close": 2520,
+    "rate": 30.23255813953488,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 3 (224선 돌파 후 120선 지지)"
+  },
+  {
+    "code": "128540",
+    "name": "에코캡",
+    "close": 997,
+    "rate": 0.6054490413723511,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "289220",
+    "name": "자이언트스텝",
+    "close": 1144,
+    "rate": 2.5089605734767026,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 1 (120선 돌파 후 60선 지지)"
+  },
+  {
+    "code": "241840",
+    "name": "에이스토리",
+    "close": 2000,
+    "rate": 2.0408163265306123,
+    "match_type": "predictive",
+    "pattern": "포도시 패턴 2 (60선 돌파 후 20선 지지)"
+  }
+]

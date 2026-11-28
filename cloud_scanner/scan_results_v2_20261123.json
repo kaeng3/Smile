@@ -1,0 +1,18 @@
+[
+  {
+    "code": "253450",
+    "name": "스튜디오드래곤",
+    "close": 33400,
+    "rate": 7.395498392282958,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  },
+  {
+    "code": "451250",
+    "name": "삐아",
+    "close": 8320,
+    "rate": 6.530089628681178,
+    "match_type": "predictive",
+    "pattern": "양음양 v2 패턴 1 (눌림목)"
+  }
+]
