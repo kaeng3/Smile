@@ -65,17 +65,7 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         return result
     def editorial(edition):
         # Separate new report output; retain old 50-item reports and consumers.
-        edition_rows=rows
-        if edition=="pre":
-            # Display only today's news in the main editorial report. The original
-            # overnight briefing export retains its established window.
-            def on_report_day(row):
-                observed=parse_time(row.get("observed_at")) or seen_time(row.get("seen"))
-                published=parse_time(row.get("published_at"))
-                timestamp=published or observed
-                return timestamp is not None and timestamp.date()==day
-            edition_rows=[row for row in rows if on_report_day(row)]
-        full=briefing(edition_rows,day,previous,edition,post_cutoff,limit=None,session=session)
+        full=briefing(rows,day,previous,edition,post_cutoff,limit=None,session=session)
         market=market_brief(market_data if market_available else None,day,full) if edition=="post" else None
         known=full.pop("events");unknown=full.pop("unknown_events_preview")
         if market and market["status"]=="available":
@@ -88,6 +78,9 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         sections=annotate_evidence(annotate_sections(group(known)))
         if edition=="pre":
             sections=premarket_signals(sections)
+            # The editorial shortlist is a subset of the full briefing.
+            full["published_events_before_selection"]=full["published_events"]
+            full["published_events"]=sum(s["count"] for s in sections)
         return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
                 "capture_health":capture_health(capture_stats,built), "market":market,"taxonomy_version":VERSION,"sections":sections,
                 "unknown_sections":annotate_evidence(annotate_sections(group(unknown))),"featured":featured, "note":"Title-only category research; not verified impact or article summary."}
