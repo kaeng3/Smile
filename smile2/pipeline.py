@@ -1,6 +1,6 @@
 """Build a standalone public-metadata research preview; never include history archives."""
 import argparse
-from datetime import date, datetime, time
+from datetime import date, datetime, time, timedelta
 from hashlib import sha256
 import re
 import json
@@ -65,7 +65,11 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         return result
     def editorial(edition):
         # Separate new report output; retain old 50-item reports and consumers.
-        full=briefing(rows,day,previous,edition,post_cutoff,limit=None,session=session)
+        calendar_day=built.date()
+        window=(datetime.combine(calendar_day-timedelta(days=1),time(15,31),KST),datetime.combine(calendar_day,time(8),KST)) if edition=="pre" else None
+        full=briefing(rows,day,previous,edition,post_cutoff,limit=None,session=session,window=window)
+        if window:
+            full.update(report_date=calendar_day.isoformat(),window_policy="calendar_daily_kst_v2",calendar_basis="calendar_day")
         market=market_brief(market_data if market_available else None,day,full) if edition=="post" else None
         known=full.pop("events");unknown=full.pop("unknown_events_preview")
         if market and market["status"]=="available":
@@ -76,11 +80,6 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         featured=featured_editions(rows,day,previous,edition,post_cutoff,session)
         full.pop("categories",None)
         sections=annotate_evidence(annotate_sections(group(known)))
-        if edition=="pre":
-            sections=premarket_signals(sections)
-            # The editorial shortlist is a subset of the full briefing.
-            full["published_events_before_selection"]=full["published_events"]
-            full["published_events"]=sum(s["count"] for s in sections)
         return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
                 "capture_health":capture_health(capture_stats,built), "market":market,"taxonomy_version":VERSION,"sections":sections,
                 "unknown_sections":annotate_evidence(annotate_sections(group(unknown))),"featured":featured, "note":"Title-only category research; not verified impact or article summary."}
@@ -97,7 +96,7 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
           "media-status.json":{"rows":len(additional),"sources":list(media_status),"checked_at":datetime.now(KST).isoformat()},
           "manifest.json":{"schema":1,"status":"research_preview","report_date":day.isoformat(),
                            "previous_trading_date":previous.isoformat(),"built_at":built.isoformat(),
-                           "preferred_edition":"post" if built>=(parse_time(session["close"]) if session else datetime.combine(day,time(15,30),KST)) else "pre",
+                           "preferred_edition":"post" if built.date()==day and built>=(parse_time(session["close"]) if session else datetime.combine(day,time(15,30),KST)) else "pre",
                            "input_rows":len(rows)+len(additional),"media_rows":len(additional),"history_included":False,"market_data_included":data_market_available(market_data,day,market_available),
                            "official_rows":len(official_rows),"calendar_basis":"XKRX" if session else "unverified_nominal_hours"}}
     assets=Path(__file__).resolve().parent

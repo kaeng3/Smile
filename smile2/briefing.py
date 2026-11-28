@@ -27,10 +27,10 @@ def bounds(day, previous, edition, post_cutoff=time(15,30), session=None):
         return datetime.combine(day,time(8),KST),end
     raise ValueError("Unknown edition")
 
-def briefing(rows, day, previous, edition, post_cutoff=time(15,30), limit=50, session=None, include_late_pre=False):
+def briefing(rows, day, previous, edition, post_cutoff=time(15,30), limit=50, session=None, include_late_pre=False, window=None):
     if limit is not None and limit < 1:
         raise ValueError("limit must be positive")
-    start,end=bounds(day,previous,edition,post_cutoff,session)
+    start,end=window if window is not None else bounds(day,previous,edition,post_cutoff,session)
     known,unknown=[],[]
     future=late=0
     for r in rows:

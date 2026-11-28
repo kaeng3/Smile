@@ -73,8 +73,8 @@ jobs:
           assert not (p/"smile2"/"patterns.py").exists()
           for edition in ("pre","post"):
               r=json.loads((p/"smile2"/f"editorial-{edition}.json").read_text())
-              assert r["start"][11:16]==("15:30" if edition=="pre" else "08:00")
-              assert r["cutoff_exclusive"][11:16]==("07:00" if edition=="pre" else "15:30")
+              assert r["start"][11:16]==("15:31" if edition=="pre" else "08:00")
+              assert r["cutoff_exclusive"][11:16]==("08:00" if edition=="pre" else "15:30")
               print("Edition window",edition,r["start"],r["cutoff_exclusive"])
               if edition=="post" and r["market"]["status"]=="available":
                   rates=[s["rate_pct"] for s in r["market"]["stocks"]]
