@@ -78,6 +78,9 @@ def generate(rows, day, previous, output, official_rows=(), source_status=(), po
         sections=annotate_evidence(annotate_sections(group(known)))
         if edition=="pre":
             sections=premarket_signals(sections)
+            # The editorial shortlist is a subset of the full briefing.
+            full["published_events_before_selection"]=full["published_events"]
+            full["published_events"]=sum(s["count"] for s in sections)
         return {**full,"built_at":built.isoformat(),"window_status":"partial" if built<parse_time(full["cutoff_exclusive"]) else "closed_window_unreviewed",
                 "capture_health":capture_health(capture_stats,built), "market":market,"taxonomy_version":VERSION,"sections":sections,
                 "unknown_sections":annotate_evidence(annotate_sections(group(unknown))),"featured":featured, "note":"Title-only category research; not verified impact or article summary."}
